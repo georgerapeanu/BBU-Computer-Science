@@ -17,3 +17,6 @@ class ProductService:
 
     def get_all_products(self):
         return self.__repository.get_all()
+
+    def filter_by_name(self, name):
+        return list(filter(lambda x: name in x.name, self.__repository.get_all()))

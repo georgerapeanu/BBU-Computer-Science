@@ -34,9 +34,9 @@ class Product:
     def id(self):
         return self.__id
 
-    @id.setter
-    def id(self, value):
-        self.__id = id
+    # @id.setter
+    # def id(self, value):
+    #     self.__id = id
 
     @property
     def name(self):
@@ -60,7 +60,7 @@ class Product:
 
 class Order:
     def __init__(self, order_id, product_id, quantity):
-        self.id = order_id
+        self.__id = order_id
         self.product_id = product_id
         self.quantity = quantity
 
@@ -68,9 +68,9 @@ class Order:
     def id(self):
         return self.__id
 
-    @id.setter
-    def id(self, value):
-        self.__id = value
+    # @id.setter
+    # def id(self, value):
+    #     self.__id = value
 
     @property
     def product_id(self):
@@ -87,3 +87,7 @@ class Order:
     @quantity.setter
     def quantity(self, value):
         self.__quantity = value
+
+    def __str__(self):
+        return "Order %d: %d products of id %d" % (self.id, self.quantity, self.product_id)
+

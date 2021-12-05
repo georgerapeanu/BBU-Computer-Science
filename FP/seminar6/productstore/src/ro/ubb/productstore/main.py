@@ -84,16 +84,14 @@ p.name="Butter"
 if __name__ == '__main__':
     print("hello")
 
-
-    product_validator=ProductValidator
+    product_validator = ProductValidator
     product_repository = Repository(product_validator)
-    product_service=ProductService(product_repository)
+    product_service = ProductService(product_repository)
 
     order_validator = OrderValidator
     order_repository = Repository(order_validator)
     order_service = OrderService(order_repository, product_repository)
 
-     console=Console(product_service)
-     #console.run_console()
-#    product_validator = ProductValidator()
-#    product_validator.validate(Product(1,"aaa",-2))
+    console = Console(product_service, order_service)
+    console.run_console()
+
