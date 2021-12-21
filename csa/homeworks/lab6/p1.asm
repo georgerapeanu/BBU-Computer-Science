@@ -35,6 +35,7 @@ segment code use32 class=code
         mov ecx, lens
         
         mov bl, 10 ;base
+        jecxz doneParseString
         parseString:
             lodsd
             shr eax, 16
@@ -65,7 +66,8 @@ segment code use32 class=code
             notPalindrome:
             
         loop parseString
-        
+        doneParseString:   
+          
         mov eax, edi
         sub eax, ans
         

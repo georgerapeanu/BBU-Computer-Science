@@ -26,9 +26,9 @@ segment code use32 class=code
     start:
         ; ...
     
-        xor eax,eax
+        xor eax, eax
         xor edx, edx
-
+        
         mov al,16
         mov bl,4
         div bl

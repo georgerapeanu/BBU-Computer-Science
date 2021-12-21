@@ -10,6 +10,7 @@ extern exit, printf, scanf               ; tell nasm that exit exists even if we
 import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
 import scanf msvcrt.dll 
 import printf msvcrt.dll 
+import printf msvcrt.dll
                        
                           
 

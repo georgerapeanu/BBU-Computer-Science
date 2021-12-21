@@ -44,7 +44,7 @@ segment code use32 class=code
         mul bx
         sub cx, ax
         
-        movsx eax, cx
+        mov ax, cx
         movsx bx, byte[c]
         sub bx, 5
 ;        cwd     ;sign extends ax into dx

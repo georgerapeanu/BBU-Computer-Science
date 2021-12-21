@@ -1,0 +1,47 @@
+     1                                  ;problem 8: A natural number a (a: dword, defined in the data segment) is given. Read a natural number b from the keyboard and calculate: a + a/b. Display the result of this operation. The values will be displayed i
+     2                                  
+     3                                  bits 32 ; assembling for the 32 bits architecture
+     4                                  
+     5                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     6                                  global start        
+     7                                  
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit, printf, scanf               ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                  import scanf msvcrt.dll 
+    12                                  import printf msvcrt.dll 
+    13                                  import printf msvcrt.dll
+    14                                                         
+    15                                                            
+    16                                  
+    17                                  ; our data is declared here (the variables needed by our program)
+    18                                  segment data use32 class=data
+    19 00000000 FC080000                    a dd 2300
+    20 00000004 00000000                    b dd 0
+    21 00000008 256400                      dwordFMT db "%d",0x0
+    22 0000000B 25640A00                    dwordFMTOutput db "%d",0xa, 0x0
+    23                                  
+    24                                  ; our code starts here
+    25                                  segment code use32 class=code
+    26                                      start:
+    27                                      
+    28 00000000 68[04000000]                    push b
+    29 00000005 68[08000000]                    push dwordFMT
+    30 0000000A FF15[00000000]                  call [scanf]
+    31 00000010 83C408                          add esp, 8
+    32                                          
+    33 00000013 A1[00000000]                    mov eax, dword[a]
+    34 00000018 8B1D[04000000]                  mov ebx, dword[b]
+    35 0000001E 99                              cdq
+    36 0000001F F7FB                            idiv ebx
+    37 00000021 0305[00000000]                  add eax, dword[a]
+    38                                          
+    39 00000027 50                              push eax
+    40 00000028 68[08000000]                    push dwordFMT
+    41 0000002D FF15[00000000]                  call [printf]
+    42 00000033 83C408                          add esp, 8
+    43                                          
+    44                                          
+    45                                      
+    46 00000036 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    47 00000038 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

@@ -1,0 +1,86 @@
+     1                                  ;@author: Rapeanu George - Alexandru(#8 in group list)
+     2                                  ;Exercise 23: Being given a string of bytes, build a string of words which contains in the low bytes of the words the set of distinct characters from the given string and in the high byte of a word it contains the n
+     3                                  
+     4                                  
+     5                                  
+     6                                  bits 32 ; assembling for the 32 bits architecture
+     7                                  
+     8                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     9                                  global start        
+    10                                  
+    11                                  ; declare external functions needed by our program
+    12                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    13                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    14                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    15                                  
+    16                                  extern printf
+    17                                  import printf msvcrt.dll
+    18                                                            
+    19                                  ; our data is declared here (the variables needed by our program)
+    20                                  segment data use32 class=data
+    21 00000000 0204020502020404            sir db 2, 4, 2, 5, 2, 2, 4, 4 
+    22                                      len equ $ - sir
+    23 00000008 2568780D0A00                fmt db "%hx", 0xd, 0xa, 0x0
+    24 0000000E 0000<rept>                  ans times 2 * len dw 0
+    25                                  
+    26                                  ; our code starts here
+    27                                  segment code use32 class=code
+    28                                      start:
+    29                                          ; ...
+    30                                      
+    31 00000000 FC                              cld
+    32 00000001 BA00000000                      mov edx, 0
+    33                                          
+    34 00000006 BF[0E000000]                    mov edi, ans
+    35                                          loopOverAllBytes:
+    36 0000000B B908000000                          mov ecx, len
+    37 00000010 BE[00000000]                        mov esi, sir
+    38 00000015 88D3                                mov bl, dl
+    39 00000017 B700                                mov bh, 0
+    40                                              
+    41 00000019 83F900                              cmp ecx, 0
+    42 0000001C 7409                                jz doneParseString
+    43                                              parseString:
+    44 0000001E AC                                      lodsb
+    45 0000001F 38D8                                    cmp al, bl
+    46 00000021 7502                                    jne notEqual
+    47 00000023 FEC7                                    inc bh
+    48                                                  notEqual:
+    49 00000025 E2F7                                loop parseString
+    50                                              doneParseString:
+    51 00000027 80FF00                              cmp bh, 0
+    52 0000002A 7405                                je notFound
+    53 0000002C 6689D8                              mov ax, bx
+    54 0000002F 66AB                                stosw
+    55                                              notFound:
+    56 00000031 42                              inc edx
+    57 00000032 81FA00010000                    cmp edx, 256
+    58 00000038 7402                            je doneLoopOverAllBytes
+    59 0000003A EBCF                            jmp loopOverAllBytes
+    60                                          doneLoopOverAllBytes:
+    61                                      
+    62 0000003C 89F9                            mov ecx, edi
+    63 0000003E 81E9[0E000000]                  sub ecx, ans
+    64 00000044 89C8                            mov eax, ecx
+    65 00000046 BA00000000                      mov edx, 0
+    66 0000004B BB02000000                      mov ebx, 2
+    67 00000050 F7F3                            div ebx
+    68 00000052 89C1                            mov ecx, eax
+    69                                          
+    70 00000054 83F900                          cmp ecx, 0
+    71 00000057 741D                            je donePrintLoop
+    72 00000059 BE[0E000000]                    mov esi, ans
+    73                                          printLoop:
+    74 0000005E 51                                  push ecx
+    75 0000005F 66AD                                lodsw
+    76 00000061 0FB7C0                              movzx eax, ax
+    77 00000064 50                                  push eax
+    78 00000065 68[08000000]                        push fmt
+    79 0000006A FF15[00000000]                      call [printf]
+    80 00000070 83C408                              add esp, 8
+    81 00000073 59                                  pop ecx
+    82 00000074 E2E8                            loop printLoop
+    83                                          donePrintLoop:
+    84                                      
+    85 00000076 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    86 00000078 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

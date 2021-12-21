@@ -33,8 +33,8 @@ segment data use32 class=data
     b dw 0100_0011_0110_1011b
     c db 0                          ;should be 0101_0001b = 0x51
     d dd 0                          ;should be 0011_1111_1010_0010_0101_0001_0100_0011 = 0x3fa25143
-    fmtByte db "%hhx",0xd,0xa
-    fmtDword db "%x",0xd,0xa
+    fmtByte db "%hhx",0xd,0xa,0x0
+    fmtDword db "%x",0xd,0xa,0x0
 
 ; our code starts here
 segment code use32 class=code

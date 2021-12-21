@@ -1,6 +1,5 @@
 ;@author: Rapeanu George - Alexandru(#8 in group list)
 ;imuliplications, idivisions - signed interpretation
-;Exercise 22: a/2+b*b-a*b*c+e+x; a,b,c-byte; e-doubleword; x-qword
 
 bits 32 ; assembling for the 32 bits architecture
 
@@ -29,12 +28,13 @@ segment data use32 class=data
 segment code use32 class=code
     start:
         ; ...
+;Exercise 22: a/2+b*b-a*b*c+e+x; a,b,c-byte; e-doubleword; x-qword
         
         mov ah, 0
         mov al, byte[a]
         mov bl, byte 2
         idiv bl
-        movzx eax, al
+        movsx eax, al
         cdq
         add dword[result],eax
         adc dword[result + 4],edx
@@ -42,7 +42,7 @@ segment code use32 class=code
         mov al, byte[b]
         mov bl, byte[b]
         mul bl
-        movzx eax,ax
+        movsx eax,ax
         cdq
         add dword[result],eax
         adc dword[result + 4],edx
@@ -50,7 +50,7 @@ segment code use32 class=code
         mov al, byte[a]
         mov bl, byte[b]
         mul bl
-        movzx bx, byte[c]
+        movsx bx, byte[c]
         mul bx
         push dx
         push ax
@@ -58,8 +58,8 @@ segment code use32 class=code
         cdq
         sub dword[result],eax
         sbb dword[result + 4],edx
-        cdq
         mov eax, dword[e]
+        cdq
         add dword[result],eax
         adc dword[result + 4],edx
         
