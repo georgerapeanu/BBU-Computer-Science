@@ -1,0 +1,2 @@
+A file name is given in the data segment, containing codes(numbers) separated by #. Print the codes that have the first digit equal to the last one.
+Example: input.txt: 121#1234#56789#4224 -> 121#4224
