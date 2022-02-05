@@ -1,0 +1,144 @@
+Write an application which manages the students of a faculty.
+Each student has a unique id, a name and a grade. The application should
+allow to:
+
+F1: print all students
+F2: add students
+F3: delete students
+F4: show students whose grades are >= a given value
+F5: find a student with the maximal grade
+F6_: split the application into modules (main, ui, domain, util)
+F7_: validate input data
+F8_: student_id is unique - validation in add, delete etc.
+F9: find all students whose name contain a string t (the match should not be
+    case sensitive)
+F10: undo
+F11: remove all students with the grade smaller than 5 (using TDD)
+F12: sort students according to their grade (descending)  (using TDD)
+F13: given an integer 'nr', find the top nr students according
+     to their grade  (using TDD)
+F14: compute the average grade of all students having the grade >= 5 (using TDD)
+F15: sort all students according to their grade and alphabetically (using TDD).
+
+F16_: cmd-based menu
+F17_: tests
+
+------------
+
+I1: F1, F2, F3, F4, F5
+I2: F6_, F7_
+I3: F8_, F9
+I4: F10
+I5: F11, F12, F13, F14, F15
+
+-----------------------
+
+I1: F1, F2, F3 - done
+---
+I2: F16_, F7_, F17_, F4, F5, F6_ - *
+I3: F8_, F9
+I4: F10
+I5: F11, F12, F13, F14, F15
+
+-------------
+sem3:
+- cmd-based ui
+- exceptions
+- testing
+
+
+
+====================================================================
+
+
+
+
+------
+
+assignment t916
+https://classroom.github.com/g/1gJCK1s1
+
+join the following team: t916
+clone the repo
+do not change anything in the code
+mark src as sources root (pycharm)
+run the project
+
+
+
+
+
+
+
+
+
+-------------
+assignment t917
+https://classroom.github.com/g/61IJ0feD
+
+join the following team: t917
+clone the repo
+do not change anything in the code!!!
+mark src as sources root (pycharm)
+run the project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------
+assignment t915
+https://classroom.github.com/g/eHr81fOW
+
+join the following team: t915
+clone the repo
+do not change anything in the code
+mark src as sources root (pycharm)
+run the project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
