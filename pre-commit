@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cloc $PWD >> $PWD/cloc.md -quiet --md
+embed-markdown $PWD/real_readme.md $PWD/README.md
+rm $PWD/cloc.md
+git add $PWD/README.md
+exit 0
