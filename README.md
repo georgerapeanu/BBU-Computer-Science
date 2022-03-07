@@ -1,7 +1,7 @@
 ### This is a repository containing all of my homeworks(mainly) at the BBU bachelor's in Computer Science program
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=0.42 s (757.5 files/s, 57438.7 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=0.43 s (736.7 files/s, 55860.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
