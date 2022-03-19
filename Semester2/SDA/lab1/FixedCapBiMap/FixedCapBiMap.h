@@ -23,7 +23,9 @@ class FixedCapBiMap {
 	friend class FixedCapBiMapIterator;
 
 	private:
-		//TODO - Representation
+    TElem* elements;
+    int capacity;
+    int current_size;
 
 	public:
 

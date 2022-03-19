@@ -6,7 +6,7 @@ class FixedCapBiMapIterator
 	friend class FixedCapBiMap;
 private:
 	const FixedCapBiMap& map;
-	//TODO - Representation
+  int index;
 
 	FixedCapBiMapIterator(const FixedCapBiMap& m);
 public:

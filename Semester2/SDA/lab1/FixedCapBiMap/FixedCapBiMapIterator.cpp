@@ -4,31 +4,35 @@
 using namespace std;
 
 
-FixedCapBiMapIterator::FixedCapBiMapIterator(const FixedCapBiMap& d) : map(d)
+FixedCapBiMapIterator::FixedCapBiMapIterator(const FixedCapBiMap& d):map(d)
 {
-	//TODO - Implementation
+  this->index = 0;
 }
 
 
 void FixedCapBiMapIterator::first() {
-	//TODO - Implementation
+  this->index = 0;
 }
 
 
 void FixedCapBiMapIterator::next() {
-	//TODO - Implementation
+  if(this->index >= this->map.size()){
+    throw exception();
+  }
+  this->index++;
 }
 
 
 TElem FixedCapBiMapIterator::getCurrent(){
-	//TODO - Implementation
-	return NULL_TELEM;
+  if(this->index >= this->map.size()){
+    throw exception();
+  }
+	return this->map.elements[this->index];
 }
 
 
 bool FixedCapBiMapIterator::valid() const {
-	//TODO - Implementation
-	return false;
+	return this->index < this->map.size();
 }
 
 
