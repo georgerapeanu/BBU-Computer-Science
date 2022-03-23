@@ -1,0 +1,22 @@
+==11326== Memcheck, a memory error detector
+==11326== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==11326== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==11326== Command: ./_app
+==11326== 
+Short tests over
+Test create
+Test add
+Test remove
+Test iterator
+Test quantity
+All test over
+==11326== 
+==11326== HEAP SUMMARY:
+==11326==     in use at exit: 0 bytes in 0 blocks
+==11326==   total heap usage: 208 allocs, 208 frees, 3,269,216 bytes allocated
+==11326== 
+==11326== All heap blocks were freed -- no leaks are possible
+==11326== 
+==11326== For lists of detected and suppressed errors, rerun with: -s
+==11326== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
