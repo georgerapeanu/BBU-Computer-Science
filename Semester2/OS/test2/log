@@ -1,0 +1,35 @@
+/home/xm/exam/os/account/rgie3205/ex1287> cat exam-tgsa.txt 
+A file containing only numbers is given. The numbers are separated by the ~
+character. The file can contain any number of numbers on each line, and can
+contain any number of lines.
+Using AWK display on the index of the lines that have at least 3 numbers and
+the sum of the last 2 numbers is above a given thershold. The treshold will
+be given as a predefined variable in the command line.
+
+--------------------------------------------------------------------------------
+A file containtng arithmetic expressions is given, the expresions contain
+only basic operations (a.k.a. no parenthesis).
+Using GREP check all the expressions and displays the incorrect ones on the
+screen.
+
+--------------------------------------------------------------------------------
+Using SED place al lines that contain an odd number of even digits between
+curly brackets.
+ /home/xm/exam/os/account/rgie3205/ex1287> cat sed_file 
+12 2141zasg24 1
+12 2214 4 tasf35 1
+
+124f51asf2 3
+214b51 
+/home/xm/exam/os/account/rgie3205/ex1287> cat run*
+awk -F~ -v threshold=$1 -f awk.awk awk_file
+grep -v -E "^(([-]?[1-9][0-9]*)|0)([+/*^-](([1-9][0-9]*)|0))*$" grep_file
+sed -E "s/^((([^02468]*[02468]){2,2})*[^02468]*[02468][^02468]*)$/{\1}/" sed_file 
+/home/xm/exam/os/account/rgie3205/ex1287> cat awk.awk 
+NF >= 3 && $NF + $(NF-1) >= threshold  {
+   print NR 
+}
+/home/xm/exam/os/account/rgie3205/ex1287> xmlock
+Connection to 172.30.0.9 closed by remote host.
+Connection to 172.30.0.9 closed.
+

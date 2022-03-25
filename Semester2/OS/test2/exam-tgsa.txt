@@ -1,0 +1,17 @@
+A file containing only numbers is given. The numbers are separated by the ~
+character. The file can contain any number of numbers on each line, and can
+contain any number of lines.
+Using AWK display on the index of the lines that have at least 3 numbers and
+the sum of the last 2 numbers is above a given thershold. The treshold will
+be given as a predefined variable in the command line.
+
+--------------------------------------------------------------------------------
+A file containtng arithmetic expressions is given, the expresions contain
+only basic operations (a.k.a. no parenthesis).
+Using GREP check all the expressions and displays the incorrect ones on the
+screen.
+
+--------------------------------------------------------------------------------
+Using SED place al lines that contain an odd number of even digits between
+curly brackets.
+
