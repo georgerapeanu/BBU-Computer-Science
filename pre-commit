@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cloc $PWD >> $PWD/cloc.md -quiet --md
+cloc $PWD --fullpath --not-match-f="(^.*build.*$)|(^.*googletest.*$)" -quiet --md >> $PWD/cloc.md
 embed-markdown $PWD/real_readme.md $PWD/README.md
 rm $PWD/cloc.md
 git add $PWD/README.md
