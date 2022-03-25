@@ -1,0 +1,168 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/Tests.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/cmake-build-debug-coverage/CMakeFiles/seminar3.dir/Tests.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/cmake-build-debug-coverage/CMakeFiles/seminar3.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "DynamicVector.h"
+        -:    2:#include "Tests.h"
+        -:    3:#include <assert.h>
+        -:    4:
+function _ZN5Tests17testDynamicVectorEv called 1 returned 100% blocks executed 68%
+        1:    5:void Tests::testDynamicVector()
+        -:    6:{
+        2:    7:    DynamicVector<int> v1{ 2 };
+        1:    7-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:    7-block  1
+call    4 never executed
+        1:    8:    v1.add(10);
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:    8-block  1
+        1:    9:    v1.add(20);
+        1:    9-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:    9-block  1
+       1*:   10:    assert(v1.getSize() == 2);
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   10-block  1
+call    3 never executed
+       1*:   11:    assert(v1[1] == 20);
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   11-block  1
+call    3 never executed
+        1:   12:    v1[1] = 25;
+        1:   12-block  0
+call    0 returned 1
+       1*:   13:    assert(v1[1] == 25);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   13-block  0
+call    3 never executed
+        1:   14:    v1.add(30);
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   14-block  1
+       1*:   15:    assert(v1.getSize() == 3);
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   15-block  1
+call    3 never executed
+        -:   16:
+        2:   17:    DynamicVector<int> v2{ v1 };
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:   17-block  1
+call    4 never executed
+       1*:   18:    assert(v2.getSize() == 3);
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   18-block  1
+call    3 never executed
+        -:   19:
+        2:   20:    DynamicVector<int> v3;
+        1:   20-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20-block  1
+call    3 returned 1
+    $$$$$:   20-block  2
+call    4 never executed
+        1:   21:    v3 = v1;
+        1:   21-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   22:    assert(v3[0] == 10);
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   22-block  1
+call    3 never executed
+        -:   23:
+        -:   24:    // test iterator
+        1:   25:    DynamicVector<int>::iterator it = v1.begin();
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   26:    assert(*it == 10);
+        1:   26-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   26-block  1
+call    3 never executed
+       1*:   27:    assert(it != v1.end());
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   27-block  2
+call    6 never executed
+        1:   28:    it++;
+        1:   28-block  0
+call    0 returned 1
+       1*:   29:    assert(*it == 25);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   29-block  0
+call    3 never executed
+        -:   30:
+        1:   31:    int i = 0;
+        4:   32:    for (auto x : v1)
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        4:   32-block  2
+call    6 returned 4
+branch  7 taken 3 (fallthrough)
+branch  8 taken 1
+        3:   32-block  3
+call    9 returned 3
+        3:   32-block  4
+        3:   33:        i++;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   34:    assert(i == 3);
+        1:   34-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   34-block  1
+call    2 never executed
+        1:   35:}

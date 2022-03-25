@@ -1,0 +1,22 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/main.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/cmake-build-debug-coverage/CMakeFiles/seminar3.dir/main.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/seminar3/cmake-build-debug-coverage/CMakeFiles/seminar3.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:#include <iostream>
+        -:    3:#include "Tests.h"
+        -:    4:
+function main called 1 returned 100% blocks executed 100%
+        1:    5:int main()
+        -:    6:{
+        -:    7:    Tests t;
+        1:    8:    t.testDynamicVector();
+        1:    8-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    9:}
+        1:    9-block  0
+        1:    9-block  1
+        -:   10:
+        -:   11:
