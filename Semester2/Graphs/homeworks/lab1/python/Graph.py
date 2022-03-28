@@ -5,7 +5,7 @@ from copy import deepcopy
 
 class Graph:
     def __init__(self, vertices, edges):
-        """! Constructor for graph.
+        """ Constructor for graph.
 
         :param vertices: a list of initial vertices
         :type vertices: a list of strings
@@ -40,7 +40,7 @@ class Graph:
             self.__costs[(edge[0], edge[1])] = edge[2]
 
     def parse_vertices(self):
-        """! This function returns an iterable containing nodes
+        """ This function returns an iterable containing nodes
 
         The nodes are deepcopied, in order to avoid being modified from the outside
         :return: iterator through a list of deepcopied nodes
@@ -48,7 +48,7 @@ class Graph:
         return deepcopy([node for node in self.__nin])
 
     def is_edge(self, x, y):
-        """! This function returns True if the edge x->y exists, false otherwise
+        """ This function returns True if the edge x->y exists, false otherwise
 
         :param x: the first vertex
         :type x: str
@@ -63,7 +63,7 @@ class Graph:
         return (x, y) in self.__costs.keys()
 
     def get_in_degree(self, x):
-        """! This function returns the in degree of a vertex
+        """ This function returns the in degree of a vertex
 
         :param x: the vertex
         :type x: str
@@ -77,7 +77,7 @@ class Graph:
         return len(self.__nin[x])
 
     def get_out_degree(self, x):
-        """! This function returns the out degree of a vertex
+        """ This function returns the out degree of a vertex
 
         :param x: the vertex
         :type x: str
@@ -91,7 +91,7 @@ class Graph:
         return len(self.__nout[x])
 
     def parse_outbound_edges(self, x):
-        """! This function returns an iterable of deepcopied vertices
+        """ This function returns an iterable of deepcopied vertices
 
         :param x: the vertex for which to retrieve the iterator
         :return: iterator to a deepcopied list of outbound vertices
@@ -102,7 +102,7 @@ class Graph:
         return deepcopy(self.__nout[x])
 
     def parse_inbound_edges(self, x):
-        """! This function returns an iterable of deepcopied vertices
+        """ This function returns an iterable of deepcopied vertices
 
         :param x: the vertex for which to retrieve the iterator
         :return: iterator to a deepcopied list of inbound vertices
@@ -114,7 +114,7 @@ class Graph:
         return deepcopy(self.__nin[x])
 
     def get_edge_cost(self, x, y):
-        """! This function returns the cost of the edge from x to y
+        """ This function returns the cost of the edge from x to y
 
         :param x: the first vertex
         :type x: str
@@ -129,7 +129,7 @@ class Graph:
         return self.__costs[(x, y)]
 
     def modify_edge_cost(self, x, y, z):
-        """! This function modifies the cost of the edge from x to y
+        """ This function modifies the cost of the edge from x to y
 
         :param x: the first vertex
         :type x: str
@@ -147,14 +147,14 @@ class Graph:
         self.__costs[(x, y)] = z
 
     def copy(self):
-        """! This function retrieves a copy of the current graph
+        """ This function retrieves a copy of the current graph
 
         :return: a Graph copy
         """
         return deepcopy(self)
 
     def add_vertex(self, x):
-        """! This function adds the vertex x to the graph
+        """ This function adds the vertex x to the graph
 
         :param x: the vertex to be added
         :type x: str
@@ -171,7 +171,7 @@ class Graph:
         self.__nout[x] = []
 
     def remove_vertex(self, x):
-        """! This function removes the vertex x from the graph
+        """ This function removes the vertex x from the graph
 
         :param x: the vertex to be removed
         :type x: str
@@ -192,7 +192,7 @@ class Graph:
         del self.__nin[x]
 
     def add_edge(self, x, y, z):
-        """! This function adds the edge from x to y to the graph
+        """ This function adds the edge from x to y to the graph
 
         :param x: the first vertex
         :type x: str
@@ -218,7 +218,7 @@ class Graph:
         self.__costs[(x, y)] = z
 
     def remove_edge(self, x, y):
-        """! This function removes the edge from x to y from the graph
+        """ This function removes the edge from x to y from the graph
 
         :param x: the first vertex
         :type x: str
@@ -235,7 +235,7 @@ class Graph:
         del self.__costs[(x, y)]
 
     def __eq__(self, other):
-        """! This function return True if two graphs are the same, False otherwise
+        """ This function return True if two graphs are the same, False otherwise
 
         :param other: the other graph
         :type other: Graph
@@ -256,7 +256,7 @@ class Graph:
 
 
 def read_graph(filename):
-    """! This function reads a graph from a file.
+    """ This function reads a graph from a file.
         It supports 2 formats
         .txt and  .modified.txt
 
@@ -322,7 +322,7 @@ def read_graph(filename):
 
 
 def write_graph(filename, graph):
-    """! This function writes a graph from a file.
+    """ This function writes a graph from a file.
         It supports 1 format
         .modified.txt
 
@@ -358,7 +358,7 @@ def write_graph(filename, graph):
 
 
 def random_graph(n, m):
-    """! This function creates a random graph with specified number of vertices and edges
+    """ This function creates a random graph with specified number of vertices and edges
 
     :param n: the number of vertices
     :type n: int
