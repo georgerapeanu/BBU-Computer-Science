@@ -1,0 +1,136 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/tests/googletest/googletest/src/gtest-assertion-result.cc
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2005, Google Inc.
+        -:    2:// All rights reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:// The Google C++ Testing and Mocking Framework (Google Test)
+        -:   31://
+        -:   32:// This file defines the AssertionResult type.
+        -:   33:
+        -:   34:#include "gtest/gtest-assertion-result.h"
+        -:   35:
+        -:   36:#include <string>
+        -:   37:#include <utility>
+        -:   38:
+        -:   39:#include "gtest/gtest-message.h"
+        -:   40:
+        -:   41:namespace testing {
+        -:   42:
+        -:   43:// AssertionResult constructors.
+        -:   44:// Used in EXPECT_TRUE/FALSE(assertion_result).
+function _ZN7testing15AssertionResultC2ERKS0_ called 0 returned 0% blocks executed 0%
+    #####:   45:AssertionResult::AssertionResult(const AssertionResult& other)
+    #####:   46:    : success_(other.success_),
+    #####:   47:      message_(other.message_.get() != nullptr
+    #####:   48:                   ? new ::std::string(*other.message_)
+    %%%%%:   48-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   48-block  1
+call    5 never executed
+    #####:   49:                   : static_cast< ::std::string*>(nullptr)) {}
+    %%%%%:   49-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   49-block  1
+    %%%%%:   49-block  2
+    %%%%%:   49-block  3
+call    3 never executed
+        -:   50:
+        -:   51:// Swaps two AssertionResults.
+function _ZN7testing15AssertionResult4swapERS0_ called 0 returned 0% blocks executed 0%
+    #####:   52:void AssertionResult::swap(AssertionResult& other) {
+        -:   53:  using std::swap;
+    #####:   54:  swap(success_, other.success_);
+    %%%%%:   54-block  0
+call    0 never executed
+    #####:   55:  swap(message_, other.message_);
+call    0 never executed
+    #####:   56:}
+        -:   57:
+        -:   58:// Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
+function _ZNK7testing15AssertionResultntEv called 0 returned 0% blocks executed 0%
+    #####:   59:AssertionResult AssertionResult::operator!() const {
+    #####:   60:  AssertionResult negation(!success_);
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:  if (message_.get() != nullptr) negation << *message_;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   61-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    #####:   62:  return negation;
+    %%%%%:   62-block  0
+    %%%%%:   62-block  1
+        -:   63:}
+        -:   64:
+        -:   65:// Makes a successful assertion result.
+function _ZN7testing16AssertionSuccessEv called 100 returned 100% blocks executed 100%
+      100:   66:AssertionResult AssertionSuccess() { return AssertionResult(true); }
+      100:   66-block  0
+call    0 returned 100
+        -:   67:
+        -:   68:// Makes a failed assertion result.
+function _ZN7testing16AssertionFailureEv called 0 returned 0% blocks executed 0%
+    #####:   69:AssertionResult AssertionFailure() { return AssertionResult(false); }
+    %%%%%:   69-block  0
+call    0 never executed
+        -:   70:
+        -:   71:// Makes a failed assertion result with the given failure message.
+        -:   72:// Deprecated; use AssertionFailure() << message.
+function _ZN7testing16AssertionFailureERKNS_7MessageE called 0 returned 0% blocks executed 0%
+    #####:   73:AssertionResult AssertionFailure(const Message& message) {
+    #####:   74:  return AssertionFailure() << message;
+    %%%%%:   74-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   74-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   74-block  2
+call    7 never executed
+    %%%%%:   74-block  3
+    $$$$$:   74-block  4
+call    8 never executed
+        -:   75:}
+        -:   76:
+        -:   77:}  // namespace testing

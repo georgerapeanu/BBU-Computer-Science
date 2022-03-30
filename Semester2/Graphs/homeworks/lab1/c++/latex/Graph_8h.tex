@@ -1,0 +1,109 @@
+\hypertarget{Graph_8h}{}\doxysubsection{Graph.\+h File Reference}
+\label{Graph_8h}\index{Graph.h@{Graph.h}}
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for Graph.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{Graph_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{Graph_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGraphException}{Graph\+Exception}}
+\begin{DoxyCompactList}\small\item\em the graph exception class \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGraph}{Graph}}
+\begin{DoxyCompactList}\small\item\em the model for the graph class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}} \mbox{\hyperlink{Graph_8h_ad70b2a7022256d8fe47c966792f9b5d3}{read\+\_\+graph}} (const std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em reads a graph from file It supports 2 formats .txt and .modified.\+txt \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Graph_8h_a16cc3138245f216421a7334eb7faecfd}{write\+\_\+graph}} (const std\+::string \&file, \mbox{\hyperlink{classGraph}{Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em writes a graph to file This function writes a graph from a file. It supports 1 format .modified.\+txt \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{Graph}} \mbox{\hyperlink{Graph_8h_a4c1c3ffa3e63fe6a8fa4a1937ed093c5}{random\+\_\+graph}} (int n, int m)
+\begin{DoxyCompactList}\small\item\em This function generates a random graph with n vertices and m edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the model for a \mbox{\hyperlink{classGraph}{Graph}} class 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{Graph_8h_a4c1c3ffa3e63fe6a8fa4a1937ed093c5}\label{Graph_8h_a4c1c3ffa3e63fe6a8fa4a1937ed093c5}} 
+\index{Graph.h@{Graph.h}!random\_graph@{random\_graph}}
+\index{random\_graph@{random\_graph}!Graph.h@{Graph.h}}
+\doxyparagraph{\texorpdfstring{random\_graph()}{random\_graph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}} random\+\_\+graph (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+This function generates a random graph with n vertices and m edges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of vertices \\
+\hline
+{\em m} & the number of edges \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the graph 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Graph_8h_ad70b2a7022256d8fe47c966792f9b5d3}\label{Graph_8h_ad70b2a7022256d8fe47c966792f9b5d3}} 
+\index{Graph.h@{Graph.h}!read\_graph@{read\_graph}}
+\index{read\_graph@{read\_graph}!Graph.h@{Graph.h}}
+\doxyparagraph{\texorpdfstring{read\_graph()}{read\_graph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}} read\+\_\+graph (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+reads a graph from file It supports 2 formats .txt and .modified.\+txt 
+
+In case of .txt, the file is supposed to look like this\+:
+
+On the first line, the number n of vertices and the number m of edges; On each of the following m lines, three numbers, x, y and c, describing an edge\+: the origin, the target and the cost of that edge.
+
+In case of .modified.\+txt, the file is supposed to look like this\+:
+
+On the first line, the number n of vertices and the number m of edges
+
+On the second line, a list of the n vertices separated by space On each of the following m lines, three numbers, x, y and c, describing an edge\+: the origin, the target and the cost of that edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the file from which to read(name, relative path or absolute path) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classGraph}{Graph}} @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} in case of invalid format 
+\end{DoxyReturn}
+\mbox{\Hypertarget{Graph_8h_a16cc3138245f216421a7334eb7faecfd}\label{Graph_8h_a16cc3138245f216421a7334eb7faecfd}} 
+\index{Graph.h@{Graph.h}!write\_graph@{write\_graph}}
+\index{write\_graph@{write\_graph}!Graph.h@{Graph.h}}
+\doxyparagraph{\texorpdfstring{write\_graph()}{write\_graph()}}
+{\footnotesize\ttfamily void write\+\_\+graph (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{\mbox{\hyperlink{classGraph}{Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+writes a graph to file This function writes a graph from a file. It supports 1 format .modified.\+txt 
+
+On the first line, the number n of vertices and the number m of edges On the second line, a list of the n vertices separated by space On each of the following m lines, three numbers, x, y and c, describing an edge\+: the origin, the target and the cost of that edge.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & the filename to which to read(name, relative path or absolute path), M\+U\+ST end in .modified.\+txt \\
+\hline
+{\em graph} & the graph to be written @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}}\+: if invalid data \\
+\hline
+\end{DoxyParams}

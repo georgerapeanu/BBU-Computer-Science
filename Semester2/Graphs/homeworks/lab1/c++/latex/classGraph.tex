@@ -1,0 +1,322 @@
+\hypertarget{classGraph}{}\doxysubsection{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+the model for the graph class  
+
+
+
+
+{\ttfamily \#include $<$Graph.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}\label{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}} 
+\mbox{\hyperlink{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph}} ()
+\begin{DoxyCompactList}\small\item\em The empty constructor of the graph. Returns an empty graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraph_ab209b684bf8199307e12ac427fcc28a2}\label{classGraph_ab209b684bf8199307e12ac427fcc28a2}} 
+\mbox{\hyperlink{classGraph_ab209b684bf8199307e12ac427fcc28a2}{Graph}} (const \mbox{\hyperlink{classGraph}{Graph}} \&other)
+\begin{DoxyCompactList}\small\item\em The copy constructor of the graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraph_ad3af85c2dee8f58050a3b121cbd5fe0b}\label{classGraph_ad3af85c2dee8f58050a3b121cbd5fe0b}} 
+\mbox{\hyperlink{classGraph}{Graph}} \& \mbox{\hyperlink{classGraph_ad3af85c2dee8f58050a3b121cbd5fe0b}{operator=}} (const \mbox{\hyperlink{classGraph}{Graph}} \&other)
+\begin{DoxyCompactList}\small\item\em The assignment constructor of the graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraph_a902c5b3eacb66d60752525ab23297a95}\label{classGraph_a902c5b3eacb66d60752525ab23297a95}} 
+\mbox{\hyperlink{classGraph_a902c5b3eacb66d60752525ab23297a95}{$\sim$\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em the desturctor of the graph \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph_a9412c047c227e14539f2611ff2a69ea8}{Graph}} (const std\+::vector$<$ std\+::string $>$ \&vertices, const std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string, int $>$ $>$ \&edges)
+\begin{DoxyCompactList}\small\item\em constructor from a given list of vertices and a given list of edges \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGraph_a3d417a2c8329303d34c5b175be49c9a9}\label{classGraph_a3d417a2c8329303d34c5b175be49c9a9}} 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGraph_a3d417a2c8329303d34c5b175be49c9a9}{parse\+\_\+vertices}} () const
+\begin{DoxyCompactList}\small\item\em this function returns a vector containing all vertices \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGraph_a233116f68ef3085c8e3a23b25f2ae57c}{is\+\_\+edge}} (const std\+::string \&x, const std\+::string \&y)
+\begin{DoxyCompactList}\small\item\em this function returns true if there is an edge from x to y and false otherwise \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_a7c5ae0758b962c7c355a2088f851c1d8}{get\+\_\+in\+\_\+degree}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em this function returns the in degree of a given vertex x \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_a68a5eb1ddd8b9fe5a4c2591c55740ac2}{get\+\_\+out\+\_\+degree}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em this function returns the out degree of a given vertex x \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGraph_a1fe0e4efc5cc52729e179033908c7845}{parse\+\_\+outbound\+\_\+edges}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em This function returns a vector containing the endpoints of all edges outbound to x. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classGraph_abbdd9aecc57e5c7757dbb0975cbd4b66}{parse\+\_\+inbound\+\_\+edges}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em This function returns a vector containing the endpoints of all edges inbound to x. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classGraph_a27f5f2b27debd6206c52c4a383d916fb}{get\+\_\+edge\+\_\+cost}} (const std\+::string \&x, const std\+::string \&y)
+\begin{DoxyCompactList}\small\item\em this function returns the cost of the edge from x to y \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a5444f05ee12ad55c6dd82bf32989f0a5}{modify\+\_\+edge\+\_\+cost}} (const std\+::string \&x, const std\+::string \&y, int z)
+\begin{DoxyCompactList}\small\item\em modifies the cost of the edge from x to y \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_abf2af49865a246e554e5ba34492c466d}{add\+\_\+vertex}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em adds a vertex to the graph \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a57bd429383c85ed3fbe2d7c60a280bfc}{remove\+\_\+vertex}} (const std\+::string \&x)
+\begin{DoxyCompactList}\small\item\em removes a vertex from the graph \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_ac157eda10dfdfa9f11e632a5bb1b03b0}{add\+\_\+edge}} (const std\+::string \&x, const std\+::string \&y, int z)
+\begin{DoxyCompactList}\small\item\em adds an edge from x to y with cost z \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a3fa1ffd66c928ad8acdc2da4a2329d5e}{remove\+\_\+edge}} (const std\+::string \&x, const std\+::string \&y)
+\begin{DoxyCompactList}\small\item\em removes the edge from x to y \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGraph_aff5a50cf23624235e40d7fc5aded5e73}{operator==}} (const \mbox{\hyperlink{classGraph}{Graph}} \&other) const
+\begin{DoxyCompactList}\small\item\em graph equality operator. Checks if the graphs are basicly the same \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGraph_ade5be7f65ab08b55af2de1e1dc0e6924}{operator!=}} (const \mbox{\hyperlink{classGraph}{Graph}} \&other) const
+\begin{DoxyCompactList}\small\item\em graph not equal operator. Checks if the graphs are not the same \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+the model for the graph class 
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGraph_a9412c047c227e14539f2611ff2a69ea8}\label{classGraph_a9412c047c227e14539f2611ff2a69ea8}} 
+\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{Graph()}{Graph()}}
+{\footnotesize\ttfamily Graph\+::\+Graph (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{vertices,  }\item[{const std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string, int $>$ $>$ \&}]{edges }\end{DoxyParamCaption})}
+
+
+
+constructor from a given list of vertices and a given list of edges 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & the vertices of the graph \\
+\hline
+{\em edges} & the edges of the graph, provided as tuples of (string, string, int) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGraph_ac157eda10dfdfa9f11e632a5bb1b03b0}\label{classGraph_ac157eda10dfdfa9f11e632a5bb1b03b0}} 
+\index{Graph@{Graph}!add\_edge@{add\_edge}}
+\index{add\_edge@{add\_edge}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{add\_edge()}{add\_edge()}}
+{\footnotesize\ttfamily void Graph\+::add\+\_\+edge (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::string \&}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+adds an edge from x to y with cost z 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first vertex \\
+\hline
+{\em y} & the second vertex \\
+\hline
+{\em z} & the cost of the edge @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if the vertices don\textquotesingle{}t exist or if the edge already exists \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraph_abf2af49865a246e554e5ba34492c466d}\label{classGraph_abf2af49865a246e554e5ba34492c466d}} 
+\index{Graph@{Graph}!add\_vertex@{add\_vertex}}
+\index{add\_vertex@{add\_vertex}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{add\_vertex()}{add\_vertex()}}
+{\footnotesize\ttfamily void Graph\+::add\+\_\+vertex (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+adds a vertex to the graph 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if the vertex already exists \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraph_a27f5f2b27debd6206c52c4a383d916fb}\label{classGraph_a27f5f2b27debd6206c52c4a383d916fb}} 
+\index{Graph@{Graph}!get\_edge\_cost@{get\_edge\_cost}}
+\index{get\_edge\_cost@{get\_edge\_cost}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{get\_edge\_cost()}{get\_edge\_cost()}}
+{\footnotesize\ttfamily int Graph\+::get\+\_\+edge\+\_\+cost (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+this function returns the cost of the edge from x to y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first vertex \\
+\hline
+{\em y} & the second vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cost of the edge from x to y @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if vertices don\textquotesingle{}t exist @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if edge doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a7c5ae0758b962c7c355a2088f851c1d8}\label{classGraph_a7c5ae0758b962c7c355a2088f851c1d8}} 
+\index{Graph@{Graph}!get\_in\_degree@{get\_in\_degree}}
+\index{get\_in\_degree@{get\_in\_degree}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{get\_in\_degree()}{get\_in\_degree()}}
+{\footnotesize\ttfamily int Graph\+::get\+\_\+in\+\_\+degree (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+this function returns the in degree of a given vertex x 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the in degree of the specified vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a68a5eb1ddd8b9fe5a4c2591c55740ac2}\label{classGraph_a68a5eb1ddd8b9fe5a4c2591c55740ac2}} 
+\index{Graph@{Graph}!get\_out\_degree@{get\_out\_degree}}
+\index{get\_out\_degree@{get\_out\_degree}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{get\_out\_degree()}{get\_out\_degree()}}
+{\footnotesize\ttfamily int Graph\+::get\+\_\+out\+\_\+degree (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+this function returns the out degree of a given vertex x 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the out degree of the specified vertex @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if vertex doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a233116f68ef3085c8e3a23b25f2ae57c}\label{classGraph_a233116f68ef3085c8e3a23b25f2ae57c}} 
+\index{Graph@{Graph}!is\_edge@{is\_edge}}
+\index{is\_edge@{is\_edge}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{is\_edge()}{is\_edge()}}
+{\footnotesize\ttfamily bool Graph\+::is\+\_\+edge (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+this function returns true if there is an edge from x to y and false otherwise 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first vertex \\
+\hline
+{\em y} & the second vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is an edge from x to y false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a5444f05ee12ad55c6dd82bf32989f0a5}\label{classGraph_a5444f05ee12ad55c6dd82bf32989f0a5}} 
+\index{Graph@{Graph}!modify\_edge\_cost@{modify\_edge\_cost}}
+\index{modify\_edge\_cost@{modify\_edge\_cost}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{modify\_edge\_cost()}{modify\_edge\_cost()}}
+{\footnotesize\ttfamily void Graph\+::modify\+\_\+edge\+\_\+cost (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::string \&}]{y,  }\item[{int}]{z }\end{DoxyParamCaption})}
+
+
+
+modifies the cost of the edge from x to y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first vertex \\
+\hline
+{\em y} & the second vertex \\
+\hline
+{\em z} & the new cost @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if vertices don\textquotesingle{}t exist @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if edge doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraph_ade5be7f65ab08b55af2de1e1dc0e6924}\label{classGraph_ade5be7f65ab08b55af2de1e1dc0e6924}} 
+\index{Graph@{Graph}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Graph\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGraph}{Graph}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+graph not equal operator. Checks if the graphs are not the same 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are different, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_aff5a50cf23624235e40d7fc5aded5e73}\label{classGraph_aff5a50cf23624235e40d7fc5aded5e73}} 
+\index{Graph@{Graph}!operator==@{operator==}}
+\index{operator==@{operator==}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Graph\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGraph}{Graph}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+graph equality operator. Checks if the graphs are basicly the same 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other graph \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are equal, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_abbdd9aecc57e5c7757dbb0975cbd4b66}\label{classGraph_abbdd9aecc57e5c7757dbb0975cbd4b66}} 
+\index{Graph@{Graph}!parse\_inbound\_edges@{parse\_inbound\_edges}}
+\index{parse\_inbound\_edges@{parse\_inbound\_edges}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{parse\_inbound\_edges()}{parse\_inbound\_edges()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::parse\+\_\+inbound\+\_\+edges (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+This function returns a vector containing the endpoints of all edges inbound to x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the inbound neighbors of x @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if vertex doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a1fe0e4efc5cc52729e179033908c7845}\label{classGraph_a1fe0e4efc5cc52729e179033908c7845}} 
+\index{Graph@{Graph}!parse\_outbound\_edges@{parse\_outbound\_edges}}
+\index{parse\_outbound\_edges@{parse\_outbound\_edges}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{parse\_outbound\_edges()}{parse\_outbound\_edges()}}
+{\footnotesize\ttfamily vector$<$ string $>$ Graph\+::parse\+\_\+outbound\+\_\+edges (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+This function returns a vector containing the endpoints of all edges outbound to x. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the outbound neighbors of x @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if vertex doesn\textquotesingle{}t exist 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGraph_a3fa1ffd66c928ad8acdc2da4a2329d5e}\label{classGraph_a3fa1ffd66c928ad8acdc2da4a2329d5e}} 
+\index{Graph@{Graph}!remove\_edge@{remove\_edge}}
+\index{remove\_edge@{remove\_edge}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{remove\_edge()}{remove\_edge()}}
+{\footnotesize\ttfamily void Graph\+::remove\+\_\+edge (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x,  }\item[{const std\+::string \&}]{y }\end{DoxyParamCaption})}
+
+
+
+removes the edge from x to y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the first vertex \\
+\hline
+{\em y} & the second vertex @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if the vertices don\textquotesingle{}t exist or the edge doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGraph_a57bd429383c85ed3fbe2d7c60a280bfc}\label{classGraph_a57bd429383c85ed3fbe2d7c60a280bfc}} 
+\index{Graph@{Graph}!remove\_vertex@{remove\_vertex}}
+\index{remove\_vertex@{remove\_vertex}!Graph@{Graph}}
+\doxyparagraph{\texorpdfstring{remove\_vertex()}{remove\_vertex()}}
+{\footnotesize\ttfamily void Graph\+::remove\+\_\+vertex (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{x }\end{DoxyParamCaption})}
+
+
+
+removes a vertex from the graph 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & the vertex @raises \mbox{\hyperlink{classGraphException}{Graph\+Exception}} if the vertex doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Graph_8h}{Graph.\+h}}\item 
+\mbox{\hyperlink{Graph_8cpp}{Graph.\+cpp}}\end{DoxyCompactItemize}

@@ -52,7 +52,7 @@ void Bag::add(TElem elem) {
 bool Bag::remove(TElem elem) {
   int first_index = -1;
   int last_index = -1;
-	for(int i = 0;i < this->size_p;i++){
+  for(int i = 0;i < this->size_p;i++){
     if(this->u[this->p[i]] == elem){
       if(first_index == -1){
         first_index = i;
@@ -130,4 +130,44 @@ Bag::~Bag() {
   delete[] this->p;
   delete[] this->u;
 }
+
+void Bag::addOccurrences(int nr, TElem elem) {
+    if(nr < 0){
+        throw exception();
+    }
+    int index = -1;
+    for(int i = 0;i < this->size_u;i++){
+        if(this->u[i] == elem){
+            index = i;
+            break;
+        }
+    }
+    if(index == -1){
+        if(this->size_u == this->capacity_u){
+            TElem* new_u = new int[this->capacity_u * 2];
+            for(int i = 0; i < this->size_u; i++) {
+                new_u[i] = this->u[i];
+            }
+            delete[] this->u;
+            this->u = new_u;
+            this->capacity_u *= 2;
+        }
+        this->u[this->size_u++] = elem;
+        index = this->size_u - 1;
+    }
+
+    for(int i = 0;i < nr;i++){
+        if(this->size_p == this->capacity_p){
+            TElem* new_p = new int[this->capacity_p * 2];
+            for(int i = 0;i < this->size_p;i++){
+                new_p[i] = p[i];
+            }
+            delete[] this->p;
+            this->p = new_p;
+            this->capacity_p *= 2;
+        }
+        this->p[this->size_p++] = index;
+    }
+}///Best case theta(nr), Worst case theta(number of unique keys + number of elements + nr), Average case theta(number of unique elements + nr)
+
 

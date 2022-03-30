@@ -274,6 +274,14 @@ class GraphTests(unittest.TestCase):
             ("1", "3", 8),
             ("2", "3", 5)
         ]))
+        self.assertEqual(read_graph("./test_files/graph2.modified.txt"), Graph(["0", "1", "2", "3", "5"], [
+            ("1", "5", 10),
+            ("1", "2", 0),
+            ("0", "3", 4),
+            ("3", "5", 20),
+            ("2", "1", 4),
+            ("1", "1", 5)
+        ]))
 
     def test_write_graph(self):
         with self.assertRaises(Exception):

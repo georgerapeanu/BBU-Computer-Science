@@ -1,0 +1,96 @@
+\hypertarget{UI_8cpp}{}\doxysubsection{U\+I.\+cpp File Reference}
+\label{UI_8cpp}\index{UI.cpp@{UI.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}Graph.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+Include dependency graph for U\+I.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{UI_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{UI_8cpp_a8d62977e1443db04799d26fc896054ae}{display\+\_\+edges}} (const vector$<$ tuple$<$ string, string, int $>$ $>$ \&edges)
+\begin{DoxyCompactList}\small\item\em this function displays a vector o edges \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{UI_8cpp_a0b40375581e033fbb2d99c3d777dce14}{display\+\_\+vertices}} (const vector$<$ string $>$ \&vertices)
+\item 
+void \mbox{\hyperlink{UI_8cpp_a60800e4e7f5e5c7b01e4d3d43f1b8b30}{display\+\_\+help}} (vector$<$ string $>$ \&help\+\_\+prompt)
+\item 
+vector$<$ string $>$ \mbox{\hyperlink{UI_8cpp_ae38a5ea2f15d600b5b6cc40f2f310b68}{my\+\_\+split}} (string s, char separator)
+\item 
+int \mbox{\hyperlink{UI_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the ui of the application. It also serves as the main file 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{UI_8cpp_a8d62977e1443db04799d26fc896054ae}\label{UI_8cpp_a8d62977e1443db04799d26fc896054ae}} 
+\index{UI.cpp@{UI.cpp}!display\_edges@{display\_edges}}
+\index{display\_edges@{display\_edges}!UI.cpp@{UI.cpp}}
+\doxyparagraph{\texorpdfstring{display\_edges()}{display\_edges()}}
+{\footnotesize\ttfamily void display\+\_\+edges (\begin{DoxyParamCaption}\item[{const vector$<$ tuple$<$ string, string, int $>$ $>$ \&}]{edges }\end{DoxyParamCaption})}
+
+
+
+this function displays a vector o edges 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edges} & the vector containing the edges \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{UI_8cpp_a60800e4e7f5e5c7b01e4d3d43f1b8b30}\label{UI_8cpp_a60800e4e7f5e5c7b01e4d3d43f1b8b30}} 
+\index{UI.cpp@{UI.cpp}!display\_help@{display\_help}}
+\index{display\_help@{display\_help}!UI.cpp@{UI.cpp}}
+\doxyparagraph{\texorpdfstring{display\_help()}{display\_help()}}
+{\footnotesize\ttfamily void display\+\_\+help (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{help\+\_\+prompt }\end{DoxyParamCaption})}
+
+This function displays a given help prompt 
+\begin{DoxyParams}{Parameters}
+{\em help\+\_\+prompt} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{UI_8cpp_a0b40375581e033fbb2d99c3d777dce14}\label{UI_8cpp_a0b40375581e033fbb2d99c3d777dce14}} 
+\index{UI.cpp@{UI.cpp}!display\_vertices@{display\_vertices}}
+\index{display\_vertices@{display\_vertices}!UI.cpp@{UI.cpp}}
+\doxyparagraph{\texorpdfstring{display\_vertices()}{display\_vertices()}}
+{\footnotesize\ttfamily void display\+\_\+vertices (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{vertices }\end{DoxyParamCaption})}
+
+This function displays the given vertices 
+\begin{DoxyParams}{Parameters}
+{\em vertices} & the vector of vertices \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{UI_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{UI_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{UI.cpp@{UI.cpp}!main@{main}}
+\index{main@{main}!UI.cpp@{UI.cpp}}
+\doxyparagraph{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+the main of the file \begin{DoxyReturn}{Returns}
+0 hopefully 
+\end{DoxyReturn}
+\mbox{\Hypertarget{UI_8cpp_ae38a5ea2f15d600b5b6cc40f2f310b68}\label{UI_8cpp_ae38a5ea2f15d600b5b6cc40f2f310b68}} 
+\index{UI.cpp@{UI.cpp}!my\_split@{my\_split}}
+\index{my\_split@{my\_split}!UI.cpp@{UI.cpp}}
+\doxyparagraph{\texorpdfstring{my\_split()}{my\_split()}}
+{\footnotesize\ttfamily vector$<$string$>$ my\+\_\+split (\begin{DoxyParamCaption}\item[{string}]{s,  }\item[{char}]{separator }\end{DoxyParamCaption})}
+
+This function splits a given string by a separator 
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+{\em separator} & the separator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing the fields of the result 
+\end{DoxyReturn}

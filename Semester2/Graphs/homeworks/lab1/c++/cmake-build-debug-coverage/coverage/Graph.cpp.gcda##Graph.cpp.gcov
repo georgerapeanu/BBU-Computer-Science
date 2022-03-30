@@ -1,0 +1,2460 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/Graph.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/CMakeFiles/c___tests.dir/__/Graph.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/CMakeFiles/c___tests.dir/__/Graph.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file Graph.cpp this file contains the implementation described in Graph.h
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 28.03.2022.
+        -:    7://
+        -:    8:
+        -:    9:#pragma once
+        -:   10:#include "Graph.h"
+        -:   11:#include <random>
+        -:   12:#include <chrono>
+        -:   13:#include <fstream>
+        -:   14:#include <sstream>
+        -:   15:
+        -:   16:using namespace std;
+        -:   17:
+function _ZN14GraphExceptionC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 35 returned 100% blocks executed 80%
+       35:   18:GraphException::GraphException(const string &msg) {
+       35:   18-block  0
+call    0 returned 35
+    $$$$$:   18-block  1
+call    1 never executed
+       35:   19:    this->message = msg;
+call    0 returned 35
+branch  1 taken 35 (fallthrough)
+branch  2 taken 0 (throw)
+       35:   20:}
+       35:   20-block  0
+        -:   21:
+function _ZNK14GraphException4whatB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   22:string GraphException::what() const {
+    #####:   23:    return this->message;
+    %%%%%:   23-block  0
+call    0 never executed
+        -:   24:}
+        -:   25:
+function _ZN5GraphC2Ev called 18 returned 100% blocks executed 100%
+       18:   26:Graph::Graph() {
+       18:   26-block  0
+call    0 returned 18
+call    1 returned 18
+call    2 returned 18
+        -:   27:    ;
+       18:   28:}
+        -:   29:
+function _ZN5GraphC2ERKS_ called 3 returned 100% blocks executed 62%
+        3:   30:Graph::Graph(const Graph &other) {
+        3:   30-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+    $$$$$:   30-block  1
+call    3 never executed
+    $$$$$:   30-block  2
+call    4 never executed
+    $$$$$:   30-block  3
+call    5 never executed
+        3:   31:    this->nin = other.nin;
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   32:    this->nout = other.nout;
+        3:   32-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   33:    this->cost = other.cost;
+        3:   33-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   34:}
+        3:   34-block  0
+        -:   35:
+function _ZN5GraphaSERKS_ called 19 returned 100% blocks executed 100%
+       19:   36:Graph &Graph::operator=(const Graph &other) {
+       19:   37:    this->nin = other.nin;
+       19:   37-block  0
+call    0 returned 19
+       19:   38:    this->nout = other.nout;
+call    0 returned 19
+       19:   39:    this->cost = other.cost;
+call    0 returned 19
+       19:   40:    return *this;
+        -:   41:}
+        -:   42:
+function _ZN5GraphD2Ev called 46 returned 100% blocks executed 100%
+       46:   43:Graph::~Graph() {
+       46:   43-block  0
+call    0 returned 46
+call    1 returned 46
+call    2 returned 46
+        -:   44:    ;
+       46:   45:}
+        -:   46:
+function _ZNK5Graph14parse_verticesB5cxx11Ev called 21 returned 100% blocks executed 85%
+       21:   47:vector<std::string> Graph::parse_vertices() const {
+       21:   48:    vector<std::string> vertices;
+       21:   48-block  0
+call    0 returned 21
+      103:   49:    for(const auto& it:this->nin){
+call    0 returned 21
+call    1 returned 21
+      103:   49-block  0
+call    2 returned 103
+branch  3 taken 82 (fallthrough)
+branch  4 taken 21
+       82:   49-block  1
+call    5 returned 82
+       82:   49-block  2
+call    6 returned 82
+       82:   50:        vertices.push_back(it.first);
+call    0 returned 82
+branch  1 taken 82 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   51:    }
+       21:   52:    return vertices;
+       21:   52-block  0
+       21:   52-block  1
+        -:   53:}
+        -:   54:
+function _ZN5Graph7is_edgeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 10 returned 90% blocks executed 76%
+       10:   55:bool Graph::is_edge(const string &x, const string &y) {
+       10:   56:    if(this->nout.count(x) == 0 || this->nin.count(y) == 0){
+       10:   56-block  0
+call    0 returned 10
+branch  1 taken 9 (fallthrough)
+branch  2 taken 1
+        9:   56-block  1
+call    3 returned 9
+branch  4 taken 0 (fallthrough)
+branch  5 taken 9
+        1:   56-block  2
+        9:   56-block  3
+       10:   56-block  4
+branch  6 taken 1 (fallthrough)
+branch  7 taken 9
+        1:   57:        throw GraphException("Vertex doesn't exist");
+        1:   57-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   57-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   57-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   57-block  3
+call   11 never executed
+    $$$$$:   57-block  4
+    $$$$$:   57-block  5
+call   12 never executed
+    $$$$$:   57-block  6
+    $$$$$:   57-block  7
+call   13 never executed
+        -:   58:    }
+        9:   59:    return find(this->nout[x].begin(), this->nout[x].end(), y) != this->nout[x].end();
+        9:   59-block  0
+call    0 returned 9
+call    1 returned 9
+call    2 returned 9
+branch  3 taken 9 (fallthrough)
+branch  4 taken 0 (throw)
+        9:   59-block  1
+call    5 returned 9
+call    6 returned 9
+branch  7 taken 9 (fallthrough)
+branch  8 taken 0 (throw)
+        9:   59-block  2
+call    9 returned 9
+call   10 returned 9
+branch 11 taken 9 (fallthrough)
+branch 12 taken 0 (throw)
+        9:   59-block  3
+call   13 returned 9
+        9:   59-block  4
+        -:   60:}
+        -:   61:
+function _ZN5Graph13get_in_degreeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 75% blocks executed 67%
+        4:   62:int Graph::get_in_degree(const string &x) {
+        4:   63:    if(this->nin.count(x) == 0){
+        4:   63-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        1:   64:        throw GraphException("Vertex doesn't exist");
+        1:   64-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   64-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   64-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   64-block  3
+call   11 never executed
+    $$$$$:   64-block  4
+    $$$$$:   64-block  5
+call   12 never executed
+    $$$$$:   64-block  6
+    $$$$$:   64-block  7
+call   13 never executed
+        -:   65:    }
+        3:   66:    return this->nin[x].size();
+        3:   66-block  0
+call    0 returned 3
+call    1 returned 3
+        3:   66-block  1
+        -:   67:}
+        -:   68:
+function _ZN5Graph14get_out_degreeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 13 returned 92% blocks executed 67%
+       13:   69:int Graph::get_out_degree(const string &x) {
+       13:   70:    if(this->nout.count(x) == 0){
+       13:   70-block  0
+call    0 returned 13
+branch  1 taken 1 (fallthrough)
+branch  2 taken 12
+        1:   71:        throw GraphException("Vertex doesn't exist");
+        1:   71-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   71-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   71-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   71-block  3
+call   11 never executed
+    $$$$$:   71-block  4
+    $$$$$:   71-block  5
+call   12 never executed
+    $$$$$:   71-block  6
+    $$$$$:   71-block  7
+call   13 never executed
+        -:   72:    }
+       12:   73:    return this->nout[x].size();
+       12:   73-block  0
+call    0 returned 12
+call    1 returned 12
+       12:   73-block  1
+        -:   74:}
+        -:   75:
+function _ZN5Graph20parse_outbound_edgesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 25 returned 96% blocks executed 65%
+       25:   76:vector<string> Graph::parse_outbound_edges(const string &x) {
+       25:   77:    if(this->nout.count(x) == 0){
+       25:   77-block  0
+call    0 returned 25
+branch  1 taken 1 (fallthrough)
+branch  2 taken 24
+        1:   78:        throw GraphException("Vertex doesn't exist");
+        1:   78-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   78-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   78-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   78-block  3
+call   11 never executed
+    $$$$$:   78-block  4
+    $$$$$:   78-block  5
+call   12 never executed
+    $$$$$:   78-block  6
+    $$$$$:   78-block  7
+call   13 never executed
+        -:   79:    }
+       24:   80:    return this->nout[x];
+       24:   80-block  0
+call    0 returned 24
+call    1 returned 24
+        -:   81:}
+        -:   82:
+function _ZN5Graph19parse_inbound_edgesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 22 returned 95% blocks executed 65%
+       22:   83:vector<string> Graph::parse_inbound_edges(const string &x) {
+       22:   84:    if(this->nin.count(x) == 0){
+       22:   84-block  0
+call    0 returned 22
+branch  1 taken 1 (fallthrough)
+branch  2 taken 21
+        1:   85:        throw GraphException("Vertex doesn't exist");
+        1:   85-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   85-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   85-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   85-block  3
+call   11 never executed
+    $$$$$:   85-block  4
+    $$$$$:   85-block  5
+call   12 never executed
+    $$$$$:   85-block  6
+    $$$$$:   85-block  7
+call   13 never executed
+        -:   86:    }
+       21:   87:    return this->nin[x];
+       21:   87-block  0
+call    0 returned 21
+call    1 returned 21
+        -:   88:}
+        -:   89:
+function _ZN5Graph13get_edge_costERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 29 returned 90% blocks executed 55%
+       29:   90:int Graph::get_edge_cost(const string &x, const string &y) {
+       29:   91:    if(this->nout.count(x) == 0){
+       29:   91-block  0
+call    0 returned 29
+branch  1 taken 1 (fallthrough)
+branch  2 taken 28
+        1:   92:        throw GraphException("Vertex doesn't exist");
+        1:   92-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   92-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   92-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   92-block  3
+call   11 never executed
+    $$$$$:   92-block  4
+    $$$$$:   92-block  5
+call   12 never executed
+    $$$$$:   92-block  6
+    $$$$$:   92-block  7
+call   13 never executed
+        -:   93:    }
+       28:   94:    if(this->nin.count(y) == 0){
+       28:   94-block  0
+call    0 returned 28
+branch  1 taken 1 (fallthrough)
+branch  2 taken 27
+        1:   95:        throw GraphException("Vertex doesn't exist");
+        1:   95-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   95-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   95-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   95-block  3
+call   11 never executed
+    $$$$$:   95-block  4
+    $$$$$:   95-block  5
+call   12 never executed
+    $$$$$:   95-block  6
+    $$$$$:   95-block  7
+call   13 never executed
+        -:   96:    }
+       27:   97:    if(this->cost.count({x, y}) == 0){
+       27:   97-block  0
+call    0 returned 27
+call    1 returned 27
+branch  2 taken 27 (fallthrough)
+branch  3 taken 0 (throw)
+       27:   97-block  1
+call    4 returned 27
+branch  5 taken 1 (fallthrough)
+branch  6 taken 26
+    $$$$$:   97-block  2
+call    7 never executed
+    $$$$$:   97-block  3
+call    8 never executed
+        1:   98:        throw GraphException("Edge doesn't exist");
+        1:   98-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   98-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   98-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   98-block  3
+call   11 never executed
+    $$$$$:   98-block  4
+    $$$$$:   98-block  5
+call   12 never executed
+    $$$$$:   98-block  6
+    $$$$$:   98-block  7
+call   13 never executed
+        -:   99:    }
+       26:  100:    return this->cost[{x, y}];
+       26:  100-block  0
+call    0 returned 26
+call    1 returned 26
+branch  2 taken 26 (fallthrough)
+branch  3 taken 0 (throw)
+       26:  100-block  1
+call    4 returned 26
+       26:  100-block  2
+    $$$$$:  100-block  3
+call    5 never executed
+        -:  101:}
+        -:  102:
+function _ZN5Graph16modify_edge_costERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_i called 5 returned 40% blocks executed 54%
+        5:  103:void Graph::modify_edge_cost(const string &x, const string &y, int z) {
+        5:  104:    if(this->nout.count(x) == 0){
+        5:  104-block  0
+call    0 returned 5
+branch  1 taken 1 (fallthrough)
+branch  2 taken 4
+        1:  105:        throw GraphException("Vertex doesn't exist");
+        1:  105-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  105-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  105-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  105-block  3
+call   11 never executed
+    $$$$$:  105-block  4
+    $$$$$:  105-block  5
+call   12 never executed
+    $$$$$:  105-block  6
+    $$$$$:  105-block  7
+call   13 never executed
+        -:  106:    }
+        4:  107:    if(this->nin.count(y) == 0){
+        4:  107-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        1:  108:        throw GraphException("Vertex doesn't exist");
+        1:  108-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  108-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  108-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  108-block  3
+call   11 never executed
+    $$$$$:  108-block  4
+    $$$$$:  108-block  5
+call   12 never executed
+    $$$$$:  108-block  6
+    $$$$$:  108-block  7
+call   13 never executed
+        -:  109:    }
+        3:  110:    if(this->cost.count({x, y}) == 0){
+        3:  110-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  110-block  1
+call    4 returned 3
+branch  5 taken 1 (fallthrough)
+branch  6 taken 2
+    $$$$$:  110-block  2
+call    7 never executed
+    $$$$$:  110-block  3
+call    8 never executed
+        1:  111:        throw GraphException("Edge doesn't exist");
+        1:  111-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  111-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  111-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  111-block  3
+call   11 never executed
+    $$$$$:  111-block  4
+    $$$$$:  111-block  5
+call   12 never executed
+    $$$$$:  111-block  6
+    $$$$$:  111-block  7
+call   13 never executed
+        -:  112:    }
+        2:  113:    this->cost[{x, y}] = z;
+        2:  113-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  113-block  1
+call    4 returned 2
+    $$$$$:  113-block  2
+call    5 never executed
+        2:  114:}
+        -:  115:
+function _ZN5Graph10add_vertexERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 9 returned 89% blocks executed 59%
+        9:  116:void Graph::add_vertex(const string &x) {
+        9:  117:    if(this->nout.count(x) > 0){
+        9:  117-block  0
+call    0 returned 9
+branch  1 taken 1 (fallthrough)
+branch  2 taken 8
+        1:  118:        throw GraphException("Vertex already exists");
+        1:  118-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  118-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  118-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  118-block  3
+call   11 never executed
+    $$$$$:  118-block  4
+    $$$$$:  118-block  5
+call   12 never executed
+    $$$$$:  118-block  6
+    $$$$$:  118-block  7
+call   13 never executed
+        -:  119:    }
+        8:  120:    this->nout[x] = vector<std::string>();
+        8:  120-block  0
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:  120-block  1
+call    4 returned 8
+call    5 returned 8
+    $$$$$:  120-block  2
+call    6 never executed
+    $$$$$:  120-block  3
+call    7 never executed
+        8:  121:    this->nin[x] = vector<std::string>();
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:  121-block  0
+call    4 returned 8
+call    5 returned 8
+    $$$$$:  121-block  1
+call    6 never executed
+        8:  122:}
+        -:  123:
+function _ZN5Graph13remove_vertexERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 75% blocks executed 72%
+        4:  124:void Graph::remove_vertex(const string &x) {
+        4:  125:    if(this->nout.count(x) == 0){
+        4:  125-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        1:  126:        throw GraphException("Vertex doesn't exists");
+        1:  126-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  126-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  126-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  126-block  3
+call   11 never executed
+    $$$$$:  126-block  4
+    $$$$$:  126-block  5
+call   12 never executed
+    $$$$$:  126-block  6
+    $$$$$:  126-block  7
+call   13 never executed
+        -:  127:    }
+        6:  128:    for(const auto& it:this->nout[x]){
+        3:  128-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  128-block  1
+call    3 returned 3
+call    4 returned 3
+        6:  128-block  2
+call    5 returned 6
+branch  6 taken 3 (fallthrough)
+branch  7 taken 3
+        3:  128-block  3
+call    8 returned 3
+        3:  129:        this->nin[it].erase(find(this->nin[it].begin(), this->nin[it].end(), x));
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  129-block  0
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  129-block  1
+call    6 returned 3
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+        3:  129-block  2
+call   10 returned 3
+call   11 returned 3
+branch 12 taken 3 (fallthrough)
+branch 13 taken 0 (throw)
+        3:  129-block  3
+call   14 returned 3
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+    $$$$$:  129-block  4
+    $$$$$:  129-block  5
+        3:  130:        this->cost.erase({x, it});
+        3:  130-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  130-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  130-block  2
+call    6 returned 3
+call    7 returned 3
+    $$$$$:  130-block  3
+call    8 never executed
+    $$$$$:  130-block  4
+        -:  131:    }
+        -:  132:
+        5:  133:    for(const auto& it:this->nin[x]){
+        3:  133-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  133-block  1
+call    3 returned 3
+call    4 returned 3
+        5:  133-block  2
+call    5 returned 5
+branch  6 taken 2 (fallthrough)
+branch  7 taken 3
+        2:  133-block  3
+call    8 returned 2
+        2:  134:        this->nout[it].erase(find(this->nout[it].begin(), this->nout[it].end(), x));
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  134-block  0
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  134-block  1
+call    6 returned 2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:  134-block  2
+call   10 returned 2
+call   11 returned 2
+branch 12 taken 2 (fallthrough)
+branch 13 taken 0 (throw)
+        2:  134-block  3
+call   14 returned 2
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+    $$$$$:  134-block  4
+    $$$$$:  134-block  5
+        2:  135:        this->cost.erase({it, x});
+        2:  135-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  135-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:  135-block  2
+call    6 returned 2
+call    7 returned 2
+    $$$$$:  135-block  3
+call    8 never executed
+    $$$$$:  135-block  4
+        -:  136:    }
+        3:  137:    this->nout.erase(x);
+        3:  137-block  0
+call    0 returned 3
+        3:  138:    this->nin.erase(x);
+call    0 returned 3
+        3:  139:}
+        -:  140:
+function _ZN5Graph8add_edgeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_i called 15 returned 87% blocks executed 46%
+       15:  141:void Graph::add_edge(const string &x, const string &y, int z) {
+       15:  142:    if(this->nout.count(x) == 0){
+       15:  142-block  0
+call    0 returned 15
+branch  1 taken 1 (fallthrough)
+branch  2 taken 14
+        1:  143:        throw GraphException("Vertex doesn't exist");
+        1:  143-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  143-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  143-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  143-block  3
+call   11 never executed
+    $$$$$:  143-block  4
+    $$$$$:  143-block  5
+call   12 never executed
+    $$$$$:  143-block  6
+    $$$$$:  143-block  7
+call   13 never executed
+        -:  144:    }
+       14:  145:    if(this->nin.count(y) == 0){
+       14:  145-block  0
+call    0 returned 14
+branch  1 taken 1 (fallthrough)
+branch  2 taken 13
+        1:  146:        throw GraphException("Vertex doesn't exist");
+        1:  146-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  146-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  146-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  146-block  3
+call   11 never executed
+    $$$$$:  146-block  4
+    $$$$$:  146-block  5
+call   12 never executed
+    $$$$$:  146-block  6
+    $$$$$:  146-block  7
+call   13 never executed
+        -:  147:    }
+       13:  148:    if(this->cost.count({x, y}) > 0){
+       13:  148-block  0
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:  148-block  1
+call    4 returned 13
+branch  5 taken 0 (fallthrough)
+branch  6 taken 13
+    $$$$$:  148-block  2
+call    7 never executed
+    $$$$$:  148-block  3
+call    8 never executed
+    #####:  149:        throw GraphException("Edge already exists");
+    %%%%%:  149-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  149-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  149-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  149-block  3
+call   11 never executed
+    $$$$$:  149-block  4
+    $$$$$:  149-block  5
+call   12 never executed
+    $$$$$:  149-block  6
+    $$$$$:  149-block  7
+call   13 never executed
+        -:  150:    }
+       13:  151:    this->nout[x].push_back(y);
+       13:  151-block  0
+call    0 returned 13
+call    1 returned 13
+       13:  152:    this->nin[y].push_back(x);
+call    0 returned 13
+call    1 returned 13
+       13:  153:    this->cost[{x,y}] = z;
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:  153-block  0
+call    4 returned 13
+    $$$$$:  153-block  1
+call    5 never executed
+       13:  154:}
+        -:  155:
+function _ZN5Graph11remove_edgeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 5 returned 40% blocks executed 60%
+        5:  156:void Graph::remove_edge(const string &x, const string &y) {
+        5:  157:    if(this->nout.count(x) == 0){
+        5:  157-block  0
+call    0 returned 5
+branch  1 taken 1 (fallthrough)
+branch  2 taken 4
+        1:  158:        throw GraphException("Vertex doesn't exist");
+        1:  158-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  158-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  158-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  158-block  3
+call   11 never executed
+    $$$$$:  158-block  4
+    $$$$$:  158-block  5
+call   12 never executed
+    $$$$$:  158-block  6
+    $$$$$:  158-block  7
+call   13 never executed
+        -:  159:    }
+        4:  160:    if(this->nin.count(y) == 0){
+        4:  160-block  0
+call    0 returned 4
+branch  1 taken 1 (fallthrough)
+branch  2 taken 3
+        1:  161:        throw GraphException("Vertex doesn't exist");
+        1:  161-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  161-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  161-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  161-block  3
+call   11 never executed
+    $$$$$:  161-block  4
+    $$$$$:  161-block  5
+call   12 never executed
+    $$$$$:  161-block  6
+    $$$$$:  161-block  7
+call   13 never executed
+        -:  162:    }
+        3:  163:    if(this->cost.count({x, y}) == 0){
+        3:  163-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:  163-block  1
+call    4 returned 3
+branch  5 taken 1 (fallthrough)
+branch  6 taken 2
+    $$$$$:  163-block  2
+call    7 never executed
+    $$$$$:  163-block  3
+call    8 never executed
+        1:  164:        throw GraphException("Edge doesn't exist");
+        1:  164-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  164-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  164-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  164-block  3
+call   11 never executed
+    $$$$$:  164-block  4
+    $$$$$:  164-block  5
+call   12 never executed
+    $$$$$:  164-block  6
+    $$$$$:  164-block  7
+call   13 never executed
+        -:  165:    }
+        2:  166:    this->nout[x].erase(find(this->nout[x].begin(), this->nout[x].end(), y));
+        2:  166-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+call    6 returned 2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:  166-block  1
+    $$$$$:  166-block  2
+call   10 never executed
+        2:  167:    this->nin[y].erase(find(this->nin[y].begin(), this->nin[y].end(), x));
+        2:  167-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+call    6 returned 2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:  167-block  1
+    $$$$$:  167-block  2
+call   10 never executed
+        2:  168:    this->cost.erase({x,y});
+        2:  168-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  168-block  1
+call    4 returned 2
+    $$$$$:  168-block  2
+call    5 never executed
+        2:  169:}
+        -:  170:
+function _ZNK5GrapheqERKS_ called 12 returned 100% blocks executed 86%
+       12:  171:bool Graph::operator==(const Graph &other) const {
+       12:  172:    if(this->nout.size() != other.nout.size() || this->nin.size() != other.nin.size()){
+       12:  172-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 10 (fallthrough)
+branch  3 taken 2
+       10:  172-block  1
+call    4 returned 10
+call    5 returned 10
+branch  6 taken 0 (fallthrough)
+branch  7 taken 10
+        2:  172-block  2
+       10:  172-block  3
+       12:  172-block  4
+branch  8 taken 2 (fallthrough)
+branch  9 taken 10
+        2:  173:        return false;
+        2:  173-block  0
+        -:  174:    }
+       10:  175:    if(this->cost.size() != other.cost.size()){
+       10:  175-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 4 (fallthrough)
+branch  3 taken 6
+        4:  176:        return false;
+        4:  176-block  0
+        -:  177:    }
+       12:  178:    vector<std::string> this_vertices = this->parse_vertices();
+        6:  178-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 6
+    $$$$$:  178-block  1
+call    4 never executed
+       12:  179:    vector<std::string> other_vertices = other.parse_vertices();
+        6:  179-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  179-block  1
+call    3 returned 6
+    $$$$$:  179-block  2
+call    4 never executed
+        6:  180:    sort(this_vertices.begin(), this_vertices.end());
+        6:  180-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+branch  3 taken 6 (fallthrough)
+branch  4 taken 0 (throw)
+        6:  181:    sort(other_vertices.begin(), other_vertices.end());
+        6:  181-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+branch  3 taken 6 (fallthrough)
+branch  4 taken 0 (throw)
+        6:  182:    if(this_vertices != other_vertices){
+        6:  182-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  182-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 6
+    #####:  183:        return false;
+    %%%%%:  183-block  0
+        -:  184:    }
+        -:  185:
+       27:  186:    for(auto it:cost){
+        6:  186-block  0
+call    0 returned 6
+call    1 returned 6
+       27:  186-block  1
+call    2 returned 27
+branch  3 taken 22 (fallthrough)
+branch  4 taken 5
+       22:  186-block  2
+call    5 returned 22
+call    6 returned 22
+branch  7 taken 22 (fallthrough)
+branch  8 taken 0 (throw)
+       21:  186-block  3
+call    9 returned 21
+    $$$$$:  186-block  4
+call   10 never executed
+       22:  187:        if(other.cost.count(it.first) == 0 || other.cost.at(it.first) != it.second){
+       22:  187-block  0
+call    0 returned 22
+branch  1 taken 22 (fallthrough)
+branch  2 taken 0 (throw)
+       22:  187-block  1
+branch  3 taken 22 (fallthrough)
+branch  4 taken 0
+       22:  187-block  2
+call    5 returned 22
+branch  6 taken 22 (fallthrough)
+branch  7 taken 0 (throw)
+       22:  187-block  3
+branch  8 taken 1 (fallthrough)
+branch  9 taken 21
+        1:  187-block  4
+       21:  187-block  5
+       22:  187-block  6
+branch 10 taken 1 (fallthrough)
+branch 11 taken 21
+        1:  188:            return false;
+        1:  188-block  0
+        -:  189:        }
+        -:  190:    }
+        5:  191:    return true;
+        5:  191-block  0
+        -:  192:}
+        -:  193:
+function _ZNK5GraphneERKS_ called 7 returned 100% blocks executed 100%
+        7:  194:bool Graph::operator!=(const Graph &other) const {
+        7:  195:    return !(*this == other);
+        7:  195-block  0
+call    0 returned 7
+        -:  196:}
+        -:  197:
+function _ZN5GraphC2ERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EERKS0_ISt5tupleIJS6_S6_iEESaISC_EE called 27 returned 93% blocks executed 72%
+       27:  198:Graph::Graph(const vector<string> &vertices,
+       33:  199:             const vector<tuple<string, string, int>> &edges) {
+       27:  199-block  0
+call    0 returned 27
+call    1 returned 27
+call    2 returned 27
+        2:  199-block  1
+call    3 returned 2
+        2:  199-block  2
+call    4 returned 2
+        2:  199-block  3
+call    5 returned 2
+      119:  200:    for(auto it:vertices){
+call    0 returned 27
+call    1 returned 27
+      119:  200-block  0
+call    2 returned 119
+branch  3 taken 92 (fallthrough)
+branch  4 taken 27
+       92:  200-block  1
+call    5 returned 92
+call    6 returned 92
+branch  7 taken 92 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 92
+    $$$$$:  200-block  2
+call   10 never executed
+       92:  201:        this->nin[it] = vector<std::string>();
+       92:  201-block  0
+call    0 returned 92
+call    1 returned 92
+branch  2 taken 92 (fallthrough)
+branch  3 taken 0 (throw)
+       92:  201-block  1
+call    4 returned 92
+call    5 returned 92
+    $$$$$:  201-block  2
+call    6 never executed
+    $$$$$:  201-block  3
+       92:  202:        this->nout[it] = vector<std::string>();
+call    0 returned 92
+call    1 returned 92
+branch  2 taken 92 (fallthrough)
+branch  3 taken 0 (throw)
+       92:  202-block  0
+call    4 returned 92
+call    5 returned 92
+call    6 returned 92
+    $$$$$:  202-block  1
+call    7 never executed
+    $$$$$:  202-block  2
+        -:  203:    }
+        -:  204:
+      120:  205:    for(auto it:edges){
+       27:  205-block  0
+call    0 returned 27
+call    1 returned 27
+      118:  205-block  1
+call    2 returned 118
+branch  3 taken 93 (fallthrough)
+branch  4 taken 25
+       93:  205-block  2
+call    5 returned 93
+call    6 returned 93
+branch  7 taken 93 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 91
+        2:  205-block  3
+call   10 returned 2
+       93:  206:        if(this->nout.count(get<0>(it)) == 0 || this->nin.count(get<1>(it)) == 0){
+       93:  206-block  0
+call    0 returned 93
+call    1 returned 93
+branch  2 taken 93 (fallthrough)
+branch  3 taken 0 (throw)
+       93:  206-block  1
+branch  4 taken 93 (fallthrough)
+branch  5 taken 0
+       93:  206-block  2
+call    6 returned 93
+call    7 returned 93
+branch  8 taken 93 (fallthrough)
+branch  9 taken 0 (throw)
+       93:  206-block  3
+branch 10 taken 1 (fallthrough)
+branch 11 taken 92
+        1:  206-block  4
+       92:  206-block  5
+       93:  206-block  6
+branch 12 taken 1 (fallthrough)
+branch 13 taken 92
+        1:  207:            throw GraphException("Vertices don't exist");
+        1:  207-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  207-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  207-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  207-block  3
+call   11 never executed
+    $$$$$:  207-block  4
+    $$$$$:  207-block  5
+call   12 never executed
+    $$$$$:  207-block  6
+    $$$$$:  207-block  7
+call   13 never executed
+        -:  208:        }
+       92:  209:        if(this->cost.count({get<0>(it), get<1>(it)})){
+       92:  209-block  0
+call    0 returned 92
+call    1 returned 92
+call    2 returned 92
+branch  3 taken 92 (fallthrough)
+branch  4 taken 0 (throw)
+       92:  209-block  1
+call    5 returned 92
+branch  6 taken 92 (fallthrough)
+branch  7 taken 0 (throw)
+       92:  209-block  2
+call    8 returned 92
+branch  9 taken 1 (fallthrough)
+branch 10 taken 91
+    $$$$$:  209-block  3
+call   11 never executed
+    $$$$$:  209-block  4
+        1:  210:            throw GraphException("Edge already exists");
+        1:  210-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  210-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  210-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  210-block  3
+call   11 never executed
+    $$$$$:  210-block  4
+    $$$$$:  210-block  5
+call   12 never executed
+    $$$$$:  210-block  6
+    $$$$$:  210-block  7
+call   13 never executed
+        -:  211:        }
+       91:  212:        this->nout[get<0>(it)].push_back(get<1>(it));
+       91:  212-block  0
+call    0 returned 91
+call    1 returned 91
+branch  2 taken 91 (fallthrough)
+branch  3 taken 0 (throw)
+       91:  212-block  1
+call    4 returned 91
+call    5 returned 91
+branch  6 taken 91 (fallthrough)
+branch  7 taken 0 (throw)
+       91:  213:        this->nin[get<1>(it)].push_back(get<0>(it));
+       91:  213-block  0
+call    0 returned 91
+call    1 returned 91
+branch  2 taken 91 (fallthrough)
+branch  3 taken 0 (throw)
+       91:  213-block  1
+call    4 returned 91
+call    5 returned 91
+branch  6 taken 91 (fallthrough)
+branch  7 taken 0 (throw)
+       91:  214:        this->cost[{get<0>(it), get<1>(it)}] = get<2>(it);
+       91:  214-block  0
+call    0 returned 91
+call    1 returned 91
+call    2 returned 91
+call    3 returned 91
+branch  4 taken 91 (fallthrough)
+branch  5 taken 0 (throw)
+       91:  214-block  1
+call    6 returned 91
+branch  7 taken 91 (fallthrough)
+branch  8 taken 0 (throw)
+       91:  214-block  2
+call    9 returned 91
+call   10 returned 91
+    $$$$$:  214-block  3
+call   11 never executed
+    $$$$$:  214-block  4
+        -:  215:    }
+       25:  216:}
+       25:  216-block  0
+        -:  217:
+function _Z8endswithNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES4_ called 24 returned 100% blocks executed 100%
+       24:  218:bool endswith(string s, string ends){
+       24:  219:    if(s.size() < ends.size()){
+       24:  219-block  0
+call    0 returned 24
+call    1 returned 24
+branch  2 taken 1 (fallthrough)
+branch  3 taken 23
+        1:  220:        return false;
+        1:  220-block  0
+        -:  221:    }
+      160:  222:    for(int i = 0;i < (int)ends.size();i++){
+       23:  222-block  0
+      160:  222-block  1
+call    0 returned 160
+branch  1 taken 144 (fallthrough)
+branch  2 taken 16
+      137:  222-block  2
+      144:  223:        if(s[(int)s.size() - i] != ends[(int)ends.size() - i]){
+      144:  223-block  0
+call    0 returned 144
+call    1 returned 144
+call    2 returned 144
+call    3 returned 144
+branch  4 taken 7 (fallthrough)
+branch  5 taken 137
+        7:  224:            return false;
+        7:  224-block  0
+        -:  225:        }
+        -:  226:    }
+       16:  227:    return true;
+       16:  227-block  0
+        -:  228:}
+        -:  229:
+function _ZL20assert_nothing_afterRNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 37 returned 86% blocks executed 65%
+       37:  230:static void assert_nothing_after(istringstream &s){
+       37:  231:    if(!s){
+       37:  231-block  0
+call    0 returned 37
+branch  1 taken 37 (fallthrough)
+branch  2 taken 0 (throw)
+       37:  231-block  1
+branch  3 taken 0 (fallthrough)
+branch  4 taken 37
+    #####:  232:        return ;
+    %%%%%:  232-block  0
+        -:  233:    }
+       37:  234:    char tmp = '\0';
+       37:  234-block  0
+      37*:  235:    while((s >> tmp) && tmp == '\n' && tmp == ' ');
+       37:  235-block  0
+call    0 returned 37
+branch  1 taken 37 (fallthrough)
+branch  2 taken 0 (throw)
+       37:  235-block  1
+call    3 returned 37
+branch  4 taken 37 (fallthrough)
+branch  5 taken 0 (throw)
+       37:  235-block  2
+branch  6 taken 5 (fallthrough)
+branch  7 taken 32
+        5:  235-block  3
+branch  8 taken 0 (fallthrough)
+branch  9 taken 5
+    %%%%%:  235-block  4
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  235-block  5
+       37:  235-block  6
+       37:  235-block  7
+branch 12 taken 0 (fallthrough)
+branch 13 taken 37
+    %%%%%:  235-block  8
+       37:  236:    if(tmp != '\n' && tmp != ' ' && tmp != '\0'){
+       37:  236-block  0
+branch  0 taken 37 (fallthrough)
+branch  1 taken 0
+       37:  236-block  1
+branch  2 taken 37 (fallthrough)
+branch  3 taken 0
+       37:  236-block  2
+branch  4 taken 5 (fallthrough)
+branch  5 taken 32
+        5:  237:        throw GraphException("invalid format");
+        5:  237-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+branch  3 taken 5 (fallthrough)
+branch  4 taken 0 (throw)
+        5:  237-block  1
+call    5 returned 5
+branch  6 taken 5 (fallthrough)
+branch  7 taken 0 (throw)
+        5:  237-block  2
+call    8 returned 5
+call    9 returned 5
+call   10 returned 5
+    $$$$$:  237-block  3
+call   11 never executed
+    $$$$$:  237-block  4
+    $$$$$:  237-block  5
+call   12 never executed
+    $$$$$:  237-block  6
+    $$$$$:  237-block  7
+call   13 never executed
+        -:  238:    }
+        -:  239:}
+        -:  240:
+function _Z10read_graphRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 12 returned 25% blocks executed 53%
+       12:  241:Graph read_graph(const string &file){
+       12:  242:    if(endswith(file, ".txt") == 0){
+       12:  242-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 12 (fallthrough)
+branch  3 taken 0 (throw)
+       12:  242-block  1
+call    4 returned 12
+branch  5 taken 12 (fallthrough)
+branch  6 taken 0 (throw)
+       12:  242-block  2
+call    7 returned 12
+branch  8 taken 12 (fallthrough)
+branch  9 taken 0 (throw)
+       12:  242-block  3
+call   10 returned 12
+call   11 returned 12
+call   12 returned 12
+branch 13 taken 2 (fallthrough)
+branch 14 taken 10
+    $$$$$:  242-block  4
+call   15 never executed
+    $$$$$:  242-block  5
+    $$$$$:  242-block  6
+call   16 never executed
+    $$$$$:  242-block  7
+    $$$$$:  242-block  8
+call   17 never executed
+    $$$$$:  242-block  9
+        2:  243:        throw GraphException("invalid filename");
+        2:  243-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:  243-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:  243-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:  243-block  3
+call   11 never executed
+    $$$$$:  243-block  4
+    $$$$$:  243-block  5
+call   12 never executed
+    $$$$$:  243-block  6
+    $$$$$:  243-block  7
+call   13 never executed
+        -:  244:    }
+       20:  245:    ifstream f(file);
+       10:  245-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 3
+        7:  245-block  1
+call    4 returned 7
+        -:  246:
+       20:  247:    vector<string> lines;
+       10:  247-block  0
+call    0 returned 10
+call    1 returned 3
+        7:  247-block  1
+call    2 returned 7
+        -:  248:
+       20:  249:    string line;
+call    0 returned 10
+call    1 returned 3
+        7:  249-block  0
+call    2 returned 7
+       85:  250:    while(getline(f, line)){
+       85:  250-block  0
+call    0 returned 85
+branch  1 taken 85 (fallthrough)
+branch  2 taken 0 (throw)
+       85:  250-block  1
+call    3 returned 85
+branch  4 taken 85 (fallthrough)
+branch  5 taken 0 (throw)
+       85:  250-block  2
+branch  6 taken 75 (fallthrough)
+branch  7 taken 10
+       75:  250-block  3
+       75:  251:        lines.push_back(line);
+       75:  251-block  0
+call    0 returned 75
+branch  1 taken 75 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  252:    }
+        -:  253:
+        -:  254:    int n, m;
+       10:  255:    if(lines.empty()){
+       10:  255-block  0
+call    0 returned 10
+branch  1 taken 0 (fallthrough)
+branch  2 taken 10
+    #####:  256:        throw GraphException("invalid format");
+    %%%%%:  256-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  256-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  256-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  256-block  3
+call   11 never executed
+    $$$$$:  256-block  4
+    $$$$$:  256-block  5
+call   12 never executed
+    $$$$$:  256-block  6
+    $$$$$:  256-block  7
+call   13 never executed
+        -:  257:    }
+       20:  258:    istringstream reader(lines[0]);
+       10:  258-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 3
+        7:  258-block  1
+call    5 returned 7
+       10:  259:    if(!(reader >> n >> m)){
+       10:  259-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  259-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  259-block  2
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:  259-block  3
+branch  9 taken 0 (fallthrough)
+branch 10 taken 10
+    #####:  260:        throw GraphException("invalid format");
+    %%%%%:  260-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  260-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  260-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  260-block  3
+call   11 never executed
+    $$$$$:  260-block  4
+    $$$$$:  260-block  5
+call   12 never executed
+    $$$$$:  260-block  6
+    $$$$$:  260-block  7
+call   13 never executed
+        -:  261:    }
+        -:  262:
+       10:  263:    assert_nothing_after(reader);
+       10:  263-block  0
+call    0 returned 10
+branch  1 taken 8 (fallthrough)
+branch  2 taken 2 (throw)
+        -:  264:    /*
+        -:  265:     * tmp = '0';
+        -:  266:    while((reader >> tmp) && tmp == ' ' || tmp == '\n');
+        -:  267:    if(tmp != '\n' && tmp != ' ' && tmp != '\0'){
+        -:  268:        throw GraphException("invalid format");
+        -:  269:    }
+        -:  270:     */
+        -:  271:
+       16:  272:    vector<string> vertices;
+        8:  272-block  0
+call    0 returned 8
+call    1 returned 3
+        5:  272-block  1
+call    2 returned 5
+       16:  273:    vector<tuple<string, string, int> > edges;
+call    0 returned 8
+        3:  273-block  0
+call    1 returned 3
+        5:  273-block  1
+call    2 returned 5
+        -:  274:
+        8:  275:    if(endswith(file, ".modified.txt")) {
+call    0 returned 8
+call    1 returned 8
+branch  2 taken 8 (fallthrough)
+branch  3 taken 0 (throw)
+        8:  275-block  0
+call    4 returned 8
+branch  5 taken 8 (fallthrough)
+branch  6 taken 0 (throw)
+        8:  275-block  1
+call    7 returned 8
+branch  8 taken 8 (fallthrough)
+branch  9 taken 0 (throw)
+        8:  275-block  2
+call   10 returned 8
+call   11 returned 8
+call   12 returned 8
+branch 13 taken 5 (fallthrough)
+branch 14 taken 3
+    $$$$$:  275-block  3
+call   15 never executed
+    $$$$$:  275-block  4
+    $$$$$:  275-block  5
+call   16 never executed
+    $$$$$:  275-block  6
+    $$$$$:  275-block  7
+call   17 never executed
+    $$$$$:  275-block  8
+        5:  276:        if (lines.size() != m + 2) {
+        5:  276-block  0
+call    0 returned 5
+branch  1 taken 1 (fallthrough)
+branch  2 taken 4
+        1:  277:            throw GraphException("invalid format");
+        1:  277-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  277-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  277-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  277-block  3
+call   11 never executed
+    $$$$$:  277-block  4
+    $$$$$:  277-block  5
+call   12 never executed
+    $$$$$:  277-block  6
+    $$$$$:  277-block  7
+call   13 never executed
+        -:  278:        }
+        4:  279:        reader = istringstream(lines[1]);
+        4:  279-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:  279-block  1
+call    4 returned 4
+branch  5 taken 4 (fallthrough)
+branch  6 taken 0 (throw)
+        4:  279-block  2
+call    7 returned 4
+    $$$$$:  279-block  3
+call    8 never executed
+    $$$$$:  279-block  4
+        -:  280:
+       22:  281:        for (int i = 0; i < n; i++) {
+       22:  281-block  0
+branch  0 taken 18 (fallthrough)
+branch  1 taken 4
+       36:  282:            string vertex;
+       18:  282-block  0
+call    0 returned 18
+       18:  282-block  1
+call    1 returned 18
+    $$$$$:  282-block  2
+call    2 never executed
+       18:  283:            if (!(reader >> vertex)) {
+call    0 returned 18
+branch  1 taken 18 (fallthrough)
+branch  2 taken 0 (throw)
+       18:  283-block  0
+call    3 returned 18
+branch  4 taken 18 (fallthrough)
+branch  5 taken 0 (throw)
+       18:  283-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 18
+    #####:  284:                throw GraphException("invalid format");
+    %%%%%:  284-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  284-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  284-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  284-block  3
+call   11 never executed
+    $$$$$:  284-block  4
+    $$$$$:  284-block  5
+call   12 never executed
+    $$$$$:  284-block  6
+    $$$$$:  284-block  7
+call   13 never executed
+        -:  285:            }
+       18:  286:            vertices.push_back(vertex);
+       18:  286-block  0
+call    0 returned 18
+branch  1 taken 18 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  287:        }
+        4:  288:        assert_nothing_after(reader);
+        4:  288-block  0
+call    0 returned 4
+branch  1 taken 3 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  289:
+       15:  290:        for (int i = 0; i < m; i++) {
+        3:  290-block  0
+       15:  290-block  1
+branch  0 taken 13 (fallthrough)
+branch  1 taken 2
+       27:  291:            string x, y;
+       13:  291-block  0
+call    0 returned 13
+call    1 returned 13
+       12:  291-block  1
+call    2 returned 12
+call    3 returned 12
+        1:  291-block  2
+call    4 returned 1
+        1:  291-block  3
+call    5 returned 1
+        -:  292:            int z;
+       13:  293:            reader = istringstream(lines[2 + i]);
+call    0 returned 13
+call    1 returned 13
+branch  2 taken 13 (fallthrough)
+branch  3 taken 0 (throw)
+       13:  293-block  0
+call    4 returned 13
+branch  5 taken 13 (fallthrough)
+branch  6 taken 0 (throw)
+       13:  293-block  1
+call    7 returned 13
+    $$$$$:  293-block  2
+call    8 never executed
+    $$$$$:  293-block  3
+       13:  294:            if (!(reader >> x >> y >> z)) {
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:  294-block  0
+call    3 returned 13
+branch  4 taken 13 (fallthrough)
+branch  5 taken 0 (throw)
+       13:  294-block  1
+call    6 returned 13
+branch  7 taken 13 (fallthrough)
+branch  8 taken 0 (throw)
+       13:  294-block  2
+call    9 returned 13
+branch 10 taken 13 (fallthrough)
+branch 11 taken 0 (throw)
+       13:  294-block  3
+branch 12 taken 0 (fallthrough)
+branch 13 taken 13
+    #####:  295:                throw GraphException("invalid format");
+    %%%%%:  295-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  295-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  295-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  295-block  3
+call   11 never executed
+    $$$$$:  295-block  4
+    $$$$$:  295-block  5
+call   12 never executed
+    $$$$$:  295-block  6
+    $$$$$:  295-block  7
+call   13 never executed
+        -:  296:            }
+       13:  297:            edges.push_back({x, y, z});
+       13:  297-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:  297-block  1
+call    3 returned 13
+branch  4 taken 13 (fallthrough)
+branch  5 taken 0 (throw)
+       13:  297-block  2
+call    6 returned 13
+    $$$$$:  297-block  3
+call    7 never executed
+    $$$$$:  297-block  4
+       13:  298:            assert_nothing_after(reader);
+call    0 returned 13
+branch  1 taken 12 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  299:        }
+        2:  300:        f.close();
+        2:  300-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  301:
+        -:  302:    }else{
+        3:  303:        if (lines.size() != m + 1) {
+        3:  303-block  0
+call    0 returned 3
+branch  1 taken 1 (fallthrough)
+branch  2 taken 2
+        1:  304:            throw GraphException("invalid format");
+        1:  304-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  304-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  304-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:  304-block  3
+call   11 never executed
+    $$$$$:  304-block  4
+    $$$$$:  304-block  5
+call   12 never executed
+    $$$$$:  304-block  6
+    $$$$$:  304-block  7
+call   13 never executed
+        -:  305:        }
+        -:  306:
+       12:  307:        for (int i = 0; i < n; i++) {
+        2:  307-block  0
+       12:  307-block  1
+branch  0 taken 10 (fallthrough)
+branch  1 taken 2
+       20:  308:            string vertex;
+       10:  308-block  0
+call    0 returned 10
+call    1 returned 10
+    $$$$$:  308-block  1
+call    2 never executed
+       30:  309:            ostringstream tmp("");
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:  309-block  0
+call    4 returned 10
+branch  5 taken 10 (fallthrough)
+branch  6 taken 0 (throw)
+call    7 returned 10
+       10:  309-block  1
+call    8 returned 10
+    $$$$$:  309-block  2
+    $$$$$:  309-block  3
+    $$$$$:  309-block  4
+call    9 never executed
+       10:  310:            tmp << i;
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  311:            vertex = tmp.str();
+       10:  311-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  311-block  1
+call    3 returned 10
+call    4 returned 10
+       10:  312:            vertices.push_back(vertex);
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  313:        }
+        -:  314:
+       11:  315:        for (int i = 0; i < m; i++) {
+        2:  315-block  0
+       11:  315-block  1
+branch  0 taken 10 (fallthrough)
+branch  1 taken 1
+       21:  316:            string x, y;
+       10:  316-block  0
+call    0 returned 10
+call    1 returned 10
+        9:  316-block  1
+call    2 returned 9
+call    3 returned 9
+        1:  316-block  2
+call    4 returned 1
+        1:  316-block  3
+call    5 returned 1
+        -:  317:            int z;
+       10:  318:            reader = istringstream(lines[1 + i]);
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 10 (fallthrough)
+branch  3 taken 0 (throw)
+       10:  318-block  0
+call    4 returned 10
+branch  5 taken 10 (fallthrough)
+branch  6 taken 0 (throw)
+       10:  318-block  1
+call    7 returned 10
+    $$$$$:  318-block  2
+call    8 never executed
+    $$$$$:  318-block  3
+       10:  319:            if (!(reader >> x >> y >> z)) {
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  319-block  0
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  319-block  1
+call    6 returned 10
+branch  7 taken 10 (fallthrough)
+branch  8 taken 0 (throw)
+       10:  319-block  2
+call    9 returned 10
+branch 10 taken 10 (fallthrough)
+branch 11 taken 0 (throw)
+       10:  319-block  3
+branch 12 taken 0 (fallthrough)
+branch 13 taken 10
+    #####:  320:                throw GraphException("invalid format");
+    %%%%%:  320-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  320-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  320-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  320-block  3
+call   11 never executed
+    $$$$$:  320-block  4
+    $$$$$:  320-block  5
+call   12 never executed
+    $$$$$:  320-block  6
+    $$$$$:  320-block  7
+call   13 never executed
+        -:  321:            }
+       10:  322:            edges.push_back({x, y, z});
+       10:  322-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  322-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  322-block  2
+call    6 returned 10
+    $$$$$:  322-block  3
+call    7 never executed
+    $$$$$:  322-block  4
+       10:  323:            assert_nothing_after(reader);
+call    0 returned 10
+branch  1 taken 9 (fallthrough)
+branch  2 taken 1 (throw)
+        -:  324:        }
+        -:  325:
+        1:  326:        f.close();
+        1:  326-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  327:    }
+        3:  328:    Graph ans(vertices, edges);
+        3:  328-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  329:    return ans;
+        3:  329-block  0
+        3:  329-block  1
+        -:  330:}
+        -:  331:
+function _Z11write_graphRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEER5Graph called 4 returned 25% blocks executed 67%
+        4:  332:void write_graph(const string &file, Graph &graph){
+        4:  333:    if(endswith(file, ".modified.txt") == 0){
+        4:  333-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:  333-block  1
+call    4 returned 4
+branch  5 taken 4 (fallthrough)
+branch  6 taken 0 (throw)
+        4:  333-block  2
+call    7 returned 4
+branch  8 taken 4 (fallthrough)
+branch  9 taken 0 (throw)
+        4:  333-block  3
+call   10 returned 4
+call   11 returned 4
+call   12 returned 4
+branch 13 taken 3 (fallthrough)
+branch 14 taken 1
+    $$$$$:  333-block  4
+call   15 never executed
+    $$$$$:  333-block  5
+    $$$$$:  333-block  6
+call   16 never executed
+    $$$$$:  333-block  7
+    $$$$$:  333-block  8
+call   17 never executed
+    $$$$$:  333-block  9
+        3:  334:        throw GraphException("invalid filename");
+        3:  334-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:  334-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:  334-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 3
+    $$$$$:  334-block  3
+call   11 never executed
+    $$$$$:  334-block  4
+    $$$$$:  334-block  5
+call   12 never executed
+    $$$$$:  334-block  6
+    $$$$$:  334-block  7
+call   13 never executed
+        -:  335:    }
+        2:  336:    ofstream g(file);
+        1:  336-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1
+    $$$$$:  336-block  1
+call    4 never executed
+        -:  337:
+        2:  338:    vector<string> vertices = graph.parse_vertices();
+        1:  338-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  338-block  1
+call    3 returned 1
+    $$$$$:  338-block  2
+call    4 never executed
+        1:  339:    int n = vertices.size();
+        1:  339-block  0
+call    0 returned 1
+        1:  340:    int m = 0;
+        -:  341:
+        4:  342:    for(auto vertex:vertices){
+call    0 returned 1
+call    1 returned 1
+        4:  342-block  0
+call    2 returned 4
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        3:  342-block  1
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 3
+    $$$$$:  342-block  2
+call   10 never executed
+        3:  343:        m += graph.get_out_degree(vertex);
+        3:  343-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  343-block  1
+call    3 returned 3
+        -:  344:    }
+        -:  345:
+        1:  346:    g << n << " " << m << endl;
+        1:  346-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  346-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  346-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  346-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        4:  347:    for(auto vertex:vertices){
+        1:  347-block  0
+call    0 returned 1
+call    1 returned 1
+        4:  347-block  1
+call    2 returned 4
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        3:  347-block  2
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  347-block  3
+call    9 returned 3
+call   10 returned 3
+    $$$$$:  347-block  4
+call   11 never executed
+        3:  348:        g << vertex << " ";
+        3:  348-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  348-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  349:    }
+        1:  350:    g << endl;
+        1:  350-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        4:  351:    for(auto vertex:vertices){
+        1:  351-block  0
+call    0 returned 1
+call    1 returned 1
+        4:  351-block  1
+call    2 returned 4
+branch  3 taken 3 (fallthrough)
+branch  4 taken 1
+        3:  351-block  2
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 3
+call   10 returned 3
+    $$$$$:  351-block  3
+call   11 never executed
+        6:  352:        for(auto edge: graph.parse_outbound_edges(vertex)){
+        3:  352-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  352-block  1
+call    3 returned 3
+call    4 returned 3
+        6:  352-block  2
+call    5 returned 6
+branch  6 taken 3 (fallthrough)
+branch  7 taken 3
+        3:  352-block  3
+call    8 returned 3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  352-block  4
+call   12 returned 3
+call   13 returned 3
+        3:  352-block  5
+call   14 returned 3
+    $$$$$:  352-block  6
+call   15 never executed
+    $$$$$:  352-block  7
+call   16 never executed
+        3:  353:            g << vertex << " " << edge << " " << graph.get_edge_cost(vertex, edge) << endl;
+        3:  353-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  353-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  353-block  2
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:  353-block  3
+call    9 returned 3
+branch 10 taken 3 (fallthrough)
+branch 11 taken 0 (throw)
+        3:  353-block  4
+call   12 returned 3
+branch 13 taken 3 (fallthrough)
+branch 14 taken 0 (throw)
+        3:  353-block  5
+call   15 returned 3
+branch 16 taken 3 (fallthrough)
+branch 17 taken 0 (throw)
+        3:  353-block  6
+call   18 returned 3
+branch 19 taken 3 (fallthrough)
+branch 20 taken 0 (throw)
+        -:  354:        }
+        -:  355:    }
+        -:  356:
+        1:  357:    g.close();
+        1:  357-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  358:}
+        -:  359:
+function _Z12random_graphii called 4 returned 25% blocks executed 65%
+        4:  360:Graph random_graph(int n, int m){
+        4:  361:    if(n < 0 || m < 0 || m > n * n){
+        4:  361-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 1
+        3:  361-block  1
+branch  2 taken 2 (fallthrough)
+branch  3 taken 1
+        2:  361-block  2
+branch  4 taken 1 (fallthrough)
+branch  5 taken 1
+        3:  362:        throw GraphException("invalid arguments");
+        3:  362-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:  362-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:  362-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 3
+    $$$$$:  362-block  3
+call   11 never executed
+    $$$$$:  362-block  4
+    $$$$$:  362-block  5
+call   12 never executed
+    $$$$$:  362-block  6
+    $$$$$:  362-block  7
+call   13 never executed
+        -:  363:    }
+        1:  364:    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+        1:  364-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:  364-block  1
+    $$$$$:  364-block  2
+        2:  365:    vector<tuple<string, string, int> > edges;
+        1:  365-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  365-block  1
+call    2 never executed
+        2:  366:    vector<string> vertices;
+call    0 returned 1
+        1:  366-block  0
+call    1 returned 1
+    $$$$$:  366-block  1
+call    2 never executed
+        7:  367:    for(int i = 0;i < n;i++){
+        7:  367-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 1
+        6:  368:        vertices.push_back(to_string(i));
+        6:  368-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        6:  368-block  1
+call    3 returned 6
+branch  4 taken 6 (fallthrough)
+branch  5 taken 0 (throw)
+        6:  368-block  2
+call    6 returned 6
+    $$$$$:  368-block  3
+call    7 never executed
+    $$$$$:  368-block  4
+        -:  369:    }
+        7:  370:    for(int i = 0;i < n;i++) {
+        1:  370-block  0
+        7:  370-block  1
+branch  0 taken 6 (fallthrough)
+branch  1 taken 1
+        6:  370-block  2
+       42:  371:        for(int j = 0;j < n;j++){
+        6:  371-block  0
+       42:  371-block  1
+branch  0 taken 36 (fallthrough)
+branch  1 taken 6
+       36:  371-block  2
+       36:  372:            if(i == j){
+       36:  372-block  0
+branch  0 taken 6 (fallthrough)
+branch  1 taken 30
+        6:  373:                continue;
+        6:  373-block  0
+        -:  374:            }
+       30:  375:            edges.push_back({to_string(i), to_string(j), (rng() % 2000000000) - 1000000000});
+       30:  375-block  0
+call    0 returned 30
+branch  1 taken 30 (fallthrough)
+branch  2 taken 0 (throw)
+       30:  375-block  1
+call    3 returned 30
+branch  4 taken 30 (fallthrough)
+branch  5 taken 0 (throw)
+       30:  375-block  2
+call    6 returned 30
+branch  7 taken 30 (fallthrough)
+branch  8 taken 0 (throw)
+       30:  375-block  3
+call    9 returned 30
+branch 10 taken 30 (fallthrough)
+branch 11 taken 0 (throw)
+       30:  375-block  4
+call   12 returned 30
+branch 13 taken 30 (fallthrough)
+branch 14 taken 0 (throw)
+       30:  375-block  5
+call   15 returned 30
+call   16 returned 30
+call   17 returned 30
+    $$$$$:  375-block  6
+call   18 never executed
+    $$$$$:  375-block  7
+    $$$$$:  375-block  8
+    $$$$$:  375-block  9
+call   19 never executed
+    $$$$$:  375-block 10
+    $$$$$:  375-block 11
+call   20 never executed
+    $$$$$:  375-block 12
+        -:  376:        }
+        -:  377:    }
+        1:  378:    shuffle(edges.begin(), edges.end(), rng);
+        1:  378-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  379:    edges.resize(m);
+        1:  379-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:  380:    return Graph(vertices, edges);
+        1:  380-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  380-block  1
+        -:  381:}

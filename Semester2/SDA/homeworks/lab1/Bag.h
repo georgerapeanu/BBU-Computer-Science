@@ -46,6 +46,10 @@ public:
 	//checks if the bag is empty
 	bool isEmpty() const;
 
+    // adds elem nr times to the bag
+    // throws an exception if nr < 0
+    void addOccurrences(int nr, TElem elem);
+
 	//destructor
 	~Bag();
 };

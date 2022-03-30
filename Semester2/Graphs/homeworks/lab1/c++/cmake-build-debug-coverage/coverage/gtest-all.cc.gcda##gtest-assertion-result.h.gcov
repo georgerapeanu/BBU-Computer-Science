@@ -1,0 +1,800 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/tests/googletest/googletest/include/gtest/gtest-assertion-result.h
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/Graphs/homeworks/lab1/c++/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2005, Google Inc.
+        -:    2:// All rights reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:// The Google C++ Testing and Mocking Framework (Google Test)
+        -:   31://
+        -:   32:// This file implements the AssertionResult type.
+        -:   33:
+        -:   34:// IWYU pragma: private, include "gtest/gtest.h"
+        -:   35:// IWYU pragma: friend gtest/.*
+        -:   36:// IWYU pragma: friend gmock/.*
+        -:   37:
+        -:   38:#ifndef GOOGLETEST_INCLUDE_GTEST_GTEST_ASSERTION_RESULT_H_
+        -:   39:#define GOOGLETEST_INCLUDE_GTEST_GTEST_ASSERTION_RESULT_H_
+        -:   40:
+        -:   41:#include <memory>
+        -:   42:#include <ostream>
+        -:   43:#include <string>
+        -:   44:#include <type_traits>
+        -:   45:
+        -:   46:#include "gtest/gtest-message.h"
+        -:   47:#include "gtest/internal/gtest-port.h"
+        -:   48:
+        -:   49:namespace testing {
+        -:   50:
+        -:   51:// A class for indicating whether an assertion was successful.  When
+        -:   52:// the assertion wasn't successful, the AssertionResult object
+        -:   53:// remembers a non-empty message that describes how it failed.
+        -:   54://
+        -:   55:// To create an instance of this class, use one of the factory functions
+        -:   56:// (AssertionSuccess() and AssertionFailure()).
+        -:   57://
+        -:   58:// This class is useful for two purposes:
+        -:   59://   1. Defining predicate functions to be used with Boolean test assertions
+        -:   60://      EXPECT_TRUE/EXPECT_FALSE and their ASSERT_ counterparts
+        -:   61://   2. Defining predicate-format functions to be
+        -:   62://      used with predicate assertions (ASSERT_PRED_FORMAT*, etc).
+        -:   63://
+        -:   64:// For example, if you define IsEven predicate:
+        -:   65://
+        -:   66://   testing::AssertionResult IsEven(int n) {
+        -:   67://     if ((n % 2) == 0)
+        -:   68://       return testing::AssertionSuccess();
+        -:   69://     else
+        -:   70://       return testing::AssertionFailure() << n << " is odd";
+        -:   71://   }
+        -:   72://
+        -:   73:// Then the failed expectation EXPECT_TRUE(IsEven(Fib(5)))
+        -:   74:// will print the message
+        -:   75://
+        -:   76://   Value of: IsEven(Fib(5))
+        -:   77://     Actual: false (5 is odd)
+        -:   78://   Expected: true
+        -:   79://
+        -:   80:// instead of a more opaque
+        -:   81://
+        -:   82://   Value of: IsEven(Fib(5))
+        -:   83://     Actual: false
+        -:   84://   Expected: true
+        -:   85://
+        -:   86:// in case IsEven is a simple Boolean predicate.
+        -:   87://
+        -:   88:// If you expect your predicate to be reused and want to support informative
+        -:   89:// messages in EXPECT_FALSE and ASSERT_FALSE (negative assertions show up
+        -:   90:// about half as often as positive ones in our tests), supply messages for
+        -:   91:// both success and failure cases:
+        -:   92://
+        -:   93://   testing::AssertionResult IsEven(int n) {
+        -:   94://     if ((n % 2) == 0)
+        -:   95://       return testing::AssertionSuccess() << n << " is even";
+        -:   96://     else
+        -:   97://       return testing::AssertionFailure() << n << " is odd";
+        -:   98://   }
+        -:   99://
+        -:  100:// Then a statement EXPECT_FALSE(IsEven(Fib(6))) will print
+        -:  101://
+        -:  102://   Value of: IsEven(Fib(6))
+        -:  103://     Actual: true (8 is even)
+        -:  104://   Expected: false
+        -:  105://
+        -:  106:// NB: Predicates that support negative Boolean assertions have reduced
+        -:  107:// performance in positive ones so be careful not to use them in tests
+        -:  108:// that have lots (tens of thousands) of positive Boolean assertions.
+        -:  109://
+        -:  110:// To use this class with EXPECT_PRED_FORMAT assertions such as:
+        -:  111://
+        -:  112://   // Verifies that Foo() returns an even number.
+        -:  113://   EXPECT_PRED_FORMAT1(IsEven, Foo());
+        -:  114://
+        -:  115:// you need to define:
+        -:  116://
+        -:  117://   testing::AssertionResult IsEven(const char* expr, int n) {
+        -:  118://     if ((n % 2) == 0)
+        -:  119://       return testing::AssertionSuccess();
+        -:  120://     else
+        -:  121://       return testing::AssertionFailure()
+        -:  122://         << "Expected: " << expr << " is even\n  Actual: it's " << n;
+        -:  123://   }
+        -:  124://
+        -:  125:// If Foo() returns 5, you will see the following message:
+        -:  126://
+        -:  127://   Expected: Foo() is even
+        -:  128://     Actual: it's 5
+        -:  129://
+        -:  130:class GTEST_API_ AssertionResult {
+        -:  131: public:
+        -:  132:  // Copy constructor.
+        -:  133:  // Used in EXPECT_TRUE/FALSE(assertion_result).
+        -:  134:  AssertionResult(const AssertionResult& other);
+        -:  135:
+        -:  136:// C4800 is a level 3 warning in Visual Studio 2015 and earlier.
+        -:  137:// This warning is not emitted in Visual Studio 2017.
+        -:  138:// This warning is off by default starting in Visual Studio 2019 but can be
+        -:  139:// enabled with command-line options.
+        -:  140:#if defined(_MSC_VER) && (_MSC_VER < 1910 || _MSC_VER >= 1920)
+        -:  141:  GTEST_DISABLE_MSC_WARNINGS_PUSH_(4800 /* forcing value to bool */)
+        -:  142:#endif
+        -:  143:
+        -:  144:  // Used in the EXPECT_TRUE/FALSE(bool_expression).
+        -:  145:  //
+        -:  146:  // T must be contextually convertible to bool.
+        -:  147:  //
+        -:  148:  // The second parameter prevents this overload from being considered if
+        -:  149:  // the argument is implicitly convertible to AssertionResult. In that case
+        -:  150:  // we want AssertionResult's copy constructor to be used.
+        -:  151:  template <typename T>
+function _ZN7testing15AssertionResultC2IbEERKT_PNSt9enable_ifIXntsrSt14is_convertibleIS2_S0_E5valueEvE4typeE called 100 returned 100% blocks executed 100%
+      100:  152:  explicit AssertionResult(
+        -:  153:      const T& success,
+        -:  154:      typename std::enable_if<
+        -:  155:          !std::is_convertible<T, AssertionResult>::value>::type*
+        -:  156:      /*enabler*/
+        -:  157:      = nullptr)
+      100:  158:      : success_(success) {}
+      100:  158-block  0
+call    0 returned 100
+        -:  159:
+        -:  160:#if defined(_MSC_VER) && (_MSC_VER < 1910 || _MSC_VER >= 1920)
+        -:  161:  GTEST_DISABLE_MSC_WARNINGS_POP_()
+        -:  162:#endif
+        -:  163:
+        -:  164:  // Assignment operator.
+        -:  165:  AssertionResult& operator=(AssertionResult other) {
+        -:  166:    swap(other);
+        -:  167:    return *this;
+        -:  168:  }
+        -:  169:
+        -:  170:  // Returns true if and only if the assertion succeeded.
+function _ZNK7testing15AssertionResultcvbEv called 0 returned 0% blocks executed 0%
+    #####:  171:  operator bool() const { return success_; }  // NOLINT
+    %%%%%:  171-block  0
+        -:  172:
+        -:  173:  // Returns the assertion's negation. Used with EXPECT/ASSERT_FALSE.
+        -:  174:  AssertionResult operator!() const;
+        -:  175:
+        -:  176:  // Returns the text streamed into this AssertionResult. Test assertions
+        -:  177:  // use it when they fail (i.e., the predicate's outcome doesn't match the
+        -:  178:  // assertion's expectation). When nothing has been streamed into the
+        -:  179:  // object, returns an empty string.
+function _ZNK7testing15AssertionResult7messageEv called 0 returned 0% blocks executed 0%
+    #####:  180:  const char* message() const {
+    #####:  181:    return message_.get() != nullptr ? message_->c_str() : "";
+    %%%%%:  181-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  181-block  1
+call    3 never executed
+call    4 never executed
+    %%%%%:  181-block  2
+    %%%%%:  181-block  3
+        -:  182:  }
+        -:  183:  // Deprecated; please use message() instead.
+function _ZNK7testing15AssertionResult15failure_messageEv called 0 returned 0% blocks executed 0%
+    #####:  184:  const char* failure_message() const { return message(); }
+    %%%%%:  184-block  0
+call    0 never executed
+        -:  185:
+        -:  186:  // Streams a custom failure message into this object.
+        -:  187:  template <typename T>
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    #####:  190:    return *this;
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA9_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA9_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS0_RKT_:
+function _ZN7testing15AssertionResultlsINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsINS_7MessageEEERS0_RKT_:
+function _ZN7testing15AssertionResultlsINS_7MessageEEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA11_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA11_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA2_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA2_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsINS_14TestPartResultEEERS0_RKT_:
+function _ZN7testing15AssertionResultlsINS_14TestPartResultEEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA14_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA14_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA3_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA3_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA24_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA24_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIPKcEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIPKcEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA6_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA6_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA5_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA5_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIdEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIdEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsINSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEERS0_RKT_:
+function _ZN7testing15AssertionResultlsINSt7__cxx1112basic_stringIwSt11char_traitsIwESaIwEEEEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA15_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA15_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA27_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA27_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA100_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA100_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA106_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA106_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA17_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA17_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA7_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA7_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA12_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA12_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA13_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA13_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA29_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA29_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIA16_cEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIA16_cEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+_ZN7testing15AssertionResultlsIPKwEERS0_RKT_:
+function _ZN7testing15AssertionResultlsIPKwEERS0_RKT_ called 0 returned 0% blocks executed 0%
+    #####:  188:  AssertionResult& operator<<(const T& value) {
+    #####:  189:    AppendMessage(Message() << value);
+    %%%%%:  189-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  189-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  189-block  2
+call    7 never executed
+    $$$$$:  189-block  3
+call    8 never executed
+    #####:  190:    return *this;
+    %%%%%:  190-block  0
+        -:  191:  }
+------------------
+        -:  192:
+        -:  193:  // Allows streaming basic output manipulators such as endl or flush into
+        -:  194:  // this object.
+        -:  195:  AssertionResult& operator<<(
+        -:  196:      ::std::ostream& (*basic_manipulator)(::std::ostream& stream)) {
+        -:  197:    AppendMessage(Message() << basic_manipulator);
+        -:  198:    return *this;
+        -:  199:  }
+        -:  200:
+        -:  201: private:
+        -:  202:  // Appends the contents of message to message_.
+function _ZN7testing15AssertionResult13AppendMessageERKNS_7MessageE called 0 returned 0% blocks executed 0%
+    #####:  203:  void AppendMessage(const Message& a_message) {
+    #####:  204:    if (message_.get() == nullptr) message_.reset(new ::std::string);
+    %%%%%:  204-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  204-block  1
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:  205:    message_->append(a_message.GetString().c_str());
+    %%%%%:  205-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  205-block  1
+call    6 never executed
+    $$$$$:  205-block  2
+call    7 never executed
+    #####:  206:  }
+        -:  207:
+        -:  208:  // Swap the contents of this AssertionResult with other.
+        -:  209:  void swap(AssertionResult& other);
+        -:  210:
+        -:  211:  // Stores result of the assertion predicate.
+        -:  212:  bool success_;
+        -:  213:  // Stores the message describing the condition in case the expectation
+        -:  214:  // construct is not satisfied with the predicate's outcome.
+        -:  215:  // Referenced via a pointer to avoid taking too much stack frame space
+        -:  216:  // with test assertions.
+        -:  217:  std::unique_ptr< ::std::string> message_;
+        -:  218:};
+        -:  219:
+        -:  220:// Makes a successful assertion result.
+        -:  221:GTEST_API_ AssertionResult AssertionSuccess();
+        -:  222:
+        -:  223:// Makes a failed assertion result.
+        -:  224:GTEST_API_ AssertionResult AssertionFailure();
+        -:  225:
+        -:  226:// Makes a failed assertion result with the given failure message.
+        -:  227:// Deprecated; use AssertionFailure() << msg.
+        -:  228:GTEST_API_ AssertionResult AssertionFailure(const Message& msg);
+        -:  229:
+        -:  230:}  // namespace testing
+        -:  231:
+        -:  232:#endif  // GOOGLETEST_INCLUDE_GTEST_GTEST_ASSERTION_RESULT_H_
