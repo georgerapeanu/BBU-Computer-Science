@@ -75,25 +75,25 @@
         -:   71:	param_type() : param_type(0) { }
         -:   72:
         -:   73:	explicit
-function _ZNSt24uniform_int_distributionImE10param_typeC2Emm called 15 returned 100% blocks executed 100%
-       15:   74:	param_type(_IntType __a,
+function _ZNSt24uniform_int_distributionImE10param_typeC2Emm called 18 returned 100% blocks executed 100%
+       18:   74:	param_type(_IntType __a,
         -:   75:		   _IntType __b = numeric_limits<_IntType>::max())
-       15:   76:	: _M_a(__a), _M_b(__b)
+       18:   76:	: _M_a(__a), _M_b(__b)
         -:   77:	{
         -:   78:	  __glibcxx_assert(_M_a <= _M_b);
-       15:   79:	}
+       18:   79:	}
         -:   80:
         -:   81:	result_type
-function _ZNKSt24uniform_int_distributionImE10param_type1aEv called 30 returned 100% blocks executed 100%
-       30:   82:	a() const
-       30:   83:	{ return _M_a; }
-       30:   83-block  0
+function _ZNKSt24uniform_int_distributionImE10param_type1aEv called 36 returned 100% blocks executed 100%
+       36:   82:	a() const
+       36:   83:	{ return _M_a; }
+       36:   83-block  0
         -:   84:
         -:   85:	result_type
-function _ZNKSt24uniform_int_distributionImE10param_type1bEv called 15 returned 100% blocks executed 100%
-       15:   86:	b() const
-       15:   87:	{ return _M_b; }
-       15:   87-block  0
+function _ZNKSt24uniform_int_distributionImE10param_type1bEv called 18 returned 100% blocks executed 100%
+       18:   86:	b() const
+       18:   87:	{ return _M_b; }
+       18:   87-block  0
         -:   88:
         -:   89:	friend bool
         -:   90:	operator==(const param_type& __p1, const param_type& __p2)
@@ -122,13 +122,13 @@ call    1 never executed
         -:  109:       * @brief Constructs a uniform distribution object.
         -:  110:       */
         -:  111:      explicit
-function _ZNSt24uniform_int_distributionImEC2Emm called 15 returned 100% blocks executed 100%
-       15:  112:      uniform_int_distribution(_IntType __a,
+function _ZNSt24uniform_int_distributionImEC2Emm called 18 returned 100% blocks executed 100%
+       18:  112:      uniform_int_distribution(_IntType __a,
         -:  113:			       _IntType __b = numeric_limits<_IntType>::max())
-       15:  114:      : _M_param(__a, __b)
-       15:  114-block  0
-call    0 returned 15
-       15:  115:      { }
+       18:  114:      : _M_param(__a, __b)
+       18:  114-block  0
+call    0 returned 18
+       18:  115:      { }
         -:  116:
         -:  117:      explicit
         -:  118:      uniform_int_distribution(const param_type& __p)
@@ -185,11 +185,11 @@ call    0 returned 15
         -:  169:       */
         -:  170:      template<typename _UniformRandomNumberGenerator>
         -:  171:	result_type
-function _ZNSt24uniform_int_distributionImEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEmRT_ called 15 returned 100% blocks executed 100%
-       15:  172:	operator()(_UniformRandomNumberGenerator& __urng)
-       15:  173:        { return this->operator()(__urng, _M_param); }
-       15:  173-block  0
-call    0 returned 15
+function _ZNSt24uniform_int_distributionImEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEmRT_ called 18 returned 100% blocks executed 100%
+       18:  172:	operator()(_UniformRandomNumberGenerator& __urng)
+       18:  173:        { return this->operator()(__urng, _M_param); }
+       18:  173-block  0
+call    0 returned 18
         -:  174:
         -:  175:      template<typename _UniformRandomNumberGenerator>
         -:  176:	result_type
@@ -241,8 +241,8 @@ call    0 returned 15
         -:  222:  template<typename _IntType>
         -:  223:    template<typename _UniformRandomNumberGenerator>
         -:  224:      typename uniform_int_distribution<_IntType>::result_type
-function _ZNSt24uniform_int_distributionImEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEmRT_RKNS0_10param_typeE called 15 returned 100% blocks executed 52%
-       15:  225:      uniform_int_distribution<_IntType>::
+function _ZNSt24uniform_int_distributionImEclISt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEEEmRT_RKNS0_10param_typeE called 18 returned 100% blocks executed 52%
+       18:  225:      uniform_int_distribution<_IntType>::
         -:  226:      operator()(_UniformRandomNumberGenerator& __urng,
         -:  227:		 const param_type& __param)
         -:  228:      {
@@ -252,36 +252,36 @@ function _ZNSt24uniform_int_distributionImEclISt23mersenne_twister_engineImLm32E
         -:  232:	typedef typename std::common_type<_Gresult_type, __utype>::type
         -:  233:	  __uctype;
         -:  234:
-       15:  235:	const __uctype __urngmin = __urng.min();
-       15:  236:	const __uctype __urngmax = __urng.max();
-       15:  237:	const __uctype __urngrange = __urngmax - __urngmin;
-       15:  238:	const __uctype __urange
-       15:  239:	  = __uctype(__param.b()) - __uctype(__param.a());
-       15:  239-block  0
-call    0 returned 15
-call    1 returned 15
+       18:  235:	const __uctype __urngmin = __urng.min();
+       18:  236:	const __uctype __urngmax = __urng.max();
+       18:  237:	const __uctype __urngrange = __urngmax - __urngmin;
+       18:  238:	const __uctype __urange
+       18:  239:	  = __uctype(__param.b()) - __uctype(__param.a());
+       18:  239-block  0
+call    0 returned 18
+call    1 returned 18
         -:  240:
         -:  241:	__uctype __ret;
         -:  242:
-       15:  243:	if (__urngrange > __urange)
-branch  0 taken 15 (fallthrough)
+       18:  243:	if (__urngrange > __urange)
+branch  0 taken 18 (fallthrough)
 branch  1 taken 0
         -:  244:	  {
         -:  245:	    // downscaling
-       15:  246:	    const __uctype __uerange = __urange + 1; // __urange can be zero
-       15:  247:	    const __uctype __scaling = __urngrange / __uerange;
-       15:  248:	    const __uctype __past = __uerange * __scaling;
-       15:  248-block  0
+       18:  246:	    const __uctype __uerange = __urange + 1; // __urange can be zero
+       18:  247:	    const __uctype __scaling = __urngrange / __uerange;
+       18:  248:	    const __uctype __past = __uerange * __scaling;
+       18:  248-block  0
     #####:  249:	    do
     %%%%%:  249-block  0
-       15:  250:	      __ret = __uctype(__urng()) - __urngmin;
-       15:  250-block  0
-call    0 returned 15
-       15:  251:	    while (__ret >= __past);
+       18:  250:	      __ret = __uctype(__urng()) - __urngmin;
+       18:  250-block  0
+call    0 returned 18
+       18:  251:	    while (__ret >= __past);
 branch  0 taken 0 (fallthrough)
-branch  1 taken 15
-       15:  252:	    __ret /= __scaling;
-       15:  252-block  0
+branch  1 taken 18
+       18:  252:	    __ret /= __scaling;
+       18:  252-block  0
         -:  253:	  }
     #####:  254:	else if (__urngrange < __urange)
     %%%%%:  254-block  0
@@ -331,10 +331,10 @@ branch  3 never executed
     %%%%%:  282-block  0
 call    0 never executed
         -:  283:
-       15:  284:	return __ret + __param.a();
-       15:  284-block  0
-call    0 returned 15
-       15:  284-block  1
+       18:  284:	return __ret + __param.a();
+       18:  284-block  0
+call    0 returned 18
+       18:  284-block  1
         -:  285:      }
         -:  286:
         -:  287:

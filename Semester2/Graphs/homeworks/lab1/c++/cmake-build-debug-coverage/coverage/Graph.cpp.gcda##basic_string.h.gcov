@@ -248,26 +248,26 @@
         -:  244:      // requires special behaviour if _InIterator is an integral type
         -:  245:      template<typename _InIterator>
         -:  246:        void
-      66*:  247:        _M_construct_aux(_InIterator __beg, _InIterator __end,
+      78*:  247:        _M_construct_aux(_InIterator __beg, _InIterator __end,
         -:  248:			 std::__false_type)
         -:  249:	{
         -:  250:          typedef typename iterator_traits<_InIterator>::iterator_category _Tag;
-      66*:  251:          _M_construct(__beg, __end, _Tag());
-      66*:  252:	}
+      78*:  251:          _M_construct(__beg, __end, _Tag());
+      78*:  252:	}
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPcEEvT_S7_St12__false_type:
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPcEEvT_S7_St12__false_type called 66 returned 100% blocks executed 100%
-       66:  247:        _M_construct_aux(_InIterator __beg, _InIterator __end,
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPcEEvT_S7_St12__false_type called 78 returned 100% blocks executed 100%
+       78:  247:        _M_construct_aux(_InIterator __beg, _InIterator __end,
         -:  248:			 std::__false_type)
         -:  249:	{
         -:  250:          typedef typename iterator_traits<_InIterator>::iterator_category _Tag;
-       66:  251:          _M_construct(__beg, __end, _Tag());
-       66:  251-block  0
-call    0 returned 66
-branch  1 taken 66 (fallthrough)
+       78:  251:          _M_construct(__beg, __end, _Tag());
+       78:  251-block  0
+call    0 returned 78
+branch  1 taken 78 (fallthrough)
 branch  2 taken 0 (throw)
-       66:  252:	}
-       66:  252-block  0
+       78:  252:	}
+       78:  252-block  0
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type:
 function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_construct_auxIPKcEEvT_S8_St12__false_type called 0 returned 0% blocks executed 0%
@@ -297,24 +297,24 @@ branch  2 never executed
         -:  264:
         -:  265:      template<typename _InIterator>
         -:  266:        void
-      66*:  267:        _M_construct(_InIterator __beg, _InIterator __end)
+      78*:  267:        _M_construct(_InIterator __beg, _InIterator __end)
         -:  268:	{
         -:  269:	  typedef typename std::__is_integer<_InIterator>::__type _Integral;
-      66*:  270:	  _M_construct_aux(__beg, __end, _Integral());
-      66*:  271:        }
+      78*:  270:	  _M_construct_aux(__beg, __end, _Integral());
+      78*:  271:        }
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_:
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_ called 66 returned 100% blocks executed 100%
-       66:  267:        _M_construct(_InIterator __beg, _InIterator __end)
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_ called 78 returned 100% blocks executed 100%
+       78:  267:        _M_construct(_InIterator __beg, _InIterator __end)
         -:  268:	{
         -:  269:	  typedef typename std::__is_integer<_InIterator>::__type _Integral;
-       66:  270:	  _M_construct_aux(__beg, __end, _Integral());
-       66:  270-block  0
-call    0 returned 66
-branch  1 taken 66 (fallthrough)
+       78:  270:	  _M_construct_aux(__beg, __end, _Integral());
+       78:  270-block  0
+call    0 returned 78
+branch  1 taken 78 (fallthrough)
 branch  2 taken 0 (throw)
-       66:  271:        }
-       66:  271-block  0
+       78:  271:        }
+       78:  271-block  0
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_:
 function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_ called 0 returned 0% blocks executed 0%
@@ -686,20 +686,20 @@ branch  2 never executed
         -:  626:#else
         -:  627:      template<typename _InputIterator>
         -:  628:#endif
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IPcvEET_S7_RKS3_ called 66 returned 100% blocks executed 83%
-       66:  629:        basic_string(_InputIterator __beg, _InputIterator __end,
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IPcvEET_S7_RKS3_ called 78 returned 100% blocks executed 83%
+       78:  629:        basic_string(_InputIterator __beg, _InputIterator __end,
         -:  630:		     const _Alloc& __a = _Alloc())
-       66:  631:	: _M_dataplus(_M_local_data(), __a)
-       66:  631-block  0
-call    0 returned 66
-call    1 returned 66
+       78:  631:	: _M_dataplus(_M_local_data(), __a)
+       78:  631-block  0
+call    0 returned 78
+call    1 returned 78
     $$$$$:  631-block  1
 call    2 never executed
-       66:  632:	{ _M_construct(__beg, __end); }
-call    0 returned 66
-branch  1 taken 66 (fallthrough)
+       78:  632:	{ _M_construct(__beg, __end); }
+call    0 returned 78
+branch  1 taken 78 (fallthrough)
 branch  2 taken 0 (throw)
-       66:  632-block  0
+       78:  632-block  0
         -:  633:
         -:  634:#if __cplusplus >= 201703L
         -:  635:      /**
@@ -6312,13 +6312,13 @@ branch  7 taken 5
         -: 6226:   */
         -: 6227:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 6228:    inline bool
-function _ZStltIcSt11char_traitsIcESaIcEEbRKNSt7__cxx1112basic_stringIT_T0_T1_EESA_ called 4767 returned 100% blocks executed 100%
-     4767: 6229:    operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+function _ZStltIcSt11char_traitsIcESaIcEEbRKNSt7__cxx1112basic_stringIT_T0_T1_EESA_ called 4780 returned 100% blocks executed 100%
+     4780: 6229:    operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 6230:	      const basic_string<_CharT, _Traits, _Alloc>& __rhs)
         -: 6231:    _GLIBCXX_NOEXCEPT
-     4767: 6232:    { return __lhs.compare(__rhs) < 0; }
-     4767: 6232-block  0
-call    0 returned 4767
+     4780: 6232:    { return __lhs.compare(__rhs) < 0; }
+     4780: 6232-block  0
+call    0 returned 4780
         -: 6233:
         -: 6234:  /**
         -: 6235:   *  @brief  Test if string precedes C string.
@@ -6467,13 +6467,13 @@ call    0 returned 4767
         -: 6378:   */
         -: 6379:  template<typename _CharT, typename _Traits, typename _Alloc>
         -: 6380:    inline void
-function _ZSt4swapIcSt11char_traitsIcESaIcEEvRNSt7__cxx1112basic_stringIT_T0_T1_EES9_ called 58 returned 100% blocks executed 100%
-       58: 6381:    swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
+function _ZSt4swapIcSt11char_traitsIcESaIcEEvRNSt7__cxx1112basic_stringIT_T0_T1_EES9_ called 70 returned 100% blocks executed 100%
+       70: 6381:    swap(basic_string<_CharT, _Traits, _Alloc>& __lhs,
         -: 6382:	 basic_string<_CharT, _Traits, _Alloc>& __rhs)
         -: 6383:    _GLIBCXX_NOEXCEPT_IF(noexcept(__lhs.swap(__rhs)))
-       58: 6384:    { __lhs.swap(__rhs); }
-       58: 6384-block  0
-call    0 returned 58
+       70: 6384:    { __lhs.swap(__rhs); }
+       70: 6384-block  0
+call    0 returned 70
         -: 6385:
         -: 6386:
         -: 6387:  /**
@@ -6638,12 +6638,12 @@ call    0 returned 58
         -: 6546:
         -: 6547:  // DR 1261.
         -: 6548:  inline string
-function _ZNSt7__cxx119to_stringEi called 66 returned 100% blocks executed 100%
-       66: 6549:  to_string(int __val)
+function _ZNSt7__cxx119to_stringEi called 78 returned 100% blocks executed 100%
+       78: 6549:  to_string(int __val)
         -: 6550:  { return __gnu_cxx::__to_xstring<string>(&std::vsnprintf, 4 * sizeof(int),
-       66: 6551:					   "%d", __val); }
-       66: 6551-block  0
-call    0 returned 66
+       78: 6551:					   "%d", __val); }
+       78: 6551-block  0
+call    0 returned 78
         -: 6552:
         -: 6553:  inline string
         -: 6554:  to_string(unsigned __val)

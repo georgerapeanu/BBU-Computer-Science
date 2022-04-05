@@ -386,8 +386,8 @@
         -:  382:    {
         -:  383:      _GLIBCXX14_CONSTEXPR
         -:  384:      bool
-     3708:  385:      operator()(const _Tp& __x, const _Tp& __y) const
-     3708:  386:      { return __x < __y; }
+     3706:  385:      operator()(const _Tp& __x, const _Tp& __y) const
+     3706:  386:      { return __x < __y; }
 ------------------
 _ZNKSt4lessISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEclERKS7_SA_:
 function _ZNKSt4lessISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEclERKS7_SA_ called 858 returned 100% blocks executed 100%
@@ -397,11 +397,11 @@ function _ZNKSt4lessISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE
 call    0 returned 858
 ------------------
 _ZNKSt4lessINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEclERKS5_S8_:
-function _ZNKSt4lessINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEclERKS5_S8_ called 2850 returned 100% blocks executed 100%
-     2850:  385:      operator()(const _Tp& __x, const _Tp& __y) const
-     2850:  386:      { return __x < __y; }
-     2850:  386-block  0
-call    0 returned 2850
+function _ZNKSt4lessINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEclERKS5_S8_ called 2848 returned 100% blocks executed 100%
+     2848:  385:      operator()(const _Tp& __x, const _Tp& __y) const
+     2848:  386:      { return __x < __y; }
+     2848:  386-block  0
+call    0 returned 2848
 ------------------
         -:  387:    };
         -:  388:
@@ -1171,8 +1171,8 @@ call    0 returned 2850
         -: 1152:      { return __x.first; }
         -: 1153:
         -: 1154:      const typename _Pair::first_type&
-     3748: 1155:      operator()(const _Pair& __x) const
-     3748: 1156:      { return __x.first; }
+     3746: 1155:      operator()(const _Pair& __x) const
+     3746: 1156:      { return __x.first; }
 ------------------
 _ZNKSt10_Select1stISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EiEEclERKS9_:
 function _ZNKSt10_Select1stISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EiEEclERKS9_ called 914 returned 100% blocks executed 100%
@@ -1181,10 +1181,10 @@ function _ZNKSt10_Select1stISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_tra
       914: 1156-block  0
 ------------------
 _ZNKSt10_Select1stISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEEclERKSB_:
-function _ZNKSt10_Select1stISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEEclERKSB_ called 2834 returned 100% blocks executed 100%
-     2834: 1155:      operator()(const _Pair& __x) const
-     2834: 1156:      { return __x.first; }
-     2834: 1156-block  0
+function _ZNKSt10_Select1stISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEEclERKSB_ called 2832 returned 100% blocks executed 100%
+     2832: 1155:      operator()(const _Pair& __x) const
+     2832: 1156:      { return __x.first; }
+     2832: 1156-block  0
 ------------------
         -: 1157:
         -: 1158:#if __cplusplus >= 201103L

@@ -100,36 +100,36 @@
         -:   96:  // Helper for the to_string / to_wstring functions.
         -:   97:  template<typename _String, typename _CharT = typename _String::value_type>
         -:   98:    _String
-function _ZN9__gnu_cxx12__to_xstringINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcEET_PFiPT0_mPKS8_P13__va_list_tagEmSB_z called 66 returned 100% blocks executed 70%
-       66:   99:    __to_xstring(int (*__convf) (_CharT*, std::size_t, const _CharT*,
+function _ZN9__gnu_cxx12__to_xstringINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcEET_PFiPT0_mPKS8_P13__va_list_tagEmSB_z called 78 returned 100% blocks executed 70%
+       78:   99:    __to_xstring(int (*__convf) (_CharT*, std::size_t, const _CharT*,
         -:  100:				 __builtin_va_list), std::size_t __n,
         -:  101:		 const _CharT* __fmt, ...)
         -:  102:    {
         -:  103:      // XXX Eventually the result should be constructed in-place in
         -:  104:      // the __cxx11 string, likely with the help of internal hooks.
-       66:  105:      _CharT* __s = static_cast<_CharT*>(__builtin_alloca(sizeof(_CharT)
+       78:  105:      _CharT* __s = static_cast<_CharT*>(__builtin_alloca(sizeof(_CharT)
         -:  106:							  * __n));
         -:  107:
         -:  108:      __builtin_va_list __args;
-       66:  109:      __builtin_va_start(__args, __fmt);
+       78:  109:      __builtin_va_start(__args, __fmt);
         -:  110:
-       66:  111:      const int __len = __convf(__s, __n, __fmt, __args);
-       66:  111-block  0
-call    0 returned 66
-branch  1 taken 66 (fallthrough)
+       78:  111:      const int __len = __convf(__s, __n, __fmt, __args);
+       78:  111-block  0
+call    0 returned 78
+branch  1 taken 78 (fallthrough)
 branch  2 taken 0 (throw)
         -:  112:
-       66:  113:      __builtin_va_end(__args);
+       78:  113:      __builtin_va_end(__args);
         -:  114:
-       66:  115:      return _String(__s, __s + __len);
-       66:  115-block  0
-call    0 returned 66
-call    1 returned 66
-branch  2 taken 66 (fallthrough)
+       78:  115:      return _String(__s, __s + __len);
+       78:  115-block  0
+call    0 returned 78
+call    1 returned 78
+branch  2 taken 78 (fallthrough)
 branch  3 taken 0 (throw)
-       66:  115-block  1
-call    4 returned 66
-       66:  115-block  2
+       78:  115-block  1
+call    4 returned 78
+       78:  115-block  2
     $$$$$:  115-block  3
 call    5 never executed
     $$$$$:  115-block  4

@@ -140,6 +140,7 @@ def main():
                 break
             else:
                 raise Exception("Invalid command!")
+            print("Operation successful")
         except Exception as ex:
             print("Error: " + str(ex))
 

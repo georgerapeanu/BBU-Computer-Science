@@ -4052,27 +4052,27 @@ call    0 returned 12
         -: 3766:  */
         -: 3767:  template<typename _IntType, typename _UniformRandomBitGenerator>
         -: 3768:    pair<_IntType, _IntType>
-function _ZSt22__gen_two_uniform_intsImRSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEESt4pairIT_S4_ES4_S4_OT0_ called 14 returned 100% blocks executed 78%
-       14: 3769:    __gen_two_uniform_ints(_IntType __b0, _IntType __b1,
+function _ZSt22__gen_two_uniform_intsImRSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEESt4pairIT_S4_ES4_S4_OT0_ called 17 returned 100% blocks executed 78%
+       17: 3769:    __gen_two_uniform_ints(_IntType __b0, _IntType __b1,
         -: 3770:			   _UniformRandomBitGenerator&& __g)
         -: 3771:    {
         -: 3772:      _IntType __x
-       14: 3773:	= uniform_int_distribution<_IntType>{0, (__b0 * __b1) - 1}(__g);
-       14: 3773-block  0
-call    0 returned 14
-call    1 returned 14
-branch  2 taken 14 (fallthrough)
+       17: 3773:	= uniform_int_distribution<_IntType>{0, (__b0 * __b1) - 1}(__g);
+       17: 3773-block  0
+call    0 returned 17
+call    1 returned 17
+branch  2 taken 17 (fallthrough)
 branch  3 taken 0 (throw)
     $$$$$: 3773-block  1
 call    4 never executed
-       14: 3774:      return std::make_pair(__x / __b1, __x % __b1);
-       14: 3774-block  0
-call    0 returned 14
-branch  1 taken 14 (fallthrough)
+       17: 3774:      return std::make_pair(__x / __b1, __x % __b1);
+       17: 3774-block  0
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
 branch  2 taken 0 (throw)
-       14: 3774-block  1
-       14: 3774-block  2
-       14: 3774-block  3
+       17: 3774-block  1
+       17: 3774-block  2
+       17: 3774-block  3
     $$$$$: 3774-block  4
         -: 3775:    }
         -: 3776:
@@ -4163,31 +4163,31 @@ call    5 returned 1
         -: 3834:	// using a single distribution invocation to produce swap positions
         -: 3835:	// for two successive elements at a time:
         -: 3836:
-       15: 3837:	while (__i != __last)
-       15: 3837-block  0
-call    0 returned 15
-branch  1 taken 14 (fallthrough)
+       18: 3837:	while (__i != __last)
+       18: 3837-block  0
+call    0 returned 18
+branch  1 taken 17 (fallthrough)
 branch  2 taken 1
         -: 3838:	{
-       14: 3839:	  const __uc_type __swap_range = __uc_type(__i - __first) + 1;
-       14: 3839-block  0
-call    0 returned 14
+       17: 3839:	  const __uc_type __swap_range = __uc_type(__i - __first) + 1;
+       17: 3839-block  0
+call    0 returned 17
         -: 3840:
         -: 3841:	  const pair<__uc_type, __uc_type> __pospos =
-       14: 3842:	    __gen_two_uniform_ints(__swap_range, __swap_range + 1, __g);
-call    0 returned 14
-branch  1 taken 14 (fallthrough)
+       17: 3842:	    __gen_two_uniform_ints(__swap_range, __swap_range + 1, __g);
+call    0 returned 17
+branch  1 taken 17 (fallthrough)
 branch  2 taken 0 (throw)
         -: 3843:
-       14: 3844:	  std::iter_swap(__i++, __first + __pospos.first);
-       14: 3844-block  0
-call    0 returned 14
-call    1 returned 14
-call    2 returned 14
-       14: 3845:	  std::iter_swap(__i++, __first + __pospos.second);
-call    0 returned 14
-call    1 returned 14
-call    2 returned 14
+       17: 3844:	  std::iter_swap(__i++, __first + __pospos.first);
+       17: 3844-block  0
+call    0 returned 17
+call    1 returned 17
+call    2 returned 17
+       17: 3845:	  std::iter_swap(__i++, __first + __pospos.second);
+call    0 returned 17
+call    1 returned 17
+call    2 returned 17
         -: 3846:	}
         -: 3847:
         1: 3848:	return;

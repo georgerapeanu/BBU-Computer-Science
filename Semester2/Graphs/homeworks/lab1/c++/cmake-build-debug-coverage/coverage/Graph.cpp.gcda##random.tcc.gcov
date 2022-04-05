@@ -425,10 +425,10 @@ branch  1 taken 1
       454:  407:	  _M_x[__k] = (_M_x[__k + __m] ^ (__y >> 1)
       227:  408:		       ^ ((__y & 0x01) ? __a : 0));
       227:  408-block  0
-branch  0 taken 114 (fallthrough)
-branch  1 taken 113
-      114:  408-block  1
-      113:  408-block  2
+branch  0 taken 103 (fallthrough)
+branch  1 taken 124
+      103:  408-block  1
+      124:  408-block  2
       227:  408-block  3
         -:  409:        }
         -:  410:
@@ -443,10 +443,10 @@ branch  1 taken 1
       792:  415:	  _M_x[__k] = (_M_x[__k + (__m - __n)] ^ (__y >> 1)
       396:  416:		       ^ ((__y & 0x01) ? __a : 0));
       396:  416-block  0
-branch  0 taken 189 (fallthrough)
-branch  1 taken 207
-      189:  416-block  1
-      207:  416-block  2
+branch  0 taken 201 (fallthrough)
+branch  1 taken 195
+      201:  416-block  1
+      195:  416-block  2
       396:  416-block  3
         -:  417:	}
         -:  418:
@@ -488,29 +488,29 @@ branch  1 taken 0
         -:  449:    typename
         -:  450:    mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
         -:  451:			    __s, __b, __t, __c, __l, __f>::result_type
-function _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv called 45 returned 100% blocks executed 100%
-       45:  452:    mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
+function _ZNSt23mersenne_twister_engineImLm32ELm624ELm397ELm31ELm2567483615ELm11ELm4294967295ELm7ELm2636928640ELm15ELm4022730752ELm18ELm1812433253EEclEv called 54 returned 100% blocks executed 100%
+       54:  452:    mersenne_twister_engine<_UIntType, __w, __n, __m, __r, __a, __u, __d,
         -:  453:			    __s, __b, __t, __c, __l, __f>::
         -:  454:    operator()()
         -:  455:    {
         -:  456:      // Reload the vector - cost is O(n) amortized over n calls.
-       45:  457:      if (_M_p >= state_size)
-       45:  457-block  0
+       54:  457:      if (_M_p >= state_size)
+       54:  457-block  0
 branch  0 taken 1 (fallthrough)
-branch  1 taken 44
+branch  1 taken 53
         1:  458:	_M_gen_rand();
         1:  458-block  0
 call    0 returned 1
         -:  459:
         -:  460:      // Calculate o(x(i)).
-       45:  461:      result_type __z = _M_x[_M_p++];
-       45:  462:      __z ^= (__z >> __u) & __d;
-       45:  463:      __z ^= (__z << __s) & __b;
-       45:  464:      __z ^= (__z << __t) & __c;
-       45:  465:      __z ^= (__z >> __l);
+       54:  461:      result_type __z = _M_x[_M_p++];
+       54:  462:      __z ^= (__z >> __u) & __d;
+       54:  463:      __z ^= (__z << __s) & __b;
+       54:  464:      __z ^= (__z << __t) & __c;
+       54:  465:      __z ^= (__z >> __l);
         -:  466:
-       45:  467:      return __z;
-       45:  467-block  0
+       54:  467:      return __z;
+       54:  467-block  0
         -:  468:    }
         -:  469:
         -:  470:  template<typename _UIntType, size_t __w,

@@ -207,18 +207,18 @@
         -:  203:  template<typename _CharT, typename _Traits, typename _Alloc>
         -:  204:    template<typename _InIterator>
         -:  205:      void
-    2492*:  206:      basic_string<_CharT, _Traits, _Alloc>::
+    2504*:  206:      basic_string<_CharT, _Traits, _Alloc>::
         -:  207:      _M_construct(_InIterator __beg, _InIterator __end,
         -:  208:		   std::forward_iterator_tag)
         -:  209:      {
         -:  210:	// NB: Not required, but considered best practice.
-    2492*:  211:	if (__gnu_cxx::__is_null_pointer(__beg) && __beg != __end)
+    2504*:  211:	if (__gnu_cxx::__is_null_pointer(__beg) && __beg != __end)
     #####:  212:	  std::__throw_logic_error(__N("basic_string::"
         -:  213:				       "_M_construct null not valid"));
         -:  214:
-    2492*:  215:	size_type __dnew = static_cast<size_type>(std::distance(__beg, __end));
+    2504*:  215:	size_type __dnew = static_cast<size_type>(std::distance(__beg, __end));
         -:  216:
-    2492*:  217:	if (__dnew > size_type(_S_local_capacity))
+    2504*:  217:	if (__dnew > size_type(_S_local_capacity))
         -:  218:	  {
       89*:  219:	    _M_data(_M_create(__dnew, size_type(0)));
       89*:  220:	    _M_capacity(__dnew);
@@ -226,51 +226,51 @@
         -:  222:
         -:  223:	// Check for out_of_range and length_error exceptions.
         -:  224:	__try
-    2492*:  225:	  { this->_S_copy_chars(_M_data(), __beg, __end); }
+    2504*:  225:	  { this->_S_copy_chars(_M_data(), __beg, __end); }
     =====:  226:	__catch(...)
         -:  227:	  {
     =====:  228:	    _M_dispose();
     =====:  229:	    __throw_exception_again;
         -:  230:	  }
         -:  231:
-    2492*:  232:	_M_set_length(__dnew);
-    2492*:  233:      }
+    2504*:  232:	_M_set_length(__dnew);
+    2504*:  233:      }
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tag:
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tag called 2492 returned 100% blocks executed 61%
-     2492:  206:      basic_string<_CharT, _Traits, _Alloc>::
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tag called 2504 returned 100% blocks executed 61%
+     2504:  206:      basic_string<_CharT, _Traits, _Alloc>::
         -:  207:      _M_construct(_InIterator __beg, _InIterator __end,
         -:  208:		   std::forward_iterator_tag)
         -:  209:      {
         -:  210:	// NB: Not required, but considered best practice.
-    2492*:  211:	if (__gnu_cxx::__is_null_pointer(__beg) && __beg != __end)
-     2492:  211-block  0
-call    0 returned 2492
+    2504*:  211:	if (__gnu_cxx::__is_null_pointer(__beg) && __beg != __end)
+     2504:  211-block  0
+call    0 returned 2504
 branch  1 taken 0 (fallthrough)
-branch  2 taken 2492
+branch  2 taken 2504
     %%%%%:  211-block  1
 branch  3 never executed
 branch  4 never executed
     %%%%%:  211-block  2
-     2492:  211-block  3
-     2492:  211-block  4
+     2504:  211-block  3
+     2504:  211-block  4
 branch  5 taken 0 (fallthrough)
-branch  6 taken 2492
+branch  6 taken 2504
     #####:  212:	  std::__throw_logic_error(__N("basic_string::"
     %%%%%:  212-block  0
 call    0 never executed
         -:  213:				       "_M_construct null not valid"));
         -:  214:
-     2492:  215:	size_type __dnew = static_cast<size_type>(std::distance(__beg, __end));
-     2492:  215-block  0
-call    0 returned 2492
-branch  1 taken 2492 (fallthrough)
+     2504:  215:	size_type __dnew = static_cast<size_type>(std::distance(__beg, __end));
+     2504:  215-block  0
+call    0 returned 2504
+branch  1 taken 2504 (fallthrough)
 branch  2 taken 0 (throw)
         -:  216:
-     2492:  217:	if (__dnew > size_type(_S_local_capacity))
-     2492:  217-block  0
+     2504:  217:	if (__dnew > size_type(_S_local_capacity))
+     2504:  217-block  0
 branch  0 taken 89 (fallthrough)
-branch  1 taken 2403
+branch  1 taken 2415
         -:  218:	  {
        89:  219:	    _M_data(_M_create(__dnew, size_type(0)));
        89:  219-block  0
@@ -290,13 +290,13 @@ branch  2 taken 0 (throw)
         -:  222:
         -:  223:	// Check for out_of_range and length_error exceptions.
         -:  224:	__try
-     2492:  225:	  { this->_S_copy_chars(_M_data(), __beg, __end); }
-     2492:  225-block  0
-call    0 returned 2492
-branch  1 taken 2492 (fallthrough)
+     2504:  225:	  { this->_S_copy_chars(_M_data(), __beg, __end); }
+     2504:  225-block  0
+call    0 returned 2504
+branch  1 taken 2504 (fallthrough)
 branch  2 taken 0 (throw)
-     2492:  225-block  1
-call    3 returned 2492
+     2504:  225-block  1
+call    3 returned 2504
     =====:  226:	__catch(...)
     $$$$$:  226-block  0
 call    0 never executed
@@ -312,12 +312,12 @@ branch  2 never executed
 call    0 never executed
         -:  230:	  }
         -:  231:
-     2492:  232:	_M_set_length(__dnew);
-call    0 returned 2492
-branch  1 taken 2492 (fallthrough)
+     2504:  232:	_M_set_length(__dnew);
+call    0 returned 2504
+branch  1 taken 2504 (fallthrough)
 branch  2 taken 0 (throw)
-     2492:  233:      }
-     2492:  233-block  0
+     2504:  233:      }
+     2504:  233-block  0
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag:
 function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPKcEEvT_S8_St20forward_iterator_tag called 0 returned 0% blocks executed 0%

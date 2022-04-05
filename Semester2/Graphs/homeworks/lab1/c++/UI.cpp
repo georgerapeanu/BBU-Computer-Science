@@ -185,9 +185,10 @@ int main() {
             }else{
                 throw GraphException("Invalid command");
             }
+            cout << "Operation successful" << endl;
         }
         catch (const GraphException &ex) {
-            cout << "Error: " << ex.what();
+            cout << "Error: " << ex.what() << endl;
         }
     }
     return 0;

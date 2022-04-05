@@ -124,7 +124,7 @@
         -:  120:  */
         -:  121:  template<typename _ForwardIterator1, typename _ForwardIterator2>
         -:  122:    inline void
-      29*:  123:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
+      35*:  123:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
         -:  124:    {
         -:  125:      // concept requirements
         -:  126:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
@@ -152,9 +152,9 @@
         -:  148:	&& __are_same<_ValueType2&, _ReferenceType2>::__value>::
         -:  149:	iter_swap(__a, __b);
         -:  150:#else
-      29*:  151:      swap(*__a, *__b);
+      35*:  151:      swap(*__a, *__b);
         -:  152:#endif
-      29*:  153:    }
+      35*:  153:    }
 ------------------
 _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESC_EvT_T0_:
 function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEESC_EvT_T0_ called 0 returned 0% blocks executed 0%
@@ -195,8 +195,8 @@ call    2 never executed
     #####:  153:    }
 ------------------
 _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_iEESt6vectorIS9_SaIS9_EEEESE_EvT_T0_:
-function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_iEESt6vectorIS9_SaIS9_EEEESE_EvT_T0_ called 29 returned 100% blocks executed 100%
-       29:  123:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
+function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_iEESt6vectorIS9_SaIS9_EEEESE_EvT_T0_ called 35 returned 100% blocks executed 100%
+       35:  123:    iter_swap(_ForwardIterator1 __a, _ForwardIterator2 __b)
         -:  124:    {
         -:  125:      // concept requirements
         -:  126:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
@@ -224,13 +224,13 @@ function _ZSt9iter_swapIN9__gnu_cxx17__normal_iteratorIPSt5tupleIJNSt7__cxx1112b
         -:  148:	&& __are_same<_ValueType2&, _ReferenceType2>::__value>::
         -:  149:	iter_swap(__a, __b);
         -:  150:#else
-       29:  151:      swap(*__a, *__b);
-       29:  151-block  0
-call    0 returned 29
-call    1 returned 29
-call    2 returned 29
+       35:  151:      swap(*__a, *__b);
+       35:  151-block  0
+call    0 returned 35
+call    1 returned 35
+call    2 returned 35
         -:  152:#endif
-       29:  153:    }
+       35:  153:    }
 ------------------
         -:  154:
         -:  155:  /**
@@ -276,20 +276,20 @@ call    2 returned 29
         -:  195:  template<typename _Tp>
         -:  196:    _GLIBCXX14_CONSTEXPR
         -:  197:    inline const _Tp&
-function _ZSt3minImERKT_S2_S2_ called 839 returned 100% blocks executed 75%
-      839:  198:    min(const _Tp& __a, const _Tp& __b)
+function _ZSt3minImERKT_S2_S2_ called 841 returned 100% blocks executed 75%
+      841:  198:    min(const _Tp& __a, const _Tp& __b)
         -:  199:    {
         -:  200:      // concept requirements
         -:  201:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  202:      //return __b < __a ? __b : __a;
-      839:  203:      if (__b < __a)
-      839:  203-block  0
+      841:  203:      if (__b < __a)
+      841:  203-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 839
+branch  1 taken 841
     #####:  204:	return __b;
     %%%%%:  204-block  0
-      839:  205:      return __a;
-      839:  205-block  0
+      841:  205:      return __a;
+      841:  205-block  0
         -:  206:    }
         -:  207:
         -:  208:  /**
@@ -306,20 +306,20 @@ branch  1 taken 839
         -:  219:  template<typename _Tp>
         -:  220:    _GLIBCXX14_CONSTEXPR
         -:  221:    inline const _Tp&
-function _ZSt3maxImERKT_S2_S2_ called 389 returned 100% blocks executed 100%
-      389:  222:    max(const _Tp& __a, const _Tp& __b)
+function _ZSt3maxImERKT_S2_S2_ called 390 returned 100% blocks executed 100%
+      390:  222:    max(const _Tp& __a, const _Tp& __b)
         -:  223:    {
         -:  224:      // concept requirements
         -:  225:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  226:      //return  __a < __b ? __b : __a;
-      389:  227:      if (__a < __b)
-      389:  227-block  0
-branch  0 taken 204 (fallthrough)
-branch  1 taken 185
-      204:  228:	return __b;
-      204:  228-block  0
-      185:  229:      return __a;
-      185:  229-block  0
+      390:  227:      if (__a < __b)
+      390:  227-block  0
+branch  0 taken 202 (fallthrough)
+branch  1 taken 188
+      202:  228:	return __b;
+      202:  228-block  0
+      188:  229:      return __a;
+      188:  229-block  0
         -:  230:    }
         -:  231:
         -:  232:  /**
@@ -370,16 +370,16 @@ branch  1 taken 185
         -:  277:  // remove the __normal_iterator wrapper. See copy, fill, ...
         -:  278:  template<typename _Iterator>
         -:  279:    inline _Iterator
-     2290:  280:    __niter_base(_Iterator __it)
+     2296:  280:    __niter_base(_Iterator __it)
         -:  281:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-     2290:  282:    { return __it; }
+     2296:  282:    { return __it; }
 ------------------
 _ZSt12__niter_baseIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEET_S9_:
-function _ZSt12__niter_baseIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEET_S9_ called 139 returned 100% blocks executed 100%
-      139:  280:    __niter_base(_Iterator __it)
+function _ZSt12__niter_baseIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEET_S9_ called 145 returned 100% blocks executed 100%
+      145:  280:    __niter_base(_Iterator __it)
         -:  281:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-      139:  282:    { return __it; }
-      139:  282-block  0
+      145:  282:    { return __it; }
+      145:  282-block  0
 ------------------
 _ZSt12__niter_baseIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_S7_:
 function _ZSt12__niter_baseIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEET_S7_ called 2151 returned 100% blocks executed 100%

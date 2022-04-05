@@ -167,22 +167,22 @@ call    0 returned 162
         -:  129:      constexpr _Head_base(_Head_base&&) = default;
         -:  130:
         -:  131:      template<typename _UHead>
-      763:  132:        constexpr _Head_base(_UHead&& __h)
-      763:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
+      895:  132:        constexpr _Head_base(_UHead&& __h)
+      895:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
 ------------------
 _ZNSt10_Head_baseILm2EiLb0EEC2IiEEOT_:
-function _ZNSt10_Head_baseILm2EiLb0EEC2IiEEOT_ called 182 returned 100% blocks executed 100%
-      182:  132:        constexpr _Head_base(_UHead&& __h)
-      182:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
-      182:  133-block  0
-call    0 returned 182
+function _ZNSt10_Head_baseILm2EiLb0EEC2IiEEOT_ called 220 returned 100% blocks executed 100%
+      220:  132:        constexpr _Head_base(_UHead&& __h)
+      220:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
+      220:  133-block  0
+call    0 returned 220
 ------------------
 _ZNSt10_Head_baseILm2EiLb0EEC2ImEEOT_:
-function _ZNSt10_Head_baseILm2EiLb0EEC2ImEEOT_ called 30 returned 100% blocks executed 100%
-       30:  132:        constexpr _Head_base(_UHead&& __h)
-       30:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
-       30:  133-block  0
-call    0 returned 30
+function _ZNSt10_Head_baseILm2EiLb0EEC2ImEEOT_ called 36 returned 100% blocks executed 100%
+       36:  132:        constexpr _Head_base(_UHead&& __h)
+       36:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
+       36:  133-block  0
+call    0 returned 36
 ------------------
 _ZNSt10_Head_baseILm2EiLb0EEC2IRiEEOT_:
 function _ZNSt10_Head_baseILm2EiLb0EEC2IRiEEOT_ called 23 returned 100% blocks executed 100%
@@ -192,12 +192,12 @@ function _ZNSt10_Head_baseILm2EiLb0EEC2IRiEEOT_ called 23 returned 100% blocks e
 call    0 returned 23
 ------------------
 _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_:
-function _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_ called 137 returned 100% blocks executed 100%
-      137:  132:        constexpr _Head_base(_UHead&& __h)
-      137:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
-      137:  133-block  0
-call    0 returned 137
-call    1 returned 137
+function _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_ called 181 returned 100% blocks executed 100%
+      181:  132:        constexpr _Head_base(_UHead&& __h)
+      181:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
+      181:  133-block  0
+call    0 returned 181
+call    1 returned 181
 ------------------
 _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IRS5_EEOT_:
 function _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IRS5_EEOT_ called 23 returned 100% blocks executed 100%
@@ -215,12 +215,12 @@ function _ZNSt10_Head_baseILm0EOSt4pairINSt7__cxx1112basic_stringIcSt11char_trai
 call    0 returned 208
 ------------------
 _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_:
-function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_ called 137 returned 100% blocks executed 100%
-      137:  132:        constexpr _Head_base(_UHead&& __h)
-      137:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
-      137:  133-block  0
-call    0 returned 137
-call    1 returned 137
+function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IS5_EEOT_ called 181 returned 100% blocks executed 100%
+      181:  132:        constexpr _Head_base(_UHead&& __h)
+      181:  133:	: _M_head_impl(std::forward<_UHead>(__h)) { }
+      181:  133-block  0
+call    0 returned 181
+call    1 returned 181
 ------------------
 _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IRS5_EEOT_:
 function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EEC2IRS5_EEOT_ called 23 returned 100% blocks executed 100%
@@ -256,7 +256,7 @@ call    1 returned 23
         -:  157:	: _M_head_impl(std::forward<_UHead>(__uhead), *__a._M_a) { }
         -:  158:
         -:  159:      static constexpr _Head&
-     2128:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
+     2278:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
 ------------------
 _ZNSt10_Head_baseILm0ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS8_:
 function _ZNSt10_Head_baseILm0ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS8_ called 400 returned 100% blocks executed 100%
@@ -269,19 +269,19 @@ function _ZNSt10_Head_baseILm0EOSt4pairINSt7__cxx1112basic_stringIcSt11char_trai
       208:  160-block  0
 ------------------
 _ZNSt10_Head_baseILm2EiLb0EE7_M_headERS0_:
-function _ZNSt10_Head_baseILm2EiLb0EE7_M_headERS0_ called 262 returned 100% blocks executed 100%
-      262:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
-      262:  160-block  0
+function _ZNSt10_Head_baseILm2EiLb0EE7_M_headERS0_ called 312 returned 100% blocks executed 100%
+      312:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
+      312:  160-block  0
 ------------------
 _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_:
-function _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_ called 629 returned 100% blocks executed 100%
-      629:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
-      629:  160-block  0
+function _ZNSt10_Head_baseILm1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_ called 679 returned 100% blocks executed 100%
+      679:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
+      679:  160-block  0
 ------------------
 _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_:
-function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_ called 629 returned 100% blocks executed 100%
-      629:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
-      629:  160-block  0
+function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEELb0EE7_M_headERS6_ called 679 returned 100% blocks executed 100%
+      679:  160:      _M_head(_Head_base& __b) noexcept { return __b._M_head_impl; }
+      679:  160-block  0
 ------------------
         -:  161:
         -:  162:      static constexpr const _Head&
@@ -317,36 +317,36 @@ function _ZNSt10_Head_baseILm0ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIc
         -:  192:      typedef _Head_base<_Idx, _Head> _Base;
         -:  193:
         -:  194:      static constexpr _Head&
-     1258:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
+     1358:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_headERS6_:
-function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_headERS6_ called 629 returned 100% blocks executed 100%
-      629:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
-      629:  195-block  0
-call    0 returned 629
+function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_headERS6_ called 679 returned 100% blocks executed 100%
+      679:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
+      679:  195-block  0
+call    0 returned 679
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_headERS6_:
-function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_headERS6_ called 629 returned 100% blocks executed 100%
-      629:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
-      629:  195-block  0
-call    0 returned 629
+function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_headERS6_ called 679 returned 100% blocks executed 100%
+      679:  195:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
+      679:  195-block  0
+call    0 returned 679
 ------------------
         -:  196:
         -:  197:      static constexpr const _Head&
         -:  198:      _M_head(const _Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
         -:  199:
         -:  200:      static constexpr _Inherited&
-      284:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
+      372:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_tailERS6_:
-function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_tailERS6_ called 142 returned 100% blocks executed 100%
-      142:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
-      142:  201-block  0
+function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_tailERS6_ called 186 returned 100% blocks executed 100%
+      186:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
+      186:  201-block  0
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_tailERS6_:
-function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_tailERS6_ called 142 returned 100% blocks executed 100%
-      142:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
-      142:  201-block  0
+function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_tailERS6_ called 186 returned 100% blocks executed 100%
+      186:  201:      _M_tail(_Tuple_impl& __t) noexcept { return __t; }
+      186:  201-block  0
 ------------------
         -:  202:
         -:  203:      static constexpr const _Inherited&
@@ -379,20 +379,20 @@ call    1 never executed
         -:  213:      template<typename _UHead, typename... _UTail, typename = typename
         -:  214:               enable_if<sizeof...(_Tail) == sizeof...(_UTail)>::type>
         -:  215:        explicit
-      106:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
+      118:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
         -:  217:	: _Inherited(std::forward<_UTail>(__tail)...),
-      106:  218:	  _Base(std::forward<_UHead>(__head)) { }
+      118:  218:	  _Base(std::forward<_UHead>(__head)) { }
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2IS5_JmEvEEOT_DpOT0_:
-function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2IS5_JmEvEEOT_DpOT0_ called 30 returned 100% blocks executed 100%
-       30:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
+function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2IS5_JmEvEEOT_DpOT0_ called 36 returned 100% blocks executed 100%
+       36:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
         -:  217:	: _Inherited(std::forward<_UTail>(__tail)...),
-       30:  218:	  _Base(std::forward<_UHead>(__head)) { }
-       30:  218-block  0
-call    0 returned 30
-call    1 returned 30
-call    2 returned 30
-call    3 returned 30
+       36:  218:	  _Base(std::forward<_UHead>(__head)) { }
+       36:  218-block  0
+call    0 returned 36
+call    1 returned 36
+call    2 returned 36
+call    3 returned 36
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2IRS5_JRiEvEEOT_DpOT0_:
 function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2IRS5_JRiEvEEOT_DpOT0_ called 23 returned 100% blocks executed 100%
@@ -406,16 +406,16 @@ call    2 returned 23
 call    3 returned 23
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IS5_JS5_mEvEEOT_DpOT0_:
-function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IS5_JS5_mEvEEOT_DpOT0_ called 30 returned 100% blocks executed 100%
-       30:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
+function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IS5_JS5_mEvEEOT_DpOT0_ called 36 returned 100% blocks executed 100%
+       36:  216:        constexpr _Tuple_impl(_UHead&& __head, _UTail&&... __tail)
         -:  217:	: _Inherited(std::forward<_UTail>(__tail)...),
-       30:  218:	  _Base(std::forward<_UHead>(__head)) { }
-       30:  218-block  0
-call    0 returned 30
-call    1 returned 30
-call    2 returned 30
-call    3 returned 30
-call    4 returned 30
+       36:  218:	  _Base(std::forward<_UHead>(__head)) { }
+       36:  218-block  0
+call    0 returned 36
+call    1 returned 36
+call    2 returned 36
+call    3 returned 36
+call    4 returned 36
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IRS5_JS8_RiEvEEOT_DpOT0_:
 function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IRS5_JS8_RiEvEEOT_DpOT0_ called 23 returned 100% blocks executed 88%
@@ -461,41 +461,41 @@ call    0 returned 162
         -:  224:      _Tuple_impl& operator=(const _Tuple_impl&) = delete;
         -:  225:
         -:  226:      constexpr
-      214:  227:      _Tuple_impl(_Tuple_impl&& __in)
+      290:  227:      _Tuple_impl(_Tuple_impl&& __in)
         -:  228:      noexcept(__and_<is_nothrow_move_constructible<_Head>,
         -:  229:	              is_nothrow_move_constructible<_Inherited>>::value)
-      214:  230:      : _Inherited(std::move(_M_tail(__in))),
-      428:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
+      290:  230:      : _Inherited(std::move(_M_tail(__in))),
+      580:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2EOS6_:
-function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2EOS6_ called 107 returned 100% blocks executed 100%
-      107:  227:      _Tuple_impl(_Tuple_impl&& __in)
+function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEEC2EOS6_ called 145 returned 100% blocks executed 100%
+      145:  227:      _Tuple_impl(_Tuple_impl&& __in)
         -:  228:      noexcept(__and_<is_nothrow_move_constructible<_Head>,
         -:  229:	              is_nothrow_move_constructible<_Inherited>>::value)
-      107:  230:      : _Inherited(std::move(_M_tail(__in))),
-call    0 returned 107
-      214:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
-      107:  231-block  0
-call    0 returned 107
-call    1 returned 107
-call    2 returned 107
-call    3 returned 107
-call    4 returned 107
+      145:  230:      : _Inherited(std::move(_M_tail(__in))),
+call    0 returned 145
+      290:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
+      145:  231-block  0
+call    0 returned 145
+call    1 returned 145
+call    2 returned 145
+call    3 returned 145
+call    4 returned 145
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_:
-function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_ called 107 returned 100% blocks executed 100%
-      107:  227:      _Tuple_impl(_Tuple_impl&& __in)
+function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_ called 145 returned 100% blocks executed 100%
+      145:  227:      _Tuple_impl(_Tuple_impl&& __in)
         -:  228:      noexcept(__and_<is_nothrow_move_constructible<_Head>,
         -:  229:	              is_nothrow_move_constructible<_Inherited>>::value)
-      107:  230:      : _Inherited(std::move(_M_tail(__in))),
-call    0 returned 107
-      214:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
-      107:  231-block  0
-call    0 returned 107
-call    1 returned 107
-call    2 returned 107
-call    3 returned 107
-call    4 returned 107
+      145:  230:      : _Inherited(std::move(_M_tail(__in))),
+call    0 returned 145
+      290:  231:	_Base(std::forward<_Head>(_M_head(__in))) { }
+      145:  231-block  0
+call    0 returned 145
+call    1 returned 145
+call    2 returned 145
+call    3 returned 145
+call    4 returned 145
 ------------------
         -:  232:
         -:  233:      template<typename... _UElements>
@@ -581,42 +581,42 @@ call    4 returned 107
         -:  313:
         -:  314:    protected:
         -:  315:      void
-       58:  316:      _M_swap(_Tuple_impl& __in)
+       70:  316:      _M_swap(_Tuple_impl& __in)
         -:  317:      {
         -:  318:	using std::swap;
-       58:  319:	swap(_M_head(*this), _M_head(__in));
-       58:  320:	_Inherited::_M_swap(_M_tail(__in));
-       58:  321:      }
+       70:  319:	swap(_M_head(*this), _M_head(__in));
+       70:  320:	_Inherited::_M_swap(_M_tail(__in));
+       70:  321:      }
 ------------------
 _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_swapERS6_:
-function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_swapERS6_ called 29 returned 100% blocks executed 100%
-       29:  316:      _M_swap(_Tuple_impl& __in)
+function _ZNSt11_Tuple_implILm1EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEiEE7_M_swapERS6_ called 35 returned 100% blocks executed 100%
+       35:  316:      _M_swap(_Tuple_impl& __in)
         -:  317:      {
         -:  318:	using std::swap;
-       29:  319:	swap(_M_head(*this), _M_head(__in));
-       29:  319-block  0
-call    0 returned 29
-call    1 returned 29
-call    2 returned 29
-       29:  320:	_Inherited::_M_swap(_M_tail(__in));
-call    0 returned 29
-call    1 returned 29
-       29:  321:      }
+       35:  319:	swap(_M_head(*this), _M_head(__in));
+       35:  319-block  0
+call    0 returned 35
+call    1 returned 35
+call    2 returned 35
+       35:  320:	_Inherited::_M_swap(_M_tail(__in));
+call    0 returned 35
+call    1 returned 35
+       35:  321:      }
 ------------------
 _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_swapERS6_:
-function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_swapERS6_ called 29 returned 100% blocks executed 100%
-       29:  316:      _M_swap(_Tuple_impl& __in)
+function _ZNSt11_Tuple_implILm0EJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE7_M_swapERS6_ called 35 returned 100% blocks executed 100%
+       35:  316:      _M_swap(_Tuple_impl& __in)
         -:  317:      {
         -:  318:	using std::swap;
-       29:  319:	swap(_M_head(*this), _M_head(__in));
-       29:  319-block  0
-call    0 returned 29
-call    1 returned 29
-call    2 returned 29
-       29:  320:	_Inherited::_M_swap(_M_tail(__in));
-call    0 returned 29
-call    1 returned 29
-       29:  321:      }
+       35:  319:	swap(_M_head(*this), _M_head(__in));
+       35:  319-block  0
+call    0 returned 35
+call    1 returned 35
+call    2 returned 35
+       35:  320:	_Inherited::_M_swap(_M_tail(__in));
+call    0 returned 35
+call    1 returned 35
+       35:  321:      }
 ------------------
         -:  322:    };
         -:  323:
@@ -630,7 +630,7 @@ call    1 returned 29
         -:  331:      typedef _Head_base<_Idx, _Head> _Base;
         -:  332:
         -:  333:      static constexpr _Head&
-      870:  334:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
+      920:  334:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
 ------------------
 _ZNSt11_Tuple_implILm0EJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE7_M_headERS8_:
 function _ZNSt11_Tuple_implILm0EJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEE7_M_headERS8_ called 400 returned 100% blocks executed 100%
@@ -645,10 +645,10 @@ function _ZNSt11_Tuple_implILm0EJOSt4pairINSt7__cxx1112basic_stringIcSt11char_tr
 call    0 returned 208
 ------------------
 _ZNSt11_Tuple_implILm2EJiEE7_M_headERS0_:
-function _ZNSt11_Tuple_implILm2EJiEE7_M_headERS0_ called 262 returned 100% blocks executed 100%
-      262:  334:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
-      262:  334-block  0
-call    0 returned 262
+function _ZNSt11_Tuple_implILm2EJiEE7_M_headERS0_ called 312 returned 100% blocks executed 100%
+      312:  334:      _M_head(_Tuple_impl& __t) noexcept { return _Base::_M_head(__t); }
+      312:  334-block  0
+call    0 returned 312
 ------------------
         -:  335:
         -:  336:      static constexpr const _Head&
@@ -669,16 +669,16 @@ call    0 returned 200
         -:  345:
         -:  346:      template<typename _UHead>
         -:  347:        explicit
-      157:  348:        constexpr _Tuple_impl(_UHead&& __head)
-      157:  349:	: _Base(std::forward<_UHead>(__head)) { }
+      163:  348:        constexpr _Tuple_impl(_UHead&& __head)
+      163:  349:	: _Base(std::forward<_UHead>(__head)) { }
 ------------------
 _ZNSt11_Tuple_implILm2EJiEEC2ImEEOT_:
-function _ZNSt11_Tuple_implILm2EJiEEC2ImEEOT_ called 30 returned 100% blocks executed 100%
-       30:  348:        constexpr _Tuple_impl(_UHead&& __head)
-       30:  349:	: _Base(std::forward<_UHead>(__head)) { }
-       30:  349-block  0
-call    0 returned 30
-call    1 returned 30
+function _ZNSt11_Tuple_implILm2EJiEEC2ImEEOT_ called 36 returned 100% blocks executed 100%
+       36:  348:        constexpr _Tuple_impl(_UHead&& __head)
+       36:  349:	: _Base(std::forward<_UHead>(__head)) { }
+       36:  349-block  0
+call    0 returned 36
+call    1 returned 36
 ------------------
 _ZNSt11_Tuple_implILm2EJiEEC2IRiEEOT_:
 function _ZNSt11_Tuple_implILm2EJiEEC2IRiEEOT_ called 23 returned 100% blocks executed 100%
@@ -704,19 +704,19 @@ call    1 returned 104
         -:  355:      _Tuple_impl& operator=(const _Tuple_impl&) = delete;
         -:  356:
         -:  357:      constexpr
-      411:  358:      _Tuple_impl(_Tuple_impl&& __in)
+      449:  358:      _Tuple_impl(_Tuple_impl&& __in)
         -:  359:      noexcept(is_nothrow_move_constructible<_Head>::value)
-      411:  360:      : _Base(std::forward<_Head>(_M_head(__in))) { }
+      449:  360:      : _Base(std::forward<_Head>(_M_head(__in))) { }
 ------------------
 _ZNSt11_Tuple_implILm2EJiEEC2EOS0_:
-function _ZNSt11_Tuple_implILm2EJiEEC2EOS0_ called 107 returned 100% blocks executed 100%
-      107:  358:      _Tuple_impl(_Tuple_impl&& __in)
+function _ZNSt11_Tuple_implILm2EJiEEC2EOS0_ called 145 returned 100% blocks executed 100%
+      145:  358:      _Tuple_impl(_Tuple_impl&& __in)
         -:  359:      noexcept(is_nothrow_move_constructible<_Head>::value)
-      107:  360:      : _Base(std::forward<_Head>(_M_head(__in))) { }
-      107:  360-block  0
-call    0 returned 107
-call    1 returned 107
-call    2 returned 107
+      145:  360:      : _Base(std::forward<_Head>(_M_head(__in))) { }
+      145:  360-block  0
+call    0 returned 145
+call    1 returned 145
+call    2 returned 145
 ------------------
 _ZNSt11_Tuple_implILm0EJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EOS8_:
 function _ZNSt11_Tuple_implILm0EJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EOS8_ called 200 returned 100% blocks executed 100%
@@ -804,16 +804,16 @@ call    2 returned 104
         -:  424:
         -:  425:    protected:
         -:  426:      void
-function _ZNSt11_Tuple_implILm2EJiEE7_M_swapERS0_ called 29 returned 100% blocks executed 100%
-       29:  427:      _M_swap(_Tuple_impl& __in)
+function _ZNSt11_Tuple_implILm2EJiEE7_M_swapERS0_ called 35 returned 100% blocks executed 100%
+       35:  427:      _M_swap(_Tuple_impl& __in)
         -:  428:      {
         -:  429:	using std::swap;
-       29:  430:	swap(_M_head(*this), _M_head(__in));
-       29:  430-block  0
-call    0 returned 29
-call    1 returned 29
-call    2 returned 29
-       29:  431:      }
+       35:  430:	swap(_M_head(*this), _M_head(__in));
+       35:  430-block  0
+call    0 returned 35
+call    1 returned 35
+call    2 returned 35
+       35:  431:      }
         -:  432:    };
         -:  433:
         -:  434:  // Concept utility functions, reused in conditionally-explicit
@@ -1014,8 +1014,8 @@ call    0 returned 200
         -:  623:                    _ImplicitlyMoveConvertibleTuple<_UElements...>()
         -:  624:                  && (sizeof...(_Elements) >= 1),
         -:  625:        bool>::type=true>
-      157:  626:        constexpr tuple(_UElements&&... __elements)
-      157:  627:        : _Inherited(std::forward<_UElements>(__elements)...) { }
+      163:  626:        constexpr tuple(_UElements&&... __elements)
+      163:  627:        : _Inherited(std::forward<_UElements>(__elements)...) { }
 ------------------
 _ZNSt5tupleIJOSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEEC2IJS7_ELb1EEEDpOT_:
 function _ZNSt5tupleIJOSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEEC2IJS7_ELb1EEEDpOT_ called 104 returned 100% blocks executed 100%
@@ -1026,14 +1026,14 @@ call    0 returned 104
 call    1 returned 104
 ------------------
 _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IJS5_S5_mELb1EEEDpOT_:
-function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IJS5_S5_mELb1EEEDpOT_ called 30 returned 100% blocks executed 100%
-       30:  626:        constexpr tuple(_UElements&&... __elements)
-       30:  627:        : _Inherited(std::forward<_UElements>(__elements)...) { }
-       30:  627-block  0
-call    0 returned 30
-call    1 returned 30
-call    2 returned 30
-call    3 returned 30
+function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IJS5_S5_mELb1EEEDpOT_ called 36 returned 100% blocks executed 100%
+       36:  626:        constexpr tuple(_UElements&&... __elements)
+       36:  627:        : _Inherited(std::forward<_UElements>(__elements)...) { }
+       36:  627-block  0
+call    0 returned 36
+call    1 returned 36
+call    2 returned 36
+call    3 returned 36
 ------------------
 _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IJRS5_S8_RiELb1EEEDpOT_:
 function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2IJRS5_S8_RiELb1EEEDpOT_ called 23 returned 100% blocks executed 100%
@@ -1062,7 +1062,7 @@ function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE
       162:  640-block  0
 call    0 returned 162
         -:  641:
-      411:  642:      constexpr tuple(tuple&&) = default;
+      449:  642:      constexpr tuple(tuple&&) = default;
 ------------------
 _ZNSt5tupleIJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EOS8_:
 function _ZNSt5tupleIJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2EOS8_ called 200 returned 100% blocks executed 100%
@@ -1071,10 +1071,10 @@ function _ZNSt5tupleIJRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEC2
 call    0 returned 200
 ------------------
 _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_:
-function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_ called 107 returned 100% blocks executed 100%
-      107:  642:      constexpr tuple(tuple&&) = default;
-      107:  642-block  0
-call    0 returned 107
+function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEEC2EOS6_ called 145 returned 100% blocks executed 100%
+      145:  642:      constexpr tuple(tuple&&) = default;
+      145:  642-block  0
+call    0 returned 145
 ------------------
 _ZNSt5tupleIJOSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEEC2EOS9_:
 function _ZNSt5tupleIJOSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EEEC2EOS9_ called 104 returned 100% blocks executed 100%
@@ -1295,12 +1295,12 @@ call    0 returned 104
         -:  853:
         -:  854:      // tuple swap
         -:  855:      void
-function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE4swapERS6_ called 29 returned 100% blocks executed 100%
-       29:  856:      swap(tuple& __in)
+function _ZNSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEE4swapERS6_ called 35 returned 100% blocks executed 100%
+       35:  856:      swap(tuple& __in)
         -:  857:      noexcept(__and_<__is_nothrow_swappable<_Elements>...>::value)
-       29:  858:      { _Inherited::_M_swap(__in); }
-       29:  858-block  0
-call    0 returned 29
+       35:  858:      { _Inherited::_M_swap(__in); }
+       35:  858-block  0
+call    0 returned 35
         -:  859:    };
         -:  860:
         -:  861:#if __cpp_deduction_guides >= 201606
@@ -2142,12 +2142,12 @@ call    1 returned 104
         -: 1621:#else
         -: 1622:    void
         -: 1623:#endif
-function _ZSt4swapIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEENSt9enable_ifIXsrSt6__and_IJDpSt14__is_swappableIT_EEE5valueEvE4typeERSt5tupleIJDpS9_EESI_ called 29 returned 100% blocks executed 100%
-       29: 1624:    swap(tuple<_Elements...>& __x, tuple<_Elements...>& __y)
+function _ZSt4swapIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iEENSt9enable_ifIXsrSt6__and_IJDpSt14__is_swappableIT_EEE5valueEvE4typeERSt5tupleIJDpS9_EESI_ called 35 returned 100% blocks executed 100%
+       35: 1624:    swap(tuple<_Elements...>& __x, tuple<_Elements...>& __y)
         -: 1625:    noexcept(noexcept(__x.swap(__y)))
-       29: 1626:    { __x.swap(__y); }
-       29: 1626-block  0
-call    0 returned 29
+       35: 1626:    { __x.swap(__y); }
+       35: 1626-block  0
+call    0 returned 35
         -: 1627:
         -: 1628:#if __cplusplus > 201402L || !defined(__STRICT_ANSI__) // c++1z or gnu++11
         -: 1629:  template<typename... _Elements>

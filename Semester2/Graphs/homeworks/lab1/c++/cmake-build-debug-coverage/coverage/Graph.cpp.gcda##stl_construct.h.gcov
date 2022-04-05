@@ -141,15 +141,15 @@ call    5 never executed
         -:   94:   */
         -:   95:  template<typename _Tp>
         -:   96:    inline void
-      823:   97:    _Destroy(_Tp* __pointer)
-      823:   98:    { __pointer->~_Tp(); }
+      829:   97:    _Destroy(_Tp* __pointer)
+      829:   98:    { __pointer->~_Tp(); }
 ------------------
 _ZSt8_DestroyISt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEEvPT_:
-function _ZSt8_DestroyISt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEEvPT_ called 122 returned 100% blocks executed 100%
-      122:   97:    _Destroy(_Tp* __pointer)
-      122:   98:    { __pointer->~_Tp(); }
-      122:   98-block  0
-call    0 returned 122
+function _ZSt8_DestroyISt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iEEEvPT_ called 128 returned 100% blocks executed 100%
+      128:   97:    _Destroy(_Tp* __pointer)
+      128:   98:    { __pointer->~_Tp(); }
+      128:   98-block  0
+call    0 returned 128
 ------------------
 _ZSt8_DestroyINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvPT_:
 function _ZSt8_DestroyINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEvPT_ called 701 returned 100% blocks executed 100%
@@ -164,24 +164,24 @@ call    0 returned 701
         -:  102:    {
         -:  103:      template<typename _ForwardIterator>
         -:  104:        static void
-     1749:  105:        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+     1755:  105:        __destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  106:	{
-     1749:  107:	  for (; __first != __last; ++__first)
-      823:  108:	    std::_Destroy(std::__addressof(*__first));
+     1755:  107:	  for (; __first != __last; ++__first)
+      829:  108:	    std::_Destroy(std::__addressof(*__first));
       926:  109:	}
 ------------------
 _ZNSt12_Destroy_auxILb0EE9__destroyIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_iEEEEvT_SB_:
 function _ZNSt12_Destroy_auxILb0EE9__destroyIPSt5tupleIJNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_iEEEEvT_SB_ called 33 returned 100% blocks executed 100%
-      155:  105:        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+      161:  105:        __destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  106:	{
-      155:  107:	  for (; __first != __last; ++__first)
-      155:  107-block  0
-branch  0 taken 122 (fallthrough)
+      161:  107:	  for (; __first != __last; ++__first)
+      161:  107-block  0
+branch  0 taken 128 (fallthrough)
 branch  1 taken 33
-      122:  108:	    std::_Destroy(std::__addressof(*__first));
-      122:  108-block  0
-call    0 returned 122
-call    1 returned 122
+      128:  108:	    std::_Destroy(std::__addressof(*__first));
+      128:  108-block  0
+call    0 returned 128
+call    1 returned 128
        33:  109:	}
 ------------------
 _ZNSt12_Destroy_auxILb0EE9__destroyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvT_S9_:

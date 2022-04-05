@@ -287,8 +287,8 @@ call    0 returned 1540
 ------------------
         -:  236:
         -:  237:      const _Val*
-     4094:  238:      _M_valptr() const
-     4094:  239:      { return _M_storage._M_ptr(); }
+     4092:  238:      _M_valptr() const
+     4092:  239:      { return _M_storage._M_ptr(); }
 ------------------
 _ZNKSt13_Rb_tree_nodeISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EiEE9_M_valptrEv:
 function _ZNKSt13_Rb_tree_nodeISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_EiEE9_M_valptrEv called 1046 returned 100% blocks executed 100%
@@ -298,11 +298,11 @@ function _ZNKSt13_Rb_tree_nodeISt4pairIKS0_INSt7__cxx1112basic_stringIcSt11char_
 call    0 returned 1046
 ------------------
 _ZNKSt13_Rb_tree_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEE9_M_valptrEv:
-function _ZNKSt13_Rb_tree_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEE9_M_valptrEv called 3048 returned 100% blocks executed 100%
-     3048:  238:      _M_valptr() const
-     3048:  239:      { return _M_storage._M_ptr(); }
-     3048:  239-block  0
-call    0 returned 3048
+function _ZNKSt13_Rb_tree_nodeISt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS6_SaIS6_EEEE9_M_valptrEv called 3046 returned 100% blocks executed 100%
+     3046:  238:      _M_valptr() const
+     3046:  239:      { return _M_storage._M_ptr(); }
+     3046:  239-block  0
+call    0 returned 3046
 ------------------
         -:  240:#endif
         -:  241:    };
@@ -1755,7 +1755,7 @@ function _ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4
         -:  769:      { return *__x->_M_valptr(); }
         -:  770:
         -:  771:      static const _Key&
-     3748:  772:      _S_key(_Const_Link_type __x)
+     3746:  772:      _S_key(_Const_Link_type __x)
         -:  773:      {
         -:  774:#if __cplusplus >= 201103L
         -:  775:	// If we're asking for the key we're presumably using the comparison
@@ -1773,7 +1773,7 @@ function _ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4
         -:  787:# endif // C++17
         -:  788:#endif // C++11
         -:  789:
-     3748:  790:	return _KeyOfValue()(*__x->_M_valptr());
+     3746:  790:	return _KeyOfValue()(*__x->_M_valptr());
         -:  791:      }
 ------------------
 _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES0_IKS7_iESt10_Select1stIS9_ESt4lessIS7_ESaIS9_EE6_S_keyEPKSt13_Rb_tree_nodeIS9_E:
@@ -1803,8 +1803,8 @@ call    1 returned 914
         -:  791:      }
 ------------------
 _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE6_S_keyEPKSt13_Rb_tree_nodeISB_E:
-function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE6_S_keyEPKSt13_Rb_tree_nodeISB_E called 2834 returned 100% blocks executed 100%
-     2834:  772:      _S_key(_Const_Link_type __x)
+function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE6_S_keyEPKSt13_Rb_tree_nodeISB_E called 2832 returned 100% blocks executed 100%
+     2832:  772:      _S_key(_Const_Link_type __x)
         -:  773:      {
         -:  774:#if __cplusplus >= 201103L
         -:  775:	// If we're asking for the key we're presumably using the comparison
@@ -1822,10 +1822,10 @@ function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4p
         -:  787:# endif // C++17
         -:  788:#endif // C++11
         -:  789:
-     2834:  790:	return _KeyOfValue()(*__x->_M_valptr());
-     2834:  790-block  0
-call    0 returned 2834
-call    1 returned 2834
+     2832:  790:	return _KeyOfValue()(*__x->_M_valptr());
+     2832:  790-block  0
+call    0 returned 2832
+call    1 returned 2832
         -:  791:      }
 ------------------
         -:  792:
@@ -1864,8 +1864,8 @@ function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4p
 ------------------
         -:  800:
         -:  801:      static _Link_type
-     1113:  802:      _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT
-     1113:  803:      { return static_cast<_Link_type>(__x->_M_right); }
+     1112:  802:      _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT
+     1112:  803:      { return static_cast<_Link_type>(__x->_M_right); }
 ------------------
 _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES0_IKS7_iESt10_Select1stIS9_ESt4lessIS7_ESaIS9_EE8_S_rightEPSt18_Rb_tree_node_base:
 function _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES0_IKS7_iESt10_Select1stIS9_ESt4lessIS7_ESaIS9_EE8_S_rightEPSt18_Rb_tree_node_base called 309 returned 100% blocks executed 100%
@@ -1874,15 +1874,15 @@ function _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaI
       309:  803-block  0
 ------------------
 _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPSt18_Rb_tree_node_base:
-function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPSt18_Rb_tree_node_base called 804 returned 100% blocks executed 100%
-      804:  802:      _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT
-      804:  803:      { return static_cast<_Link_type>(__x->_M_right); }
-      804:  803-block  0
+function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPSt18_Rb_tree_node_base called 803 returned 100% blocks executed 100%
+      803:  802:      _S_right(_Base_ptr __x) _GLIBCXX_NOEXCEPT
+      803:  803:      { return static_cast<_Link_type>(__x->_M_right); }
+      803:  803-block  0
 ------------------
         -:  804:
         -:  805:      static _Const_Link_type
-      531:  806:      _S_right(_Const_Base_ptr __x) _GLIBCXX_NOEXCEPT
-      531:  807:      { return static_cast<_Const_Link_type>(__x->_M_right); }
+      530:  806:      _S_right(_Const_Base_ptr __x) _GLIBCXX_NOEXCEPT
+      530:  807:      { return static_cast<_Const_Link_type>(__x->_M_right); }
 ------------------
 _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES0_IKS7_iESt10_Select1stIS9_ESt4lessIS7_ESaIS9_EE8_S_rightEPKSt18_Rb_tree_node_base:
 function _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES0_IKS7_iESt10_Select1stIS9_ESt4lessIS7_ESaIS9_EE8_S_rightEPKSt18_Rb_tree_node_base called 185 returned 100% blocks executed 100%
@@ -1891,10 +1891,10 @@ function _ZNSt8_Rb_treeISt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaI
       185:  807-block  0
 ------------------
 _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPKSt18_Rb_tree_node_base:
-function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPKSt18_Rb_tree_node_base called 346 returned 100% blocks executed 100%
-      346:  806:      _S_right(_Const_Base_ptr __x) _GLIBCXX_NOEXCEPT
-      346:  807:      { return static_cast<_Const_Link_type>(__x->_M_right); }
-      346:  807-block  0
+function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_S_rightEPKSt18_Rb_tree_node_base called 345 returned 100% blocks executed 100%
+      345:  806:      _S_right(_Const_Base_ptr __x) _GLIBCXX_NOEXCEPT
+      345:  807:      { return static_cast<_Const_Link_type>(__x->_M_right); }
+      345:  807-block  0
 ------------------
         -:  808:
         -:  809:      static const_reference
@@ -3627,15 +3627,15 @@ call    0 returned 320
         -: 1926:	   typename _Compare, typename _Alloc>
         -: 1927:    typename _Rb_tree<_Key, _Val, _KeyOfValue,
         -: 1928:		      _Compare, _Alloc>::iterator
-     1841: 1929:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
+     1840: 1929:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
         -: 1930:    _M_lower_bound(_Link_type __x, _Base_ptr __y,
         -: 1931:		   const _Key& __k)
         -: 1932:    {
-     1841: 1933:      while (__x != 0)
-     1168: 1934:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
+     1840: 1933:      while (__x != 0)
+     1167: 1934:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
       596: 1935:	  __y = __x, __x = _S_left(__x);
         -: 1936:	else
-      572: 1937:	  __x = _S_right(__x);
+      571: 1937:	  __x = _S_right(__x);
       673: 1938:      return iterator(__y);
         -: 1939:    }
 ------------------
@@ -3670,28 +3670,28 @@ call    0 returned 139
 ------------------
 _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE14_M_lower_boundEPSt13_Rb_tree_nodeISB_EPSt18_Rb_tree_node_baseRS7_:
 function _ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE14_M_lower_boundEPSt13_Rb_tree_nodeISB_EPSt18_Rb_tree_node_baseRS7_ called 534 returned 100% blocks executed 100%
-     1507: 1929:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
+     1506: 1929:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
         -: 1930:    _M_lower_bound(_Link_type __x, _Base_ptr __y,
         -: 1931:		   const _Key& __k)
         -: 1932:    {
-     1507: 1933:      while (__x != 0)
-     1507: 1933-block  0
-branch  0 taken 973 (fallthrough)
+     1506: 1933:      while (__x != 0)
+     1506: 1933-block  0
+branch  0 taken 972 (fallthrough)
 branch  1 taken 534
-      973: 1933-block  1
-      973: 1934:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
-      973: 1934-block  0
-call    0 returned 973
-call    1 returned 973
+      972: 1933-block  1
+      972: 1934:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
+      972: 1934-block  0
+call    0 returned 972
+call    1 returned 972
 branch  2 taken 511 (fallthrough)
-branch  3 taken 462
+branch  3 taken 461
       511: 1935:	  __y = __x, __x = _S_left(__x);
       511: 1935-block  0
 call    0 returned 511
         -: 1936:	else
-      462: 1937:	  __x = _S_right(__x);
-      462: 1937-block  0
-call    0 returned 462
+      461: 1937:	  __x = _S_right(__x);
+      461: 1937-block  0
+call    0 returned 461
       534: 1938:      return iterator(__y);
       534: 1938-block  0
 call    0 returned 534
@@ -3702,15 +3702,15 @@ call    0 returned 534
         -: 1942:	   typename _Compare, typename _Alloc>
         -: 1943:    typename _Rb_tree<_Key, _Val, _KeyOfValue,
         -: 1944:		      _Compare, _Alloc>::const_iterator
-     1733: 1945:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
+     1732: 1945:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
         -: 1946:    _M_lower_bound(_Const_Link_type __x, _Const_Base_ptr __y,
         -: 1947:		   const _Key& __k) const
         -: 1948:    {
-     1733: 1949:      while (__x != 0)
-     1165: 1950:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
+     1732: 1949:      while (__x != 0)
+     1164: 1950:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
       700: 1951:	  __y = __x, __x = _S_left(__x);
         -: 1952:	else
-      465: 1953:	  __x = _S_right(__x);
+      464: 1953:	  __x = _S_right(__x);
       568: 1954:      return const_iterator(__y);
         -: 1955:    }
 ------------------
@@ -3745,28 +3745,28 @@ call    0 returned 182
 ------------------
 _ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE14_M_lower_boundEPKSt13_Rb_tree_nodeISB_EPKSt18_Rb_tree_node_baseRS7_:
 function _ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE14_M_lower_boundEPKSt13_Rb_tree_nodeISB_EPKSt18_Rb_tree_node_baseRS7_ called 386 returned 100% blocks executed 100%
-     1235: 1945:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
+     1234: 1945:    _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>::
         -: 1946:    _M_lower_bound(_Const_Link_type __x, _Const_Base_ptr __y,
         -: 1947:		   const _Key& __k) const
         -: 1948:    {
-     1235: 1949:      while (__x != 0)
-     1235: 1949-block  0
-branch  0 taken 849 (fallthrough)
+     1234: 1949:      while (__x != 0)
+     1234: 1949-block  0
+branch  0 taken 848 (fallthrough)
 branch  1 taken 386
-      849: 1949-block  1
-      849: 1950:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
-      849: 1950-block  0
-call    0 returned 849
-call    1 returned 849
+      848: 1949-block  1
+      848: 1950:	if (!_M_impl._M_key_compare(_S_key(__x), __k))
+      848: 1950-block  0
+call    0 returned 848
+call    1 returned 848
 branch  2 taken 547 (fallthrough)
-branch  3 taken 302
+branch  3 taken 301
       547: 1951:	  __y = __x, __x = _S_left(__x);
       547: 1951-block  0
 call    0 returned 547
         -: 1952:	else
-      302: 1953:	  __x = _S_right(__x);
-      302: 1953-block  0
-call    0 returned 302
+      301: 1953:	  __x = _S_right(__x);
+      301: 1953-block  0
+call    0 returned 301
       386: 1954:      return const_iterator(__y);
       386: 1954-block  0
 call    0 returned 386
