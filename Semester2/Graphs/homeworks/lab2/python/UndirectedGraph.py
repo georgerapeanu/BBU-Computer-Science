@@ -391,6 +391,7 @@ def get_connected_components(graph):
         """ This function is to be used only in the get_connected_components function
             It implements a dfs, that adds to the supplied component the new vertices and edges
             It also needs a visited dictionary, for it to keep track of what has been visited so far
+            It implements dfs in a non-recursive way
         :param vertex: the current vertex
         :type vertex: str
         :param component: the component in which to save data
@@ -399,13 +400,17 @@ def get_connected_components(graph):
         :type visited: dict
         :return: None
         """
-        visited[vertex] = True
-        component.add_vertex(vertex)
-        for neighbor in graph.parse_adjacent_edges(vertex):
-            if neighbor not in visited:
-                dfs(neighbor, component, visited)
-            if vertex <= neighbor:
-                component.add_edge(vertex, neighbor, graph.get_edge_cost(vertex, neighbor))
+        dfs_stack = [vertex]
+        while len(dfs_stack) != 0:
+            vertex = dfs_stack.pop()
+            if vertex not in visited:
+                visited[vertex] = True
+                component.add_vertex(vertex)
+                for neighbor in graph.parse_adjacent_edges(vertex):
+                    if neighbor not in visited:
+                        dfs_stack.append(neighbor)
+                    else:
+                        component.add_edge(vertex, neighbor, graph.get_edge_cost(vertex, neighbor))
 
     ans = []
     visited = {}
