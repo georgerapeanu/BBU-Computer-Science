@@ -1,0 +1,112 @@
+\begin{sphinxtheindex}
+\let\bigletter\sphinxstyleindexlettergroup
+\let\spxpagem \sphinxstyleindexpagemain
+\let\spxentry \sphinxstyleindexentry
+\let\spxextra \sphinxstyleindexextra
+
+  \bigletter A
+  \item \spxentry{add\_edge()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{1}
+  \item \spxentry{add\_vertex()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{2}
+
+  \indexspace
+  \bigletter C
+  \item \spxentry{copy()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{2}
+
+  \indexspace
+  \bigletter D
+  \item \spxentry{display\_edges()}\spxextra{in module UI}, \hyperpage{1}
+  \item \spxentry{display\_graph()}\spxextra{in module UI}, \hyperpage{1}
+  \item \spxentry{display\_vertices()}\spxextra{in module UI}, \hyperpage{1}
+
+  \indexspace
+  \bigletter G
+  \item \spxentry{get\_connected\_components()}\spxextra{in module UndirectedGraph}, \hyperpage{3}
+  \item \spxentry{get\_degree()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{2}
+  \item \spxentry{get\_edge\_cost()}\spxextra{UndirectedGraph.UndirectedGraph method}, 
+		\hyperpage{2}
+
+  \indexspace
+  \bigletter H
+  \item \spxentry{has\_vertex()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{2}
+
+  \indexspace
+  \bigletter I
+  \item \spxentry{is\_edge()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{2}
+
+  \indexspace
+  \bigletter M
+  \item \spxentry{main()}\spxextra{in module UI}, \hyperpage{1}
+  \item \spxentry{modify\_edge\_cost()}\spxextra{UndirectedGraph.UndirectedGraph method}, 
+		\hyperpage{2}
+
+  \indexspace
+  \bigletter P
+  \item \spxentry{parse\_adjacent\_edges()}\spxextra{UndirectedGraph.UndirectedGraph method}, 
+		\hyperpage{3}
+  \item \spxentry{parse\_vertices()}\spxextra{UndirectedGraph.UndirectedGraph method}, 
+		\hyperpage{3}
+
+  \indexspace
+  \bigletter R
+  \item \spxentry{random\_graph()}\spxextra{in module UndirectedGraph}, \hyperpage{3}
+  \item \spxentry{read\_graph()}\spxextra{in module UndirectedGraph}, \hyperpage{3}
+  \item \spxentry{remove\_edge()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{3}
+  \item \spxentry{remove\_vertex()}\spxextra{UndirectedGraph.UndirectedGraph method}, \hyperpage{3}
+
+  \indexspace
+  \bigletter S
+  \item \spxentry{setUp()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+
+  \indexspace
+  \bigletter T
+  \item \spxentry{test\_add\_edge()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_add\_vertex()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_constructor()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_copy()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_eq()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_get\_connected\_components()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_get\_degree()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_get\_edge\_cost()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_has\_vertex()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_is\_edge()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_modify\_edge\_cost()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_parse\_adjacent\_edges()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_parse\_vertices()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_random\_graph()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_read\_graph()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_remove\_edge()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{4}
+  \item \spxentry{test\_remove\_vertex()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{5}
+  \item \spxentry{test\_write\_graph()}\spxextra{UndirectedGraphTests.UndirectedGraphTests method}, 
+		\hyperpage{5}
+
+  \indexspace
+  \bigletter U
+  \item \spxentry{UI}\spxextra{module}, \hyperpage{1}
+  \item \spxentry{UndirectedGraph}\spxextra{class in UndirectedGraph}, \hyperpage{1}
+  \item \spxentry{UndirectedGraph}\spxextra{module}, \hyperpage{1}
+  \item \spxentry{UndirectedGraphTests}\spxextra{class in UndirectedGraphTests}, \hyperpage{4}
+  \item \spxentry{UndirectedGraphTests}\spxextra{module}, \hyperpage{4}
+
+  \indexspace
+  \bigletter W
+  \item \spxentry{write\_graph()}\spxextra{in module UndirectedGraph}, \hyperpage{4}
+
+\end{sphinxtheindex}

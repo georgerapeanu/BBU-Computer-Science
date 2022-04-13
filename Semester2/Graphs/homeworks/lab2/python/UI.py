@@ -63,7 +63,7 @@ def main():
         "^ *read +graph +[^ ]+ *$",
         "^ *write +graph +[^ ]+ *$",
         "^ *random +graph +[^ ]+ +[^ ]+ *$",
-        "^ *get +connected +components *$",
+        "^ *print +connected +components *$",
         "^ *help *$",
         "^ *exit *$"
     ]
@@ -96,7 +96,7 @@ def main():
             "\twrites the graph to file",
             "random graph [n] [m]",
             "\tgenerates a random graph with n vertices and m edges",
-            "get connected components",
+            "print connected components",
             "\tprints all connected components from a graph",
             "help",
             "exit"
