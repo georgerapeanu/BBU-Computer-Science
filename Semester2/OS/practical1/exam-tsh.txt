@@ -1,0 +1,10 @@
+Write a shell script that receives a list of strings as commnad line
+arguments.
+The script will display all the hidden file inside all directories given
+as arguments that have the read pesmission for group set.
+The script will also display the smallest number received as a command line
+argument.
+All input data must be validated.
+Apropriate messages will be displayed on the console in the case of invalid
+data or unexpected events.
+
