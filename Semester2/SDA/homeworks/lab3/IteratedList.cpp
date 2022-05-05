@@ -11,6 +11,7 @@ IteratedList::IteratedList() {
   free_head = 0;
   next[0] = -1;
   elems[0] = NULL_TELEM; 
+  __size = 0;
 }///BC: theta(1), WC: theta(1), TC: theta(1)
 
 void IteratedList::change_capacity(int new_capacity){
@@ -42,6 +43,8 @@ int IteratedList::allocate(){
   int tmp = free_head;
   free_head = next[free_head];
 
+  __size++;
+
   return tmp;
 }///BC: theta(1), WC: theta(capacity), TC: O(capacity)
 
@@ -49,27 +52,23 @@ void IteratedList::deallocate(int node){
   next[node] = free_head;
   elems[node] = NULL_TELEM;
   free_head = node;
+  __size--;
 }///BC: theta(1), WC: theta(1), TC: theta(1)
 
 
 int IteratedList::size() const {
-	int answer = 0;
-
-  for(int node = head;node != -1;node = next[node]){
-    answer++;
-  }
-  return answer;
-}///BC: theta(size), WC: theta(size), TC: theta(size)
+  return __size;
+}///BC: theta(1), WC: theta(1), TC: theta(1)
 
 bool IteratedList::isEmpty() const {
 	return (head == -1);
 }///BC: theta(1), WC: theta(1), TC: theta(1)
 
-ListIterator IteratedList::first() const {
+ListIterator IteratedList::first(){
 	return ListIterator(*this);
 }
 
-TElem IteratedList::getElement(ListIterator pos) const {
+TElem IteratedList::getElement(ListIterator pos){
   return pos.getCurrent();
 }///BC: theta(1), WC: theta(1), TC: theta(1)
 
@@ -100,7 +99,7 @@ TElem IteratedList::remove(ListIterator& pos) {
   throw std::exception();///not theoretically reachable
 }///BC: theta(1), WC: theta(size), TC: O(size)
 
-ListIterator IteratedList::search(TElem e) const{
+ListIterator IteratedList::search(TElem e){
   ListIterator node(*this);
 	for(; node.valid(); node.next()){
     if(node.getCurrent() == e){

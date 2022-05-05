@@ -2,7 +2,7 @@
 #include "IteratedList.h"
 #include <exception>
 
-ListIterator::ListIterator(const IteratedList& list) : list(list) {
+ListIterator::ListIterator(IteratedList& list) : list(list) {
   index = list.head;
 }///BC: theta(1), WC: theta(1), TC: theta(1)
 
@@ -28,3 +28,10 @@ TElem ListIterator::getCurrent() const {
    
   return this->list.elems[this->index];
 }///BC: theta(1), WC: theta(1), TC: theta(1)
+
+TElem ListIterator::remove() {
+  if(this->index == -1){
+    throw std::exception();
+  }
+  return this->list.remove(*this);
+}///BC: theta(1), WC: theta(list size), TC: o(list size)

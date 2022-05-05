@@ -11,6 +11,7 @@ private:
   int* next;
   TElem* elems;
   int capacity;
+  int __size;
 
   int head;
   int free_head;
@@ -39,11 +40,11 @@ public:
 	bool isEmpty() const;
 
 	// returns the first position from the list
-	ListIterator first() const;
+	ListIterator first() ;
 
 	// returns the element from the given position
 	//throws an exception if the position is not valid
-	TElem getElement(ListIterator pos) const;
+	TElem getElement(ListIterator pos);
 
 	// changes the element from the current position to the given one.
 	//returns the old value from the position
@@ -69,7 +70,7 @@ public:
 
 	// searches for the first occurrance of an element 
 	//returns an iterator that points to the element, if it appear in the list, or an invalid iterator if the element is not in the list
-	ListIterator search(TElem e) const;
+	ListIterator search(TElem e);
 
 	//destructor
 

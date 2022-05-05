@@ -388,8 +388,10 @@ def random_graph(n, m):
 
     return graph
 
+
 def floyd_warshall(graph, u, v):
     """ This function returns a tuple containing on the first position the smallest cost, and on the second position the walk from u to v which achieves this cost. Returns (inf,[]) if there is no walk
+
     :param graph: the graph
     :type graph: Graph
     :param u: the first node
@@ -423,6 +425,13 @@ def floyd_warshall(graph, u, v):
                 if dist[i][j] > dist[i][vertex] + dist[vertex][j]:
                     dist[i][j] = dist[i][vertex] + dist[vertex][j]
                     previous[i][j] = previous[vertex][j]
+        print(f'Vertex {vertex}')
+        print('Previous is ')
+        for node in previous.keys():
+            print(previous[node])
+        print('Dist is ')
+        for node in dist.keys():
+            print(dist[node])
 
     if dist[u][v] == inf:
         return inf, []

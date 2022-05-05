@@ -396,11 +396,28 @@ void testRemove() {
 	
 }
 
+void testRemove2(){
+  cout << "Test remove 2" << endl;
+  IteratedList l;
+  for(int i = 0;i < 100;i++){
+    l.addToEnd(i);
+  }
+
+  ListIterator it = l.first();
+
+  int tmp = 0;
+  while(it.valid()){
+    assert(it.remove() == tmp);
+    tmp++;
+  }
+}
+
 void testAllExtended() {
 	testCreate();
 	testAdd();
 	testSetRemoveSearch();
 	testRemove();
+  testRemove2();
 	testMixExtended();
 	testQuantity();
 }

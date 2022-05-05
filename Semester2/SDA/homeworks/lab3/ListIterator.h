@@ -11,14 +11,16 @@ private:
   int index;
 
 	//DO NOT CHANGE THIS PART
-	const IteratedList& list;
-	ListIterator(const IteratedList& list);
+	IteratedList& list;
+	ListIterator(IteratedList& list);
 
 public:
 	void first();
 	void next();
 	bool valid() const;
-    TElem getCurrent() const;
+  TElem getCurrent() const;
+
+  TElem remove();
 };
 
 
