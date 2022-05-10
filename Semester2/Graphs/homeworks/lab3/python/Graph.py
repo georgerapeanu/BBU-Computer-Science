@@ -18,6 +18,8 @@ class Graph:
         self.__nin = {}
         self.__nout = {}
         self.__costs = {}
+        self._last_dist = None
+        self._last_prev = None
 
         if not isinstance(vertices, list) or not isinstance(edges, list):
             raise Exception("Arguments do not have the required type")
@@ -145,6 +147,8 @@ class Graph:
         if type(z) != int:
             raise Exception("Cost isn't int")
         self.__costs[(x, y)] = z
+        self._last_dist = None
+        self._last_prev = None
 
     def copy(self):
         """ This function retrieves a copy of the current graph
@@ -169,6 +173,8 @@ class Graph:
 
         self.__nin[x] = []
         self.__nout[x] = []
+        self._last_dist = None
+        self._last_prev = None
 
     def remove_vertex(self, x):
         """ This function removes the vertex x from the graph
@@ -190,6 +196,8 @@ class Graph:
 
         del self.__nout[x]
         del self.__nin[x]
+        self._last_dist = None
+        self._last_prev = None
 
     def add_edge(self, x, y, z):
         """ This function adds the edge from x to y to the graph
@@ -216,6 +224,8 @@ class Graph:
         self.__nin[y].append(x)
         self.__nout[x].append(y)
         self.__costs[(x, y)] = z
+        self._last_dist = None
+        self._last_prev = None
 
     def remove_edge(self, x, y):
         """ This function removes the edge from x to y from the graph
@@ -233,6 +243,8 @@ class Graph:
         self.__nin[y].remove(x)
         self.__nout[x].remove(y)
         del self.__costs[(x, y)]
+        self._last_dist = None
+        self._last_prev = None
 
     def __eq__(self, other):
         """ This function return True if two graphs are the same, False otherwise
@@ -318,6 +330,7 @@ def read_graph(filename):
                 if len(line_data) != 3:
                     raise Exception("invalid format")
                 edges.append((line_data[0], line_data[1], int(line_data[2])))
+
     return Graph(vertices, edges)
 
 
@@ -400,40 +413,43 @@ def floyd_warshall(graph, u, v):
     :type v: str
     :return: tuple
     """
-    previous = {}
-    dist = {}
-    for vertex in graph.parse_vertices():
-        dist[vertex] = {}
-        previous[vertex] = {}
-        for vertex2 in graph.parse_vertices():
-            dist[vertex][vertex2] = inf
-            previous[vertex][vertex2] = 0
+    if graph._last_prev is None:
+        previous = {}
+        dist = {}
+        for vertex in graph.parse_vertices():
+            dist[vertex] = {}
+            previous[vertex] = {}
+            for vertex2 in graph.parse_vertices():
+                dist[vertex][vertex2] = inf
+                previous[vertex][vertex2] = 0
 
-    for vertex in graph.parse_vertices():
-        dist[vertex][vertex] = 0
-        for neighbor in graph.parse_outbound_edges(vertex):
-            previous[vertex][neighbor] = vertex
-            dist[vertex][neighbor] = graph.get_edge_cost(vertex, neighbor)
+        for vertex in graph.parse_vertices():
+            dist[vertex][vertex] = 0
+            for neighbor in graph.parse_outbound_edges(vertex):
+                previous[vertex][neighbor] = vertex
+                dist[vertex][neighbor] = graph.get_edge_cost(vertex, neighbor)
 
-    for vertex in graph.parse_vertices():
-        for i in graph.parse_vertices():
-            if i == vertex:
-                continue
-            for j in graph.parse_vertices():
-                if i == j or vertex == j:
+        for vertex in graph.parse_vertices():
+            for i in graph.parse_vertices():
+                if i == vertex:
                     continue
-                if dist[i][j] > dist[i][vertex] + dist[vertex][j]:
-                    dist[i][j] = dist[i][vertex] + dist[vertex][j]
-                    previous[i][j] = previous[vertex][j]
-        print(f'Vertex {vertex}')
-        print('Previous is ')
-        for node in previous.keys():
-            print(previous[node])
-        print('Dist is ')
-        for node in dist.keys():
-            print(dist[node])
+                for j in graph.parse_vertices():
+                    if i == j or vertex == j:
+                        continue
+                    if dist[i][j] > dist[i][vertex] + dist[vertex][j]:
+                        dist[i][j] = dist[i][vertex] + dist[vertex][j]
+                        previous[i][j] = previous[vertex][j]
+            print(f'Vertex {vertex}')
+            print('Previous is ')
+            for node in previous.keys():
+                print(previous[node])
+            print('Dist is ')
+            for node in dist.keys():
+                print(dist[node])
+        graph._last_dist = dist
+        graph._last_prev = previous
 
-    if dist[u][v] == inf:
+    if graph._last_dist[u][v] == inf:
         return inf, []
 
     walk = []
@@ -441,7 +457,7 @@ def floyd_warshall(graph, u, v):
     node = v
     while u != node:
         walk.append(node)
-        node = previous[u][node]
+        node = graph._last_prev[u][node]
     walk.append(u)
 
-    return dist[u][v], list(reversed(walk))
+    return graph._last_dist[u][v], list(reversed(walk))
