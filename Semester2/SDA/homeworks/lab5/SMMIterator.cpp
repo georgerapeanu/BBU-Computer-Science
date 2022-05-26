@@ -1,55 +1,38 @@
-
 #include "SMMIterator.h"
 #include "SortedMultiMap.h"
 
 SMMIterator::SMMIterator(const SortedMultiMap& d) : map(d){
-  this->node_stack = std::vector<SortedMultiMap::node_t*>();
-  this->current_node = NULL;
+  this->dfs_stack = std::vector<SortedMultiMap::node_t*>();
   this->current_index = 0;
   if(map.root != NULL){
     
-    this->node_stack.push_back(map.root);
+    this->dfs_stack.push_back(map.root);
     
-    SortedMultiMap::node_t* tmp = this->node_stack.back();
+    SortedMultiMap::node_t* tmp = this->dfs_stack.back();
   
     tmp = tmp->left;
     while(tmp != NULL){
-      this->node_stack.push_back(tmp);
-      tmp = tmp->left;
-    }
-    current_node = this->node_stack.back();
-    this->node_stack.pop_back();
-    tmp = current_node->right;
-    while(tmp != NULL){
-      this->node_stack.push_back(tmp);
+      this->dfs_stack.push_back(tmp);
       tmp = tmp->left;
     }
   }
 } // BC: theta(log(size)), WC: theta(log(size)), TC: theta(log(size))
 
 void SMMIterator::first(){
-  this->node_stack = std::vector<SortedMultiMap::node_t*>();
-  this->current_node = NULL;
-  this->current_index = 0;
-  this->node_stack.push_back(map.root);
-  if(map.root == NULL){
-      return ;
-  }
-  
-  SortedMultiMap::node_t* tmp = this->node_stack.back();
+    this->dfs_stack = std::vector<SortedMultiMap::node_t*>();
+    this->current_index = 0;
+    if(map.root != NULL){
 
-  tmp = tmp->left;
-  while(tmp != NULL){
-    this->node_stack.push_back(tmp);
-    tmp = tmp->left;
-  }
-  current_node = this->node_stack.back();
-  this->node_stack.pop_back();
-  tmp = current_node->right;
-  while(tmp != NULL){
-    this->node_stack.push_back(tmp);
-    tmp = tmp->left;
-  }
+        this->dfs_stack.push_back(map.root);
+
+        SortedMultiMap::node_t* tmp = this->dfs_stack.back();
+
+        tmp = tmp->left;
+        while(tmp != NULL){
+            this->dfs_stack.push_back(tmp);
+            tmp = tmp->left;
+        }
+    }
 } // BC: theta(log(size)), WC: theta(log(size)), TC: theta(log(size))
 
 void SMMIterator::next(){
@@ -57,31 +40,33 @@ void SMMIterator::next(){
     throw std::exception();
   }
   current_index++;
-  if(current_index >= this->current_node->size){
+  if(current_index >= this->dfs_stack.back()->size){
     current_index = 0;
-    current_node = NULL;
-    if(this->node_stack.empty()){
-      return ;
-    }
-    current_node = this->node_stack.back();
-    this->node_stack.pop_back();
-    SortedMultiMap::node_t* tmp = current_node->right;
-    while(tmp != NULL){
-      this->node_stack.push_back(tmp);
-      tmp = tmp->left;
+    SortedMultiMap::node_t* last_node = this->dfs_stack.back();
+    if(last_node->right != NULL){
+        this->dfs_stack.push_back(last_node->right);
+        while(this->dfs_stack.back()->left != NULL){
+            this->dfs_stack.push_back(this->dfs_stack.back()->left);
+        }
+    }else{
+        this->dfs_stack.pop_back();
+        while(this->dfs_stack.empty() == false && this->dfs_stack.back()->right == last_node){
+            last_node = this->dfs_stack.back();
+            this->dfs_stack.pop_back();
+        }
     }
   }
 } //BC: theta(1), WC: theta(log(size)), TC: O(log(size))
 
 bool SMMIterator::valid() const{
-	return current_node != NULL;
+	return this->dfs_stack.empty() != true;
 } // BC: theta(1), WC: theta(1), TC: theta(1);
 
 TElem SMMIterator::getCurrent() const{
   if(this->valid() == false){
     throw std::exception();
   }
-	return std::make_pair(this->current_node->key, this->current_node->values[current_index]);
+	return std::make_pair(this->dfs_stack.back()->key, this->dfs_stack.back()->values[current_index]);
 } // BC: theta(1), WC: theta(1), TC: theta(1);
 
 

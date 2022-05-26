@@ -10,8 +10,7 @@ private:
 	const SortedMultiMap& map;
 	SMMIterator(const SortedMultiMap& map);
 
-  std::vector<SortedMultiMap::node_t*> node_stack;
-  SortedMultiMap::node_t* current_node;
+  std::vector<SortedMultiMap::node_t*> dfs_stack;
   int current_index;
 
 public:
