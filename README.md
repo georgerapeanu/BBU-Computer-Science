@@ -1,7 +1,7 @@
 ### This is a repository containing all of my homeworks(mainly) at the BBU bachelor's in Computer Science program
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=2.41 s (327.4 files/s, 26336.4 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=1.66 s (475.2 files/s, 38207.0 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -9,7 +9,7 @@ Language|files|blank|comment|code
 Python|191|3263|3702|10263
 TeX|116|1843|273|10225
 C++|108|1335|376|8632
-XML|72|7|47|5554
+XML|72|7|47|5515
 C|39|551|419|3300
 C/C++ Header|94|793|2121|1743
 Assembly|48|574|358|1697
@@ -24,5 +24,5 @@ reStructuredText|13|36|75|51
 make|2|9|6|27
 DOS Batch|2|0|0|9
 --------|--------|--------|--------|--------
-SUM:|790|8758|10323|44476
+SUM:|790|8758|10323|44437
 
