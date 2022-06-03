@@ -32,8 +32,8 @@ class UndirectedGraph:
             if edge[0] not in self.__neighbors or edge[1] not in self.__neighbors:
                 raise Exception("Initial edges don't have both endpoints in the initial vertices")
             if (edge[0], edge[1]) in self.__costs:
-                #continue
-                raise Exception("Edge already exists")
+                continue
+                #raise Exception("Edge already exists")
             self.__neighbors[edge[1]].append(edge[0])
             self.__costs[(edge[0], edge[1])] = edge[2]
             if edge[0] != edge[1]:
