@@ -90,4 +90,8 @@ class SortedMultiMap {
 
     // destructor
     ~SortedMultiMap();
+
+    // replaces the value currently mapped to a key k, with value newValue, only if the current value is equal to oldValue
+    // if the current value is not oldValue, or if k is not in the sortedmap, nothing changes
+    void replace(TKey k, TValue oldValue, TValue newValue);
 };

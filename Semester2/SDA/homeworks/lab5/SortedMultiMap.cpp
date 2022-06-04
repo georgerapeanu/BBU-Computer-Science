@@ -223,3 +223,25 @@ SortedMultiMap::~SortedMultiMap() {
   this->__size = 0;
   recursive_delete(this->root);
 } //BC : theta(size), WC: theta(size), TC: theta(size)
+
+void SortedMultiMap::replace(TKey k, TValue oldValue, TValue newValue) {
+    node_t* current = this->root;
+
+    while(current != NULL && current->key != k){
+        if(this->r(current->key, k)){
+            current = current->right;
+        }else{
+            current = current->left;
+        }
+    }
+
+    if(current == NULL){
+        return ;
+    }
+
+    for(int i = 0;i < current->size;i++){
+        if(current->values[i] == oldValue){
+            current->values[i] = newValue;
+        }
+    }
+}/// BC: theta(1), WC: theta(size + log(size)), TC: O(size + log(size))

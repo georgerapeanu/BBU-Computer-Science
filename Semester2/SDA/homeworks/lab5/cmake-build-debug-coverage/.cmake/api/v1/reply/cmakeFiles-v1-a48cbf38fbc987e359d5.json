@@ -16,7 +16,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake"
+			"path" : "cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeSystem.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -260,7 +260,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake"
+			"path" : "cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -494,7 +494,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
+			"path" : "cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -618,7 +618,7 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake"
+			"path" : "cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeCCompiler.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -712,13 +712,13 @@
 		},
 		{
 			"isGenerated" : true,
-			"path" : "cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
+			"path" : "cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug",
+		"build" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage",
 		"source" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5"
 	},
 	"version" : 

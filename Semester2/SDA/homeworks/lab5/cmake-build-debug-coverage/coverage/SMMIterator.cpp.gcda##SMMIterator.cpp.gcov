@@ -1,0 +1,183 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/SMMIterator.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage/CMakeFiles/lab5.dir/SMMIterator.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage/CMakeFiles/lab5.dir/SMMIterator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "SMMIterator.h"
+        -:    2:#include "SortedMultiMap.h"
+        -:    3:
+function _ZN11SMMIteratorC2ERK14SortedMultiMap called 66 returned 100% blocks executed 88%
+       66:    4:SMMIterator::SMMIterator(const SortedMultiMap& d) : map(d){
+       66:    4-block  0
+call    0 returned 66
+    $$$$$:    4-block  1
+call    1 never executed
+       66:    5:  this->dfs_stack = std::vector<SortedMultiMap::node_t*>();
+call    0 returned 66
+call    1 returned 66
+call    2 returned 66
+       66:    6:  this->current_index = 0;
+       66:    7:  if(map.root != NULL){
+branch  0 taken 62 (fallthrough)
+branch  1 taken 4
+        -:    8:    
+       62:    9:    this->dfs_stack.push_back(map.root);
+       62:    9-block  0
+call    0 returned 62
+branch  1 taken 62 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   10:    
+       62:   11:    SortedMultiMap::node_t* tmp = this->dfs_stack.back();
+       62:   11-block  0
+call    0 returned 62
+        -:   12:  
+       62:   13:    tmp = tmp->left;
+      234:   14:    while(tmp != NULL){
+      234:   14-block  0
+branch  0 taken 172 (fallthrough)
+branch  1 taken 62
+      172:   15:      this->dfs_stack.push_back(tmp);
+      172:   15-block  0
+call    0 returned 172
+branch  1 taken 172 (fallthrough)
+branch  2 taken 0 (throw)
+      172:   16:      tmp = tmp->left;
+      172:   16-block  0
+        -:   17:    }
+        -:   18:  }
+       66:   19:} // BC: theta(log(size)), WC: theta(log(size)), TC: theta(log(size))
+       66:   19-block  0
+        -:   20:
+function _ZN11SMMIterator5firstEv called 61 returned 100% blocks executed 100%
+       61:   21:void SMMIterator::first(){
+       61:   22:    this->dfs_stack = std::vector<SortedMultiMap::node_t*>();
+       61:   22-block  0
+call    0 returned 61
+call    1 returned 61
+call    2 returned 61
+       61:   23:    this->current_index = 0;
+       61:   24:    if(map.root != NULL){
+branch  0 taken 57 (fallthrough)
+branch  1 taken 4
+        -:   25:
+       57:   26:        this->dfs_stack.push_back(map.root);
+       57:   26-block  0
+call    0 returned 57
+branch  1 taken 57 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   27:
+       57:   28:        SortedMultiMap::node_t* tmp = this->dfs_stack.back();
+       57:   28-block  0
+call    0 returned 57
+        -:   29:
+       57:   30:        tmp = tmp->left;
+      199:   31:        while(tmp != NULL){
+      199:   31-block  0
+branch  0 taken 142 (fallthrough)
+branch  1 taken 57
+      142:   32:            this->dfs_stack.push_back(tmp);
+      142:   32-block  0
+call    0 returned 142
+branch  1 taken 142 (fallthrough)
+branch  2 taken 0 (throw)
+      142:   33:            tmp = tmp->left;
+      142:   33-block  0
+        -:   34:        }
+        -:   35:    }
+       61:   36:} // BC: theta(log(size)), WC: theta(log(size)), TC: theta(log(size))
+       61:   36-block  0
+        -:   37:
+function _ZN11SMMIterator4nextEv called 102246 returned 100% blocks executed 100%
+   102246:   38:void SMMIterator::next(){
+   102246:   39:  if(this->valid() == false){
+   102246:   39-block  0
+call    0 returned 102246
+branch  1 taken 2 (fallthrough)
+branch  2 taken 102244
+        2:   40:    throw std::exception();
+        2:   40-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 0
+        -:   41:  }
+   102244:   42:  current_index++;
+   102244:   43:  if(current_index >= this->dfs_stack.back()->size){
+   102244:   43-block  0
+call    0 returned 102244
+branch  1 taken 4226 (fallthrough)
+branch  2 taken 98018
+     4226:   44:    current_index = 0;
+     4226:   45:    SortedMultiMap::node_t* last_node = this->dfs_stack.back();
+     4226:   45-block  0
+call    0 returned 4226
+     4226:   46:    if(last_node->right != NULL){
+branch  0 taken 2071 (fallthrough)
+branch  1 taken 2155
+     2071:   47:        this->dfs_stack.push_back(last_node->right);
+     2071:   47-block  0
+call    0 returned 2071
+     3923:   48:        while(this->dfs_stack.back()->left != NULL){
+     3923:   48-block  0
+call    0 returned 3923
+branch  1 taken 1852 (fallthrough)
+branch  2 taken 2071
+     1852:   49:            this->dfs_stack.push_back(this->dfs_stack.back()->left);
+     1852:   49-block  0
+call    0 returned 1852
+call    1 returned 1852
+        -:   50:        }
+        -:   51:    }else{
+     2155:   52:        this->dfs_stack.pop_back();
+     2155:   52-block  0
+call    0 returned 2155
+     4160:   53:        while(this->dfs_stack.empty() == false && this->dfs_stack.back()->right == last_node){
+     4160:   53-block  0
+call    0 returned 4160
+branch  1 taken 4097 (fallthrough)
+branch  2 taken 63
+     4097:   53-block  1
+call    3 returned 4097
+branch  4 taken 2005 (fallthrough)
+branch  5 taken 2092
+     2005:   53-block  2
+     2155:   53-block  3
+     4160:   53-block  4
+branch  6 taken 2005 (fallthrough)
+branch  7 taken 2155
+     2005:   54:            last_node = this->dfs_stack.back();
+     2005:   54-block  0
+call    0 returned 2005
+     2005:   55:            this->dfs_stack.pop_back();
+call    0 returned 2005
+        -:   56:        }
+        -:   57:    }
+        -:   58:  }
+   102244:   59:} //BC: theta(1), WC: theta(log(size)), TC: O(log(size))
+        -:   60:
+function _ZNK11SMMIterator5validEv called 284418 returned 100% blocks executed 100%
+   284418:   61:bool SMMIterator::valid() const{
+   284418:   62:	return this->dfs_stack.empty() != true;
+   284418:   62-block  0
+call    0 returned 284418
+        -:   63:} // BC: theta(1), WC: theta(1), TC: theta(1);
+        -:   64:
+function _ZNK11SMMIterator10getCurrentEv called 100406 returned 100% blocks executed 100%
+   100406:   65:TElem SMMIterator::getCurrent() const{
+   100406:   66:  if(this->valid() == false){
+   100406:   66-block  0
+call    0 returned 100406
+branch  1 taken 2 (fallthrough)
+branch  2 taken 100404
+        2:   67:    throw std::exception();
+        2:   67-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 0
+        -:   68:  }
+   100404:   69:	return std::make_pair(this->dfs_stack.back()->key, this->dfs_stack.back()->values[current_index]);
+   100404:   69-block  0
+call    0 returned 100404
+call    1 returned 100404
+call    2 returned 100404
+        -:   70:} // BC: theta(1), WC: theta(1), TC: theta(1);
+        -:   71:
+        -:   72:

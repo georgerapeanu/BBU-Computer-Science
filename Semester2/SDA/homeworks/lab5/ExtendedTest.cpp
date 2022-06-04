@@ -249,10 +249,42 @@ void testIterator() {
 	testIterator(desc);
 }
 
+void testReplace(){
+    cout << "Test replace\n";
+    SortedMultiMap smm = SortedMultiMap(asc);
+    smm.add(2, 4);
+    smm.add(3, 4);
+    smm.add(2, 5);
+    smm.add(2, 5);
+    assert(smm.size() == 4);
+    smm.replace(2, 4, 5);
+    SMMIterator it = smm.iterator();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(3, 4));it.next();
+    assert(it.valid() == false);
+    smm.replace(2, 4, 5);
+    it.first();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(3, 4));it.next();
+    assert(it.valid() == false);
+    smm.replace(3, 4, 6);
+    it.first();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(2, 5));it.next();
+    assert(it.getCurrent() == make_pair(3, 6));it.next();
+    assert(it.valid() == false);
+}
+
 void testAllExtended() {
 	testCreate();
 	testSearch();
 	testRemove();
 	testIterator();
 	testRelations();
+    testReplace();
 }

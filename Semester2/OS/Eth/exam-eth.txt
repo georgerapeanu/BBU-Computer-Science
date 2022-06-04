@@ -1,0 +1,19 @@
+Write a c program that receives pairs of integer numbers as command line
+arguments. The secound number in the pair reprezents an index between 0 and
+the total number of pairs, all te indexes given will be unique.
+For each pair the program will create a thread, each thread will be indexed
+starting from 0 in the order in which they are created. Each thread will
+receive as argument one of the pairs given as command line argument. Each
+thread will add to an integer global variable the value o the first number
+of the pair it received as command line argument. If the global variable is
+an even number after the addition the next thread that will add to the
+variable will be the thread with the index equal to the index received by
+the las thread that added to the variable, othrewise any othre thread can
+add to the gobal variable.
+The execution will end after the gobal variable ecides a predetermined value.
+The threads must be dynamically allocated in memory.
+The access to the critical resources must be efficiently synchronized (aka
+the wait time of each thread must be miminum)
+NOTE: When you compile use the -pthread obtion.
+The source file must be compiled using gcc with -Wall -g options WITHOUT WARNINGS OR SYNTAX ERRORS!!!
+

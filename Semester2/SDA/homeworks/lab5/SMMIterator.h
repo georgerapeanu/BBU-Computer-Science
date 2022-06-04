@@ -1,6 +1,6 @@
 #pragma once
 #include "SortedMultiMap.h"
-#include <vector>
+
 
 
 class SMMIterator{
@@ -10,7 +10,13 @@ private:
 	const SortedMultiMap& map;
 	SMMIterator(const SortedMultiMap& map);
 
-  std::vector<SortedMultiMap::node_t*> dfs_stack;
+    void stack_push_back(SortedMultiMap::node_t* current);
+    void stack_pop_back();
+    SortedMultiMap::node_t* stack_back()const;
+
+  SortedMultiMap::node_t** dfs_stack;
+  int stack_size;
+  int stack_capacity;
   int current_index;
 
 public:
