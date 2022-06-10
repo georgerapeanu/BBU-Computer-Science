@@ -1,0 +1,4 @@
+/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/model/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/model/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/model/cmake-build-debug/CMakeFiles/model.dir
+/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/model/cmake-build-debug/CMakeFiles/model_autogen.dir

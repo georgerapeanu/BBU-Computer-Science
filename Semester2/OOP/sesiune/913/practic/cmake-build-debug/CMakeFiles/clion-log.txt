@@ -1,0 +1,20 @@
+/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/linux/ninja -G Ninja /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic
+-- Could NOT find Qt5REQUITED (missing: Qt5REQUITED_DIR)
+CMake Warning at CMakeLists.txt:16 (find_package):
+  Found package configuration file:
+
+    /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake
+
+  but it set Qt5_FOUND to FALSE so package "Qt5" is considered to be NOT
+  FOUND.  Reason given by package:
+
+  Failed to find Qt5 component "REQUITED" config file at
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt5REQUITED/Qt5REQUITEDConfig.cmake"
+
+  
+
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic/cmake-build-debug
