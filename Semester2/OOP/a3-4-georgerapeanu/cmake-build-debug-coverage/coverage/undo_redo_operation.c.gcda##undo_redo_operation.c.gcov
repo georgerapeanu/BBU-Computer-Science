@@ -1,0 +1,83 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/src/domain/undo_redo_operation.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/undo_redo_operation.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/undo_redo_operation.c.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file undo_redo_operation.c this file contains the model for an undo_redo operation.
+        -:    3: * This operation consists of 2 operations, one which can undo_operation and one which can redo_operation.
+        -:    4: */
+        -:    5:
+        -:    6:#pragma once
+        -:    7:#include "../../include/domain/undo_redo_operation.h"
+        -:    8:#include "../../include/domain/errors.h"
+        -:    9:#include <stdlib.h>
+        -:   10:
+        -:   11:/*
+        -:   12: * This implementation does exactly what it says it does in undo_redo_operation.h
+        -:   13: */
+function create_undo_redo_operation called 11 returned 100% blocks executed 60%
+       11:   14:undo_redo_operation_t* create_undo_redo_operation(operation_t* p_undo, operation_t* p_redo, int* p_error){
+       11:   15:    undo_redo_operation_t* p_operation = (undo_redo_operation_t*) malloc(sizeof(undo_redo_operation_t));
+       11:   16:    if(p_operation == NULL){
+       11:   16-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 11
+    #####:   17:        set_error(p_error, 1);
+    %%%%%:   17-block  0
+call    0 never executed
+    #####:   18:        return NULL;
+        -:   19:    }
+       11:   20:    p_operation->p_redo_operation = p_redo;
+       11:   21:    p_operation->p_undo_operation = p_undo;
+       11:   22:    return p_operation;
+       11:   22-block  0
+        -:   23:}
+        -:   24:
+        -:   25:/*
+        -:   26: * This implementation does exactly what it says it does in undo_redo_operation.h
+        -:   27: */
+        -:   28:
+function delete_undo_redo_operation called 2 returned 100% blocks executed 100%
+        2:   29:void delete_undo_redo_operation(undo_redo_operation_t* p_operation){
+        2:   30:    if(p_operation != NULL){
+        2:   30-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:   31:        delete_undo_redo_operation_data(p_operation);
+        2:   31-block  0
+call    0 returned 2
+        2:   32:        free(p_operation);
+        -:   33:    }
+        2:   34:}
+        -:   35:
+        -:   36:/*
+        -:   37: * This implementation does exactly what it says it does in undo_redo_operation.h
+        -:   38: */
+function delete_undo_redo_operation_data called 11 returned 100% blocks executed 100%
+       11:   39:void delete_undo_redo_operation_data(undo_redo_operation_t* p_operation){
+       11:   40:    delete_operation(p_operation->p_undo_operation);
+       11:   40-block  0
+call    0 returned 11
+       11:   41:    delete_operation(p_operation->p_redo_operation);
+call    0 returned 11
+       11:   42:}
+        -:   43:
+        -:   44:/*
+        -:   45: * This implementation does exactly what it says it does in undo_redo_operation.h
+        -:   46: */
+function undo_operation called 12 returned 100% blocks executed 100%
+       12:   47:void undo_operation(undo_redo_operation_t* p_operation, int* p_error){
+       12:   48:    apply(p_operation->p_undo_operation, p_error);
+       12:   48-block  0
+call    0 returned 12
+       12:   49:}
+        -:   50:
+        -:   51:/*
+        -:   52: * This implementation does exactly what it says it does in undo_redo_operation.h
+        -:   53: */
+function redo_operation called 5 returned 100% blocks executed 100%
+        5:   54:void redo_operation(undo_redo_operation_t* p_operation, int* p_error){
+        5:   55:    apply(p_operation->p_redo_operation, p_error);
+        5:   55-block  0
+call    0 returned 5
+        5:   56:}

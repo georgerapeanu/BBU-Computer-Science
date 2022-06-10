@@ -1,0 +1,198 @@
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{6}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!AbstractRepository@{AbstractRepository}|hyperpage}{7}
+\indexentry{AbstractRepository@{AbstractRepository}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{7}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!add@{add}|hyperpage}{7}
+\indexentry{add@{add}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{7}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!find@{find}|hyperpage}{7}
+\indexentry{find@{find}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{7}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!get\_all@{get\_all}|hyperpage}{8}
+\indexentry{get\_all@{get\_all}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{8}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!remove@{remove}|hyperpage}{8}
+\indexentry{remove@{remove}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{8}
+\indexentry{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!update@{update}|hyperpage}{8}
+\indexentry{update@{update}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}|hyperpage}{8}
+\indexentry{AbstractWatchlist$<$ T $>$@{AbstractWatchlist$<$ T $>$}|hyperpage}{9}
+\indexentry{AppException@{AppException}|hyperpage}{10}
+\indexentry{ControllerException@{ControllerException}|hyperpage}{11}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{12}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!CSVWatchlist@{CSVWatchlist}|hyperpage}{13}
+\indexentry{CSVWatchlist@{CSVWatchlist}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{13}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!add@{add}|hyperpage}{14}
+\indexentry{add@{add}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{14}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!display@{display}|hyperpage}{14}
+\indexentry{display@{display}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{14}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!find@{find}|hyperpage}{14}
+\indexentry{find@{find}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{14}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!get\_all@{get\_all}|hyperpage}{15}
+\indexentry{get\_all@{get\_all}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{15}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!remove@{remove}|hyperpage}{15}
+\indexentry{remove@{remove}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{15}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!save@{save}|hyperpage}{15}
+\indexentry{save@{save}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{15}
+\indexentry{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!update@{update}|hyperpage}{15}
+\indexentry{update@{update}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}|hyperpage}{15}
+\indexentry{CSVWatchlistTests@{CSVWatchlistTests}|hyperpage}{16}
+\indexentry{DomainException@{DomainException}|hyperpage}{17}
+\indexentry{DynamicVectorException@{DynamicVectorException}|hyperpage}{19}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{20}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!FileRepository@{FileRepository}|hyperpage}{21}
+\indexentry{FileRepository@{FileRepository}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{21}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!add@{add}|hyperpage}{21}
+\indexentry{add@{add}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{21}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!find@{find}|hyperpage}{22}
+\indexentry{find@{find}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{22}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!get\_all@{get\_all}|hyperpage}{22}
+\indexentry{get\_all@{get\_all}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{22}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!load@{load}|hyperpage}{22}
+\indexentry{load@{load}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{22}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!remove@{remove}|hyperpage}{23}
+\indexentry{remove@{remove}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{23}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!save@{save}|hyperpage}{23}
+\indexentry{save@{save}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{23}
+\indexentry{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!update@{update}|hyperpage}{23}
+\indexentry{update@{update}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}|hyperpage}{23}
+\indexentry{FileRepositoryTests@{FileRepositoryTests}|hyperpage}{24}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{25}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!HTMLWatchlist@{HTMLWatchlist}|hyperpage}{26}
+\indexentry{HTMLWatchlist@{HTMLWatchlist}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{26}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!add@{add}|hyperpage}{26}
+\indexentry{add@{add}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{26}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!display@{display}|hyperpage}{26}
+\indexentry{display@{display}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{26}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!find@{find}|hyperpage}{27}
+\indexentry{find@{find}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{27}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!get\_all@{get\_all}|hyperpage}{27}
+\indexentry{get\_all@{get\_all}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{27}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!remove@{remove}|hyperpage}{27}
+\indexentry{remove@{remove}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{27}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!save@{save}|hyperpage}{28}
+\indexentry{save@{save}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{28}
+\indexentry{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!update@{update}|hyperpage}{28}
+\indexentry{update@{update}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}|hyperpage}{28}
+\indexentry{HTMLWatchlistTests@{HTMLWatchlistTests}|hyperpage}{29}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{30}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!add@{add}|hyperpage}{31}
+\indexentry{add@{add}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{31}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!find@{find}|hyperpage}{31}
+\indexentry{find@{find}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{31}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!get\_all@{get\_all}|hyperpage}{32}
+\indexentry{get\_all@{get\_all}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{32}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!remove@{remove}|hyperpage}{32}
+\indexentry{remove@{remove}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{32}
+\indexentry{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!update@{update}|hyperpage}{33}
+\indexentry{update@{update}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}|hyperpage}{33}
+\indexentry{MemoryRepositoryTests@{MemoryRepositoryTests}|hyperpage}{33}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{34}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!add@{add}|hyperpage}{35}
+\indexentry{add@{add}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{35}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!display@{display}|hyperpage}{36}
+\indexentry{display@{display}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{36}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!find@{find}|hyperpage}{36}
+\indexentry{find@{find}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{36}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!get\_all@{get\_all}|hyperpage}{36}
+\indexentry{get\_all@{get\_all}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{36}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!remove@{remove}|hyperpage}{37}
+\indexentry{remove@{remove}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{37}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!save@{save}|hyperpage}{37}
+\indexentry{save@{save}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{37}
+\indexentry{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!update@{update}|hyperpage}{37}
+\indexentry{update@{update}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}|hyperpage}{37}
+\indexentry{MemoryWatchlistTests@{MemoryWatchlistTests}|hyperpage}{38}
+\indexentry{Movie@{Movie}|hyperpage}{39}
+\indexentry{Movie@{Movie}!Movie@{Movie}|hyperpage}{40}
+\indexentry{Movie@{Movie}!Movie@{Movie}|hyperpage}{40}
+\indexentry{Movie@{Movie}!Movie@{Movie}|hyperpage}{40}
+\indexentry{Movie@{Movie}!Movie@{Movie}|hyperpage}{40}
+\indexentry{Movie@{Movie}!get\_genre@{get\_genre}|hyperpage}{40}
+\indexentry{get\_genre@{get\_genre}!Movie@{Movie}|hyperpage}{40}
+\indexentry{Movie@{Movie}!get\_id@{get\_id}|hyperpage}{41}
+\indexentry{get\_id@{get\_id}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!get\_likes@{get\_likes}|hyperpage}{41}
+\indexentry{get\_likes@{get\_likes}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!get\_title@{get\_title}|hyperpage}{41}
+\indexentry{get\_title@{get\_title}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!get\_trailer\_link@{get\_trailer\_link}|hyperpage}{41}
+\indexentry{get\_trailer\_link@{get\_trailer\_link}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!get\_year@{get\_year}|hyperpage}{41}
+\indexentry{get\_year@{get\_year}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!operator"!=@{operator"!=}|hyperpage}{41}
+\indexentry{operator"!=@{operator"!=}!Movie@{Movie}|hyperpage}{41}
+\indexentry{Movie@{Movie}!operator==@{operator==}|hyperpage}{42}
+\indexentry{operator==@{operator==}!Movie@{Movie}|hyperpage}{42}
+\indexentry{Movie@{Movie}!set\_genre@{set\_genre}|hyperpage}{42}
+\indexentry{set\_genre@{set\_genre}!Movie@{Movie}|hyperpage}{42}
+\indexentry{Movie@{Movie}!set\_likes@{set\_likes}|hyperpage}{42}
+\indexentry{set\_likes@{set\_likes}!Movie@{Movie}|hyperpage}{42}
+\indexentry{Movie@{Movie}!set\_title@{set\_title}|hyperpage}{42}
+\indexentry{set\_title@{set\_title}!Movie@{Movie}|hyperpage}{42}
+\indexentry{Movie@{Movie}!set\_trailer\_link@{set\_trailer\_link}|hyperpage}{43}
+\indexentry{set\_trailer\_link@{set\_trailer\_link}!Movie@{Movie}|hyperpage}{43}
+\indexentry{Movie@{Movie}!set\_year@{set\_year}|hyperpage}{43}
+\indexentry{set\_year@{set\_year}!Movie@{Movie}|hyperpage}{43}
+\indexentry{Movie@{Movie}!operator$<$$<$@{operator$<$$<$}|hyperpage}{43}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Movie@{Movie}|hyperpage}{43}
+\indexentry{Movie@{Movie}!operator$>$$>$@{operator$>$$>$}|hyperpage}{44}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Movie@{Movie}|hyperpage}{44}
+\indexentry{MovieController@{MovieController}|hyperpage}{44}
+\indexentry{MovieController@{MovieController}!add\_movie\_admin@{add\_movie\_admin}|hyperpage}{45}
+\indexentry{add\_movie\_admin@{add\_movie\_admin}!MovieController@{MovieController}|hyperpage}{45}
+\indexentry{MovieController@{MovieController}!add\_movie\_user@{add\_movie\_user}|hyperpage}{45}
+\indexentry{add\_movie\_user@{add\_movie\_user}!MovieController@{MovieController}|hyperpage}{45}
+\indexentry{MovieController@{MovieController}!get\_all\_movies\_admin@{get\_all\_movies\_admin}|hyperpage}{46}
+\indexentry{get\_all\_movies\_admin@{get\_all\_movies\_admin}!MovieController@{MovieController}|hyperpage}{46}
+\indexentry{MovieController@{MovieController}!get\_movie\_user@{get\_movie\_user}|hyperpage}{46}
+\indexentry{get\_movie\_user@{get\_movie\_user}!MovieController@{MovieController}|hyperpage}{46}
+\indexentry{MovieController@{MovieController}!get\_movies\_user@{get\_movies\_user}|hyperpage}{46}
+\indexentry{get\_movies\_user@{get\_movies\_user}!MovieController@{MovieController}|hyperpage}{46}
+\indexentry{MovieController@{MovieController}!like\_movie\_user@{like\_movie\_user}|hyperpage}{46}
+\indexentry{like\_movie\_user@{like\_movie\_user}!MovieController@{MovieController}|hyperpage}{46}
+\indexentry{MovieController@{MovieController}!my\_tolower@{my\_tolower}|hyperpage}{47}
+\indexentry{my\_tolower@{my\_tolower}!MovieController@{MovieController}|hyperpage}{47}
+\indexentry{MovieController@{MovieController}!operator=@{operator=}|hyperpage}{47}
+\indexentry{operator=@{operator=}!MovieController@{MovieController}|hyperpage}{47}
+\indexentry{MovieController@{MovieController}!remove\_movie\_admin@{remove\_movie\_admin}|hyperpage}{47}
+\indexentry{remove\_movie\_admin@{remove\_movie\_admin}!MovieController@{MovieController}|hyperpage}{47}
+\indexentry{MovieController@{MovieController}!remove\_movie\_user@{remove\_movie\_user}|hyperpage}{47}
+\indexentry{remove\_movie\_user@{remove\_movie\_user}!MovieController@{MovieController}|hyperpage}{47}
+\indexentry{MovieController@{MovieController}!update\_movie\_admin@{update\_movie\_admin}|hyperpage}{48}
+\indexentry{update\_movie\_admin@{update\_movie\_admin}!MovieController@{MovieController}|hyperpage}{48}
+\indexentry{MovieControllerException@{MovieControllerException}|hyperpage}{48}
+\indexentry{MovieControllerTests@{MovieControllerTests}|hyperpage}{50}
+\indexentry{MovieValidator@{MovieValidator}|hyperpage}{51}
+\indexentry{MovieValidator@{MovieValidator}!validate\_movie@{validate\_movie}|hyperpage}{51}
+\indexentry{validate\_movie@{validate\_movie}!MovieValidator@{MovieValidator}|hyperpage}{51}
+\indexentry{RepositoryException@{RepositoryException}|hyperpage}{52}
+\indexentry{UI@{UI}|hyperpage}{53}
+\indexentry{UI@{UI}!UI@{UI}|hyperpage}{53}
+\indexentry{UI@{UI}!UI@{UI}|hyperpage}{53}
+\indexentry{UI@{UI}!run@{run}|hyperpage}{53}
+\indexentry{run@{run}!UI@{UI}|hyperpage}{53}
+\indexentry{UIException@{UIException}|hyperpage}{54}
+\indexentry{app/main.cpp@{app/main.cpp}|hyperpage}{55}
+\indexentry{include/controller/MovieController.h@{include/controller/MovieController.h}|hyperpage}{56}
+\indexentry{include/domain/Exceptions.h@{include/domain/Exceptions.h}|hyperpage}{57}
+\indexentry{include/domain/Movie.h@{include/domain/Movie.h}|hyperpage}{58}
+\indexentry{include/domain/MovieValidator.h@{include/domain/MovieValidator.h}|hyperpage}{58}
+\indexentry{include/repository/AbstractRepository.h@{include/repository/AbstractRepository.h}|hyperpage}{60}
+\indexentry{include/repository/AbstractWatchlist.h@{include/repository/AbstractWatchlist.h}|hyperpage}{61}
+\indexentry{include/repository/CSVWatchlist.h@{include/repository/CSVWatchlist.h}|hyperpage}{61}
+\indexentry{include/repository/FileRepository.h@{include/repository/FileRepository.h}|hyperpage}{63}
+\indexentry{include/repository/HTMLWatchlist.h@{include/repository/HTMLWatchlist.h}|hyperpage}{64}
+\indexentry{include/repository/MemoryWatchlist.h@{include/repository/MemoryWatchlist.h}|hyperpage}{65}
+\indexentry{include/ui/UI.h@{include/ui/UI.h}|hyperpage}{66}
+\indexentry{src/controller/MovieController.cpp@{src/controller/MovieController.cpp}|hyperpage}{67}
+\indexentry{src/domain/Movie.cpp@{src/domain/Movie.cpp}|hyperpage}{67}
+\indexentry{Movie.cpp@{Movie.cpp}!operator$<$$<$@{operator$<$$<$}|hyperpage}{68}
+\indexentry{operator$<$$<$@{operator$<$$<$}!Movie.cpp@{Movie.cpp}|hyperpage}{68}
+\indexentry{Movie.cpp@{Movie.cpp}!operator$>$$>$@{operator$>$$>$}|hyperpage}{69}
+\indexentry{operator$>$$>$@{operator$>$$>$}!Movie.cpp@{Movie.cpp}|hyperpage}{69}
+\indexentry{src/domain/MovieValidator.cpp@{src/domain/MovieValidator.cpp}|hyperpage}{69}
+\indexentry{src/repository/CSVWatchlist.cpp@{src/repository/CSVWatchlist.cpp}|hyperpage}{70}
+\indexentry{src/repository/FileRepository.cpp@{src/repository/FileRepository.cpp}|hyperpage}{70}
+\indexentry{src/repository/MemoryWatchlist.cpp@{src/repository/MemoryWatchlist.cpp}|hyperpage}{71}
+\indexentry{src/ui/UI.cpp@{src/ui/UI.cpp}|hyperpage}{72}
+\indexentry{tests/repository/CSVWatchlistTests.cpp@{tests/repository/CSVWatchlistTests.cpp}|hyperpage}{72}
+\indexentry{tests/repository/FileRepositoryTests.cpp@{tests/repository/FileRepositoryTests.cpp}|hyperpage}{73}
+\indexentry{tests/repository/HTMLWatchlistTests.cpp@{tests/repository/HTMLWatchlistTests.cpp}|hyperpage}{74}
+\indexentry{tests/repository/MemoryRepositoryTests.cpp@{tests/repository/MemoryRepositoryTests.cpp}|hyperpage}{75}
+\indexentry{tests/repository/MemoryWatchlistTests.cpp@{tests/repository/MemoryWatchlistTests.cpp}|hyperpage}{76}

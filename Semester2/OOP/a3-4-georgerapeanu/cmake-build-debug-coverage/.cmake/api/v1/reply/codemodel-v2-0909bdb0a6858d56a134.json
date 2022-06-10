@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "a3_4_georgerapeanu",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "a3_4_georgerapeanu::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a3_4_georgerapeanu-Debug-7c437ba65a74f75c827a.json",
+					"name" : "a3_4_georgerapeanu",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "a3_4_georgerapeanu_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-a3_4_georgerapeanu_tests-Debug-3e892851daf50c3a6711.json",
+					"name" : "a3_4_georgerapeanu_tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage",
+		"source" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

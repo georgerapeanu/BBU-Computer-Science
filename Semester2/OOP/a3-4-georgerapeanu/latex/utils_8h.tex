@@ -1,0 +1,116 @@
+\hypertarget{utils_8h}{}\doxysubsection{include/utils/utils.h File Reference}
+\label{utils_8h}\index{include/utils/utils.h@{include/utils/utils.h}}
+{\ttfamily \#include \char`\"{}../domain/vector.\+h\char`\"{}}\newline
+Include dependency graph for utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{utils_8h_a60b77036a5995c87286f03a46bf2171d}{get\+\_\+lowercase}} (const char $\ast$p\+\_\+s, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em gets a pointer to a new char string having the lowercase version of a given string \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_aa890dc490eb0bc269847f4113cd0c2cf}{sort}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int l, int r, int($\ast$cmp)(const void $\ast$$\ast$a, const void $\ast$$\ast$b))
+\begin{DoxyCompactList}\small\item\em this function sorts a given vector using the compare function on the range \mbox{[}l,r) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8h_afa0a541e419df88a49f26853f4454bb5}{swap}} (void $\ast$p\+\_\+a, void $\ast$p\+\_\+b, int cnt\+\_\+bytes)
+\begin{DoxyCompactList}\small\item\em swaps the next cnt\+\_\+bytes from a and b \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{utils_8h_a3e413b2dcc3b16f61d2650e96d6a4615}{split\+\_\+string}} (char $\ast$p\+\_\+s, char delim, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function returns a vector structure containing pointers to all tokens in a given string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+contains the definitions of various general purpose functions. 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8h_a60b77036a5995c87286f03a46bf2171d}\label{utils_8h_a60b77036a5995c87286f03a46bf2171d}} 
+\index{utils.h@{utils.h}!get\_lowercase@{get\_lowercase}}
+\index{get\_lowercase@{get\_lowercase}!utils.h@{utils.h}}
+\doxyparagraph{\texorpdfstring{get\_lowercase()}{get\_lowercase()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+lowercase (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p\+\_\+s,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+gets a pointer to a new char string having the lowercase version of a given string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+s} & the pointer to the string \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that gets the error \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the new string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_aa890dc490eb0bc269847f4113cd0c2cf}\label{utils_8h_aa890dc490eb0bc269847f4113cd0c2cf}} 
+\index{utils.h@{utils.h}!sort@{sort}}
+\index{sort@{sort}!utils.h@{utils.h}}
+\doxyparagraph{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily void sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int}]{l,  }\item[{int}]{r,  }\item[{int($\ast$)(const void $\ast$$\ast$a, const void $\ast$$\ast$b)}]{cmp }\end{DoxyParamCaption})}
+
+
+
+this function sorts a given vector using the compare function on the range \mbox{[}l,r) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & a pointer to the vector to be sorted \\
+\hline
+{\em l} & the left index \\
+\hline
+{\em r} & the right index \\
+\hline
+{\em cmp} & the compare index which returns 1 if a $<$ b \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8h_a3e413b2dcc3b16f61d2650e96d6a4615}\label{utils_8h_a3e413b2dcc3b16f61d2650e96d6a4615}} 
+\index{utils.h@{utils.h}!split\_string@{split\_string}}
+\index{split\_string@{split\_string}!utils.h@{utils.h}}
+\doxyparagraph{\texorpdfstring{split\_string()}{split\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ split\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{p\+\_\+s,  }\item[{char}]{delim,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function returns a vector structure containing pointers to all tokens in a given string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+s} & a pointer to the string being processed \\
+\hline
+{\em delim} & a character which is the \textquotesingle{}deliminator\textquotesingle{} \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that gets the error \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a vector containing pointers to new strings containing the arguments 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8h_afa0a541e419df88a49f26853f4454bb5}\label{utils_8h_afa0a541e419df88a49f26853f4454bb5}} 
+\index{utils.h@{utils.h}!swap@{swap}}
+\index{swap@{swap}!utils.h@{utils.h}}
+\doxyparagraph{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily void swap (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+\_\+a,  }\item[{void $\ast$}]{p\+\_\+b,  }\item[{int}]{cnt\+\_\+bytes }\end{DoxyParamCaption})}
+
+
+
+swaps the next cnt\+\_\+bytes from a and b 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+a} & pointer to the first address \\
+\hline
+{\em p\+\_\+b} & pointer to the second address \\
+\hline
+{\em cnt\+\_\+bytes} & the number of bytes to swap \\
+\hline
+\end{DoxyParams}

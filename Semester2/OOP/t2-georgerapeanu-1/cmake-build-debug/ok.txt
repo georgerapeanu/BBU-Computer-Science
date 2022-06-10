@@ -1,0 +1,22 @@
+Car with 2 doors
+Engine type: electric
+Autonomy: 100
+Fuel type: 
+Base price: 3000
+Price: 10001
+Car with 4 doors
+Engine type: electric
+Autonomy: 25
+Fuel type: 
+Base price: 3000
+Price: 11500.2
+Car with 4 doors
+Engine type: turbo
+Fuel type: gasoline
+Base price: 3000
+Price: 11501
+Car with 2 doors
+Engine type: turbo
+Fuel type: diesel
+Base price: 3000
+Price: 10001.5

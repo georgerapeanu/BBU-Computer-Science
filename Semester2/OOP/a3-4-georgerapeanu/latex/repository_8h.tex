@@ -1,0 +1,227 @@
+\hypertarget{repository_8h}{}\doxysubsection{include/repository/repository.h File Reference}
+\label{repository_8h}\index{include/repository/repository.h@{include/repository/repository.h}}
+{\ttfamily \#include \char`\"{}../../include/domain/vector.\+h\char`\"{}}\newline
+Include dependency graph for repository.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{repository_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{repository_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrepository__t}{repository\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em This is the model for a repository instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$ \mbox{\hyperlink{repository_8h_a2af8a58de6d15726b3be207862c2cf25}{create\+\_\+repository}} (int element\+\_\+size, void($\ast$free\+\_\+element\+\_\+data)(void $\ast$), int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em creates a repository object and returns a pointer to it \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{repository_8h_a8034f67881644f764aa25fc82d94919e}{delete\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository)
+\begin{DoxyCompactList}\small\item\em frees the memory allocated for a given repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{repository_8h_a8b18c4e40a55874a4e4a2656cb75d70a}{add\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, void $\ast$p\+\_\+element, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em adds an element to a given repository \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{repository_8h_a12977f426ff5e131c42fdc171ce34a73}{filter\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, int($\ast$p\+\_\+filter\+\_\+function)(void $\ast$repository\+\_\+element, void $\ast$$\ast$args), void $\ast$$\ast$filter\+\_\+function\+\_\+args, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em returns a list of the indexes of elements which match a given filter function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{repository_8h_ada835da7ff85619a548448e95cc1dca0}{update\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, int position, void $\ast$p\+\_\+new\+\_\+element, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em updates an element from the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{repository_8h_a0c2d265c3de25aaed6d37e2e383fd521}{remove\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, int position, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em removes an element from the repository \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{repository_8h_ad8fbcdbce2ba27657cc181ec8d0c1754}{get\+\_\+position\+\_\+repository}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, int position, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em gets an element from a specified position \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{repository_8h_ae13c1c80c5e9de022499b938c40c44f3}{get\+\_\+repository\+\_\+size}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository)
+\begin{DoxyCompactList}\small\item\em returns the number of elements the repository currently has \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{repository_8h_a806111408d30e1b6c01578cb269249bd}{get\+\_\+repository\+\_\+element\+\_\+size}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository)
+\begin{DoxyCompactList}\small\item\em returns the size(in bytes) of a repository element \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the model for a general list-\/based repository 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{repository_8h_a8b18c4e40a55874a4e4a2656cb75d70a}\label{repository_8h_a8b18c4e40a55874a4e4a2656cb75d70a}} 
+\index{repository.h@{repository.h}!add\_repository@{add\_repository}}
+\index{add\_repository@{add\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{add\_repository()}{add\_repository()}}
+{\footnotesize\ttfamily void add\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{void $\ast$}]{p\+\_\+element,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+adds an element to a given repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em p\+\_\+element} & a pointer to the element which is adds to the repository \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{repository_8h_a2af8a58de6d15726b3be207862c2cf25}\label{repository_8h_a2af8a58de6d15726b3be207862c2cf25}} 
+\index{repository.h@{repository.h}!create\_repository@{create\_repository}}
+\index{create\_repository@{create\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{create\_repository()}{create\_repository()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrepository__t}{repository\+\_\+t}}$\ast$ create\+\_\+repository (\begin{DoxyParamCaption}\item[{int}]{element\+\_\+size,  }\item[{void($\ast$)(void $\ast$)}]{free\+\_\+element\+\_\+data,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+creates a repository object and returns a pointer to it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+size} & the size of a repository element(in bytes) \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+{\em free\+\_\+element\+\_\+data} & a pointer to a function that frees the data for an element(but not the element itself) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the newly created repository 
+\end{DoxyReturn}
+\mbox{\Hypertarget{repository_8h_a8034f67881644f764aa25fc82d94919e}\label{repository_8h_a8034f67881644f764aa25fc82d94919e}} 
+\index{repository.h@{repository.h}!delete\_repository@{delete\_repository}}
+\index{delete\_repository@{delete\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{delete\_repository()}{delete\_repository()}}
+{\footnotesize\ttfamily void delete\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository }\end{DoxyParamCaption})}
+
+
+
+frees the memory allocated for a given repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{repository_8h_a12977f426ff5e131c42fdc171ce34a73}\label{repository_8h_a12977f426ff5e131c42fdc171ce34a73}} 
+\index{repository.h@{repository.h}!filter\_repository@{filter\_repository}}
+\index{filter\_repository@{filter\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{filter\_repository()}{filter\_repository()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ filter\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{int($\ast$)(void $\ast$repository\+\_\+element, void $\ast$$\ast$args)}]{p\+\_\+filter\+\_\+function,  }\item[{void $\ast$$\ast$}]{filter\+\_\+function\+\_\+args,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+returns a list of the indexes of elements which match a given filter function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em p\+\_\+filter\+\_\+function} & a filter function which decides which elements are returned. If the function returns 1, the element is added to the answer. The filter function should have 2 arguments, the first one should be the pointer to the repository element, the second one should be any custom function arguments. \\
+\hline
+{\em filter\+\_\+function\+\_\+args} & any custom filter function arguments \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a vector that contains the indexes of the elements which are matching a given filter function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{repository_8h_ad8fbcdbce2ba27657cc181ec8d0c1754}\label{repository_8h_ad8fbcdbce2ba27657cc181ec8d0c1754}} 
+\index{repository.h@{repository.h}!get\_position\_repository@{get\_position\_repository}}
+\index{get\_position\_repository@{get\_position\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{get\_position\_repository()}{get\_position\_repository()}}
+{\footnotesize\ttfamily void$\ast$ get\+\_\+position\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{int}]{position,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+gets an element from a specified position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em position} & the position wanted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{repository_8h_a806111408d30e1b6c01578cb269249bd}\label{repository_8h_a806111408d30e1b6c01578cb269249bd}} 
+\index{repository.h@{repository.h}!get\_repository\_element\_size@{get\_repository\_element\_size}}
+\index{get\_repository\_element\_size@{get\_repository\_element\_size}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{get\_repository\_element\_size()}{get\_repository\_element\_size()}}
+{\footnotesize\ttfamily int get\+\_\+repository\+\_\+element\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository }\end{DoxyParamCaption})}
+
+
+
+returns the size(in bytes) of a repository element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of a repository element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{repository_8h_ae13c1c80c5e9de022499b938c40c44f3}\label{repository_8h_ae13c1c80c5e9de022499b938c40c44f3}} 
+\index{repository.h@{repository.h}!get\_repository\_size@{get\_repository\_size}}
+\index{get\_repository\_size@{get\_repository\_size}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{get\_repository\_size()}{get\_repository\_size()}}
+{\footnotesize\ttfamily int get\+\_\+repository\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository }\end{DoxyParamCaption})}
+
+
+
+returns the number of elements the repository currently has 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of elements the repository contains 
+\end{DoxyReturn}
+\mbox{\Hypertarget{repository_8h_a0c2d265c3de25aaed6d37e2e383fd521}\label{repository_8h_a0c2d265c3de25aaed6d37e2e383fd521}} 
+\index{repository.h@{repository.h}!remove\_repository@{remove\_repository}}
+\index{remove\_repository@{remove\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{remove\_repository()}{remove\_repository()}}
+{\footnotesize\ttfamily void remove\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{int}]{position,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+removes an element from the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em position} & the position of the element which is to be removed \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{repository_8h_ada835da7ff85619a548448e95cc1dca0}\label{repository_8h_ada835da7ff85619a548448e95cc1dca0}} 
+\index{repository.h@{repository.h}!update\_repository@{update\_repository}}
+\index{update\_repository@{update\_repository}!repository.h@{repository.h}}
+\doxyparagraph{\texorpdfstring{update\_repository()}{update\_repository()}}
+{\footnotesize\ttfamily void update\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{int}]{position,  }\item[{void $\ast$}]{p\+\_\+new\+\_\+element,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+updates an element from the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em position} & the position of the element which is to be updated \\
+\hline
+{\em p\+\_\+new\+\_\+element} & a pointer to the new value of the updated element \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}

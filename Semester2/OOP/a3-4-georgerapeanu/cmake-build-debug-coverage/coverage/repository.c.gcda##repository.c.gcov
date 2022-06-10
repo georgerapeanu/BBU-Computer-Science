@@ -1,0 +1,221 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/src/repository/repository.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/repository.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/repository.c.gcda
+        -:    0:Runs:1
+        -:    1:/*! @file repository.c This file contains the implementation for repository.h
+        -:    2: *
+        -:    3: */
+        -:    4:
+        -:    5:#pragma once
+        -:    6:#include "../../include/repository/repository.h"
+        -:    7:#include "../../include/domain/errors.h"
+        -:    8:#include "../../include/utils/utils.h"
+        -:    9:#include <stdlib.h>
+        -:   10:
+        -:   11:/*
+        -:   12: * This implementation does exactly what it says it does in repository.h
+        -:   13: */
+function create_repository called 21 returned 100% blocks executed 50%
+       21:   14:repository_t* create_repository(int element_size,void (*free_element_data)(void*), int* p_error){
+       21:   15:    repository_t* p_repository = (repository_t*) malloc(sizeof(repository_t));
+       21:   16:    if(p_repository == NULL){
+       21:   16-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 21
+    #####:   17:        set_error(p_error, 1);
+    %%%%%:   17-block  0
+call    0 never executed
+    #####:   18:        delete_repository(p_repository);
+call    0 never executed
+    #####:   19:        return NULL;
+        -:   20:    }
+       21:   21:    int tmp_error = 0;
+       21:   22:    p_repository->p_elements = create_vector(element_size, 0, free_element_data,&tmp_error);
+       21:   22-block  0
+call    0 returned 21
+       21:   23:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 21
+    #####:   24:        set_error(p_error, tmp_error);
+    %%%%%:   24-block  0
+call    0 never executed
+    #####:   25:        delete_repository(p_repository);
+call    0 never executed
+    #####:   26:        return NULL;
+        -:   27:    }
+       21:   28:    return p_repository;
+       21:   28-block  0
+        -:   29:}
+        -:   30:
+        -:   31:/*
+        -:   32: * This implementation does exactly what it says it does in repository.h
+        -:   33: */
+function delete_repository called 22 returned 100% blocks executed 100%
+       22:   34:void delete_repository(repository_t* p_repository){
+       22:   35:    if(p_repository != NULL){
+       22:   35-block  0
+branch  0 taken 21 (fallthrough)
+branch  1 taken 1
+       21:   36:        delete_vector(p_repository->p_elements);
+       21:   36-block  0
+call    0 returned 21
+       21:   37:        free(p_repository);
+        -:   38:    }
+       22:   39:}
+        -:   40:
+        -:   41:/*
+        -:   42: * This implementation does exactly what it says it does in repository.h
+        -:   43: */
+function add_repository called 66 returned 100% blocks executed 100%
+       66:   44:void add_repository(repository_t* p_repository, void* p_element, int* p_error){
+       66:   45:    push_back(p_repository->p_elements, p_element, p_error);
+       66:   45-block  0
+call    0 returned 66
+       66:   46:}
+        -:   47:
+        -:   48:/*
+        -:   49: * This implementation does exactly what it says it does in repository.h
+        -:   50: */
+function filter_repository called 109 returned 100% blocks executed 68%
+      109:   51:vector_t* filter_repository(repository_t* p_repository, int (*p_filter_function)(void* repository_element, void** args),  void **filter_function_args, int* p_error){
+      109:   52:    int tmp_error = 0;
+      109:   53:    vector_t* ans = create_vector(4, 0, NULL, &tmp_error);
+      109:   53-block  0
+call    0 returned 109
+      109:   54:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 109
+    #####:   55:        delete_vector(ans);
+    %%%%%:   55-block  0
+call    0 never executed
+    #####:   56:        set_error(p_error, tmp_error);
+call    0 never executed
+    #####:   57:        return NULL;
+        -:   58:    }
+      421:   59:    for(int i = 0;i < p_repository->p_elements->size;i++){
+      109:   59-block  0
+      312:   59-block  1
+      421:   59-block  2
+branch  0 taken 312
+branch  1 taken 109 (fallthrough)
+      312:   60:        if((*p_filter_function)(get_position_vector(p_repository->p_elements, i, NULL), filter_function_args) == 1){
+      312:   60-block  0
+call    0 returned 312
+call    1 returned 312
+branch  2 taken 83 (fallthrough)
+branch  3 taken 229
+       83:   61:            push_back(ans, &i,&tmp_error);
+       83:   61-block  0
+call    0 returned 83
+       83:   62:            if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 83
+    #####:   63:                delete_vector(ans);
+    %%%%%:   63-block  0
+call    0 never executed
+    #####:   64:                set_error(p_error, tmp_error);
+call    0 never executed
+    #####:   65:                return NULL;
+        -:   66:            }
+        -:   67:        }
+        -:   68:    }
+      109:   69:    return ans;
+      109:   69-block  0
+        -:   70:}
+        -:   71:
+        -:   72:/*
+        -:   73: * This implementation does exactly what it says it does in repository.h
+        -:   74: */
+function update_repository called 6 returned 100% blocks executed 100%
+        6:   75:void update_repository(repository_t* p_repository, int position, void* p_new_element, int* p_error){
+        6:   76:    int tmp_error = 0;
+        6:   77:    set_position_vector(p_repository->p_elements, position, p_new_element, &tmp_error);
+        6:   77-block  0
+call    0 returned 6
+        6:   78:    if(tmp_error != 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+        1:   79:        if(tmp_error == 6){
+        1:   79-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   80:            tmp_error = 7;
+        1:   80-block  0
+        -:   81:        }
+        1:   82:        set_error(p_error, tmp_error);
+        1:   82-block  0
+call    0 returned 1
+        1:   83:        return ;
+        -:   84:    }
+        -:   85:}
+        -:   86:
+        -:   87:/*
+        -:   88: * This implementation does exactly what it says it does in repository.h
+        -:   89: */
+function remove_repository called 11 returned 100% blocks executed 88%
+       11:   90:void remove_repository(repository_t* p_repository, int position, int* p_error){
+       11:   91:    if(position < 0 || position >= p_repository->p_elements->size){
+       11:   91-block  0
+branch  0 taken 11 (fallthrough)
+branch  1 taken 0
+       11:   91-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 10
+        1:   92:        set_error(p_error, 7);
+        1:   92-block  0
+call    0 returned 1
+        1:   93:        return ;
+        1:   93-block  0
+        -:   94:    }
+       10:   95:    int tmp_error = 0;
+       14:   96:    for(int i = position;i + 1 < p_repository->p_elements->size;i++){
+       10:   96-block  0
+       14:   96-block  1
+branch  0 taken 4
+branch  1 taken 10 (fallthrough)
+        4:   97:        swap(get_position_repository(p_repository, i, NULL), get_position_repository(p_repository,i + 1, NULL), p_repository->p_elements->element_size);
+        4:   97-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+        -:   98:    }
+       10:   99:    pop_back(p_repository->p_elements, &tmp_error);
+       10:   99-block  0
+call    0 returned 10
+       10:  100:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 10
+    #####:  101:        set_error(p_error, tmp_error);
+    %%%%%:  101-block  0
+call    0 never executed
+    #####:  102:        return ;
+        -:  103:    }
+        -:  104:}
+        -:  105:
+        -:  106:/*
+        -:  107: * This implementation does exactly what it says it does in repository.h
+        -:  108: */
+function get_position_repository called 117 returned 100% blocks executed 100%
+      117:  109:void* get_position_repository(repository_t* p_repository, int position, int* p_error){
+      117:  110:    return get_position_vector(p_repository->p_elements, position, p_error);
+      117:  110-block  0
+call    0 returned 117
+        -:  111:}
+        -:  112:
+        -:  113:/*
+        -:  114: * This implementation does exactly what it says it does in repository.h
+        -:  115: */
+function get_repository_size called 3 returned 100% blocks executed 100%
+        3:  116:int get_repository_size(repository_t* p_repository){
+        3:  117:    return p_repository->p_elements->size;
+        3:  117-block  0
+        -:  118:}
+        -:  119:
+        -:  120:/*
+        -:  121: * This implementation does exactly what it says it does in repository.h
+        -:  122: */
+function get_repository_element_size called 3 returned 100% blocks executed 100%
+        3:  123:int get_repository_element_size(repository_t* p_repository){
+        3:  124:    return p_repository->p_elements->element_size;
+        3:  124-block  0
+        -:  125:}

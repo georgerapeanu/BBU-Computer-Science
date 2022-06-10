@@ -1,0 +1,215 @@
+\hypertarget{classHTMLWatchlist}{}\doxysubsection{H\+T\+M\+L\+Watchlist$<$ T $>$ Class Template Reference}
+\label{classHTMLWatchlist}\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+
+
+Inheritance diagram for H\+T\+M\+L\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classHTMLWatchlist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for H\+T\+M\+L\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classHTMLWatchlist__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHTMLWatchlist_a3c546a4ad2eccff5f66649ca0166d4e9}{H\+T\+M\+L\+Watchlist}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em the default constructor of the repository Initializes a repository which holds an empty vector of type T \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHTMLWatchlist_a5794d19b21b230ebb98164cd23142043}\label{classHTMLWatchlist_a5794d19b21b230ebb98164cd23142043}} 
+\mbox{\hyperlink{classHTMLWatchlist_a5794d19b21b230ebb98164cd23142043}{$\sim$\+H\+T\+M\+L\+Watchlist}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHTMLWatchlist_a39b56c36c19cfc39350a12d779bb4bf6}{add}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHTMLWatchlist_ae046bc9f433014d236829262b2156d0c}{update}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHTMLWatchlist_aad01045e1c737618fa86549dc2243958}{remove}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classHTMLWatchlist_a4c21d6e4445ea08638dbe54114bed86f}{find}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classHTMLWatchlist_af889e2c79def97071f841f913646d25b}{get\+\_\+all}} () override
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHTMLWatchlist_af7f459ea070e716293779d3a2d45fe6d}{save}} () const override
+\item 
+void \mbox{\hyperlink{classHTMLWatchlist_a84e57864abd0d630403f7e1ff30849f6}{display}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHTMLWatchlist_a3c546a4ad2eccff5f66649ca0166d4e9}\label{classHTMLWatchlist_a3c546a4ad2eccff5f66649ca0166d4e9}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!HTMLWatchlist@{HTMLWatchlist}}
+\index{HTMLWatchlist@{HTMLWatchlist}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{HTMLWatchlist()}{HTMLWatchlist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::\mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+the default constructor of the repository Initializes a repository which holds an empty vector of type T 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & this is the path to the file in which to store the data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHTMLWatchlist_a39b56c36c19cfc39350a12d779bb4bf6}\label{classHTMLWatchlist_a39b56c36c19cfc39350a12d779bb4bf6}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!add@{add}}
+\index{add@{add}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if its id is already taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_a84e57864abd0d630403f7e1ff30849f6}\label{classHTMLWatchlist_a84e57864abd0d630403f7e1ff30849f6}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!display@{display}}
+\index{display@{display}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::display\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This file shows the file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a86275b7cceab399a29fc00af311befe2}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_a4c21d6e4445ea08638dbe54114bed86f}\label{classHTMLWatchlist_a4c21d6e4445ea08638dbe54114bed86f}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!find@{find}}
+\index{find@{find}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_af889e2c79def97071f841f913646d25b}\label{classHTMLWatchlist_af889e2c79def97071f841f913646d25b}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::get\+\_\+all\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_aad01045e1c737618fa86549dc2243958}\label{classHTMLWatchlist_aad01045e1c737618fa86549dc2243958}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_af7f459ea070e716293779d3a2d45fe6d}\label{classHTMLWatchlist_af7f459ea070e716293779d3a2d45fe6d}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!save@{save}}
+\index{save@{save}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::save\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This function saves the data to a file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a58ac45a38bc11d0e5bb45e5f6d86b7df}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classHTMLWatchlist_ae046bc9f433014d236829262b2156d0c}\label{classHTMLWatchlist_ae046bc9f433014d236829262b2156d0c}} 
+\index{HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}!update@{update}}
+\index{update@{update}!HTMLWatchlist$<$ T $>$@{HTMLWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classHTMLWatchlist}{H\+T\+M\+L\+Watchlist}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{Abstract\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/\mbox{\hyperlink{HTMLWatchlist_8h}{H\+T\+M\+L\+Watchlist.\+h}}\item 
+src/repository/H\+T\+M\+L\+Watchlist.\+cpp\end{DoxyCompactItemize}

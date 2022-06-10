@@ -1,0 +1,326 @@
+\hypertarget{classMovie}{}\doxysubsection{Movie Class Reference}
+\label{classMovie}\index{Movie@{Movie}}
+
+
+{\ttfamily \#include $<$Movie.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMovie_a62d82e9e61d6349ae66a73d0af6667ac}\label{classMovie_a62d82e9e61d6349ae66a73d0af6667ac}} 
+\mbox{\hyperlink{classMovie_a62d82e9e61d6349ae66a73d0af6667ac}{Movie}} ()
+\begin{DoxyCompactList}\small\item\em default constructor for an \mbox{\hyperlink{classMovie}{Movie}} instance \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMovie_a16cd11c1c178adcb0795b2f1007edfb7}{Movie}} (const \mbox{\hyperlink{classMovie}{Movie}} \&other)
+\item 
+\mbox{\hyperlink{classMovie_a653828d918ff90a5056a1949bfb88dbd}{Movie}} (const std\+::string \&title, const std\+::string \&genre, const int \&year, const int \&likes, const std\+::string \&trailer\+\_\+link)
+\item 
+std\+::string \mbox{\hyperlink{classMovie_a5fcd8d09192a9d4918ccb6d3bb4f17ab}{get\+\_\+title}} () const
+\begin{DoxyCompactList}\small\item\em gets the title of the movie \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMovie_a55c590c9b159d85b70ae79802cb4d967}{get\+\_\+genre}} () const
+\begin{DoxyCompactList}\small\item\em gets the genre of the movie \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMovie_a44da876bdf878df00ff86897785ead10}{get\+\_\+year}} () const
+\begin{DoxyCompactList}\small\item\em gets the year of the movie \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMovie_ad5ac6c989056a9b0d7d399f4d2adeeae}{get\+\_\+likes}} () const
+\begin{DoxyCompactList}\small\item\em gets the number of likes of the movie \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMovie_ab0842ce292fcb89a75ee0f34a08b0c96}{get\+\_\+trailer\+\_\+link}} () const
+\begin{DoxyCompactList}\small\item\em gets the link to the trailer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovie_ac26c1d28cd45d84fed904f97a9d2d876}{set\+\_\+title}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em sets the title of the movie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovie_af4917982a28e717e7aebd9dfe82a3c8c}{set\+\_\+genre}} (const std\+::string \&genre)
+\begin{DoxyCompactList}\small\item\em sets the genre of the movie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovie_a47b7a951beb033404923821e6d0356da}{set\+\_\+year}} (int year)
+\begin{DoxyCompactList}\small\item\em sets the year of the movie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovie_a8ceed1cae4d0ea178a0c5e21575d1148}{set\+\_\+likes}} (int likes)
+\begin{DoxyCompactList}\small\item\em sets the number of likes of the movie \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovie_a95bc8efebbe2e43201566d39703563f1}{set\+\_\+trailer\+\_\+link}} (const std\+::string \&trailer\+\_\+link)
+\begin{DoxyCompactList}\small\item\em set the trailer link \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMovie_ade6fdbd58f3fca63167daea2931af6c1}{get\+\_\+id}} () const
+\begin{DoxyCompactList}\small\item\em this function returns a string that will correspond to the id of the movie \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMovie_a99cf4bc036534699503f15392325a574}{operator==}} (const \mbox{\hyperlink{classMovie}{Movie}} \&other) const
+\begin{DoxyCompactList}\small\item\em equality operator between movies \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMovie_a0524740eda99cf55ecb498f5def48797}{operator!=}} (const \mbox{\hyperlink{classMovie}{Movie}} \&other) const
+\begin{DoxyCompactList}\small\item\em not equal operator between movies \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{classMovie_a752395a82051a5a4e8e25098f9f93ef4}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classMovie}{Movie}} \&c)
+\begin{DoxyCompactList}\small\item\em istream insertion operator \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classMovie_af32142c6b78d352670d199c16d011271}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{classMovie}{Movie}} c)
+\begin{DoxyCompactList}\small\item\em ostream extraction operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+The \mbox{\hyperlink{classMovie}{Movie}} class model 
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMovie_a16cd11c1c178adcb0795b2f1007edfb7}\label{classMovie_a16cd11c1c178adcb0795b2f1007edfb7}} 
+\index{Movie@{Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Movie\+::\+Movie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{other }\end{DoxyParamCaption})}
+
+copy constructor for an \mbox{\hyperlink{classMovie}{Movie}} instance 
+\begin{DoxyParams}{Parameters}
+{\em other} & the other movie instance who\textquotesingle{}s attributes are copied. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovie_a653828d918ff90a5056a1949bfb88dbd}\label{classMovie_a653828d918ff90a5056a1949bfb88dbd}} 
+\index{Movie@{Movie}!Movie@{Movie}}
+\index{Movie@{Movie}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{Movie()}{Movie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Movie\+::\+Movie (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{genre,  }\item[{const int \&}]{year,  }\item[{const int \&}]{likes,  }\item[{const std\+::string \&}]{trailer\+\_\+link }\end{DoxyParamCaption})}
+
+Constructor with full params. 
+\begin{DoxyParams}{Parameters}
+{\em title} & the movie title \\
+\hline
+{\em genre} & the movie genre \\
+\hline
+{\em year} & the year in which the movie was released \\
+\hline
+{\em likes} & the number of likes the movie has \\
+\hline
+{\em trailer\+\_\+link} & a link to the trailer of the movie \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMovie_a55c590c9b159d85b70ae79802cb4d967}\label{classMovie_a55c590c9b159d85b70ae79802cb4d967}} 
+\index{Movie@{Movie}!get\_genre@{get\_genre}}
+\index{get\_genre@{get\_genre}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_genre()}{get\_genre()}}
+{\footnotesize\ttfamily std\+::string Movie\+::get\+\_\+genre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the genre of the movie 
+
+\begin{DoxyReturn}{Returns}
+the genre of the movie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_ade6fdbd58f3fca63167daea2931af6c1}\label{classMovie_ade6fdbd58f3fca63167daea2931af6c1}} 
+\index{Movie@{Movie}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily std\+::string Movie\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+this function returns a string that will correspond to the id of the movie 
+
+\begin{DoxyReturn}{Returns}
+the id of the movie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_ad5ac6c989056a9b0d7d399f4d2adeeae}\label{classMovie_ad5ac6c989056a9b0d7d399f4d2adeeae}} 
+\index{Movie@{Movie}!get\_likes@{get\_likes}}
+\index{get\_likes@{get\_likes}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_likes()}{get\_likes()}}
+{\footnotesize\ttfamily int Movie\+::get\+\_\+likes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the number of likes of the movie 
+
+\begin{DoxyReturn}{Returns}
+the number of likes that the movie has 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_a5fcd8d09192a9d4918ccb6d3bb4f17ab}\label{classMovie_a5fcd8d09192a9d4918ccb6d3bb4f17ab}} 
+\index{Movie@{Movie}!get\_title@{get\_title}}
+\index{get\_title@{get\_title}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_title()}{get\_title()}}
+{\footnotesize\ttfamily std\+::string Movie\+::get\+\_\+title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the title of the movie 
+
+\begin{DoxyReturn}{Returns}
+the title of the movies 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_ab0842ce292fcb89a75ee0f34a08b0c96}\label{classMovie_ab0842ce292fcb89a75ee0f34a08b0c96}} 
+\index{Movie@{Movie}!get\_trailer\_link@{get\_trailer\_link}}
+\index{get\_trailer\_link@{get\_trailer\_link}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_trailer\_link()}{get\_trailer\_link()}}
+{\footnotesize\ttfamily std\+::string Movie\+::get\+\_\+trailer\+\_\+link (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the link to the trailer 
+
+\begin{DoxyReturn}{Returns}
+the link to the movie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_a44da876bdf878df00ff86897785ead10}\label{classMovie_a44da876bdf878df00ff86897785ead10}} 
+\index{Movie@{Movie}!get\_year@{get\_year}}
+\index{get\_year@{get\_year}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{get\_year()}{get\_year()}}
+{\footnotesize\ttfamily int Movie\+::get\+\_\+year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+gets the year of the movie 
+
+\begin{DoxyReturn}{Returns}
+the year in which the movie was released 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_a0524740eda99cf55ecb498f5def48797}\label{classMovie_a0524740eda99cf55ecb498f5def48797}} 
+\index{Movie@{Movie}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Movie\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+not equal operator between movies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if they are the same, true otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_a99cf4bc036534699503f15392325a574}\label{classMovie_a99cf4bc036534699503f15392325a574}} 
+\index{Movie@{Movie}!operator==@{operator==}}
+\index{operator==@{operator==}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Movie\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+equality operator between movies 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are the same, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_af4917982a28e717e7aebd9dfe82a3c8c}\label{classMovie_af4917982a28e717e7aebd9dfe82a3c8c}} 
+\index{Movie@{Movie}!set\_genre@{set\_genre}}
+\index{set\_genre@{set\_genre}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{set\_genre()}{set\_genre()}}
+{\footnotesize\ttfamily void Movie\+::set\+\_\+genre (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{genre }\end{DoxyParamCaption})}
+
+
+
+sets the genre of the movie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em genre} & the new genre of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovie_a8ceed1cae4d0ea178a0c5e21575d1148}\label{classMovie_a8ceed1cae4d0ea178a0c5e21575d1148}} 
+\index{Movie@{Movie}!set\_likes@{set\_likes}}
+\index{set\_likes@{set\_likes}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{set\_likes()}{set\_likes()}}
+{\footnotesize\ttfamily void Movie\+::set\+\_\+likes (\begin{DoxyParamCaption}\item[{int}]{likes }\end{DoxyParamCaption})}
+
+
+
+sets the number of likes of the movie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em likes} & the nw likes of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovie_ac26c1d28cd45d84fed904f97a9d2d876}\label{classMovie_ac26c1d28cd45d84fed904f97a9d2d876}} 
+\index{Movie@{Movie}!set\_title@{set\_title}}
+\index{set\_title@{set\_title}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{set\_title()}{set\_title()}}
+{\footnotesize\ttfamily void Movie\+::set\+\_\+title (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title }\end{DoxyParamCaption})}
+
+
+
+sets the title of the movie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the new title of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovie_a95bc8efebbe2e43201566d39703563f1}\label{classMovie_a95bc8efebbe2e43201566d39703563f1}} 
+\index{Movie@{Movie}!set\_trailer\_link@{set\_trailer\_link}}
+\index{set\_trailer\_link@{set\_trailer\_link}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{set\_trailer\_link()}{set\_trailer\_link()}}
+{\footnotesize\ttfamily void Movie\+::set\+\_\+trailer\+\_\+link (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{trailer\+\_\+link }\end{DoxyParamCaption})}
+
+
+
+set the trailer link 
+
+
+\begin{DoxyParams}{Parameters}
+{\em trailer\+\_\+link} & the new trailer link of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovie_a47b7a951beb033404923821e6d0356da}\label{classMovie_a47b7a951beb033404923821e6d0356da}} 
+\index{Movie@{Movie}!set\_year@{set\_year}}
+\index{set\_year@{set\_year}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{set\_year()}{set\_year()}}
+{\footnotesize\ttfamily void Movie\+::set\+\_\+year (\begin{DoxyParamCaption}\item[{int}]{year }\end{DoxyParamCaption})}
+
+
+
+sets the year of the movie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em year} & the new year of the movie \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classMovie_af32142c6b78d352670d199c16d011271}\label{classMovie_af32142c6b78d352670d199c16d011271}} 
+\index{Movie@{Movie}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{classMovie}{Movie}}}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+ostream extraction operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovie_a752395a82051a5a4e8e25098f9f93ef4}\label{classMovie_a752395a82051a5a4e8e25098f9f93ef4}} 
+\index{Movie@{Movie}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Movie@{Movie}}
+\doxyparagraph{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classMovie}{Movie}} \&}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+istream insertion operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the input stream \\
+\hline
+{\em c} & the movie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/domain/\mbox{\hyperlink{Movie_8h}{Movie.\+h}}\item 
+src/domain/\mbox{\hyperlink{Movie_8cpp}{Movie.\+cpp}}\end{DoxyCompactItemize}

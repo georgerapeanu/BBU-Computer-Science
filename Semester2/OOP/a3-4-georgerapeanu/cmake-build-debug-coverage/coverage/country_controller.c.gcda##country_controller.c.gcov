@@ -1,0 +1,1560 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/src/controller/country_controller.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/country_controller.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/country_controller.c.gcda
+        -:    0:Runs:1
+        -:    1:/*! @file country_controller.c This file contains the implementation for the functions from country_controller.h
+        -:    2: *
+        -:    3: */
+        -:    4:
+        -:    5:#pragma once
+        -:    6:#include "../../include/domain/errors.h"
+        -:    7:#include "../../include/controller/country_controller.h"
+        -:    8:#include "../../include/utils/utils.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <assert.h>
+        -:   12:
+        -:   13:/*
+        -:   14: * This implementation does exactly what it says it does in country_controller.h
+        -:   15: */
+function create_country_controller called 13 returned 100% blocks executed 50%
+       13:   16:country_controller_t* create_country_controller(repository_t* p_repository, undo_redo_repository_t* p_undo_redo_repository, int* p_error){
+       13:   17:    country_controller_t* p_controller = (country_controller_t*)malloc(sizeof(country_controller_t));
+       13:   18:    if(p_controller == NULL){
+       13:   18-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 13
+    #####:   19:        set_error(p_error, 1);
+    %%%%%:   19-block  0
+call    0 never executed
+    #####:   20:        delete_country_controller(p_controller);
+call    0 never executed
+    #####:   21:        return NULL;
+        -:   22:    }
+       13:   23:    p_controller->p_country_repository = p_repository;
+       13:   24:    p_controller->p_undo_redo_repository = p_undo_redo_repository;
+       13:   25:    return p_controller;
+       13:   25-block  0
+        -:   26:}
+        -:   27:
+        -:   28:/*
+        -:   29: * This implementation does exactly what it says it does in country_controller.h
+        -:   30: */
+function delete_country_controller called 13 returned 100% blocks executed 100%
+       13:   31:void delete_country_controller(country_controller_t* p_controller){
+       13:   32:    if(p_controller != NULL){
+       13:   32-block  0
+branch  0 taken 13 (fallthrough)
+branch  1 taken 0
+       13:   33:        free(p_controller);
+       13:   33-block  0
+        -:   34:    }
+       13:   35:}
+        -:   36:
+        -:   37:/*!
+        -:   38: * @brief filters countries by checking their exact name
+        -:   39: * @param p_country pointer to a country
+        -:   40: * @param args void** pointer containing only one element which is a pointer to the name to be checked against
+        -:   41: * @return 1 if they are the same, 0 otherwise
+        -:   42: */
+function filter_by_exact_name called 205 returned 100% blocks executed 100%
+      205:   43:int filter_by_exact_name(void* p_country, void** args){
+      205:   44:    return strcmp(((country_t*)p_country)->name, ((char*)args)) == 0;
+      205:   44-block  0
+        -:   45:}
+        -:   46:
+        -:   47:/*!
+        -:   48: * @brief returns the index of a country by name in repository.
+        -:   49: * @param p_controller a pointer to the country controller
+        -:   50: * @param p_name a pointer to the string containing the name of the country
+        -:   51: * @param p_error a pointer to the variable that receives the error code. It can be NULL in case no error is wanted.
+        -:   52: * @return the country index if it exists, and -1 otherwise(but it also sets p_error to 11)
+        -:   53: */
+function get_index_from_name called 85 returned 100% blocks executed 68%
+       85:   54:int get_index_from_name(country_controller_t* p_controller, const char* p_name, int* p_error){
+       85:   55:    int tmp_error = 0;
+       85:   56:    char* p_lowercase = get_lowercase(p_name, NULL);
+       85:   56-block  0
+call    0 returned 85
+       85:   57:    vector_t* p_country_indexes = filter_repository(p_controller->p_country_repository, &filter_by_exact_name, (void**)p_lowercase, &tmp_error);
+call    0 returned 85
+       85:   58:    free(p_lowercase);
+       85:   59:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 85
+    #####:   60:        set_error(p_error, tmp_error);
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:        delete_vector(p_country_indexes);
+call    0 never executed
+    #####:   62:        return -1;
+        -:   63:    }
+       85:   64:    if(p_country_indexes->size != 1){
+       85:   64-block  0
+branch  0 taken 56 (fallthrough)
+branch  1 taken 29
+       56:   65:        set_error(p_error, 11);
+       56:   65-block  0
+call    0 returned 56
+       56:   66:        delete_vector(p_country_indexes);
+call    0 returned 56
+       56:   67:        return -1;
+        -:   68:    }
+        -:   69:
+       29:   70:    int* p_index = get_position_vector(p_country_indexes, 0, &tmp_error);
+       29:   70-block  0
+call    0 returned 29
+       29:   71:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 29
+    #####:   72:        set_error(p_error, tmp_error);
+    %%%%%:   72-block  0
+call    0 never executed
+    #####:   73:        delete_vector(p_country_indexes);
+call    0 never executed
+    #####:   74:        return -1;
+        -:   75:    }
+       29:   76:    int index = *p_index;
+       29:   77:    delete_vector(p_country_indexes);
+       29:   77-block  0
+call    0 returned 29
+       29:   78:    return index;
+        -:   79:}
+        -:   80:
+        -:   81:/*!
+        -:   82: * @brief adds a country to the controller.
+        -:   83: * @param p_controller a pointer to the country controller
+        -:   84: * @param p_country a pointer to the country to be added.
+        -:   85: * @param p_error a pointer to the variable that receives the error code. It can be NULL in case no error is wanted.
+        -:   86: */
+function add_country called 52 returned 100% blocks executed 75%
+       52:   87:void add_country(country_controller_t* p_controller, const country_t* p_country, int* p_error){
+       52:   88:    int tmp_error = 0;
+       52:   89:    int index = get_index_from_name(p_controller, p_country->name, &tmp_error);
+       52:   89-block  0
+call    0 returned 52
+       52:   90:    if(tmp_error != 0){
+branch  0 taken 51 (fallthrough)
+branch  1 taken 1
+       51:   91:        if(tmp_error != 11){
+       51:   91-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 51
+    #####:   92:            set_error(p_error, tmp_error);
+    %%%%%:   92-block  0
+call    0 never executed
+       1*:   93:            return ;
+        1:   93-block  0
+        -:   94:        }
+       51:   95:        tmp_error = 0;
+       51:   95-block  0
+        -:   96:    }
+       52:   97:    if(index != -1){
+       52:   97-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 51
+        1:   98:        set_error(p_error, 8);
+        1:   98-block  0
+call    0 returned 1
+        1:   99:        return ;
+        -:  100:    }
+       51:  101:    add_repository(p_controller->p_country_repository, (void*)p_country, &tmp_error);
+       51:  101-block  0
+call    0 returned 51
+       51:  102:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 51
+    #####:  103:        set_error(p_error, tmp_error);
+    %%%%%:  103-block  0
+call    0 never executed
+    #####:  104:        return ;
+        -:  105:    }
+        -:  106:}
+        -:  107:
+        -:  108:/*!
+        -:  109: * @brief removes a country from the controller.
+        -:  110: * @param p_controller a pointer to the country controller
+        -:  111: * @param index the index of the country which is removed
+        -:  112: * @param p_error a pointer to the variable that receives the error code. It can be NULL in case no error is wanted.
+        -:  113: */
+function remove_country called 9 returned 100% blocks executed 100%
+        9:  114:void remove_country(country_controller_t* p_controller, const int index, int* p_error){
+        9:  115:    remove_repository(p_controller->p_country_repository, index, p_error);
+        9:  115-block  0
+call    0 returned 9
+        9:  116:}
+        -:  117:
+        -:  118:/*!
+        -:  119: * @brief updates a country from the controller.
+        -:  120: * @param p_controller a pointer to the country controller
+        -:  121: * @param index the index of the country which is removed
+        -:  122: * @param p_new_country a pointer to a country object containing the new data
+        -:  123: * @param p_error a pointer to the variable that receives the error code. It can be NULL in case no error is wanted.
+        -:  124: */
+function update_country called 4 returned 100% blocks executed 78%
+        4:  125:void update_country(country_controller_t* p_controller, const int index, const country_t* p_new_country, int* p_error){
+        4:  126:    int tmp_error = 0;
+        4:  127:    void* p_elem = get_position_repository(p_controller->p_country_repository, index, &tmp_error);
+        4:  127-block  0
+call    0 returned 4
+        4:  128:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  129:        set_error(p_error, tmp_error);
+    %%%%%:  129-block  0
+call    0 never executed
+    #####:  130:        return ;
+        -:  131:    }
+        4:  132:    if(p_controller->p_country_repository->p_elements->free_elem_data != NULL){
+        4:  132-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 0
+        4:  133:        p_controller->p_country_repository->p_elements->free_elem_data(p_elem);
+        4:  133-block  0
+call    0 returned 4
+        -:  134:    }
+        4:  135:    update_repository(p_controller->p_country_repository, index, (void*)p_new_country, p_error);
+        4:  135-block  0
+call    0 returned 4
+        -:  136:}
+        -:  137:
+        -:  138:/*!
+        -:  139: * @brief migrates population from a country to another
+        -:  140: * @param p_controller a pointer to the country controller
+        -:  141: * @param src_index the index of the source country
+        -:  142: * @param dst_index the index of the destination country
+        -:  143: * @param population the population that is migrated
+        -:  144: * @param p_error a pointer to the variable that receives the error code. It can be NULL in case no error is wanted.
+        -:  145: */
+function migrate_country called 7 returned 100% blocks executed 65%
+        7:  146:void migrate_country(country_controller_t* p_controller, const int src_index, const int dst_index, const int population, int* p_error){
+        7:  147:    if(src_index == dst_index){
+        7:  147-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    #####:  148:        set_error(p_error, 12);
+    %%%%%:  148-block  0
+call    0 never executed
+       1*:  149:        return ;
+        1:  149-block  0
+        -:  150:    }
+        7:  151:    country_t* p_src = NULL;
+        7:  152:    country_t* p_dst = NULL;
+        7:  153:    int tmp_error = 0;
+        7:  154:    p_src = (country_t*)get_position_repository(p_controller->p_country_repository, src_index, &tmp_error);
+        7:  154-block  0
+call    0 returned 7
+        7:  155:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    #####:  156:        set_error(p_error, tmp_error);
+    %%%%%:  156-block  0
+call    0 never executed
+    #####:  157:        return ;
+        -:  158:    }
+        7:  159:    p_dst = (country_t*)get_position_repository(p_controller->p_country_repository, dst_index, &tmp_error);
+        7:  159-block  0
+call    0 returned 7
+        7:  160:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 7
+    #####:  161:        set_error(p_error, tmp_error);
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:        return ;
+        -:  163:    }
+        7:  164:    if(p_src->population < population){
+        7:  164-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 6
+        1:  165:        set_error(p_error, 13);
+        1:  165-block  0
+call    0 returned 1
+        1:  166:        return ;
+        -:  167:    }
+        6:  168:    p_src->population -= population;
+        6:  169:    p_dst->population += population;
+        6:  169-block  0
+        -:  170:}
+        -:  171:
+        -:  172:/*!
+        -:  173: * frees the memory allocated for the arguments of an add operation
+        -:  174: * @param args a pointer to the vector containing the arguments
+        -:  175: */
+function free_add_country_args called 6 returned 100% blocks executed 88%
+        6:  176:void free_add_country_args(vector_t* args){
+       6*:  177:    assert(args->size == 5);
+        6:  177-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    %%%%%:  177-block  1
+call    2 never executed
+        6:  178:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, NULL);
+        6:  178-block  0
+call    0 returned 6
+        6:  179:    char* p_country_name = *(char**)get_position_vector(args, 1, NULL);
+call    0 returned 6
+        6:  180:    char* p_continent_name = *(char**)get_position_vector(args, 2, NULL);
+call    0 returned 6
+        6:  181:    int* p_population = *(int**)get_position_vector(args, 3, NULL);
+call    0 returned 6
+        6:  182:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 4, NULL);
+call    0 returned 6
+        6:  183:    free(p_country_name);
+        6:  184:    free(p_continent_name);
+        6:  185:    free(p_population);
+        6:  186:    free(p_make_undo_redo_operation);
+        6:  187:}
+        -:  188:
+        -:  189:
+        -:  190:/*!
+        -:  191: * @brief this function frees the memory allocated for the arguments a remove from args operation
+        -:  192: * @param args pointer to the arguments
+        -:  193: */
+function free_remove_country_args called 6 returned 100% blocks executed 83%
+        6:  194:void free_remove_country_args(vector_t* args){
+       6*:  195:    assert(args->size == 3);
+        6:  195-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    %%%%%:  195-block  1
+call    2 never executed
+        6:  196:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, NULL);
+        6:  196-block  0
+call    0 returned 6
+        6:  197:    char* p_country_name = *(char**)get_position_vector(args, 1, NULL);
+call    0 returned 6
+        6:  198:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 2, NULL);
+call    0 returned 6
+        6:  199:    free(p_country_name);
+        6:  200:    free(p_make_undo_redo_operation);
+        6:  201:}
+        -:  202:
+        -:  203:/*!
+        -:  204: * @brief this function frees the memory allocated for arguments for a update from args operation
+        -:  205: * @param args pointer to the arguments
+        -:  206: */
+function free_update_country_args called 2 returned 100% blocks executed 86%
+        2:  207:void free_update_country_args(vector_t* args){
+       2*:  208:    assert(args->size == 4);
+        2:  208-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    %%%%%:  208-block  1
+call    2 never executed
+        2:  209:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, NULL);
+        2:  209-block  0
+call    0 returned 2
+        2:  210:    char* p_country_name = *(char**)get_position_vector(args, 1, NULL);
+call    0 returned 2
+        2:  211:    int* p_population = *(int**)get_position_vector(args, 2, NULL);
+call    0 returned 2
+        2:  212:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 3, NULL);
+call    0 returned 2
+        2:  213:    free(p_country_name);
+        2:  214:    free(p_population);
+        2:  215:    free(p_make_undo_redo_operation);
+        2:  216:}
+        -:  217:
+function free_migrate_country_args called 4 returned 100% blocks executed 88%
+        4:  218:void free_migrate_country_args(vector_t* args){
+       4*:  219:    assert(args->size == 5);
+        4:  219-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    %%%%%:  219-block  1
+call    2 never executed
+        4:  220:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, NULL);
+        4:  220-block  0
+call    0 returned 4
+        4:  221:    char* p_country_src = *(char**)get_position_vector(args, 1, NULL);
+call    0 returned 4
+        4:  222:    char* p_country_dst = *(char**)get_position_vector(args, 2, NULL);
+call    0 returned 4
+        4:  223:    int* p_population = *(int**)get_position_vector(args, 3, NULL);
+call    0 returned 4
+        4:  224:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 4, NULL);
+call    0 returned 4
+        -:  225:
+        4:  226:    free(p_country_src);
+        4:  227:    free(p_country_dst);
+        4:  228:    free(p_population);
+        4:  229:    free(p_make_undo_redo_operation);
+        4:  230:}
+        -:  231:
+        -:  232:/*
+        -:  233: * This implementation does exactly what it says it does in country_controller.h
+        -:  234: */
+function add_country_ui called 58 returned 100% blocks executed 85%
+       58:  235:void add_country_ui(country_controller_t* p_controller, const char* p_country_name, const char* p_country_continent, const int population, int make_undo_redo, int* p_error){
+       58:  236:    if(population < 0){
+       58:  236-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 57
+        1:  237:        set_error(p_error, 9);
+        1:  237-block  0
+call    0 returned 1
+        7:  238:        return ;
+        7:  238-block  0
+        -:  239:    }
+        -:  240:    const static char* possible_continents[] = {
+        -:  241:            "europe",
+        -:  242:            "america",
+        -:  243:            "africa",
+        -:  244:            "australia",
+        -:  245:            "asia"
+        -:  246:    };
+        -:  247:
+       57:  248:    int tmp_error = 0;
+       57:  249:    char* lowercase_continent = get_lowercase(p_country_continent, &tmp_error);
+       57:  249-block  0
+call    0 returned 57
+        -:  250:
+       57:  251:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 57
+    #####:  252:        set_error(p_error, tmp_error);
+    %%%%%:  252-block  0
+call    0 never executed
+    #####:  253:        if(lowercase_continent != NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:  254:            free(lowercase_continent);
+    %%%%%:  254-block  0
+        -:  255:        }
+    #####:  256:        return ;
+    %%%%%:  256-block  0
+        -:  257:    }
+        -:  258:
+       57:  259:    int ok = 0;
+      147:  260:    for(int i = 0;i < 5;i++){
+       57:  260-block  0
+       90:  260-block  1
+      147:  260-block  2
+branch  0 taken 142
+branch  1 taken 5 (fallthrough)
+      142:  261:        if(strcmp(possible_continents[i], lowercase_continent) == 0){
+      142:  261-block  0
+branch  0 taken 52 (fallthrough)
+branch  1 taken 90
+       52:  262:            ok = 1;
+       52:  263:            break;
+       52:  263-block  0
+        -:  264:        }
+        -:  265:    }
+       57:  266:    free(lowercase_continent);
+        -:  267:
+       57:  268:    if(ok == 0){
+       57:  268-block  0
+branch  0 taken 5 (fallthrough)
+branch  1 taken 52
+        5:  269:        set_error(p_error, 10);
+        5:  269-block  0
+call    0 returned 5
+        5:  270:        return ;
+        -:  271:    }
+        -:  272:
+       52:  273:    country_t* p_new_country = create_country(p_country_name, p_country_continent, population, &tmp_error);
+       52:  273-block  0
+call    0 returned 52
+       52:  274:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 52
+    #####:  275:        delete_country(p_new_country);
+    %%%%%:  275-block  0
+call    0 never executed
+    #####:  276:        set_error(p_error, tmp_error);
+call    0 never executed
+    #####:  277:        return ;
+        -:  278:    }
+        -:  279:
+       52:  280:    add_country(p_controller, p_new_country , &tmp_error);
+       52:  280-block  0
+call    0 returned 52
+       52:  281:    if(tmp_error != 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 51
+        1:  282:        set_error(p_error, tmp_error);
+        1:  282-block  0
+call    0 returned 1
+        1:  283:        delete_country(p_new_country);
+call    0 returned 1
+        1:  284:        return ;
+        -:  285:    }
+       51:  286:    free(p_new_country); // we do not want to free any of its char* because they are remembered like that in the repo
+        -:  287:
+       51:  288:    if(make_undo_redo){
+       51:  288-block  0
+branch  0 taken 4 (fallthrough)
+branch  1 taken 47
+        4:  289:        char* p_redo_name = malloc(strlen(p_country_name) + 1);
+        4:  290:        char* p_redo_continent = malloc(strlen(p_country_continent) + 1);
+        4:  291:        int* p_redo_population = malloc(sizeof(int));
+        4:  292:        int* p_redo_make_undo_redo = malloc(sizeof(int));
+        -:  293:
+        4:  294:        strcpy(p_redo_name, p_country_name);
+        4:  295:        strcpy(p_redo_continent, p_country_continent);
+        4:  296:        *p_redo_population = population;
+        4:  297:        *p_redo_make_undo_redo = 0;
+        -:  298:
+        4:  299:        vector_t* redo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+        4:  299-block  0
+call    0 returned 4
+        4:  300:        push_back(redo_args, &p_controller, NULL);
+call    0 returned 4
+        4:  301:        push_back(redo_args, &p_redo_name, NULL);
+call    0 returned 4
+        4:  302:        push_back(redo_args, &p_redo_continent, NULL);
+call    0 returned 4
+        4:  303:        push_back(redo_args, &p_redo_population, NULL);
+call    0 returned 4
+        4:  304:        push_back(redo_args, &p_redo_make_undo_redo, NULL);
+call    0 returned 4
+        4:  305:        operation_t* p_redo_operation = create_operation(&add_country_from_args, redo_args, &free_add_country_args, NULL);
+call    0 returned 4
+        -:  306:
+        4:  307:        char* p_undo_name = malloc(strlen(p_country_name) + 1);
+        4:  308:        int* p_undo_make_undo_redo = malloc(sizeof(int));
+        4:  309:        strcpy(p_undo_name, p_country_name);
+        4:  310:        *p_undo_make_undo_redo = 0;
+        4:  311:        vector_t* undo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+call    0 returned 4
+        4:  312:        push_back(undo_args, &p_controller, NULL);
+call    0 returned 4
+        4:  313:        push_back(undo_args, &p_undo_name, NULL);
+call    0 returned 4
+        4:  314:        push_back(undo_args, &p_undo_make_undo_redo, NULL);
+call    0 returned 4
+        4:  315:        operation_t* p_undo_operation = create_operation(&remove_country_from_args, undo_args, &free_remove_country_args, NULL);
+call    0 returned 4
+        4:  316:        undo_redo_operation_t* p_operation = create_undo_redo_operation(p_undo_operation, p_redo_operation, NULL);
+call    0 returned 4
+        4:  317:        add_undo_repository(p_controller->p_undo_redo_repository, p_operation, NULL);
+call    0 returned 4
+        4:  318:        free(p_operation); /// this frees the memory for the operation because its data is stored in the repository
+        -:  319:    }
+        -:  320:}
+        -:  321:
+        -:  322:/*
+        -:  323: * This implementation does exactly what it says it does in country_controller.h
+        -:  324: */
+function add_country_from_args called 5 returned 100% blocks executed 65%
+        5:  325:void add_country_from_args(vector_t* args, int* p_error){
+        5:  326:    if(args->size != 5){
+        5:  326-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:  327:        set_error(p_error, 18);
+        1:  327-block  0
+call    0 returned 1
+        1:  328:        return ;
+        1:  328-block  0
+        -:  329:    }
+        4:  330:    int tmp_error = 0;
+        4:  331:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, &tmp_error);
+        4:  331-block  0
+call    0 returned 4
+        4:  332:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  333:        set_error(p_error, tmp_error);
+    %%%%%:  333-block  0
+call    0 never executed
+    #####:  334:        return;
+        -:  335:    }
+        4:  336:    char* p_country_name = *(char**)get_position_vector(args, 1, &tmp_error);
+        4:  336-block  0
+call    0 returned 4
+        4:  337:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  338:        set_error(p_error, tmp_error);
+    %%%%%:  338-block  0
+call    0 never executed
+    #####:  339:        return;
+        -:  340:    }
+        4:  341:    char* p_continent_name = *(char**)get_position_vector(args, 2, &tmp_error);
+        4:  341-block  0
+call    0 returned 4
+        4:  342:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  343:        set_error(p_error, tmp_error);
+    %%%%%:  343-block  0
+call    0 never executed
+    #####:  344:        return;
+        -:  345:    }
+        4:  346:    int* p_population = *(int**)get_position_vector(args, 3, &tmp_error);
+        4:  346-block  0
+call    0 returned 4
+        4:  347:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  348:        set_error(p_error, tmp_error);
+    %%%%%:  348-block  0
+call    0 never executed
+    #####:  349:        return;
+        -:  350:    }
+        4:  351:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 4, &tmp_error);
+        4:  351-block  0
+call    0 returned 4
+        4:  352:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  353:        set_error(p_error, tmp_error);
+    %%%%%:  353-block  0
+call    0 never executed
+        -:  354:    }
+        4:  355:    add_country_ui(p_country_controller, p_country_name, p_continent_name, *p_population, *p_make_undo_redo_operation, p_error);
+        4:  355-block  0
+call    0 returned 4
+        -:  356:}
+        -:  357:
+        -:  358:/*
+        -:  359: * This implementation does exactly what it says it does in country_controller.h
+        -:  360: */
+function remove_country_ui called 12 returned 100% blocks executed 86%
+       12:  361:void remove_country_ui(country_controller_t* p_controller, const char* p_country_name, int make_undo_redo, int* p_error){
+       12:  362:    int tmp_error = 0;
+       12:  363:    char* p_lowercase_name = get_lowercase(p_country_name, &tmp_error);
+       12:  363-block  0
+call    0 returned 12
+       12:  364:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 12
+    #####:  365:        set_error(p_error, tmp_error);
+    %%%%%:  365-block  0
+call    0 never executed
+    #####:  366:        if(p_lowercase_name != NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:  367:            free(p_lowercase_name);
+    %%%%%:  367-block  0
+        -:  368:        }
+       3*:  369:        return ;
+    %%%%%:  369-block  0
+        3:  369-block  1
+        -:  370:    }
+        -:  371:
+       12:  372:    int index = get_index_from_name(p_controller, p_lowercase_name, &tmp_error);
+       12:  372-block  0
+call    0 returned 12
+       12:  373:    free(p_lowercase_name);
+       12:  374:    if(tmp_error != 0){
+branch  0 taken 3 (fallthrough)
+branch  1 taken 9
+        3:  375:        set_error(p_error, tmp_error);
+        3:  375-block  0
+call    0 returned 3
+        3:  376:        return ;
+        -:  377:    }
+        9:  378:    country_t* p_repo_country = get_position_repository(p_controller->p_country_repository, index, NULL);
+        9:  378-block  0
+call    0 returned 9
+        9:  379:    country_t* p_tmp_country = create_country(p_repo_country->name, p_repo_country->continent, p_repo_country->population, NULL);
+call    0 returned 9
+        9:  380:    remove_country(p_controller, index, &tmp_error);
+call    0 returned 9
+        9:  381:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 9
+    #####:  382:        set_error(p_error, tmp_error);
+    %%%%%:  382-block  0
+call    0 never executed
+        -:  383:    }
+        9:  384:    else if(make_undo_redo){
+        9:  384-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 7
+        2:  385:        char* p_undo_name = malloc(strlen(p_tmp_country->name) + 1);
+        2:  386:        char* p_undo_continent = malloc(strlen(p_tmp_country->continent) + 1);
+        2:  387:        int* p_undo_population = malloc(sizeof(int));
+        2:  388:        int* p_undo_make_undo_redo = malloc(sizeof(int));
+        -:  389:
+        2:  390:        strcpy(p_undo_name, p_tmp_country->name);
+        2:  391:        strcpy(p_undo_continent, p_tmp_country->continent);
+        2:  392:        *p_undo_population = p_tmp_country->population;
+        2:  393:        *p_undo_make_undo_redo = 0;
+        -:  394:
+        2:  395:        vector_t* undo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+        2:  395-block  0
+call    0 returned 2
+        2:  396:        push_back(undo_args, &p_controller, NULL);
+call    0 returned 2
+        2:  397:        push_back(undo_args, &p_undo_name, NULL);
+call    0 returned 2
+        2:  398:        push_back(undo_args, &p_undo_continent, NULL);
+call    0 returned 2
+        2:  399:        push_back(undo_args, &p_undo_population, NULL);
+call    0 returned 2
+        2:  400:        push_back(undo_args, &p_undo_make_undo_redo, NULL);
+call    0 returned 2
+        2:  401:        operation_t* p_undo_operation = create_operation(&add_country_from_args, undo_args, &free_add_country_args, NULL);
+call    0 returned 2
+        -:  402:
+        2:  403:        char* p_redo_name = malloc(strlen(p_country_name) + 1);
+        2:  404:        int* p_redo_make_undo_redo = malloc(sizeof(int));
+        2:  405:        strcpy(p_redo_name, p_country_name);
+        2:  406:        *p_redo_make_undo_redo = 0;
+        2:  407:        vector_t* redo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+call    0 returned 2
+        2:  408:        push_back(redo_args, &p_controller, NULL);
+call    0 returned 2
+        2:  409:        push_back(redo_args, &p_redo_name, NULL);
+call    0 returned 2
+        2:  410:        push_back(redo_args, &p_redo_make_undo_redo, NULL);
+call    0 returned 2
+        2:  411:        operation_t* p_redo_operation = create_operation(&remove_country_from_args, redo_args, &free_remove_country_args, NULL);
+call    0 returned 2
+        2:  412:        undo_redo_operation_t* p_operation = create_undo_redo_operation(p_undo_operation, p_redo_operation, NULL);
+call    0 returned 2
+        2:  413:        add_undo_repository(p_controller->p_undo_redo_repository, p_operation, NULL);
+call    0 returned 2
+        2:  414:        free(p_operation); /// this frees the memory for the operation because its data is stored in the repository
+        -:  415:    }
+        9:  416:    delete_country(p_tmp_country);
+        9:  416-block  0
+call    0 returned 9
+        -:  417:}
+        -:  418:
+        -:  419:/*
+        -:  420: * This implementation does exactly what it says it does in country_controller.h
+        -:  421: */
+function remove_country_from_args called 6 returned 100% blocks executed 56%
+        6:  422:void remove_country_from_args(vector_t* args, int* p_error){
+        6:  423:    if(args->size != 3){
+        6:  423-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  424:        set_error(p_error, 18);
+    %%%%%:  424-block  0
+call    0 never executed
+    #####:  425:        return ;
+    %%%%%:  425-block  0
+        -:  426:    }
+        6:  427:    int tmp_error = 0;
+        6:  428:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, &tmp_error);
+        6:  428-block  0
+call    0 returned 6
+        6:  429:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  430:        set_error(p_error, tmp_error);
+    %%%%%:  430-block  0
+call    0 never executed
+    #####:  431:        return;
+        -:  432:    }
+        6:  433:    char* p_country_name = *(char**)get_position_vector(args, 1, &tmp_error);
+        6:  433-block  0
+call    0 returned 6
+        6:  434:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  435:        set_error(p_error, tmp_error);
+    %%%%%:  435-block  0
+call    0 never executed
+    #####:  436:        return;
+        -:  437:    }
+        6:  438:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 2, &tmp_error);
+        6:  438-block  0
+call    0 returned 6
+        6:  439:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  440:        set_error(p_error, tmp_error);
+    %%%%%:  440-block  0
+call    0 never executed
+        -:  441:    }
+        6:  442:    remove_country_ui(p_country_controller, p_country_name, *p_make_undo_redo_operation, p_error);
+        6:  442-block  0
+call    0 returned 6
+        -:  443:}
+        -:  444:
+        -:  445:/*
+        -:  446: * This implementation does exactly what it says it does in country_controller.h
+        -:  447: */
+function update_country_ui called 6 returned 100% blocks executed 73%
+        6:  448:void update_country_ui(country_controller_t* p_controller, const char* p_country_name, const int new_population, int make_undo_redo_operation, int* p_error){
+        6:  449:    if(new_population < 0){
+        6:  449-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 5
+        1:  450:        set_error(p_error, 9);
+        1:  450-block  0
+call    0 returned 1
+        2:  451:        return ;
+        2:  451-block  0
+        -:  452:    }
+        5:  453:    int tmp_error = 0;
+        -:  454:
+        5:  455:    char* p_lowercase_name = get_lowercase(p_country_name, &tmp_error);
+        5:  455-block  0
+call    0 returned 5
+        5:  456:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 5
+    #####:  457:        set_error(p_error, tmp_error);
+    %%%%%:  457-block  0
+call    0 never executed
+    #####:  458:        if(p_lowercase_name != NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:  459:            free(p_lowercase_name);
+    %%%%%:  459-block  0
+        -:  460:        }
+    #####:  461:        return ;
+    %%%%%:  461-block  0
+        -:  462:    }
+        -:  463:
+        5:  464:    int index = get_index_from_name(p_controller, p_lowercase_name, &tmp_error);
+        5:  464-block  0
+call    0 returned 5
+        5:  465:    free(p_lowercase_name);
+        -:  466:
+        5:  467:    if(tmp_error != 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        1:  468:        set_error(p_error, tmp_error);
+        1:  468-block  0
+call    0 returned 1
+        1:  469:        return ;
+        -:  470:    }
+        4:  471:    if(new_population < 0){
+        4:  471-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  472:        set_error(p_error, 14);
+    %%%%%:  472-block  0
+call    0 never executed
+    #####:  473:        return ;
+        -:  474:    }
+        4:  475:    country_t* p_repository_country = get_position_repository(p_controller->p_country_repository, index, &tmp_error);
+        4:  475-block  0
+call    0 returned 4
+        4:  476:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  477:        set_error(p_error, tmp_error);
+    %%%%%:  477-block  0
+call    0 never executed
+    #####:  478:        return ;
+        -:  479:    }
+        4:  480:    country_t* p_old_country = create_country(p_repository_country->name, p_repository_country->continent, p_repository_country->population, &tmp_error);
+        4:  480-block  0
+call    0 returned 4
+        4:  481:    country_t* p_new_country = create_country(p_repository_country->name, p_repository_country->continent, new_population, &tmp_error);
+call    0 returned 4
+        4:  482:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  483:        delete_country(p_new_country);
+    %%%%%:  483-block  0
+call    0 never executed
+    #####:  484:        set_error(p_error, tmp_error);
+call    0 never executed
+    #####:  485:        return;
+        -:  486:    }
+        4:  487:    update_country(p_controller, index, p_new_country, &tmp_error);
+        4:  487-block  0
+call    0 returned 4
+        4:  488:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 4
+    #####:  489:        set_error(p_error, tmp_error);
+    %%%%%:  489-block  0
+call    0 never executed
+    #####:  490:        delete_country(p_new_country);
+call    0 never executed
+    #####:  491:        return ;
+        -:  492:    }
+        4:  493:    if(make_undo_redo_operation){
+        4:  493-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:  494:        char* p_undo_name = malloc(strlen(p_old_country->name) + 1);
+        1:  495:        int* p_undo_population = malloc(sizeof(int));
+        1:  496:        int* p_undo_make_undo_redo = malloc(sizeof(int));
+        -:  497:
+        1:  498:        strcpy(p_undo_name, p_old_country->name);
+        1:  499:        *p_undo_population = p_old_country->population;
+        1:  500:        *p_undo_make_undo_redo = 0;
+        -:  501:
+        1:  502:        vector_t* undo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+        1:  502-block  0
+call    0 returned 1
+        1:  503:        push_back(undo_args, &p_controller, NULL);
+call    0 returned 1
+        1:  504:        push_back(undo_args, &p_undo_name, NULL);
+call    0 returned 1
+        1:  505:        push_back(undo_args, &p_undo_population, NULL);
+call    0 returned 1
+        1:  506:        push_back(undo_args, &p_undo_make_undo_redo, NULL);
+call    0 returned 1
+        1:  507:        operation_t* p_undo_operation = create_operation(&update_country_from_args, undo_args, &free_update_country_args, NULL);
+call    0 returned 1
+        -:  508:
+        1:  509:        char* p_redo_name = malloc(strlen(p_new_country->name) + 1);
+        1:  510:        int* p_redo_population = malloc(sizeof(int));
+        1:  511:        int* p_redo_make_undo_redo = malloc(sizeof(int));
+        1:  512:        strcpy(p_redo_name, p_new_country->name);
+        1:  513:        *p_redo_population = p_new_country->population;
+        1:  514:        *p_redo_make_undo_redo = 0;
+        1:  515:        vector_t* redo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+call    0 returned 1
+        1:  516:        push_back(redo_args, &p_controller, NULL);
+call    0 returned 1
+        1:  517:        push_back(redo_args, &p_redo_name, NULL);
+call    0 returned 1
+        1:  518:        push_back(redo_args, &p_redo_population, NULL);
+call    0 returned 1
+        1:  519:        push_back(redo_args, &p_redo_make_undo_redo, NULL);
+call    0 returned 1
+        1:  520:        operation_t* p_redo_operation = create_operation(&update_country_from_args, redo_args, &free_update_country_args, NULL);
+call    0 returned 1
+        1:  521:        undo_redo_operation_t* p_operation = create_undo_redo_operation(p_undo_operation, p_redo_operation, NULL);
+call    0 returned 1
+        1:  522:        add_undo_repository(p_controller->p_undo_redo_repository, p_operation, NULL);
+call    0 returned 1
+        1:  523:        free(p_operation); /// this frees the memory for the operation because its data is stored in the repository
+        -:  524:    }
+        4:  525:    delete_country(p_old_country);
+        4:  525-block  0
+call    0 returned 4
+        4:  526:    free(p_new_country); // we do not want to free any of its char* because they are remembered like that in the repo
+        -:  527:}
+        -:  528:
+        -:  529:/*
+        -:  530: * This implementation does exactly what it says it does in country_controller.h
+        -:  531: */
+function update_country_from_args called 2 returned 100% blocks executed 55%
+        2:  532:void update_country_from_args(vector_t* args, int* p_error){
+        2:  533:    if(args->size != 4){
+        2:  533-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  534:        set_error(p_error, 18);
+    %%%%%:  534-block  0
+call    0 never executed
+    #####:  535:        return ;
+    %%%%%:  535-block  0
+        -:  536:    }
+        2:  537:    int tmp_error = 0;
+        2:  538:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, &tmp_error);
+        2:  538-block  0
+call    0 returned 2
+        2:  539:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  540:        set_error(p_error, tmp_error);
+    %%%%%:  540-block  0
+call    0 never executed
+    #####:  541:        return;
+        -:  542:    }
+        2:  543:    char* p_country_name = *(char**)get_position_vector(args, 1, &tmp_error);
+        2:  543-block  0
+call    0 returned 2
+        2:  544:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  545:        set_error(p_error, tmp_error);
+    %%%%%:  545-block  0
+call    0 never executed
+    #####:  546:        return;
+        -:  547:    }
+        -:  548:
+        2:  549:    int* p_population = *(int**)get_position_vector(args, 2, &tmp_error);
+        2:  549-block  0
+call    0 returned 2
+        2:  550:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  551:        set_error(p_error, tmp_error);
+    %%%%%:  551-block  0
+call    0 never executed
+    #####:  552:        return;
+        -:  553:    }
+        -:  554:
+        2:  555:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 3, &tmp_error);
+        2:  555-block  0
+call    0 returned 2
+        2:  556:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  557:        set_error(p_error, tmp_error);
+    %%%%%:  557-block  0
+call    0 never executed
+        -:  558:    }
+        -:  559:
+        2:  560:    update_country_ui(p_country_controller, p_country_name, *p_population, *p_make_undo_redo_operation, p_error);
+        2:  560-block  0
+call    0 returned 2
+        -:  561:}
+        -:  562:
+        -:  563:/*
+        -:  564: * This implementation does exactly what it says it does in country_controller.h
+        -:  565: */
+function migrate_ui called 8 returned 100% blocks executed 89%
+        8:  566:void migrate_ui(country_controller_t* p_controller, const char* p_country_source_name, const char* p_country_destination_name, const int population, int make_undo_redo_operation ,int* p_error){
+        8:  567:    int tmp_error = 0;
+        8:  568:    int src_idx = -1;
+        8:  569:    int dst_idx = -1;
+        -:  570:
+        8:  571:    if(population < 0){
+        8:  571-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:  572:        set_error(p_error, 9);
+    %%%%%:  572-block  0
+call    0 never executed
+       2*:  573:        return ;
+        2:  573-block  0
+        -:  574:    }
+        -:  575:
+        8:  576:    src_idx = get_index_from_name(p_controller, p_country_source_name, &tmp_error);
+        8:  576-block  0
+call    0 returned 8
+        -:  577:
+        8:  578:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 8
+    #####:  579:        set_error(p_error, tmp_error);
+    %%%%%:  579-block  0
+call    0 never executed
+    #####:  580:        return ;
+        -:  581:    }
+        -:  582:
+        8:  583:    dst_idx = get_index_from_name(p_controller, p_country_destination_name, &tmp_error);
+        8:  583-block  0
+call    0 returned 8
+        -:  584:
+        8:  585:    if(tmp_error != 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 7
+        1:  586:        set_error(p_error, tmp_error);
+        1:  586-block  0
+call    0 returned 1
+        1:  587:        return ;
+        -:  588:    }
+        -:  589:
+        7:  590:    migrate_country(p_controller, src_idx, dst_idx, population, &tmp_error);
+        7:  590-block  0
+call    0 returned 7
+        7:  591:    if(tmp_error != 0){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 6
+        1:  592:        set_error(p_error, tmp_error);
+        1:  592-block  0
+call    0 returned 1
+        1:  593:        return ;
+        6:  594:    }else if(make_undo_redo_operation){
+        6:  594-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4
+        2:  595:        char* p_undo_src_name = malloc(strlen(p_country_destination_name) + 1);
+        2:  596:        char* p_undo_dst_name = malloc(strlen(p_country_source_name) + 1);
+        2:  597:        int* p_undo_population = malloc(sizeof(int));
+        2:  598:        int* p_undo_make_undo_redo = malloc(sizeof(int));
+        -:  599:
+        2:  600:        strcpy(p_undo_src_name, p_country_destination_name);
+        2:  601:        strcpy(p_undo_dst_name, p_country_source_name);
+        2:  602:        *p_undo_population = population;
+        2:  603:        *p_undo_make_undo_redo = 0;
+        -:  604:
+        2:  605:        vector_t* undo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+        2:  605-block  0
+call    0 returned 2
+        2:  606:        push_back(undo_args, &p_controller, NULL);
+call    0 returned 2
+        2:  607:        push_back(undo_args, &p_undo_src_name, NULL);
+call    0 returned 2
+        2:  608:        push_back(undo_args, &p_undo_dst_name, NULL);
+call    0 returned 2
+        2:  609:        push_back(undo_args, &p_undo_population, NULL);
+call    0 returned 2
+        2:  610:        push_back(undo_args, &p_undo_make_undo_redo, NULL);
+call    0 returned 2
+        2:  611:        operation_t* p_undo_operation = create_operation(&migrate_from_args, undo_args, &free_migrate_country_args, NULL);
+call    0 returned 2
+        -:  612:
+        2:  613:        char* p_redo_src_name = malloc(strlen(p_country_source_name) + 1);
+        2:  614:        char* p_redo_dst_name = malloc(strlen(p_country_destination_name) + 1);
+        2:  615:        int* p_redo_population = malloc(sizeof(int));
+        2:  616:        int* p_redo_make_undo_redo = malloc(sizeof(int));
+        -:  617:
+        2:  618:        strcpy(p_redo_src_name, p_country_source_name);
+        2:  619:        strcpy(p_redo_dst_name, p_country_destination_name);
+        2:  620:        *p_redo_population = population;
+        2:  621:        *p_redo_make_undo_redo = 0;
+        -:  622:
+        2:  623:        vector_t* redo_args = create_vector(sizeof(int*), 0, NULL ,NULL);
+call    0 returned 2
+        2:  624:        push_back(redo_args, &p_controller, NULL);
+call    0 returned 2
+        2:  625:        push_back(redo_args, &p_redo_src_name, NULL);
+call    0 returned 2
+        2:  626:        push_back(redo_args, &p_redo_dst_name, NULL);
+call    0 returned 2
+        2:  627:        push_back(redo_args, &p_redo_population, NULL);
+call    0 returned 2
+        2:  628:        push_back(redo_args, &p_redo_make_undo_redo, NULL);
+call    0 returned 2
+        2:  629:        operation_t* p_redo_operation = create_operation(&migrate_from_args, redo_args, &free_migrate_country_args, NULL);
+call    0 returned 2
+        -:  630:
+        2:  631:        undo_redo_operation_t* p_operation = create_undo_redo_operation(p_undo_operation, p_redo_operation, NULL);
+call    0 returned 2
+        2:  632:        add_undo_repository(p_controller->p_undo_redo_repository, p_operation, NULL);
+call    0 returned 2
+        2:  633:        free(p_operation); /// this frees the memory for the operation because its data is stored in the repository
+        -:  634:    }
+        -:  635:}
+        -:  636:
+        -:  637:/*
+        -:  638: * This implementation does exactly what it says it does in country_controller.h
+        -:  639: */
+function migrate_from_args called 3 returned 100% blocks executed 50%
+        3:  640:void migrate_from_args(vector_t* args, int* p_error){
+        3:  641:    if(args->size != 5){
+        3:  641-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  642:        set_error(p_error, 18);
+    %%%%%:  642-block  0
+call    0 never executed
+    #####:  643:        return ;
+    %%%%%:  643-block  0
+        -:  644:    }
+        3:  645:    int tmp_error = 0;
+        3:  646:    country_controller_t* p_country_controller = *(country_controller_t**)get_position_vector(args, 0, &tmp_error);
+        3:  646-block  0
+call    0 returned 3
+        3:  647:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  648:        set_error(p_error, tmp_error);
+    %%%%%:  648-block  0
+call    0 never executed
+    #####:  649:        return;
+        -:  650:    }
+        -:  651:
+        3:  652:    char* p_country_src = *(char**)get_position_vector(args, 1, &tmp_error);
+        3:  652-block  0
+call    0 returned 3
+        3:  653:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  654:        set_error(p_error, tmp_error);
+    %%%%%:  654-block  0
+call    0 never executed
+    #####:  655:        return;
+        -:  656:    }
+        -:  657:
+        3:  658:    char* p_country_dst = *(char**)get_position_vector(args, 2, &tmp_error);
+        3:  658-block  0
+call    0 returned 3
+        3:  659:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  660:        set_error(p_error, tmp_error);
+    %%%%%:  660-block  0
+call    0 never executed
+    #####:  661:        return;
+        -:  662:    }
+        3:  663:    if(p_country_dst == NULL){
+        3:  663-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  664:        set_error(p_error, 16);
+    %%%%%:  664-block  0
+call    0 never executed
+    #####:  665:        return ;
+        -:  666:    }
+        -:  667:
+        3:  668:    int* p_population = *(int**)get_position_vector(args, 3, &tmp_error);
+        3:  668-block  0
+call    0 returned 3
+        3:  669:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  670:        set_error(p_error, tmp_error);
+    %%%%%:  670-block  0
+call    0 never executed
+    #####:  671:        return;
+        -:  672:    }
+        3:  673:    if(p_population == NULL){
+        3:  673-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  674:        set_error(p_error, 16);
+    %%%%%:  674-block  0
+call    0 never executed
+    #####:  675:        return ;
+        -:  676:    }
+        -:  677:
+        3:  678:    int* p_make_undo_redo_operation = *(int**) get_position_vector(args, 4, &tmp_error);
+        3:  678-block  0
+call    0 returned 3
+        3:  679:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 3
+    #####:  680:        set_error(p_error, tmp_error);
+    %%%%%:  680-block  0
+call    0 never executed
+        -:  681:    }
+        -:  682:
+        3:  683:    migrate_ui(p_country_controller, p_country_src, p_country_dst, *p_population, *p_make_undo_redo_operation, p_error);
+        3:  683-block  0
+call    0 returned 3
+        -:  684:}
+        -:  685:
+        -:  686:
+        -:  687:/*!
+        -:  688: * @brief returns a vector containing the pointers to the countries corresponding to the indexes from a given vector
+        -:  689: * @param p_controller pointer to the country controller
+        -:  690: * @param p_indexes pointer to the vector containing the indexes
+        -:  691: * @param p_error pointer to the variable that receives the error variable. Can be left NULL
+        -:  692: * @return pointer to a vector containing pointers to countries.
+        -:  693: */
+function get_p_countries_from_p_indexes called 22 returned 100% blocks executed 52%
+       22:  694:vector_t* get_p_countries_from_p_indexes(const country_controller_t* p_controller, vector_t* p_indexes, int* p_error){
+       22:  695:    int tmp_error = 0;
+       22:  696:    vector_t* p_countries = create_vector(sizeof(void*), 0, NULL, &tmp_error);
+       22:  696-block  0
+call    0 returned 22
+        -:  697:
+       22:  698:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 22
+    #####:  699:        set_error(p_error, tmp_error);
+    %%%%%:  699-block  0
+call    0 never executed
+    #####:  700:        delete_vector(p_countries);
+call    0 never executed
+    #####:  701:        return NULL;
+        -:  702:    }
+        -:  703:
+       74:  704:    for(int i = 0;i < p_indexes->size;i++){
+       22:  704-block  0
+       52:  704-block  1
+       74:  704-block  2
+branch  0 taken 52
+branch  1 taken 22 (fallthrough)
+       52:  705:        int* p_idx = (int*)get_position_vector(p_indexes, i, &tmp_error);
+       52:  705-block  0
+call    0 returned 52
+       52:  706:        if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 52
+    #####:  707:            set_error(p_error, tmp_error);
+    %%%%%:  707-block  0
+call    0 never executed
+    #####:  708:            delete_vector(p_countries);
+call    0 never executed
+    #####:  709:            return NULL;
+    %%%%%:  709-block  0
+        -:  710:        }
+       52:  711:        int idx = *p_idx;
+       52:  712:        country_t* p_country = get_position_repository(p_controller->p_country_repository, idx, &tmp_error);
+       52:  712-block  0
+call    0 returned 52
+       52:  713:        if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 52
+    #####:  714:            set_error(p_error, tmp_error);
+    %%%%%:  714-block  0
+call    0 never executed
+    #####:  715:            delete_vector(p_countries);
+call    0 never executed
+    #####:  716:            return NULL;
+        -:  717:        }
+       52:  718:        push_back(p_countries, &p_country, &tmp_error);
+       52:  718-block  0
+call    0 returned 52
+       52:  719:        if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 52
+    #####:  720:            set_error(p_error, tmp_error);
+    %%%%%:  720-block  0
+call    0 never executed
+    #####:  721:            delete_vector(p_countries);
+call    0 never executed
+    #####:  722:            return NULL;
+        -:  723:        }
+        -:  724:    }
+        -:  725:
+       22:  726:    return p_countries;
+       22:  726-block  0
+        -:  727:}
+        -:  728:
+        -:  729:/*!
+        -:  730: * @brief returns 1 if the given country contains a given string in its name and 0 otherwise
+        -:  731: * @param p_country pointer to the country
+        -:  732: * @param args a pointer to an array of pointers containing a single element which points to the string which is to be checked against
+        -:  733: * @return 1 if the string is included, 0 otherwise
+        -:  734: */
+function filter_contains_string called 44 returned 100% blocks executed 100%
+       44:  735:int filter_contains_string(country_t* p_country, void** args){
+       44:  736:    return strstr(p_country->name, (char*)args) != NULL;
+       44:  736-block  0
+        -:  737:}
+        -:  738:
+        -:  739:/*
+        -:  740: * This implementation does exactly what it says it does in country_controller.h
+        -:  741: */
+function get_countries_containing_string called 6 returned 100% blocks executed 61%
+        6:  742:vector_t* get_countries_containing_string(country_controller_t* p_controller, const char* p_name, int* p_error){
+        6:  743:    int tmp_error = 0;
+        6:  744:    char* p_lowercase_name = get_lowercase(p_name, &tmp_error);
+        6:  744-block  0
+call    0 returned 6
+        6:  745:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  746:        set_error(p_error, tmp_error);
+    %%%%%:  746-block  0
+call    0 never executed
+    #####:  747:        if(p_lowercase_name != NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:  748:            free(p_lowercase_name);
+    %%%%%:  748-block  0
+        -:  749:        }
+    #####:  750:        return NULL;
+    %%%%%:  750-block  0
+        -:  751:    }
+        6:  752:    if(strcmp(p_lowercase_name, "*") == 0){
+        6:  752-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 3
+        3:  753:        strcpy(p_lowercase_name, "");
+        3:  753-block  0
+        -:  754:    }
+        6:  755:    vector_t* p_country_indexes = filter_repository(p_controller->p_country_repository, &filter_contains_string, (void**)p_lowercase_name, &tmp_error);
+        6:  755-block  0
+call    0 returned 6
+        6:  756:    free(p_lowercase_name);
+        6:  757:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  758:        set_error(p_error, tmp_error);
+    %%%%%:  758-block  0
+call    0 never executed
+    #####:  759:        delete_vector(p_country_indexes);
+call    0 never executed
+    #####:  760:        return NULL;
+        -:  761:    }
+        -:  762:
+        6:  763:    vector_t* p_countries = get_p_countries_from_p_indexes(p_controller, p_country_indexes, p_error);
+        6:  763-block  0
+call    0 returned 6
+        6:  764:    delete_vector(p_country_indexes);
+call    0 returned 6
+        6:  765:    return p_countries;
+        -:  766:}
+        -:  767:
+        -:  768:/*!
+        -:  769: * @brief returns 1 if the given country has more population than a given amount
+        -:  770: * @param p_country pointer to the country
+        -:  771: * @param args a pointer to an array of pointers containing a single element which points to an int which is the population to be checked against
+        -:  772: * @return 1 if the string is included, 0 otherwise
+        -:  773: */
+function filter_at_least called 37 returned 100% blocks executed 100%
+       37:  774:int filter_at_least(country_t* p_country, void** args){
+       37:  775:    return p_country->population >= *(int*)args;
+       37:  775-block  0
+        -:  776:}
+        -:  777:
+        -:  778:/*
+        -:  779: * This implementation does exactly what it says it does in country_controller.h
+        -:  780: */
+function get_countries_with_at_least called 14 returned 100% blocks executed 70%
+       14:  781:vector_t* get_countries_with_at_least(country_controller_t* p_controller, const int population, int* p_error){
+       14:  782:    int tmp_error = 0;
+       14:  783:    vector_t* p_country_indexes = filter_repository(p_controller->p_country_repository, &filter_at_least, (void**)&population, &tmp_error);
+       14:  783-block  0
+call    0 returned 14
+       14:  784:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 14
+    #####:  785:        set_error(p_error, tmp_error);
+    %%%%%:  785-block  0
+call    0 never executed
+    #####:  786:        delete_vector(p_country_indexes);
+call    0 never executed
+    #####:  787:        return NULL;
+        -:  788:    }
+       14:  789:    vector_t* p_countries = get_p_countries_from_p_indexes(p_controller, p_country_indexes, p_error);
+       14:  789-block  0
+call    0 returned 14
+       14:  790:    delete_vector(p_country_indexes);
+call    0 returned 14
+       14:  791:    return p_countries;
+        -:  792:}
+        -:  793:
+        -:  794:/*!
+        -:  795: * @brief returns 1 if the given country's continent matches a string, and 0 otherwise
+        -:  796: * @param p_country pointer to the country
+        -:  797: * @param args a pointer to an array of pointers containing a single element which points to the string which is to be checked against
+        -:  798: * @return 1 if the string is included, 0 otherwise
+        -:  799: */
+function filter_matches_string_continent_and_population called 20 returned 100% blocks executed 100%
+       20:  800:int filter_matches_string_continent_and_population(country_t* p_country, void** args){
+       20:  801:    if(strcmp((char*)(args[0]),"") == 0 || strcmp(p_country->continent, (char*)args[0]) == 0){
+       20:  801-block  0
+branch  0 taken 10 (fallthrough)
+branch  1 taken 10
+       10:  801-block  1
+branch  2 taken 3 (fallthrough)
+branch  3 taken 7
+       13:  802:        if(p_country->population >= *(int*)args[1]){
+       13:  802-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 6
+        7:  803:            return 1;
+        7:  803-block  0
+        -:  804:        }
+        -:  805:    }
+       13:  806:    return 0;
+       13:  806-block  0
+        -:  807:}
+        -:  808:
+        -:  809:/*!
+        -:  810: * @brief comparator for sorting countries ascendingly according to population
+        -:  811: * @param a pointer to the first country
+        -:  812: * @param b pointer to the second country
+        -:  813: * @return return 0 if a has more population than b, 1 otherwise
+        -:  814: */
+function cmp_ascending called 24 returned 100% blocks executed 100%
+       24:  815:int cmp_ascending(const country_t** a, const country_t** b){
+       24:  816:    return (*a)->population < (*b)->population;
+       24:  816-block  0
+        -:  817:}
+        -:  818:
+        -:  819:/*!
+        -:  820: * @brief comparator for sorting countries descendingly according to population
+        -:  821: * @param a pointer to a pointer to the first country
+        -:  822: * @param b pointer to a pointer to the second country
+        -:  823: * @return return 0 if a has more population than b, 1 otherwise
+        -:  824: */
+function cmp_descending called 3 returned 100% blocks executed 100%
+        3:  825:int cmp_descending(const country_t** a, const country_t** b){
+        3:  826:    return (*a)->population > (*b)->population;
+        3:  826-block  0
+        -:  827:}
+        -:  828:/*
+        -:  829: * This implementation does exactly what it says it does in country_controller.h
+        -:  830: */
+function get_countries_from_continent called 2 returned 100% blocks executed 65%
+        2:  831:vector_t* get_countries_from_continent(country_controller_t* p_controller, const char* p_continent_name, const int population, const char* p_sort_order, int* p_error){
+        2:  832:    int tmp_error = 0;
+        -:  833:
+        2:  834:    char* p_lowercase_sort_order = get_lowercase(p_sort_order, &tmp_error);
+        2:  834-block  0
+call    0 returned 2
+        -:  835:
+        2:  836:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  837:        set_error(p_error, tmp_error);
+    %%%%%:  837-block  0
+call    0 never executed
+    #####:  838:        return NULL;
+        -:  839:    }
+        -:  840:
+        2:  841:    int order_type = -1;
+        -:  842:
+        2:  843:    if(strcmp(p_lowercase_sort_order, "ascending") == 0){
+        2:  843-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  844:        order_type = 0;
+        1:  844-block  0
+        1:  845:    }else if(strcmp(p_lowercase_sort_order, "descending") == 0){
+        1:  845-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  846:        order_type = 1;
+        1:  846-block  0
+        -:  847:    }else{
+    #####:  848:        free(p_lowercase_sort_order);
+    #####:  849:        set_error(p_error, 15);
+    %%%%%:  849-block  0
+call    0 never executed
+    #####:  850:        return NULL;
+        -:  851:    }
+        -:  852:
+        2:  853:    free(p_lowercase_sort_order);
+        -:  854:
+        2:  855:    char* p_lowercase_name = get_lowercase(p_continent_name, &tmp_error);
+        2:  855-block  0
+call    0 returned 2
+        2:  856:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  857:        set_error(p_error, tmp_error);
+    %%%%%:  857-block  0
+call    0 never executed
+    #####:  858:        if(p_lowercase_name != NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:  859:            free(p_lowercase_name);
+    %%%%%:  859-block  0
+        -:  860:        }
+    #####:  861:        return NULL;
+    %%%%%:  861-block  0
+        -:  862:    }
+        2:  863:    if(strcmp(p_lowercase_name,"*") == 0){
+        2:  863-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  864:        strcpy(p_lowercase_name,"");
+        1:  864-block  0
+        -:  865:    }
+        -:  866:
+        2:  867:    void** args = malloc(sizeof(void*) * 2);
+        2:  868:    args[0] = p_lowercase_name;
+        2:  869:    args[1] = &population;
+        2:  870:    vector_t* p_country_indexes = filter_repository(p_controller->p_country_repository, &filter_matches_string_continent_and_population, args, &tmp_error);
+        2:  870-block  0
+call    0 returned 2
+        2:  871:    free(args);
+        2:  872:    vector_t* p_countries = get_p_countries_from_p_indexes(p_controller, p_country_indexes, &tmp_error);
+call    0 returned 2
+        2:  873:    delete_vector(p_country_indexes);
+call    0 returned 2
+        2:  874:    free(p_lowercase_name);
+        2:  875:    if(tmp_error != 0){
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    #####:  876:        set_error(p_error, tmp_error);
+    %%%%%:  876-block  0
+call    0 never executed
+    #####:  877:        delete_vector(p_countries);
+call    0 never executed
+    #####:  878:        return NULL;
+        -:  879:    }
+        -:  880:
+        2:  881:    if(order_type == 0){
+        2:  881-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  882:        sort(p_countries, 0, p_countries->size, &cmp_ascending);
+        1:  882-block  0
+call    0 returned 1
+        -:  883:    }else{
+        1:  884:        sort(p_countries, 0, p_countries->size, &cmp_descending);
+        1:  884-block  0
+call    0 returned 1
+        -:  885:    }
+        2:  886:    return p_countries;
+        2:  886-block  0
+        -:  887:}
+        -:  888:
+        -:  889:
+        -:  890:
+        -:  891:
+        -:  892:
+        -:  893:
+        -:  894:
+        -:  895:
+        -:  896:

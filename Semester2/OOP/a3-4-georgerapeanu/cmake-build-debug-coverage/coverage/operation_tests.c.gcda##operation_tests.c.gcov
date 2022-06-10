@@ -1,0 +1,92 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/tests/src/domain/operation_tests.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/operation_tests.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/operation_tests.c.gcda
+        -:    0:Runs:1
+        -:    1:/*! @file operation_tests.h this file contains the model for the operation_t tests
+        -:    2: *
+        -:    3: */
+        -:    4:#pragma once
+        -:    5:#include "../../../include/domain/operation.h"
+        -:    6:#include <stdlib.h>
+        -:    7:#include <assert.h>
+        -:    8:
+function increment_value called 2 returned 100% blocks executed 100%
+        2:    9:static void increment_value(int* p_value, int* p_error){
+        2:   10:    (*p_value)++;
+        2:   11:}
+        -:   12:
+function increment_from_args called 2 returned 100% blocks executed 80%
+        2:   13:static void increment_from_args(vector_t* args, int* p_error){
+       2*:   14:    assert(args->size == 1);
+        2:   14-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+    %%%%%:   14-block  1
+call    2 never executed
+        2:   15:    int* p_value = *(int**) get_position_vector(args, 0, NULL);
+        2:   15-block  0
+call    0 returned 2
+        2:   16:    increment_value(p_value, p_error);
+call    0 returned 2
+        2:   17:}
+        -:   18:
+        -:   19:
+function my_free called 2 returned 100% blocks executed 100%
+        2:   20:static void my_free(void** p_elem){
+        2:   21:    free(*p_elem);
+        2:   22:}
+        -:   23:
+function operation_test_create_delete_operation called 1 returned 100% blocks executed 100%
+        1:   24:void operation_test_create_delete_operation(){
+        1:   25:    int* p_a = (int*)malloc(sizeof(int));
+        1:   26:    *p_a = 0;
+        1:   27:    vector_t* args = create_vector(sizeof(int*), 0, &my_free, NULL);
+        1:   27-block  0
+call    0 returned 1
+        1:   28:    push_back(args, &p_a, NULL);
+call    0 returned 1
+        1:   29:    operation_t* p_operation = create_operation(&increment_from_args, args, NULL, NULL);
+call    0 returned 1
+        1:   30:    delete_operation(p_operation);
+call    0 returned 1
+        1:   31:}
+        -:   32:
+function operation_test_apply called 1 returned 100% blocks executed 82%
+        1:   33:void operation_test_apply(){
+        1:   34:    int* p_a = (int*)malloc(sizeof(int));
+        1:   35:    *p_a = 0;
+        1:   36:    vector_t* args = create_vector(sizeof(int*), 0, &my_free, NULL);
+        1:   36-block  0
+call    0 returned 1
+        1:   37:    push_back(args, &p_a, NULL);
+call    0 returned 1
+        1:   38:    operation_t* p_operation = create_operation(&increment_from_args, args, NULL, NULL);
+call    0 returned 1
+        1:   39:    apply(p_operation, NULL);
+call    0 returned 1
+       1*:   40:    assert(*p_a == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   40-block  0
+call    2 never executed
+        1:   41:    apply(p_operation, NULL);
+        1:   41-block  0
+call    0 returned 1
+       1*:   42:    assert(*p_a == 2);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   42-block  0
+call    2 never executed
+        1:   43:    delete_operation(p_operation);
+        1:   43-block  0
+call    0 returned 1
+        1:   44:}
+        -:   45:
+function operation_test_all called 1 returned 100% blocks executed 100%
+        1:   46:void operation_test_all(){
+        1:   47:    operation_test_apply();
+        1:   47-block  0
+call    0 returned 1
+        1:   48:    operation_test_create_delete_operation();
+call    0 returned 1
+        1:   49:}

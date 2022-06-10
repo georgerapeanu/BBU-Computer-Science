@@ -1,0 +1,281 @@
+\begin{theindex}
+
+  \item {AbstractRepository}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{7}
+  \item {AbstractRepository$<$ T $>$}, \hyperpage{6}
+    \subitem {AbstractRepository}, \hyperpage{7}
+    \subitem {add}, \hyperpage{7}
+    \subitem {find}, \hyperpage{7}
+    \subitem {get\_all}, \hyperpage{8}
+    \subitem {remove}, \hyperpage{8}
+    \subitem {update}, \hyperpage{8}
+  \item {AbstractWatchlist$<$ T $>$}, \hyperpage{9}
+  \item {add}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{7}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{14}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{21}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{26}
+    \subitem {MemoryRepository$<$ T $>$}, \hyperpage{31}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{35}
+  \item {add\_movie\_admin}
+    \subitem {MovieController}, \hyperpage{45}
+  \item {add\_movie\_user}
+    \subitem {MovieController}, \hyperpage{45}
+  \item {app/main.cpp}, \hyperpage{55}
+  \item {AppException}, \hyperpage{10}
+
+  \indexspace
+
+  \item {ControllerException}, \hyperpage{11}
+  \item {CSVWatchlist}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{13}
+  \item {CSVWatchlist$<$ T $>$}, \hyperpage{12}
+    \subitem {add}, \hyperpage{14}
+    \subitem {CSVWatchlist}, \hyperpage{13}
+    \subitem {display}, \hyperpage{14}
+    \subitem {find}, \hyperpage{14}
+    \subitem {get\_all}, \hyperpage{15}
+    \subitem {remove}, \hyperpage{15}
+    \subitem {save}, \hyperpage{15}
+    \subitem {update}, \hyperpage{15}
+  \item {CSVWatchlistTests}, \hyperpage{16}
+
+  \indexspace
+
+  \item {display}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{14}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{26}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{36}
+  \item {DomainException}, \hyperpage{17}
+  \item {DynamicVectorException}, \hyperpage{19}
+
+  \indexspace
+
+  \item {FileRepository}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{21}
+  \item {FileRepository$<$ T $>$}, \hyperpage{20}
+    \subitem {add}, \hyperpage{21}
+    \subitem {FileRepository}, \hyperpage{21}
+    \subitem {find}, \hyperpage{22}
+    \subitem {get\_all}, \hyperpage{22}
+    \subitem {load}, \hyperpage{22}
+    \subitem {remove}, \hyperpage{23}
+    \subitem {save}, \hyperpage{23}
+    \subitem {update}, \hyperpage{23}
+  \item {FileRepositoryTests}, \hyperpage{24}
+  \item {find}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{7}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{14}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{22}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{27}
+    \subitem {MemoryRepository$<$ T $>$}, \hyperpage{31}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{36}
+
+  \indexspace
+
+  \item {get\_all}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{8}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{15}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{22}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{27}
+    \subitem {MemoryRepository$<$ T $>$}, \hyperpage{32}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{36}
+  \item {get\_all\_movies\_admin}
+    \subitem {MovieController}, \hyperpage{46}
+  \item {get\_genre}
+    \subitem {Movie}, \hyperpage{40}
+  \item {get\_id}
+    \subitem {Movie}, \hyperpage{41}
+  \item {get\_likes}
+    \subitem {Movie}, \hyperpage{41}
+  \item {get\_movie\_user}
+    \subitem {MovieController}, \hyperpage{46}
+  \item {get\_movies\_user}
+    \subitem {MovieController}, \hyperpage{46}
+  \item {get\_title}
+    \subitem {Movie}, \hyperpage{41}
+  \item {get\_trailer\_link}
+    \subitem {Movie}, \hyperpage{41}
+  \item {get\_year}
+    \subitem {Movie}, \hyperpage{41}
+
+  \indexspace
+
+  \item {HTMLWatchlist}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{26}
+  \item {HTMLWatchlist$<$ T $>$}, \hyperpage{25}
+    \subitem {add}, \hyperpage{26}
+    \subitem {display}, \hyperpage{26}
+    \subitem {find}, \hyperpage{27}
+    \subitem {get\_all}, \hyperpage{27}
+    \subitem {HTMLWatchlist}, \hyperpage{26}
+    \subitem {remove}, \hyperpage{27}
+    \subitem {save}, \hyperpage{28}
+    \subitem {update}, \hyperpage{28}
+  \item {HTMLWatchlistTests}, \hyperpage{29}
+
+  \indexspace
+
+  \item {include/controller/MovieController.h}, \hyperpage{56}
+  \item {include/domain/Exceptions.h}, \hyperpage{57}
+  \item {include/domain/Movie.h}, \hyperpage{58}
+  \item {include/domain/MovieValidator.h}, \hyperpage{58}
+  \item {include/repository/AbstractRepository.h}, \hyperpage{60}
+  \item {include/repository/AbstractWatchlist.h}, \hyperpage{61}
+  \item {include/repository/CSVWatchlist.h}, \hyperpage{61}
+  \item {include/repository/FileRepository.h}, \hyperpage{63}
+  \item {include/repository/HTMLWatchlist.h}, \hyperpage{64}
+  \item {include/repository/MemoryWatchlist.h}, \hyperpage{65}
+  \item {include/ui/UI.h}, \hyperpage{66}
+
+  \indexspace
+
+  \item {like\_movie\_user}
+    \subitem {MovieController}, \hyperpage{46}
+  \item {load}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{22}
+
+  \indexspace
+
+  \item {MemoryRepository$<$ T $>$}, \hyperpage{30}
+    \subitem {add}, \hyperpage{31}
+    \subitem {find}, \hyperpage{31}
+    \subitem {get\_all}, \hyperpage{32}
+    \subitem {remove}, \hyperpage{32}
+    \subitem {update}, \hyperpage{33}
+  \item {MemoryRepositoryTests}, \hyperpage{33}
+  \item {MemoryWatchlist$<$ T $>$}, \hyperpage{34}
+    \subitem {add}, \hyperpage{35}
+    \subitem {display}, \hyperpage{36}
+    \subitem {find}, \hyperpage{36}
+    \subitem {get\_all}, \hyperpage{36}
+    \subitem {remove}, \hyperpage{37}
+    \subitem {save}, \hyperpage{37}
+    \subitem {update}, \hyperpage{37}
+  \item {MemoryWatchlistTests}, \hyperpage{38}
+  \item {Movie}, \hyperpage{39}
+    \subitem {get\_genre}, \hyperpage{40}
+    \subitem {get\_id}, \hyperpage{41}
+    \subitem {get\_likes}, \hyperpage{41}
+    \subitem {get\_title}, \hyperpage{41}
+    \subitem {get\_trailer\_link}, \hyperpage{41}
+    \subitem {get\_year}, \hyperpage{41}
+    \subitem {Movie}, \hyperpage{40}
+    \subitem {operator!=}, \hyperpage{41}
+    \subitem {operator$<$$<$}, \hyperpage{43}
+    \subitem {operator$>$$>$}, \hyperpage{44}
+    \subitem {operator==}, \hyperpage{42}
+    \subitem {set\_genre}, \hyperpage{42}
+    \subitem {set\_likes}, \hyperpage{42}
+    \subitem {set\_title}, \hyperpage{42}
+    \subitem {set\_trailer\_link}, \hyperpage{43}
+    \subitem {set\_year}, \hyperpage{43}
+  \item {Movie.cpp}
+    \subitem {operator$<$$<$}, \hyperpage{68}
+    \subitem {operator$>$$>$}, \hyperpage{69}
+  \item {MovieController}, \hyperpage{44}
+    \subitem {add\_movie\_admin}, \hyperpage{45}
+    \subitem {add\_movie\_user}, \hyperpage{45}
+    \subitem {get\_all\_movies\_admin}, \hyperpage{46}
+    \subitem {get\_movie\_user}, \hyperpage{46}
+    \subitem {get\_movies\_user}, \hyperpage{46}
+    \subitem {like\_movie\_user}, \hyperpage{46}
+    \subitem {my\_tolower}, \hyperpage{47}
+    \subitem {operator=}, \hyperpage{47}
+    \subitem {remove\_movie\_admin}, \hyperpage{47}
+    \subitem {remove\_movie\_user}, \hyperpage{47}
+    \subitem {update\_movie\_admin}, \hyperpage{48}
+  \item {MovieControllerException}, \hyperpage{48}
+  \item {MovieControllerTests}, \hyperpage{50}
+  \item {MovieValidator}, \hyperpage{51}
+    \subitem {validate\_movie}, \hyperpage{51}
+  \item {my\_tolower}
+    \subitem {MovieController}, \hyperpage{47}
+
+  \indexspace
+
+  \item {operator!=}
+    \subitem {Movie}, \hyperpage{41}
+  \item {operator$<$$<$}
+    \subitem {Movie}, \hyperpage{43}
+    \subitem {Movie.cpp}, \hyperpage{68}
+  \item {operator$>$$>$}
+    \subitem {Movie}, \hyperpage{44}
+    \subitem {Movie.cpp}, \hyperpage{69}
+  \item {operator=}
+    \subitem {MovieController}, \hyperpage{47}
+  \item {operator==}
+    \subitem {Movie}, \hyperpage{42}
+
+  \indexspace
+
+  \item {remove}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{8}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{15}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{23}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{27}
+    \subitem {MemoryRepository$<$ T $>$}, \hyperpage{32}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{37}
+  \item {remove\_movie\_admin}
+    \subitem {MovieController}, \hyperpage{47}
+  \item {remove\_movie\_user}
+    \subitem {MovieController}, \hyperpage{47}
+  \item {RepositoryException}, \hyperpage{52}
+  \item {run}
+    \subitem {UI}, \hyperpage{53}
+
+  \indexspace
+
+  \item {save}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{15}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{23}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{28}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{37}
+  \item {set\_genre}
+    \subitem {Movie}, \hyperpage{42}
+  \item {set\_likes}
+    \subitem {Movie}, \hyperpage{42}
+  \item {set\_title}
+    \subitem {Movie}, \hyperpage{42}
+  \item {set\_trailer\_link}
+    \subitem {Movie}, \hyperpage{43}
+  \item {set\_year}
+    \subitem {Movie}, \hyperpage{43}
+  \item {src/controller/MovieController.cpp}, \hyperpage{67}
+  \item {src/domain/Movie.cpp}, \hyperpage{67}
+  \item {src/domain/MovieValidator.cpp}, \hyperpage{69}
+  \item {src/repository/CSVWatchlist.cpp}, \hyperpage{70}
+  \item {src/repository/FileRepository.cpp}, \hyperpage{70}
+  \item {src/repository/MemoryWatchlist.cpp}, \hyperpage{71}
+  \item {src/ui/UI.cpp}, \hyperpage{72}
+
+  \indexspace
+
+  \item {tests/repository/CSVWatchlistTests.cpp}, \hyperpage{72}
+  \item {tests/repository/FileRepositoryTests.cpp}, \hyperpage{73}
+  \item {tests/repository/HTMLWatchlistTests.cpp}, \hyperpage{74}
+  \item {tests/repository/MemoryRepositoryTests.cpp}, \hyperpage{75}
+  \item {tests/repository/MemoryWatchlistTests.cpp}, \hyperpage{76}
+
+  \indexspace
+
+  \item {UI}, \hyperpage{53}
+    \subitem {run}, \hyperpage{53}
+    \subitem {UI}, \hyperpage{53}
+  \item {UIException}, \hyperpage{54}
+  \item {update}
+    \subitem {AbstractRepository$<$ T $>$}, \hyperpage{8}
+    \subitem {CSVWatchlist$<$ T $>$}, \hyperpage{15}
+    \subitem {FileRepository$<$ T $>$}, \hyperpage{23}
+    \subitem {HTMLWatchlist$<$ T $>$}, \hyperpage{28}
+    \subitem {MemoryRepository$<$ T $>$}, \hyperpage{33}
+    \subitem {MemoryWatchlist$<$ T $>$}, \hyperpage{37}
+  \item {update\_movie\_admin}
+    \subitem {MovieController}, \hyperpage{48}
+
+  \indexspace
+
+  \item {validate\_movie}
+    \subitem {MovieValidator}, \hyperpage{51}
+
+\end{theindex}

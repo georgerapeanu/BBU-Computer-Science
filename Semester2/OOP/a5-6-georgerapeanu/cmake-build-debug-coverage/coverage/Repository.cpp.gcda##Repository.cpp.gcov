@@ -1,0 +1,324 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/src/repository/Repository.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/repository/Repository.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/repository/Repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file Repository.cpp this file contains the implementation of Repository
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 21.03.2022.
+        -:    7://
+        -:    8:
+        -:    9:#pragma once
+        -:   10:#include "Repository.h"
+        -:   11:#include "Movie.h"
+        -:   12:#include <iostream>
+        -:   13:
+        -:   14:template<class T>
+function _ZN10RepositoryI5MovieEC2Ev called 55 returned 100% blocks executed 60%
+       55:   15:Repository<T>::Repository() {
+       55:   15-block  0
+call    0 returned 55
+    $$$$$:   15-block  1
+call    1 never executed
+       55:   16:    this->entities = DynamicVector<T>();
+call    0 returned 55
+branch  1 taken 55 (fallthrough)
+branch  2 taken 0 (throw)
+       55:   16-block  0
+call    3 returned 55
+branch  4 taken 55 (fallthrough)
+branch  5 taken 0 (throw)
+       55:   16-block  1
+call    6 returned 55
+    $$$$$:   16-block  2
+call    7 never executed
+    $$$$$:   16-block  3
+       55:   17:}
+        -:   18:
+        -:   19:template<class T>
+function _ZN10RepositoryI5MovieEC2ERKS1_ called 1 returned 100% blocks executed 80%
+        1:   20:Repository<T>::Repository(const Repository<T> &other) {
+        1:   20-block  0
+call    0 returned 1
+    $$$$$:   20-block  1
+call    1 never executed
+        1:   21:    this->entities = other.entities;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   22:}
+        1:   22-block  0
+        -:   23:
+        -:   24:template<class T>
+function _ZN10RepositoryI5MovieED2Ev called 56 returned 100% blocks executed 100%
+       56:   25:Repository<T>::~Repository() {
+        -:   26:    ;
+       56:   27:}
+       56:   27-block  0
+call    0 returned 56
+        -:   28:
+        -:   29:template<class T>
+function _ZN10RepositoryI5MovieE3addERKS0_ called 153 returned 95% blocks executed 64%
+      153:   30:void Repository<T>::add(const T &elem) {
+      731:   31:    for(int i = 0;i < this->entities.size();i++){
+      153:   31-block  0
+      731:   31-block  1
+call    0 returned 731
+branch  1 taken 585 (fallthrough)
+branch  2 taken 146
+      578:   31-block  2
+      585:   32:        if(this->entities[i].get_id() == elem.get_id()){
+      585:   32-block  0
+call    0 returned 585
+call    1 returned 585
+branch  2 taken 585 (fallthrough)
+branch  3 taken 0 (throw)
+      585:   32-block  1
+call    4 returned 585
+branch  5 taken 585 (fallthrough)
+branch  6 taken 0 (throw)
+      585:   32-block  2
+call    7 returned 585
+call    8 returned 585
+call    9 returned 585
+branch 10 taken 7 (fallthrough)
+branch 11 taken 578
+    $$$$$:   32-block  3
+call   12 never executed
+    $$$$$:   32-block  4
+call   13 never executed
+        7:   33:            throw RepositoryException("Id already exists");
+        7:   33-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
+branch  4 taken 0 (throw)
+        7:   33-block  1
+call    5 returned 7
+branch  6 taken 7 (fallthrough)
+branch  7 taken 0 (throw)
+        7:   33-block  2
+call    8 returned 7
+call    9 returned 7
+call   10 returned 0
+    $$$$$:   33-block  3
+call   11 never executed
+    $$$$$:   33-block  4
+    $$$$$:   33-block  5
+call   12 never executed
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+call   13 never executed
+        -:   34:        }
+        -:   35:    }
+      146:   36:    this->entities.push_back(elem);
+      146:   36-block  0
+call    0 returned 146
+call    1 returned 146
+branch  2 taken 146 (fallthrough)
+branch  3 taken 0 (throw)
+      146:   36-block  1
+call    4 returned 146
+    $$$$$:   36-block  2
+call    5 never executed
+      146:   37:}
+        -:   38:
+        -:   39:template<class T>
+function _ZN10RepositoryI5MovieE6updateERKS0_ called 6 returned 67% blocks executed 70%
+        6:   40:void Repository<T>::update(const T &elem) {
+       24:   41:    for(int i = 0;i < this->entities.size();i++){
+        6:   41-block  0
+       24:   41-block  1
+call    0 returned 24
+branch  1 taken 22 (fallthrough)
+branch  2 taken 2
+       18:   41-block  2
+       22:   42:        if(this->entities[i].get_id() == elem.get_id()){
+       22:   42-block  0
+call    0 returned 22
+call    1 returned 22
+branch  2 taken 22 (fallthrough)
+branch  3 taken 0 (throw)
+       22:   42-block  1
+call    4 returned 22
+branch  5 taken 22 (fallthrough)
+branch  6 taken 0 (throw)
+       22:   42-block  2
+call    7 returned 22
+call    8 returned 22
+call    9 returned 22
+branch 10 taken 4 (fallthrough)
+branch 11 taken 18
+    $$$$$:   42-block  3
+call   12 never executed
+    $$$$$:   42-block  4
+call   13 never executed
+        4:   43:            this->entities[i] = elem;
+        4:   43-block  0
+call    0 returned 4
+call    1 returned 4
+        4:   44:            return ;
+        4:   44-block  0
+        -:   45:        }
+        -:   46:    }
+        2:   47:    throw RepositoryException("Id doesn't exist");
+        2:   47-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   47-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   47-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 0
+    $$$$$:   47-block  3
+call   11 never executed
+    $$$$$:   47-block  4
+    $$$$$:   47-block  5
+call   12 never executed
+    $$$$$:   47-block  6
+    $$$$$:   47-block  7
+call   13 never executed
+        -:   48:}
+        -:   49:
+        -:   50:
+        -:   51:template<class T>
+function _ZN10RepositoryI5MovieE6removeERKS0_ called 8 returned 62% blocks executed 69%
+        8:   52:void Repository<T>::remove(const T &elem) {
+       29:   53:    for(int i = 0;i < this->entities.size();i++){
+        8:   53-block  0
+       29:   53-block  1
+call    0 returned 29
+branch  1 taken 26 (fallthrough)
+branch  2 taken 3
+       21:   53-block  2
+       26:   54:        if(this->entities[i].get_id() == elem.get_id()){
+       26:   54-block  0
+call    0 returned 26
+call    1 returned 26
+branch  2 taken 26 (fallthrough)
+branch  3 taken 0 (throw)
+       26:   54-block  1
+call    4 returned 26
+branch  5 taken 26 (fallthrough)
+branch  6 taken 0 (throw)
+       26:   54-block  2
+call    7 returned 26
+call    8 returned 26
+call    9 returned 26
+branch 10 taken 5 (fallthrough)
+branch 11 taken 21
+    $$$$$:   54-block  3
+call   12 never executed
+    $$$$$:   54-block  4
+call   13 never executed
+        5:   55:            this->entities.remove(i);
+        5:   55-block  0
+call    0 returned 5
+        5:   56:            return ;
+        5:   56-block  0
+        -:   57:        }
+        -:   58:    }
+        3:   59:    throw RepositoryException("Id doesn't exist");
+        3:   59-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:   59-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   59-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 0
+    $$$$$:   59-block  3
+call   11 never executed
+    $$$$$:   59-block  4
+    $$$$$:   59-block  5
+call   12 never executed
+    $$$$$:   59-block  6
+    $$$$$:   59-block  7
+call   13 never executed
+        -:   60:}
+        -:   61:
+        -:   62:template<class T>
+function _ZN10RepositoryI5MovieE4findERKS0_ called 7 returned 57% blocks executed 69%
+        7:   63:T Repository<T>::find(const T &elem) {
+       29:   64:    for(int i = 0;i < this->entities.size();i++){
+        7:   64-block  0
+       29:   64-block  1
+call    0 returned 29
+branch  1 taken 26 (fallthrough)
+branch  2 taken 3
+       22:   64-block  2
+       26:   65:        if(this->entities[i].get_id() == elem.get_id()){
+       26:   65-block  0
+call    0 returned 26
+call    1 returned 26
+branch  2 taken 26 (fallthrough)
+branch  3 taken 0 (throw)
+       26:   65-block  1
+call    4 returned 26
+branch  5 taken 26 (fallthrough)
+branch  6 taken 0 (throw)
+       26:   65-block  2
+call    7 returned 26
+call    8 returned 26
+call    9 returned 26
+branch 10 taken 4 (fallthrough)
+branch 11 taken 22
+    $$$$$:   65-block  3
+call   12 never executed
+    $$$$$:   65-block  4
+call   13 never executed
+        4:   66:            return this->entities[i];
+        4:   66-block  0
+call    0 returned 4
+call    1 returned 4
+        -:   67:        }
+        -:   68:    }
+        3:   69:    throw RepositoryException("Id doesn't exist");
+        3:   69-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:   69-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   69-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 0
+    $$$$$:   69-block  3
+call   11 never executed
+    $$$$$:   69-block  4
+    $$$$$:   69-block  5
+call   12 never executed
+    $$$$$:   69-block  6
+    $$$$$:   69-block  7
+call   13 never executed
+        -:   70:}
+        -:   71:
+        -:   72:template<class T>
+function _ZN10RepositoryI5MovieE7get_allEv called 19 returned 100% blocks executed 100%
+       19:   73:DynamicVector<T> Repository<T>::get_all() {
+       19:   74:    return this->entities;
+       19:   74-block  0
+call    0 returned 19
+        -:   75:}
+        -:   76:
+        -:   77:template class Repository<Movie>;

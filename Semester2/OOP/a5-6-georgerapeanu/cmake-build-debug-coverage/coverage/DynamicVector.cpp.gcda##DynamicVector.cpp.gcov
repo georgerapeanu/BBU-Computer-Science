@@ -1,0 +1,1146 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/src/domain/DynamicVector.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/DynamicVector.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/DynamicVector.cpp.gcda
+        -:    0:Runs:1
+        -:    1://! @file DynamicVector.cpp this file contains the implementation for DynamicVector
+        -:    2:
+        -:    3://
+        -:    4:// Created by georgerapeanu on 21.03.2022.
+        -:    5://
+        -:    6:#pragma once
+        -:    7:#include "DynamicVector.h"
+        -:    8:#include "Exceptions.h"
+        -:    9:#include "Movie.h"
+        -:   10:#include <algorithm>
+        -:   11:#include <string>
+        -:   12:
+        -:   13:template<class T>
+      133:   14:void DynamicVector<T>::change_capacity(unsigned int capacity){
+     949*:   15:    T* tmp_elems = new T[capacity];
+      543:   16:    for(unsigned int i = 0;i < this->_size && i < capacity;i++){
+      410:   17:        tmp_elems[i] = this->elems[i];
+        -:   18:    }
+      552:   19:    delete[] this->elems;
+      133:   20:    this->elems = tmp_elems;
+      133:   21:    this->capacity = capacity;
+      133:   22:    this->_size = std::min(this->_size, capacity);
+      133:   23:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE15change_capacityEj:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE15change_capacityEj called 7 returned 100% blocks executed 95%
+        7:   14:void DynamicVector<T>::change_capacity(unsigned int capacity){
+      19*:   15:    T* tmp_elems = new T[capacity];
+        7:   15-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 0
+        7:   15-block  1
+    %%%%%:   15-block  2
+        7:   15-block  3
+call    2 returned 7
+       19:   15-block  4
+branch  3 taken 12 (fallthrough)
+branch  4 taken 7
+       12:   15-block  5
+call    5 returned 12
+       15:   16:    for(unsigned int i = 0;i < this->_size && i < capacity;i++){
+        7:   16-block  0
+       15:   16-block  1
+branch  0 taken 11 (fallthrough)
+branch  1 taken 4
+       11:   16-block  2
+branch  2 taken 8 (fallthrough)
+branch  3 taken 3
+        8:   17:        tmp_elems[i] = this->elems[i];
+        8:   17-block  0
+call    0 returned 8
+        -:   18:    }
+       24:   19:    delete[] this->elems;
+        7:   19-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 0
+        7:   19-block  1
+       24:   19-block  2
+branch  2 taken 17 (fallthrough)
+branch  3 taken 7
+       17:   19-block  3
+call    4 returned 17
+        7:   19-block  4
+call    5 returned 7
+        7:   20:    this->elems = tmp_elems;
+        7:   21:    this->capacity = capacity;
+        7:   22:    this->_size = std::min(this->_size, capacity);
+        7:   22-block  0
+call    0 returned 7
+        7:   23:}
+------------------
+_ZN13DynamicVectorI5MovieE15change_capacityEj:
+function _ZN13DynamicVectorI5MovieE15change_capacityEj called 126 returned 100% blocks executed 74%
+      126:   14:void DynamicVector<T>::change_capacity(unsigned int capacity){
+     930*:   15:    T* tmp_elems = new T[capacity];
+      126:   15-block  0
+branch  0 taken 126 (fallthrough)
+branch  1 taken 0
+      126:   15-block  1
+    %%%%%:   15-block  2
+      126:   15-block  3
+call    2 returned 126
+      930:   15-block  4
+branch  3 taken 804 (fallthrough)
+branch  4 taken 126
+      804:   15-block  5
+call    5 returned 804
+branch  6 taken 804 (fallthrough)
+branch  7 taken 0 (throw)
+      804:   15-block  6
+    $$$$$:   15-block  7
+    $$$$$:   15-block  8
+call    8 never executed
+    $$$$$:   15-block  9
+call    9 never executed
+      528:   16:    for(unsigned int i = 0;i < this->_size && i < capacity;i++){
+      126:   16-block  0
+      528:   16-block  1
+branch  0 taken 402 (fallthrough)
+branch  1 taken 126
+      402:   16-block  2
+branch  2 taken 402 (fallthrough)
+branch  3 taken 0
+      402:   17:        tmp_elems[i] = this->elems[i];
+      402:   17-block  0
+call    0 returned 402
+        -:   18:    }
+      528:   19:    delete[] this->elems;
+      126:   19-block  0
+branch  0 taken 126 (fallthrough)
+branch  1 taken 0
+      126:   19-block  1
+      528:   19-block  2
+branch  2 taken 402 (fallthrough)
+branch  3 taken 126
+      402:   19-block  3
+call    4 returned 402
+      126:   19-block  4
+call    5 returned 126
+      126:   20:    this->elems = tmp_elems;
+      126:   21:    this->capacity = capacity;
+      126:   22:    this->_size = std::min(this->_size, capacity);
+      126:   22-block  0
+call    0 returned 126
+      126:   23:}
+------------------
+        -:   24:
+        -:   25:template<class T>
+      140:   26:DynamicVector<T>::DynamicVector(){
+      140:   27:    this->_size = 0;
+      140:   28:    this->capacity = 1;
+      280:   29:    this->elems = new T[1];
+      140:   30:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ev called 4 returned 100% blocks executed 100%
+        4:   26:DynamicVector<T>::DynamicVector(){
+        4:   27:    this->_size = 0;
+        4:   28:    this->capacity = 1;
+        8:   29:    this->elems = new T[1];
+        4:   29-block  0
+call    0 returned 4
+        8:   29-block  1
+branch  1 taken 4 (fallthrough)
+branch  2 taken 4
+        4:   29-block  2
+call    3 returned 4
+        4:   30:}
+------------------
+_ZN13DynamicVectorI5MovieEC2Ev:
+function _ZN13DynamicVectorI5MovieEC2Ev called 136 returned 100% blocks executed 54%
+      136:   26:DynamicVector<T>::DynamicVector(){
+      136:   27:    this->_size = 0;
+      136:   28:    this->capacity = 1;
+      272:   29:    this->elems = new T[1];
+      136:   29-block  0
+call    0 returned 136
+      272:   29-block  1
+branch  1 taken 136 (fallthrough)
+branch  2 taken 136
+      136:   29-block  2
+call    3 returned 136
+branch  4 taken 136 (fallthrough)
+branch  5 taken 0 (throw)
+      136:   29-block  3
+    $$$$$:   29-block  4
+    $$$$$:   29-block  5
+call    6 never executed
+    $$$$$:   29-block  6
+call    7 never executed
+      136:   30:}
+      136:   30-block  0
+------------------
+        -:   31:
+        -:   32:template<class T>
+       1*:   33:DynamicVector<T>::DynamicVector(unsigned int _size){
+       1*:   34:    this->_size = _size;
+       1*:   35:    this->capacity = std::max(_size, (unsigned int)1);
+      11*:   36:    this->elems = new T[_size];
+      11*:   37:    for(unsigned int i = 0;i < this->_size;i++){
+      10*:   38:        this->elems[i] = T();
+        -:   39:    }
+       1*:   40:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ej:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2Ej called 1 returned 100% blocks executed 94%
+        1:   33:DynamicVector<T>::DynamicVector(unsigned int _size){
+        1:   34:    this->_size = _size;
+        1:   35:    this->capacity = std::max(_size, (unsigned int)1);
+        1:   35-block  0
+call    0 returned 1
+      11*:   36:    this->elems = new T[_size];
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   36-block  0
+    %%%%%:   36-block  1
+        1:   36-block  2
+call    2 returned 1
+       11:   36-block  3
+branch  3 taken 10 (fallthrough)
+branch  4 taken 1
+       10:   36-block  4
+call    5 returned 10
+       11:   37:    for(unsigned int i = 0;i < this->_size;i++){
+        1:   37-block  0
+       11:   37-block  1
+branch  0 taken 10 (fallthrough)
+branch  1 taken 1
+       10:   38:        this->elems[i] = T();
+       10:   38-block  0
+call    0 returned 10
+call    1 returned 10
+call    2 returned 10
+        -:   39:    }
+        1:   40:}
+------------------
+_ZN13DynamicVectorI5MovieEC2Ej:
+function _ZN13DynamicVectorI5MovieEC2Ej called 0 returned 0% blocks executed 0%
+    #####:   33:DynamicVector<T>::DynamicVector(unsigned int _size){
+    #####:   34:    this->_size = _size;
+    #####:   35:    this->capacity = std::max(_size, (unsigned int)1);
+    %%%%%:   35-block  0
+call    0 never executed
+    #####:   36:    this->elems = new T[_size];
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   36-block  0
+    %%%%%:   36-block  1
+    %%%%%:   36-block  2
+call    2 never executed
+    %%%%%:   36-block  3
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   36-block  4
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   36-block  5
+    $$$$$:   36-block  6
+    $$$$$:   36-block  7
+call    8 never executed
+    $$$$$:   36-block  8
+call    9 never executed
+    #####:   37:    for(unsigned int i = 0;i < this->_size;i++){
+    %%%%%:   37-block  0
+    %%%%%:   37-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   38:        this->elems[i] = T();
+    %%%%%:   38-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   38-block  1
+call    4 never executed
+    $$$$$:   38-block  2
+call    5 never executed
+        -:   39:    }
+    #####:   40:}
+    %%%%%:   40-block  0
+------------------
+        -:   41:
+        -:   42:template<class T>
+       1*:   43:DynamicVector<T>::DynamicVector(unsigned int _size, T value){
+       1*:   44:    this->_size = _size;
+       1*:   45:    this->capacity = std::max(_size, (unsigned int)1);
+       6*:   46:    this->elems = new T[_size];
+       6*:   47:    for(unsigned int i = 0;i < this->_size;i++){
+       5*:   48:        this->elems[i] = value;
+        -:   49:    }
+       1*:   50:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2EjS5_:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2EjS5_ called 1 returned 100% blocks executed 93%
+        1:   43:DynamicVector<T>::DynamicVector(unsigned int _size, T value){
+        1:   44:    this->_size = _size;
+        1:   45:    this->capacity = std::max(_size, (unsigned int)1);
+        1:   45-block  0
+call    0 returned 1
+       6*:   46:    this->elems = new T[_size];
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   46-block  0
+    %%%%%:   46-block  1
+        1:   46-block  2
+call    2 returned 1
+        6:   46-block  3
+branch  3 taken 5 (fallthrough)
+branch  4 taken 1
+        5:   46-block  4
+call    5 returned 5
+        6:   47:    for(unsigned int i = 0;i < this->_size;i++){
+        1:   47-block  0
+        6:   47-block  1
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+        5:   48:        this->elems[i] = value;
+        5:   48-block  0
+call    0 returned 5
+        -:   49:    }
+        1:   50:}
+------------------
+_ZN13DynamicVectorI5MovieEC2EjS0_:
+function _ZN13DynamicVectorI5MovieEC2EjS0_ called 0 returned 0% blocks executed 0%
+    #####:   43:DynamicVector<T>::DynamicVector(unsigned int _size, T value){
+    #####:   44:    this->_size = _size;
+    #####:   45:    this->capacity = std::max(_size, (unsigned int)1);
+    %%%%%:   45-block  0
+call    0 never executed
+    #####:   46:    this->elems = new T[_size];
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   46-block  0
+    %%%%%:   46-block  1
+    %%%%%:   46-block  2
+call    2 never executed
+    %%%%%:   46-block  3
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   46-block  4
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   46-block  5
+    $$$$$:   46-block  6
+    $$$$$:   46-block  7
+call    8 never executed
+    $$$$$:   46-block  8
+call    9 never executed
+    #####:   47:    for(unsigned int i = 0;i < this->_size;i++){
+    %%%%%:   47-block  0
+    %%%%%:   47-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:   48:        this->elems[i] = value;
+    %%%%%:   48-block  0
+call    0 never executed
+        -:   49:    }
+    #####:   50:}
+    %%%%%:   50-block  0
+------------------
+        -:   51:
+        -:   52:template<class T>
+       20:   53:DynamicVector<T>::DynamicVector(const DynamicVector<T> &other){
+       20:   54:    this->_size = other._size;
+       20:   55:    this->capacity = other.capacity;
+      214:   56:    this->elems = new T[other.capacity];
+      214:   57:    for(int i = 0;i < other.capacity;i++){
+      194:   58:        this->elems[i] = other.elems[i];
+        -:   59:    }
+       20:   60:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2ERKS6_:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEC2ERKS6_ called 1 returned 100% blocks executed 100%
+        1:   53:DynamicVector<T>::DynamicVector(const DynamicVector<T> &other){
+        1:   54:    this->_size = other._size;
+        1:   55:    this->capacity = other.capacity;
+        6:   56:    this->elems = new T[other.capacity];
+        1:   56-block  0
+call    0 returned 1
+        6:   56-block  1
+branch  1 taken 5 (fallthrough)
+branch  2 taken 1
+        5:   56-block  2
+call    3 returned 5
+        6:   57:    for(int i = 0;i < other.capacity;i++){
+        1:   57-block  0
+        6:   57-block  1
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+        5:   58:        this->elems[i] = other.elems[i];
+        5:   58-block  0
+call    0 returned 5
+        -:   59:    }
+        1:   60:}
+------------------
+_ZN13DynamicVectorI5MovieEC2ERKS1_:
+function _ZN13DynamicVectorI5MovieEC2ERKS1_ called 19 returned 100% blocks executed 65%
+       19:   53:DynamicVector<T>::DynamicVector(const DynamicVector<T> &other){
+       19:   54:    this->_size = other._size;
+       19:   55:    this->capacity = other.capacity;
+      208:   56:    this->elems = new T[other.capacity];
+       19:   56-block  0
+call    0 returned 19
+      208:   56-block  1
+branch  1 taken 189 (fallthrough)
+branch  2 taken 19
+      189:   56-block  2
+call    3 returned 189
+branch  4 taken 189 (fallthrough)
+branch  5 taken 0 (throw)
+      189:   56-block  3
+    $$$$$:   56-block  4
+    $$$$$:   56-block  5
+call    6 never executed
+    $$$$$:   56-block  6
+call    7 never executed
+      208:   57:    for(int i = 0;i < other.capacity;i++){
+       19:   57-block  0
+      208:   57-block  1
+branch  0 taken 189 (fallthrough)
+branch  1 taken 19
+      189:   58:        this->elems[i] = other.elems[i];
+      189:   58-block  0
+call    0 returned 189
+        -:   59:    }
+       19:   60:}
+       19:   60-block  0
+------------------
+        -:   61:
+        -:   62:template<class T>
+       83:   63:DynamicVector<T>& DynamicVector<T>::operator=(const DynamicVector &other) {
+       83:   64:    this->_size = other._size;
+       83:   65:    this->capacity = other.capacity;
+      166:   66:    delete[] this->elems;
+      188:   67:    this->elems = new T[other.capacity];
+      188:   68:    for(int i = 0;i < other.capacity;i++){
+      105:   69:        this->elems[i] = other.elems[i];
+        -:   70:    }
+       83:   71:    return *this;
+        -:   72:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEaSERKS6_:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEaSERKS6_ called 1 returned 100% blocks executed 100%
+        1:   63:DynamicVector<T>& DynamicVector<T>::operator=(const DynamicVector &other) {
+        1:   64:    this->_size = other._size;
+        1:   65:    this->capacity = other.capacity;
+        2:   66:    delete[] this->elems;
+        1:   66-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   66-block  1
+        2:   66-block  2
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+        1:   66-block  3
+call    4 returned 1
+        1:   66-block  4
+call    5 returned 1
+        6:   67:    this->elems = new T[other.capacity];
+        1:   67-block  0
+call    0 returned 1
+        6:   67-block  1
+branch  1 taken 5 (fallthrough)
+branch  2 taken 1
+        5:   67-block  2
+call    3 returned 5
+        6:   68:    for(int i = 0;i < other.capacity;i++){
+        1:   68-block  0
+        6:   68-block  1
+branch  0 taken 5 (fallthrough)
+branch  1 taken 1
+        5:   69:        this->elems[i] = other.elems[i];
+        5:   69-block  0
+call    0 returned 5
+        -:   70:    }
+        1:   71:    return *this;
+        1:   71-block  0
+        -:   72:}
+------------------
+_ZN13DynamicVectorI5MovieEaSERKS1_:
+function _ZN13DynamicVectorI5MovieEaSERKS1_ called 82 returned 100% blocks executed 74%
+       82:   63:DynamicVector<T>& DynamicVector<T>::operator=(const DynamicVector &other) {
+       82:   64:    this->_size = other._size;
+       82:   65:    this->capacity = other.capacity;
+      164:   66:    delete[] this->elems;
+       82:   66-block  0
+branch  0 taken 82 (fallthrough)
+branch  1 taken 0
+       82:   66-block  1
+      164:   66-block  2
+branch  2 taken 82 (fallthrough)
+branch  3 taken 82
+       82:   66-block  3
+call    4 returned 82
+       82:   66-block  4
+call    5 returned 82
+      182:   67:    this->elems = new T[other.capacity];
+       82:   67-block  0
+call    0 returned 82
+      182:   67-block  1
+branch  1 taken 100 (fallthrough)
+branch  2 taken 82
+      100:   67-block  2
+call    3 returned 100
+branch  4 taken 100 (fallthrough)
+branch  5 taken 0 (throw)
+      100:   67-block  3
+    $$$$$:   67-block  4
+    $$$$$:   67-block  5
+call    6 never executed
+    $$$$$:   67-block  6
+call    7 never executed
+      182:   68:    for(int i = 0;i < other.capacity;i++){
+       82:   68-block  0
+      182:   68-block  1
+branch  0 taken 100 (fallthrough)
+branch  1 taken 82
+      100:   69:        this->elems[i] = other.elems[i];
+      100:   69-block  0
+call    0 returned 100
+        -:   70:    }
+       82:   71:    return *this;
+       82:   71-block  0
+       82:   71-block  1
+        -:   72:}
+------------------
+        -:   73:
+        -:   74:template<class T>
+      162:   75:DynamicVector<T>::~DynamicVector(){
+      930:   76:    delete[] this->elems;
+      162:   77:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEED2Ev called 7 returned 100% blocks executed 100%
+        7:   75:DynamicVector<T>::~DynamicVector(){
+       30:   76:    delete[] this->elems;
+        7:   76-block  0
+branch  0 taken 7 (fallthrough)
+branch  1 taken 0
+        7:   76-block  1
+       30:   76-block  2
+branch  2 taken 23 (fallthrough)
+branch  3 taken 7
+       23:   76-block  3
+call    4 returned 23
+        7:   76-block  4
+call    5 returned 7
+        7:   77:}
+------------------
+_ZN13DynamicVectorI5MovieED2Ev:
+function _ZN13DynamicVectorI5MovieED2Ev called 155 returned 100% blocks executed 100%
+      155:   75:DynamicVector<T>::~DynamicVector(){
+      900:   76:    delete[] this->elems;
+      155:   76-block  0
+branch  0 taken 155 (fallthrough)
+branch  1 taken 0
+      155:   76-block  1
+      900:   76-block  2
+branch  2 taken 745 (fallthrough)
+branch  3 taken 155
+      745:   76-block  3
+call    4 returned 745
+      155:   76-block  4
+call    5 returned 155
+      155:   77:}
+------------------
+        -:   78:
+        -:   79:template<class T>
+      762:   80:T& DynamicVector<T>::operator [](unsigned int position){
+      762:   81:    if(position >= this->_size){
+       2*:   82:        throw DynamicVectorException("position is outside of vector");
+        -:   83:    }
+      760:   84:    return this->elems[position];
+        -:   85:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEixEj:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEixEj called 44 returned 95% blocks executed 61%
+       44:   80:T& DynamicVector<T>::operator [](unsigned int position){
+       44:   81:    if(position >= this->_size){
+       44:   81-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 42
+        2:   82:        throw DynamicVectorException("position is outside of vector");
+        2:   82-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   82-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   82-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 0
+    $$$$$:   82-block  3
+call   11 never executed
+    $$$$$:   82-block  4
+    $$$$$:   82-block  5
+call   12 never executed
+    $$$$$:   82-block  6
+    $$$$$:   82-block  7
+call   13 never executed
+        -:   83:    }
+       42:   84:    return this->elems[position];
+       42:   84-block  0
+       42:   84-block  1
+        -:   85:}
+------------------
+_ZN13DynamicVectorI5MovieEixEj:
+function _ZN13DynamicVectorI5MovieEixEj called 718 returned 100% blocks executed 22%
+      718:   80:T& DynamicVector<T>::operator [](unsigned int position){
+      718:   81:    if(position >= this->_size){
+      718:   81-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 718
+    #####:   82:        throw DynamicVectorException("position is outside of vector");
+    %%%%%:   82-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   82-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   82-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:   82-block  3
+call   11 never executed
+    $$$$$:   82-block  4
+    $$$$$:   82-block  5
+call   12 never executed
+    $$$$$:   82-block  6
+    $$$$$:   82-block  7
+call   13 never executed
+        -:   83:    }
+      718:   84:    return this->elems[position];
+      718:   84-block  0
+      718:   84-block  1
+        -:   85:}
+------------------
+        -:   86:
+        -:   87:template<class T>
+      300:   88:void DynamicVector<T>::push_back(T elem){
+      300:   89:    if(this->capacity == this->_size){
+      129:   90:        change_capacity(this->capacity << 1);
+        -:   91:    }
+      300:   92:    this->elems[this->_size++] = elem;
+      300:   93:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9push_backES5_:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE9push_backES5_ called 7 returned 100% blocks executed 100%
+        7:   88:void DynamicVector<T>::push_back(T elem){
+        7:   89:    if(this->capacity == this->_size){
+        7:   89-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 4
+        3:   90:        change_capacity(this->capacity << 1);
+        3:   90-block  0
+call    0 returned 3
+        -:   91:    }
+        7:   92:    this->elems[this->_size++] = elem;
+        7:   92-block  0
+call    0 returned 7
+        7:   93:}
+------------------
+_ZN13DynamicVectorI5MovieE9push_backES0_:
+function _ZN13DynamicVectorI5MovieE9push_backES0_ called 293 returned 100% blocks executed 100%
+      293:   88:void DynamicVector<T>::push_back(T elem){
+      293:   89:    if(this->capacity == this->_size){
+      293:   89-block  0
+branch  0 taken 126 (fallthrough)
+branch  1 taken 167
+      126:   90:        change_capacity(this->capacity << 1);
+      126:   90-block  0
+call    0 returned 126
+        -:   91:    }
+      293:   92:    this->elems[this->_size++] = elem;
+      293:   92-block  0
+call    0 returned 293
+      293:   93:}
+------------------
+        -:   94:
+        -:   95:template<class T>
+      14*:   96:void DynamicVector<T>::pop_back(){
+      14*:   97:    if(this->_size == 0){
+       1*:   98:        throw DynamicVectorException("vector is empty");
+        -:   99:    }
+      13*:  100:    this->_size--;
+      13*:  101:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8pop_backEv:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE8pop_backEv called 14 returned 93% blocks executed 59%
+       14:   96:void DynamicVector<T>::pop_back(){
+       14:   97:    if(this->_size == 0){
+       14:   97-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 13
+        1:   98:        throw DynamicVectorException("vector is empty");
+        1:   98-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   98-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   98-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:   98-block  3
+call   11 never executed
+    $$$$$:   98-block  4
+    $$$$$:   98-block  5
+call   12 never executed
+    $$$$$:   98-block  6
+    $$$$$:   98-block  7
+call   13 never executed
+        -:   99:    }
+       13:  100:    this->_size--;
+       13:  101:}
+       13:  101-block  0
+------------------
+_ZN13DynamicVectorI5MovieE8pop_backEv:
+function _ZN13DynamicVectorI5MovieE8pop_backEv called 0 returned 0% blocks executed 0%
+    #####:   96:void DynamicVector<T>::pop_back(){
+    #####:   97:    if(this->_size == 0){
+    %%%%%:   97-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   98:        throw DynamicVectorException("vector is empty");
+    %%%%%:   98-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   98-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   98-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:   98-block  3
+call   11 never executed
+    $$$$$:   98-block  4
+    $$$$$:   98-block  5
+call   12 never executed
+    $$$$$:   98-block  6
+    $$$$$:   98-block  7
+call   13 never executed
+        -:   99:    }
+    #####:  100:    this->_size--;
+    #####:  101:}
+    %%%%%:  101-block  0
+------------------
+        -:  102:
+        -:  103:template<class T>
+       4*:  104:T& DynamicVector<T>::back(){
+       4*:  105:    if(this->_size == 0){
+       1*:  106:        throw DynamicVectorException("vector is empty");
+        -:  107:    }
+       3*:  108:    return this->elems[this->_size - 1];
+        -:  109:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4backEv:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4backEv called 4 returned 75% blocks executed 61%
+        4:  104:T& DynamicVector<T>::back(){
+        4:  105:    if(this->_size == 0){
+        4:  105-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 3
+        1:  106:        throw DynamicVectorException("vector is empty");
+        1:  106-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  106-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  106-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  106-block  3
+call   11 never executed
+    $$$$$:  106-block  4
+    $$$$$:  106-block  5
+call   12 never executed
+    $$$$$:  106-block  6
+    $$$$$:  106-block  7
+call   13 never executed
+        -:  107:    }
+        3:  108:    return this->elems[this->_size - 1];
+        3:  108-block  0
+        3:  108-block  1
+        -:  109:}
+------------------
+_ZN13DynamicVectorI5MovieE4backEv:
+function _ZN13DynamicVectorI5MovieE4backEv called 0 returned 0% blocks executed 0%
+    #####:  104:T& DynamicVector<T>::back(){
+    #####:  105:    if(this->_size == 0){
+    %%%%%:  105-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  106:        throw DynamicVectorException("vector is empty");
+    %%%%%:  106-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  106-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  106-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  106-block  3
+call   11 never executed
+    $$$$$:  106-block  4
+    $$$$$:  106-block  5
+call   12 never executed
+    $$$$$:  106-block  6
+    $$$$$:  106-block  7
+call   13 never executed
+        -:  107:    }
+    #####:  108:    return this->elems[this->_size - 1];
+    %%%%%:  108-block  0
+    %%%%%:  108-block  1
+        -:  109:}
+------------------
+        -:  110:
+        -:  111:template<class T>
+     1063:  112:unsigned int DynamicVector<T>::size()const{
+     1063:  113:    return this->_size;
+        -:  114:}
+------------------
+_ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4sizeEv:
+function _ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE4sizeEv called 67 returned 100% blocks executed 100%
+       67:  112:unsigned int DynamicVector<T>::size()const{
+       67:  113:    return this->_size;
+       67:  113-block  0
+        -:  114:}
+------------------
+_ZNK13DynamicVectorI5MovieE4sizeEv:
+function _ZNK13DynamicVectorI5MovieE4sizeEv called 996 returned 100% blocks executed 100%
+      996:  112:unsigned int DynamicVector<T>::size()const{
+      996:  113:    return this->_size;
+      996:  113-block  0
+        -:  114:}
+------------------
+        -:  115:
+        -:  116:template<class T>
+       4*:  117:void DynamicVector<T>::resize(unsigned int _size){
+       4*:  118:    this->change_capacity(_size);
+       4*:  119:    this->_size = _size;
+       4*:  120:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6resizeEj:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6resizeEj called 4 returned 100% blocks executed 100%
+        4:  117:void DynamicVector<T>::resize(unsigned int _size){
+        4:  118:    this->change_capacity(_size);
+        4:  118-block  0
+call    0 returned 4
+        4:  119:    this->_size = _size;
+        4:  120:}
+------------------
+_ZN13DynamicVectorI5MovieE6resizeEj:
+function _ZN13DynamicVectorI5MovieE6resizeEj called 0 returned 0% blocks executed 0%
+    #####:  117:void DynamicVector<T>::resize(unsigned int _size){
+    #####:  118:    this->change_capacity(_size);
+    %%%%%:  118-block  0
+call    0 never executed
+    #####:  119:    this->_size = _size;
+    #####:  120:}
+------------------
+        -:  121:
+        -:  122:template<class T>
+        8:  123:void DynamicVector<T>::remove(unsigned int position) {
+        8:  124:    if(position >= this->_size){
+       1*:  125:        throw DynamicVectorException("position is outside of vector");
+        -:  126:    }
+       34:  127:    for(unsigned int i = position;i + 1 < this->_size;i++){
+       27:  128:        this->elems[i] = this->elems[i + 1];
+        -:  129:    }
+        7:  130:    this->_size--;
+        7:  131:}
+------------------
+_ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6removeEj:
+function _ZN13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE6removeEj called 2 returned 50% blocks executed 67%
+        2:  123:void DynamicVector<T>::remove(unsigned int position) {
+        2:  124:    if(position >= this->_size){
+        2:  124-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  125:        throw DynamicVectorException("position is outside of vector");
+        1:  125-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  125-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  125-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  125-block  3
+call   11 never executed
+    $$$$$:  125-block  4
+    $$$$$:  125-block  5
+call   12 never executed
+    $$$$$:  125-block  6
+    $$$$$:  125-block  7
+call   13 never executed
+        -:  126:    }
+        5:  127:    for(unsigned int i = position;i + 1 < this->_size;i++){
+        1:  127-block  0
+        5:  127-block  1
+branch  0 taken 4 (fallthrough)
+branch  1 taken 1
+        4:  128:        this->elems[i] = this->elems[i + 1];
+        4:  128-block  0
+call    0 returned 4
+        -:  129:    }
+        1:  130:    this->_size--;
+        1:  131:}
+        1:  131-block  0
+------------------
+_ZN13DynamicVectorI5MovieE6removeEj:
+function _ZN13DynamicVectorI5MovieE6removeEj called 6 returned 100% blocks executed 33%
+        6:  123:void DynamicVector<T>::remove(unsigned int position) {
+        6:  124:    if(position >= this->_size){
+        6:  124-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 6
+    #####:  125:        throw DynamicVectorException("position is outside of vector");
+    %%%%%:  125-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  125-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  125-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  125-block  3
+call   11 never executed
+    $$$$$:  125-block  4
+    $$$$$:  125-block  5
+call   12 never executed
+    $$$$$:  125-block  6
+    $$$$$:  125-block  7
+call   13 never executed
+        -:  126:    }
+       29:  127:    for(unsigned int i = position;i + 1 < this->_size;i++){
+        6:  127-block  0
+       29:  127-block  1
+branch  0 taken 23 (fallthrough)
+branch  1 taken 6
+       23:  128:        this->elems[i] = this->elems[i + 1];
+       23:  128-block  0
+call    0 returned 23
+        -:  129:    }
+        6:  130:    this->_size--;
+        6:  131:}
+        6:  131-block  0
+------------------
+        -:  132:
+        -:  133:template<class T>
+       2*:  134:T DynamicVector<T>::operator[](unsigned int position) const {
+       2*:  135:    if(position >= this->_size){
+       1*:  136:        throw DynamicVectorException("position is outside of vector");
+        -:  137:    }
+       1*:  138:    return this->elems[position];
+        -:  139:}
+------------------
+_ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEixEj:
+function _ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEixEj called 2 returned 50% blocks executed 61%
+        2:  134:T DynamicVector<T>::operator[](unsigned int position) const {
+        2:  135:    if(position >= this->_size){
+        2:  135-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  136:        throw DynamicVectorException("position is outside of vector");
+        1:  136-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:  136-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:  136-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 0
+    $$$$$:  136-block  3
+call   11 never executed
+    $$$$$:  136-block  4
+    $$$$$:  136-block  5
+call   12 never executed
+    $$$$$:  136-block  6
+    $$$$$:  136-block  7
+call   13 never executed
+        -:  137:    }
+        1:  138:    return this->elems[position];
+        1:  138-block  0
+call    0 returned 1
+        -:  139:}
+------------------
+_ZNK13DynamicVectorI5MovieEixEj:
+function _ZNK13DynamicVectorI5MovieEixEj called 0 returned 0% blocks executed 0%
+    #####:  134:T DynamicVector<T>::operator[](unsigned int position) const {
+    #####:  135:    if(position >= this->_size){
+    %%%%%:  135-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  136:        throw DynamicVectorException("position is outside of vector");
+    %%%%%:  136-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  136-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  136-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  136-block  3
+call   11 never executed
+    $$$$$:  136-block  4
+    $$$$$:  136-block  5
+call   12 never executed
+    $$$$$:  136-block  6
+    $$$$$:  136-block  7
+call   13 never executed
+        -:  137:    }
+    #####:  138:    return this->elems[position];
+    %%%%%:  138-block  0
+call    0 never executed
+        -:  139:}
+------------------
+        -:  140:
+        -:  141:template<class T>
+       26:  142:bool DynamicVector<T>::operator==(const DynamicVector<T> &other) const {
+       26:  143:    if(this->size() != other.size()){
+       2*:  144:        return false;
+        -:  145:    }
+      136:  146:    for(int i = 0;i < this->size();i++){
+      113:  147:        if(this->elems[i] != other.elems[i]){
+       1*:  148:            return false;
+        -:  149:        }
+        -:  150:    }
+       23:  151:    return true;
+        -:  152:}
+------------------
+_ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEeqERKS6_:
+function _ZNK13DynamicVectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEeqERKS6_ called 7 returned 100% blocks executed 100%
+        7:  142:bool DynamicVector<T>::operator==(const DynamicVector<T> &other) const {
+        7:  143:    if(this->size() != other.size()){
+        7:  143-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 2 (fallthrough)
+branch  3 taken 5
+        2:  144:        return false;
+        2:  144-block  0
+        -:  145:    }
+       13:  146:    for(int i = 0;i < this->size();i++){
+        5:  146-block  0
+       13:  146-block  1
+call    0 returned 13
+branch  1 taken 9 (fallthrough)
+branch  2 taken 4
+        8:  146-block  2
+        9:  147:        if(this->elems[i] != other.elems[i]){
+        9:  147-block  0
+call    0 returned 9
+branch  1 taken 1 (fallthrough)
+branch  2 taken 8
+        1:  148:            return false;
+        1:  148-block  0
+        -:  149:        }
+        -:  150:    }
+        4:  151:    return true;
+        4:  151-block  0
+        -:  152:}
+------------------
+_ZNK13DynamicVectorI5MovieEeqERKS1_:
+function _ZNK13DynamicVectorI5MovieEeqERKS1_ called 19 returned 100% blocks executed 85%
+       19:  142:bool DynamicVector<T>::operator==(const DynamicVector<T> &other) const {
+       19:  143:    if(this->size() != other.size()){
+       19:  143-block  0
+call    0 returned 19
+call    1 returned 19
+branch  2 taken 0 (fallthrough)
+branch  3 taken 19
+    #####:  144:        return false;
+    %%%%%:  144-block  0
+        -:  145:    }
+      123:  146:    for(int i = 0;i < this->size();i++){
+       19:  146-block  0
+      123:  146-block  1
+call    0 returned 123
+branch  1 taken 104 (fallthrough)
+branch  2 taken 19
+      104:  146-block  2
+      104:  147:        if(this->elems[i] != other.elems[i]){
+      104:  147-block  0
+call    0 returned 104
+branch  1 taken 0 (fallthrough)
+branch  2 taken 104
+    #####:  148:            return false;
+    %%%%%:  148-block  0
+        -:  149:        }
+        -:  150:    }
+       19:  151:    return true;
+       19:  151-block  0
+        -:  152:}
+------------------
+        -:  153:
+        -:  154:template<class T>
+       3*:  155:bool DynamicVector<T>::operator!=(const DynamicVector<T> &other) const {
+       3*:  156:    return !(*this == other);
+        -:  157:}
+        -:  158:
+        -:  159:template class DynamicVector<Movie>;
+        -:  160:template class DynamicVector<std::string>;

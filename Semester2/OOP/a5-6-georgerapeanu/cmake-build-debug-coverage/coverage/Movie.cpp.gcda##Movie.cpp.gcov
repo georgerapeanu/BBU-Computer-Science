@@ -1,0 +1,239 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/src/domain/Movie.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/Movie.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/Movie.cpp.gcda
+        -:    0:Runs:1
+        -:    1://! @file Movie.cpp this file contains the implementation for the Movie class
+        -:    2:
+        -:    3://
+        -:    4:// Created by georgerapeanu on 21.03.2022.
+        -:    5://
+        -:    6:#pragma once
+        -:    7:#include "Movie.h"
+        -:    8:#include <sstream>
+        -:    9:    //! default constructor for an Movie instance
+function _ZN5MovieC2Ev called 1230 returned 100% blocks executed 62%
+     1230:   10:Movie::Movie(){
+     1230:   10-block  0
+call    0 returned 1230
+call    1 returned 1230
+call    2 returned 1230
+    $$$$$:   10-block  1
+call    3 never executed
+    $$$$$:   10-block  2
+call    4 never executed
+    $$$$$:   10-block  3
+call    5 never executed
+     1230:   11:    this->genre = "";
+call    0 returned 1230
+branch  1 taken 1230 (fallthrough)
+branch  2 taken 0 (throw)
+     1230:   12:    this->title = "";
+     1230:   12-block  0
+call    0 returned 1230
+branch  1 taken 1230 (fallthrough)
+branch  2 taken 0 (throw)
+     1230:   13:    this->likes = 0;
+     1230:   14:    this->trailer_link = "";
+     1230:   14-block  0
+call    0 returned 1230
+branch  1 taken 1230 (fallthrough)
+branch  2 taken 0 (throw)
+     1230:   15:    this->year = 0;
+     1230:   16:}
+     1230:   16-block  0
+        -:   17:
+function _ZN5MovieC2ERKS_ called 163 returned 100% blocks executed 62%
+      163:   18:Movie::Movie(const Movie &other){
+      163:   18-block  0
+call    0 returned 163
+call    1 returned 163
+call    2 returned 163
+    $$$$$:   18-block  1
+call    3 never executed
+    $$$$$:   18-block  2
+call    4 never executed
+    $$$$$:   18-block  3
+call    5 never executed
+      163:   19:    this->genre = other.genre;
+call    0 returned 163
+branch  1 taken 163 (fallthrough)
+branch  2 taken 0 (throw)
+      163:   20:    this->title = other.title;
+      163:   20-block  0
+call    0 returned 163
+branch  1 taken 163 (fallthrough)
+branch  2 taken 0 (throw)
+      163:   21:    this->likes = other.likes;
+      163:   22:    this->trailer_link = other.trailer_link;
+      163:   22-block  0
+call    0 returned 163
+branch  1 taken 163 (fallthrough)
+branch  2 taken 0 (throw)
+      163:   23:    this->year = other.year;
+      163:   24:}
+      163:   24-block  0
+        -:   25:
+function _ZN5MovieC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_RKiS9_S7_ called 303 returned 100% blocks executed 62%
+      303:   26:Movie::Movie(const std::string &title, const std::string &genre, const int &year, const int &likes, const std::string &trailer_link){
+      303:   26-block  0
+call    0 returned 303
+call    1 returned 303
+call    2 returned 303
+    $$$$$:   26-block  1
+call    3 never executed
+    $$$$$:   26-block  2
+call    4 never executed
+    $$$$$:   26-block  3
+call    5 never executed
+      303:   27:    this->genre = genre;
+call    0 returned 303
+branch  1 taken 303 (fallthrough)
+branch  2 taken 0 (throw)
+      303:   28:    this->title = title;
+      303:   28-block  0
+call    0 returned 303
+branch  1 taken 303 (fallthrough)
+branch  2 taken 0 (throw)
+      303:   29:    this->likes = likes;
+      303:   30:    this->trailer_link = trailer_link;
+      303:   30-block  0
+call    0 returned 303
+branch  1 taken 303 (fallthrough)
+branch  2 taken 0 (throw)
+      303:   31:    this->year = year;
+      303:   32:}
+      303:   32-block  0
+        -:   33:
+function _ZNK5Movie9get_titleB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:   34:std::string Movie::get_title() const {
+        4:   35:    return this->title;
+        4:   35-block  0
+call    0 returned 4
+        -:   36:}
+        -:   37:
+function _ZNK5Movie9get_genreB5cxx11Ev called 24 returned 100% blocks executed 100%
+       24:   38:std::string Movie::get_genre() const {
+       24:   39:    return this->genre;
+       24:   39-block  0
+call    0 returned 24
+        -:   40:}
+        -:   41:
+function _ZNK5Movie8get_yearEv called 4 returned 100% blocks executed 100%
+        4:   42:int Movie::get_year() const {
+        4:   43:    return this->year;
+        4:   43-block  0
+        -:   44:}
+        -:   45:
+function _ZNK5Movie9get_likesEv called 7 returned 100% blocks executed 100%
+        7:   46:int Movie::get_likes() const {
+        7:   47:    return this->likes;
+        7:   47-block  0
+        -:   48:}
+        -:   49:
+function _ZNK5Movie16get_trailer_linkB5cxx11Ev called 4 returned 100% blocks executed 100%
+        4:   50:std::string Movie::get_trailer_link() const {
+        4:   51:    return this->trailer_link;
+        4:   51-block  0
+call    0 returned 4
+        -:   52:}
+        -:   53:
+function _ZN5Movie9set_titleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   54:void Movie::set_title(const std::string &title){
+        1:   55:    this->title = title;
+        1:   55-block  0
+call    0 returned 1
+        1:   56:}
+function _ZN5Movie9set_genreERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   57:void Movie::set_genre(const std::string &genre){
+        1:   58:    this->genre = genre;
+        1:   58-block  0
+call    0 returned 1
+        1:   59:}
+        -:   60:
+function _ZN5Movie8set_yearEi called 1 returned 100% blocks executed 100%
+        1:   61:void Movie::set_year(int year){
+        1:   62:    this->year = year;
+        1:   63:}
+        -:   64:
+function _ZN5Movie9set_likesEi called 3 returned 100% blocks executed 100%
+        3:   65:void Movie::set_likes(int likes){
+        3:   66:    this->likes = likes;
+        3:   67:}
+        -:   68:
+function _ZN5Movie16set_trailer_linkERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   69:void Movie::set_trailer_link(const std::string &trailer_link){
+        1:   70:    this->trailer_link = trailer_link;
+        1:   70-block  0
+call    0 returned 1
+        1:   71:}
+        -:   72:
+function _ZNK5Movie6get_idB5cxx11Ev called 1320 returned 100% blocks executed 83%
+     1320:   73:std::string Movie::get_id() const {
+     2640:   74:    std::ostringstream  id;
+     1320:   74-block  0
+call    0 returned 1320
+branch  1 taken 1320 (fallthrough)
+branch  2 taken 0 (throw)
+     1320:   74-block  1
+call    3 returned 1320
+    $$$$$:   74-block  2
+call    4 never executed
+     1320:   75:    id << title;
+     1320:   75-block  0
+call    0 returned 1320
+branch  1 taken 1320 (fallthrough)
+branch  2 taken 0 (throw)
+     1320:   76:    id << "###";
+     1320:   76-block  0
+call    0 returned 1320
+branch  1 taken 1320 (fallthrough)
+branch  2 taken 0 (throw)
+     1320:   77:    id << year;
+     1320:   77-block  0
+call    0 returned 1320
+branch  1 taken 1320 (fallthrough)
+branch  2 taken 0 (throw)
+     2640:   78:    return id.str();
+     1320:   78-block  0
+call    0 returned 1320
+branch  1 taken 1320 (fallthrough)
+branch  2 taken 0 (throw)
+     1320:   78-block  1
+        -:   79:}
+        -:   80:
+function _ZNK5MovieeqERKS_ called 110 returned 100% blocks executed 100%
+      110:   81:bool Movie::operator==(const Movie &other) const {
+      219:   82:    return  this->title == other.title &&
+      110:   82-block  0
+call    0 returned 110
+branch  1 taken 109 (fallthrough)
+branch  2 taken 0
+      109:   83:            this->genre == other.genre &&
+      109:   83-block  0
+call    0 returned 109
+      109:   84:            this->likes == other.likes &&
+      109:   84-block  0
+branch  0 taken 109 (fallthrough)
+branch  1 taken 0
+      328:   85:            this->year == other.year &&
+branch  0 taken 109 (fallthrough)
+branch  1 taken 1
+      109:   85-block  0
+branch  2 taken 109 (fallthrough)
+branch  3 taken 0
+branch  4 taken 109 (fallthrough)
+branch  5 taken 0
+      109:   85-block  1
+        1:   85-block  2
+      219:   86:            this->trailer_link == other.trailer_link;
+      109:   86-block  0
+call    0 returned 109
+      110:   86-block  1
+        -:   87:}
+        -:   88:
+function _ZNK5MovieneERKS_ called 105 returned 100% blocks executed 100%
+      105:   89:bool Movie::operator!=(const Movie &other) const {
+      105:   90:    return !(*this == other);
+      105:   90-block  0
+call    0 returned 105
+        -:   91:}

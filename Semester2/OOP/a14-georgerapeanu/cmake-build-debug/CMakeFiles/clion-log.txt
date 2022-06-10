@@ -1,0 +1,49 @@
+/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/linux/ninja -G Ninja /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu
+-- Configuring done
+CMake Warning (dev) in tests/CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target a14_georgerapeanu_tests.
+  AUTOMOC, AUTOUIC and AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in tests/googletest/googlemock/CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target gmock_main.  AUTOMOC, AUTOUIC
+  and AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in tests/googletest/googlemock/CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target gmock.  AUTOMOC, AUTOUIC and
+  AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in tests/googletest/googletest/CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target gtest_main.  AUTOMOC, AUTOUIC
+  and AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) in tests/googletest/googletest/CMakeLists.txt:
+  AUTOGEN: No valid Qt version found for target gtest.  AUTOMOC, AUTOUIC and
+  AUTORCC disabled.  Consider adding:
+
+    find_package(Qt<QTVERSION> COMPONENTS Widgets)
+
+  to your CMakeLists.txt file.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Generating done
+-- Build files have been written to: /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug

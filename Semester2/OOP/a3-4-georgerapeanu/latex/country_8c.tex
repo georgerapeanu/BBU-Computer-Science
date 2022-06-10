@@ -1,0 +1,83 @@
+\hypertarget{country_8c}{}\doxysubsection{src/domain/country.c File Reference}
+\label{country_8c}\index{src/domain/country.c@{src/domain/country.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/country.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/utils/utils.\+h\char`\"{}}\newline
+Include dependency graph for country.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{country_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$ \mbox{\hyperlink{country_8c_a30e4df50fc0b48bfe03174d804aec1f1}{create\+\_\+country}} (const char $\ast$name, const char $\ast$continent, int population, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This creates a country using the necessary data. It stores its name in lowercase. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country_8c_a1dda34a26a91560fda159ace9b1df6ac}{delete\+\_\+country}} (\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country)
+\begin{DoxyCompactList}\small\item\em This frees the dynamically allocated memory for a given country. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country_8c_a547eecc0206d587101dad5fcdd3894d4}{delete\+\_\+country\+\_\+data}} (\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country)
+\begin{DoxyCompactList}\small\item\em this free the data for a country(but not the country itself) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This file contains the implementation of the defined functions for Country.\+h 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{country_8c_a30e4df50fc0b48bfe03174d804aec1f1}\label{country_8c_a30e4df50fc0b48bfe03174d804aec1f1}} 
+\index{country.c@{country.c}!create\_country@{create\_country}}
+\index{create\_country@{create\_country}!country.c@{country.c}}
+\doxyparagraph{\texorpdfstring{create\_country()}{create\_country()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcountry__t}{country\+\_\+t}}$\ast$ create\+\_\+country (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{continent,  }\item[{int}]{population,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This creates a country using the necessary data. It stores its name in lowercase. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A pointer to the start of a char array containing the name of the country. The content of the char array is copied in a new dynamically-\/allocated char array. \\
+\hline
+{\em continent} & A pointer to the start of a char array containing the name of the continent of the country. The content of the char array is copied in a new dynamically-\/allocated char array. \\
+\hline
+{\em population} & The population of the country \\
+\hline
+{\em p\+\_\+error} & This is a pointer to the value which receives the error code for this operation(if any). This can be set to N\+U\+LL if you do not want the error code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the new created country 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country_8c_a1dda34a26a91560fda159ace9b1df6ac}\label{country_8c_a1dda34a26a91560fda159ace9b1df6ac}} 
+\index{country.c@{country.c}!delete\_country@{delete\_country}}
+\index{delete\_country@{delete\_country}!country.c@{country.c}}
+\doxyparagraph{\texorpdfstring{delete\_country()}{delete\_country()}}
+{\footnotesize\ttfamily void delete\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country }\end{DoxyParamCaption})}
+
+
+
+This frees the dynamically allocated memory for a given country. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & a pointer to the country for which the memory is freed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country_8c_a547eecc0206d587101dad5fcdd3894d4}\label{country_8c_a547eecc0206d587101dad5fcdd3894d4}} 
+\index{country.c@{country.c}!delete\_country\_data@{delete\_country\_data}}
+\index{delete\_country\_data@{delete\_country\_data}!country.c@{country.c}}
+\doxyparagraph{\texorpdfstring{delete\_country\_data()}{delete\_country\_data()}}
+{\footnotesize\ttfamily void delete\+\_\+country\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country }\end{DoxyParamCaption})}
+
+
+
+this free the data for a country(but not the country itself) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & a pointer to the country for which the memory is freed. \\
+\hline
+\end{DoxyParams}

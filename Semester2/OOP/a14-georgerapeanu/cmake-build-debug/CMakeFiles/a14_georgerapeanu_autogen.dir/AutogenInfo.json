@@ -1,0 +1,302 @@
+{
+	"BUILD_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/a14_georgerapeanu_autogen",
+	"CMAKE_BINARY_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu",
+	"CMAKE_EXECUTABLE" : "/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/CMakeLists.txt",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/CMakeFiles/3.21.1/CMakeCXXCompiler.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeGenericSystem.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/UnixPaths.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCInformation.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-C.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-C.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXInformation.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU-CXX.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Compiler/GNU.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/Platform/Linux-GNU.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/domain/AbstractMovieAction.h",
+			"MU",
+			"RHPEHI62ZW/moc_AbstractMovieAction.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/domain/AddMovieAction.h",
+			"MU",
+			"RHPEHI62ZW/moc_AddMovieAction.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/domain/RemoveMovieAction.h",
+			"MU",
+			"RHPEHI62ZW/moc_RemoveMovieAction.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/domain/UpdateMovieAction.h",
+			"MU",
+			"RHPEHI62ZW/moc_UpdateMovieAction.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/repository/UndoActionsStack.h",
+			"MU",
+			"CKHUSCEPXR/moc_UndoActionsStack.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/ui/AdminGUI.h",
+			"MU",
+			"JCP2AIONHY/moc_AdminGUI.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/ui/GUI.h",
+			"MU",
+			"JCP2AIONHY/moc_GUI.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/ui/MovieListModel.h",
+			"MU",
+			"JCP2AIONHY/moc_MovieListModel.cpp",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/ui/UserGUI.h",
+			"MU",
+			"JCP2AIONHY/moc_UserGUI.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/a14_georgerapeanu_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/a14_georgerapeanu_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/domain",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/repository",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/controller",
+		"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/ui",
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/c++/9",
+		"/usr/include/x86_64-linux-gnu/c++/9",
+		"/usr/include/c++/9/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/9/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-dM",
+		"-E",
+		"-c",
+		"/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/cmake/linux/share/cmake-3.21/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/a14_georgerapeanu_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 2,
+	"PARSE_CACHE_FILE" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/CMakeFiles/a14_georgerapeanu_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 12,
+	"SETTINGS_FILE" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug/CMakeFiles/a14_georgerapeanu_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/app/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/controller/MovieController.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/AbstractMovieAction.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/AddMovieAction.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/Exceptions.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/Movie.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/MovieValidator.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/RemoveMovieAction.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/UpdateMovieAction.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/CSVWatchlist.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/FileRepository.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/HTMLWatchlist.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/MemoryRepository.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/MemoryWatchlist.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/UndoActionsStack.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/AdminGUI.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/GUI.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/MovieListModel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/UI.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/UserGUI.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

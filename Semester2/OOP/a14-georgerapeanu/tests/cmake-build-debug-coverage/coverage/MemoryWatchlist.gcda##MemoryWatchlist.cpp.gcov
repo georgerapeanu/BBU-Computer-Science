@@ -1,0 +1,332 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/MemoryWatchlist.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/MemoryWatchlist.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/repository/MemoryWatchlist.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file MemoryWatchlist.cpp this is a file containing the implementation for an in-memory watchlist
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 18.04.2022.
+        -:    7://
+        -:    8:
+        -:    9:#pragma once
+        -:   10:#include "MemoryWatchlist.h"
+        -:   11:#include "Movie.h"
+        -:   12:#include "Exceptions.h"
+        -:   13:#include <string>
+        -:   14:#include <vector>
+        -:   15:#include <fstream>
+        -:   16:
+        -:   17:using namespace std;
+        -:   18:
+        -:   19:template<class T>
+function _ZN15MemoryWatchlistI5MovieEC2Ev called 30 returned 100% blocks executed 100%
+       30:   20:MemoryWatchlist<T>::MemoryWatchlist() {
+       30:   20-block  0
+call    0 returned 30
+call    1 returned 30
+       30:   21:    this->entities = vector<T>();
+call    0 returned 30
+call    1 returned 30
+call    2 returned 30
+       30:   22:}
+        -:   23:
+        -:   24:template<class T>
+      30*:   25:MemoryWatchlist<T>::~MemoryWatchlist() {
+        -:   26:    ;
+      30*:   27:}
+------------------
+_ZN15MemoryWatchlistI5MovieED0Ev:
+function _ZN15MemoryWatchlistI5MovieED0Ev called 0 returned 0% blocks executed 0%
+    #####:   25:MemoryWatchlist<T>::~MemoryWatchlist() {
+        -:   26:    ;
+    #####:   27:}
+    %%%%%:   27-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN15MemoryWatchlistI5MovieED2Ev:
+function _ZN15MemoryWatchlistI5MovieED2Ev called 30 returned 100% blocks executed 100%
+       30:   25:MemoryWatchlist<T>::~MemoryWatchlist() {
+        -:   26:    ;
+       30:   27:}
+       30:   27-block  0
+call    0 returned 30
+call    1 returned 30
+------------------
+        -:   28:
+        -:   29:template<class T>
+function _ZN15MemoryWatchlistI5MovieE3addERKS0_ called 27 returned 78% blocks executed 69%
+       27:   30:void MemoryWatchlist<T>::add(const T &elem) {
+       47:   31:    for(int i = 0;i < this->entities.size();i++){
+       27:   31-block  0
+       47:   31-block  1
+call    0 returned 47
+branch  1 taken 26 (fallthrough)
+branch  2 taken 21
+       20:   31-block  2
+       26:   32:        if(this->entities[i].get_id() == elem.get_id()){
+       26:   32-block  0
+call    0 returned 26
+call    1 returned 26
+call    2 returned 26
+branch  3 taken 26 (fallthrough)
+branch  4 taken 0 (throw)
+       26:   32-block  1
+call    5 returned 26
+call    6 returned 26
+call    7 returned 26
+branch  8 taken 6 (fallthrough)
+branch  9 taken 20
+    $$$$$:   32-block  2
+call   10 never executed
+    $$$$$:   32-block  3
+call   11 never executed
+        6:   33:            throw RepositoryException("Id already exists");
+        6:   33-block  0
+call    0 returned 6
+call    1 returned 6
+call    2 returned 6
+branch  3 taken 6 (fallthrough)
+branch  4 taken 0 (throw)
+        6:   33-block  1
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   33-block  2
+call    8 returned 6
+call    9 returned 6
+call   10 returned 0
+    $$$$$:   33-block  3
+call   11 never executed
+    $$$$$:   33-block  4
+    $$$$$:   33-block  5
+call   12 never executed
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+call   13 never executed
+        -:   34:        }
+        -:   35:    }
+       21:   36:    this->entities.push_back(elem);
+       21:   36-block  0
+call    0 returned 21
+       21:   37:    this->save();
+call    0 returned 21
+       21:   38:}
+        -:   39:
+        -:   40:template<class T>
+function _ZN15MemoryWatchlistI5MovieE6updateERKS0_ called 3 returned 33% blocks executed 71%
+        3:   41:void MemoryWatchlist<T>::update(const T &elem) {
+        6:   42:    for(int i = 0;i < this->entities.size();i++){
+        3:   42-block  0
+        6:   42-block  1
+call    0 returned 6
+branch  1 taken 4 (fallthrough)
+branch  2 taken 2
+        3:   42-block  2
+        4:   43:        if(this->entities[i].get_id() == elem.get_id()){
+        4:   43-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+branch  3 taken 4 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   43-block  1
+call    5 returned 4
+call    6 returned 4
+call    7 returned 4
+branch  8 taken 1 (fallthrough)
+branch  9 taken 3
+    $$$$$:   43-block  2
+call   10 never executed
+    $$$$$:   43-block  3
+call   11 never executed
+        1:   44:            this->entities[i] = elem;
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+        1:   45:            this->save();
+call    0 returned 1
+        1:   46:            return ;
+        1:   46-block  0
+        -:   47:        }
+        -:   48:    }
+        2:   49:    throw RepositoryException("Id doesn't exist");
+        2:   49-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   49-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   49-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 0
+    $$$$$:   49-block  3
+call   11 never executed
+    $$$$$:   49-block  4
+    $$$$$:   49-block  5
+call   12 never executed
+    $$$$$:   49-block  6
+    $$$$$:   49-block  7
+call   13 never executed
+        -:   50:}
+        -:   51:
+        -:   52:
+        -:   53:template<class T>
+function _ZN15MemoryWatchlistI5MovieE6removeERKS0_ called 5 returned 40% blocks executed 67%
+        5:   54:void MemoryWatchlist<T>::remove(const T &elem) {
+       10:   55:    for(int i = 0;i < this->entities.size();i++){
+        5:   55-block  0
+       10:   55-block  1
+call    0 returned 10
+branch  1 taken 7 (fallthrough)
+branch  2 taken 3
+        5:   55-block  2
+        7:   56:        if(this->entities[i].get_id() == elem.get_id()){
+        7:   56-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
+branch  4 taken 0 (throw)
+        7:   56-block  1
+call    5 returned 7
+call    6 returned 7
+call    7 returned 7
+branch  8 taken 2 (fallthrough)
+branch  9 taken 5
+    $$$$$:   56-block  2
+call   10 never executed
+    $$$$$:   56-block  3
+call   11 never executed
+        2:   57:            this->entities.erase(this->entities.begin() + i);
+        2:   57-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+    $$$$$:   57-block  1
+    $$$$$:   57-block  2
+    $$$$$:   57-block  3
+call    6 never executed
+        2:   58:            this->save();
+        2:   58-block  0
+call    0 returned 2
+        2:   59:            return ;
+        2:   59-block  0
+        -:   60:        }
+        -:   61:    }
+        3:   62:    throw RepositoryException("Id doesn't exist");
+        3:   62-block  0
+call    0 returned 3
+call    1 returned 3
+call    2 returned 3
+branch  3 taken 3 (fallthrough)
+branch  4 taken 0 (throw)
+        3:   62-block  1
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+        3:   62-block  2
+call    8 returned 3
+call    9 returned 3
+call   10 returned 0
+    $$$$$:   62-block  3
+call   11 never executed
+    $$$$$:   62-block  4
+    $$$$$:   62-block  5
+call   12 never executed
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+call   13 never executed
+        -:   63:}
+        -:   64:
+        -:   65:template<class T>
+function _ZN15MemoryWatchlistI5MovieE4findERKS0_ called 5 returned 60% blocks executed 69%
+        5:   66:T MemoryWatchlist<T>::find(const T &elem) {
+       14:   67:    for(int i = 0;i < this->entities.size();i++){
+        5:   67-block  0
+       14:   67-block  1
+call    0 returned 14
+branch  1 taken 12 (fallthrough)
+branch  2 taken 2
+        9:   67-block  2
+       12:   68:        if(this->entities[i].get_id() == elem.get_id()){
+       12:   68-block  0
+call    0 returned 12
+call    1 returned 12
+call    2 returned 12
+branch  3 taken 12 (fallthrough)
+branch  4 taken 0 (throw)
+       12:   68-block  1
+call    5 returned 12
+call    6 returned 12
+call    7 returned 12
+branch  8 taken 3 (fallthrough)
+branch  9 taken 9
+    $$$$$:   68-block  2
+call   10 never executed
+    $$$$$:   68-block  3
+call   11 never executed
+        3:   69:            return this->entities[i];
+        3:   69-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   70:        }
+        -:   71:    }
+        2:   72:    throw RepositoryException("Id doesn't exist");
+        2:   72-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   72-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   72-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 0
+    $$$$$:   72-block  3
+call   11 never executed
+    $$$$$:   72-block  4
+    $$$$$:   72-block  5
+call   12 never executed
+    $$$$$:   72-block  6
+    $$$$$:   72-block  7
+call   13 never executed
+        -:   73:}
+        -:   74:
+        -:   75:template<class T>
+function _ZN15MemoryWatchlistI5MovieE7get_allEv called 7 returned 100% blocks executed 100%
+        7:   76:vector<T> MemoryWatchlist<T>::get_all() {
+        7:   77:    return this->entities;
+        7:   77-block  0
+call    0 returned 7
+        -:   78:}
+        -:   79:
+        -:   80:template<class T>
+function _ZNK15MemoryWatchlistI5MovieE4saveEv called 24 returned 100% blocks executed 100%
+       24:   81:void MemoryWatchlist<T>::save() const {
+        -:   82:    ;
+       24:   83:}
+        -:   84:
+        -:   85:template<class T>
+function _ZNK15MemoryWatchlistI5MovieE7displayEv called 0 returned 0% blocks executed 0%
+    #####:   86:void MemoryWatchlist<T>::display() const {
+        -:   87:    ;
+    #####:   88:}
+        -:   89:
+        -:   90:template class MemoryWatchlist<Movie>;
+        -:   91:
+        -:   92:

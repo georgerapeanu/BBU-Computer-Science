@@ -1,0 +1,193 @@
+\hypertarget{vector_8h}{}\doxysubsection{include/domain/vector.h File Reference}
+\label{vector_8h}\index{include/domain/vector.h@{include/domain/vector.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{vector_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Implements a dynamic array. It is generic, so you can hold any type in it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{vector_8h_ac7bde867c6a1fe4c4247314747cf39aa}{create\+\_\+vector}} (int element\+\_\+size, int initial\+\_\+size, void($\ast$free\+\_\+elem\+\_\+data)(), int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function creates a pointer to a new \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_a9fa59ca7b739e346dfef9d91fe8a60d5}{delete\+\_\+vector}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v)
+\begin{DoxyCompactList}\small\item\em This function frees the memory for a \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_a4e81cd1ca15b514bd559d67d18ff39e6}{resize}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int size, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function resizes the current vector. It also changes its capacity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_ac027cefeca587aa1a23ea2695ef6296b}{change\+\_\+capacity\+\_\+vector}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int capacity, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function changes the capacity of the current vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_afda81f9664fcf82c9f1fbd60ee62c32c}{push\+\_\+back}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, const void $\ast$p\+\_\+element, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function resizes a given vector. It changes both size, and capacity. Deletes the any elements which do not fit in the new size. Any newly created elements are not initialized to any default value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_ab32687f129a09fe01282fea05bcd8414}{pop\+\_\+back}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function removes the last element of the vector. It changes only size. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{vector_8h_aa5250df5fad6118b5c2bf707136c20dd}{get\+\_\+position\+\_\+vector}} (const \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int pos, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em gets a pointer to the element from specified position in the given vector \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vector_8h_a86e5ee8c2992c6cd76ec4cf47e144925}{set\+\_\+position\+\_\+vector}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+v, int pos, const void $\ast$p\+\_\+element, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em sets an element on a given position in the vector to a given element \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This file contains the model for a dynamic array. This array is generic, so it holds a void$\ast$ pointer to a large buffer. 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{vector_8h_ac027cefeca587aa1a23ea2695ef6296b}\label{vector_8h_ac027cefeca587aa1a23ea2695ef6296b}} 
+\index{vector.h@{vector.h}!change\_capacity\_vector@{change\_capacity\_vector}}
+\index{change\_capacity\_vector@{change\_capacity\_vector}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{change\_capacity\_vector()}{change\_capacity\_vector()}}
+{\footnotesize\ttfamily void change\+\_\+capacity\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int}]{capacity,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function changes the capacity of the current vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & the pointer to the vector to be resized \\
+\hline
+{\em capacity} & the new size of the vector \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_ac7bde867c6a1fe4c4247314747cf39aa}\label{vector_8h_ac7bde867c6a1fe4c4247314747cf39aa}} 
+\index{vector.h@{vector.h}!create\_vector@{create\_vector}}
+\index{create\_vector@{create\_vector}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{create\_vector()}{create\_vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ create\+\_\+vector (\begin{DoxyParamCaption}\item[{int}]{element\+\_\+size,  }\item[{int}]{initial\+\_\+size,  }\item[{void($\ast$)()}]{free\+\_\+elem\+\_\+data,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function creates a pointer to a new \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element\+\_\+size} & the size of a vector element(int bytes) \\
+\hline
+{\em initial\+\_\+size} & the initial number of elements of the vector \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL \\
+\hline
+{\em free\+\_\+elem\+\_\+data} & a pointer to a function responsible for freeing data for a given element(but not the element itself). Can be N\+U\+LL if no freeing should be applied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the newly created vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{vector_8h_a9fa59ca7b739e346dfef9d91fe8a60d5}\label{vector_8h_a9fa59ca7b739e346dfef9d91fe8a60d5}} 
+\index{vector.h@{vector.h}!delete\_vector@{delete\_vector}}
+\index{delete\_vector@{delete\_vector}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{delete\_vector()}{delete\_vector()}}
+{\footnotesize\ttfamily void delete\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v }\end{DoxyParamCaption})}
+
+
+
+This function frees the memory for a \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & the pointer to the vector to be freed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_aa5250df5fad6118b5c2bf707136c20dd}\label{vector_8h_aa5250df5fad6118b5c2bf707136c20dd}} 
+\index{vector.h@{vector.h}!get\_position\_vector@{get\_position\_vector}}
+\index{get\_position\_vector@{get\_position\_vector}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{get\_position\_vector()}{get\_position\_vector()}}
+{\footnotesize\ttfamily void$\ast$ get\+\_\+position\+\_\+vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int}]{pos,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+gets a pointer to the element from specified position in the given vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & pointer to the vector that is accessed \\
+\hline
+{\em pos} & the position that is wanted \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_ab32687f129a09fe01282fea05bcd8414}\label{vector_8h_ab32687f129a09fe01282fea05bcd8414}} 
+\index{vector.h@{vector.h}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily void pop\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function removes the last element of the vector. It changes only size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & a pointer to the vector from which the last element is removed \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_afda81f9664fcf82c9f1fbd60ee62c32c}\label{vector_8h_afda81f9664fcf82c9f1fbd60ee62c32c}} 
+\index{vector.h@{vector.h}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily void push\+\_\+back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{const void $\ast$}]{p\+\_\+element,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function resizes a given vector. It changes both size, and capacity. Deletes the any elements which do not fit in the new size. Any newly created elements are not initialized to any default value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & the pointer to the vector on which to push back the element. \\
+\hline
+{\em p\+\_\+element} & a pointer to the element to be pushed to the back of the vector. \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_a4e81cd1ca15b514bd559d67d18ff39e6}\label{vector_8h_a4e81cd1ca15b514bd559d67d18ff39e6}} 
+\index{vector.h@{vector.h}!resize@{resize}}
+\index{resize@{resize}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void resize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int}]{size,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function resizes the current vector. It also changes its capacity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & the pointer to the vector to be resized \\
+\hline
+{\em size} & the new size of the vector \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{vector_8h_a86e5ee8c2992c6cd76ec4cf47e144925}\label{vector_8h_a86e5ee8c2992c6cd76ec4cf47e144925}} 
+\index{vector.h@{vector.h}!set\_position\_vector@{set\_position\_vector}}
+\index{set\_position\_vector@{set\_position\_vector}!vector.h@{vector.h}}
+\doxyparagraph{\texorpdfstring{set\_position\_vector()}{set\_position\_vector()}}
+{\footnotesize\ttfamily void set\+\_\+position\+\_\+vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+v,  }\item[{int}]{pos,  }\item[{const void $\ast$}]{p\+\_\+element,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+sets an element on a given position in the vector to a given element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+v} & pointer to the vector that is modified \\
+\hline
+{\em pos} & the position that will be modified \\
+\hline
+{\em p\+\_\+element} & pointer to the elemenet with which the position is updated \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code of this function. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}

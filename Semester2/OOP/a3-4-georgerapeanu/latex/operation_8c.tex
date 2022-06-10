@@ -1,0 +1,101 @@
+\hypertarget{operation_8c}{}\doxysubsection{src/domain/operation.c File Reference}
+\label{operation_8c}\index{src/domain/operation.c@{src/domain/operation.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/operation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for operation.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{operation_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$ \mbox{\hyperlink{operation_8c_acecdf62ec935a1e6c0b4ce09716b1361}{create\+\_\+operation}} (void($\ast$function)(\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error), \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, void($\ast$free\+\_\+args\+\_\+data)(\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args), int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function creates an operation instance \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operation_8c_ad945e766d717979922fdaf5610d52e16}{delete\+\_\+operation}} (\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$p\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em this function frees the memory for an operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operation_8c_a10113c25249d18c8806c45c934b2c608}{delete\+\_\+operation\+\_\+data}} (\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$p\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em this function frees the memory allocated for an operation, but not the operation itself \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operation_8c_a090e0e3636dcfb384fe6c4d79ea3fd56}{apply}} (\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$p\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em applies the operation(runs the function with given args). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the implementation of the operation structure and its methods 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{operation_8c_a090e0e3636dcfb384fe6c4d79ea3fd56}\label{operation_8c_a090e0e3636dcfb384fe6c4d79ea3fd56}} 
+\index{operation.c@{operation.c}!apply@{apply}}
+\index{apply@{apply}!operation.c@{operation.c}}
+\doxyparagraph{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily void apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$}]{p\+\_\+operation,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+applies the operation(runs the function with given args). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & a pointer to the operation \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable which receives the error. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operation_8c_acecdf62ec935a1e6c0b4ce09716b1361}\label{operation_8c_acecdf62ec935a1e6c0b4ce09716b1361}} 
+\index{operation.c@{operation.c}!create\_operation@{create\_operation}}
+\index{create\_operation@{create\_operation}!operation.c@{operation.c}}
+\doxyparagraph{\texorpdfstring{create\_operation()}{create\_operation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structoperation__t}{operation\+\_\+t}}$\ast$ create\+\_\+operation (\begin{DoxyParamCaption}\item[{void($\ast$)(\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error)}]{function,  }\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args,  }\item[{void($\ast$)(\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args)}]{free\+\_\+args\+\_\+data,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function creates an operation instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & the function which is to be applied \\
+\hline
+{\em args} & the args of the function \\
+\hline
+{\em free\+\_\+args\+\_\+data} & the functions which frees the data for given args. Can be left N\+U\+LL if there is no need for one. \\
+\hline
+{\em p\+\_\+error} & the pointer to the variable that receives the error. Can be left N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the new operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operation_8c_ad945e766d717979922fdaf5610d52e16}\label{operation_8c_ad945e766d717979922fdaf5610d52e16}} 
+\index{operation.c@{operation.c}!delete\_operation@{delete\_operation}}
+\index{delete\_operation@{delete\_operation}!operation.c@{operation.c}}
+\doxyparagraph{\texorpdfstring{delete\_operation()}{delete\_operation()}}
+{\footnotesize\ttfamily void delete\+\_\+operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$}]{p\+\_\+operation }\end{DoxyParamCaption})}
+
+
+
+this function frees the memory for an operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & a pointer to the operation to be freed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operation_8c_a10113c25249d18c8806c45c934b2c608}\label{operation_8c_a10113c25249d18c8806c45c934b2c608}} 
+\index{operation.c@{operation.c}!delete\_operation\_data@{delete\_operation\_data}}
+\index{delete\_operation\_data@{delete\_operation\_data}!operation.c@{operation.c}}
+\doxyparagraph{\texorpdfstring{delete\_operation\_data()}{delete\_operation\_data()}}
+{\footnotesize\ttfamily void delete\+\_\+operation\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$}]{p\+\_\+operation }\end{DoxyParamCaption})}
+
+
+
+this function frees the memory allocated for an operation, but not the operation itself 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & a pointer to the operation \\
+\hline
+\end{DoxyParams}

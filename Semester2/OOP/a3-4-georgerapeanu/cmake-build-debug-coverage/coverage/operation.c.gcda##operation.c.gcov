@@ -1,0 +1,80 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/src/domain/operation.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/operation.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/operation.c.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file operation.c this file contains the implementation of the operation structure and its methods
+        -:    3: */
+        -:    4:
+        -:    5:#pragma once
+        -:    6:#include "../../include/domain/operation.h"
+        -:    7:#include "../../include/domain/errors.h"
+        -:    8:#include <stdlib.h>
+        -:    9:
+        -:   10:/*
+        -:   11: * This implementation does exactly what it says it does in operation.h
+        -:   12: */
+function create_operation called 24 returned 100% blocks executed 50%
+       24:   13:operation_t* create_operation(void (*function)(vector_t* args, int*p_error), vector_t* args, void (*free_args_data)(vector_t* args), int* p_error){
+       24:   14:    operation_t* p_operation = (operation_t*)malloc(sizeof(operation_t));
+       24:   15:    if(p_operation == NULL){
+       24:   15-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 24
+    #####:   16:        set_error(p_error, 1);
+    %%%%%:   16-block  0
+call    0 never executed
+    #####:   17:        delete_operation(p_operation);
+call    0 never executed
+    #####:   18:        return NULL;
+        -:   19:    }
+       24:   20:    p_operation->args = args;
+       24:   21:    p_operation->function = function;
+       24:   22:    p_operation->free_args_data = free_args_data;
+       24:   23:    return p_operation;
+       24:   23-block  0
+        -:   24:}
+        -:   25:
+        -:   26:/*
+        -:   27: * This implementation does exactly what it says it does in operation.h
+        -:   28: */
+function delete_operation called 24 returned 100% blocks executed 100%
+       24:   29:void delete_operation(operation_t* p_operation){
+       24:   30:    if(p_operation != NULL){
+       24:   30-block  0
+branch  0 taken 24 (fallthrough)
+branch  1 taken 0
+       24:   31:        delete_operation_data(p_operation);
+       24:   31-block  0
+call    0 returned 24
+       24:   32:        free(p_operation);
+        -:   33:    }
+       24:   34:}
+        -:   35:
+        -:   36:/*
+        -:   37: * This implementation does exactly what it says it does in operation.h
+        -:   38: */
+function delete_operation_data called 24 returned 100% blocks executed 100%
+       24:   39:void delete_operation_data(operation_t* p_operation){
+       24:   40:    if(p_operation->free_args_data != NULL){
+       24:   40-block  0
+branch  0 taken 22 (fallthrough)
+branch  1 taken 2
+       22:   41:        p_operation->free_args_data(p_operation->args);
+       22:   41-block  0
+call    0 returned 22
+        -:   42:    }
+       24:   43:    delete_vector(p_operation->args);
+       24:   43-block  0
+call    0 returned 24
+       24:   44:}
+        -:   45:
+        -:   46:/*
+        -:   47: * This implementation does exactly what it says it does in operation.h
+        -:   48: */
+function apply called 19 returned 100% blocks executed 100%
+       19:   49:void apply(operation_t* p_operation, int* p_error){
+       19:   50:    p_operation->function(p_operation->args, p_error);
+       19:   50-block  0
+call    0 returned 19
+       19:   51:}

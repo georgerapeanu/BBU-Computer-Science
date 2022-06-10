@@ -1,0 +1,86 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/include/repository/AbstractRepository.h
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/__/src/repository/MemoryWatchlist.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/__/src/repository/MemoryWatchlist.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file AbstractRepository.h this file contains the model for a completely abstract repository
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 18.04.2022.
+        -:    7://
+        -:    8:
+        -:    9:#ifndef A8_9_GEORGERAPEANU_ABSTRACTREPOSITORY_H
+        -:   10:#define A8_9_GEORGERAPEANU_ABSTRACTREPOSITORY_H
+        -:   11:#pragma once
+        -:   12:#include <vector>
+        -:   13:
+        -:   14:
+        -:   15://! this is the model for a general purpose repository
+        -:   16:template<class T>
+        -:   17:class AbstractRepository{
+        -:   18:    //! the vector that stores the elements of the repository
+        -:   19:public:
+        -:   20:
+        -:   21:    /*!
+        -:   22:     * @brief the default constructor of the repository
+        -:   23:     */
+function _ZN18AbstractRepositoryI5MovieEC2Ev called 0 returned 0% blocks executed 0%
+    #####:   24:    AbstractRepository(){
+        -:   25:        ;
+    #####:   26:    }
+        -:   27:    /*!
+        -:   28:     * @brief the default destructor of the repository
+        -:   29:     */
+    #####:   30:    virtual ~AbstractRepository(){
+        -:   31:        //placeholder
+    #####:   32:    }
+------------------
+_ZN18AbstractRepositoryI5MovieED0Ev:
+function _ZN18AbstractRepositoryI5MovieED0Ev called 0 returned 0% blocks executed 0%
+    #####:   30:    virtual ~AbstractRepository(){
+        -:   31:        //placeholder
+    #####:   32:    }
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN18AbstractRepositoryI5MovieED2Ev:
+function _ZN18AbstractRepositoryI5MovieED2Ev called 0 returned 0% blocks executed 0%
+    #####:   30:    virtual ~AbstractRepository(){
+        -:   31:        //placeholder
+    #####:   32:    }
+------------------
+        -:   33:
+        -:   34:    /*!
+        -:   35:     * @brief the add method of the repository. Adds an element to the repository
+        -:   36:     * @param elem the element to be added
+        -:   37:     * @throws RepositoryException if id is taken
+        -:   38:     */
+        -:   39:    virtual void add(const T &elem) = 0;
+        -:   40:
+        -:   41:    /*!
+        -:   42:     * @brief the update method of the repository. Updates an element of the repository
+        -:   43:     * @param elem an element with which to update. It should have the same id as the one to be updated
+        -:   44:     */
+        -:   45:    virtual void update(const T &elem) = 0;
+        -:   46:    /*!
+        -:   47:     * @brief removes an element using the id provided by an element with the same id.
+        -:   48:     * @param elem the element to be removed
+        -:   49:     * @throws RepositoryException if id doesn't exist
+        -:   50:     */
+        -:   51:    virtual void remove(const T &elem) = 0;
+        -:   52:    /*!
+        -:   53:     * @brief returns the element with the same id as the element that is provided
+        -:   54:     * @param elem the element used to search the id
+        -:   55:     * @return the element from the repository with that id
+        -:   56:     * @throws RepositoryException if id doesn't exist
+        -:   57:     */
+        -:   58:    virtual T find(const T &elem) = 0;
+        -:   59:    /*!
+        -:   60:     * @brief gets all elements from the repository
+        -:   61:     * @return all elements currently held in the repository
+        -:   62:     */
+        -:   63:    virtual std::vector<T> get_all() = 0;
+        -:   64:};
+        -:   65:#endif //A8_9_GEORGERAPEANU_ABSTRACTREPOSITORY_H

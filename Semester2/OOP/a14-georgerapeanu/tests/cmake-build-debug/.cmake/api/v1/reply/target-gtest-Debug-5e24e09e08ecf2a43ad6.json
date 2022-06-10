@@ -1,0 +1,195 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "lib/libgtest.a"
+		}
+	],
+	"backtrace" : 3,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"cxx_library_with_type",
+			"cxx_library",
+			"install",
+			"install_project",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"googletest/googletest/cmake/internal_utils.cmake",
+			"googletest/googletest/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 126,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 205,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 152,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 150,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 316,
+				"parent" : 4
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 3,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 4,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 5,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 6,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 7,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 116,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g"
+				},
+				{
+					"fragment" : "-Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 7,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/../include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/../include/domain"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/../include/repository"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/../include/controller"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/../include/ui"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/googletest/googletest/include"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/googletest/googletest"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "gtest::@f95b5c00bd49b3b4698d",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 5,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "/usr/local"
+		}
+	},
+	"name" : "gtest",
+	"nameOnDisk" : "libgtest.a",
+	"paths" : 
+	{
+		"build" : "googletest/googletest",
+		"source" : "googletest/googletest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "googletest/googletest/src/gtest-all.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

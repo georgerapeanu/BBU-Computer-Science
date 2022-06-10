@@ -1,0 +1,1948 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/ui/UI.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/__/src/ui/UI.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/__/src/ui/UI.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file UI.cpp this file contains the UI class implementation
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 21.03.2022.
+        -:    7://
+        -:    8:
+        -:    9:#pragma once
+        -:   10:#include "UI.h"
+        -:   11:#include <string>
+        -:   12:#include <iostream>
+        -:   13:#include <stdlib.h>
+        -:   14:#include "Exceptions.h"
+        -:   15:
+        -:   16:using namespace std;
+        -:   17:
+function _ZN2UIC2ER15MovieController called 0 returned 0% blocks executed 0%
+    #####:   18:UI::UI(MovieController &controller): controller(controller) {
+        -:   19:    ;
+    #####:   20:}
+        -:   21:
+function _ZN2UI9run_adminEv called 0 returned 0% blocks executed 0%
+    #####:   22:void UI::run_admin() {
+    #####:   23:    vector<std::string> help_display;
+    %%%%%:   23-block  0
+call    0 never executed
+    %%%%%:   23-block  1
+call    1 never executed
+    $$$$$:   23-block  2
+call    2 never executed
+    #####:   24:    help_display.push_back("===============ADMIN PORTAL================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   24-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   24-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   24-block  2
+call    9 never executed
+    $$$$$:   24-block  3
+    $$$$$:   24-block  4
+call   10 never executed
+    $$$$$:   24-block  5
+    #####:   25:    help_display.push_back("add <title> <genre> <year> <likes> <trailer_link> -> adds a movie with the given parameters. there shouldn't be any other movie with the same title and year");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   25-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   25-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   25-block  2
+call    9 never executed
+    $$$$$:   25-block  3
+    $$$$$:   25-block  4
+call   10 never executed
+    $$$$$:   25-block  5
+    #####:   26:    help_display.push_back("update <title> <genre> <year> <likes> <trailer_link> -> updates the movie with the given title and year to have the new specified parameters");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   26-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   26-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   26-block  2
+call    9 never executed
+    $$$$$:   26-block  3
+    $$$$$:   26-block  4
+call   10 never executed
+    $$$$$:   26-block  5
+    #####:   27:    help_display.push_back("remove <title> <year> -> removes the movie with the given title and year");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   27-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   27-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   27-block  2
+call    9 never executed
+    $$$$$:   27-block  3
+    $$$$$:   27-block  4
+call   10 never executed
+    $$$$$:   27-block  5
+    #####:   28:    help_display.push_back("list -> prints a list containing all movies");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   28-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   28-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   28-block  2
+call    9 never executed
+    $$$$$:   28-block  3
+    $$$$$:   28-block  4
+call   10 never executed
+    $$$$$:   28-block  5
+    #####:   29:    help_display.push_back("logout -> logout of the admin account");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   29-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   29-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   29-block  2
+call    9 never executed
+    $$$$$:   29-block  3
+    $$$$$:   29-block  4
+call   10 never executed
+    $$$$$:   29-block  5
+    #####:   30:    help_display.push_back("help -> displays the help prompt");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   30-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   30-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   30-block  2
+call    9 never executed
+    $$$$$:   30-block  3
+    $$$$$:   30-block  4
+call   10 never executed
+    $$$$$:   30-block  5
+    #####:   31:    help_display.push_back("===========================================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   31-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   31-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   31-block  2
+call    9 never executed
+    $$$$$:   31-block  3
+    $$$$$:   31-block  4
+call   10 never executed
+    $$$$$:   31-block  5
+    #####:   32:    display_help(help_display);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   33:    while(true){
+    #####:   34:        std::string command;
+    %%%%%:   34-block  0
+call    0 never executed
+    $$$$$:   34-block  1
+call    1 never executed
+    #####:   35:        getline(std::cin, command);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36:        vector<std::string> args = split_command(command);
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   36-block  1
+call    3 never executed
+        -:   37:        try{
+    #####:   38:            if(args.size() > 0 && args[0] == "add"){
+    %%%%%:   38-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   38-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   38-block  2
+    %%%%%:   38-block  3
+    %%%%%:   38-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   39:                handle_add_admin(args);
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   40:            }else if(args.size() > 0 && args[0] == "update"){
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   40-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   40-block  2
+    %%%%%:   40-block  3
+    %%%%%:   40-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   41:                handle_update_admin(args);
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   42:            }else if(args.size() > 0 && args[0] == "remove"){
+    %%%%%:   42-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   42-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   42-block  2
+    %%%%%:   42-block  3
+    %%%%%:   42-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   43:                handle_remove_admin(args);
+    %%%%%:   43-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   44:            }else if(args.size() > 0 && args[0] == "list"){
+    %%%%%:   44-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   44-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   44-block  2
+    %%%%%:   44-block  3
+    %%%%%:   44-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   45:                handle_get_movies_admin(args);
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   46:            }else if(args.size() == 1 && args[0] == "help"){
+    %%%%%:   46-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   46-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   46-block  2
+    %%%%%:   46-block  3
+    %%%%%:   46-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   47:                display_help(help_display);
+    %%%%%:   47-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   48:            }else if(args.size() == 1 && args[0] == "logout"){
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   48-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   48-block  2
+    %%%%%:   48-block  3
+    %%%%%:   48-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   49:                break;
+    %%%%%:   49-block  0
+        -:   50:            }else{
+    #####:   51:                std::cout << "Invalid command!" << std::endl;
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   51-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   52:                display_help(help_display);
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   53:            }
+    =====:   54:        }catch(const AppException &exception){
+    $$$$$:   54-block  0
+call    0 never executed
+    $$$$$:   54-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   54-block  2
+call    4 never executed
+    =====:   55:            std::cout << exception.get_message() << std::endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   55-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   55-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   55-block  2
+call    9 never executed
+    $$$$$:   55-block  3
+call   10 never executed
+    $$$$$:   55-block  4
+    =====:   56:            display_help(help_display);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   57:        }
+    #####:   58:    }
+    %%%%%:   58-block  0
+    #####:   59:}
+        -:   60:
+function _ZN2UI8run_userEv called 0 returned 0% blocks executed 0%
+    #####:   61:void UI::run_user() {
+    #####:   62:    vector<std::string> help_display;
+    %%%%%:   62-block  0
+call    0 never executed
+    %%%%%:   62-block  1
+call    1 never executed
+    $$$$$:   62-block  2
+call    2 never executed
+    #####:   63:    help_display.push_back("================USER PORTAL================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   63-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   63-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   63-block  2
+call    9 never executed
+    $$$$$:   63-block  3
+    $$$$$:   63-block  4
+call   10 never executed
+    $$$$$:   63-block  5
+    #####:   64:    help_display.push_back("get movies from <genre> -> gets all movies with given genre");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   64-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   64-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   64-block  2
+call    9 never executed
+    $$$$$:   64-block  3
+    $$$$$:   64-block  4
+call   10 never executed
+    $$$$$:   64-block  5
+    #####:   65:    help_display.push_back("remove movie <title> <year> -> remove the given movie from the watchlist");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   65-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   65-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   65-block  2
+call    9 never executed
+    $$$$$:   65-block  3
+    $$$$$:   65-block  4
+call   10 never executed
+    $$$$$:   65-block  5
+    #####:   66:    help_display.push_back("list -> prints all movies in a watchlist");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   66-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   66-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   66-block  2
+call    9 never executed
+    $$$$$:   66-block  3
+    $$$$$:   66-block  4
+call   10 never executed
+    $$$$$:   66-block  5
+    #####:   67:    help_display.push_back("logout -> logout of the admin account");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   67-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   67-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   67-block  2
+call    9 never executed
+    $$$$$:   67-block  3
+    $$$$$:   67-block  4
+call   10 never executed
+    $$$$$:   67-block  5
+    #####:   68:    help_display.push_back("help -> displays the help prompt");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   68-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   68-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   68-block  2
+call    9 never executed
+    $$$$$:   68-block  3
+    $$$$$:   68-block  4
+call   10 never executed
+    $$$$$:   68-block  5
+    #####:   69:    help_display.push_back("display watchlist -> displays the watch list");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   69-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   69-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   69-block  2
+call    9 never executed
+    $$$$$:   69-block  3
+    $$$$$:   69-block  4
+call   10 never executed
+    $$$$$:   69-block  5
+    #####:   70:    help_display.push_back("===========================================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   70-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   70-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:   70-block  2
+call    9 never executed
+    $$$$$:   70-block  3
+    $$$$$:   70-block  4
+call   10 never executed
+    $$$$$:   70-block  5
+    #####:   71:    display_help(help_display);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   72:    while(true){
+    #####:   73:        std::string command;
+    %%%%%:   73-block  0
+call    0 never executed
+    $$$$$:   73-block  1
+call    1 never executed
+    #####:   74:        getline(std::cin, command);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:        vector<std::string> args = split_command(command);
+    %%%%%:   75-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   75-block  1
+call    3 never executed
+        -:   76:        try{
+    #####:   77:            if(args.size() > 3 && args[0] == "get" && args[1] == "movies" && args[2] == "from"){
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   77-block  2
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   77-block  3
+call   11 never executed
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:   77-block  4
+    %%%%%:   77-block  5
+    %%%%%:   77-block  6
+branch 15 never executed
+branch 16 never executed
+    #####:   78:                handle_get_movies_user(args);
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   79:            }else if(args.size() > 1 && args[0] == "remove" && args[1] == "movie"){
+    %%%%%:   79-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   79-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   79-block  2
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   79-block  3
+    %%%%%:   79-block  4
+    %%%%%:   79-block  5
+branch 11 never executed
+branch 12 never executed
+    #####:   80:                handle_remove_movie_user(args);
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   81:            }else if(args.size() > 0 && args[0] == "list"){
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   81-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   81-block  2
+    %%%%%:   81-block  3
+    %%%%%:   81-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   82:                handle_get_watchlist_user(args);
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   83:            }else if(args.size() == 1 && args[0] == "help"){
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   83-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   83-block  2
+    %%%%%:   83-block  3
+    %%%%%:   83-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   84:                display_help(help_display);
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:            }else if(args.size() == 1 && args[0] == "logout"){
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   85-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   85-block  2
+    %%%%%:   85-block  3
+    %%%%%:   85-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:   86:                break;
+    %%%%%:   86-block  0
+    #####:   87:            }else if(args.size() == 2 && args[0] == "display" && args[1] == "watchlist"){
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   87-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   87-block  2
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:   87-block  3
+    %%%%%:   87-block  4
+    %%%%%:   87-block  5
+branch 11 never executed
+branch 12 never executed
+    #####:   88:                this->controller.display_watchlist();
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   89:            }else{
+    #####:   90:                std::cout << "Invalid command!" << std::endl;
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   90-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   91:                display_help(help_display);
+    %%%%%:   91-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   92:            }
+    =====:   93:        }catch(const AppException &exception){
+    $$$$$:   93-block  0
+call    0 never executed
+    $$$$$:   93-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   93-block  2
+call    4 never executed
+    =====:   94:            std::cout << exception.get_message() << std::endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   94-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   94-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:   94-block  2
+call    9 never executed
+    $$$$$:   94-block  3
+call   10 never executed
+    $$$$$:   94-block  4
+    =====:   95:            display_help(help_display);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   96:        }
+    #####:   97:    }
+    %%%%%:   97-block  0
+        -:   98:
+    #####:   99:}
+        -:  100:
+function _ZN2UI3runEv called 0 returned 0% blocks executed 0%
+    #####:  101:void UI::run() {
+    #####:  102:    vector<std::string> help_display;
+    %%%%%:  102-block  0
+call    0 never executed
+    %%%%%:  102-block  1
+call    1 never executed
+    $$$$$:  102-block  2
+call    2 never executed
+    #####:  103:    help_display.push_back("================LOGIN PORTAL================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  103-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  103-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  103-block  2
+call    9 never executed
+    $$$$$:  103-block  3
+    $$$$$:  103-block  4
+call   10 never executed
+    $$$$$:  103-block  5
+    #####:  104:    help_display.push_back("login user -> logins as user account");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  104-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  104-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  104-block  2
+call    9 never executed
+    $$$$$:  104-block  3
+    $$$$$:  104-block  4
+call   10 never executed
+    $$$$$:  104-block  5
+    #####:  105:    help_display.push_back("login admin -> logins as administrator account");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  105-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  105-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  105-block  2
+call    9 never executed
+    $$$$$:  105-block  3
+    $$$$$:  105-block  4
+call   10 never executed
+    $$$$$:  105-block  5
+    #####:  106:    help_display.push_back("exit -> exits the application");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  106-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  106-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  106-block  2
+call    9 never executed
+    $$$$$:  106-block  3
+    $$$$$:  106-block  4
+call   10 never executed
+    $$$$$:  106-block  5
+    #####:  107:    help_display.push_back("help -> displays the help prompt");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  107-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  107-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  107-block  2
+call    9 never executed
+    $$$$$:  107-block  3
+    $$$$$:  107-block  4
+call   10 never executed
+    $$$$$:  107-block  5
+    #####:  108:    help_display.push_back("============================================");
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  108-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  108-block  1
+call    7 never executed
+call    8 never executed
+    $$$$$:  108-block  2
+call    9 never executed
+    $$$$$:  108-block  3
+    $$$$$:  108-block  4
+call   10 never executed
+    $$$$$:  108-block  5
+        -:  109:
+    #####:  110:    display_help(help_display);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  111:    while(true){
+    #####:  112:        std::string command;
+    %%%%%:  112-block  0
+call    0 never executed
+    $$$$$:  112-block  1
+call    1 never executed
+    #####:  113:        getline(std::cin, command);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  114:        vector<std::string> args = split_command(command);
+    %%%%%:  114-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  114-block  1
+call    3 never executed
+    #####:  115:        if(args.size() == 2 && args[0] == "login" && args[1] == "user"){
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  115-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  115-block  2
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  115-block  3
+    %%%%%:  115-block  4
+    %%%%%:  115-block  5
+branch 11 never executed
+branch 12 never executed
+    #####:  116:            run_user();
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  117:        }else if(args.size() == 2 && args[0] == "login" && args[1] == "admin"){
+    %%%%%:  117-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  117-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  117-block  2
+call    7 never executed
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  117-block  3
+    %%%%%:  117-block  4
+    %%%%%:  117-block  5
+branch 11 never executed
+branch 12 never executed
+    #####:  118:            run_admin();
+    %%%%%:  118-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  119:        }else if(args.size() == 1 && args[0] == "exit"){
+    %%%%%:  119-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  119-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  119-block  2
+    %%%%%:  119-block  3
+    %%%%%:  119-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:  120:            break;
+    %%%%%:  120-block  0
+    #####:  121:        }else if(args.size() == 1 && args[0] == "help"){
+    %%%%%:  121-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  121-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  121-block  2
+    %%%%%:  121-block  3
+    %%%%%:  121-block  4
+branch  7 never executed
+branch  8 never executed
+    #####:  122:            display_help(help_display);
+    %%%%%:  122-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  123:        }else{
+    #####:  124:            std::cout << "Invalid command!" << std::endl;
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  124-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  125:            display_help(help_display);
+    %%%%%:  125-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  126:        }
+    #####:  127:    }
+    %%%%%:  127-block  0
+    #####:  128:}
+        -:  129:
+function _ZN2UI13split_commandERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  130:vector<std::string> UI::split_command(const std::string &s) {
+    #####:  131:    vector<std::string> ans;
+    %%%%%:  131-block  0
+call    0 never executed
+    #####:  132:    std::string curr = "";
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  132-block  0
+call    4 never executed
+    $$$$$:  132-block  1
+    $$$$$:  132-block  2
+call    5 never executed
+    #####:  133:    for(unsigned int i = 0;i < s.size();i++){
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  133-block  1
+    #####:  134:        if(s[i] != ' ' && s[i] != '\n' && s[i] != '\t' && s[i] != '\r'){
+    %%%%%:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  134-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  134-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  134-block  3
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  134-block  4
+    %%%%%:  134-block  5
+    %%%%%:  134-block  6
+branch 12 never executed
+branch 13 never executed
+    #####:  135:            curr += s[i];
+    %%%%%:  135-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  136:        }else{
+    #####:  137:            if(!curr.empty()){
+    %%%%%:  137-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  138:                ans.push_back(curr);
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  139:            }
+    #####:  140:            curr = "";
+    %%%%%:  140-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  141:        }
+        -:  142:    }
+    #####:  143:    if(!curr.empty()){
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  144:        ans.push_back(curr);
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  145:    }
+    #####:  146:    return ans;
+    %%%%%:  146-block  0
+    %%%%%:  146-block  1
+        -:  147:}
+        -:  148:
+function _ZN2UI16handle_add_adminERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  149:void UI::handle_add_admin(const vector<std::string> &args) {
+    #####:  150:    if(args.size() != 6){
+    %%%%%:  150-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  151:        throw UIException("arguments are wrong for given command");
+    %%%%%:  151-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  151-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  151-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  151-block  3
+call   11 never executed
+    $$$$$:  151-block  4
+    $$$$$:  151-block  5
+call   12 never executed
+    $$$$$:  151-block  6
+    $$$$$:  151-block  7
+call   13 never executed
+        -:  152:    }
+        -:  153:    try {
+    #####:  154:        std::string title = args[1];
+    %%%%%:  154-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    $$$$$:  154-block  1
+call    5 never executed
+    #####:  155:        std::string genre = args[2];
+    %%%%%:  155-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    $$$$$:  155-block  1
+call    5 never executed
+    #####:  156:        int year = std::stoi(args[3]);
+    %%%%%:  156-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  157:        int likes = std::stoi(args[4]);
+    %%%%%:  157-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  158:        std::string trailer_link = args[5];
+    %%%%%:  158-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  158-block  1
+call    4 never executed
+    $$$$$:  158-block  2
+call    5 never executed
+    #####:  159:        this->controller.add_movie_admin(title, genre, year, likes, trailer_link);
+    %%%%%:  159-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  160:    }catch(const std::invalid_argument &exception){
+    $$$$$:  160-block  0
+call    0 never executed
+    $$$$$:  160-block  1
+call    1 never executed
+    =====:  161:        throw UIException("arguments are wrong for given command");
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  161-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  161-block  1
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  161-block  2
+call   11 never executed
+    $$$$$:  161-block  3
+    $$$$$:  161-block  4
+call   12 never executed
+    $$$$$:  161-block  5
+    $$$$$:  161-block  6
+call   13 never executed
+        -:  162:    }
+    #####:  163:}
+        -:  164:
+function _ZN2UI19handle_update_adminERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  165:void UI::handle_update_admin(const vector<std::string> &args) {
+    #####:  166:    if(args.size() != 6){
+    %%%%%:  166-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  167:        throw UIException("arguments are wrong for given command");
+    %%%%%:  167-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  167-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  167-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  167-block  3
+call   11 never executed
+    $$$$$:  167-block  4
+    $$$$$:  167-block  5
+call   12 never executed
+    $$$$$:  167-block  6
+    $$$$$:  167-block  7
+call   13 never executed
+        -:  168:    }
+        -:  169:
+        -:  170:    try{
+    #####:  171:        std::string title = args[1];
+    %%%%%:  171-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    $$$$$:  171-block  1
+call    5 never executed
+    #####:  172:        std::string genre = args[2];
+    %%%%%:  172-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+call    4 never executed
+    $$$$$:  172-block  1
+call    5 never executed
+    #####:  173:        int year = std::stoi(args[3]);
+    %%%%%:  173-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  174:        int likes = std::stoi(args[4]);
+    %%%%%:  174-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  175:        std::string trailer_link = args[5];
+    %%%%%:  175-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  175-block  1
+call    4 never executed
+    $$$$$:  175-block  2
+call    5 never executed
+    #####:  176:        this->controller.update_movie_admin(title, genre, year, likes, trailer_link);
+    %%%%%:  176-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  177:    }catch(const std::invalid_argument &exception){
+    $$$$$:  177-block  0
+call    0 never executed
+    $$$$$:  177-block  1
+call    1 never executed
+    =====:  178:        throw UIException("arguments are wrong for given command");
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  178-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  178-block  1
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  178-block  2
+call   11 never executed
+    $$$$$:  178-block  3
+    $$$$$:  178-block  4
+call   12 never executed
+    $$$$$:  178-block  5
+    $$$$$:  178-block  6
+call   13 never executed
+        -:  179:    }
+    #####:  180:}
+        -:  181:
+function _ZN2UI19handle_remove_adminERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  182:void UI::handle_remove_admin(const vector<std::string> &args) {
+    #####:  183:    if(args.size() != 3){
+    %%%%%:  183-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  184:        throw UIException("arguments are wrong for given command");
+    %%%%%:  184-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  184-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  184-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  184-block  3
+call   11 never executed
+    $$$$$:  184-block  4
+    $$$$$:  184-block  5
+call   12 never executed
+    $$$$$:  184-block  6
+    $$$$$:  184-block  7
+call   13 never executed
+        -:  185:    }
+        -:  186:    try {
+    #####:  187:        std::string title = args[1];
+    %%%%%:  187-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  187-block  1
+call    4 never executed
+    $$$$$:  187-block  2
+call    5 never executed
+    #####:  188:        int year = std::stoi(args[2]);
+    %%%%%:  188-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  189:        this->controller.remove_movie_admin(title, year);
+    %%%%%:  189-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  190:    }catch(const std::invalid_argument &exception){
+    $$$$$:  190-block  0
+call    0 never executed
+    $$$$$:  190-block  1
+call    1 never executed
+    =====:  191:        throw UIException("arguments are wrong for given command");
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  191-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  191-block  1
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  191-block  2
+call   11 never executed
+    $$$$$:  191-block  3
+    $$$$$:  191-block  4
+call   12 never executed
+    $$$$$:  191-block  5
+    $$$$$:  191-block  6
+call   13 never executed
+        -:  192:    }
+    #####:  193:}
+        -:  194:
+function _ZN2UI23handle_get_movies_adminERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  195:void UI::handle_get_movies_admin(const vector<std::string> &args) {
+    #####:  196:    if(args.size() != 1){
+    %%%%%:  196-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  197:        throw UIException("arguments are wrong for given command");
+    %%%%%:  197-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  197-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  197-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  197-block  3
+call   11 never executed
+    $$$$$:  197-block  4
+    $$$$$:  197-block  5
+call   12 never executed
+    $$$$$:  197-block  6
+    $$$$$:  197-block  7
+call   13 never executed
+        -:  198:    }
+    #####:  199:    vector<Movie> movies = this->controller.get_all_movies_admin();
+    %%%%%:  199-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  199-block  1
+call    3 never executed
+    $$$$$:  199-block  2
+call    4 never executed
+    #####:  200:    for(unsigned int i = 0;i < movies.size();i++){
+    %%%%%:  200-block  0
+    %%%%%:  200-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  200-block  2
+    #####:  201:        display_movie(movies[i]);
+    %%%%%:  201-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  202:    }
+    #####:  203:}
+        -:  204:
+function _ZN2UI22handle_get_movies_userERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  205:void UI::handle_get_movies_user(const vector<std::string> &args) {
+    #####:  206:    if(args.size() != 4){
+    %%%%%:  206-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  207:        throw UIException("arguments are wrong for given command");
+    %%%%%:  207-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  207-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  207-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  207-block  3
+call   11 never executed
+    $$$$$:  207-block  4
+    $$$$$:  207-block  5
+call   12 never executed
+    $$$$$:  207-block  6
+    $$$$$:  207-block  7
+call   13 never executed
+        -:  208:    }
+    #####:  209:    vector<Movie> movies = this->controller.get_movies_user(args[3]);
+    %%%%%:  209-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  209-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+call    7 never executed
+    $$$$$:  209-block  2
+    $$$$$:  209-block  3
+call    8 never executed
+    #####:  210:    if(movies.size() == 0){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  211:        throw UIException("no movies for given genre");
+    %%%%%:  211-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  211-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  211-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  211-block  3
+call   11 never executed
+    $$$$$:  211-block  4
+    $$$$$:  211-block  5
+call   12 never executed
+    $$$$$:  211-block  6
+    $$$$$:  211-block  7
+call   13 never executed
+        -:  212:    }
+    #####:  213:    unsigned int current = 0;
+    #####:  214:    std::string command;
+    %%%%%:  214-block  0
+call    0 never executed
+    %%%%%:  214-block  1
+call    1 never executed
+    $$$$$:  214-block  2
+call    2 never executed
+        -:  215:
+        -:  216:    while(true){
+    #####:  217:        std::string command = "firefox " + movies[current].get_trailer_link();
+    %%%%%:  217-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  217-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    $$$$$:  217-block  2
+    $$$$$:  217-block  3
+call    7 never executed
+    #####:  218:        system(command.c_str());
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  219:        display_movie(movies[current]);
+    %%%%%:  219-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  220:        try_again:
+    #####:  221:        std::cout << "add to watchlist?(yes/no/stop)\n";
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  222:        getline(std::cin, command);
+    %%%%%:  222-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  223:        try{
+    #####:  224:            if(command == "yes" || command == "y"){
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  224-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  224-block  2
+    %%%%%:  224-block  3
+    %%%%%:  224-block  4
+branch  6 never executed
+branch  7 never executed
+    #####:  225:                this->controller.add_movie_user(movies[current]);
+    %%%%%:  225-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:  226:            }else if(command == "no" || command == "n"){
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  226-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  226-block  2
+    %%%%%:  226-block  3
+    %%%%%:  226-block  4
+branch  6 never executed
+branch  7 never executed
+        -:  227:                ;
+    #####:  228:            }else if(command == "stop" || command == "s" || command == "x"){
+    %%%%%:  228-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  228-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  228-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  228-block  3
+    %%%%%:  228-block  4
+    %%%%%:  228-block  5
+branch  9 never executed
+branch 10 never executed
+    #####:  229:                break;
+    %%%%%:  229-block  0
+        -:  230:            }else{
+    #####:  231:                throw UIException("option not available");
+    %%%%%:  231-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  231-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  231-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  231-block  3
+call   11 never executed
+    $$$$$:  231-block  4
+    $$$$$:  231-block  5
+call   12 never executed
+    $$$$$:  231-block  6
+    $$$$$:  231-block  7
+call   13 never executed
+        -:  232:            }
+    =====:  233:        }catch(const AppException &exception){
+    $$$$$:  233-block  0
+call    0 never executed
+    $$$$$:  233-block  1
+call    1 never executed
+    =====:  234:            std::cout << exception.get_message() << std::endl;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  234-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  234-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    $$$$$:  234-block  2
+call    9 never executed
+    $$$$$:  234-block  3
+call   10 never executed
+    $$$$$:  234-block  4
+    =====:  235:            goto try_again;
+call    0 never executed
+        -:  236:        }
+    #####:  237:        current++;
+    #####:  238:        current = (current >= movies.size() ? 0:current);
+    %%%%%:  238-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  238-block  1
+    %%%%%:  238-block  2
+    %%%%%:  238-block  3
+    #####:  239:    }
+    %%%%%:  239-block  0
+    #####:  240:}
+        -:  241:
+function _ZN2UI24handle_remove_movie_userERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  242:void UI::handle_remove_movie_user(const vector<std::string> &args) {
+    #####:  243:    if(args.size() != 4){
+    %%%%%:  243-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  244:        throw UIException("arguments are wrong for given command");
+    %%%%%:  244-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  244-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  244-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  244-block  3
+call   11 never executed
+    $$$$$:  244-block  4
+    $$$$$:  244-block  5
+call   12 never executed
+    $$$$$:  244-block  6
+    $$$$$:  244-block  7
+call   13 never executed
+        -:  245:    }
+    #####:  246:    Movie movie;
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+    $$$$$:  246-block  1
+call    4 never executed
+        -:  247:    try{
+    #####:  248:        movie = this->controller.get_movie_user(args[2], std::stoi(args[3]));
+    %%%%%:  248-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  248-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  248-block  2
+call    8 never executed
+branch  9 never executed
+branch 10 never executed
+    %%%%%:  248-block  3
+call   11 never executed
+    $$$$$:  248-block  4
+call   12 never executed
+    $$$$$:  248-block  5
+    $$$$$:  248-block  6
+    =====:  249:    }catch(const std::invalid_argument &exception){
+    $$$$$:  249-block  0
+call    0 never executed
+    $$$$$:  249-block  1
+call    1 never executed
+    =====:  250:        throw UIException("arguments are wrong for given command");
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:  250-block  0
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    $$$$$:  250-block  1
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  250-block  2
+call   11 never executed
+    $$$$$:  250-block  3
+    $$$$$:  250-block  4
+call   12 never executed
+    $$$$$:  250-block  5
+    $$$$$:  250-block  6
+call   13 never executed
+        -:  251:    }
+    #####:  252:    this->controller.remove_movie_user(movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  253:    std::cout << "Like movie?(yes/no)" << std::endl;
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  253-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:  254:    std::string ans;
+    %%%%%:  254-block  0
+call    0 never executed
+    %%%%%:  254-block  1
+call    1 never executed
+    $$$$$:  254-block  2
+call    2 never executed
+        -:  255:    while(true){
+    #####:  256:        getline(std::cin, ans);
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  256-block  1
+    #####:  257:        if(ans == "yes" || ans == "y"){
+    %%%%%:  257-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  257-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  257-block  2
+    %%%%%:  257-block  3
+    %%%%%:  257-block  4
+branch  6 never executed
+branch  7 never executed
+    #####:  258:            this->controller.like_movie_user(movie);
+    %%%%%:  258-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  259:            break;
+    %%%%%:  259-block  0
+    #####:  260:        }else if(ans == "no" || ans == "n"){
+    %%%%%:  260-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  260-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  260-block  2
+    %%%%%:  260-block  3
+    %%%%%:  260-block  4
+branch  6 never executed
+branch  7 never executed
+    #####:  261:            break;
+    %%%%%:  261-block  0
+        -:  262:        }else{
+    #####:  263:            std::cout << "Invalid option" << std::endl;
+    %%%%%:  263-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  263-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  264:        }
+        -:  265:    }
+    #####:  266:}
+        -:  267:
+function _ZN2UI25handle_get_watchlist_userERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  268:void UI::handle_get_watchlist_user(const vector<std::string> &args) {
+    #####:  269:    if(args.size() != 1){
+    %%%%%:  269-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  270:        throw UIException("arguments are wrong for given command");
+    %%%%%:  270-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  270-block  1
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:  270-block  2
+call    8 never executed
+call    9 never executed
+call   10 never executed
+    $$$$$:  270-block  3
+call   11 never executed
+    $$$$$:  270-block  4
+    $$$$$:  270-block  5
+call   12 never executed
+    $$$$$:  270-block  6
+    $$$$$:  270-block  7
+call   13 never executed
+        -:  271:    }
+    #####:  272:    vector<Movie> movies = this->controller.get_watchlist_user();
+    %%%%%:  272-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  272-block  1
+call    3 never executed
+    $$$$$:  272-block  2
+call    4 never executed
+    #####:  273:    for(unsigned int i = 0;i < movies.size();i++){
+    %%%%%:  273-block  0
+    %%%%%:  273-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  273-block  2
+    #####:  274:        display_movie(movies[i]);
+    %%%%%:  274-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+        -:  275:    }
+    #####:  276:}
+        -:  277:
+function _ZNK2UI12display_helpERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 0 returned 0% blocks executed 0%
+    #####:  278:void UI::display_help(const vector<std::string> &help) const {
+    #####:  279:    for(unsigned int i = 0;i < help.size();i++){
+    %%%%%:  279-block  0
+    %%%%%:  279-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  280:        std::cout << help[i] << std::endl;
+    %%%%%:  280-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  281:    }
+    #####:  282:}
+        -:  283:
+function _ZNK2UI13display_movieERK5Movie called 0 returned 0% blocks executed 0%
+    #####:  284:void UI::display_movie(const Movie &movie) const {
+    #####:  285:    std::cout << movie.get_title() << " ";
+    %%%%%:  285-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  285-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  285-block  2
+call    7 never executed
+    $$$$$:  285-block  3
+call    8 never executed
+    $$$$$:  285-block  4
+call    9 never executed
+    #####:  286:    std::cout << movie.get_genre() << " ";
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  286-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  286-block  1
+call    7 never executed
+    $$$$$:  286-block  2
+call    8 never executed
+    $$$$$:  286-block  3
+call    9 never executed
+    #####:  287:    std::cout << movie.get_year() << " ";
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  288:    std::cout << movie.get_likes() << " ";
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  289:    std::cout << movie.get_trailer_link() << std::endl;
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  289-block  0
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:  289-block  1
+call    7 never executed
+    $$$$$:  289-block  2
+call    8 never executed
+    #####:  290:}

@@ -1,0 +1,121 @@
+\hypertarget{undo__redo__repository_8c}{}\doxysubsection{src/repository/undo\+\_\+redo\+\_\+repository.c File Reference}
+\label{undo__redo__repository_8c}\index{src/repository/undo\_redo\_repository.c@{src/repository/undo\_redo\_repository.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/vector.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/domain/undo\+\_\+redo\+\_\+operation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/repository/undo\+\_\+redo\+\_\+repository.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for undo\+\_\+redo\+\_\+repository.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{undo__redo__repository_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$ \mbox{\hyperlink{undo__redo__repository_8c_a5a5c108e0bd2c42f63330ea820a4e1f9}{create\+\_\+undo\+\_\+redo\+\_\+repository}} (int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function creates an undo redo repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__repository_8c_a8dd1052e36e170175ffa9964596af836}{delete\+\_\+undo\+\_\+redo\+\_\+repository}} (\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+repository)
+\begin{DoxyCompactList}\small\item\em this function frees the memory for a given undo redo repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__repository_8c_a04572130e1cfa0f41357002dc77dc212}{add\+\_\+undo\+\_\+repository}} (\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+repository, \mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$p\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em add an operation to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__repository_8c_a1455a48b2140163c68ab9be5fab717b7}{undo\+\_\+repository}} (\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+repository, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function undoes an operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__repository_8c_ae31eebf76e0b28832213ea91ca130d54}{redo\+\_\+repository}} (\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+repository, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function redoes an operation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the implementation for a repository responsible for managing undo-\/redo\+\_\+ operations 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{undo__redo__repository_8c_a04572130e1cfa0f41357002dc77dc212}\label{undo__redo__repository_8c_a04572130e1cfa0f41357002dc77dc212}} 
+\index{undo\_redo\_repository.c@{undo\_redo\_repository.c}!add\_undo\_repository@{add\_undo\_repository}}
+\index{add\_undo\_repository@{add\_undo\_repository}!undo\_redo\_repository.c@{undo\_redo\_repository.c}}
+\doxyparagraph{\texorpdfstring{add\_undo\_repository()}{add\_undo\_repository()}}
+{\footnotesize\ttfamily void add\+\_\+undo\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+repository,  }\item[{\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$}]{p\+\_\+operation,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+add an operation to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+repository} & a pointer to the repository \\
+\hline
+{\em p\+\_\+operation} & a pointer to the undo redo operation \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__repository_8c_a5a5c108e0bd2c42f63330ea820a4e1f9}\label{undo__redo__repository_8c_a5a5c108e0bd2c42f63330ea820a4e1f9}} 
+\index{undo\_redo\_repository.c@{undo\_redo\_repository.c}!create\_undo\_redo\_repository@{create\_undo\_redo\_repository}}
+\index{create\_undo\_redo\_repository@{create\_undo\_redo\_repository}!undo\_redo\_repository.c@{undo\_redo\_repository.c}}
+\doxyparagraph{\texorpdfstring{create\_undo\_redo\_repository()}{create\_undo\_redo\_repository()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}}$\ast$ create\+\_\+undo\+\_\+redo\+\_\+repository (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function creates an undo redo repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the undo redo repository created 
+\end{DoxyReturn}
+\mbox{\Hypertarget{undo__redo__repository_8c_a8dd1052e36e170175ffa9964596af836}\label{undo__redo__repository_8c_a8dd1052e36e170175ffa9964596af836}} 
+\index{undo\_redo\_repository.c@{undo\_redo\_repository.c}!delete\_undo\_redo\_repository@{delete\_undo\_redo\_repository}}
+\index{delete\_undo\_redo\_repository@{delete\_undo\_redo\_repository}!undo\_redo\_repository.c@{undo\_redo\_repository.c}}
+\doxyparagraph{\texorpdfstring{delete\_undo\_redo\_repository()}{delete\_undo\_redo\_repository()}}
+{\footnotesize\ttfamily void delete\+\_\+undo\+\_\+redo\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+repository }\end{DoxyParamCaption})}
+
+
+
+this function frees the memory for a given undo redo repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+repository} & a pointer to the undo redo repository \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__repository_8c_ae31eebf76e0b28832213ea91ca130d54}\label{undo__redo__repository_8c_ae31eebf76e0b28832213ea91ca130d54}} 
+\index{undo\_redo\_repository.c@{undo\_redo\_repository.c}!redo\_repository@{redo\_repository}}
+\index{redo\_repository@{redo\_repository}!undo\_redo\_repository.c@{undo\_redo\_repository.c}}
+\doxyparagraph{\texorpdfstring{redo\_repository()}{redo\_repository()}}
+{\footnotesize\ttfamily void redo\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+repository,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function redoes an operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+repository} & \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__repository_8c_a1455a48b2140163c68ab9be5fab717b7}\label{undo__redo__repository_8c_a1455a48b2140163c68ab9be5fab717b7}} 
+\index{undo\_redo\_repository.c@{undo\_redo\_repository.c}!undo\_repository@{undo\_repository}}
+\index{undo\_repository@{undo\_repository}!undo\_redo\_repository.c@{undo\_redo\_repository.c}}
+\doxyparagraph{\texorpdfstring{undo\_repository()}{undo\_repository()}}
+{\footnotesize\ttfamily void undo\+\_\+repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+repository,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function undoes an operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+repository} & a pointer to the undo redo repository \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}

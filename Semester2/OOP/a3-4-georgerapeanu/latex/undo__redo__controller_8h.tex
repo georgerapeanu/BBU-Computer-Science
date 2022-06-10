@@ -1,0 +1,111 @@
+\hypertarget{undo__redo__controller_8h}{}\doxysubsection{include/controller/undo\+\_\+redo\+\_\+controller.h File Reference}
+\label{undo__redo__controller_8h}\index{include/controller/undo\_redo\_controller.h@{include/controller/undo\_redo\_controller.h}}
+{\ttfamily \#include \char`\"{}../repository/undo\+\_\+redo\+\_\+repository.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../domain/undo\+\_\+redo\+\_\+operation.\+h\char`\"{}}\newline
+Include dependency graph for undo\+\_\+redo\+\_\+controller.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{undo__redo__controller_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{undo__redo__controller_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em this struct implements the model for the undo\+\_\+operation-\/redo\+\_\+operation controller The struct will receive operations indirectly. This means, that any controllers that need undo\+\_\+repository/redo\+\_\+repository services will push operations directly to the repository used by this controller \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$ \mbox{\hyperlink{undo__redo__controller_8h_abf582b3b0ca110f776e1f3cae2c55844}{create\+\_\+undo\+\_\+redo\+\_\+controller}} (\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+repository, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function creates an undo\+\_\+repository-\/redo\+\_\+repository controller instance \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__controller_8h_a2436b6d53341ed1db04521c22ea2101b}{delete\+\_\+undo\+\_\+redo\+\_\+controller}} (\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+controller)
+\begin{DoxyCompactList}\small\item\em this function deletes an undo\+\_\+repository redo\+\_\+repository controller \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__controller_8h_a4132d06af42c9c5b0afca8de399fcfaf}{undo}} (\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+controller, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function undoes an operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__controller_8h_a79b7bd52f5176637511c690554ee54cf}{redo}} (\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+controller, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function redoes an operation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file containing the model for implementing the undo\+\_\+operation-\/redo\+\_\+operation controller This controller is responsible for successfully applying undo\+\_\+operation and redo\+\_\+operation functions 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{undo__redo__controller_8h_abf582b3b0ca110f776e1f3cae2c55844}\label{undo__redo__controller_8h_abf582b3b0ca110f776e1f3cae2c55844}} 
+\index{undo\_redo\_controller.h@{undo\_redo\_controller.h}!create\_undo\_redo\_controller@{create\_undo\_redo\_controller}}
+\index{create\_undo\_redo\_controller@{create\_undo\_redo\_controller}!undo\_redo\_controller.h@{undo\_redo\_controller.h}}
+\doxyparagraph{\texorpdfstring{create\_undo\_redo\_controller()}{create\_undo\_redo\_controller()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}}$\ast$ create\+\_\+undo\+\_\+redo\+\_\+controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function creates an undo\+\_\+repository-\/redo\+\_\+repository controller instance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+repository} & a pointer to the repository which should be used for storing operations \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable receiving the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to an undo\+\_\+repository-\/redo\+\_\+repository controller instance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{undo__redo__controller_8h_a2436b6d53341ed1db04521c22ea2101b}\label{undo__redo__controller_8h_a2436b6d53341ed1db04521c22ea2101b}} 
+\index{undo\_redo\_controller.h@{undo\_redo\_controller.h}!delete\_undo\_redo\_controller@{delete\_undo\_redo\_controller}}
+\index{delete\_undo\_redo\_controller@{delete\_undo\_redo\_controller}!undo\_redo\_controller.h@{undo\_redo\_controller.h}}
+\doxyparagraph{\texorpdfstring{delete\_undo\_redo\_controller()}{delete\_undo\_redo\_controller()}}
+{\footnotesize\ttfamily void delete\+\_\+undo\+\_\+redo\+\_\+controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+controller }\end{DoxyParamCaption})}
+
+
+
+this function deletes an undo\+\_\+repository redo\+\_\+repository controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+controller} & a pointer to the undo\+\_\+repository redo\+\_\+repository controller \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__controller_8h_a79b7bd52f5176637511c690554ee54cf}\label{undo__redo__controller_8h_a79b7bd52f5176637511c690554ee54cf}} 
+\index{undo\_redo\_controller.h@{undo\_redo\_controller.h}!redo@{redo}}
+\index{redo@{redo}!undo\_redo\_controller.h@{undo\_redo\_controller.h}}
+\doxyparagraph{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void redo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+controller,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function redoes an operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+controller} & a pointer to the undo\+\_\+repository-\/redo\+\_\+repository controller \\
+\hline
+{\em p\+\_\+error} & a pointer to the varialbe which receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__controller_8h_a4132d06af42c9c5b0afca8de399fcfaf}\label{undo__redo__controller_8h_a4132d06af42c9c5b0afca8de399fcfaf}} 
+\index{undo\_redo\_controller.h@{undo\_redo\_controller.h}!undo@{undo}}
+\index{undo@{undo}!undo\_redo\_controller.h@{undo\_redo\_controller.h}}
+\doxyparagraph{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void undo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+controller,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function undoes an operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo\+\_\+redo\+\_\+controller} & a pointer to the undo\+\_\+repository-\/redo\+\_\+repository controller \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable which receives the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}

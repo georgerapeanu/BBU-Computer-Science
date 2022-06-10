@@ -1,0 +1,54 @@
+The C compiler identification could not be found in "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.gcno"
+
+The CXX compiler identification could not be found in "/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.gcno"
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/linux/ninja cmTC_565f5 && [1/2] Building C object CMakeFiles/cmTC_565f5.dir/src.c.o
+[2/2] Linking C executable cmTC_565f5
+FAILED: cmTC_565f5 
+: && /usr/bin/cc --coverage  CMakeFiles/cmTC_565f5.dir/src.c.o -o cmTC_565f5   && :
+/usr/bin/ld: CMakeFiles/cmTC_565f5.dir/src.c.o: in function `main':
+src.c:(.text+0x6a): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x88): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0xa6): undefined reference to `pthread_cancel'
+/usr/bin/ld: src.c:(.text+0xc9): undefined reference to `pthread_join'
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/home/georgerapeanu/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/213.7172.20/bin/ninja/linux/ninja cmTC_fe512 && [1/2] Building C object CMakeFiles/cmTC_fe512.dir/CheckFunctionExists.c.o
+[2/2] Linking C executable cmTC_fe512
+FAILED: cmTC_fe512 
+: && /usr/bin/cc --coverage -DCHECK_FUNCTION_EXISTS=pthread_create  CMakeFiles/cmTC_fe512.dir/CheckFunctionExists.c.o -o cmTC_fe512  -lpthreads && :
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+ninja: build stopped: subcommand failed.
+
+
+

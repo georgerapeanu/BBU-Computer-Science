@@ -1,0 +1,43 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/tests/src/domain/errors_tests.c
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/errors_tests.c.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/errors_tests.c.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file errors_tests.c this file contains the implementations of the errors tests
+        -:    3: */
+        -:    4:
+        -:    5:#pragma once
+        -:    6:#include "../../../include/domain/errors.h"
+        -:    7:#include <stdlib.h>
+        -:    8:#include <assert.h>
+        -:    9:
+        -:   10:
+function errors_test_set_error called 1 returned 100% blocks executed 75%
+        1:   11:void errors_test_set_error(){
+        1:   12:    set_error(NULL, 0);
+        1:   12-block  0
+call    0 returned 1
+        1:   13:    int tmp_error = 0;
+        1:   14:    set_error(&tmp_error, 1);
+call    0 returned 1
+       1*:   15:    assert(tmp_error == 1);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   15-block  0
+call    2 never executed
+        1:   16:    set_error(&tmp_error, 0);
+        1:   16-block  0
+call    0 returned 1
+       1*:   17:    assert(tmp_error == 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   17-block  0
+call    2 never executed
+        1:   18:}
+        -:   19:
+function errors_test_all called 1 returned 100% blocks executed 100%
+        1:   20:void errors_test_all(){
+        1:   21:    errors_test_set_error();
+        1:   21-block  0
+call    0 returned 1
+        1:   22:}

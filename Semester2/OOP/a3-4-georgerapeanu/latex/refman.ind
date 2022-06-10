@@ -1,0 +1,452 @@
+\begin{theindex}
+
+  \item {add\_country}
+    \subitem {country\_controller.c}, \hyperpage{42}
+  \item {add\_country\_from\_args}
+    \subitem {country\_controller.c}, \hyperpage{43}
+  \item {add\_country\_ui}
+    \subitem {country\_controller.c}, \hyperpage{43}
+  \item {add\_repository}
+    \subitem {repository.c}, \hyperpage{67}
+    \subitem {repository.h}, \hyperpage{30}
+  \item {add\_undo\_repository}
+    \subitem {undo\_redo\_repository.c}, \hyperpage{71}
+    \subitem {undo\_redo\_repository.h}, \hyperpage{34}
+  \item {app/main.c}, \hyperpage{13}
+  \item {apply}
+    \subitem {operation.c}, \hyperpage{59}
+    \subitem {operation.h}, \hyperpage{21}
+
+  \indexspace
+
+  \item {change\_capacity\_vector}
+    \subitem {vector.c}, \hyperpage{64}
+    \subitem {vector.h}, \hyperpage{26}
+  \item {cmp\_ascending}
+    \subitem {country\_controller.c}, \hyperpage{43}
+  \item {cmp\_descending}
+    \subitem {country\_controller.c}, \hyperpage{44}
+  \item {country.c}
+    \subitem {create\_country}, \hyperpage{55}
+    \subitem {delete\_country}, \hyperpage{56}
+    \subitem {delete\_country\_data}, \hyperpage{56}
+  \item {country.h}
+    \subitem {create\_country}, \hyperpage{17}
+    \subitem {delete\_country}, \hyperpage{18}
+    \subitem {delete\_country\_data}, \hyperpage{18}
+  \item {country\_controller.c}
+    \subitem {add\_country}, \hyperpage{42}
+    \subitem {add\_country\_from\_args}, \hyperpage{43}
+    \subitem {add\_country\_ui}, \hyperpage{43}
+    \subitem {cmp\_ascending}, \hyperpage{43}
+    \subitem {cmp\_descending}, \hyperpage{44}
+    \subitem {create\_country\_controller}, \hyperpage{44}
+    \subitem {delete\_country\_controller}, \hyperpage{45}
+    \subitem {filter\_at\_least}, \hyperpage{45}
+    \subitem {filter\_by\_exact\_name}, \hyperpage{45}
+    \subitem {filter\_contains\_string}, \hyperpage{45}
+    \subitem {filter\_matches\_string\_continent\_and\_population}, 
+		\hyperpage{46}
+    \subitem {free\_add\_country\_args}, \hyperpage{46}
+    \subitem {free\_remove\_country\_args}, \hyperpage{46}
+    \subitem {free\_update\_country\_args}, \hyperpage{47}
+    \subitem {get\_countries\_containing\_string}, \hyperpage{47}
+    \subitem {get\_countries\_from\_continent}, \hyperpage{47}
+    \subitem {get\_countries\_with\_at\_least}, \hyperpage{48}
+    \subitem {get\_index\_from\_name}, \hyperpage{48}
+    \subitem {get\_p\_countries\_from\_p\_indexes}, \hyperpage{49}
+    \subitem {migrate\_country}, \hyperpage{49}
+    \subitem {migrate\_from\_args}, \hyperpage{49}
+    \subitem {migrate\_ui}, \hyperpage{50}
+    \subitem {remove\_country}, \hyperpage{50}
+    \subitem {remove\_country\_from\_args}, \hyperpage{50}
+    \subitem {remove\_country\_ui}, \hyperpage{51}
+    \subitem {update\_country}, \hyperpage{51}
+    \subitem {update\_country\_from\_args}, \hyperpage{51}
+    \subitem {update\_country\_ui}, \hyperpage{52}
+  \item {country\_controller\_t}, \hyperpage{5}
+  \item {country\_t}, \hyperpage{6}
+  \item {create\_country}
+    \subitem {country.c}, \hyperpage{55}
+    \subitem {country.h}, \hyperpage{17}
+  \item {create\_country\_controller}
+    \subitem {country\_controller.c}, \hyperpage{44}
+  \item {create\_operation}
+    \subitem {operation.c}, \hyperpage{59}
+    \subitem {operation.h}, \hyperpage{21}
+  \item {create\_repository}
+    \subitem {repository.c}, \hyperpage{68}
+    \subitem {repository.h}, \hyperpage{30}
+  \item {create\_ui}
+    \subitem {ui.c}, \hyperpage{74}
+    \subitem {ui.h}, \hyperpage{37}
+  \item {create\_undo\_redo\_controller}
+    \subitem {undo\_redo\_controller.c}, \hyperpage{53}
+    \subitem {undo\_redo\_controller.h}, \hyperpage{15}
+  \item {create\_undo\_redo\_operation}
+    \subitem {undo\_redo\_operation.c}, \hyperpage{61}
+    \subitem {undo\_redo\_operation.h}, \hyperpage{23}
+  \item {create\_undo\_redo\_repository}
+    \subitem {undo\_redo\_repository.c}, \hyperpage{72}
+    \subitem {undo\_redo\_repository.h}, \hyperpage{35}
+  \item {create\_vector}
+    \subitem {vector.c}, \hyperpage{64}
+    \subitem {vector.h}, \hyperpage{26}
+
+  \indexspace
+
+  \item {delete\_country}
+    \subitem {country.c}, \hyperpage{56}
+    \subitem {country.h}, \hyperpage{18}
+  \item {delete\_country\_controller}
+    \subitem {country\_controller.c}, \hyperpage{45}
+  \item {delete\_country\_data}
+    \subitem {country.c}, \hyperpage{56}
+    \subitem {country.h}, \hyperpage{18}
+  \item {delete\_operation}
+    \subitem {operation.c}, \hyperpage{60}
+    \subitem {operation.h}, \hyperpage{21}
+  \item {delete\_operation\_data}
+    \subitem {operation.c}, \hyperpage{60}
+    \subitem {operation.h}, \hyperpage{22}
+  \item {delete\_repository}
+    \subitem {repository.c}, \hyperpage{68}
+    \subitem {repository.h}, \hyperpage{31}
+  \item {delete\_ui}
+    \subitem {ui.c}, \hyperpage{74}
+    \subitem {ui.h}, \hyperpage{37}
+  \item {delete\_undo\_redo\_controller}
+    \subitem {undo\_redo\_controller.c}, \hyperpage{54}
+    \subitem {undo\_redo\_controller.h}, \hyperpage{16}
+  \item {delete\_undo\_redo\_operation}
+    \subitem {undo\_redo\_operation.c}, \hyperpage{62}
+    \subitem {undo\_redo\_operation.h}, \hyperpage{24}
+  \item {delete\_undo\_redo\_operation\_data}
+    \subitem {undo\_redo\_operation.c}, \hyperpage{62}
+    \subitem {undo\_redo\_operation.h}, \hyperpage{24}
+  \item {delete\_undo\_redo\_repository}
+    \subitem {undo\_redo\_repository.c}, \hyperpage{72}
+    \subitem {undo\_redo\_repository.h}, \hyperpage{35}
+  \item {delete\_vector}
+    \subitem {vector.c}, \hyperpage{64}
+    \subitem {vector.h}, \hyperpage{26}
+  \item {display\_countries}
+    \subitem {ui.c}, \hyperpage{74}
+  \item {display\_country}
+    \subitem {ui.c}, \hyperpage{75}
+  \item {display\_help}
+    \subitem {ui.c}, \hyperpage{75}
+
+  \indexspace
+
+  \item {error\_t}, \hyperpage{7}
+  \item {errors}
+    \subitem {errors.c}, \hyperpage{58}
+    \subitem {errors.h}, \hyperpage{19}
+  \item {errors.c}
+    \subitem {errors}, \hyperpage{58}
+    \subitem {set\_error}, \hyperpage{57}
+  \item {errors.h}
+    \subitem {errors}, \hyperpage{19}
+    \subitem {set\_error}, \hyperpage{19}
+
+  \indexspace
+
+  \item {filter\_at\_least}
+    \subitem {country\_controller.c}, \hyperpage{45}
+  \item {filter\_by\_exact\_name}
+    \subitem {country\_controller.c}, \hyperpage{45}
+  \item {filter\_contains\_string}
+    \subitem {country\_controller.c}, \hyperpage{45}
+  \item {filter\_matches\_string\_continent\_and\_population}
+    \subitem {country\_controller.c}, \hyperpage{46}
+  \item {filter\_repository}
+    \subitem {repository.c}, \hyperpage{68}
+    \subitem {repository.h}, \hyperpage{31}
+  \item {free\_add\_country\_args}
+    \subitem {country\_controller.c}, \hyperpage{46}
+  \item {free\_remove\_country\_args}
+    \subitem {country\_controller.c}, \hyperpage{46}
+  \item {free\_update\_country\_args}
+    \subitem {country\_controller.c}, \hyperpage{47}
+  \item {free\_vector\_string}
+    \subitem {utils.c}, \hyperpage{76}
+
+  \indexspace
+
+  \item {get\_countries\_containing\_string}
+    \subitem {country\_controller.c}, \hyperpage{47}
+  \item {get\_countries\_from\_continent}
+    \subitem {country\_controller.c}, \hyperpage{47}
+  \item {get\_countries\_with\_at\_least}
+    \subitem {country\_controller.c}, \hyperpage{48}
+  \item {get\_index\_from\_name}
+    \subitem {country\_controller.c}, \hyperpage{48}
+  \item {get\_lowercase}
+    \subitem {utils.c}, \hyperpage{77}
+    \subitem {utils.h}, \hyperpage{39}
+  \item {get\_p\_countries\_from\_p\_indexes}
+    \subitem {country\_controller.c}, \hyperpage{49}
+  \item {get\_position\_repository}
+    \subitem {repository.c}, \hyperpage{69}
+    \subitem {repository.h}, \hyperpage{31}
+  \item {get\_position\_vector}
+    \subitem {vector.c}, \hyperpage{65}
+    \subitem {vector.h}, \hyperpage{27}
+  \item {get\_repository\_element\_size}
+    \subitem {repository.c}, \hyperpage{69}
+    \subitem {repository.h}, \hyperpage{32}
+  \item {get\_repository\_size}
+    \subitem {repository.c}, \hyperpage{69}
+    \subitem {repository.h}, \hyperpage{32}
+
+  \indexspace
+
+  \item {include/controller/undo\_redo\_controller.h}, \hyperpage{14}
+  \item {include/domain/country.h}, \hyperpage{17}
+  \item {include/domain/errors.h}, \hyperpage{18}
+  \item {include/domain/operation.h}, \hyperpage{19}
+  \item {include/domain/undo\_redo\_operation.h}, \hyperpage{22}
+  \item {include/domain/vector.h}, \hyperpage{25}
+  \item {include/repository/repository.h}, \hyperpage{28}
+  \item {include/repository/undo\_redo\_repository.h}, \hyperpage{33}
+  \item {include/ui/ui.h}, \hyperpage{36}
+  \item {include/utils/utils.h}, \hyperpage{38}
+
+  \indexspace
+
+  \item {migrate\_country}
+    \subitem {country\_controller.c}, \hyperpage{49}
+  \item {migrate\_from\_args}
+    \subitem {country\_controller.c}, \hyperpage{49}
+  \item {migrate\_ui}
+    \subitem {country\_controller.c}, \hyperpage{50}
+
+  \indexspace
+
+  \item {operation.c}
+    \subitem {apply}, \hyperpage{59}
+    \subitem {create\_operation}, \hyperpage{59}
+    \subitem {delete\_operation}, \hyperpage{60}
+    \subitem {delete\_operation\_data}, \hyperpage{60}
+  \item {operation.h}
+    \subitem {apply}, \hyperpage{21}
+    \subitem {create\_operation}, \hyperpage{21}
+    \subitem {delete\_operation}, \hyperpage{21}
+    \subitem {delete\_operation\_data}, \hyperpage{22}
+  \item {operation\_t}, \hyperpage{7}
+
+  \indexspace
+
+  \item {pop\_back}
+    \subitem {vector.c}, \hyperpage{65}
+    \subitem {vector.h}, \hyperpage{27}
+  \item {push\_back}
+    \subitem {vector.c}, \hyperpage{65}
+    \subitem {vector.h}, \hyperpage{27}
+
+  \indexspace
+
+  \item {redo}
+    \subitem {undo\_redo\_controller.c}, \hyperpage{54}
+    \subitem {undo\_redo\_controller.h}, \hyperpage{16}
+  \item {redo\_operation}
+    \subitem {undo\_redo\_operation.c}, \hyperpage{62}
+    \subitem {undo\_redo\_operation.h}, \hyperpage{24}
+  \item {redo\_repository}
+    \subitem {undo\_redo\_repository.c}, \hyperpage{72}
+    \subitem {undo\_redo\_repository.h}, \hyperpage{35}
+  \item {remove\_country}
+    \subitem {country\_controller.c}, \hyperpage{50}
+  \item {remove\_country\_from\_args}
+    \subitem {country\_controller.c}, \hyperpage{50}
+  \item {remove\_country\_ui}
+    \subitem {country\_controller.c}, \hyperpage{51}
+  \item {remove\_repository}
+    \subitem {repository.c}, \hyperpage{70}
+    \subitem {repository.h}, \hyperpage{32}
+  \item {repository.c}
+    \subitem {add\_repository}, \hyperpage{67}
+    \subitem {create\_repository}, \hyperpage{68}
+    \subitem {delete\_repository}, \hyperpage{68}
+    \subitem {filter\_repository}, \hyperpage{68}
+    \subitem {get\_position\_repository}, \hyperpage{69}
+    \subitem {get\_repository\_element\_size}, \hyperpage{69}
+    \subitem {get\_repository\_size}, \hyperpage{69}
+    \subitem {remove\_repository}, \hyperpage{70}
+    \subitem {update\_repository}, \hyperpage{70}
+  \item {repository.h}
+    \subitem {add\_repository}, \hyperpage{30}
+    \subitem {create\_repository}, \hyperpage{30}
+    \subitem {delete\_repository}, \hyperpage{31}
+    \subitem {filter\_repository}, \hyperpage{31}
+    \subitem {get\_position\_repository}, \hyperpage{31}
+    \subitem {get\_repository\_element\_size}, \hyperpage{32}
+    \subitem {get\_repository\_size}, \hyperpage{32}
+    \subitem {remove\_repository}, \hyperpage{32}
+    \subitem {update\_repository}, \hyperpage{33}
+  \item {repository\_t}, \hyperpage{8}
+  \item {resize}
+    \subitem {vector.c}, \hyperpage{66}
+    \subitem {vector.h}, \hyperpage{28}
+  \item {run}
+    \subitem {ui.c}, \hyperpage{75}
+    \subitem {ui.h}, \hyperpage{37}
+
+  \indexspace
+
+  \item {set\_error}
+    \subitem {errors.c}, \hyperpage{57}
+    \subitem {errors.h}, \hyperpage{19}
+  \item {set\_position\_vector}
+    \subitem {vector.c}, \hyperpage{66}
+    \subitem {vector.h}, \hyperpage{28}
+  \item {sort}
+    \subitem {utils.c}, \hyperpage{77}
+    \subitem {utils.h}, \hyperpage{39}
+  \item {split\_string}
+    \subitem {utils.c}, \hyperpage{77}
+    \subitem {utils.h}, \hyperpage{39}
+  \item {src/controller/country\_controller.c}, \hyperpage{40}
+  \item {src/controller/undo\_redo\_controller.c}, \hyperpage{52}
+  \item {src/domain/country.c}, \hyperpage{55}
+  \item {src/domain/errors.c}, \hyperpage{56}
+  \item {src/domain/operation.c}, \hyperpage{58}
+  \item {src/domain/undo\_redo\_operation.c}, \hyperpage{60}
+  \item {src/domain/vector.c}, \hyperpage{63}
+  \item {src/repository/repository.c}, \hyperpage{66}
+  \item {src/repository/undo\_redo\_repository.c}, \hyperpage{70}
+  \item {src/ui/ui.c}, \hyperpage{73}
+  \item {src/utils/utils.c}, \hyperpage{75}
+  \item {swap}
+    \subitem {utils.c}, \hyperpage{78}
+    \subitem {utils.h}, \hyperpage{40}
+
+  \indexspace
+
+  \item {tests/include/controller/country\_controller\_tests.h}, 
+		\hyperpage{78}
+  \item {tests/include/controller/undo\_redo\_tests.h}, \hyperpage{80}
+  \item {tests/include/domain/country\_tests.h}, \hyperpage{80}
+  \item {tests/include/domain/domain\_tests.h}, \hyperpage{80}
+  \item {tests/include/domain/errors\_tests.h}, \hyperpage{81}
+  \item {tests/include/domain/operation\_tests.h}, \hyperpage{81}
+  \item {tests/include/domain/undo\_redo\_operation\_tests.h}, 
+		\hyperpage{81}
+  \item {tests/include/domain/vector\_tests.h}, \hyperpage{82}
+  \item {tests/include/repository/repository\_tests.h}, \hyperpage{82}
+  \item {tests/src/controller/country\_controller\_tests.c}, 
+		\hyperpage{83}
+  \item {tests/src/domain/country\_tests.c}, \hyperpage{84}
+  \item {tests/src/domain/errors\_tests.c}, \hyperpage{85}
+  \item {tests/src/domain/vector\_tests.c}, \hyperpage{85}
+  \item {tests/src/utils/utils\_tests.c}, \hyperpage{86}
+
+  \indexspace
+
+  \item {ui.c}
+    \subitem {create\_ui}, \hyperpage{74}
+    \subitem {delete\_ui}, \hyperpage{74}
+    \subitem {display\_countries}, \hyperpage{74}
+    \subitem {display\_country}, \hyperpage{75}
+    \subitem {display\_help}, \hyperpage{75}
+    \subitem {run}, \hyperpage{75}
+  \item {ui.h}
+    \subitem {create\_ui}, \hyperpage{37}
+    \subitem {delete\_ui}, \hyperpage{37}
+    \subitem {run}, \hyperpage{37}
+  \item {ui\_t}, \hyperpage{9}
+  \item {undo}
+    \subitem {undo\_redo\_controller.c}, \hyperpage{54}
+    \subitem {undo\_redo\_controller.h}, \hyperpage{16}
+  \item {undo\_operation}
+    \subitem {undo\_redo\_operation.c}, \hyperpage{62}
+    \subitem {undo\_redo\_operation.h}, \hyperpage{24}
+  \item {undo\_redo\_controller.c}
+    \subitem {create\_undo\_redo\_controller}, \hyperpage{53}
+    \subitem {delete\_undo\_redo\_controller}, \hyperpage{54}
+    \subitem {redo}, \hyperpage{54}
+    \subitem {undo}, \hyperpage{54}
+  \item {undo\_redo\_controller.h}
+    \subitem {create\_undo\_redo\_controller}, \hyperpage{15}
+    \subitem {delete\_undo\_redo\_controller}, \hyperpage{16}
+    \subitem {redo}, \hyperpage{16}
+    \subitem {undo}, \hyperpage{16}
+  \item {undo\_redo\_controller\_t}, \hyperpage{9}
+  \item {undo\_redo\_operation.c}
+    \subitem {create\_undo\_redo\_operation}, \hyperpage{61}
+    \subitem {delete\_undo\_redo\_operation}, \hyperpage{62}
+    \subitem {delete\_undo\_redo\_operation\_data}, \hyperpage{62}
+    \subitem {redo\_operation}, \hyperpage{62}
+    \subitem {undo\_operation}, \hyperpage{62}
+  \item {undo\_redo\_operation.h}
+    \subitem {create\_undo\_redo\_operation}, \hyperpage{23}
+    \subitem {delete\_undo\_redo\_operation}, \hyperpage{24}
+    \subitem {delete\_undo\_redo\_operation\_data}, \hyperpage{24}
+    \subitem {redo\_operation}, \hyperpage{24}
+    \subitem {undo\_operation}, \hyperpage{24}
+  \item {undo\_redo\_operation\_t}, \hyperpage{10}
+  \item {undo\_redo\_repository.c}
+    \subitem {add\_undo\_repository}, \hyperpage{71}
+    \subitem {create\_undo\_redo\_repository}, \hyperpage{72}
+    \subitem {delete\_undo\_redo\_repository}, \hyperpage{72}
+    \subitem {redo\_repository}, \hyperpage{72}
+    \subitem {undo\_repository}, \hyperpage{72}
+  \item {undo\_redo\_repository.h}
+    \subitem {add\_undo\_repository}, \hyperpage{34}
+    \subitem {create\_undo\_redo\_repository}, \hyperpage{35}
+    \subitem {delete\_undo\_redo\_repository}, \hyperpage{35}
+    \subitem {redo\_repository}, \hyperpage{35}
+    \subitem {undo\_repository}, \hyperpage{35}
+  \item {undo\_redo\_repository\_t}, \hyperpage{11}
+  \item {undo\_redo\_test1}
+    \subitem {undo\_redo\_tests.h}, \hyperpage{80}
+  \item {undo\_redo\_tests.h}
+    \subitem {undo\_redo\_test1}, \hyperpage{80}
+  \item {undo\_repository}
+    \subitem {undo\_redo\_repository.c}, \hyperpage{72}
+    \subitem {undo\_redo\_repository.h}, \hyperpage{35}
+  \item {update\_country}
+    \subitem {country\_controller.c}, \hyperpage{51}
+  \item {update\_country\_from\_args}
+    \subitem {country\_controller.c}, \hyperpage{51}
+  \item {update\_country\_ui}
+    \subitem {country\_controller.c}, \hyperpage{52}
+  \item {update\_repository}
+    \subitem {repository.c}, \hyperpage{70}
+    \subitem {repository.h}, \hyperpage{33}
+  \item {utils.c}
+    \subitem {free\_vector\_string}, \hyperpage{76}
+    \subitem {get\_lowercase}, \hyperpage{77}
+    \subitem {sort}, \hyperpage{77}
+    \subitem {split\_string}, \hyperpage{77}
+    \subitem {swap}, \hyperpage{78}
+  \item {utils.h}
+    \subitem {get\_lowercase}, \hyperpage{39}
+    \subitem {sort}, \hyperpage{39}
+    \subitem {split\_string}, \hyperpage{39}
+    \subitem {swap}, \hyperpage{40}
+
+  \indexspace
+
+  \item {vector.c}
+    \subitem {change\_capacity\_vector}, \hyperpage{64}
+    \subitem {create\_vector}, \hyperpage{64}
+    \subitem {delete\_vector}, \hyperpage{64}
+    \subitem {get\_position\_vector}, \hyperpage{65}
+    \subitem {pop\_back}, \hyperpage{65}
+    \subitem {push\_back}, \hyperpage{65}
+    \subitem {resize}, \hyperpage{66}
+    \subitem {set\_position\_vector}, \hyperpage{66}
+  \item {vector.h}
+    \subitem {change\_capacity\_vector}, \hyperpage{26}
+    \subitem {create\_vector}, \hyperpage{26}
+    \subitem {delete\_vector}, \hyperpage{26}
+    \subitem {get\_position\_vector}, \hyperpage{27}
+    \subitem {pop\_back}, \hyperpage{27}
+    \subitem {push\_back}, \hyperpage{27}
+    \subitem {resize}, \hyperpage{28}
+    \subitem {set\_position\_vector}, \hyperpage{28}
+  \item {vector\_t}, \hyperpage{12}
+
+\end{theindex}

@@ -1,0 +1,215 @@
+\hypertarget{classCSVWatchlist}{}\doxysubsection{C\+S\+V\+Watchlist$<$ T $>$ Class Template Reference}
+\label{classCSVWatchlist}\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+
+
+Inheritance diagram for C\+S\+V\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCSVWatchlist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for C\+S\+V\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classCSVWatchlist__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCSVWatchlist_a892ba61b619ae2eb3a87d0e3bda2487a}{C\+S\+V\+Watchlist}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em the default constructor of the repository Initializes a repository which holds an empty vector of type T \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCSVWatchlist_a1cc3fe8ff5e5cdcd8d2c328e896b3f1e}\label{classCSVWatchlist_a1cc3fe8ff5e5cdcd8d2c328e896b3f1e}} 
+\mbox{\hyperlink{classCSVWatchlist_a1cc3fe8ff5e5cdcd8d2c328e896b3f1e}{$\sim$\+C\+S\+V\+Watchlist}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCSVWatchlist_a9f822d14f7227d6b6729e0a9716d9974}{add}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCSVWatchlist_a383fc1d521ab22acbe330e37f8288150}{update}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCSVWatchlist_adecb2f667f45989d3740adb0661013e7}{remove}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classCSVWatchlist_ab77a140eb0d617f839b8906e160785b5}{find}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classCSVWatchlist_a6b27a1ae7edda6d3ce72bab568944a0c}{get\+\_\+all}} () override
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCSVWatchlist_aca7b476b11db58a5caa4351fd7ed5d93}{save}} () const override
+\item 
+void \mbox{\hyperlink{classCSVWatchlist_acfd8badd75df27f8c2d38d28ba392bee}{display}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCSVWatchlist_a892ba61b619ae2eb3a87d0e3bda2487a}\label{classCSVWatchlist_a892ba61b619ae2eb3a87d0e3bda2487a}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!CSVWatchlist@{CSVWatchlist}}
+\index{CSVWatchlist@{CSVWatchlist}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{CSVWatchlist()}{CSVWatchlist()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::\mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+the default constructor of the repository Initializes a repository which holds an empty vector of type T 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & this is the path to the file in which to store the data \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCSVWatchlist_a9f822d14f7227d6b6729e0a9716d9974}\label{classCSVWatchlist_a9f822d14f7227d6b6729e0a9716d9974}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!add@{add}}
+\index{add@{add}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if its id is already taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_acfd8badd75df27f8c2d38d28ba392bee}\label{classCSVWatchlist_acfd8badd75df27f8c2d38d28ba392bee}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!display@{display}}
+\index{display@{display}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::display\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This file shows the file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a86275b7cceab399a29fc00af311befe2}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_ab77a140eb0d617f839b8906e160785b5}\label{classCSVWatchlist_ab77a140eb0d617f839b8906e160785b5}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!find@{find}}
+\index{find@{find}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_a6b27a1ae7edda6d3ce72bab568944a0c}\label{classCSVWatchlist_a6b27a1ae7edda6d3ce72bab568944a0c}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::get\+\_\+all\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_adecb2f667f45989d3740adb0661013e7}\label{classCSVWatchlist_adecb2f667f45989d3740adb0661013e7}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_aca7b476b11db58a5caa4351fd7ed5d93}\label{classCSVWatchlist_aca7b476b11db58a5caa4351fd7ed5d93}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!save@{save}}
+\index{save@{save}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::save\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This function saves the data to a file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a58ac45a38bc11d0e5bb45e5f6d86b7df}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classCSVWatchlist_a383fc1d521ab22acbe330e37f8288150}\label{classCSVWatchlist_a383fc1d521ab22acbe330e37f8288150}} 
+\index{CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}!update@{update}}
+\index{update@{update}!CSVWatchlist$<$ T $>$@{CSVWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classCSVWatchlist}{C\+S\+V\+Watchlist}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{Abstract\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/\mbox{\hyperlink{CSVWatchlist_8h}{C\+S\+V\+Watchlist.\+h}}\item 
+src/repository/\mbox{\hyperlink{CSVWatchlist_8cpp}{C\+S\+V\+Watchlist.\+cpp}}\end{DoxyCompactItemize}

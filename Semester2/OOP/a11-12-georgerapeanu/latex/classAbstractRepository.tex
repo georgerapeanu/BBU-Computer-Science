@@ -1,0 +1,183 @@
+\hypertarget{classAbstractRepository}{}\doxysubsection{Abstract\+Repository$<$ T $>$ Class Template Reference}
+\label{classAbstractRepository}\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+
+
+this is the model for a general purpose repository  
+
+
+
+
+{\ttfamily \#include $<$Abstract\+Repository.\+h$>$}
+
+
+
+Inheritance diagram for Abstract\+Repository$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAbstractRepository__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAbstractRepository_a7e8399d1820c8f429083c6770cee07a4}{Abstract\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em the vector that stores the elements of the repository \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAbstractRepository_ac80c846ab38ab84c1afdbea4faad3361}\label{classAbstractRepository_ac80c846ab38ab84c1afdbea4faad3361}} 
+virtual \mbox{\hyperlink{classAbstractRepository_ac80c846ab38ab84c1afdbea4faad3361}{$\sim$\+Abstract\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{add}} (const T \&elem)=0
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{update}} (const T \&elem)=0
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{remove}} (const T \&elem)=0
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+virtual T \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{find}} (const T \&elem)=0
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ T $>$ \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{get\+\_\+all}} ()=0
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Abstract\+Repository$<$ T $>$}
+
+this is the model for a general purpose repository 
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAbstractRepository_a7e8399d1820c8f429083c6770cee07a4}\label{classAbstractRepository_a7e8399d1820c8f429083c6770cee07a4}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!AbstractRepository@{AbstractRepository}}
+\index{AbstractRepository@{AbstractRepository}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{AbstractRepository()}{AbstractRepository()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::\mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the vector that stores the elements of the repository 
+
+the default constructor of the repository 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}\label{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!add@{add}}
+\index{add@{add}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id is taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classFileRepository_a24396a35ed87687857cc304e34799d48}{File\+Repository$<$ T $>$}}, \mbox{\hyperlink{classCSVWatchlist_a9f822d14f7227d6b6729e0a9716d9974}{C\+S\+V\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classHTMLWatchlist_a39b56c36c19cfc39350a12d779bb4bf6}{H\+T\+M\+L\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classMemoryRepository_ae394402e6e973c200a9871f98d8090ae}{Memory\+Repository$<$ T $>$}}, \mbox{\hyperlink{classMemoryWatchlist_ab354c281c471921f3cc4b4dc8dabd33b}{Memory\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classFileRepository_a24396a35ed87687857cc304e34799d48}{File\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classCSVWatchlist_a9f822d14f7227d6b6729e0a9716d9974}{C\+S\+V\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classHTMLWatchlist_a39b56c36c19cfc39350a12d779bb4bf6}{H\+T\+M\+L\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryRepository_ae394402e6e973c200a9871f98d8090ae}{Memory\+Repository$<$ Movie $>$}}, and \mbox{\hyperlink{classMemoryWatchlist_ab354c281c471921f3cc4b4dc8dabd33b}{Memory\+Watchlist$<$ Movie $>$}}.
+
+\mbox{\Hypertarget{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}\label{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!find@{find}}
+\index{find@{find}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual T \mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classFileRepository_a289101ea3916ad58e3136c253ceee30a}{File\+Repository$<$ T $>$}}, \mbox{\hyperlink{classCSVWatchlist_ab77a140eb0d617f839b8906e160785b5}{C\+S\+V\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classHTMLWatchlist_a4c21d6e4445ea08638dbe54114bed86f}{H\+T\+M\+L\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classMemoryRepository_aa5b93dd0edd9213377134e6ea7dd68aa}{Memory\+Repository$<$ T $>$}}, \mbox{\hyperlink{classMemoryWatchlist_a92eb066c18f068e592db7fbd1c1a7011}{Memory\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classFileRepository_a289101ea3916ad58e3136c253ceee30a}{File\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classCSVWatchlist_ab77a140eb0d617f839b8906e160785b5}{C\+S\+V\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classHTMLWatchlist_a4c21d6e4445ea08638dbe54114bed86f}{H\+T\+M\+L\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryRepository_aa5b93dd0edd9213377134e6ea7dd68aa}{Memory\+Repository$<$ Movie $>$}}, and \mbox{\hyperlink{classMemoryWatchlist_a92eb066c18f068e592db7fbd1c1a7011}{Memory\+Watchlist$<$ Movie $>$}}.
+
+\mbox{\Hypertarget{classAbstractRepository_a6740c931b683196292e61d6885a1320c}\label{classAbstractRepository_a6740c931b683196292e61d6885a1320c}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual std\+::vector$<$T$>$ \mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::get\+\_\+all (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classFileRepository_aefae109fd664b3b3a790335d69540efc}{File\+Repository$<$ T $>$}}, \mbox{\hyperlink{classFileRepository_aefae109fd664b3b3a790335d69540efc}{File\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classCSVWatchlist_a6b27a1ae7edda6d3ce72bab568944a0c}{C\+S\+V\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classHTMLWatchlist_af889e2c79def97071f841f913646d25b}{H\+T\+M\+L\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classMemoryRepository_a9222c6f1bd8b936a312818a2109bf599}{Memory\+Repository$<$ T $>$}}, \mbox{\hyperlink{classCSVWatchlist_a6b27a1ae7edda6d3ce72bab568944a0c}{C\+S\+V\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classHTMLWatchlist_af889e2c79def97071f841f913646d25b}{H\+T\+M\+L\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryRepository_a9222c6f1bd8b936a312818a2109bf599}{Memory\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryWatchlist_a5bc70200439d5f293745d7adf4aadd0e}{Memory\+Watchlist$<$ T $>$}}, and \mbox{\hyperlink{classMemoryWatchlist_a5bc70200439d5f293745d7adf4aadd0e}{Memory\+Watchlist$<$ Movie $>$}}.
+
+\mbox{\Hypertarget{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}\label{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classFileRepository_aa9d6dc7e98f3b3c081fdd649d5748455}{File\+Repository$<$ T $>$}}, \mbox{\hyperlink{classCSVWatchlist_adecb2f667f45989d3740adb0661013e7}{C\+S\+V\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classHTMLWatchlist_aad01045e1c737618fa86549dc2243958}{H\+T\+M\+L\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classMemoryRepository_a0775389c312898a24af171e5c67745e4}{Memory\+Repository$<$ T $>$}}, \mbox{\hyperlink{classMemoryWatchlist_a282d04e489b41bd00dfd5c3aabac8cf5}{Memory\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classFileRepository_aa9d6dc7e98f3b3c081fdd649d5748455}{File\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classCSVWatchlist_adecb2f667f45989d3740adb0661013e7}{C\+S\+V\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classHTMLWatchlist_aad01045e1c737618fa86549dc2243958}{H\+T\+M\+L\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryRepository_a0775389c312898a24af171e5c67745e4}{Memory\+Repository$<$ Movie $>$}}, and \mbox{\hyperlink{classMemoryWatchlist_a282d04e489b41bd00dfd5c3aabac8cf5}{Memory\+Watchlist$<$ Movie $>$}}.
+
+\mbox{\Hypertarget{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}\label{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}} 
+\index{AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}!update@{update}}
+\index{update@{update}!AbstractRepository$<$ T $>$@{AbstractRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+virtual void \mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classFileRepository_a352297726b1e235e256c3992f4b557c1}{File\+Repository$<$ T $>$}}, \mbox{\hyperlink{classCSVWatchlist_a383fc1d521ab22acbe330e37f8288150}{C\+S\+V\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classHTMLWatchlist_ae046bc9f433014d236829262b2156d0c}{H\+T\+M\+L\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classMemoryRepository_af3b4ffff10372c551265c1364bc9093b}{Memory\+Repository$<$ T $>$}}, \mbox{\hyperlink{classMemoryWatchlist_a3f063ab96fafa9dd4c87b12ef7663061}{Memory\+Watchlist$<$ T $>$}}, \mbox{\hyperlink{classFileRepository_a352297726b1e235e256c3992f4b557c1}{File\+Repository$<$ Movie $>$}}, \mbox{\hyperlink{classCSVWatchlist_a383fc1d521ab22acbe330e37f8288150}{C\+S\+V\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classHTMLWatchlist_ae046bc9f433014d236829262b2156d0c}{H\+T\+M\+L\+Watchlist$<$ Movie $>$}}, \mbox{\hyperlink{classMemoryRepository_af3b4ffff10372c551265c1364bc9093b}{Memory\+Repository$<$ Movie $>$}}, and \mbox{\hyperlink{classMemoryWatchlist_a3f063ab96fafa9dd4c87b12ef7663061}{Memory\+Watchlist$<$ Movie $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/\mbox{\hyperlink{AbstractRepository_8h}{Abstract\+Repository.\+h}}\end{DoxyCompactItemize}

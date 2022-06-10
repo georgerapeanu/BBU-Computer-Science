@@ -1,0 +1,186 @@
+\hypertarget{classMemoryRepository}{}\doxysubsection{Memory\+Repository$<$ T $>$ Class Template Reference}
+\label{classMemoryRepository}\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+
+
+this is the model for a general purpose repository  
+
+
+
+
+{\ttfamily \#include $<$Memory\+Repository.\+h$>$}
+
+
+
+Inheritance diagram for Memory\+Repository$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classMemoryRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+Repository$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classMemoryRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMemoryRepository_ac5379fac6432affd707cbd8fd0cd1d42}\label{classMemoryRepository_ac5379fac6432affd707cbd8fd0cd1d42}} 
+\mbox{\hyperlink{classMemoryRepository_ac5379fac6432affd707cbd8fd0cd1d42}{Memory\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em the default constructor of the repository Initializes a repository which holds an empty vector of type T \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMemoryRepository_a2d93e2b2a1828f82a96dedf904b816bb}\label{classMemoryRepository_a2d93e2b2a1828f82a96dedf904b816bb}} 
+\mbox{\hyperlink{classMemoryRepository_a2d93e2b2a1828f82a96dedf904b816bb}{$\sim$\+Memory\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryRepository_ae394402e6e973c200a9871f98d8090ae}{add}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryRepository_af3b4ffff10372c551265c1364bc9093b}{update}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryRepository_a0775389c312898a24af171e5c67745e4}{remove}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classMemoryRepository_aa5b93dd0edd9213377134e6ea7dd68aa}{find}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classMemoryRepository_a9222c6f1bd8b936a312818a2109bf599}{get\+\_\+all}} () override
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class Memory\+Repository$<$ T $>$}
+
+this is the model for a general purpose repository 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryRepository_ae394402e6e973c200a9871f98d8090ae}\label{classMemoryRepository_ae394402e6e973c200a9871f98d8090ae}} 
+\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!add@{add}}
+\index{add@{add}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryRepository}{Memory\+Repository}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if its id is already taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryRepository_aa5b93dd0edd9213377134e6ea7dd68aa}\label{classMemoryRepository_aa5b93dd0edd9213377134e6ea7dd68aa}} 
+\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!find@{find}}
+\index{find@{find}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classMemoryRepository}{Memory\+Repository}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryRepository_a9222c6f1bd8b936a312818a2109bf599}\label{classMemoryRepository_a9222c6f1bd8b936a312818a2109bf599}} 
+\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classMemoryRepository}{Memory\+Repository}}$<$ T $>$\+::get\+\_\+all\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryRepository_a0775389c312898a24af171e5c67745e4}\label{classMemoryRepository_a0775389c312898a24af171e5c67745e4}} 
+\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryRepository}{Memory\+Repository}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryRepository_af3b4ffff10372c551265c1364bc9093b}\label{classMemoryRepository_af3b4ffff10372c551265c1364bc9093b}} 
+\index{MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}!update@{update}}
+\index{update@{update}!MemoryRepository$<$ T $>$@{MemoryRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryRepository}{Memory\+Repository}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{Abstract\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/Memory\+Repository.\+h\item 
+src/repository/Memory\+Repository.\+cpp\end{DoxyCompactItemize}

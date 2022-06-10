@@ -1,0 +1,1642 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.3.4)  14 MAR 2022 20:26
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**refman
+(./refman.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Rollback for package 'array' requested -> date 2016-10-06.
+         Best approximation is the release introduced on 2016-10-06.
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array-2016-10-06.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen135
+\extrarowheight=\dimen136
+\NC@list=\toks14
+\extratabsurround=\skip49
+\backup@length=\skip50
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
+Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
+Applying: [2015/01/01] Old fixltx2e package on input line 46.
+
+
+Package fixltx2e Warning: fixltx2e is not required with releases after 2015
+(fixltx2e)                All fixes are now in the LaTeX kernel.
+(fixltx2e)                See the latexrelease package for details.
+
+Already applied: [0000/00/00] Old fixltx2e package on input line 53.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count175
+\calc@Bcount=\count176
+\calc@Adimen=\dimen137
+\calc@Bdimen=\dimen138
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count177
+\calc@Cskip=\skip53
+) (./doxygen.sty
+Package: doxygen 
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count178
+\float@exts=\toks15
+\float@box=\box45
+\@float@everytoks=\toks16
+\@floatcapt=\box46
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks17
+\verbatim@line=\toks18
+\verbatim@in@stream=\read2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
+\everycr=\toks19
+\minrowclearance=\skip54
+)
+\rownum=\count179
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(./longtable_doxygen.sty
+Package: longtable_doxygen 2014/10/28 v4.11 Multi-page Table package (DPC) - fr
+ozen version for doxygen
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count180
+\LTcapwidth=\dimen139
+\LT@head=\box47
+\LT@firsthead=\box48
+\LT@foot=\box49
+\LT@lastfoot=\box50
+\LT@cols=\count181
+\LT@rows=\count182
+\c@LT@tables=\count183
+\c@LT@chunks=\count184
+\LT@p@ftn=\toks20
+) (./tabu_doxygen.sty
+Package: tabu_doxygen 2011/02/26 v2.8 - flexible LaTeX tabulars (FC), frozen ve
+rsion for doxygen
+
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box51
+\sift@deathcycles=\count185
+\@vwid@loff=\dimen140
+\@vwid@roff=\dimen141
+)
+\c@taburow=\count186
+\tabu@nbcols=\count187
+\tabu@cnt=\count188
+\tabu@Xcol=\count189
+\tabu@alloc=\count190
+\tabu@nested=\count191
+\tabu@target=\dimen142
+\tabu@spreadtarget=\dimen143
+\tabu@naturalX=\dimen144
+\tabucolX=\dimen145
+\tabu@Xsum=\dimen146
+\extrarowdepth=\dimen147
+\abovetabulinesep=\dimen148
+\belowtabulinesep=\dimen149
+\tabustrutrule=\dimen150
+\tabu@thebody=\toks21
+\tabu@footnotes=\toks22
+\tabu@box=\box52
+\tabu@arstrutbox=\box53
+\tabu@hleads=\box54
+\tabu@vleads=\box55
+\tabu@cellskip=\skip59
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2020/01/13 v3.5 verbatim text (tvz,hv)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks23
+)
+\FV@CodeLineNo=\count192
+\FV@InFile=\read3
+\FV@TabBox=\box56
+\c@FancyVerbLine=\count193
+\FV@StepNumber=\count194
+\FV@OutFile=\write3
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen151
+\TX@old@table=\dimen152
+\TX@old@col=\dimen153
+\TX@target=\dimen154
+\TX@delta=\dimen155
+\TX@cols=\count195
+\TX@ftn=\toks24
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip60
+\multirow@cntb=\count196
+\multirow@dima=\skip61
+\bigstrutjot=\dimen156
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hanging/hanging.sty
+Package: hanging 2009/09/02 v1.2b hanging paragraphs and punctuation
+\h@ngcommawd=\skip62
+\h@ngfstopwd=\skip63
+\h@ngquotewd=\skip64
+\h@ngdquotewd=\skip65
+\h@ngquerywd=\skip66
+\h@ngexclwd=\skip67
+\h@ngcolonwd=\skip68
+\h@ngscolonwd=\skip69
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks25
+\XKV@tempa@toks=\toks26
+)
+\XKV@depth=\count197
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+)
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box57
+)
+\tc@llx=\dimen159
+\tc@lly=\dimen160
+\tc@urx=\dimen161
+\tc@ury=\dimen162
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen163
+\adjbox@Height=\dimen164
+\adjbox@Depth=\dimen165
+\adjbox@Totalheight=\dimen166
+\adjbox@pwidth=\dimen167
+\adjbox@pheight=\dimen168
+\adjbox@pdepth=\dimen169
+\adjbox@ptotalheight=\dimen170
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count198
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks27
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2017/02/13 v4.01\ Stacking text and objects in convenient 
+ways
+
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count199
+)
+(/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.sty
+(/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count266
+\loi_nestcnt=\count267
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified 
+sep char (CT)
+)
+\c@@stackindex=\count268
+\@boxshift=\skip70
+\stack@tmplength=\skip71
+\temp@stkl=\skip72
+\@stackedboxwidth=\skip73
+\@addedbox=\box58
+\@anchorbox=\box59
+\stackedbox=\box60
+\@centerbox=\box61
+\c@ROWcellindex@=\count269
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box62
+\UL@hyphenbox=\box63
+\UL@skip=\skip74
+\UL@hook=\toks28
+\UL@height=\dimen171
+\UL@pe=\count270
+\UL@pixel=\dimen172
+\ULC@box=\box64
+Package: ulem 2019/11/18
+\ULdepth=\dimen173
+)
+\xrefbox=\box65
+\xreflength=\skip75
+\CodeWidthChar=\skip76
+\CodeHeightChar=\skip77
+\DoxyCodeWidth=\skip78
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks29
+\inpenc@posthook=\toks30
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count271
+\mult@box=\box66
+\multicol@leftmargin=\dimen174
+\c@unbalance=\count272
+\c@collectmore=\count273
+\doublecol@number=\count274
+\multicoltolerance=\count275
+\multicolpretolerance=\count276
+\full@width=\dimen175
+\page@free=\dimen176
+\premulticols=\dimen177
+\postmulticols=\dimen178
+\multicolsep=\skip79
+\multicolbaselineskip=\skip80
+\partial@page=\box67
+\last@line=\box68
+\maxbalancingoverflow=\dimen179
+\mult@rightbox=\box69
+\mult@grightbox=\box70
+\mult@gfirstbox=\box71
+\mult@firstbox=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\@tempa=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\c@minrows=\count277
+\c@columnbadness=\count278
+\c@finalcolumnbadness=\count279
+\last@try=\dimen180
+\multicolovershoot=\dimen181
+\multicolundershoot=\dimen182
+\mult@nat@firstbox=\box110
+\colbreak@box=\box111
+\mc@col@check@num=\count280
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+
+
+LaTeX Warning: Command \underbar  has changed.
+               Check if current package is valid.
+
+
+LaTeX Warning: Command \underline  has changed.
+               Check if current package is valid.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count281
+\Gm@cntv=\count282
+\c@Gm@tempcnt=\count283
+\Gm@bindingoffset=\dimen183
+\Gm@wd@mp=\dimen184
+\Gm@odd@mp=\dimen185
+\Gm@even@mp=\dimen186
+\Gm@layoutwidth=\dimen187
+\Gm@layoutheight=\dimen188
+\Gm@layouthoffset=\dimen189
+\Gm@layoutvoffset=\dimen190
+\Gm@dimlist=\toks31
+)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip81
+\f@nch@O@elh=\skip82
+\f@nch@O@erh=\skip83
+\f@nch@O@olh=\skip84
+\f@nch@O@orh=\skip85
+\f@nch@O@elf=\skip86
+\f@nch@O@erf=\skip87
+\f@nch@O@olf=\skip88
+\f@nch@O@orf=\skip89
+)
+(/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip90
+\bibsep=\skip91
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count284
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip92
+\cftbeforetoctitleskip=\skip93
+\cftaftertoctitleskip=\skip94
+\cftbeforepartskip=\skip95
+\cftpartnumwidth=\skip96
+\cftpartindent=\skip97
+\cftbeforesecskip=\skip98
+\cftsecindent=\skip99
+\cftsecnumwidth=\skip100
+\cftbeforesubsecskip=\skip101
+\cftsubsecindent=\skip102
+\cftsubsecnumwidth=\skip103
+\cftbeforesubsubsecskip=\skip104
+\cftsubsubsecindent=\skip105
+\cftsubsubsecnumwidth=\skip106
+\cftbeforeparaskip=\skip107
+\cftparaindent=\skip108
+\cftparanumwidth=\skip109
+\cftbeforesubparaskip=\skip110
+\cftsubparaindent=\skip111
+\cftsubparanumwidth=\skip112
+\cftbeforeloftitleskip=\skip113
+\cftafterloftitleskip=\skip114
+\cftbeforefigskip=\skip115
+\cftfigindent=\skip116
+\cftfignumwidth=\skip117
+\c@lofdepth=\count285
+\c@lotdepth=\count286
+\cftbeforelottitleskip=\skip118
+\cftafterlottitleskip=\skip119
+\cftbeforetabskip=\skip120
+\cfttabindent=\skip121
+\cfttabnumwidth=\skip122
+)
+\@indexfile=\write4
+\openout4 = `refman.idx'.
+
+
+Writing index file refman.idx
+(/usr/share/texlive/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+Package: newunicodechar 2018/04/08 v1.2 Defining Unicode characters
+)
+
+Package newunicodechar Warning: Redefining Unicode character on input line 113.
+
+
+
+Package newunicodechar Warning: Redefining Unicode character on input line 114.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen191
+\Hy@linkcounter=\count287
+\Hy@pagecounter=\count288
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count289
+\pdfmajorversion=\count290
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing ON on input line 4565.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/backref.sty
+Package: backref 2020/01/14 v1.40 Bibliographical back referencing
+
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+))
+\c@Hy@tempcnt=\count291
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen192
+
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+)
+\Fld@menulength=\count292
+\Field@Width=\dimen193
+\Fld@charsize=\dimen194
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing ON on input line 6443.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count293
+\c@Item=\count294
+\c@Hfootnote=\count295
+)
+Package hyperref Info: Driver: hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+\Fld@listcount=\count296
+\c@bookmark@seq@number=\count297
+\Hy@SectionHShift=\skip123
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 132.
+Package hyperref Info: Option `unicode' set `true' on input line 132.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen195
+\captionmargin@=\dimen196
+\captionwidth=\dimen197
+\caption@tempdima=\dimen198
+\caption@indent=\dimen199
+\caption@parindent=\dimen256
+\caption@hangindent=\dimen257
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count298
+\c@continuedfloat=\count299
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoc/etoc.sty
+Package: etoc 2019/11/17 v1.09b Completely customisable TOCs (JFB)
+\Etoc@toctoks=\toks32
+\c@etoc@tocid=\count300
+\c@etoc@tocdepth=\count301
+\etoc@framed@titlebox=\box112
+\etoc@framed@contentsbox=\box113
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count302
+\l__pdf_internal_box=\box114
+)
+(./refman.aux)
+\openout1 = `refman.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 14
+7.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 147.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count303
+\scratchdimen=\dimen258
+\scratchbox=\box115
+\nofMPsegments=\count304
+\nofMParguments=\count305
+\everyMPshowfont=\toks33
+\MPscratchCnt=\count306
+\MPscratchDim=\dimen259
+\MPnumerator=\count307
+\makeMPintoPDFobject=\count308
+\everyMPtoPDFconversion=\toks34
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(71.13188pt, 455.24411pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=-1.1381pt
+* \evensidemargin=-1.1381pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=121.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package backref Info: ** backref set up for natbib ** on input line 147.
+\AtBeginShipoutBox=\box116
+Package hyperref Info: Link coloring ON on input line 147.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count309
+)
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
+
+(./refman.out) (./refman.out)
+\@outlinefile=\write5
+\openout5 = `refman.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+\Etoc@tf=\read4
+Package hyperref Info: Option `pageanchor' set `false' on input line 153.
+Package hyperref Info: Option `bookmarksnumbered' set `true' on input line 153.
+
+Package hyperref Info: Option `unicode' set `true' on input line 153.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.9599pt on input line 158.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 160.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+\tf@toc=\write6
+\openout6 = `refman.toc'.
+
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 8.99994pt on input line 165.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 165
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 165
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 16
+5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.29996pt on input line 165.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 6.29996pt on input line 165.
+ [1] [2] [3]
+Package hyperref Info: Option `pageanchor' set `true' on input line 166.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 12.9599pt on input line 169.
+
+(./md_README.tex
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 1.
+LaTeX Font Info:    Trying to load font information for TS1+phv on input line 4
+.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1phv.fd
+File: ts1phv.fd 2001/06/04 scalable font definitions for TS1/phv.
+)
+LaTeX Font Info:    Font shape `TS1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 4.
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 6.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+) [1]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 34.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 34.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <7> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 34.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 6.29996pt on input line 34.
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <10> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 35.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.99994pt on input line 35.
+ [2])
+(./annotated.tex [3]
+Underfull \hbox (badness 887) in paragraph at lines 9--9
+ \T1/phv/b/n/10 This struct im-ple-ments the model for the undo[]_[]operation-r
+edo[]_[]operation con-troller The 
+ []
+
+) (./files.tex
+
+LaTeX Warning: Reference `country__controller_8h' on page 4 undefined on input 
+line 4.
+
+[4]
+
+LaTeX Warning: Reference `uitls__tests_8h' on page 5 undefined on input line 35
+.
+
+) (./structcountry__controller__t.tex <./structcountry__controller__t__coll__gr
+aph.pdf
+
+pdfTeX warning: pdflatex (file ./structcountry__controller__t__coll__graph.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+>
+<structcountry__controller__t__coll__graph.pdf, id=856, 350.30875pt x 234.8775p
+t>
+File: structcountry__controller__t__coll__graph.pdf Graphic file (type pdf)
+<use structcountry__controller__t__coll__graph.pdf>
+Package pdftex.def Info: structcountry__controller__t__coll__graph.pdf  used on
+ input line 19.
+(pdftex.def)             Requested size: 349.0pt x 234.01677pt.
+ [5]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 27.
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 27.
+LaTeX Font Info:    Font shape `T1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 27.
+) (./structcountry__t.tex [6]) (./structerror__t.tex)
+(./structoperation__t.tex <./structoperation__t__coll__graph.pdf>
+<structoperation__t__coll__graph.pdf, id=916, 152.57pt x 167.62625pt>
+File: structoperation__t__coll__graph.pdf Graphic file (type pdf)
+<use structoperation__t__coll__graph.pdf>
+Package pdftex.def Info: structoperation__t__coll__graph.pdf  used on input lin
+e 19.
+(pdftex.def)             Requested size: 152.0pt x 167.00684pt.
+ [7])
+(./structrepository__t.tex <./structrepository__t__coll__graph.pdf>
+<structrepository__t__coll__graph.pdf, id=944, 179.67125pt x 167.62625pt>
+File: structrepository__t__coll__graph.pdf Graphic file (type pdf)
+<use structrepository__t__coll__graph.pdf>
+Package pdftex.def Info: structrepository__t__coll__graph.pdf  used on input li
+ne 18.
+(pdftex.def)             Requested size: 179.0pt x 167.01195pt.
+)
+(./structui__t.tex <./structui__t__coll__graph.pdf
+
+pdfTeX warning: pdflatex (file ./structui__t__coll__graph.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>
+<structui__t__coll__graph.pdf, id=957, 476.78125pt x 302.12875pt>
+File: structui__t__coll__graph.pdf Graphic file (type pdf)
+<use structui__t__coll__graph.pdf>
+Package pdftex.def Info: structui__t__coll__graph.pdf  used on input line 19.
+(pdftex.def)             Requested size: 350.0pt x 221.80148pt.
+ [8]) (./structundo__redo__controller__t.tex <./structundo__redo__controller__t
+__coll__graph.pdf>
+<structundo__redo__controller__t__coll__graph.pdf, id=982, 213.79875pt x 234.87
+75pt>
+File: structundo__redo__controller__t__coll__graph.pdf Graphic file (type pdf)
+<use structundo__redo__controller__t__coll__graph.pdf>
+Package pdftex.def Info: structundo__redo__controller__t__coll__graph.pdf  used
+ on input line 19.
+(pdftex.def)             Requested size: 213.0pt x 233.99886pt.
+ [9]) (./structundo__redo__operation__t.tex <./structundo__redo__operation__t__
+coll__graph.pdf>
+<structundo__redo__operation__t__coll__graph.pdf, id=1003, 235.88126pt x 245.91
+875pt>
+File: structundo__redo__operation__t__coll__graph.pdf Graphic file (type pdf)
+<use structundo__redo__operation__t__coll__graph.pdf>
+Package pdftex.def Info: structundo__redo__operation__t__coll__graph.pdf  used 
+on input line 19.
+(pdftex.def)             Requested size: 235.0pt x 245.00253pt.
+ [10])
+(./structundo__redo__repository__t.tex <./structundo__redo__repository__t__coll
+__graph.pdf>
+<structundo__redo__repository__t__coll__graph.pdf, id=1025, 213.79875pt x 167.6
+2625pt>
+File: structundo__redo__repository__t__coll__graph.pdf Graphic file (type pdf)
+<use structundo__redo__repository__t__coll__graph.pdf>
+Package pdftex.def Info: structundo__redo__repository__t__coll__graph.pdf  used
+ on input line 19.
+(pdftex.def)             Requested size: 213.0pt x 166.99916pt.
+ [11]) (./structvector__t.tex [12]) (./app_2main_8c.tex <./app_2main_8c__incl.p
+df>
+<app_2main_8c__incl.pdf, id=1070, 737.75626pt x 481.8pt>
+File: app_2main_8c__incl.pdf Graphic file (type pdf)
+<use app_2main_8c__incl.pdf>
+Package pdftex.def Info: app_2main_8c__incl.pdf  used on input line 14.
+(pdftex.def)             Requested size: 350.0pt x 228.57065pt.
+) (./undo__redo__controller_8h.tex <./undo__redo__controller_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__controller_8h__incl.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>
+<undo__redo__controller_8h__incl.pdf, id=1078, 281.05pt x 369.38pt>
+File: undo__redo__controller_8h__incl.pdf Graphic file (type pdf)
+<use undo__redo__controller_8h__incl.pdf>
+Package pdftex.def Info: undo__redo__controller_8h__incl.pdf  used on input lin
+e 10.
+(pdftex.def)             Requested size: 280.0pt x 368.02074pt.
+ [13] <./undo__redo__controller_8h__dep__incl.pdf>
+<undo__redo__controller_8h__dep__incl.pdf, id=1094, 337.26pt x 234.8775pt>
+File: undo__redo__controller_8h__dep__incl.pdf Graphic file (type pdf)
+<use undo__redo__controller_8h__dep__incl.pdf>
+Package pdftex.def Info: undo__redo__controller_8h__dep__incl.pdf  used on inpu
+t line 18.
+(pdftex.def)             Requested size: 336.0pt x 234.00601pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.19995pt on input line 47.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <8> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 47.
+LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <7> not available
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 47.
+
+[15]
+Underfull \hbox (badness 10000) detected at line 60
+[][][]
+ []
+
+) (./country_8h.tex <./country_8h__dep__incl.pdf>
+<country_8h__dep__incl.pdf, id=1139, 939.51pt x 302.12875pt>
+File: country_8h__dep__incl.pdf Graphic file (type pdf)
+<use country_8h__dep__incl.pdf>
+Package pdftex.def Info: country_8h__dep__incl.pdf  used on input line 7.
+(pdftex.def)             Requested size: 350.0pt x 112.55116pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+Overfull \vbox (76.83215pt too high) has occurred while \output is active []
+
+
+[17]
+Underfull \hbox (badness 10000) detected at line 51
+[][][]
+ []
+
+) (./errors_8h.tex <./errors_8h__dep__incl.pdf>
+<errors_8h__dep__incl.pdf, id=1183, 1989.4325pt x 302.12875pt>
+File: errors_8h__dep__incl.pdf Graphic file (type pdf)
+<use errors_8h__dep__incl.pdf>
+Package pdftex.def Info: errors_8h__dep__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 350.0pt x 53.14992pt.
+ [18]) (./operation_8h.tex <./operation_8h__incl.pdf>
+<operation_8h__incl.pdf, id=1209, 230.8625pt x 156.585pt>
+File: operation_8h__incl.pdf Graphic file (type pdf)
+<use operation_8h__incl.pdf>
+Package pdftex.def Info: operation_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 230.0pt x 156.00162pt.
+ [19] <./operation_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./operation_8h__dep__incl.pdf): PDF inclusion: m
+ultiple pdfs with page group included in a single page
+>
+<operation_8h__dep__incl.pdf, id=1226, 725.71124pt x 436.63126pt>
+File: operation_8h__dep__incl.pdf Graphic file (type pdf)
+<use operation_8h__dep__incl.pdf>
+Package pdftex.def Info: operation_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 210.58664pt.
+ [20]
+Underfull \hbox (badness 10000) detected at line 80
+[][][]
+ []
+
+[21]) (./undo__redo__operation_8h.tex <./undo__redo__operation_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__operation_8h__incl.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>
+<undo__redo__operation_8h__incl.pdf, id=1278, 199.74625pt x 223.83624pt>
+File: undo__redo__operation_8h__incl.pdf Graphic file (type pdf)
+<use undo__redo__operation_8h__incl.pdf>
+Package pdftex.def Info: undo__redo__operation_8h__incl.pdf  used on input line
+ 9.
+(pdftex.def)             Requested size: 199.0pt x 223.01256pt.
+ <./undo__redo__operation_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__operation_8h__dep__incl.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>
+<undo__redo__operation_8h__dep__incl.pdf, id=1286, 725.71124pt x 380.42125pt>
+File: undo__redo__operation_8h__dep__incl.pdf Graphic file (type pdf)
+<use undo__redo__operation_8h__dep__incl.pdf>
+Package pdftex.def Info: undo__redo__operation_8h__dep__incl.pdf  used on input
+ line 17.
+(pdftex.def)             Requested size: 350.0pt x 183.47662pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+LaTeX Font Info:    Font shape `TS1/phv/m/it' in size <9> not available
+(Font)              Font shape `TS1/phv/m/sl' tried instead on input line 33.
+LaTeX Font Info:    Font shape `TS1/phv/m/sl' will be
+(Font)              scaled to size 8.09995pt on input line 33.
+
+[23]
+Underfull \hbox (badness 10000) detected at line 63
+[][][]
+ []
+
+[24]) (./vector_8h.tex <./vector_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./vector_8h__dep__incl.pdf): PDF inclusion: mult
+iple pdfs with page group included in a single page
+>
+<vector_8h__dep__incl.pdf, id=1348, 1229.59375pt x 503.8825pt>
+File: vector_8h__dep__incl.pdf Graphic file (type pdf)
+<use vector_8h__dep__incl.pdf>
+Package pdftex.def Info: vector_8h__dep__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 350.0pt x 143.43117pt.
+ [25]
+Underfull \hbox (badness 10000) detected at line 81
+[][][]
+ []
+
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27])
+(./repository_8h.tex <./repository_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./repository_8h__incl.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>
+<repository_8h__incl.pdf, id=1425, 190.7125pt x 178.6675pt>
+File: repository_8h__incl.pdf Graphic file (type pdf)
+<use repository_8h__incl.pdf>
+Package pdftex.def Info: repository_8h__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 190.0pt x 178.0073pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [28] <./repository_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./repository_8h__dep__incl.pdf): PDF inclusion: 
+multiple pdfs with page group included in a single page
+>
+<repository_8h__dep__incl.pdf, id=1441, 810.02625pt x 313.17pt>
+File: repository_8h__dep__incl.pdf Graphic file (type pdf)
+<use repository_8h__dep__incl.pdf>
+Package pdftex.def Info: repository_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 350.0pt x 135.3199pt.
+ [29]
+Underfull \hbox (badness 10000) detected at line 90
+[][][]
+ []
+
+[30]
+Underfull \hbox (badness 10000) detected at line 129
+[][][]
+ []
+
+[31]
+Underfull \hbox (badness 10000) detected at line 149
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 167
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 185
+[][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32])
+(./undo__redo__repository_8h.tex <./undo__redo__repository_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__repository_8h__incl.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>
+<undo__redo__repository_8h__incl.pdf, id=1526, 262.9825pt x 302.12875pt>
+File: undo__redo__repository_8h__incl.pdf Graphic file (type pdf)
+<use undo__redo__repository_8h__incl.pdf>
+Package pdftex.def Info: undo__redo__repository_8h__incl.pdf  used on input lin
+e 10.
+(pdftex.def)             Requested size: 262.0pt x 301.01236pt.
+ <./undo__redo__repository_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__repository_8h__dep__incl.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>
+<undo__redo__repository_8h__dep__incl.pdf, id=1534, 725.71124pt x 313.17pt>
+File: undo__redo__repository_8h__dep__incl.pdf Graphic file (type pdf)
+<use undo__redo__repository_8h__dep__incl.pdf>
+Package pdftex.def Info: undo__redo__repository_8h__dep__incl.pdf  used on inpu
+t line 18.
+(pdftex.def)             Requested size: 350.0pt x 151.04144pt.
+ [33] [34]
+Underfull \hbox (badness 10000) detected at line 79
+[][][]
+ []
+
+[35]) (./ui_8h.tex <./ui_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./ui_8h__incl.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+>
+<ui_8h__incl.pdf, id=1596, 607.26875pt x 425.59pt>
+File: ui_8h__incl.pdf Graphic file (type pdf)
+<use ui_8h__incl.pdf>
+Package pdftex.def Info: ui_8h__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 350.0pt x 245.2903pt.
+ <./ui_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./ui_8h__dep__incl.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>
+<ui_8h__dep__incl.pdf, id=1604, 232.87pt x 156.585pt>
+File: ui_8h__dep__incl.pdf Graphic file (type pdf)
+<use ui_8h__dep__incl.pdf>
+Package pdftex.def Info: ui_8h__dep__incl.pdf  used on input line 17.
+(pdftex.def)             Requested size: 232.0pt x 156.0064pt.
+ [36] [37]) (./utils_8h.tex <./utils_8h__incl.pdf
+
+pdfTeX warning: pdflatex (file ./utils_8h__incl.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>
+<utils_8h__incl.pdf, id=1650, 189.70876pt x 156.585pt>
+File: utils_8h__incl.pdf Graphic file (type pdf)
+<use utils_8h__incl.pdf>
+Package pdftex.def Info: utils_8h__incl.pdf  used on input line 8.
+(pdftex.def)             Requested size: 189.0pt x 156.004pt.
+ <./utils_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./utils_8h__dep__incl.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>
+<utils_8h__dep__incl.pdf, id=1658, 810.02625pt x 167.62625pt>
+File: utils_8h__dep__incl.pdf Graphic file (type pdf)
+<use utils_8h__dep__incl.pdf>
+Package pdftex.def Info: utils_8h__dep__incl.pdf  used on input line 15.
+(pdftex.def)             Requested size: 350.0pt x 72.43085pt.
+ [38]
+Underfull \hbox (badness 10000) detected at line 52
+[][][]
+ []
+
+[39]
+Underfull \hbox (badness 10000) detected at line 95
+[][][]
+ []
+
+) (./country__controller_8c.tex <./country__controller_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./country__controller_8c__incl.pdf): PDF inclusi
+on: multiple pdfs with page group included in a single page
+>
+<country__controller_8c__incl.pdf, id=1699, 738.76pt x 436.63126pt>
+File: country__controller_8c__incl.pdf Graphic file (type pdf)
+<use country__controller_8c__incl.pdf>
+Package pdftex.def Info: country__controller_8c__incl.pdf  used on input line 1
+4.
+(pdftex.def)             Requested size: 350.0pt x 206.86234pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40]
+[41] [42] [43]
+Underfull \hbox (badness 10000) detected at line 161
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 181
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 201
+[][][]
+ []
+
+[44]
+Underfull \hbox (badness 10000) detected at line 236
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 256
+[][][]
+ []
+
+[45]
+Underfull \hbox (badness 10000) detected at line 276
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+ \T1/phv/b/n/10 5.12.2.11 fil-ter_matches_string_continent_and_population()[] \
+T1/pcr/m/n/8 int filter[]_[]matches[]_[]string[]_[]continent[]_[]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 296
+[][][]
+ []
+
+[46]
+Underfull \hbox (badness 10000) detected at line 359
+[][][]
+ []
+
+[47]
+Underfull \hbox (badness 10000) detected at line 385
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 407
+[][][]
+ []
+
+[48]
+Underfull \hbox (badness 10000) detected at line 429
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 451
+[][][]
+ []
+
+[49] [50] [51]) (./undo__redo__controller_8c.tex <./undo__redo__controller_8c__
+incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__controller_8c__incl.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>
+<undo__redo__controller_8c__incl.pdf, id=1954, 440.64626pt x 436.63126pt>
+File: undo__redo__controller_8c__incl.pdf Graphic file (type pdf)
+<use undo__redo__controller_8c__incl.pdf>
+Package pdftex.def Info: undo__redo__controller_8c__incl.pdf  used on input lin
+e 11.
+(pdftex.def)             Requested size: 350.0pt x 346.82039pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+[53]
+Underfull \hbox (badness 10000) detected at line 48
+[][][]
+ []
+
+[54]) (./country_8c.tex <./country_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./country_8c__incl.pdf): PDF inclusion: multiple
+ pdfs with page group included in a single page
+>
+<country_8c__incl.pdf, id=2005, 581.17125pt x 223.83624pt>
+File: country_8c__incl.pdf Graphic file (type pdf)
+<use country_8c__incl.pdf>
+Package pdftex.def Info: country_8c__incl.pdf  used on input line 12.
+(pdftex.def)             Requested size: 350.0pt x 134.80144pt.
+ [55]
+Underfull \hbox (badness 10000) detected at line 51
+[][][]
+ []
+
+) (./errors_8c.tex <./errors_8c__incl.pdf>
+<errors_8c__incl.pdf, id=2035, 262.9825pt x 167.62625pt>
+File: errors_8c__incl.pdf Graphic file (type pdf)
+<use errors_8c__incl.pdf>
+Package pdftex.def Info: errors_8c__incl.pdf  used on input line 9.
+(pdftex.def)             Requested size: 262.0pt x 167.00684pt.
+
+Underfull \vbox (badness 4391) has occurred while \output is active []
+
+ [56]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57])
+(./operation_8c.tex <./operation_8c__incl.pdf>
+<operation_8c__incl.pdf, id=2070, 391.4625pt x 223.83624pt>
+File: operation_8c__incl.pdf Graphic file (type pdf)
+<use operation_8c__incl.pdf>
+Package pdftex.def Info: operation_8c__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 200.1392pt.
+ [58] [59]
+Underfull \hbox (badness 10000) detected at line 69
+[][][]
+ []
+
+) (./undo__redo__operation_8c.tex <./undo__redo__operation_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__operation_8c__incl.pdf): PDF inclu
+sion: multiple pdfs with page group included in a single page
+>
+<undo__redo__operation_8c__incl.pdf, id=2117, 412.54124pt x 291.0875pt>
+File: undo__redo__operation_8c__incl.pdf Graphic file (type pdf)
+<use undo__redo__operation_8c__incl.pdf>
+Package pdftex.def Info: undo__redo__operation_8c__incl.pdf  used on input line
+ 11.
+(pdftex.def)             Requested size: 350.0pt x 246.9636pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [60]
+[61]
+Underfull \hbox (badness 10000) detected at line 52
+[][][]
+ []
+
+[62]) (./vector_8c.tex <./vector_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./vector_8c__incl.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>
+<vector_8c__incl.pdf, id=2177, 462.72874pt x 167.62625pt>
+File: vector_8c__incl.pdf Graphic file (type pdf)
+<use vector_8c__incl.pdf>
+Package pdftex.def Info: vector_8c__incl.pdf  used on input line 16.
+(pdftex.def)             Requested size: 350.0pt x 126.79106pt.
+ [63]
+Underfull \hbox (badness 10000) detected at line 86
+[][][]
+ []
+
+[64]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [65])
+(./repository_8c.tex <./repository_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./repository_8c__incl.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>
+<repository_8c__incl.pdf, id=2253, 515.9275pt x 234.8775pt>
+File: repository_8c__incl.pdf Graphic file (type pdf)
+<use repository_8c__incl.pdf>
+Package pdftex.def Info: repository_8c__incl.pdf  used on input line 12.
+(pdftex.def)             Requested size: 350.0pt x 159.34184pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [66]
+[67]
+Underfull \hbox (badness 10000) detected at line 80
+[][][]
+ []
+
+[68]
+Underfull \hbox (badness 10000) detected at line 119
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 139
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+[69]
+Underfull \hbox (badness 10000) detected at line 175
+[][][]
+ []
+
+) (./undo__redo__repository_8c.tex <./undo__redo__repository_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./undo__redo__repository_8c__incl.pdf): PDF incl
+usion: multiple pdfs with page group included in a single page
+>
+<undo__redo__repository_8c__incl.pdf, id=2337, 568.1225pt x 369.38pt>
+File: undo__redo__repository_8c__incl.pdf Graphic file (type pdf)
+<use undo__redo__repository_8c__incl.pdf>
+Package pdftex.def Info: undo__redo__repository_8c__incl.pdf  used on input lin
+e 14.
+(pdftex.def)             Requested size: 350.0pt x 227.57034pt.
+ [70] [71]
+Underfull \hbox (badness 10000) detected at line 70
+[][][]
+ []
+
+[72]) (./ui_8c.tex <./ui_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./ui_8c__incl.pdf): PDF inclusion: multiple pdfs
+ with page group included in a single page
+>
+<ui_8c__incl.pdf, id=2396, 770.88pt x 481.8pt>
+File: ui_8c__incl.pdf Graphic file (type pdf)
+<use ui_8c__incl.pdf>
+Package pdftex.def Info: ui_8c__incl.pdf  used on input line 15.
+(pdftex.def)             Requested size: 350.0pt x 218.74883pt.
+ [73] [74]) (./utils_8c.tex <./utils_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./utils_8c__incl.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+>
+<utils_8c__incl.pdf, id=2459, 446.66875pt x 223.83624pt>
+File: utils_8c__incl.pdf Graphic file (type pdf)
+<use utils_8c__incl.pdf>
+Package pdftex.def Info: utils_8c__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 175.39761pt.
+ [75]
+Overfull \vbox (1.88785pt too high) has occurred while \output is active []
+
+
+[76]
+Underfull \hbox (badness 10000) detected at line 65
+[][][]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [77]
+Underfull \hbox (badness 10000) detected at line 108
+[][][]
+ []
+
+) (./country__controller__tests_8h.tex <./country__controller__tests_8h__incl.p
+df
+
+pdfTeX warning: pdflatex (file ./country__controller__tests_8h__incl.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>
+<country__controller__tests_8h__incl.pdf, id=2512, 683.55376pt x 436.63126pt>
+File: country__controller__tests_8h__incl.pdf Graphic file (type pdf)
+<use country__controller__tests_8h__incl.pdf>
+Package pdftex.def Info: country__controller__tests_8h__incl.pdf  used on input
+ line 13.
+(pdftex.def)             Requested size: 350.0pt x 223.57176pt.
+ <./country__controller__tests_8h__dep__incl.pdf
+
+pdfTeX warning: pdflatex (file ./country__controller__tests_8h__dep__incl.pdf):
+ PDF inclusion: multiple pdfs with page group included in a single page
+>
+<country__controller__tests_8h__dep__incl.pdf, id=2520, 226.8475pt x 178.6675pt
+>
+File: country__controller__tests_8h__dep__incl.pdf Graphic file (type pdf)
+<use country__controller__tests_8h__dep__incl.pdf>
+Package pdftex.def Info: country__controller__tests_8h__dep__incl.pdf  used on 
+input line 20.
+(pdftex.def)             Requested size: 226.0pt x 178.00185pt.
+
+Underfull \vbox (badness 1194) has occurred while \output is active []
+
+ [78])
+(./undo__redo__tests_8h.tex [79]) (./country__tests_8h.tex)
+(./domain__tests_8h.tex) (./errors__tests_8h.tex) (./operation__tests_8h.tex
+[80]) (./undo__redo__operation__tests_8h.tex) (./vector__tests_8h.tex [81])
+(./repository__tests_8h.tex) (./country__controller__tests_8c.tex [82] <./count
+ry__controller__tests_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./country__controller__tests_8c__incl.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>
+<country__controller__tests_8c__incl.pdf, id=2656, 783.92876pt x 503.8825pt>
+File: country__controller__tests_8c__incl.pdf Graphic file (type pdf)
+<use country__controller__tests_8c__incl.pdf>
+Package pdftex.def Info: country__controller__tests_8c__incl.pdf  used on input
+ line 16.
+(pdftex.def)             Requested size: 350.0pt x 224.96896pt.
+ [83]) (./country__tests_8c.tex <./country__tests_8c__incl.pdf>
+<country__tests_8c__incl.pdf, id=2691, 417.56pt x 178.6675pt>
+File: country__tests_8c__incl.pdf Graphic file (type pdf)
+<use country__tests_8c__incl.pdf>
+Package pdftex.def Info: country__tests_8c__incl.pdf  used on input line 11.
+(pdftex.def)             Requested size: 350.0pt x 149.76888pt.
+)
+(./errors__tests_8c.tex <./errors__tests_8c__incl.pdf
+
+pdfTeX warning: pdflatex (file ./errors__tests_8c__incl.pdf): PDF inclusion: mu
+ltiple pdfs with page group included in a single page
+>
+<errors__tests_8c__incl.pdf, id=2702, 346.29375pt x 178.6675pt>
+File: errors__tests_8c__incl.pdf Graphic file (type pdf)
+<use errors__tests_8c__incl.pdf>
+Package pdftex.def Info: errors__tests_8c__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 345.0pt x 178.00456pt.
+ [84]) (./vector__tests_8c.tex <./vector__tests_8c__incl.pdf>
+<vector__tests_8c__incl.pdf, id=2727, 346.29375pt x 178.6675pt>
+File: vector__tests_8c__incl.pdf Graphic file (type pdf)
+<use vector__tests_8c__incl.pdf>
+Package pdftex.def Info: vector__tests_8c__incl.pdf  used on input line 10.
+(pdftex.def)             Requested size: 345.0pt x 178.00456pt.
+ [85])
+(./utils__tests_8c.tex <./utils__tests_8c__incl.pdf>
+<utils__tests_8c__incl.pdf, id=2753, 440.64626pt x 234.8775pt>
+File: utils__tests_8c__incl.pdf Graphic file (type pdf)
+<use utils__tests_8c__incl.pdf>
+Package pdftex.def Info: utils__tests_8c__incl.pdf  used on input line 12.
+(pdftex.def)             Requested size: 350.0pt x 186.56544pt.
+ [86]) [87] [88
+
+]
+(./refman.ind
+LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
+(Font)              scaled to size 12.9599pt on input line 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--50
+[]| \T1/phv/m/n/10 fil-ter_matches_string_continent_and_population,
+ []
+
+[89
+
+] [90] [91] [92])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 234.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 234.
+ (./refman.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 234.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 234.
+Package rerunfilecheck Info: File `refman.out' has not changed.
+(rerunfilecheck)             Checksum: 12D736306B5EAC48B4AED16F00F62D5C;31771.
+
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 18228 strings out of 483183
+ 287093 string characters out of 5966293
+ 596671 words of memory out of 5000000
+ 31966 multiletter control sequences out of 15000+600000
+ 581183 words of font info for 89 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 55i,16n,96p,1620b,637s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{country__controller_8h_source} has been reference
+d but does not exist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courie
+r/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8ac.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on refman.pdf (96 pages, 593462 bytes).
+PDF statistics:
+ 3343 PDF objects out of 3580 (max. 8388607)
+ 3050 compressed objects within 31 object streams
+ 866 named destinations out of 1000 (max. 500000)
+ 1296 words of extra memory for PDF output out of 10000 (max. 10000000)
+

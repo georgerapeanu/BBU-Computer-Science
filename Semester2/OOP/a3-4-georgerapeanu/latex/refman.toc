@@ -1,0 +1,263 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {section}{\numberline {1}Assignment 02-\/03}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Requirements}{1}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Week 3}{1}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Week 4}{1}{subsubsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.2}Bonus possibilities}{2}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Problem Statements}{2}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Pharmacy}{2}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Bakery}{2}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Tourism Agency}{2}{subsubsection.1.3.3}%
+\contentsline {subsubsection}{\numberline {1.3.4}Real Estate Agency}{3}{subsubsection.1.3.4}%
+\contentsline {subsubsection}{\numberline {1.3.5}Intelligent Refrigerator}{3}{subsubsection.1.3.5}%
+\contentsline {subsubsection}{\numberline {1.3.6}World Population Monitoring}{3}{subsubsection.1.3.6}%
+\contentsline {section}{\numberline {2}Class Index}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Class List}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}File Index}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}File List}{4}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Class Documentation}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{5}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Detailed Description}{6}{subsubsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.2}country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{6}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Detailed Description}{7}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}error\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{7}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Detailed Description}{7}{subsubsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.4}operation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{7}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Detailed Description}{8}{subsubsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.5}repository\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{8}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Detailed Description}{8}{subsubsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.6}ui\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{9}{subsection.4.6}%
+\contentsline {subsubsection}{\numberline {4.6.1}Detailed Description}{9}{subsubsection.4.6.1}%
+\contentsline {subsection}{\numberline {4.7}undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{9}{subsection.4.7}%
+\contentsline {subsubsection}{\numberline {4.7.1}Detailed Description}{10}{subsubsection.4.7.1}%
+\contentsline {subsection}{\numberline {4.8}undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{10}{subsection.4.8}%
+\contentsline {subsubsection}{\numberline {4.8.1}Detailed Description}{11}{subsubsection.4.8.1}%
+\contentsline {subsection}{\numberline {4.9}undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}repository\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{11}{subsection.4.9}%
+\contentsline {subsubsection}{\numberline {4.9.1}Detailed Description}{12}{subsubsection.4.9.1}%
+\contentsline {subsection}{\numberline {4.10}vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}t Struct Reference}{12}{subsection.4.10}%
+\contentsline {subsubsection}{\numberline {4.10.1}Detailed Description}{13}{subsubsection.4.10.1}%
+\contentsline {section}{\numberline {5}File Documentation}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}app/main.c File Reference}{13}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Detailed Description}{13}{subsubsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.2}include/controller/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller.h File Reference}{14}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Detailed Description}{15}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Function Documentation}{15}{subsubsection.5.2.2}%
+\contentsline {paragraph}{\numberline {5.2.2.1}create\_undo\_redo\_controller()}{15}{paragraph.5.2.2.1}%
+\contentsline {paragraph}{\numberline {5.2.2.2}delete\_undo\_redo\_controller()}{16}{paragraph.5.2.2.2}%
+\contentsline {paragraph}{\numberline {5.2.2.3}redo()}{16}{paragraph.5.2.2.3}%
+\contentsline {paragraph}{\numberline {5.2.2.4}undo()}{16}{paragraph.5.2.2.4}%
+\contentsline {subsection}{\numberline {5.3}include/domain/country.h File Reference}{17}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Detailed Description}{17}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Function Documentation}{17}{subsubsection.5.3.2}%
+\contentsline {paragraph}{\numberline {5.3.2.1}create\_country()}{17}{paragraph.5.3.2.1}%
+\contentsline {paragraph}{\numberline {5.3.2.2}delete\_country()}{18}{paragraph.5.3.2.2}%
+\contentsline {paragraph}{\numberline {5.3.2.3}delete\_country\_data()}{18}{paragraph.5.3.2.3}%
+\contentsline {subsection}{\numberline {5.4}include/domain/errors.h File Reference}{18}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Detailed Description}{19}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Function Documentation}{19}{subsubsection.5.4.2}%
+\contentsline {paragraph}{\numberline {5.4.2.1}set\_error()}{19}{paragraph.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.3}Variable Documentation}{19}{subsubsection.5.4.3}%
+\contentsline {paragraph}{\numberline {5.4.3.1}errors}{19}{paragraph.5.4.3.1}%
+\contentsline {subsection}{\numberline {5.5}include/domain/operation.h File Reference}{19}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Detailed Description}{21}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Function Documentation}{21}{subsubsection.5.5.2}%
+\contentsline {paragraph}{\numberline {5.5.2.1}apply()}{21}{paragraph.5.5.2.1}%
+\contentsline {paragraph}{\numberline {5.5.2.2}create\_operation()}{21}{paragraph.5.5.2.2}%
+\contentsline {paragraph}{\numberline {5.5.2.3}delete\_operation()}{21}{paragraph.5.5.2.3}%
+\contentsline {paragraph}{\numberline {5.5.2.4}delete\_operation\_data()}{22}{paragraph.5.5.2.4}%
+\contentsline {subsection}{\numberline {5.6}include/domain/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operation.h File Reference}{22}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Detailed Description}{23}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Function Documentation}{23}{subsubsection.5.6.2}%
+\contentsline {paragraph}{\numberline {5.6.2.1}create\_undo\_redo\_operation()}{23}{paragraph.5.6.2.1}%
+\contentsline {paragraph}{\numberline {5.6.2.2}delete\_undo\_redo\_operation()}{24}{paragraph.5.6.2.2}%
+\contentsline {paragraph}{\numberline {5.6.2.3}delete\_undo\_redo\_operation\_data()}{24}{paragraph.5.6.2.3}%
+\contentsline {paragraph}{\numberline {5.6.2.4}redo\_operation()}{24}{paragraph.5.6.2.4}%
+\contentsline {paragraph}{\numberline {5.6.2.5}undo\_operation()}{25}{paragraph.5.6.2.5}%
+\contentsline {subsection}{\numberline {5.7}include/domain/vector.h File Reference}{25}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Detailed Description}{26}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Function Documentation}{26}{subsubsection.5.7.2}%
+\contentsline {paragraph}{\numberline {5.7.2.1}change\_capacity\_vector()}{26}{paragraph.5.7.2.1}%
+\contentsline {paragraph}{\numberline {5.7.2.2}create\_vector()}{26}{paragraph.5.7.2.2}%
+\contentsline {paragraph}{\numberline {5.7.2.3}delete\_vector()}{26}{paragraph.5.7.2.3}%
+\contentsline {paragraph}{\numberline {5.7.2.4}get\_position\_vector()}{27}{paragraph.5.7.2.4}%
+\contentsline {paragraph}{\numberline {5.7.2.5}pop\_back()}{27}{paragraph.5.7.2.5}%
+\contentsline {paragraph}{\numberline {5.7.2.6}push\_back()}{27}{paragraph.5.7.2.6}%
+\contentsline {paragraph}{\numberline {5.7.2.7}resize()}{28}{paragraph.5.7.2.7}%
+\contentsline {paragraph}{\numberline {5.7.2.8}set\_position\_vector()}{28}{paragraph.5.7.2.8}%
+\contentsline {subsection}{\numberline {5.8}include/repository/repository.h File Reference}{28}{subsection.5.8}%
+\contentsline {subsubsection}{\numberline {5.8.1}Detailed Description}{30}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.2}Function Documentation}{30}{subsubsection.5.8.2}%
+\contentsline {paragraph}{\numberline {5.8.2.1}add\_repository()}{30}{paragraph.5.8.2.1}%
+\contentsline {paragraph}{\numberline {5.8.2.2}create\_repository()}{30}{paragraph.5.8.2.2}%
+\contentsline {paragraph}{\numberline {5.8.2.3}delete\_repository()}{31}{paragraph.5.8.2.3}%
+\contentsline {paragraph}{\numberline {5.8.2.4}filter\_repository()}{31}{paragraph.5.8.2.4}%
+\contentsline {paragraph}{\numberline {5.8.2.5}get\_position\_repository()}{31}{paragraph.5.8.2.5}%
+\contentsline {paragraph}{\numberline {5.8.2.6}get\_repository\_element\_size()}{32}{paragraph.5.8.2.6}%
+\contentsline {paragraph}{\numberline {5.8.2.7}get\_repository\_size()}{32}{paragraph.5.8.2.7}%
+\contentsline {paragraph}{\numberline {5.8.2.8}remove\_repository()}{32}{paragraph.5.8.2.8}%
+\contentsline {paragraph}{\numberline {5.8.2.9}update\_repository()}{33}{paragraph.5.8.2.9}%
+\contentsline {subsection}{\numberline {5.9}include/repository/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}repository.h File Reference}{33}{subsection.5.9}%
+\contentsline {subsubsection}{\numberline {5.9.1}Detailed Description}{34}{subsubsection.5.9.1}%
+\contentsline {subsubsection}{\numberline {5.9.2}Function Documentation}{34}{subsubsection.5.9.2}%
+\contentsline {paragraph}{\numberline {5.9.2.1}add\_undo\_repository()}{34}{paragraph.5.9.2.1}%
+\contentsline {paragraph}{\numberline {5.9.2.2}create\_undo\_redo\_repository()}{35}{paragraph.5.9.2.2}%
+\contentsline {paragraph}{\numberline {5.9.2.3}delete\_undo\_redo\_repository()}{35}{paragraph.5.9.2.3}%
+\contentsline {paragraph}{\numberline {5.9.2.4}redo\_repository()}{35}{paragraph.5.9.2.4}%
+\contentsline {paragraph}{\numberline {5.9.2.5}undo\_repository()}{36}{paragraph.5.9.2.5}%
+\contentsline {subsection}{\numberline {5.10}include/ui/ui.h File Reference}{36}{subsection.5.10}%
+\contentsline {subsubsection}{\numberline {5.10.1}Detailed Description}{37}{subsubsection.5.10.1}%
+\contentsline {subsubsection}{\numberline {5.10.2}Function Documentation}{37}{subsubsection.5.10.2}%
+\contentsline {paragraph}{\numberline {5.10.2.1}create\_ui()}{37}{paragraph.5.10.2.1}%
+\contentsline {paragraph}{\numberline {5.10.2.2}delete\_ui()}{37}{paragraph.5.10.2.2}%
+\contentsline {paragraph}{\numberline {5.10.2.3}run()}{38}{paragraph.5.10.2.3}%
+\contentsline {subsection}{\numberline {5.11}include/utils/utils.h File Reference}{38}{subsection.5.11}%
+\contentsline {subsubsection}{\numberline {5.11.1}Detailed Description}{39}{subsubsection.5.11.1}%
+\contentsline {subsubsection}{\numberline {5.11.2}Function Documentation}{39}{subsubsection.5.11.2}%
+\contentsline {paragraph}{\numberline {5.11.2.1}get\_lowercase()}{39}{paragraph.5.11.2.1}%
+\contentsline {paragraph}{\numberline {5.11.2.2}sort()}{39}{paragraph.5.11.2.2}%
+\contentsline {paragraph}{\numberline {5.11.2.3}split\_string()}{39}{paragraph.5.11.2.3}%
+\contentsline {paragraph}{\numberline {5.11.2.4}swap()}{40}{paragraph.5.11.2.4}%
+\contentsline {subsection}{\numberline {5.12}src/controller/country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller.c File Reference}{40}{subsection.5.12}%
+\contentsline {subsubsection}{\numberline {5.12.1}Detailed Description}{42}{subsubsection.5.12.1}%
+\contentsline {subsubsection}{\numberline {5.12.2}Function Documentation}{42}{subsubsection.5.12.2}%
+\contentsline {paragraph}{\numberline {5.12.2.1}add\_country()}{43}{paragraph.5.12.2.1}%
+\contentsline {paragraph}{\numberline {5.12.2.2}add\_country\_from\_args()}{43}{paragraph.5.12.2.2}%
+\contentsline {paragraph}{\numberline {5.12.2.3}add\_country\_ui()}{43}{paragraph.5.12.2.3}%
+\contentsline {paragraph}{\numberline {5.12.2.4}cmp\_ascending()}{44}{paragraph.5.12.2.4}%
+\contentsline {paragraph}{\numberline {5.12.2.5}cmp\_descending()}{44}{paragraph.5.12.2.5}%
+\contentsline {paragraph}{\numberline {5.12.2.6}create\_country\_controller()}{44}{paragraph.5.12.2.6}%
+\contentsline {paragraph}{\numberline {5.12.2.7}delete\_country\_controller()}{45}{paragraph.5.12.2.7}%
+\contentsline {paragraph}{\numberline {5.12.2.8}filter\_at\_least()}{45}{paragraph.5.12.2.8}%
+\contentsline {paragraph}{\numberline {5.12.2.9}filter\_by\_exact\_name()}{45}{paragraph.5.12.2.9}%
+\contentsline {paragraph}{\numberline {5.12.2.10}filter\_contains\_string()}{46}{paragraph.5.12.2.10}%
+\contentsline {paragraph}{\numberline {5.12.2.11}filter\_matches\_string\_continent\_and\_population()}{46}{paragraph.5.12.2.11}%
+\contentsline {paragraph}{\numberline {5.12.2.12}free\_add\_country\_args()}{46}{paragraph.5.12.2.12}%
+\contentsline {paragraph}{\numberline {5.12.2.13}free\_remove\_country\_args()}{46}{paragraph.5.12.2.13}%
+\contentsline {paragraph}{\numberline {5.12.2.14}free\_update\_country\_args()}{47}{paragraph.5.12.2.14}%
+\contentsline {paragraph}{\numberline {5.12.2.15}get\_countries\_containing\_string()}{47}{paragraph.5.12.2.15}%
+\contentsline {paragraph}{\numberline {5.12.2.16}get\_countries\_from\_continent()}{47}{paragraph.5.12.2.16}%
+\contentsline {paragraph}{\numberline {5.12.2.17}get\_countries\_with\_at\_least()}{48}{paragraph.5.12.2.17}%
+\contentsline {paragraph}{\numberline {5.12.2.18}get\_index\_from\_name()}{48}{paragraph.5.12.2.18}%
+\contentsline {paragraph}{\numberline {5.12.2.19}get\_p\_countries\_from\_p\_indexes()}{49}{paragraph.5.12.2.19}%
+\contentsline {paragraph}{\numberline {5.12.2.20}migrate\_country()}{49}{paragraph.5.12.2.20}%
+\contentsline {paragraph}{\numberline {5.12.2.21}migrate\_from\_args()}{49}{paragraph.5.12.2.21}%
+\contentsline {paragraph}{\numberline {5.12.2.22}migrate\_ui()}{50}{paragraph.5.12.2.22}%
+\contentsline {paragraph}{\numberline {5.12.2.23}remove\_country()}{50}{paragraph.5.12.2.23}%
+\contentsline {paragraph}{\numberline {5.12.2.24}remove\_country\_from\_args()}{50}{paragraph.5.12.2.24}%
+\contentsline {paragraph}{\numberline {5.12.2.25}remove\_country\_ui()}{51}{paragraph.5.12.2.25}%
+\contentsline {paragraph}{\numberline {5.12.2.26}update\_country()}{51}{paragraph.5.12.2.26}%
+\contentsline {paragraph}{\numberline {5.12.2.27}update\_country\_from\_args()}{51}{paragraph.5.12.2.27}%
+\contentsline {paragraph}{\numberline {5.12.2.28}update\_country\_ui()}{52}{paragraph.5.12.2.28}%
+\contentsline {subsection}{\numberline {5.13}src/controller/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller.c File Reference}{52}{subsection.5.13}%
+\contentsline {subsubsection}{\numberline {5.13.1}Detailed Description}{53}{subsubsection.5.13.1}%
+\contentsline {subsubsection}{\numberline {5.13.2}Function Documentation}{53}{subsubsection.5.13.2}%
+\contentsline {paragraph}{\numberline {5.13.2.1}create\_undo\_redo\_controller()}{54}{paragraph.5.13.2.1}%
+\contentsline {paragraph}{\numberline {5.13.2.2}delete\_undo\_redo\_controller()}{54}{paragraph.5.13.2.2}%
+\contentsline {paragraph}{\numberline {5.13.2.3}redo()}{54}{paragraph.5.13.2.3}%
+\contentsline {paragraph}{\numberline {5.13.2.4}undo()}{54}{paragraph.5.13.2.4}%
+\contentsline {subsection}{\numberline {5.14}src/domain/country.c File Reference}{55}{subsection.5.14}%
+\contentsline {subsubsection}{\numberline {5.14.1}Detailed Description}{55}{subsubsection.5.14.1}%
+\contentsline {subsubsection}{\numberline {5.14.2}Function Documentation}{55}{subsubsection.5.14.2}%
+\contentsline {paragraph}{\numberline {5.14.2.1}create\_country()}{55}{paragraph.5.14.2.1}%
+\contentsline {paragraph}{\numberline {5.14.2.2}delete\_country()}{56}{paragraph.5.14.2.2}%
+\contentsline {paragraph}{\numberline {5.14.2.3}delete\_country\_data()}{56}{paragraph.5.14.2.3}%
+\contentsline {subsection}{\numberline {5.15}src/domain/errors.c File Reference}{56}{subsection.5.15}%
+\contentsline {subsubsection}{\numberline {5.15.1}Detailed Description}{57}{subsubsection.5.15.1}%
+\contentsline {subsubsection}{\numberline {5.15.2}Function Documentation}{57}{subsubsection.5.15.2}%
+\contentsline {paragraph}{\numberline {5.15.2.1}set\_error()}{57}{paragraph.5.15.2.1}%
+\contentsline {subsubsection}{\numberline {5.15.3}Variable Documentation}{58}{subsubsection.5.15.3}%
+\contentsline {paragraph}{\numberline {5.15.3.1}errors}{58}{paragraph.5.15.3.1}%
+\contentsline {subsection}{\numberline {5.16}src/domain/operation.c File Reference}{58}{subsection.5.16}%
+\contentsline {subsubsection}{\numberline {5.16.1}Detailed Description}{59}{subsubsection.5.16.1}%
+\contentsline {subsubsection}{\numberline {5.16.2}Function Documentation}{59}{subsubsection.5.16.2}%
+\contentsline {paragraph}{\numberline {5.16.2.1}apply()}{59}{paragraph.5.16.2.1}%
+\contentsline {paragraph}{\numberline {5.16.2.2}create\_operation()}{59}{paragraph.5.16.2.2}%
+\contentsline {paragraph}{\numberline {5.16.2.3}delete\_operation()}{60}{paragraph.5.16.2.3}%
+\contentsline {paragraph}{\numberline {5.16.2.4}delete\_operation\_data()}{60}{paragraph.5.16.2.4}%
+\contentsline {subsection}{\numberline {5.17}src/domain/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operation.c File Reference}{60}{subsection.5.17}%
+\contentsline {subsubsection}{\numberline {5.17.1}Detailed Description}{61}{subsubsection.5.17.1}%
+\contentsline {subsubsection}{\numberline {5.17.2}Function Documentation}{61}{subsubsection.5.17.2}%
+\contentsline {paragraph}{\numberline {5.17.2.1}create\_undo\_redo\_operation()}{61}{paragraph.5.17.2.1}%
+\contentsline {paragraph}{\numberline {5.17.2.2}delete\_undo\_redo\_operation()}{62}{paragraph.5.17.2.2}%
+\contentsline {paragraph}{\numberline {5.17.2.3}delete\_undo\_redo\_operation\_data()}{62}{paragraph.5.17.2.3}%
+\contentsline {paragraph}{\numberline {5.17.2.4}redo\_operation()}{62}{paragraph.5.17.2.4}%
+\contentsline {paragraph}{\numberline {5.17.2.5}undo\_operation()}{63}{paragraph.5.17.2.5}%
+\contentsline {subsection}{\numberline {5.18}src/domain/vector.c File Reference}{63}{subsection.5.18}%
+\contentsline {subsubsection}{\numberline {5.18.1}Detailed Description}{64}{subsubsection.5.18.1}%
+\contentsline {subsubsection}{\numberline {5.18.2}Function Documentation}{64}{subsubsection.5.18.2}%
+\contentsline {paragraph}{\numberline {5.18.2.1}change\_capacity\_vector()}{64}{paragraph.5.18.2.1}%
+\contentsline {paragraph}{\numberline {5.18.2.2}create\_vector()}{64}{paragraph.5.18.2.2}%
+\contentsline {paragraph}{\numberline {5.18.2.3}delete\_vector()}{64}{paragraph.5.18.2.3}%
+\contentsline {paragraph}{\numberline {5.18.2.4}get\_position\_vector()}{65}{paragraph.5.18.2.4}%
+\contentsline {paragraph}{\numberline {5.18.2.5}pop\_back()}{65}{paragraph.5.18.2.5}%
+\contentsline {paragraph}{\numberline {5.18.2.6}push\_back()}{65}{paragraph.5.18.2.6}%
+\contentsline {paragraph}{\numberline {5.18.2.7}resize()}{66}{paragraph.5.18.2.7}%
+\contentsline {paragraph}{\numberline {5.18.2.8}set\_position\_vector()}{66}{paragraph.5.18.2.8}%
+\contentsline {subsection}{\numberline {5.19}src/repository/repository.c File Reference}{66}{subsection.5.19}%
+\contentsline {subsubsection}{\numberline {5.19.1}Detailed Description}{67}{subsubsection.5.19.1}%
+\contentsline {subsubsection}{\numberline {5.19.2}Function Documentation}{67}{subsubsection.5.19.2}%
+\contentsline {paragraph}{\numberline {5.19.2.1}add\_repository()}{67}{paragraph.5.19.2.1}%
+\contentsline {paragraph}{\numberline {5.19.2.2}create\_repository()}{68}{paragraph.5.19.2.2}%
+\contentsline {paragraph}{\numberline {5.19.2.3}delete\_repository()}{68}{paragraph.5.19.2.3}%
+\contentsline {paragraph}{\numberline {5.19.2.4}filter\_repository()}{68}{paragraph.5.19.2.4}%
+\contentsline {paragraph}{\numberline {5.19.2.5}get\_position\_repository()}{69}{paragraph.5.19.2.5}%
+\contentsline {paragraph}{\numberline {5.19.2.6}get\_repository\_element\_size()}{69}{paragraph.5.19.2.6}%
+\contentsline {paragraph}{\numberline {5.19.2.7}get\_repository\_size()}{70}{paragraph.5.19.2.7}%
+\contentsline {paragraph}{\numberline {5.19.2.8}remove\_repository()}{70}{paragraph.5.19.2.8}%
+\contentsline {paragraph}{\numberline {5.19.2.9}update\_repository()}{70}{paragraph.5.19.2.9}%
+\contentsline {subsection}{\numberline {5.20}src/repository/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}repository.c File Reference}{70}{subsection.5.20}%
+\contentsline {subsubsection}{\numberline {5.20.1}Detailed Description}{71}{subsubsection.5.20.1}%
+\contentsline {subsubsection}{\numberline {5.20.2}Function Documentation}{71}{subsubsection.5.20.2}%
+\contentsline {paragraph}{\numberline {5.20.2.1}add\_undo\_repository()}{71}{paragraph.5.20.2.1}%
+\contentsline {paragraph}{\numberline {5.20.2.2}create\_undo\_redo\_repository()}{72}{paragraph.5.20.2.2}%
+\contentsline {paragraph}{\numberline {5.20.2.3}delete\_undo\_redo\_repository()}{72}{paragraph.5.20.2.3}%
+\contentsline {paragraph}{\numberline {5.20.2.4}redo\_repository()}{72}{paragraph.5.20.2.4}%
+\contentsline {paragraph}{\numberline {5.20.2.5}undo\_repository()}{73}{paragraph.5.20.2.5}%
+\contentsline {subsection}{\numberline {5.21}src/ui/ui.c File Reference}{73}{subsection.5.21}%
+\contentsline {subsubsection}{\numberline {5.21.1}Detailed Description}{74}{subsubsection.5.21.1}%
+\contentsline {subsubsection}{\numberline {5.21.2}Function Documentation}{74}{subsubsection.5.21.2}%
+\contentsline {paragraph}{\numberline {5.21.2.1}create\_ui()}{74}{paragraph.5.21.2.1}%
+\contentsline {paragraph}{\numberline {5.21.2.2}delete\_ui()}{74}{paragraph.5.21.2.2}%
+\contentsline {paragraph}{\numberline {5.21.2.3}display\_countries()}{74}{paragraph.5.21.2.3}%
+\contentsline {paragraph}{\numberline {5.21.2.4}display\_country()}{75}{paragraph.5.21.2.4}%
+\contentsline {paragraph}{\numberline {5.21.2.5}display\_help()}{75}{paragraph.5.21.2.5}%
+\contentsline {paragraph}{\numberline {5.21.2.6}run()}{75}{paragraph.5.21.2.6}%
+\contentsline {subsection}{\numberline {5.22}src/utils/utils.c File Reference}{75}{subsection.5.22}%
+\contentsline {subsubsection}{\numberline {5.22.1}Detailed Description}{76}{subsubsection.5.22.1}%
+\contentsline {subsubsection}{\numberline {5.22.2}Function Documentation}{76}{subsubsection.5.22.2}%
+\contentsline {paragraph}{\numberline {5.22.2.1}free\_vector\_string()}{76}{paragraph.5.22.2.1}%
+\contentsline {paragraph}{\numberline {5.22.2.2}get\_lowercase()}{77}{paragraph.5.22.2.2}%
+\contentsline {paragraph}{\numberline {5.22.2.3}sort()}{77}{paragraph.5.22.2.3}%
+\contentsline {paragraph}{\numberline {5.22.2.4}split\_string()}{77}{paragraph.5.22.2.4}%
+\contentsline {paragraph}{\numberline {5.22.2.5}swap()}{78}{paragraph.5.22.2.5}%
+\contentsline {subsection}{\numberline {5.23}tests/include/controller/country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{78}{subsection.5.23}%
+\contentsline {subsubsection}{\numberline {5.23.1}Detailed Description}{79}{subsubsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.24}tests/include/controller/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{80}{subsection.5.24}%
+\contentsline {subsubsection}{\numberline {5.24.1}Detailed Description}{80}{subsubsection.5.24.1}%
+\contentsline {subsubsection}{\numberline {5.24.2}Function Documentation}{80}{subsubsection.5.24.2}%
+\contentsline {paragraph}{\numberline {5.24.2.1}undo\_redo\_test1()}{80}{paragraph.5.24.2.1}%
+\contentsline {subsection}{\numberline {5.25}tests/include/domain/country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{80}{subsection.5.25}%
+\contentsline {subsubsection}{\numberline {5.25.1}Detailed Description}{80}{subsubsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.26}tests/include/domain/domain\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{80}{subsection.5.26}%
+\contentsline {subsubsection}{\numberline {5.26.1}Detailed Description}{81}{subsubsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.27}tests/include/domain/errors\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{81}{subsection.5.27}%
+\contentsline {subsubsection}{\numberline {5.27.1}Detailed Description}{81}{subsubsection.5.27.1}%
+\contentsline {subsection}{\numberline {5.28}tests/include/domain/operation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{81}{subsection.5.28}%
+\contentsline {subsubsection}{\numberline {5.28.1}Detailed Description}{81}{subsubsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.29}tests/include/domain/undo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}redo\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}operation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{81}{subsection.5.29}%
+\contentsline {subsubsection}{\numberline {5.29.1}Detailed Description}{82}{subsubsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.30}tests/include/domain/vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{82}{subsection.5.30}%
+\contentsline {subsubsection}{\numberline {5.30.1}Detailed Description}{82}{subsubsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.31}tests/include/repository/repository\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.h File Reference}{82}{subsection.5.31}%
+\contentsline {subsubsection}{\numberline {5.31.1}Detailed Description}{83}{subsubsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.32}tests/src/controller/country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}controller\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.c File Reference}{83}{subsection.5.32}%
+\contentsline {subsubsection}{\numberline {5.32.1}Detailed Description}{84}{subsubsection.5.32.1}%
+\contentsline {subsection}{\numberline {5.33}tests/src/domain/country\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.c File Reference}{84}{subsection.5.33}%
+\contentsline {subsubsection}{\numberline {5.33.1}Detailed Description}{84}{subsubsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.34}tests/src/domain/errors\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.c File Reference}{85}{subsection.5.34}%
+\contentsline {subsubsection}{\numberline {5.34.1}Detailed Description}{85}{subsubsection.5.34.1}%
+\contentsline {subsection}{\numberline {5.35}tests/src/domain/vector\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.c File Reference}{85}{subsection.5.35}%
+\contentsline {subsubsection}{\numberline {5.35.1}Detailed Description}{86}{subsubsection.5.35.1}%
+\contentsline {subsection}{\numberline {5.36}tests/src/utils/utils\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}tests.c File Reference}{86}{subsection.5.36}%
+\contentsline {subsubsection}{\numberline {5.36.1}Detailed Description}{87}{subsubsection.5.36.1}%
+\contentsline {section}{Index}{89}{section*.101}%

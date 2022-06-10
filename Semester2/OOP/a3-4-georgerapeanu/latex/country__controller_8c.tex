@@ -1,0 +1,631 @@
+\hypertarget{country__controller_8c}{}\doxysubsection{src/controller/country\+\_\+controller.c File Reference}
+\label{country__controller_8c}\index{src/controller/country\_controller.c@{src/controller/country\_controller.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/controller/country\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/utils/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for country\+\_\+controller.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{country__controller_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$ \mbox{\hyperlink{country__controller_8c_abc27b399e45a1502a7de49b6b06264fa}{create\+\_\+country\+\_\+controller}} (\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$p\+\_\+repository, \mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+repository, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em creates a country controller and returns the pointer to it \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a30a31576f3de497cf307d7bf65df2b8a}{delete\+\_\+country\+\_\+controller}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller)
+\begin{DoxyCompactList}\small\item\em frees the memory allocated for a country\+\_\+controller \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a66f295c08db0e1a1a19ae5d226d196d6}{filter\+\_\+by\+\_\+exact\+\_\+name}} (void $\ast$p\+\_\+country, void $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em filters countries by checking their exact name \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a5da4cc603251c8e6046cc13eb24ee8c8}{get\+\_\+index\+\_\+from\+\_\+name}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+name, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em returns the index of a country by name in repository. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a0fe31730333ddcb630f9e9bc4b7ad00c}{add\+\_\+country}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em adds a country to the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a84b2aee9a438264dd3c5f5903c13080b}{remove\+\_\+country}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const int index, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em removes a country from the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a1d3d43d511933b2b3ec724974e9d9b92}{update\+\_\+country}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const int index, const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+new\+\_\+country, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em updates a country from the controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_ac6c3bd9253f6f108341a90b0f05dc4b9}{migrate\+\_\+country}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const int src\+\_\+index, const int dst\+\_\+index, const int population, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em migrates population from a country to another \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a389ffa1ddc2c1a498a345da74f0ad141}{free\+\_\+add\+\_\+country\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args)
+\item 
+void \mbox{\hyperlink{country__controller_8c_a07f3aa7388cc888650aa80768a7e4775}{free\+\_\+remove\+\_\+country\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args)
+\begin{DoxyCompactList}\small\item\em this function frees the memory allocated for the arguments a remove from args operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_aa3672a1f7b21bbdf91e9677d971190ec}{free\+\_\+update\+\_\+country\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args)
+\begin{DoxyCompactList}\small\item\em this function frees the memory allocated for arguments for a update from args operation \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{country__controller_8c_aff4228aab4b6e22d11d19355469accae}\label{country__controller_8c_aff4228aab4b6e22d11d19355469accae}} 
+void {\bfseries free\+\_\+migrate\+\_\+country\+\_\+args} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args)
+\item 
+void \mbox{\hyperlink{country__controller_8c_aac21d88a84500979e04c2bb315261c3d}{add\+\_\+country\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+country\+\_\+name, const char $\ast$p\+\_\+country\+\_\+continent, const int population, int make\+\_\+undo\+\_\+redo, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Adds a country to the controller. This function should be used by UI only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_ade4664c7e0597bedbe975163fcffa662}{add\+\_\+country\+\_\+from\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Adds a country using arguments contained in a single parameter. This is intended to be used only for undo\+\_\+operation/redo\+\_\+operation purposes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a5d3d6ddd330cb66136fee966364cade3}{remove\+\_\+country\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+country\+\_\+name, int make\+\_\+undo\+\_\+redo, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Removes a country based on its name. This is intended to be used by UI only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a6134f472cc38feb3497d6c750b2b9c92}{remove\+\_\+country\+\_\+from\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Removes a country using arguments contained in a single parameter. This is intended to be used only for undo\+\_\+operation/redo\+\_\+operation purposes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a745de129e60658824bac62bfc7fe8d1d}{update\+\_\+country\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+country\+\_\+name, const int new\+\_\+population, int make\+\_\+undo\+\_\+redo\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Updates a country based on its name. This is intended to be used by UI only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a7a3f7b3fb8746affc81714e19227f6db}{update\+\_\+country\+\_\+from\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Updates a country using arguments contained in a single parameter. This is intended to be used for undo\+\_\+operation/redo\+\_\+operation purposes only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_aec5a3dccbe654e8a5a4c086f52fbffa5}{migrate\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+country\+\_\+source\+\_\+name, const char $\ast$p\+\_\+country\+\_\+destination\+\_\+name, const int population, int make\+\_\+undo\+\_\+redo\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em migrates population from a country to another. This is intended to be used by UI only. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{country__controller_8c_a421866ea8a6cfe029195bd552c632a92}{migrate\+\_\+from\+\_\+args}} (\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$args, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em migrates population from a country to another. This is intended to be used for undo\+\_\+operation/redo\+\_\+operation purposes only. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{country__controller_8c_a45960c8f446428c9aacf1f62cb9dd38e}{get\+\_\+p\+\_\+countries\+\_\+from\+\_\+p\+\_\+indexes}} (const \mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+indexes, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em returns a vector containing the pointers to the countries corresponding to the indexes from a given vector \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a44ba61c9e1e094ed99aeb20b829f22c9}{filter\+\_\+contains\+\_\+string}} (\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country, void $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em returns 1 if the given country contains a given string in its name and 0 otherwise \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{country__controller_8c_abe94e091971dc3c14bfbbbf9a4123568}{get\+\_\+countries\+\_\+containing\+\_\+string}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+name, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function returns all countries which have given string as substring in their name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a6da0200ef17ddc4553a026a91f82314e}{filter\+\_\+at\+\_\+least}} (\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country, void $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em returns 1 if the given country has more population than a given amount \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{country__controller_8c_a272e9220a0b8b8712872b80ad0805466}{get\+\_\+countries\+\_\+with\+\_\+at\+\_\+least}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const int population, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This function returns all countries which have at least a specified population. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a14d3341d8d90944ba79e9b8474b17650}{filter\+\_\+matches\+\_\+string\+\_\+continent\+\_\+and\+\_\+population}} (\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country, void $\ast$$\ast$args)
+\begin{DoxyCompactList}\small\item\em returns 1 if the given country\textquotesingle{}s continent matches a string, and 0 otherwise \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_acde0126a75ba32501669de70ef51cdc3}{cmp\+\_\+ascending}} (const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$a, const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$b)
+\begin{DoxyCompactList}\small\item\em comparator for sorting countries ascendingly according to population \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{country__controller_8c_a16ff9e36223cebaca4efa1378209b23b}{cmp\+\_\+descending}} (const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$a, const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$b)
+\begin{DoxyCompactList}\small\item\em comparator for sorting countries descendingly according to population \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$ \mbox{\hyperlink{country__controller_8c_ab4649257a9867ed607f402277e2844b1}{get\+\_\+countries\+\_\+from\+\_\+continent}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, const char $\ast$p\+\_\+continent\+\_\+name, const int population, const char $\ast$p\+\_\+sort\+\_\+order, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em This functions returns all countries from a continent with at least a specified population. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+This file contains the implementation for the functions from \mbox{\hyperlink{country__controller_8h_source}{country\+\_\+controller.\+h}} 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{country__controller_8c_a0fe31730333ddcb630f9e9bc4b7ad00c}\label{country__controller_8c_a0fe31730333ddcb630f9e9bc4b7ad00c}} 
+\index{country\_controller.c@{country\_controller.c}!add\_country@{add\_country}}
+\index{add\_country@{add\_country}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{add\_country()}{add\_country()}}
+{\footnotesize\ttfamily void add\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+adds a country to the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+country} & a pointer to the country to be added. \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_ade4664c7e0597bedbe975163fcffa662}\label{country__controller_8c_ade4664c7e0597bedbe975163fcffa662}} 
+\index{country\_controller.c@{country\_controller.c}!add\_country\_from\_args@{add\_country\_from\_args}}
+\index{add\_country\_from\_args@{add\_country\_from\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{add\_country\_from\_args()}{add\_country\_from\_args()}}
+{\footnotesize\ttfamily void add\+\_\+country\+\_\+from\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Adds a country using arguments contained in a single parameter. This is intended to be used only for undo\+\_\+operation/redo\+\_\+operation purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & a pointer to the vector of arguments this function would normally use \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_aac21d88a84500979e04c2bb315261c3d}\label{country__controller_8c_aac21d88a84500979e04c2bb315261c3d}} 
+\index{country\_controller.c@{country\_controller.c}!add\_country\_ui@{add\_country\_ui}}
+\index{add\_country\_ui@{add\_country\_ui}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{add\_country\_ui()}{add\_country\_ui()}}
+{\footnotesize\ttfamily void add\+\_\+country\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+name,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+continent,  }\item[{const int}]{population,  }\item[{int}]{make\+\_\+undo\+\_\+redo,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Adds a country to the controller. This function should be used by UI only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+country\+\_\+name} & a pointer to the country name string \\
+\hline
+{\em p\+\_\+country\+\_\+continent} & a pointer to the country continent string \\
+\hline
+{\em population} & the population of the country \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+this frees the memory for the operation because its data is stored in the repository\mbox{\Hypertarget{country__controller_8c_acde0126a75ba32501669de70ef51cdc3}\label{country__controller_8c_acde0126a75ba32501669de70ef51cdc3}} 
+\index{country\_controller.c@{country\_controller.c}!cmp\_ascending@{cmp\_ascending}}
+\index{cmp\_ascending@{cmp\_ascending}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{cmp\_ascending()}{cmp\_ascending()}}
+{\footnotesize\ttfamily int cmp\+\_\+ascending (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$}]{a,  }\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+comparator for sorting countries ascendingly according to population 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to the first country \\
+\hline
+{\em b} & pointer to the second country \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return 0 if a has more population than b, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a16ff9e36223cebaca4efa1378209b23b}\label{country__controller_8c_a16ff9e36223cebaca4efa1378209b23b}} 
+\index{country\_controller.c@{country\_controller.c}!cmp\_descending@{cmp\_descending}}
+\index{cmp\_descending@{cmp\_descending}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{cmp\_descending()}{cmp\_descending()}}
+{\footnotesize\ttfamily int cmp\+\_\+descending (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$}]{a,  }\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$$\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+comparator for sorting countries descendingly according to population 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & pointer to a pointer to the first country \\
+\hline
+{\em b} & pointer to a pointer to the second country \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return 0 if a has more population than b, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_abc27b399e45a1502a7de49b6b06264fa}\label{country__controller_8c_abc27b399e45a1502a7de49b6b06264fa}} 
+\index{country\_controller.c@{country\_controller.c}!create\_country\_controller@{create\_country\_controller}}
+\index{create\_country\_controller@{create\_country\_controller}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{create\_country\_controller()}{create\_country\_controller()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}}$\ast$ create\+\_\+country\+\_\+controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrepository__t}{repository\+\_\+t}} $\ast$}]{p\+\_\+repository,  }\item[{\mbox{\hyperlink{structundo__redo__repository__t}{undo\+\_\+redo\+\_\+repository\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+repository,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+creates a country controller and returns the pointer to it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the repository containing the countries. \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the country controller 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a30a31576f3de497cf307d7bf65df2b8a}\label{country__controller_8c_a30a31576f3de497cf307d7bf65df2b8a}} 
+\index{country\_controller.c@{country\_controller.c}!delete\_country\_controller@{delete\_country\_controller}}
+\index{delete\_country\_controller@{delete\_country\_controller}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{delete\_country\_controller()}{delete\_country\_controller()}}
+{\footnotesize\ttfamily void delete\+\_\+country\+\_\+controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller }\end{DoxyParamCaption})}
+
+
+
+frees the memory allocated for a country\+\_\+controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a6da0200ef17ddc4553a026a91f82314e}\label{country__controller_8c_a6da0200ef17ddc4553a026a91f82314e}} 
+\index{country\_controller.c@{country\_controller.c}!filter\_at\_least@{filter\_at\_least}}
+\index{filter\_at\_least@{filter\_at\_least}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{filter\_at\_least()}{filter\_at\_least()}}
+{\footnotesize\ttfamily int filter\+\_\+at\+\_\+least (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country,  }\item[{void $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+returns 1 if the given country has more population than a given amount 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & pointer to the country \\
+\hline
+{\em args} & a pointer to an array of pointers containing a single element which points to an int which is the population to be checked against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the string is included, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a66f295c08db0e1a1a19ae5d226d196d6}\label{country__controller_8c_a66f295c08db0e1a1a19ae5d226d196d6}} 
+\index{country\_controller.c@{country\_controller.c}!filter\_by\_exact\_name@{filter\_by\_exact\_name}}
+\index{filter\_by\_exact\_name@{filter\_by\_exact\_name}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{filter\_by\_exact\_name()}{filter\_by\_exact\_name()}}
+{\footnotesize\ttfamily int filter\+\_\+by\+\_\+exact\+\_\+name (\begin{DoxyParamCaption}\item[{void $\ast$}]{p\+\_\+country,  }\item[{void $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+filters countries by checking their exact name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & pointer to a country \\
+\hline
+{\em args} & void$\ast$$\ast$ pointer containing only one element which is a pointer to the name to be checked against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if they are the same, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a44ba61c9e1e094ed99aeb20b829f22c9}\label{country__controller_8c_a44ba61c9e1e094ed99aeb20b829f22c9}} 
+\index{country\_controller.c@{country\_controller.c}!filter\_contains\_string@{filter\_contains\_string}}
+\index{filter\_contains\_string@{filter\_contains\_string}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{filter\_contains\_string()}{filter\_contains\_string()}}
+{\footnotesize\ttfamily int filter\+\_\+contains\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country,  }\item[{void $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+returns 1 if the given country contains a given string in its name and 0 otherwise 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & pointer to the country \\
+\hline
+{\em args} & a pointer to an array of pointers containing a single element which points to the string which is to be checked against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the string is included, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a14d3341d8d90944ba79e9b8474b17650}\label{country__controller_8c_a14d3341d8d90944ba79e9b8474b17650}} 
+\index{country\_controller.c@{country\_controller.c}!filter\_matches\_string\_continent\_and\_population@{filter\_matches\_string\_continent\_and\_population}}
+\index{filter\_matches\_string\_continent\_and\_population@{filter\_matches\_string\_continent\_and\_population}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{filter\_matches\_string\_continent\_and\_population()}{filter\_matches\_string\_continent\_and\_population()}}
+{\footnotesize\ttfamily int filter\+\_\+matches\+\_\+string\+\_\+continent\+\_\+and\+\_\+population (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country,  }\item[{void $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+returns 1 if the given country\textquotesingle{}s continent matches a string, and 0 otherwise 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+country} & pointer to the country \\
+\hline
+{\em args} & a pointer to an array of pointers containing a single element which points to the string which is to be checked against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the string is included, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a389ffa1ddc2c1a498a345da74f0ad141}\label{country__controller_8c_a389ffa1ddc2c1a498a345da74f0ad141}} 
+\index{country\_controller.c@{country\_controller.c}!free\_add\_country\_args@{free\_add\_country\_args}}
+\index{free\_add\_country\_args@{free\_add\_country\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{free\_add\_country\_args()}{free\_add\_country\_args()}}
+{\footnotesize\ttfamily void free\+\_\+add\+\_\+country\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+frees the memory allocated for the arguments of an add operation 
+\begin{DoxyParams}{Parameters}
+{\em args} & a pointer to the vector containing the arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a07f3aa7388cc888650aa80768a7e4775}\label{country__controller_8c_a07f3aa7388cc888650aa80768a7e4775}} 
+\index{country\_controller.c@{country\_controller.c}!free\_remove\_country\_args@{free\_remove\_country\_args}}
+\index{free\_remove\_country\_args@{free\_remove\_country\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{free\_remove\_country\_args()}{free\_remove\_country\_args()}}
+{\footnotesize\ttfamily void free\+\_\+remove\+\_\+country\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+this function frees the memory allocated for the arguments a remove from args operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & pointer to the arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_aa3672a1f7b21bbdf91e9677d971190ec}\label{country__controller_8c_aa3672a1f7b21bbdf91e9677d971190ec}} 
+\index{country\_controller.c@{country\_controller.c}!free\_update\_country\_args@{free\_update\_country\_args}}
+\index{free\_update\_country\_args@{free\_update\_country\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{free\_update\_country\_args()}{free\_update\_country\_args()}}
+{\footnotesize\ttfamily void free\+\_\+update\+\_\+country\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+this function frees the memory allocated for arguments for a update from args operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & pointer to the arguments \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_abe94e091971dc3c14bfbbbf9a4123568}\label{country__controller_8c_abe94e091971dc3c14bfbbbf9a4123568}} 
+\index{country\_controller.c@{country\_controller.c}!get\_countries\_containing\_string@{get\_countries\_containing\_string}}
+\index{get\_countries\_containing\_string@{get\_countries\_containing\_string}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{get\_countries\_containing\_string()}{get\_countries\_containing\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ get\+\_\+countries\+\_\+containing\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+name,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function returns all countries which have given string as substring in their name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+name} & a pointer to the string containing the name \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a vector containing pointer to the valid countries. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_ab4649257a9867ed607f402277e2844b1}\label{country__controller_8c_ab4649257a9867ed607f402277e2844b1}} 
+\index{country\_controller.c@{country\_controller.c}!get\_countries\_from\_continent@{get\_countries\_from\_continent}}
+\index{get\_countries\_from\_continent@{get\_countries\_from\_continent}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{get\_countries\_from\_continent()}{get\_countries\_from\_continent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ get\+\_\+countries\+\_\+from\+\_\+continent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+continent\+\_\+name,  }\item[{const int}]{population,  }\item[{const char $\ast$}]{p\+\_\+sort\+\_\+order,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This functions returns all countries from a continent with at least a specified population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+continent\+\_\+name} & a pointer to the string containing the continent name \\
+\hline
+{\em population} & the minimum population a country should have \\
+\hline
+{\em p\+\_\+sort\+\_\+order} & a pointer to the string containing the order \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a vector containing pointer to all valid countries. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a272e9220a0b8b8712872b80ad0805466}\label{country__controller_8c_a272e9220a0b8b8712872b80ad0805466}} 
+\index{country\_controller.c@{country\_controller.c}!get\_countries\_with\_at\_least@{get\_countries\_with\_at\_least}}
+\index{get\_countries\_with\_at\_least@{get\_countries\_with\_at\_least}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{get\_countries\_with\_at\_least()}{get\_countries\_with\_at\_least()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ get\+\_\+countries\+\_\+with\+\_\+at\+\_\+least (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const int}]{population,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+This function returns all countries which have at least a specified population. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller. \\
+\hline
+{\em population} & the minimum population a country should have. \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to a vector containing pointers to all valid countries. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a5da4cc603251c8e6046cc13eb24ee8c8}\label{country__controller_8c_a5da4cc603251c8e6046cc13eb24ee8c8}} 
+\index{country\_controller.c@{country\_controller.c}!get\_index\_from\_name@{get\_index\_from\_name}}
+\index{get\_index\_from\_name@{get\_index\_from\_name}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{get\_index\_from\_name()}{get\_index\_from\_name()}}
+{\footnotesize\ttfamily int get\+\_\+index\+\_\+from\+\_\+name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+name,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+returns the index of a country by name in repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+name} & a pointer to the string containing the name of the country \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the country index if it exists, and -\/1 otherwise(but it also sets p\+\_\+error to 11) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_a45960c8f446428c9aacf1f62cb9dd38e}\label{country__controller_8c_a45960c8f446428c9aacf1f62cb9dd38e}} 
+\index{country\_controller.c@{country\_controller.c}!get\_p\_countries\_from\_p\_indexes@{get\_p\_countries\_from\_p\_indexes}}
+\index{get\_p\_countries\_from\_p\_indexes@{get\_p\_countries\_from\_p\_indexes}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{get\_p\_countries\_from\_p\_indexes()}{get\_p\_countries\_from\_p\_indexes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structvector__t}{vector\+\_\+t}}$\ast$ get\+\_\+p\+\_\+countries\+\_\+from\+\_\+p\+\_\+indexes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+indexes,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+returns a vector containing the pointers to the countries corresponding to the indexes from a given vector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & pointer to the country controller \\
+\hline
+{\em p\+\_\+indexes} & pointer to the vector containing the indexes \\
+\hline
+{\em p\+\_\+error} & pointer to the variable that receives the error variable. Can be left N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a vector containing pointers to countries. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{country__controller_8c_ac6c3bd9253f6f108341a90b0f05dc4b9}\label{country__controller_8c_ac6c3bd9253f6f108341a90b0f05dc4b9}} 
+\index{country\_controller.c@{country\_controller.c}!migrate\_country@{migrate\_country}}
+\index{migrate\_country@{migrate\_country}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{migrate\_country()}{migrate\_country()}}
+{\footnotesize\ttfamily void migrate\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const int}]{src\+\_\+index,  }\item[{const int}]{dst\+\_\+index,  }\item[{const int}]{population,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+migrates population from a country to another 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em src\+\_\+index} & the index of the source country \\
+\hline
+{\em dst\+\_\+index} & the index of the destination country \\
+\hline
+{\em population} & the population that is migrated \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a421866ea8a6cfe029195bd552c632a92}\label{country__controller_8c_a421866ea8a6cfe029195bd552c632a92}} 
+\index{country\_controller.c@{country\_controller.c}!migrate\_from\_args@{migrate\_from\_args}}
+\index{migrate\_from\_args@{migrate\_from\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{migrate\_from\_args()}{migrate\_from\_args()}}
+{\footnotesize\ttfamily void migrate\+\_\+from\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+migrates population from a country to another. This is intended to be used for undo\+\_\+operation/redo\+\_\+operation purposes only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & a pointer to the vector of arguments this function would normally use \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_aec5a3dccbe654e8a5a4c086f52fbffa5}\label{country__controller_8c_aec5a3dccbe654e8a5a4c086f52fbffa5}} 
+\index{country\_controller.c@{country\_controller.c}!migrate\_ui@{migrate\_ui}}
+\index{migrate\_ui@{migrate\_ui}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{migrate\_ui()}{migrate\_ui()}}
+{\footnotesize\ttfamily void migrate\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+source\+\_\+name,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+destination\+\_\+name,  }\item[{const int}]{population,  }\item[{int}]{make\+\_\+undo\+\_\+redo,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+migrates population from a country to another. This is intended to be used by UI only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+country\+\_\+source\+\_\+name} & a pointer to the string containing the source country name \\
+\hline
+{\em p\+\_\+country\+\_\+destination\+\_\+name} & a pointer to the string containing the destination country name \\
+\hline
+{\em population} & the population that migrates \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+this frees the memory for the operation because its data is stored in the repository\mbox{\Hypertarget{country__controller_8c_a84b2aee9a438264dd3c5f5903c13080b}\label{country__controller_8c_a84b2aee9a438264dd3c5f5903c13080b}} 
+\index{country\_controller.c@{country\_controller.c}!remove\_country@{remove\_country}}
+\index{remove\_country@{remove\_country}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{remove\_country()}{remove\_country()}}
+{\footnotesize\ttfamily void remove\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const int}]{index,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+removes a country from the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em index} & the index of the country which is removed \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a6134f472cc38feb3497d6c750b2b9c92}\label{country__controller_8c_a6134f472cc38feb3497d6c750b2b9c92}} 
+\index{country\_controller.c@{country\_controller.c}!remove\_country\_from\_args@{remove\_country\_from\_args}}
+\index{remove\_country\_from\_args@{remove\_country\_from\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{remove\_country\_from\_args()}{remove\_country\_from\_args()}}
+{\footnotesize\ttfamily void remove\+\_\+country\+\_\+from\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Removes a country using arguments contained in a single parameter. This is intended to be used only for undo\+\_\+operation/redo\+\_\+operation purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & a pointer to the vector of arguments this function would normally use \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a5d3d6ddd330cb66136fee966364cade3}\label{country__controller_8c_a5d3d6ddd330cb66136fee966364cade3}} 
+\index{country\_controller.c@{country\_controller.c}!remove\_country\_ui@{remove\_country\_ui}}
+\index{remove\_country\_ui@{remove\_country\_ui}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{remove\_country\_ui()}{remove\_country\_ui()}}
+{\footnotesize\ttfamily void remove\+\_\+country\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+name,  }\item[{int}]{make\+\_\+undo\+\_\+redo,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Removes a country based on its name. This is intended to be used by UI only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+country\+\_\+name} & a pointer to the string containing the country name \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+this frees the memory for the operation because its data is stored in the repository\mbox{\Hypertarget{country__controller_8c_a1d3d43d511933b2b3ec724974e9d9b92}\label{country__controller_8c_a1d3d43d511933b2b3ec724974e9d9b92}} 
+\index{country\_controller.c@{country\_controller.c}!update\_country@{update\_country}}
+\index{update\_country@{update\_country}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{update\_country()}{update\_country()}}
+{\footnotesize\ttfamily void update\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const int}]{index,  }\item[{const \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+new\+\_\+country,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+updates a country from the controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em index} & the index of the country which is removed \\
+\hline
+{\em p\+\_\+new\+\_\+country} & a pointer to a country object containing the new data \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a7a3f7b3fb8746affc81714e19227f6db}\label{country__controller_8c_a7a3f7b3fb8746affc81714e19227f6db}} 
+\index{country\_controller.c@{country\_controller.c}!update\_country\_from\_args@{update\_country\_from\_args}}
+\index{update\_country\_from\_args@{update\_country\_from\_args}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{update\_country\_from\_args()}{update\_country\_from\_args()}}
+{\footnotesize\ttfamily void update\+\_\+country\+\_\+from\+\_\+args (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{args,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Updates a country using arguments contained in a single parameter. This is intended to be used for undo\+\_\+operation/redo\+\_\+operation purposes only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & a pointer to the vector of arguments this function would normally use \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{country__controller_8c_a745de129e60658824bac62bfc7fe8d1d}\label{country__controller_8c_a745de129e60658824bac62bfc7fe8d1d}} 
+\index{country\_controller.c@{country\_controller.c}!update\_country\_ui@{update\_country\_ui}}
+\index{update\_country\_ui@{update\_country\_ui}!country\_controller.c@{country\_controller.c}}
+\doxyparagraph{\texorpdfstring{update\_country\_ui()}{update\_country\_ui()}}
+{\footnotesize\ttfamily void update\+\_\+country\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{const char $\ast$}]{p\+\_\+country\+\_\+name,  }\item[{const int}]{new\+\_\+population,  }\item[{int}]{make\+\_\+undo\+\_\+redo,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+Updates a country based on its name. This is intended to be used by UI only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & a pointer to the country controller \\
+\hline
+{\em p\+\_\+country\+\_\+name} & a pointer to the string containing the country name \\
+\hline
+{\em new\+\_\+population} & the new population of the country. \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+\end{DoxyParams}
+this frees the memory for the operation because its data is stored in the repository

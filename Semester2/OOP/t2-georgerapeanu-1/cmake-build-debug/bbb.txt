@@ -1,0 +1,6 @@
+Car with 2 doors
+Engine type: turbo
+Fuel type: gasoline
+Base price: 3000
+Price10001
+Price 10001

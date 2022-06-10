@@ -1,0 +1,252 @@
+\hypertarget{classMovieController}{}\doxysubsection{Movie\+Controller Class Reference}
+\label{classMovieController}\index{MovieController@{MovieController}}
+
+
+the model of the \mbox{\hyperlink{classMovieController}{Movie\+Controller}} class  
+
+
+
+
+{\ttfamily \#include $<$Movie\+Controller.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMovieController_a9e73da64bdc5db5faf0f77b6dd6c21db}\label{classMovieController_a9e73da64bdc5db5faf0f77b6dd6c21db}} 
+\mbox{\hyperlink{classMovieController_a9e73da64bdc5db5faf0f77b6dd6c21db}{Movie\+Controller}} (\mbox{\hyperlink{classAbstractRepository}{Abstract\+Repository}}$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ \&repository, \mbox{\hyperlink{classAbstractWatchlist}{Abstract\+Watchlist}}$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ \&watchlist)
+\begin{DoxyCompactList}\small\item\em The default constructor of the movie controller. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMovieController_ac470cd0e22cf31a026e36f24e0d48de8}\label{classMovieController_ac470cd0e22cf31a026e36f24e0d48de8}} 
+\mbox{\hyperlink{classMovieController_ac470cd0e22cf31a026e36f24e0d48de8}{$\sim$\+Movie\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em The destructor of the movie controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMovieController}{Movie\+Controller}} \& \mbox{\hyperlink{classMovieController_addafe6ea4898a73a38242794dc8788f2}{operator=}} (const \mbox{\hyperlink{classMovieController}{Movie\+Controller}} \&other)
+\begin{DoxyCompactList}\small\item\em the assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_aecde9d5cef8281896acc384964ad1761}{add\+\_\+movie\+\_\+admin}} (const std\+::string \&title, const std\+::string \&genre, const int \&year, const int \&likes, const std\+::string \&trailer\+\_\+link)
+\begin{DoxyCompactList}\small\item\em adds a movie to the movie repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_a4ef6ee6ab48eb55f83b90b8e952b87b7}{update\+\_\+movie\+\_\+admin}} (const std\+::string \&title, const std\+::string \&genre, const int \&year, const int \&likes, const std\+::string \&trailer\+\_\+link)
+\begin{DoxyCompactList}\small\item\em updates a movie to the movie repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_a571d9ece9c0f6e3ac12b91431a00fed9}{remove\+\_\+movie\+\_\+admin}} (const std\+::string \&title, const int \&year)
+\begin{DoxyCompactList}\small\item\em this function removes a movie from the movie repository \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMovie}{Movie}} \mbox{\hyperlink{classMovieController_a930ebf11b2926e96be6cea98c6da3e93}{get\+\_\+movie\+\_\+user}} (const std\+::string \&title, const int \&year)
+\begin{DoxyCompactList}\small\item\em this function finds a movie in the repository \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ \mbox{\hyperlink{classMovieController_a56d0191059eb289e7d50aa6ed44f4327}{get\+\_\+all\+\_\+movies\+\_\+admin}} ()
+\begin{DoxyCompactList}\small\item\em this function returns all the movies from the repository \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ \mbox{\hyperlink{classMovieController_a0aef237f1a4864250d028b35a5f5360c}{get\+\_\+movies\+\_\+user}} (const std\+::string genre)
+\begin{DoxyCompactList}\small\item\em this function gets a vector with all the movies that have a given genre. If the genre is empty, all genres are considered. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_ae4124de0675991c548864534e529901c}{add\+\_\+movie\+\_\+user}} (const \mbox{\hyperlink{classMovie}{Movie}} \&movie)
+\begin{DoxyCompactList}\small\item\em this function adds a movie to the user watch list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_aa92ebed5d9370798b49ff26bb16f5a32}{remove\+\_\+movie\+\_\+user}} (const \mbox{\hyperlink{classMovie}{Movie}} \&movie)
+\begin{DoxyCompactList}\small\item\em this function removes a movie from the user watch list \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMovieController_a8aab2c09c941800225fb7d905875ae79}\label{classMovieController_a8aab2c09c941800225fb7d905875ae79}} 
+std\+::vector$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ \mbox{\hyperlink{classMovieController_a8aab2c09c941800225fb7d905875ae79}{get\+\_\+watchlist\+\_\+user}} ()
+\begin{DoxyCompactList}\small\item\em this function gets a list of the movies in the user\textquotesingle{}s watchlist \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMovieController_a5348a8d5bd0debfa8faf45c101b20a97}{like\+\_\+movie\+\_\+user}} (const \mbox{\hyperlink{classMovie}{Movie}} \&movie)
+\begin{DoxyCompactList}\small\item\em gives a like to a movie \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classMovieController_a24b7a1a9333dbebf285082731a567a1e}{my\+\_\+tolower}} (const std\+::string \&s) const
+\begin{DoxyCompactList}\small\item\em converts a string to lower characters \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMovieController_ac9362f23ff266582b594b21d7c66a47f}\label{classMovieController_ac9362f23ff266582b594b21d7c66a47f}} 
+void \mbox{\hyperlink{classMovieController_ac9362f23ff266582b594b21d7c66a47f}{display\+\_\+watchlist}} () const
+\begin{DoxyCompactList}\small\item\em this function displays the current watchlist, in the required format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+the model of the \mbox{\hyperlink{classMovieController}{Movie\+Controller}} class 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMovieController_aecde9d5cef8281896acc384964ad1761}\label{classMovieController_aecde9d5cef8281896acc384964ad1761}} 
+\index{MovieController@{MovieController}!add\_movie\_admin@{add\_movie\_admin}}
+\index{add\_movie\_admin@{add\_movie\_admin}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{add\_movie\_admin()}{add\_movie\_admin()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::add\+\_\+movie\+\_\+admin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{genre,  }\item[{const int \&}]{year,  }\item[{const int \&}]{likes,  }\item[{const std\+::string \&}]{trailer\+\_\+link }\end{DoxyParamCaption})}
+
+
+
+adds a movie to the movie repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the title of the movie to be added \\
+\hline
+{\em genre} & the genre of the movie to be added \\
+\hline
+{\em year} & the year of the movie to be added \\
+\hline
+{\em likes} & the number of likes of the movie to be added \\
+\hline
+{\em trailer\+\_\+link} & the trailer of the movie to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_ae4124de0675991c548864534e529901c}\label{classMovieController_ae4124de0675991c548864534e529901c}} 
+\index{MovieController@{MovieController}!add\_movie\_user@{add\_movie\_user}}
+\index{add\_movie\_user@{add\_movie\_user}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{add\_movie\_user()}{add\_movie\_user()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::add\+\_\+movie\+\_\+user (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{movie }\end{DoxyParamCaption})}
+
+
+
+this function adds a movie to the user watch list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & the movie to be added \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_a56d0191059eb289e7d50aa6ed44f4327}\label{classMovieController_a56d0191059eb289e7d50aa6ed44f4327}} 
+\index{MovieController@{MovieController}!get\_all\_movies\_admin@{get\_all\_movies\_admin}}
+\index{get\_all\_movies\_admin@{get\_all\_movies\_admin}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{get\_all\_movies\_admin()}{get\_all\_movies\_admin()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ Movie\+Controller\+::get\+\_\+all\+\_\+movies\+\_\+admin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function returns all the movies from the repository 
+
+\begin{DoxyReturn}{Returns}
+a list of the movies from the repository 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovieController_a930ebf11b2926e96be6cea98c6da3e93}\label{classMovieController_a930ebf11b2926e96be6cea98c6da3e93}} 
+\index{MovieController@{MovieController}!get\_movie\_user@{get\_movie\_user}}
+\index{get\_movie\_user@{get\_movie\_user}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{get\_movie\_user()}{get\_movie\_user()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMovie}{Movie}} Movie\+Controller\+::get\+\_\+movie\+\_\+user (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const int \&}]{year }\end{DoxyParamCaption})}
+
+
+
+this function finds a movie in the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the title of the movie \\
+\hline
+{\em year} & the year of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_a0aef237f1a4864250d028b35a5f5360c}\label{classMovieController_a0aef237f1a4864250d028b35a5f5360c}} 
+\index{MovieController@{MovieController}!get\_movies\_user@{get\_movies\_user}}
+\index{get\_movies\_user@{get\_movies\_user}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{get\_movies\_user()}{get\_movies\_user()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classMovie}{Movie}} $>$ Movie\+Controller\+::get\+\_\+movies\+\_\+user (\begin{DoxyParamCaption}\item[{const std\+::string}]{genre }\end{DoxyParamCaption})}
+
+
+
+this function gets a vector with all the movies that have a given genre. If the genre is empty, all genres are considered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em genre} & the genre of the movies \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector of the movies 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovieController_a5348a8d5bd0debfa8faf45c101b20a97}\label{classMovieController_a5348a8d5bd0debfa8faf45c101b20a97}} 
+\index{MovieController@{MovieController}!like\_movie\_user@{like\_movie\_user}}
+\index{like\_movie\_user@{like\_movie\_user}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{like\_movie\_user()}{like\_movie\_user()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::like\+\_\+movie\+\_\+user (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{movie }\end{DoxyParamCaption})}
+
+
+
+gives a like to a movie 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & the movie to be liked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_a24b7a1a9333dbebf285082731a567a1e}\label{classMovieController_a24b7a1a9333dbebf285082731a567a1e}} 
+\index{MovieController@{MovieController}!my\_tolower@{my\_tolower}}
+\index{my\_tolower@{my\_tolower}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{my\_tolower()}{my\_tolower()}}
+{\footnotesize\ttfamily std\+::string Movie\+Controller\+::my\+\_\+tolower (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+converts a string to lower characters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the string containing only lowered characters 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovieController_addafe6ea4898a73a38242794dc8788f2}\label{classMovieController_addafe6ea4898a73a38242794dc8788f2}} 
+\index{MovieController@{MovieController}!operator=@{operator=}}
+\index{operator=@{operator=}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMovieController}{Movie\+Controller}} \& Movie\+Controller\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovieController}{Movie\+Controller}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+the assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & the other controller \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copy 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMovieController_a571d9ece9c0f6e3ac12b91431a00fed9}\label{classMovieController_a571d9ece9c0f6e3ac12b91431a00fed9}} 
+\index{MovieController@{MovieController}!remove\_movie\_admin@{remove\_movie\_admin}}
+\index{remove\_movie\_admin@{remove\_movie\_admin}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{remove\_movie\_admin()}{remove\_movie\_admin()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::remove\+\_\+movie\+\_\+admin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const int \&}]{year }\end{DoxyParamCaption})}
+
+
+
+this function removes a movie from the movie repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the title of the movie \\
+\hline
+{\em year} & the year of the movie \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_aa92ebed5d9370798b49ff26bb16f5a32}\label{classMovieController_aa92ebed5d9370798b49ff26bb16f5a32}} 
+\index{MovieController@{MovieController}!remove\_movie\_user@{remove\_movie\_user}}
+\index{remove\_movie\_user@{remove\_movie\_user}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{remove\_movie\_user()}{remove\_movie\_user()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::remove\+\_\+movie\+\_\+user (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMovie}{Movie}} \&}]{movie }\end{DoxyParamCaption})}
+
+
+
+this function removes a movie from the user watch list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em movie} & the movie to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMovieController_a4ef6ee6ab48eb55f83b90b8e952b87b7}\label{classMovieController_a4ef6ee6ab48eb55f83b90b8e952b87b7}} 
+\index{MovieController@{MovieController}!update\_movie\_admin@{update\_movie\_admin}}
+\index{update\_movie\_admin@{update\_movie\_admin}!MovieController@{MovieController}}
+\doxyparagraph{\texorpdfstring{update\_movie\_admin()}{update\_movie\_admin()}}
+{\footnotesize\ttfamily void Movie\+Controller\+::update\+\_\+movie\+\_\+admin (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{title,  }\item[{const std\+::string \&}]{genre,  }\item[{const int \&}]{year,  }\item[{const int \&}]{likes,  }\item[{const std\+::string \&}]{trailer\+\_\+link }\end{DoxyParamCaption})}
+
+
+
+updates a movie to the movie repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & the title of the movie to be added \\
+\hline
+{\em genre} & the genre of the movie to be added \\
+\hline
+{\em year} & the year of the movie to be added \\
+\hline
+{\em likes} & the number of likes of the movie to be added \\
+\hline
+{\em trailer\+\_\+link} & the trailer of the movie to be added \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/controller/\mbox{\hyperlink{MovieController_8h}{Movie\+Controller.\+h}}\item 
+src/controller/\mbox{\hyperlink{MovieController_8cpp}{Movie\+Controller.\+cpp}}\end{DoxyCompactItemize}

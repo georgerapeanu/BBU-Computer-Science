@@ -1,0 +1,16 @@
+# ninja log v5
+790	2454	1648491120937480116	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/ui/UI.cpp.o	6671137b30e0e2fa
+14541	14659	1648491133133503626	lib/libgtest.a	329e58c003e57b51
+9	1647	1648491120133478567	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/controller/MovieController.cpp.o	b1ab148d441a6797
+1950	6669	1648491125153488243	tests/googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	70a5af161013feac
+1648	8277	1648491126761491343	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/domain/DynamicVectorTests.cpp.o	f8dfbe8bb86a345a
+2455	14540	1648491133013503394	tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	d5f4d13dbf442445
+4	522	1648491344161910377	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/Exceptions.cpp.o	d6af1493388bb52c
+1710	7855	1648491126337490526	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/repository/RepositoryTests.cpp.o	e57de534e9cf6321
+1557	7875	1648491126357490564	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/domain/MovieTests.cpp.o	e1167003a33b7e0e
+0	1556	1648491120041478389	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/repository/Repository.cpp.o	796feddcc5dcb38f
+10	7590	1648491126069490009	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/controller/MovieControllerTests.cpp.o	1c8ca6975561712d
+522	883	1648491344521911070	tests/a5_6_georgerapeanu_tests	958cd0c1e75bee64
+14660	14670	1648491133157503673	lib/libgtest_main.a	9a6135de2df4a7c8
+0	1709	1648491120193478683	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/DynamicVector.cpp.o	f0c854f840ac1e6
+2	1950	1648491120433479146	tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/__/src/domain/Movie.cpp.o	ac955959df3c9181

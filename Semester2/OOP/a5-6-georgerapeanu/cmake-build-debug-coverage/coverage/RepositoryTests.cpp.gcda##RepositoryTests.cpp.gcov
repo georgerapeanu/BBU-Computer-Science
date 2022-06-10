@@ -1,0 +1,3110 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/tests/repository/RepositoryTests.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/repository/RepositoryTests.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a5-6-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a5_6_georgerapeanu_tests.dir/repository/RepositoryTests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file RepositoryTests.cpp this file contains the tests for the reposiory
+        -:    3: */
+        -:    4:
+        -:    5:#include "gtest/gtest.h"
+        -:    6:#include "Repository.h"
+        -:    7:#include "Movie.h"
+        -:    8:
+        4:    9:TEST(RepositoryTests, test_add){
+        1:   10:    Repository<Movie> repository;
+        1:   11:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   12:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   13:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       9*:   14:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+        1:   15:    DynamicVector<Movie> movies = repository.get_all();
+        1:   16:    DynamicVector<Movie> expected_movies;
+        1:   17:    expected_movies.push_back(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   18:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   19:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       1*:   20:    ASSERT_EQ(expected_movies, movies);
+        -:   21:}
+------------------
+_ZN29RepositoryTests_test_add_TestC2Ev:
+function _ZN29RepositoryTests_test_add_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:    9:TEST(RepositoryTests, test_add){
+        1:    9-block  0
+call    0 returned 1
+------------------
+_ZN29RepositoryTests_test_add_TestD0Ev:
+function _ZN29RepositoryTests_test_add_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:    9:TEST(RepositoryTests, test_add){
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN29RepositoryTests_test_add_TestD2Ev:
+function _ZN29RepositoryTests_test_add_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:    9:TEST(RepositoryTests, test_add){
+        1:    9-block  0
+call    0 returned 1
+------------------
+_ZN29RepositoryTests_test_add_Test8TestBodyEv:
+function _ZN29RepositoryTests_test_add_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+        1:    9:TEST(RepositoryTests, test_add){
+        1:   10:    Repository<Movie> repository;
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   10-block  1
+call    3 never executed
+        1:   11:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   11-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   11-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   11-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   11-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   11-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   11-block  6
+call   25 never executed
+    $$$$$:   11-block  7
+    $$$$$:   11-block  8
+call   26 never executed
+    $$$$$:   11-block  9
+    $$$$$:   11-block 10
+call   27 never executed
+    $$$$$:   11-block 11
+    $$$$$:   11-block 12
+call   28 never executed
+    $$$$$:   11-block 13
+    $$$$$:   11-block 14
+call   29 never executed
+    $$$$$:   11-block 15
+    $$$$$:   11-block 16
+    $$$$$:   11-block 17
+    $$$$$:   11-block 18
+call   30 never executed
+    $$$$$:   11-block 19
+    $$$$$:   11-block 20
+call   31 never executed
+    $$$$$:   11-block 21
+        1:   12:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   12-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   12-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   12-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   12-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   12-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   12-block  5
+call   25 never executed
+    $$$$$:   12-block  6
+    $$$$$:   12-block  7
+call   26 never executed
+    $$$$$:   12-block  8
+    $$$$$:   12-block  9
+call   27 never executed
+    $$$$$:   12-block 10
+    $$$$$:   12-block 11
+call   28 never executed
+    $$$$$:   12-block 12
+    $$$$$:   12-block 13
+call   29 never executed
+    $$$$$:   12-block 14
+    $$$$$:   12-block 15
+    $$$$$:   12-block 16
+    $$$$$:   12-block 17
+call   30 never executed
+    $$$$$:   12-block 18
+    $$$$$:   12-block 19
+call   31 never executed
+    $$$$$:   12-block 20
+        1:   13:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   13-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   13-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   13-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   13-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   13-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   13-block  5
+call   25 never executed
+    $$$$$:   13-block  6
+    $$$$$:   13-block  7
+call   26 never executed
+    $$$$$:   13-block  8
+    $$$$$:   13-block  9
+call   27 never executed
+    $$$$$:   13-block 10
+    $$$$$:   13-block 11
+call   28 never executed
+    $$$$$:   13-block 12
+    $$$$$:   13-block 13
+call   29 never executed
+    $$$$$:   13-block 14
+    $$$$$:   13-block 15
+    $$$$$:   13-block 16
+    $$$$$:   13-block 17
+call   30 never executed
+    $$$$$:   13-block 18
+    $$$$$:   13-block 19
+call   31 never executed
+    $$$$$:   13-block 20
+       9*:   14:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   14-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   14-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   14-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   14-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   14-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   14-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   14-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   14-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   14-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   14-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   14-block 10
+    %%%%%:   14-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   14-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   14-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   14-block 14
+call   49 never executed
+call   50 never executed
+        1:   14-block 15
+call   51 returned 1
+        1:   14-block 16
+call   52 returned 1
+        1:   14-block 17
+        1:   14-block 18
+call   53 returned 1
+        1:   14-block 19
+        1:   14-block 20
+call   54 returned 1
+        1:   14-block 21
+        1:   14-block 22
+call   55 returned 1
+        1:   14-block 23
+        1:   14-block 24
+call   56 returned 1
+        1:   14-block 25
+        1:   14-block 26
+        1:   14-block 27
+        1:   14-block 28
+call   57 returned 1
+        1:   14-block 29
+        1:   14-block 30
+call   58 returned 1
+        1:   14-block 31
+        1:   14-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   14-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   14-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   14-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   14-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   14-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   14-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   14-block 39
+call   84 never executed
+    $$$$$:   14-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   14-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   14-block 42
+call   92 never executed
+    $$$$$:   14-block 43
+    $$$$$:   14-block 44
+call   93 never executed
+    $$$$$:   14-block 45
+call   94 never executed
+    $$$$$:   14-block 46
+call   95 never executed
+    $$$$$:   14-block 47
+    $$$$$:   14-block 48
+call   96 never executed
+    $$$$$:   14-block 49
+    $$$$$:   14-block 50
+call   97 never executed
+        1:   15:    DynamicVector<Movie> movies = repository.get_all();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   15-block  0
+call    3 never executed
+        1:   16:    DynamicVector<Movie> expected_movies;
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   16-block  1
+call    3 never executed
+        1:   17:    expected_movies.push_back(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   17-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   17-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   17-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   17-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   17-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   17-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   17-block  6
+call   25 never executed
+    $$$$$:   17-block  7
+    $$$$$:   17-block  8
+call   26 never executed
+    $$$$$:   17-block  9
+    $$$$$:   17-block 10
+call   27 never executed
+    $$$$$:   17-block 11
+    $$$$$:   17-block 12
+call   28 never executed
+    $$$$$:   17-block 13
+    $$$$$:   17-block 14
+call   29 never executed
+    $$$$$:   17-block 15
+    $$$$$:   17-block 16
+    $$$$$:   17-block 17
+    $$$$$:   17-block 18
+call   30 never executed
+    $$$$$:   17-block 19
+    $$$$$:   17-block 20
+call   31 never executed
+    $$$$$:   17-block 21
+        1:   18:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   18-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   18-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   18-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   18-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   18-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   18-block  5
+call   25 never executed
+    $$$$$:   18-block  6
+    $$$$$:   18-block  7
+call   26 never executed
+    $$$$$:   18-block  8
+    $$$$$:   18-block  9
+call   27 never executed
+    $$$$$:   18-block 10
+    $$$$$:   18-block 11
+call   28 never executed
+    $$$$$:   18-block 12
+    $$$$$:   18-block 13
+call   29 never executed
+    $$$$$:   18-block 14
+    $$$$$:   18-block 15
+    $$$$$:   18-block 16
+    $$$$$:   18-block 17
+call   30 never executed
+    $$$$$:   18-block 18
+    $$$$$:   18-block 19
+call   31 never executed
+    $$$$$:   18-block 20
+        1:   19:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   19-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   19-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   19-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   19-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   19-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   19-block  5
+call   25 never executed
+    $$$$$:   19-block  6
+    $$$$$:   19-block  7
+call   26 never executed
+    $$$$$:   19-block  8
+    $$$$$:   19-block  9
+call   27 never executed
+    $$$$$:   19-block 10
+    $$$$$:   19-block 11
+call   28 never executed
+    $$$$$:   19-block 12
+    $$$$$:   19-block 13
+call   29 never executed
+    $$$$$:   19-block 14
+    $$$$$:   19-block 15
+    $$$$$:   19-block 16
+    $$$$$:   19-block 17
+call   30 never executed
+    $$$$$:   19-block 18
+    $$$$$:   19-block 19
+call   31 never executed
+    $$$$$:   19-block 20
+       1*:   20:    ASSERT_EQ(expected_movies, movies);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   20-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   20-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   20-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   20-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:   20-block  5
+call   18 never executed
+    $$$$$:   20-block  6
+    $$$$$:   20-block  7
+call   19 never executed
+    $$$$$:   20-block  8
+    $$$$$:   20-block  9
+call   20 never executed
+        -:   21:}
+------------------
+        -:   22:
+        4:   23:TEST(RepositoryTests, test_update){
+        1:   24:    Repository<Movie> repository;
+        1:   25:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   26:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   27:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       9*:   28:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+        1:   29:    repository.update(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+       9*:   30:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+       9*:   31:    EXPECT_THROW(repository.update(Movie("movie1", "genre3", 45, 10, "trailer3")), RepositoryException);
+        1:   32:    DynamicVector<Movie> movies = repository.get_all();
+        1:   33:    DynamicVector<Movie> expected_movies;
+        1:   34:    expected_movies.push_back(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+        1:   35:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   36:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       1*:   37:    ASSERT_EQ(expected_movies, movies);
+        -:   38:}
+------------------
+_ZN32RepositoryTests_test_update_TestC2Ev:
+function _ZN32RepositoryTests_test_update_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   23:TEST(RepositoryTests, test_update){
+        1:   23-block  0
+call    0 returned 1
+------------------
+_ZN32RepositoryTests_test_update_TestD0Ev:
+function _ZN32RepositoryTests_test_update_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   23:TEST(RepositoryTests, test_update){
+        1:   23-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN32RepositoryTests_test_update_TestD2Ev:
+function _ZN32RepositoryTests_test_update_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   23:TEST(RepositoryTests, test_update){
+        1:   23-block  0
+call    0 returned 1
+------------------
+_ZN32RepositoryTests_test_update_Test8TestBodyEv:
+function _ZN32RepositoryTests_test_update_Test8TestBodyEv called 1 returned 100% blocks executed 43%
+        1:   23:TEST(RepositoryTests, test_update){
+        1:   24:    Repository<Movie> repository;
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   24-block  1
+call    3 never executed
+        1:   25:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   25-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   25-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   25-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   25-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   25-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   25-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   25-block  6
+call   25 never executed
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+call   26 never executed
+    $$$$$:   25-block  9
+    $$$$$:   25-block 10
+call   27 never executed
+    $$$$$:   25-block 11
+    $$$$$:   25-block 12
+call   28 never executed
+    $$$$$:   25-block 13
+    $$$$$:   25-block 14
+call   29 never executed
+    $$$$$:   25-block 15
+    $$$$$:   25-block 16
+    $$$$$:   25-block 17
+    $$$$$:   25-block 18
+call   30 never executed
+    $$$$$:   25-block 19
+    $$$$$:   25-block 20
+call   31 never executed
+    $$$$$:   25-block 21
+        1:   26:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   26-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   26-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   26-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   26-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   26-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   26-block  5
+call   25 never executed
+    $$$$$:   26-block  6
+    $$$$$:   26-block  7
+call   26 never executed
+    $$$$$:   26-block  8
+    $$$$$:   26-block  9
+call   27 never executed
+    $$$$$:   26-block 10
+    $$$$$:   26-block 11
+call   28 never executed
+    $$$$$:   26-block 12
+    $$$$$:   26-block 13
+call   29 never executed
+    $$$$$:   26-block 14
+    $$$$$:   26-block 15
+    $$$$$:   26-block 16
+    $$$$$:   26-block 17
+call   30 never executed
+    $$$$$:   26-block 18
+    $$$$$:   26-block 19
+call   31 never executed
+    $$$$$:   26-block 20
+        1:   27:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   27-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   27-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   27-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   27-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   27-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   27-block  5
+call   25 never executed
+    $$$$$:   27-block  6
+    $$$$$:   27-block  7
+call   26 never executed
+    $$$$$:   27-block  8
+    $$$$$:   27-block  9
+call   27 never executed
+    $$$$$:   27-block 10
+    $$$$$:   27-block 11
+call   28 never executed
+    $$$$$:   27-block 12
+    $$$$$:   27-block 13
+call   29 never executed
+    $$$$$:   27-block 14
+    $$$$$:   27-block 15
+    $$$$$:   27-block 16
+    $$$$$:   27-block 17
+call   30 never executed
+    $$$$$:   27-block 18
+    $$$$$:   27-block 19
+call   31 never executed
+    $$$$$:   27-block 20
+       9*:   28:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   28-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   28-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   28-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   28-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   28-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   28-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   28-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   28-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   28-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   28-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   28-block 10
+    %%%%%:   28-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   28-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   28-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   28-block 14
+call   49 never executed
+call   50 never executed
+        1:   28-block 15
+call   51 returned 1
+        1:   28-block 16
+call   52 returned 1
+        1:   28-block 17
+        1:   28-block 18
+call   53 returned 1
+        1:   28-block 19
+        1:   28-block 20
+call   54 returned 1
+        1:   28-block 21
+        1:   28-block 22
+call   55 returned 1
+        1:   28-block 23
+        1:   28-block 24
+call   56 returned 1
+        1:   28-block 25
+        1:   28-block 26
+        1:   28-block 27
+        1:   28-block 28
+call   57 returned 1
+        1:   28-block 29
+        1:   28-block 30
+call   58 returned 1
+        1:   28-block 31
+        1:   28-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   28-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   28-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   28-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   28-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   28-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   28-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   28-block 39
+call   84 never executed
+    $$$$$:   28-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   28-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   28-block 42
+call   92 never executed
+    $$$$$:   28-block 43
+    $$$$$:   28-block 44
+call   93 never executed
+    $$$$$:   28-block 45
+call   94 never executed
+    $$$$$:   28-block 46
+call   95 never executed
+    $$$$$:   28-block 47
+    $$$$$:   28-block 48
+call   96 never executed
+    $$$$$:   28-block 49
+    $$$$$:   28-block 50
+call   97 never executed
+        1:   29:    repository.update(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   29-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   29-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   29-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   29-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   29-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   29-block  5
+call   25 never executed
+    $$$$$:   29-block  6
+    $$$$$:   29-block  7
+call   26 never executed
+    $$$$$:   29-block  8
+    $$$$$:   29-block  9
+call   27 never executed
+    $$$$$:   29-block 10
+    $$$$$:   29-block 11
+call   28 never executed
+    $$$$$:   29-block 12
+    $$$$$:   29-block 13
+call   29 never executed
+    $$$$$:   29-block 14
+    $$$$$:   29-block 15
+    $$$$$:   29-block 16
+    $$$$$:   29-block 17
+call   30 never executed
+    $$$$$:   29-block 18
+    $$$$$:   29-block 19
+call   31 never executed
+    $$$$$:   29-block 20
+       9*:   30:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   30-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   30-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   30-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   30-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   30-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   30-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   30-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   30-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   30-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   30-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   30-block 10
+    %%%%%:   30-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   30-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   30-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   30-block 14
+call   49 never executed
+call   50 never executed
+        1:   30-block 15
+call   51 returned 1
+        1:   30-block 16
+call   52 returned 1
+        1:   30-block 17
+        1:   30-block 18
+call   53 returned 1
+        1:   30-block 19
+        1:   30-block 20
+call   54 returned 1
+        1:   30-block 21
+        1:   30-block 22
+call   55 returned 1
+        1:   30-block 23
+        1:   30-block 24
+call   56 returned 1
+        1:   30-block 25
+        1:   30-block 26
+        1:   30-block 27
+        1:   30-block 28
+call   57 returned 1
+        1:   30-block 29
+        1:   30-block 30
+call   58 returned 1
+        1:   30-block 31
+        1:   30-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   30-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   30-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   30-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   30-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   30-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   30-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   30-block 39
+call   84 never executed
+    $$$$$:   30-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   30-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   30-block 42
+call   92 never executed
+    $$$$$:   30-block 43
+    $$$$$:   30-block 44
+call   93 never executed
+    $$$$$:   30-block 45
+call   94 never executed
+    $$$$$:   30-block 46
+call   95 never executed
+    $$$$$:   30-block 47
+    $$$$$:   30-block 48
+call   96 never executed
+    $$$$$:   30-block 49
+    $$$$$:   30-block 50
+call   97 never executed
+       9*:   31:    EXPECT_THROW(repository.update(Movie("movie1", "genre3", 45, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   31-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   31-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   31-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   31-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   31-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   31-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   31-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   31-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   31-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   31-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   31-block 10
+    %%%%%:   31-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   31-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   31-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   31-block 14
+call   49 never executed
+call   50 never executed
+        1:   31-block 15
+call   51 returned 1
+        1:   31-block 16
+call   52 returned 1
+        1:   31-block 17
+        1:   31-block 18
+call   53 returned 1
+        1:   31-block 19
+        1:   31-block 20
+call   54 returned 1
+        1:   31-block 21
+        1:   31-block 22
+call   55 returned 1
+        1:   31-block 23
+        1:   31-block 24
+call   56 returned 1
+        1:   31-block 25
+        1:   31-block 26
+        1:   31-block 27
+        1:   31-block 28
+call   57 returned 1
+        1:   31-block 29
+        1:   31-block 30
+call   58 returned 1
+        1:   31-block 31
+        1:   31-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   31-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   31-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   31-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   31-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   31-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   31-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   31-block 39
+call   84 never executed
+    $$$$$:   31-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   31-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   31-block 42
+call   92 never executed
+    $$$$$:   31-block 43
+    $$$$$:   31-block 44
+call   93 never executed
+    $$$$$:   31-block 45
+call   94 never executed
+    $$$$$:   31-block 46
+call   95 never executed
+    $$$$$:   31-block 47
+    $$$$$:   31-block 48
+call   96 never executed
+    $$$$$:   31-block 49
+    $$$$$:   31-block 50
+call   97 never executed
+        1:   32:    DynamicVector<Movie> movies = repository.get_all();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   32-block  0
+call    3 never executed
+        1:   33:    DynamicVector<Movie> expected_movies;
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   33-block  1
+call    3 never executed
+        1:   34:    expected_movies.push_back(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+        1:   34-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   34-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   34-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   34-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   34-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   34-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   34-block  6
+call   25 never executed
+    $$$$$:   34-block  7
+    $$$$$:   34-block  8
+call   26 never executed
+    $$$$$:   34-block  9
+    $$$$$:   34-block 10
+call   27 never executed
+    $$$$$:   34-block 11
+    $$$$$:   34-block 12
+call   28 never executed
+    $$$$$:   34-block 13
+    $$$$$:   34-block 14
+call   29 never executed
+    $$$$$:   34-block 15
+    $$$$$:   34-block 16
+    $$$$$:   34-block 17
+    $$$$$:   34-block 18
+call   30 never executed
+    $$$$$:   34-block 19
+    $$$$$:   34-block 20
+call   31 never executed
+    $$$$$:   34-block 21
+        1:   35:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   35-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   35-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   35-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   35-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   35-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   35-block  5
+call   25 never executed
+    $$$$$:   35-block  6
+    $$$$$:   35-block  7
+call   26 never executed
+    $$$$$:   35-block  8
+    $$$$$:   35-block  9
+call   27 never executed
+    $$$$$:   35-block 10
+    $$$$$:   35-block 11
+call   28 never executed
+    $$$$$:   35-block 12
+    $$$$$:   35-block 13
+call   29 never executed
+    $$$$$:   35-block 14
+    $$$$$:   35-block 15
+    $$$$$:   35-block 16
+    $$$$$:   35-block 17
+call   30 never executed
+    $$$$$:   35-block 18
+    $$$$$:   35-block 19
+call   31 never executed
+    $$$$$:   35-block 20
+        1:   36:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   36-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   36-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   36-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   36-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   36-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   36-block  5
+call   25 never executed
+    $$$$$:   36-block  6
+    $$$$$:   36-block  7
+call   26 never executed
+    $$$$$:   36-block  8
+    $$$$$:   36-block  9
+call   27 never executed
+    $$$$$:   36-block 10
+    $$$$$:   36-block 11
+call   28 never executed
+    $$$$$:   36-block 12
+    $$$$$:   36-block 13
+call   29 never executed
+    $$$$$:   36-block 14
+    $$$$$:   36-block 15
+    $$$$$:   36-block 16
+    $$$$$:   36-block 17
+call   30 never executed
+    $$$$$:   36-block 18
+    $$$$$:   36-block 19
+call   31 never executed
+    $$$$$:   36-block 20
+       1*:   37:    ASSERT_EQ(expected_movies, movies);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   37-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   37-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   37-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   37-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   37-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:   37-block  5
+call   18 never executed
+    $$$$$:   37-block  6
+    $$$$$:   37-block  7
+call   19 never executed
+    $$$$$:   37-block  8
+    $$$$$:   37-block  9
+call   20 never executed
+        -:   38:}
+------------------
+        -:   39:
+        4:   40:TEST(RepositoryTests, test_remove){
+        1:   41:    Repository<Movie> repository;
+        1:   42:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   43:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   44:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       9*:   45:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+        1:   46:    repository.remove(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+       9*:   47:    EXPECT_THROW(repository.remove(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+        1:   48:    repository.add(Movie("movie1", "genre3", 1, 10, "trailer3"));
+        -:   49:
+        1:   50:    DynamicVector<Movie> movies = repository.get_all();
+        1:   51:    DynamicVector<Movie> expected_movies;
+        1:   52:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   53:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+        1:   54:    expected_movies.push_back(Movie("movie1", "genre3", 1, 10, "trailer3"));
+       1*:   55:    ASSERT_EQ(expected_movies, movies);
+        -:   56:}
+------------------
+_ZN32RepositoryTests_test_remove_TestC2Ev:
+function _ZN32RepositoryTests_test_remove_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(RepositoryTests, test_remove){
+        1:   40-block  0
+call    0 returned 1
+------------------
+_ZN32RepositoryTests_test_remove_TestD0Ev:
+function _ZN32RepositoryTests_test_remove_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(RepositoryTests, test_remove){
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN32RepositoryTests_test_remove_TestD2Ev:
+function _ZN32RepositoryTests_test_remove_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   40:TEST(RepositoryTests, test_remove){
+        1:   40-block  0
+call    0 returned 1
+------------------
+_ZN32RepositoryTests_test_remove_Test8TestBodyEv:
+function _ZN32RepositoryTests_test_remove_Test8TestBodyEv called 1 returned 100% blocks executed 42%
+        1:   40:TEST(RepositoryTests, test_remove){
+        1:   41:    Repository<Movie> repository;
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   41-block  1
+call    3 never executed
+        1:   42:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   42-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   42-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   42-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   42-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   42-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   42-block  6
+call   25 never executed
+    $$$$$:   42-block  7
+    $$$$$:   42-block  8
+call   26 never executed
+    $$$$$:   42-block  9
+    $$$$$:   42-block 10
+call   27 never executed
+    $$$$$:   42-block 11
+    $$$$$:   42-block 12
+call   28 never executed
+    $$$$$:   42-block 13
+    $$$$$:   42-block 14
+call   29 never executed
+    $$$$$:   42-block 15
+    $$$$$:   42-block 16
+    $$$$$:   42-block 17
+    $$$$$:   42-block 18
+call   30 never executed
+    $$$$$:   42-block 19
+    $$$$$:   42-block 20
+call   31 never executed
+    $$$$$:   42-block 21
+        1:   43:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   43-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   43-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   43-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   43-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   43-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   43-block  5
+call   25 never executed
+    $$$$$:   43-block  6
+    $$$$$:   43-block  7
+call   26 never executed
+    $$$$$:   43-block  8
+    $$$$$:   43-block  9
+call   27 never executed
+    $$$$$:   43-block 10
+    $$$$$:   43-block 11
+call   28 never executed
+    $$$$$:   43-block 12
+    $$$$$:   43-block 13
+call   29 never executed
+    $$$$$:   43-block 14
+    $$$$$:   43-block 15
+    $$$$$:   43-block 16
+    $$$$$:   43-block 17
+call   30 never executed
+    $$$$$:   43-block 18
+    $$$$$:   43-block 19
+call   31 never executed
+    $$$$$:   43-block 20
+        1:   44:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   44-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   44-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   44-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   44-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   44-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   44-block  5
+call   25 never executed
+    $$$$$:   44-block  6
+    $$$$$:   44-block  7
+call   26 never executed
+    $$$$$:   44-block  8
+    $$$$$:   44-block  9
+call   27 never executed
+    $$$$$:   44-block 10
+    $$$$$:   44-block 11
+call   28 never executed
+    $$$$$:   44-block 12
+    $$$$$:   44-block 13
+call   29 never executed
+    $$$$$:   44-block 14
+    $$$$$:   44-block 15
+    $$$$$:   44-block 16
+    $$$$$:   44-block 17
+call   30 never executed
+    $$$$$:   44-block 18
+    $$$$$:   44-block 19
+call   31 never executed
+    $$$$$:   44-block 20
+       9*:   45:    EXPECT_THROW(repository.add(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   45-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   45-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   45-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   45-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   45-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   45-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   45-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   45-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   45-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   45-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   45-block 10
+    %%%%%:   45-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   45-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   45-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   45-block 14
+call   49 never executed
+call   50 never executed
+        1:   45-block 15
+call   51 returned 1
+        1:   45-block 16
+call   52 returned 1
+        1:   45-block 17
+        1:   45-block 18
+call   53 returned 1
+        1:   45-block 19
+        1:   45-block 20
+call   54 returned 1
+        1:   45-block 21
+        1:   45-block 22
+call   55 returned 1
+        1:   45-block 23
+        1:   45-block 24
+call   56 returned 1
+        1:   45-block 25
+        1:   45-block 26
+        1:   45-block 27
+        1:   45-block 28
+call   57 returned 1
+        1:   45-block 29
+        1:   45-block 30
+call   58 returned 1
+        1:   45-block 31
+        1:   45-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   45-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   45-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   45-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   45-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   45-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   45-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   45-block 39
+call   84 never executed
+    $$$$$:   45-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   45-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   45-block 42
+call   92 never executed
+    $$$$$:   45-block 43
+    $$$$$:   45-block 44
+call   93 never executed
+    $$$$$:   45-block 45
+call   94 never executed
+    $$$$$:   45-block 46
+call   95 never executed
+    $$$$$:   45-block 47
+    $$$$$:   45-block 48
+call   96 never executed
+    $$$$$:   45-block 49
+    $$$$$:   45-block 50
+call   97 never executed
+        1:   46:    repository.remove(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   46-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   46-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   46-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   46-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   46-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   46-block  5
+call   25 never executed
+    $$$$$:   46-block  6
+    $$$$$:   46-block  7
+call   26 never executed
+    $$$$$:   46-block  8
+    $$$$$:   46-block  9
+call   27 never executed
+    $$$$$:   46-block 10
+    $$$$$:   46-block 11
+call   28 never executed
+    $$$$$:   46-block 12
+    $$$$$:   46-block 13
+call   29 never executed
+    $$$$$:   46-block 14
+    $$$$$:   46-block 15
+    $$$$$:   46-block 16
+    $$$$$:   46-block 17
+call   30 never executed
+    $$$$$:   46-block 18
+    $$$$$:   46-block 19
+call   31 never executed
+    $$$$$:   46-block 20
+       9*:   47:    EXPECT_THROW(repository.remove(Movie("movie1", "genre3", 1, 10, "trailer3")), RepositoryException);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0
+        1:   47-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   47-block  1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0
+        1:   47-block  2
+call    9 returned 1
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:   47-block  3
+call   13 returned 1
+call   14 returned 1
+branch 15 taken 1 (fallthrough)
+branch 16 taken 0 (throw)
+        1:   47-block  4
+call   17 returned 1
+call   18 returned 1
+branch 19 taken 1 (fallthrough)
+branch 20 taken 0 (throw)
+        1:   47-block  5
+call   21 returned 1
+branch 22 taken 1 (fallthrough)
+branch 23 taken 0 (throw)
+        1:   47-block  6
+call   24 returned 1
+branch 25 taken 0 (fallthrough)
+branch 26 taken 1 (throw)
+    %%%%%:   47-block  7
+call   27 never executed
+call   28 never executed
+call   29 never executed
+call   30 never executed
+call   31 never executed
+call   32 never executed
+call   33 never executed
+        1:   47-block  8
+branch 34 taken 0 (fallthrough)
+branch 35 taken 1
+    %%%%%:   47-block  9
+call   36 never executed
+branch 37 never executed
+branch 38 never executed
+    %%%%%:   47-block 10
+    %%%%%:   47-block 11
+call   39 never executed
+branch 40 never executed
+branch 41 never executed
+    %%%%%:   47-block 12
+call   42 never executed
+call   43 never executed
+branch 44 never executed
+branch 45 never executed
+    %%%%%:   47-block 13
+call   46 never executed
+branch 47 never executed
+branch 48 never executed
+    %%%%%:   47-block 14
+call   49 never executed
+call   50 never executed
+        1:   47-block 15
+call   51 returned 1
+        1:   47-block 16
+call   52 returned 1
+        1:   47-block 17
+        1:   47-block 18
+call   53 returned 1
+        1:   47-block 19
+        1:   47-block 20
+call   54 returned 1
+        1:   47-block 21
+        1:   47-block 22
+call   55 returned 1
+        1:   47-block 23
+        1:   47-block 24
+call   56 returned 1
+        1:   47-block 25
+        1:   47-block 26
+        1:   47-block 27
+        1:   47-block 28
+call   57 returned 1
+        1:   47-block 29
+        1:   47-block 30
+call   58 returned 1
+        1:   47-block 31
+        1:   47-block 32
+call   59 returned 1
+call   60 returned 1
+branch 61 taken 1 (fallthrough)
+branch 62 taken 0 (throw)
+    $$$$$:   47-block 33
+call   63 never executed
+call   64 never executed
+branch 65 never executed
+branch 66 never executed
+    $$$$$:   47-block 34
+call   67 never executed
+branch 68 never executed
+branch 69 never executed
+    $$$$$:   47-block 35
+call   70 never executed
+branch 71 never executed
+branch 72 never executed
+    $$$$$:   47-block 36
+call   73 never executed
+call   74 never executed
+branch 75 never executed
+branch 76 never executed
+    $$$$$:   47-block 37
+call   77 never executed
+call   78 never executed
+branch 79 never executed
+branch 80 never executed
+    $$$$$:   47-block 38
+call   81 never executed
+branch 82 never executed
+branch 83 never executed
+    $$$$$:   47-block 39
+call   84 never executed
+    $$$$$:   47-block 40
+call   85 never executed
+call   86 never executed
+branch 87 never executed
+branch 88 never executed
+    $$$$$:   47-block 41
+call   89 never executed
+branch 90 never executed
+branch 91 never executed
+    $$$$$:   47-block 42
+call   92 never executed
+    $$$$$:   47-block 43
+    $$$$$:   47-block 44
+call   93 never executed
+    $$$$$:   47-block 45
+call   94 never executed
+    $$$$$:   47-block 46
+call   95 never executed
+    $$$$$:   47-block 47
+    $$$$$:   47-block 48
+call   96 never executed
+    $$$$$:   47-block 49
+    $$$$$:   47-block 50
+call   97 never executed
+        1:   48:    repository.add(Movie("movie1", "genre3", 1, 10, "trailer3"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   48-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   48-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   48-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   48-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   48-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   48-block  5
+call   25 never executed
+    $$$$$:   48-block  6
+    $$$$$:   48-block  7
+call   26 never executed
+    $$$$$:   48-block  8
+    $$$$$:   48-block  9
+call   27 never executed
+    $$$$$:   48-block 10
+    $$$$$:   48-block 11
+call   28 never executed
+    $$$$$:   48-block 12
+    $$$$$:   48-block 13
+call   29 never executed
+    $$$$$:   48-block 14
+    $$$$$:   48-block 15
+    $$$$$:   48-block 16
+    $$$$$:   48-block 17
+call   30 never executed
+    $$$$$:   48-block 18
+    $$$$$:   48-block 19
+call   31 never executed
+    $$$$$:   48-block 20
+        -:   49:
+        1:   50:    DynamicVector<Movie> movies = repository.get_all();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   50-block  0
+call    3 never executed
+        1:   51:    DynamicVector<Movie> expected_movies;
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   51-block  1
+call    3 never executed
+        1:   52:    expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   52-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   52-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   52-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   52-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   52-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   52-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   52-block  6
+call   25 never executed
+    $$$$$:   52-block  7
+    $$$$$:   52-block  8
+call   26 never executed
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+call   27 never executed
+    $$$$$:   52-block 11
+    $$$$$:   52-block 12
+call   28 never executed
+    $$$$$:   52-block 13
+    $$$$$:   52-block 14
+call   29 never executed
+    $$$$$:   52-block 15
+    $$$$$:   52-block 16
+    $$$$$:   52-block 17
+    $$$$$:   52-block 18
+call   30 never executed
+    $$$$$:   52-block 19
+    $$$$$:   52-block 20
+call   31 never executed
+    $$$$$:   52-block 21
+        1:   53:    expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   53-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   53-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   53-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   53-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   53-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   53-block  5
+call   25 never executed
+    $$$$$:   53-block  6
+    $$$$$:   53-block  7
+call   26 never executed
+    $$$$$:   53-block  8
+    $$$$$:   53-block  9
+call   27 never executed
+    $$$$$:   53-block 10
+    $$$$$:   53-block 11
+call   28 never executed
+    $$$$$:   53-block 12
+    $$$$$:   53-block 13
+call   29 never executed
+    $$$$$:   53-block 14
+    $$$$$:   53-block 15
+    $$$$$:   53-block 16
+    $$$$$:   53-block 17
+call   30 never executed
+    $$$$$:   53-block 18
+    $$$$$:   53-block 19
+call   31 never executed
+    $$$$$:   53-block 20
+        1:   54:    expected_movies.push_back(Movie("movie1", "genre3", 1, 10, "trailer3"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   54-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   54-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   54-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   54-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   54-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   54-block  5
+call   25 never executed
+    $$$$$:   54-block  6
+    $$$$$:   54-block  7
+call   26 never executed
+    $$$$$:   54-block  8
+    $$$$$:   54-block  9
+call   27 never executed
+    $$$$$:   54-block 10
+    $$$$$:   54-block 11
+call   28 never executed
+    $$$$$:   54-block 12
+    $$$$$:   54-block 13
+call   29 never executed
+    $$$$$:   54-block 14
+    $$$$$:   54-block 15
+    $$$$$:   54-block 16
+    $$$$$:   54-block 17
+call   30 never executed
+    $$$$$:   54-block 18
+    $$$$$:   54-block 19
+call   31 never executed
+    $$$$$:   54-block 20
+       1*:   55:    ASSERT_EQ(expected_movies, movies);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   55-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   55-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   55-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   55-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:   55-block  5
+call   18 never executed
+    $$$$$:   55-block  6
+    $$$$$:   55-block  7
+call   19 never executed
+    $$$$$:   55-block  8
+    $$$$$:   55-block  9
+call   20 never executed
+        -:   56:}
+------------------
+        -:   57:
+        4:   58:TEST(RepositoryTests, test_copy){
+        1:   59:    Repository<Movie> repository;
+        1:   60:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   61:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   62:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+        -:   63:
+        1:   64:    Repository<Movie> repository2(repository);
+        -:   65:
+        1:   66:    repository2.remove(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+        1:   67:    repository2.add(Movie("movie1", "genre3", 1, 10, "trailer3"));
+        -:   68:
+        -:   69:
+        -:   70:    {
+        1:   71:        DynamicVector<Movie> movies = repository2.get_all();
+        1:   72:        DynamicVector<Movie> expected_movies;
+        1:   73:        expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   74:        expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+        1:   75:        expected_movies.push_back(Movie("movie1", "genre3", 1, 10, "trailer3"));
+       1*:   76:        ASSERT_EQ(expected_movies, movies);
+        -:   77:    }
+        -:   78:    {
+        1:   79:        DynamicVector<Movie> movies = repository.get_all();
+        1:   80:        DynamicVector<Movie> expected_movies;
+        1:   81:        expected_movies.push_back(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   82:        expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   83:        expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+       1*:   84:        ASSERT_EQ(expected_movies, movies);
+        -:   85:    }
+        -:   86:}
+------------------
+_ZN30RepositoryTests_test_copy_TestC2Ev:
+function _ZN30RepositoryTests_test_copy_TestC2Ev called 1 returned 100% blocks executed 100%
+        1:   58:TEST(RepositoryTests, test_copy){
+        1:   58-block  0
+call    0 returned 1
+------------------
+_ZN30RepositoryTests_test_copy_TestD0Ev:
+function _ZN30RepositoryTests_test_copy_TestD0Ev called 1 returned 100% blocks executed 100%
+        1:   58:TEST(RepositoryTests, test_copy){
+        1:   58-block  0
+call    0 returned 1
+call    1 returned 1
+------------------
+_ZN30RepositoryTests_test_copy_TestD2Ev:
+function _ZN30RepositoryTests_test_copy_TestD2Ev called 1 returned 100% blocks executed 100%
+        1:   58:TEST(RepositoryTests, test_copy){
+        1:   58-block  0
+call    0 returned 1
+------------------
+_ZN30RepositoryTests_test_copy_Test8TestBodyEv:
+function _ZN30RepositoryTests_test_copy_Test8TestBodyEv called 1 returned 100% blocks executed 40%
+        1:   58:TEST(RepositoryTests, test_copy){
+        1:   59:    Repository<Movie> repository;
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   59-block  1
+call    3 never executed
+        1:   60:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   60-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   60-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   60-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   60-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   60-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   60-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   60-block  6
+call   25 never executed
+    $$$$$:   60-block  7
+    $$$$$:   60-block  8
+call   26 never executed
+    $$$$$:   60-block  9
+    $$$$$:   60-block 10
+call   27 never executed
+    $$$$$:   60-block 11
+    $$$$$:   60-block 12
+call   28 never executed
+    $$$$$:   60-block 13
+    $$$$$:   60-block 14
+call   29 never executed
+    $$$$$:   60-block 15
+    $$$$$:   60-block 16
+    $$$$$:   60-block 17
+    $$$$$:   60-block 18
+call   30 never executed
+    $$$$$:   60-block 19
+    $$$$$:   60-block 20
+call   31 never executed
+    $$$$$:   60-block 21
+        1:   61:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   61-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   61-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   61-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   61-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   61-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   61-block  5
+call   25 never executed
+    $$$$$:   61-block  6
+    $$$$$:   61-block  7
+call   26 never executed
+    $$$$$:   61-block  8
+    $$$$$:   61-block  9
+call   27 never executed
+    $$$$$:   61-block 10
+    $$$$$:   61-block 11
+call   28 never executed
+    $$$$$:   61-block 12
+    $$$$$:   61-block 13
+call   29 never executed
+    $$$$$:   61-block 14
+    $$$$$:   61-block 15
+    $$$$$:   61-block 16
+    $$$$$:   61-block 17
+call   30 never executed
+    $$$$$:   61-block 18
+    $$$$$:   61-block 19
+call   31 never executed
+    $$$$$:   61-block 20
+        1:   62:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   62-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   62-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   62-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   62-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   62-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   62-block  5
+call   25 never executed
+    $$$$$:   62-block  6
+    $$$$$:   62-block  7
+call   26 never executed
+    $$$$$:   62-block  8
+    $$$$$:   62-block  9
+call   27 never executed
+    $$$$$:   62-block 10
+    $$$$$:   62-block 11
+call   28 never executed
+    $$$$$:   62-block 12
+    $$$$$:   62-block 13
+call   29 never executed
+    $$$$$:   62-block 14
+    $$$$$:   62-block 15
+    $$$$$:   62-block 16
+    $$$$$:   62-block 17
+call   30 never executed
+    $$$$$:   62-block 18
+    $$$$$:   62-block 19
+call   31 never executed
+    $$$$$:   62-block 20
+        -:   63:
+        1:   64:    Repository<Movie> repository2(repository);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   64-block  0
+call    3 never executed
+        -:   65:
+        1:   66:    repository2.remove(Movie("movie1", "genre_new", 1, 200, "trailer_new"));
+        1:   66-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   66-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   66-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   66-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   66-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   66-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   66-block  6
+call   25 never executed
+    $$$$$:   66-block  7
+    $$$$$:   66-block  8
+call   26 never executed
+    $$$$$:   66-block  9
+    $$$$$:   66-block 10
+call   27 never executed
+    $$$$$:   66-block 11
+    $$$$$:   66-block 12
+call   28 never executed
+    $$$$$:   66-block 13
+    $$$$$:   66-block 14
+call   29 never executed
+    $$$$$:   66-block 15
+    $$$$$:   66-block 16
+    $$$$$:   66-block 17
+    $$$$$:   66-block 18
+call   30 never executed
+    $$$$$:   66-block 19
+    $$$$$:   66-block 20
+call   31 never executed
+    $$$$$:   66-block 21
+        1:   67:    repository2.add(Movie("movie1", "genre3", 1, 10, "trailer3"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   67-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   67-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   67-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   67-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   67-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   67-block  5
+call   25 never executed
+    $$$$$:   67-block  6
+    $$$$$:   67-block  7
+call   26 never executed
+    $$$$$:   67-block  8
+    $$$$$:   67-block  9
+call   27 never executed
+    $$$$$:   67-block 10
+    $$$$$:   67-block 11
+call   28 never executed
+    $$$$$:   67-block 12
+    $$$$$:   67-block 13
+call   29 never executed
+    $$$$$:   67-block 14
+    $$$$$:   67-block 15
+    $$$$$:   67-block 16
+    $$$$$:   67-block 17
+call   30 never executed
+    $$$$$:   67-block 18
+    $$$$$:   67-block 19
+call   31 never executed
+    $$$$$:   67-block 20
+        -:   68:
+        -:   69:
+        -:   70:    {
+        1:   71:        DynamicVector<Movie> movies = repository2.get_all();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   71-block  0
+call    3 never executed
+        1:   72:        DynamicVector<Movie> expected_movies;
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   72-block  1
+call    3 never executed
+        1:   73:        expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   73-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   73-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   73-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   73-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   73-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   73-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   73-block  6
+call   25 never executed
+    $$$$$:   73-block  7
+    $$$$$:   73-block  8
+call   26 never executed
+    $$$$$:   73-block  9
+    $$$$$:   73-block 10
+call   27 never executed
+    $$$$$:   73-block 11
+    $$$$$:   73-block 12
+call   28 never executed
+    $$$$$:   73-block 13
+    $$$$$:   73-block 14
+call   29 never executed
+    $$$$$:   73-block 15
+    $$$$$:   73-block 16
+    $$$$$:   73-block 17
+    $$$$$:   73-block 18
+call   30 never executed
+    $$$$$:   73-block 19
+    $$$$$:   73-block 20
+call   31 never executed
+    $$$$$:   73-block 21
+        1:   74:        expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   74-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   74-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   74-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   74-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   74-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   74-block  5
+call   25 never executed
+    $$$$$:   74-block  6
+    $$$$$:   74-block  7
+call   26 never executed
+    $$$$$:   74-block  8
+    $$$$$:   74-block  9
+call   27 never executed
+    $$$$$:   74-block 10
+    $$$$$:   74-block 11
+call   28 never executed
+    $$$$$:   74-block 12
+    $$$$$:   74-block 13
+call   29 never executed
+    $$$$$:   74-block 14
+    $$$$$:   74-block 15
+    $$$$$:   74-block 16
+    $$$$$:   74-block 17
+call   30 never executed
+    $$$$$:   74-block 18
+    $$$$$:   74-block 19
+call   31 never executed
+    $$$$$:   74-block 20
+        1:   75:        expected_movies.push_back(Movie("movie1", "genre3", 1, 10, "trailer3"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   75-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   75-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   75-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   75-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   75-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   75-block  5
+call   25 never executed
+    $$$$$:   75-block  6
+    $$$$$:   75-block  7
+call   26 never executed
+    $$$$$:   75-block  8
+    $$$$$:   75-block  9
+call   27 never executed
+    $$$$$:   75-block 10
+    $$$$$:   75-block 11
+call   28 never executed
+    $$$$$:   75-block 12
+    $$$$$:   75-block 13
+call   29 never executed
+    $$$$$:   75-block 14
+    $$$$$:   75-block 15
+    $$$$$:   75-block 16
+    $$$$$:   75-block 17
+call   30 never executed
+    $$$$$:   75-block 18
+    $$$$$:   75-block 19
+call   31 never executed
+    $$$$$:   75-block 20
+       1*:   76:        ASSERT_EQ(expected_movies, movies);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   76-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   76-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   76-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   76-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:   76-block  5
+call   18 never executed
+    $$$$$:   76-block  6
+    $$$$$:   76-block  7
+call   19 never executed
+    $$$$$:   76-block  8
+    $$$$$:   76-block  9
+call   20 never executed
+        -:   77:    }
+        -:   78:    {
+        1:   79:        DynamicVector<Movie> movies = repository.get_all();
+        1:   79-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   79-block  1
+call    3 never executed
+        1:   80:        DynamicVector<Movie> expected_movies;
+        1:   80-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:   80-block  1
+call    3 never executed
+        1:   81:        expected_movies.push_back(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   81-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   81-block  1
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   81-block  2
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   81-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   81-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   81-block  5
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   81-block  6
+call   25 never executed
+    $$$$$:   81-block  7
+    $$$$$:   81-block  8
+call   26 never executed
+    $$$$$:   81-block  9
+    $$$$$:   81-block 10
+call   27 never executed
+    $$$$$:   81-block 11
+    $$$$$:   81-block 12
+call   28 never executed
+    $$$$$:   81-block 13
+    $$$$$:   81-block 14
+call   29 never executed
+    $$$$$:   81-block 15
+    $$$$$:   81-block 16
+    $$$$$:   81-block 17
+    $$$$$:   81-block 18
+call   30 never executed
+    $$$$$:   81-block 19
+    $$$$$:   81-block 20
+call   31 never executed
+    $$$$$:   81-block 21
+        1:   82:        expected_movies.push_back(Movie("movie2", "genre2", 2, 12, "trailer2"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   82-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   82-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   82-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   82-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   82-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   82-block  5
+call   25 never executed
+    $$$$$:   82-block  6
+    $$$$$:   82-block  7
+call   26 never executed
+    $$$$$:   82-block  8
+    $$$$$:   82-block  9
+call   27 never executed
+    $$$$$:   82-block 10
+    $$$$$:   82-block 11
+call   28 never executed
+    $$$$$:   82-block 12
+    $$$$$:   82-block 13
+call   29 never executed
+    $$$$$:   82-block 14
+    $$$$$:   82-block 15
+    $$$$$:   82-block 16
+    $$$$$:   82-block 17
+call   30 never executed
+    $$$$$:   82-block 18
+    $$$$$:   82-block 19
+call   31 never executed
+    $$$$$:   82-block 20
+        1:   83:        expected_movies.push_back(Movie("movie1", "genre1", 2, 10, "trailer1"));
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   83-block  0
+call    4 returned 1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   83-block  1
+call    8 returned 1
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   83-block  2
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   83-block  3
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0 (throw)
+        1:   83-block  4
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+call   23 returned 1
+call   24 returned 1
+    $$$$$:   83-block  5
+call   25 never executed
+    $$$$$:   83-block  6
+    $$$$$:   83-block  7
+call   26 never executed
+    $$$$$:   83-block  8
+    $$$$$:   83-block  9
+call   27 never executed
+    $$$$$:   83-block 10
+    $$$$$:   83-block 11
+call   28 never executed
+    $$$$$:   83-block 12
+    $$$$$:   83-block 13
+call   29 never executed
+    $$$$$:   83-block 14
+    $$$$$:   83-block 15
+    $$$$$:   83-block 16
+    $$$$$:   83-block 17
+call   30 never executed
+    $$$$$:   83-block 18
+    $$$$$:   83-block 19
+call   31 never executed
+    $$$$$:   83-block 20
+       1*:   84:        ASSERT_EQ(expected_movies, movies);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   84-block  0
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   84-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   84-block  2
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:   84-block  3
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:   84-block  4
+call   16 never executed
+call   17 never executed
+    $$$$$:   84-block  5
+call   18 never executed
+    $$$$$:   84-block  6
+    $$$$$:   84-block  7
+call   19 never executed
+    $$$$$:   84-block  8
+    $$$$$:   84-block  9
+call   20 never executed
+        -:   85:    }
+        -:   86:}
+------------------
+        -:   87:
+        4:   88:TEST(RepositoryTests, test_find){
+        1:   89:    Repository<Movie> repository;
+        1:   90:    repository.add(Movie("movie1", "genre1", 1, 10, "trailer1"));
+        1:   91:    repository.add(Movie("movie2", "genre2", 2, 12, "trailer2"));
+        1:   92:    repository.add(Movie("movie1", "genre1", 2, 10, "trailer1"));
+        -:   93:
+       2*:   94:    ASSERT_EQ(repository.find(Movie("movie1","",1,0,"")),Movie("movie1", "genre1", 1, 10, "trailer1"));
+       2*:   95:    ASSERT_EQ(repository.find(Movie("movie2", "genre", 2, 10, "t")), Movie("movie2", "genre2", 2, 12, "trailer2"));
+       2*:   96:    ASSERT_EQ(repository.find(Movie("movie1", "genre1", 2, 10, "trailer1")), Movie("movie1", "genre1", 2, 10, "trailer1"));
+       9*:   97:    EXPECT_THROW(repository.find(Movie("movie1","",10,0,"")), RepositoryException);
+       9*:   98:    EXPECT_THROW(repository.find(Movie("movie12","",1,0,"")), RepositoryException);
+        -:   99:}

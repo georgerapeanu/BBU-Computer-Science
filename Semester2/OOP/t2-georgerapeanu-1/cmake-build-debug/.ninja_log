@@ -1,0 +1,24 @@
+# ninja log v5
+1	838	1651753470838545822	CMakeFiles/t2_georgerapeanu_1.dir/domain/ElectricEngine.cpp.o	ebca4bce87b5f7be
+2	860	1651753470858546441	CMakeFiles/t2_georgerapeanu_1.dir/domain/TurboEngine.cpp.o	1f0b79de0d5b0103
+1	578	1651753470574537648	CMakeFiles/t2_georgerapeanu_1.dir/domain/Engine.cpp.o	84392f83c5a7f72
+12	251	1651753402312475003	CMakeFiles/t2_georgerapeanu_1.dir/domain/AppException.cpp.o	1f6c7a74bb9358a4
+2	467	1651753427137212664	CMakeFiles/t2_georgerapeanu_1.dir/domain/EngineValidator.cpp.o	d37bfefc2e17386f
+1	753	1651755249008598786	CMakeFiles/t2_georgerapeanu_1.dir/domain/Car.cpp.o	8f1afb6e6a53da5b
+5	763	1651755249016599000	CMakeFiles/t2_georgerapeanu_1.dir/main.cpp.o	2392ec846f4e9b1f
+2	849	1651755249104601344	CMakeFiles/t2_georgerapeanu_1.dir/UI/UI.cpp.o	6dbbb11b4b0eea03
+1	1052	1651755249304606671	CMakeFiles/t2_georgerapeanu_1.dir/service/Service.cpp.o	95c757a9ca7b4c67
+1052	1150	1651755249404609335	t2_georgerapeanu_1	21168ae932c0da53
+1	545	1651755366007753857	CMakeFiles/t2_georgerapeanu_1.dir/UI/UI.cpp.o	6dbbb11b4b0eea03
+546	655	1651755366119756912	t2_georgerapeanu_1	21168ae932c0da53
+1	438	1651755403296774231	CMakeFiles/t2_georgerapeanu_1.dir/domain/Car.cpp.o	8f1afb6e6a53da5b
+439	540	1651755403396776976	t2_georgerapeanu_1	21168ae932c0da53
+0	608	1651755568881375521	CMakeFiles/t2_georgerapeanu_1.dir/domain/Car.cpp.o	8f1afb6e6a53da5b
+1	758	1651755569033379791	CMakeFiles/t2_georgerapeanu_1.dir/service/Service.cpp.o	95c757a9ca7b4c67
+758	863	1651755569137382712	t2_georgerapeanu_1	21168ae932c0da53
+0	731	1651755728877908022	CMakeFiles/t2_georgerapeanu_1.dir/UI/UI.cpp.o	6dbbb11b4b0eea03
+731	829	1651755728977910876	t2_georgerapeanu_1	21168ae932c0da53
+2	570	1651756182040659434	CMakeFiles/t2_georgerapeanu_1.dir/main.cpp.o	2392ec846f4e9b1f
+1	715	1651756182184655526	CMakeFiles/t2_georgerapeanu_1.dir/service/Service.cpp.o	95c757a9ca7b4c67
+2	781	1651756182248653789	CMakeFiles/t2_georgerapeanu_1.dir/UI/UI.cpp.o	6dbbb11b4b0eea03
+781	890	1651756182360650748	t2_georgerapeanu_1	21168ae932c0da53

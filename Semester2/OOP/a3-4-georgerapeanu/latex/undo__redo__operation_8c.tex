@@ -1,0 +1,118 @@
+\hypertarget{undo__redo__operation_8c}{}\doxysubsection{src/domain/undo\+\_\+redo\+\_\+operation.c File Reference}
+\label{undo__redo__operation_8c}\index{src/domain/undo\_redo\_operation.c@{src/domain/undo\_redo\_operation.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/undo\+\_\+redo\+\_\+operation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for undo\+\_\+redo\+\_\+operation.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{undo__redo__operation_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$ \mbox{\hyperlink{undo__redo__operation_8c_a0fa2bd4d6919fff335d49862ed037d85}{create\+\_\+undo\+\_\+redo\+\_\+operation}} (\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$p\+\_\+undo, \mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$p\+\_\+redo, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function creates an undo\+\_\+operation-\/redo\+\_\+operation operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__operation_8c_a1e08f7830037dbf04d99de401be3ca0a}{delete\+\_\+undo\+\_\+redo\+\_\+operation}} (\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$p\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em this function deletes the memory allocated for an undo\+\_\+operation-\/redo\+\_\+operation operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__operation_8c_a2727b40bc936880276d4bfad784c1e08}{delete\+\_\+undo\+\_\+redo\+\_\+operation\+\_\+data}} (\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$p\+\_\+operation)
+\begin{DoxyCompactList}\small\item\em this function deletes the memory allocated for an undo\+\_\+operation-\/redo\+\_\+operation operation\textquotesingle{}s data, but not the operation itself \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__operation_8c_af4c82b8bc6a3934d0916f6f2827593d4}{undo\+\_\+operation}} (\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$p\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function applies the undo\+\_\+operation operation of a given operation \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{undo__redo__operation_8c_adce8c8b92abdd9d298ad55f4700f0c24}{redo\+\_\+operation}} (\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$p\+\_\+operation, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em this function applies the redo\+\_\+operation operation of a given operation \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the model for an undo\+\_\+redo operation. This operation consists of 2 operations, one which can undo\+\_\+operation and one which can redo\+\_\+operation. 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{undo__redo__operation_8c_a0fa2bd4d6919fff335d49862ed037d85}\label{undo__redo__operation_8c_a0fa2bd4d6919fff335d49862ed037d85}} 
+\index{undo\_redo\_operation.c@{undo\_redo\_operation.c}!create\_undo\_redo\_operation@{create\_undo\_redo\_operation}}
+\index{create\_undo\_redo\_operation@{create\_undo\_redo\_operation}!undo\_redo\_operation.c@{undo\_redo\_operation.c}}
+\doxyparagraph{\texorpdfstring{create\_undo\_redo\_operation()}{create\_undo\_redo\_operation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}}$\ast$ create\+\_\+undo\+\_\+redo\+\_\+operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$}]{p\+\_\+undo,  }\item[{\mbox{\hyperlink{structoperation__t}{operation\+\_\+t}} $\ast$}]{p\+\_\+redo,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function creates an undo\+\_\+operation-\/redo\+\_\+operation operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+undo} & a pointer to the undo\+\_\+operation operation \\
+\hline
+{\em p\+\_\+redo} & a pointer to the redo\+\_\+operation operation \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable which receives the error. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the undo\+\_\+operation-\/redo\+\_\+operation operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{undo__redo__operation_8c_a1e08f7830037dbf04d99de401be3ca0a}\label{undo__redo__operation_8c_a1e08f7830037dbf04d99de401be3ca0a}} 
+\index{undo\_redo\_operation.c@{undo\_redo\_operation.c}!delete\_undo\_redo\_operation@{delete\_undo\_redo\_operation}}
+\index{delete\_undo\_redo\_operation@{delete\_undo\_redo\_operation}!undo\_redo\_operation.c@{undo\_redo\_operation.c}}
+\doxyparagraph{\texorpdfstring{delete\_undo\_redo\_operation()}{delete\_undo\_redo\_operation()}}
+{\footnotesize\ttfamily void delete\+\_\+undo\+\_\+redo\+\_\+operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$}]{p\+\_\+operation }\end{DoxyParamCaption})}
+
+
+
+this function deletes the memory allocated for an undo\+\_\+operation-\/redo\+\_\+operation operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & a pointer to the operation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__operation_8c_a2727b40bc936880276d4bfad784c1e08}\label{undo__redo__operation_8c_a2727b40bc936880276d4bfad784c1e08}} 
+\index{undo\_redo\_operation.c@{undo\_redo\_operation.c}!delete\_undo\_redo\_operation\_data@{delete\_undo\_redo\_operation\_data}}
+\index{delete\_undo\_redo\_operation\_data@{delete\_undo\_redo\_operation\_data}!undo\_redo\_operation.c@{undo\_redo\_operation.c}}
+\doxyparagraph{\texorpdfstring{delete\_undo\_redo\_operation\_data()}{delete\_undo\_redo\_operation\_data()}}
+{\footnotesize\ttfamily void delete\+\_\+undo\+\_\+redo\+\_\+operation\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$}]{p\+\_\+operation }\end{DoxyParamCaption})}
+
+
+
+this function deletes the memory allocated for an undo\+\_\+operation-\/redo\+\_\+operation operation\textquotesingle{}s data, but not the operation itself 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__operation_8c_adce8c8b92abdd9d298ad55f4700f0c24}\label{undo__redo__operation_8c_adce8c8b92abdd9d298ad55f4700f0c24}} 
+\index{undo\_redo\_operation.c@{undo\_redo\_operation.c}!redo\_operation@{redo\_operation}}
+\index{redo\_operation@{redo\_operation}!undo\_redo\_operation.c@{undo\_redo\_operation.c}}
+\doxyparagraph{\texorpdfstring{redo\_operation()}{redo\_operation()}}
+{\footnotesize\ttfamily void redo\+\_\+operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$}]{p\+\_\+operation,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function applies the redo\+\_\+operation operation of a given operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & the pointer to the undo\+\_\+operation-\/redo\+\_\+operation operation \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable which receives the error. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{undo__redo__operation_8c_af4c82b8bc6a3934d0916f6f2827593d4}\label{undo__redo__operation_8c_af4c82b8bc6a3934d0916f6f2827593d4}} 
+\index{undo\_redo\_operation.c@{undo\_redo\_operation.c}!undo\_operation@{undo\_operation}}
+\index{undo\_operation@{undo\_operation}!undo\_redo\_operation.c@{undo\_redo\_operation.c}}
+\doxyparagraph{\texorpdfstring{undo\_operation()}{undo\_operation()}}
+{\footnotesize\ttfamily void undo\+\_\+operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structundo__redo__operation__t}{undo\+\_\+redo\+\_\+operation\+\_\+t}} $\ast$}]{p\+\_\+operation,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+this function applies the undo\+\_\+operation operation of a given operation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+operation} & the pointer to the undo\+\_\+operation-\/redo\+\_\+operation operation \\
+\hline
+{\em p\+\_\+error} & a pointer to the variable which receives the error. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}

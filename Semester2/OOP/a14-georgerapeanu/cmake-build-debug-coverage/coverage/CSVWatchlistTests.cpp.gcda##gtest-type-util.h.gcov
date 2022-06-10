@@ -1,0 +1,236 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/googletest/googletest/include/gtest/internal/gtest-type-util.h
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/repository/CSVWatchlistTests.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a14_georgerapeanu_tests.dir/repository/CSVWatchlistTests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2008 Google Inc.
+        -:    2:// All Rights Reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:// Type utilities needed for implementing typed and type-parameterized
+        -:   31:// tests.
+        -:   32:
+        -:   33:// IWYU pragma: private, include "gtest/gtest.h"
+        -:   34:// IWYU pragma: friend gtest/.*
+        -:   35:// IWYU pragma: friend gmock/.*
+        -:   36:
+        -:   37:#ifndef GOOGLETEST_INCLUDE_GTEST_INTERNAL_GTEST_TYPE_UTIL_H_
+        -:   38:#define GOOGLETEST_INCLUDE_GTEST_INTERNAL_GTEST_TYPE_UTIL_H_
+        -:   39:
+        -:   40:#include "gtest/internal/gtest-port.h"
+        -:   41:
+        -:   42:// #ifdef __GNUC__ is too general here.  It is possible to use gcc without using
+        -:   43:// libstdc++ (which is where cxxabi.h comes from).
+        -:   44:#if GTEST_HAS_CXXABI_H_
+        -:   45:#include <cxxabi.h>
+        -:   46:#elif defined(__HP_aCC)
+        -:   47:#include <acxx_demangle.h>
+        -:   48:#endif  // GTEST_HASH_CXXABI_H_
+        -:   49:
+        -:   50:namespace testing {
+        -:   51:namespace internal {
+        -:   52:
+        -:   53:// Canonicalizes a given name with respect to the Standard C++ Library.
+        -:   54:// This handles removing the inline namespace within `std` that is
+        -:   55:// used by various standard libraries (e.g., `std::__1`).  Names outside
+        -:   56:// of namespace std are returned unmodified.
+function _ZN7testing8internal31CanonicalizeForStdLibVersioningENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   57:inline std::string CanonicalizeForStdLibVersioning(std::string s) {
+        -:   58:  static const char prefix[] = "std::__";
+    #####:   59:  if (s.compare(0, strlen(prefix), prefix) == 0) {
+    %%%%%:   59-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   60:    std::string::size_type end = s.find("::", strlen(prefix));
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:    if (end != s.npos) {
+branch  0 never executed
+branch  1 never executed
+        -:   62:      // Erase everything between the initial `std` and the second `::`.
+    #####:   63:      s.erase(strlen("std"), end - strlen("std"));
+    %%%%%:   63-block  0
+call    0 never executed
+        -:   64:    }
+        -:   65:  }
+    #####:   66:  return s;
+    %%%%%:   66-block  0
+call    0 never executed
+        -:   67:}
+        -:   68:
+        -:   69:#if GTEST_HAS_RTTI
+        -:   70:// GetTypeName(const std::type_info&) returns a human-readable name of type T.
+function _ZN7testing8internal11GetTypeNameB5cxx11ERKSt9type_info called 0 returned 0% blocks executed 0%
+    #####:   71:inline std::string GetTypeName(const std::type_info& type) {
+    #####:   72:  const char* const name = type.name();
+    %%%%%:   72-block  0
+call    0 never executed
+        -:   73:#if GTEST_HAS_CXXABI_H_ || defined(__HP_aCC)
+    #####:   74:  int status = 0;
+        -:   75:  // gcc's implementation of typeid(T).name() mangles the type name,
+        -:   76:  // so we have to demangle it.
+        -:   77:#if GTEST_HAS_CXXABI_H_
+        -:   78:  using abi::__cxa_demangle;
+        -:   79:#endif  // GTEST_HAS_CXXABI_H_
+    #####:   80:  char* const readable_name = __cxa_demangle(name, nullptr, nullptr, &status);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   81:  const std::string name_str(status == 0 ? readable_name : name);
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   81-block  1
+    %%%%%:   81-block  2
+    %%%%%:   81-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   81-block  4
+    $$$$$:   81-block  5
+call    6 never executed
+    #####:   82:  free(readable_name);
+    #####:   83:  return CanonicalizeForStdLibVersioning(name_str);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   83-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   83-block  1
+call    6 never executed
+call    7 never executed
+    %%%%%:   83-block  2
+    $$$$$:   83-block  3
+call    8 never executed
+    $$$$$:   83-block  4
+        -:   84:#else
+        -:   85:  return name;
+        -:   86:#endif  // GTEST_HAS_CXXABI_H_ || __HP_aCC
+        -:   87:}
+        -:   88:#endif  // GTEST_HAS_RTTI
+        -:   89:
+        -:   90:// GetTypeName<T>() returns a human-readable name of type T if and only if
+        -:   91:// RTTI is enabled, otherwise it returns a dummy type name.
+        -:   92:// NB: This function is also used in Google Mock, so don't move it inside of
+        -:   93:// the typed-test-only section below.
+        -:   94:template <typename T>
+        -:   95:std::string GetTypeName() {
+        -:   96:#if GTEST_HAS_RTTI
+        -:   97:  return GetTypeName(typeid(T));
+        -:   98:#else
+        -:   99:  return "<type>";
+        -:  100:#endif  // GTEST_HAS_RTTI
+        -:  101:}
+        -:  102:
+        -:  103:// A unique type indicating an empty node
+        -:  104:struct None {};
+        -:  105:
+        -:  106:#define GTEST_TEMPLATE_ \
+        -:  107:  template <typename T> \
+        -:  108:  class
+        -:  109:
+        -:  110:// The template "selector" struct TemplateSel<Tmpl> is used to
+        -:  111:// represent Tmpl, which must be a class template with one type
+        -:  112:// parameter, as a type.  TemplateSel<Tmpl>::Bind<T>::type is defined
+        -:  113:// as the type Tmpl<T>.  This allows us to actually instantiate the
+        -:  114:// template "selected" by TemplateSel<Tmpl>.
+        -:  115://
+        -:  116:// This trick is necessary for simulating typedef for class templates,
+        -:  117:// which C++ doesn't support directly.
+        -:  118:template <GTEST_TEMPLATE_ Tmpl>
+        -:  119:struct TemplateSel {
+        -:  120:  template <typename T>
+        -:  121:  struct Bind {
+        -:  122:    typedef Tmpl<T> type;
+        -:  123:  };
+        -:  124:};
+        -:  125:
+        -:  126:#define GTEST_BIND_(TmplSel, T) TmplSel::template Bind<T>::type
+        -:  127:
+        -:  128:template <GTEST_TEMPLATE_ Head_, GTEST_TEMPLATE_... Tail_>
+        -:  129:struct Templates {
+        -:  130:  using Head = TemplateSel<Head_>;
+        -:  131:  using Tail = Templates<Tail_...>;
+        -:  132:};
+        -:  133:
+        -:  134:template <GTEST_TEMPLATE_ Head_>
+        -:  135:struct Templates<Head_> {
+        -:  136:  using Head = TemplateSel<Head_>;
+        -:  137:  using Tail = None;
+        -:  138:};
+        -:  139:
+        -:  140:// Tuple-like type lists
+        -:  141:template <typename Head_, typename... Tail_>
+        -:  142:struct Types {
+        -:  143:  using Head = Head_;
+        -:  144:  using Tail = Types<Tail_...>;
+        -:  145:};
+        -:  146:
+        -:  147:template <typename Head_>
+        -:  148:struct Types<Head_> {
+        -:  149:  using Head = Head_;
+        -:  150:  using Tail = None;
+        -:  151:};
+        -:  152:
+        -:  153:// Helper metafunctions to tell apart a single type from types
+        -:  154:// generated by ::testing::Types
+        -:  155:template <typename... Ts>
+        -:  156:struct ProxyTypeList {
+        -:  157:  using type = Types<Ts...>;
+        -:  158:};
+        -:  159:
+        -:  160:template <typename>
+        -:  161:struct is_proxy_type_list : std::false_type {};
+        -:  162:
+        -:  163:template <typename... Ts>
+        -:  164:struct is_proxy_type_list<ProxyTypeList<Ts...>> : std::true_type {};
+        -:  165:
+        -:  166:// Generator which conditionally creates type lists.
+        -:  167:// It recognizes if a requested type list should be created
+        -:  168:// and prevents creating a new type list nested within another one.
+        -:  169:template <typename T>
+        -:  170:struct GenerateTypeList {
+        -:  171: private:
+        -:  172:  using proxy = typename std::conditional<is_proxy_type_list<T>::value, T,
+        -:  173:                                          ProxyTypeList<T>>::type;
+        -:  174:
+        -:  175: public:
+        -:  176:  using type = typename proxy::type;
+        -:  177:};
+        -:  178:
+        -:  179:}  // namespace internal
+        -:  180:
+        -:  181:template <typename... Ts>
+        -:  182:using Types = internal::ProxyTypeList<Ts...>;
+        -:  183:
+        -:  184:}  // namespace testing
+        -:  185:
+        -:  186:#endif  // GOOGLETEST_INCLUDE_GTEST_INTERNAL_GTEST_TYPE_UTIL_H_

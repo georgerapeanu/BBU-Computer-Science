@@ -1,0 +1,130 @@
+\hypertarget{ui_8c}{}\doxysubsection{src/ui/ui.c File Reference}
+\label{ui_8c}\index{src/ui/ui.c@{src/ui/ui.c}}
+{\ttfamily \#include \char`\"{}../../include/ui/ui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/utils/utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/controller/country\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../include/controller/undo\+\_\+redo\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for ui.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$ \mbox{\hyperlink{ui_8c_acc88f91f90ecdda4b23e7c2e1a8a623b}{create\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, \mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+controller, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em creates ui object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui_8c_afdbec9ddf806a611413edf37883a8307}{delete\+\_\+ui}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui)
+\item 
+void \mbox{\hyperlink{ui_8c_ab58ae2b276a57cb4a0c4ec20b2708e51}{display\+\_\+country}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui, \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$p\+\_\+country)
+\begin{DoxyCompactList}\small\item\em this function displays a \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui_8c_ac52df8beae643b1d96556915a723012e}{display\+\_\+countries}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui, \mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$p\+\_\+countries)
+\begin{DoxyCompactList}\small\item\em this function displays a vector of countries \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui_8c_a2e07de30fa8106677e34501229a9248c}{display\+\_\+help}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui)
+\begin{DoxyCompactList}\small\item\em display the help for this app \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui_8c_ac49e155415f2cc70300b08a47643976b}{run}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui)
+\begin{DoxyCompactList}\small\item\em the main loop of the ui \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+contains the implementation of \mbox{\hyperlink{ui_8h}{ui.\+h}} 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{ui_8c_acc88f91f90ecdda4b23e7c2e1a8a623b}\label{ui_8c_acc88f91f90ecdda4b23e7c2e1a8a623b}} 
+\index{ui.c@{ui.c}!create\_ui@{create\_ui}}
+\index{create\_ui@{create\_ui}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{create\_ui()}{create\_ui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structui__t}{ui\+\_\+t}}$\ast$ create\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+controller,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+creates ui object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & pointer to the controller \\
+\hline
+{\em p\+\_\+error} & pointer to the variable receiving the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_afdbec9ddf806a611413edf37883a8307}\label{ui_8c_afdbec9ddf806a611413edf37883a8307}} 
+\index{ui.c@{ui.c}!delete\_ui@{delete\_ui}}
+\index{delete\_ui@{delete\_ui}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{delete\_ui()}{delete\_ui()}}
+{\footnotesize\ttfamily void delete\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui }\end{DoxyParamCaption})}
+
+frees the memory of a \mbox{\hyperlink{structui__t}{ui\+\_\+t}} object 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & pointer to the ui object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_ac52df8beae643b1d96556915a723012e}\label{ui_8c_ac52df8beae643b1d96556915a723012e}} 
+\index{ui.c@{ui.c}!display\_countries@{display\_countries}}
+\index{display\_countries@{display\_countries}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{display\_countries()}{display\_countries()}}
+{\footnotesize\ttfamily void display\+\_\+countries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui,  }\item[{\mbox{\hyperlink{structvector__t}{vector\+\_\+t}} $\ast$}]{p\+\_\+countries }\end{DoxyParamCaption})}
+
+
+
+this function displays a vector of countries 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & a pointer to the ui \\
+\hline
+{\em p\+\_\+countries} & a pointer to the vector containing the countries \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_ab58ae2b276a57cb4a0c4ec20b2708e51}\label{ui_8c_ab58ae2b276a57cb4a0c4ec20b2708e51}} 
+\index{ui.c@{ui.c}!display\_country@{display\_country}}
+\index{display\_country@{display\_country}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{display\_country()}{display\_country()}}
+{\footnotesize\ttfamily void display\+\_\+country (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui,  }\item[{\mbox{\hyperlink{structcountry__t}{country\+\_\+t}} $\ast$}]{p\+\_\+country }\end{DoxyParamCaption})}
+
+
+
+this function displays a \mbox{\hyperlink{structcountry__t}{country\+\_\+t}} object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & pointer to the ui \\
+\hline
+{\em p\+\_\+country} & pointer to the country to be displayed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8c_a2e07de30fa8106677e34501229a9248c}\label{ui_8c_a2e07de30fa8106677e34501229a9248c}} 
+\index{ui.c@{ui.c}!display\_help@{display\_help}}
+\index{display\_help@{display\_help}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{display\_help()}{display\_help()}}
+{\footnotesize\ttfamily void display\+\_\+help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui }\end{DoxyParamCaption})}
+
+
+
+display the help for this app 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & pointer to the ui \\
+\hline
+\end{DoxyParams}
+T\+O\+DO maybe allow change of name and continent\mbox{\Hypertarget{ui_8c_ac49e155415f2cc70300b08a47643976b}\label{ui_8c_ac49e155415f2cc70300b08a47643976b}} 
+\index{ui.c@{ui.c}!run@{run}}
+\index{run@{run}!ui.c@{ui.c}}
+\doxyparagraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui }\end{DoxyParamCaption})}
+
+
+
+the main loop of the ui 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & the pointer to the ui \\
+\hline
+\end{DoxyParams}

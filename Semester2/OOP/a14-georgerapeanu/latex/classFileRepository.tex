@@ -1,0 +1,222 @@
+\hypertarget{classFileRepository}{}\doxysubsection{File\+Repository$<$ T $>$ Class Template Reference}
+\label{classFileRepository}\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+
+
+this is the model for a general purpose repository  
+
+
+
+
+{\ttfamily \#include $<$File\+Repository.\+h$>$}
+
+
+
+Inheritance diagram for File\+Repository$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classFileRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\+Repository$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classFileRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFileRepository_a051ad5e136ba57bd20705745ec8f1fc9}{File\+Repository}} (const std\+::string \&file\+\_\+path)
+\begin{DoxyCompactList}\small\item\em the default constructor of the repository Initializes a repository which holds an empty vector of type T \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFileRepository_ad08233bddf21bbe113de2e1415614cf5}\label{classFileRepository_ad08233bddf21bbe113de2e1415614cf5}} 
+\mbox{\hyperlink{classFileRepository_ad08233bddf21bbe113de2e1415614cf5}{$\sim$\+File\+Repository}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileRepository_a24396a35ed87687857cc304e34799d48}{add}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileRepository_a352297726b1e235e256c3992f4b557c1}{update}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileRepository_aa9d6dc7e98f3b3c081fdd649d5748455}{remove}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classFileRepository_a289101ea3916ad58e3136c253ceee30a}{find}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classFileRepository_aefae109fd664b3b3a790335d69540efc}{get\+\_\+all}} () override
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFileRepository_a20a8753926320084c5d5c53b73ca5268}{save}} ()
+\item 
+void \mbox{\hyperlink{classFileRepository_a2adcc15ffe93acdb54435b6331d8bca2}{load}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class File\+Repository$<$ T $>$}
+
+this is the model for a general purpose repository 
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFileRepository_a051ad5e136ba57bd20705745ec8f1fc9}\label{classFileRepository_a051ad5e136ba57bd20705745ec8f1fc9}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!FileRepository@{FileRepository}}
+\index{FileRepository@{FileRepository}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{FileRepository()}{FileRepository()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::\mbox{\hyperlink{classFileRepository}{File\+Repository}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+
+
+the default constructor of the repository Initializes a repository which holds an empty vector of type T 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & this is the path to the file in which to store the data(and from which to load it) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFileRepository_a24396a35ed87687857cc304e34799d48}\label{classFileRepository_a24396a35ed87687857cc304e34799d48}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!add@{add}}
+\index{add@{add}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if its id is already taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classFileRepository_a289101ea3916ad58e3136c253ceee30a}\label{classFileRepository_a289101ea3916ad58e3136c253ceee30a}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!find@{find}}
+\index{find@{find}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classFileRepository_aefae109fd664b3b3a790335d69540efc}\label{classFileRepository_aefae109fd664b3b3a790335d69540efc}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::get\+\_\+all\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classFileRepository_a2adcc15ffe93acdb54435b6331d8bca2}\label{classFileRepository_a2adcc15ffe93acdb54435b6331d8bca2}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!load@{load}}
+\index{load@{load}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::load}
+
+This function loads the data from a file \mbox{\Hypertarget{classFileRepository_aa9d6dc7e98f3b3c081fdd649d5748455}\label{classFileRepository_aa9d6dc7e98f3b3c081fdd649d5748455}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classFileRepository_a20a8753926320084c5d5c53b73ca5268}\label{classFileRepository_a20a8753926320084c5d5c53b73ca5268}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!save@{save}}
+\index{save@{save}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::save}
+
+This function saves the data to a file \mbox{\Hypertarget{classFileRepository_a352297726b1e235e256c3992f4b557c1}\label{classFileRepository_a352297726b1e235e256c3992f4b557c1}} 
+\index{FileRepository$<$ T $>$@{FileRepository$<$ T $>$}!update@{update}}
+\index{update@{update}!FileRepository$<$ T $>$@{FileRepository$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classFileRepository}{File\+Repository}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{Abstract\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/\mbox{\hyperlink{FileRepository_8h}{File\+Repository.\+h}}\item 
+src/repository/\mbox{\hyperlink{FileRepository_8cpp}{File\+Repository.\+cpp}}\end{DoxyCompactItemize}

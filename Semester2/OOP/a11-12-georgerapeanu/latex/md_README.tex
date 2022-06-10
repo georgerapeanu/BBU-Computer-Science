@@ -1,0 +1,34 @@
+\hypertarget{md_README_autotoc_md1}{}\doxysubsection{Week 8}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Implement at least requirements {\bfseries{1}}, {\bfseries{2}} and {\bfseries{3}}. 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Week 9}\label{md_README_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Implement all requirements
+\item Requirements {\bfseries{4}} and {\bfseries{5}} must be implemented using inheritance and polymorphism.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Bonus possibility (0.\+2p, deadline week 9)}\label{md_README_autotoc_md3}
+In addition to the file-\/based implementation for the repository, implement a true database-\/backed repository. For this, use inheritance and polymorphism. You are free to choose any type of database management system (e.\+g. {\ttfamily My\+S\+QL}, {\ttfamily S\+Q\+Lite}, {\ttfamily Postgre\+S\+QL}, {\ttfamily Couchbase} etc.).\hypertarget{md_README_autotoc_md4}{}\doxysubsection{Problem Statement}\label{md_README_autotoc_md4}
+For your solution to the previous assignment (Assignment 05-\/06), add the following features\+:
+\begin{DoxyEnumerate}
+\item Replace the templated Dynamic\+Vector with the S\+TL vector. Use S\+TL algorithms wherever possible in your application (e.\+g. in your filter function you could use {\ttfamily copy\+\_\+if}, {\ttfamily count\+\_\+if}). Replace all your for loops either with S\+TL algorithms, or with C++11\textquotesingle{}s ranged-\/based for loop.
+\item Store data in a text file. When the program starts, entities are read from the file. Modifications made during program execution are stored in the file. Implement this using the {\ttfamily iostream} library. Create insertion and extraction operators for your entities and use these when reading/writing to files or the console.
+\item Use exceptions to signal errors\+:
+\begin{DoxyItemize}
+\item from the repository;
+\item validation errors – validate your entities using Validator classes;
+\item create your own exception classes.
+\item validate program input.
+\end{DoxyItemize}
+\item Depending on your assignment, store your (adoption list, movie watch list, shopping basket or tutorial watch list) in a file. When the application starts, the user should choose the type of file between {\ttfamily C\+SV} or {\ttfamily H\+T\+ML}. Depending on the type, the application will save the list in the correct format.
+
+{\bfseries{Indications}}\textbackslash{} The C\+SV file will contain each entity on one line and the attributes will be separated by comma \textbackslash{} The H\+T\+ML file will contain a table, in which each row holds the data of one entity. The columns of the table will contain the names of the data attributes.\textbackslash{} These are exemplified in the \href{example.csv}{\texttt{ example.\+csv}} and \href{example.html}{\texttt{ example.\+html}} files. {\ttfamily C\+SV} and {\ttfamily H\+T\+ML} files are used to save and display data to the user; they act as program outputs, so data should not be read from them!
+\item Add a new command, allowing the user to see the\+:
+\begin{DoxyItemize}
+\item adoption list
+\item movie watch list
+\item shopping basket
+\item tutorial watch list\textbackslash{} Displaying the list means opening the saved file ({\ttfamily C\+SV} or {\ttfamily H\+T\+ML}) with the correct application ({\ttfamily C\+SV} files using Notepad, Notepad++, Microsoft Excel etc. and {\ttfamily H\+T\+ML} files using a browser)
+\end{DoxyItemize}
+\item Create a U\+ML class diagram for your entire application. For this, you can use any tool that you like (\href{https://staruml.io/}{\texttt{ Star\+U\+ML}} or \href{https://www.lucidchart.com/}{\texttt{ Lucid\+Chart}} are only some examples. Many other options exist. 
+\end{DoxyEnumerate}

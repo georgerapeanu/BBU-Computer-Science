@@ -1,0 +1,698 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/src/controller/MovieController.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a8_9_georgerapeanu_tests.dir/__/src/controller/MovieController.cpp.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/cmake-build-debug-coverage/tests/CMakeFiles/a8_9_georgerapeanu_tests.dir/__/src/controller/MovieController.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/*!
+        -:    2: * @file MovieController.cpp this file contains the implementations for MovieController
+        -:    3: */
+        -:    4:
+        -:    5://
+        -:    6:// Created by georgerapeanu on 21.03.2022.
+        -:    7://
+        -:    8:
+        -:    9:#pragma once
+        -:   10:
+        -:   11:#include <algorithm>
+        -:   12:#include "MovieController.h"
+        -:   13:#include "MemoryRepository.h"
+        -:   14:#include "Movie.h"
+        -:   15:#include "Exceptions.h"
+        -:   16:
+        -:   17:using namespace std;
+        -:   18:
+function _ZN15MovieControllerC2ER18AbstractRepositoryI5MovieER17AbstractWatchlistIS1_E called 22 returned 100% blocks executed 100%
+       22:   19:MovieController::MovieController(AbstractRepository<Movie> &repository, AbstractWatchlist<Movie> &watchlist):watchlist(watchlist), repository(repository) {
+       22:   20:}
+        -:   21:
+function _ZN15MovieControllerD2Ev called 22 returned 100% blocks executed 100%
+       22:   22:MovieController::~MovieController() {
+        -:   23:    ;
+       22:   24:}
+        -:   25:
+        -:   26:void
+function _ZN15MovieController15add_movie_adminERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_RKiS9_S7_ called 112 returned 99% blocks executed 77%
+      112:   27:MovieController::add_movie_admin(const std::string &title, const std::string &genre, const int &year, const int &likes,
+        -:   28:                                 const std::string &trailer_link) {
+        -:   29:    try{
+      115:   30:        this->repository.add(Movie(my_tolower(title), my_tolower(genre), year, likes, trailer_link));
+      112:   30-block  0
+call    0 returned 112
+branch  1 taken 112 (fallthrough)
+branch  2 taken 0 (throw)
+      112:   30-block  1
+call    3 returned 112
+branch  4 taken 112 (fallthrough)
+branch  5 taken 0 (throw)
+      112:   30-block  2
+call    6 returned 112
+branch  7 taken 112 (fallthrough)
+branch  8 taken 0 (throw)
+      112:   30-block  3
+call    9 returned 112
+branch 10 taken 111 (fallthrough)
+branch 11 taken 1 (throw)
+      111:   30-block  4
+call   12 returned 111
+call   13 returned 111
+call   14 returned 111
+        1:   30-block  5
+call   15 returned 1
+        1:   30-block  6
+        1:   30-block  7
+call   16 returned 1
+        1:   30-block  8
+        1:   30-block  9
+call   17 returned 1
+        1:   30-block 10
+        2:   31:    }catch(const RepositoryException& exception){
+        1:   31-block  0
+call    0 returned 1
+    $$$$$:   31-block  1
+call    1 never executed
+        1:   31-block  2
+call    2 returned 1
+        1:   32:        if(exception.get_message() == "Id already exists"){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   33:            throw MovieControllerException("Movie already exists");
+        1:   33-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   33-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   33-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   33-block  3
+call   11 never executed
+    $$$$$:   33-block  4
+    $$$$$:   33-block  5
+call   12 never executed
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+call   13 never executed
+        -:   34:        }
+        -:   35:    }
+      111:   36:}
+      111:   36-block  0
+        -:   37:
+        -:   38:
+function _ZN15MovieController18update_movie_adminERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_RKiS9_S7_ called 2 returned 50% blocks executed 77%
+        2:   39:void MovieController::update_movie_admin(const std::string &title, const std::string &genre, const int &year,
+        -:   40:                                         const int &likes, const std::string &trailer_link) {
+        -:   41:    try{
+        5:   42:        this->repository.update(Movie(my_tolower(title), my_tolower(genre), year, likes, trailer_link));
+        2:   42-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   42-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   42-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   42-block  3
+call    9 returned 2
+branch 10 taken 1 (fallthrough)
+branch 11 taken 1 (throw)
+        1:   42-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+        1:   42-block  5
+call   15 returned 1
+        1:   42-block  6
+        1:   42-block  7
+call   16 returned 1
+        1:   42-block  8
+        1:   42-block  9
+call   17 returned 1
+        1:   42-block 10
+        2:   43:    }catch(const RepositoryException& exception){
+        1:   43-block  0
+call    0 returned 1
+    $$$$$:   43-block  1
+call    1 never executed
+        1:   43-block  2
+call    2 returned 1
+        1:   44:        if(exception.get_message() == "Id doesn't exist"){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   44-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   45:            throw MovieControllerException("Movie doesn't exist");
+        1:   45-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   45-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   45-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   45-block  3
+call   11 never executed
+    $$$$$:   45-block  4
+    $$$$$:   45-block  5
+call   12 never executed
+    $$$$$:   45-block  6
+    $$$$$:   45-block  7
+call   13 never executed
+        -:   46:        }
+        -:   47:    }
+        1:   48:}
+        1:   48-block  0
+        -:   49:
+function _ZN15MovieController18remove_movie_adminERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKi called 2 returned 50% blocks executed 83%
+        2:   50:void MovieController::remove_movie_admin(const std::string &title, const int &year) {
+        -:   51:    try{
+        8:   52:        this->repository.remove(Movie(my_tolower(title), "nop", year, 0, "nop"));
+        2:   52-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   52-block  1
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   52-block  2
+call    8 returned 2
+branch  9 taken 2 (fallthrough)
+branch 10 taken 0 (throw)
+        2:   52-block  3
+call   11 returned 2
+branch 12 taken 2 (fallthrough)
+branch 13 taken 0 (throw)
+        2:   52-block  4
+call   14 returned 2
+branch 15 taken 1 (fallthrough)
+branch 16 taken 1 (throw)
+        1:   52-block  5
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+        1:   52-block  6
+call   23 returned 1
+        1:   52-block  7
+        1:   52-block  8
+call   24 returned 1
+        1:   52-block  9
+        1:   52-block 10
+call   25 returned 1
+        1:   52-block 11
+        1:   52-block 12
+call   26 returned 1
+        1:   52-block 13
+        1:   52-block 14
+        1:   52-block 15
+call   27 returned 1
+        1:   52-block 16
+        1:   52-block 17
+call   28 returned 1
+        1:   52-block 18
+        2:   53:    }catch(const RepositoryException& exception){
+        1:   53-block  0
+call    0 returned 1
+    $$$$$:   53-block  1
+call    1 never executed
+        1:   53-block  2
+call    2 returned 1
+        1:   54:        if(exception.get_message() == "Id doesn't exist"){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   55:            throw MovieControllerException("Movie doesn't exist");
+        1:   55-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   55-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   55-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   55-block  3
+call   11 never executed
+    $$$$$:   55-block  4
+    $$$$$:   55-block  5
+call   12 never executed
+    $$$$$:   55-block  6
+    $$$$$:   55-block  7
+call   13 never executed
+        -:   56:        }
+        -:   57:    }
+        1:   58:}
+        1:   58-block  0
+        -:   59:
+function _ZN15MovieController14get_movie_userERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKi called 2 returned 50% blocks executed 82%
+        2:   60:Movie MovieController::get_movie_user(const std::string &title, const int &year) {
+        -:   61:    try{
+        9:   62:        return this->repository.find(Movie(my_tolower(title), "nop", year, 0, "nop"));
+        2:   62-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   62-block  1
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   62-block  2
+call    8 returned 2
+branch  9 taken 2 (fallthrough)
+branch 10 taken 0 (throw)
+        2:   62-block  3
+call   11 returned 2
+branch 12 taken 2 (fallthrough)
+branch 13 taken 0 (throw)
+        2:   62-block  4
+call   14 returned 2
+branch 15 taken 1 (fallthrough)
+branch 16 taken 1 (throw)
+        1:   62-block  5
+call   17 returned 1
+call   18 returned 1
+call   19 returned 1
+call   20 returned 1
+call   21 returned 1
+call   22 returned 1
+        1:   62-block  6
+call   23 returned 1
+        1:   62-block  7
+        1:   62-block  8
+call   24 returned 1
+        1:   62-block  9
+        1:   62-block 10
+call   25 returned 1
+        1:   62-block 11
+        1:   62-block 12
+call   26 returned 1
+        1:   62-block 13
+        1:   62-block 14
+        1:   62-block 15
+call   27 returned 1
+        1:   62-block 16
+        1:   62-block 17
+call   28 returned 1
+        1:   62-block 18
+        2:   63:    }catch(const RepositoryException& exception){
+        1:   63-block  0
+call    0 returned 1
+    $$$$$:   63-block  1
+call    1 never executed
+        1:   63-block  2
+call    2 returned 1
+        1:   64:        if(exception.get_message() == "Id doesn't exist"){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   64-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   65:            throw MovieControllerException("Movie doesn't exist");
+        1:   65-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   65-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   65-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   65-block  3
+call   11 never executed
+    $$$$$:   65-block  4
+    $$$$$:   65-block  5
+call   12 never executed
+    $$$$$:   65-block  6
+    $$$$$:   65-block  7
+call   13 never executed
+        -:   66:        }
+        -:   67:    }
+    =====:   68:    return Movie();
+call    0 never executed
+        -:   69:}
+        -:   70:
+function _ZN15MovieController15get_movies_userENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 100% blocks executed 73%
+        2:   71:vector<Movie> MovieController::get_movies_user(const std::string genre) {
+        4:   72:    vector<Movie> movies = this->repository.get_all();
+        2:   72-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   72-block  1
+call    3 returned 2
+    $$$$$:   72-block  2
+call    4 never executed
+        2:   73:    vector<Movie> answer;
+        2:   73-block  0
+call    0 returned 2
+function _ZZN15MovieController15get_movies_userENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlR5MovieE_clES7_ called 20 returned 100% blocks executed 62%
+       20:   74:    copy_if(movies.begin(), movies.end(), back_inserter(answer), [&](Movie &movie){
+       20:   75:        return genre == "" || my_tolower(movie.get_genre()) == my_tolower(genre);
+       20:   75-block  0
+call    0 returned 20
+branch  1 taken 20 (fallthrough)
+branch  2 taken 0
+       20:   75-block  1
+call    3 returned 20
+branch  4 taken 20 (fallthrough)
+branch  5 taken 0 (throw)
+       20:   75-block  2
+call    6 returned 20
+branch  7 taken 20 (fallthrough)
+branch  8 taken 0 (throw)
+       20:   75-block  3
+call    9 returned 20
+branch 10 taken 20 (fallthrough)
+branch 11 taken 0 (throw)
+       20:   75-block  4
+call   12 returned 20
+branch 13 taken 2 (fallthrough)
+branch 14 taken 18
+        2:   75-block  5
+       18:   75-block  6
+       20:   75-block  7
+branch 15 taken 20 (fallthrough)
+branch 16 taken 0
+       20:   75-block  8
+call   17 returned 20
+       20:   75-block  9
+branch 18 taken 20 (fallthrough)
+branch 19 taken 0
+       20:   75-block 10
+call   20 returned 20
+       20:   75-block 11
+branch 21 taken 20 (fallthrough)
+branch 22 taken 0
+       20:   75-block 12
+call   23 returned 20
+       20:   75-block 13
+       20:   75-block 14
+    $$$$$:   75-block 15
+branch 24 never executed
+branch 25 never executed
+    $$$$$:   75-block 16
+call   26 never executed
+    $$$$$:   75-block 17
+    $$$$$:   75-block 18
+branch 27 never executed
+branch 28 never executed
+    $$$$$:   75-block 19
+call   29 never executed
+    $$$$$:   75-block 20
+    $$$$$:   75-block 21
+branch 30 never executed
+branch 31 never executed
+    $$$$$:   75-block 22
+call   32 never executed
+        2:   76:    });
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   76-block  0
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        4:   77:    return answer;
+        2:   77-block  0
+        2:   77-block  1
+        -:   78:}
+        -:   79:
+function _ZN15MovieController14add_movie_userERK5Movie called 10 returned 80% blocks executed 63%
+       10:   80:void MovieController::add_movie_user(const Movie &movie) {
+        -:   81:    try{
+       10:   82:        this->watchlist.add(movie);
+       10:   82-block  0
+call    0 returned 10
+branch  1 taken 8 (fallthrough)
+branch  2 taken 2 (throw)
+        4:   83:    }catch(const RepositoryException& exception){
+        2:   83-block  0
+call    0 returned 2
+    $$$$$:   83-block  1
+call    1 never executed
+        2:   83-block  2
+call    2 returned 2
+        2:   84:        if(exception.get_message() == "Id already exists"){
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   84-block  0
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0
+        2:   85:            throw MovieControllerException("Movie already in watchlist");
+        2:   85-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0 (throw)
+        2:   85-block  1
+call    5 returned 2
+branch  6 taken 2 (fallthrough)
+branch  7 taken 0 (throw)
+        2:   85-block  2
+call    8 returned 2
+call    9 returned 2
+call   10 returned 2
+    $$$$$:   85-block  3
+call   11 never executed
+    $$$$$:   85-block  4
+    $$$$$:   85-block  5
+call   12 never executed
+    $$$$$:   85-block  6
+    $$$$$:   85-block  7
+call   13 never executed
+        -:   86:        }
+        -:   87:    }
+        8:   88:}
+        8:   88-block  0
+        -:   89:
+function _ZN15MovieController17remove_movie_userERK5Movie called 2 returned 50% blocks executed 63%
+        2:   90:void MovieController::remove_movie_user(const Movie &movie) {
+        -:   91:    try{
+        2:   92:        this->watchlist.remove(movie);
+        2:   92-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1 (throw)
+        2:   93:    }catch(const RepositoryException& exception){
+        1:   93-block  0
+call    0 returned 1
+    $$$$$:   93-block  1
+call    1 never executed
+        1:   93-block  2
+call    2 returned 1
+        1:   94:        if(exception.get_message() == "Id doesn't exist"){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0
+        1:   95:            throw MovieControllerException("Movie not in watchlist");
+        1:   95-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   95-block  1
+call    5 returned 1
+branch  6 taken 1 (fallthrough)
+branch  7 taken 0 (throw)
+        1:   95-block  2
+call    8 returned 1
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   95-block  3
+call   11 never executed
+    $$$$$:   95-block  4
+    $$$$$:   95-block  5
+call   12 never executed
+    $$$$$:   95-block  6
+    $$$$$:   95-block  7
+call   13 never executed
+        -:   96:        }
+        -:   97:    }
+        1:   98:}
+        1:   98-block  0
+        -:   99:
+function _ZN15MovieController18get_watchlist_userEv called 4 returned 100% blocks executed 100%
+        4:  100:vector<Movie> MovieController::get_watchlist_user() {
+        4:  101:    return this->watchlist.get_all();
+        4:  101-block  0
+call    0 returned 4
+        -:  102:}
+        -:  103:
+function _ZN15MovieController15like_movie_userERK5Movie called 2 returned 100% blocks executed 50%
+        2:  104:void MovieController::like_movie_user(const Movie &movie) {
+        2:  105:    this->repository.update(Movie(movie.get_title(), movie.get_genre(), movie.get_year(), movie.get_likes() + 1, movie.get_trailer_link()));
+        2:  105-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:  105-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:  105-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+        2:  105-block  3
+call   10 returned 2
+branch 11 taken 2 (fallthrough)
+branch 12 taken 0 (throw)
+        2:  105-block  4
+call   13 returned 2
+branch 14 taken 2 (fallthrough)
+branch 15 taken 0 (throw)
+        2:  105-block  5
+call   16 returned 2
+branch 17 taken 2 (fallthrough)
+branch 18 taken 0 (throw)
+        2:  105-block  6
+call   19 returned 2
+call   20 returned 2
+call   21 returned 2
+call   22 returned 2
+    $$$$$:  105-block  7
+call   23 never executed
+    $$$$$:  105-block  8
+    $$$$$:  105-block  9
+call   24 never executed
+    $$$$$:  105-block 10
+    $$$$$:  105-block 11
+call   25 never executed
+    $$$$$:  105-block 12
+    $$$$$:  105-block 13
+    $$$$$:  105-block 14
+    $$$$$:  105-block 15
+call   26 never executed
+        2:  106:}
+        -:  107:
+function _ZN15MovieController20get_all_movies_adminEv called 7 returned 100% blocks executed 100%
+        7:  108:vector<Movie> MovieController::get_all_movies_admin() {
+        7:  109:    return this->repository.get_all();
+        7:  109-block  0
+call    0 returned 7
+        -:  110:}
+        -:  111:
+function _ZNK15MovieController10my_tolowerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 274 returned 100% blocks executed 77%
+      274:  112:std::string MovieController::my_tolower(const std::string &s) const {
+      274:  113:    std::string ans = "";
+      274:  113-block  0
+call    0 returned 274
+call    1 returned 274
+branch  2 taken 274 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  113-block  1
+call    4 never executed
+     2963:  114:    for(auto &it:s){
+call    0 returned 274
+call    1 returned 274
+     2963:  114-block  0
+call    2 returned 2963
+branch  3 taken 2689 (fallthrough)
+branch  4 taken 274
+     2689:  114-block  1
+call    5 returned 2689
+     2689:  114-block  2
+call    6 returned 2689
+     2689:  115:        if('A' <= it && it <= 'Z'){
+branch  0 taken 2674 (fallthrough)
+branch  1 taken 15
+     2674:  115-block  0
+branch  2 taken 246 (fallthrough)
+branch  3 taken 2428
+      246:  116:            ans += it + ('a' - 'A');
+      246:  116-block  0
+call    0 returned 246
+branch  1 taken 246 (fallthrough)
+branch  2 taken 0 (throw)
+      246:  116-block  1
+        -:  117:        }else{
+     2443:  118:            ans += it;
+     2443:  118-block  0
+call    0 returned 2443
+branch  1 taken 2443 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  119:        }
+        -:  120:    }
+      274:  121:    return ans;
+      274:  121-block  0
+      274:  121-block  1
+        -:  122:}
+        -:  123:
+function _ZN15MovieControlleraSERKS_ called 11 returned 100% blocks executed 100%
+       11:  124:MovieController &MovieController::operator=(const MovieController &other) {
+       11:  125:    this->repository = other.repository;
+       11:  125-block  0
+call    0 returned 11
+       11:  126:    this->watchlist = other.watchlist;
+call    0 returned 11
+       11:  127:    return *this;
+        -:  128:}
+        -:  129:
+function _ZNK15MovieController17display_watchlistEv called 0 returned 0% blocks executed 0%
+    #####:  130:void MovieController::display_watchlist() const {
+    #####:  131:    this->watchlist.display();
+    %%%%%:  131-block  0
+call    0 never executed
+    #####:  132:}

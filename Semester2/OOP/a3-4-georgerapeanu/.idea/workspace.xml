@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="a3_4_georgerapeanu" targetName="a3_4_georgerapeanu" />
+      <config projectName="a3_4_georgerapeanu" targetName="a3_4_georgerapeanu_tests" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug-Coverage" ENABLED="true" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_CXX_FLAGS=--coverage -DCMAKE_C_FLAGS=--coverage" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7f219524-57bd-4068-a212-8aec6b60dfa7" name="Changes" comment="updates documentation">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/a3-4-georgerapeanu.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cache-v2-10fb468ab67cbeb6cdf1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/cmakeFiles-v1-7868acb16361dbff8424.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/codemodel-v2-0909bdb0a6858d56a134.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2022-03-14T16-38-40-0148.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/target-a3_4_georgerapeanu-Debug-7c437ba65a74f75c827a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/target-a3_4_georgerapeanu_tests-Debug-3e892851daf50c3a6711.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/toolchains-v1-a894359dc99c08def31e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.21.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeError.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/app/main.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/app/main.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/controller/country_controller.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/controller/country_controller.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/controller/undo_redo_controller.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/controller/undo_redo_controller.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/country.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/country.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/errors.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/errors.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/operation.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/operation.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/undo_redo_operation.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/undo_redo_operation.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/vector.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/domain/vector.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/repository/repository.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/repository/repository.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/repository/undo_redo_repository.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/repository/undo_redo_repository.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/ui/ui.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/ui/ui.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/utils/utils.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu.dir/src/utils/utils.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/country_controller.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/country_controller.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/undo_redo_controller.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/controller/undo_redo_controller.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/country.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/country.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/errors.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/errors.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/operation.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/operation.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/undo_redo_operation.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/undo_redo_operation.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/vector.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/domain/vector.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/repository.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/repository.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/undo_redo_repository.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/repository/undo_redo_repository.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/utils/utils.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/src/utils/utils.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/app/main.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/app/main.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/controller/country_controller_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/controller/country_controller_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/controller/undo_redo_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/controller/undo_redo_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/country_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/country_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/domain_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/domain_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/errors_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/errors_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/operation_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/operation_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/undo_redo_operation_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/undo_redo_operation_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/vector_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/domain/vector_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/repository/repository_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/repository/repository_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/utils/utils_tests.c.gcda" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/a3_4_georgerapeanu_tests.dir/tests/src/utils/utils_tests.c.gcno" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/a3_4_georgerapeanu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/a3_4_georgerapeanu_tests" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/country.c.gcda##country.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/country_controller.c.gcda##country_controller.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/country_controller_tests.c.gcda##country_controller_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/country_tests.c.gcda##country_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/domain_tests.c.gcda##domain_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/errors.c.gcda##errors.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/errors_tests.c.gcda##errors_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/main.c.gcda##main.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/operation.c.gcda##operation.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/operation_tests.c.gcda##operation_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repository.c.gcda##repository.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repository_tests.c.gcda##repository_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/undo_redo_controller.c.gcda##undo_redo_controller.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/undo_redo_operation.c.gcda##undo_redo_operation.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/undo_redo_operation_tests.c.gcda##undo_redo_operation_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/undo_redo_repository.c.gcda##undo_redo_repository.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/undo_redo_tests.c.gcda##undo_redo_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/utils.c.gcda##utils.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/utils_tests.c.gcda##utils_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/vector.c.gcda##vector.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/vector_tests.c.gcda##vector_tests.c.gcov" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cache-v2-82dbecc6fd643cdca5ac.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4078c8b03d03dc1f484a.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-05cd5dd29a744b985cdc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-f5ebdc15457944623624.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-03-14T16-38-40-0145.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-a3_4_georgerapeanu-Debug-8fd7e8f145ab5bcc8ad4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-a3_4_georgerapeanu_tests-Debug-bcc9be73f56e99ddcff2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-d668cb81fceeba1bd9d6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/a3_4_georgerapeanu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/a3_4_georgerapeanu_tests" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug-Coverage" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2021" />
+    <option name="minorVersion" value="3.3" />
+  </component>
+  <component name="ProjectId" id="2640gZNVZEqluIGVLQwYykELf5I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/domain" />
+    </key>
+  </component>
+  <component name="RunManager" selected="CMake Application.a3_4_georgerapeanu">
+    <configuration name="a3_4_georgerapeanu" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="a3_4_georgerapeanu" TARGET_NAME="a3_4_georgerapeanu" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="a3_4_georgerapeanu" RUN_TARGET_NAME="a3_4_georgerapeanu">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="a3_4_georgerapeanu_tests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="a3_4_georgerapeanu" TARGET_NAME="a3_4_georgerapeanu_tests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="a3_4_georgerapeanu" RUN_TARGET_NAME="a3_4_georgerapeanu_tests">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.a3_4_georgerapeanu" />
+      <item itemvalue="CMake Application.a3_4_georgerapeanu_tests" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7f219524-57bd-4068-a212-8aec6b60dfa7" name="Changes" comment="" />
+      <created>1646667667941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1646667667941</updated>
+      <workItem from="1646667674134" duration="7775000" />
+      <workItem from="1646744929783" duration="15904000" />
+      <workItem from="1646804743469" duration="7412000" />
+      <workItem from="1646907608721" duration="25000" />
+      <workItem from="1646907778066" duration="37000" />
+      <workItem from="1646916812767" duration="1558000" />
+      <workItem from="1647084198032" duration="2026000" />
+      <workItem from="1647239844897" duration="36150000" />
+      <workItem from="1647428707844" duration="398000" />
+      <workItem from="1647502885601" duration="2385000" />
+      <workItem from="1647615048950" duration="40000" />
+      <workItem from="1647615186673" duration="13000" />
+    </task>
+    <task id="LOCAL-00001" summary="working protorype maybe">
+      <created>1646680082981</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646680082981</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adds tests and some bug fixes">
+      <created>1646775884866</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646775884866</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adds more tests">
+      <created>1646808478032</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646808478032</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finished tests for now">
+      <created>1646811918453</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646811918453</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adds undo-redo operation and tests for it.">
+      <created>1647250391747</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647250391747</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adds the undo-redo controller, this is a commit before changing the country_controller to allow undos">
+      <created>1647258151624</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647258151624</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changes tests and implementation&#10;next step is to actually add undo redo operations on modifications">
+      <created>1647258664459</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647258664459</updated>
+    </task>
+    <task id="LOCAL-00008" summary="changes tests and from_args behaviour in country_controller.c">
+      <created>1647265807270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1647265807270</updated>
+    </task>
+    <task id="LOCAL-00009" summary="finishes the undo-redo mechanic I hope&#10;will run tests">
+      <created>1647275703827</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1647275703827</updated>
+    </task>
+    <task id="LOCAL-00010" summary="final commit">
+      <created>1647282379204</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1647282379204</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updates documentation">
+      <created>1647282778601</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647282778601</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="working protorype maybe" />
+    <MESSAGE value="adds tests and some bug fixes" />
+    <MESSAGE value="adds more tests" />
+    <MESSAGE value="finished tests for now" />
+    <MESSAGE value="adds undo-redo operation and tests for it." />
+    <MESSAGE value="adds the undo-redo controller, this is a commit before changing the country_controller to allow undos" />
+    <MESSAGE value="changes tests and implementation&#10;next step is to actually add undo redo operations on modifications" />
+    <MESSAGE value="changes tests and from_args behaviour in country_controller.c" />
+    <MESSAGE value="finishes the undo-redo mechanic I hope&#10;will run tests" />
+    <MESSAGE value="final commit" />
+    <MESSAGE value="updates documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates documentation" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/include/controller/country_controller.h</url>
+          <line>51</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/src/controller/undo_redo_tests.c</url>
+          <line>129</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/src/controller/undo_redo_tests.c</url>
+          <line>83</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="../../../Desktop/ubbShit/Semester2/OOP/a3-4-georgerapeanu/cmake-build-debug-coverage" NAME="a3_4_georgerapeanu_tests Coverage Results" MODIFIED="1647281910218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="gcov/llvm" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

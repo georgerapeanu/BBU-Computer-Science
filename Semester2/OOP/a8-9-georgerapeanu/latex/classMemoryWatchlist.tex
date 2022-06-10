@@ -1,0 +1,197 @@
+\hypertarget{classMemoryWatchlist}{}\doxysubsection{Memory\+Watchlist$<$ T $>$ Class Template Reference}
+\label{classMemoryWatchlist}\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+
+
+Inheritance diagram for Memory\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classMemoryWatchlist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+Watchlist$<$ T $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classMemoryWatchlist__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMemoryWatchlist_a14a23d6b74cebb29d427db27f7b1a4ee}\label{classMemoryWatchlist_a14a23d6b74cebb29d427db27f7b1a4ee}} 
+\mbox{\hyperlink{classMemoryWatchlist_a14a23d6b74cebb29d427db27f7b1a4ee}{Memory\+Watchlist}} ()
+\begin{DoxyCompactList}\small\item\em the default constructor of the repository Initializes a repository which holds an empty vector of type T \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMemoryWatchlist_af11bcdbed359622099f220cd9bc61918}\label{classMemoryWatchlist_af11bcdbed359622099f220cd9bc61918}} 
+\mbox{\hyperlink{classMemoryWatchlist_af11bcdbed359622099f220cd9bc61918}{$\sim$\+Memory\+Watchlist}} ()
+\begin{DoxyCompactList}\small\item\em the default destructor of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryWatchlist_ab354c281c471921f3cc4b4dc8dabd33b}{add}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the add method of the repository. Adds an element to the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryWatchlist_a3f063ab96fafa9dd4c87b12ef7663061}{update}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em the update method of the repository. Updates an element of the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryWatchlist_a282d04e489b41bd00dfd5c3aabac8cf5}{remove}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em removes an element using the id provided by an element with the same id. \end{DoxyCompactList}\item 
+T \mbox{\hyperlink{classMemoryWatchlist_a92eb066c18f068e592db7fbd1c1a7011}{find}} (const T \&elem) override
+\begin{DoxyCompactList}\small\item\em returns the element with the same id as the element that is provided \end{DoxyCompactList}\item 
+std\+::vector$<$ T $>$ \mbox{\hyperlink{classMemoryWatchlist_a5bc70200439d5f293745d7adf4aadd0e}{get\+\_\+all}} () override
+\begin{DoxyCompactList}\small\item\em gets all elements from the repository \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryWatchlist_ab4604c573c32d19ceab0008d7229664a}{save}} () const override
+\item 
+void \mbox{\hyperlink{classMemoryWatchlist_affab66e952a8245caf7189bbc937aa5a}{display}} () const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryWatchlist_ab354c281c471921f3cc4b4dc8dabd33b}\label{classMemoryWatchlist_ab354c281c471921f3cc4b4dc8dabd33b}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!add@{add}}
+\index{add@{add}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the add method of the repository. Adds an element to the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be added \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if its id is already taken \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a09716704a27bbeea153826e4de75bfc9}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_affab66e952a8245caf7189bbc937aa5a}\label{classMemoryWatchlist_affab66e952a8245caf7189bbc937aa5a}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!display@{display}}
+\index{display@{display}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::display\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This file shows the file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a86275b7cceab399a29fc00af311befe2}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_a92eb066c18f068e592db7fbd1c1a7011}\label{classMemoryWatchlist_a92eb066c18f068e592db7fbd1c1a7011}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!find@{find}}
+\index{find@{find}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::find (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+returns the element with the same id as the element that is provided 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element used to search the id \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the element from the repository with that id 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_aeb59d155ae004c02ad4c19539e98a5ce}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_a5bc70200439d5f293745d7adf4aadd0e}\label{classMemoryWatchlist_a5bc70200439d5f293745d7adf4aadd0e}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!get\_all@{get\_all}}
+\index{get\_all@{get\_all}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{get\_all()}{get\_all()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+vector$<$ T $>$ \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::get\+\_\+all\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+gets all elements from the repository 
+
+\begin{DoxyReturn}{Returns}
+all elements currently held in the repository 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a6740c931b683196292e61d6885a1320c}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_a282d04e489b41bd00dfd5c3aabac8cf5}\label{classMemoryWatchlist_a282d04e489b41bd00dfd5c3aabac8cf5}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+removes an element using the id provided by an element with the same id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & the element to be removed \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a5bb9a6db37b63ed42e1813a89b20271b}{Abstract\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_ab4604c573c32d19ceab0008d7229664a}\label{classMemoryWatchlist_ab4604c573c32d19ceab0008d7229664a}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!save@{save}}
+\index{save@{save}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::save\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+This function saves the data to a file 
+
+Implements \mbox{\hyperlink{classAbstractWatchlist_a58ac45a38bc11d0e5bb45e5f6d86b7df}{Abstract\+Watchlist$<$ T $>$}}.
+
+\mbox{\Hypertarget{classMemoryWatchlist_a3f063ab96fafa9dd4c87b12ef7663061}\label{classMemoryWatchlist_a3f063ab96fafa9dd4c87b12ef7663061}} 
+\index{MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}!update@{update}}
+\index{update@{update}!MemoryWatchlist$<$ T $>$@{MemoryWatchlist$<$ T $>$}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classMemoryWatchlist}{Memory\+Watchlist}}$<$ T $>$\+::update (\begin{DoxyParamCaption}\item[{const T \&}]{elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+the update method of the repository. Updates an element of the repository 
+
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & an element with which to update. It should have the same id as the one to be updated \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classRepositoryException}{Repository\+Exception}}} & if id doesn\textquotesingle{}t exist \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classAbstractRepository_a19028b829fedd8fb1e6ff2c3789cee3e}{Abstract\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/repository/\mbox{\hyperlink{MemoryWatchlist_8h}{Memory\+Watchlist.\+h}}\item 
+src/repository/\mbox{\hyperlink{MemoryWatchlist_8cpp}{Memory\+Watchlist.\+cpp}}\end{DoxyCompactItemize}

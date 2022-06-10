@@ -1,0 +1,85 @@
+\hypertarget{errors_8c}{}\doxysubsection{src/domain/errors.c File Reference}
+\label{errors_8c}\index{src/domain/errors.c@{src/domain/errors.c}}
+{\ttfamily \#include \char`\"{}../../include/domain/errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for errors.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{errors_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{errors_8c_a9dc10657d11c9eb4ffb5348f0055e303}{set\+\_\+error}} (int $\ast$p\+\_\+error, int error\+\_\+code)
+\begin{DoxyCompactList}\small\item\em This function sets the error code to a given pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structerror__t}{error\+\_\+t}} \mbox{\hyperlink{errors_8c_a5d02c28eed1044e378eb18efa19a09e6}{errors}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em this is a vector containing all error codes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+contains the implementation for \mbox{\hyperlink{errors_8h}{errors.\+h}} 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{errors_8c_a9dc10657d11c9eb4ffb5348f0055e303}\label{errors_8c_a9dc10657d11c9eb4ffb5348f0055e303}} 
+\index{errors.c@{errors.c}!set\_error@{set\_error}}
+\index{set\_error@{set\_error}!errors.c@{errors.c}}
+\doxyparagraph{\texorpdfstring{set\_error()}{set\_error()}}
+{\footnotesize\ttfamily void set\+\_\+error (\begin{DoxyParamCaption}\item[{int $\ast$}]{p\+\_\+error,  }\item[{int}]{error\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+This function sets the error code to a given pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+error} & a pointer to the variable that receives the error code. It can be N\+U\+LL in case no error is wanted. \\
+\hline
+{\em error\+\_\+code} & the error code \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsubsection{Variable Documentation}
+\mbox{\Hypertarget{errors_8c_a5d02c28eed1044e378eb18efa19a09e6}\label{errors_8c_a5d02c28eed1044e378eb18efa19a09e6}} 
+\index{errors.c@{errors.c}!errors@{errors}}
+\index{errors@{errors}!errors.c@{errors.c}}
+\doxyparagraph{\texorpdfstring{errors}{errors}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structerror__t}{error\+\_\+t}} errors\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Success!"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Unable to allocate more memory(bad\_alloc)"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Vector element size invalid"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Vector size invalid"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Vector new capacity is less than old capacity"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"A pop was attempted on an empty vector"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Attempted to access an index which is not in vector"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Invalid index in repository"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Country with specified name already exists"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Country population cannot be negative"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Continent does not exist"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Country with specified name doesn't exist"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Source country cannot be the same with destination country"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Source country population is less than migrated population"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"New population cannot be negative"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Sort order invalid"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Invalid address"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Command does not follow format"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Args has wrong size"}, 1\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Cannot undo any further"}, 0\},}
+\DoxyCodeLine{\{\textcolor{stringliteral}{"Cannot redo any further"}, 0\}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+this is a vector containing all error codes 
+
+Array containing all the corresponding messages for each error code. 

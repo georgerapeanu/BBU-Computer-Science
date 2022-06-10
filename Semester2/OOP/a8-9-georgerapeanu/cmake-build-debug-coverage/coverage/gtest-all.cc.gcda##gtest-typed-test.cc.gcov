@@ -1,0 +1,309 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/tests/googletest/googletest/src/gtest-typed-test.cc
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a8-9-georgerapeanu/cmake-build-debug-coverage/tests/googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.gcda
+        -:    0:Runs:1
+        -:    1:// Copyright 2008 Google Inc.
+        -:    2:// All Rights Reserved.
+        -:    3://
+        -:    4:// Redistribution and use in source and binary forms, with or without
+        -:    5:// modification, are permitted provided that the following conditions are
+        -:    6:// met:
+        -:    7://
+        -:    8://     * Redistributions of source code must retain the above copyright
+        -:    9:// notice, this list of conditions and the following disclaimer.
+        -:   10://     * Redistributions in binary form must reproduce the above
+        -:   11:// copyright notice, this list of conditions and the following disclaimer
+        -:   12:// in the documentation and/or other materials provided with the
+        -:   13:// distribution.
+        -:   14://     * Neither the name of Google Inc. nor the names of its
+        -:   15:// contributors may be used to endorse or promote products derived from
+        -:   16:// this software without specific prior written permission.
+        -:   17://
+        -:   18:// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        -:   19:// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        -:   20:// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        -:   21:// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        -:   22:// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        -:   23:// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        -:   24:// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        -:   25:// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        -:   26:// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        -:   27:// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        -:   28:// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        -:   29:
+        -:   30:#include "gtest/gtest-typed-test.h"
+        -:   31:
+        -:   32:#include "gtest/gtest.h"
+        -:   33:
+        -:   34:namespace testing {
+        -:   35:namespace internal {
+        -:   36:
+        -:   37:// Skips to the first non-space char in str. Returns an empty string if str
+        -:   38:// contains only whitespace characters.
+function _ZN7testing8internalL10SkipSpacesEPKc called 0 returned 0% blocks executed 0%
+    #####:   39:static const char* SkipSpaces(const char* str) {
+    #####:   40:  while (IsSpace(*str)) str++;
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   40-block  1
+    #####:   41:  return str;
+    %%%%%:   41-block  0
+        -:   42:}
+        -:   43:
+function _ZN7testing8internalL18SplitIntoTestNamesEPKc called 0 returned 0% blocks executed 0%
+    #####:   44:static std::vector<std::string> SplitIntoTestNames(const char* src) {
+    #####:   45:  std::vector<std::string> name_vec;
+    %%%%%:   45-block  0
+call    0 never executed
+    #####:   46:  src = SkipSpaces(src);
+call    0 never executed
+    #####:   47:  for (; src != nullptr; src = SkipComma(src)) {
+    %%%%%:   47-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   48:    name_vec.push_back(StripTrailingSpaces(GetPrefixUntilComma(src)));
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   48-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   48-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   48-block  3
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:   48-block  4
+call   12 never executed
+    $$$$$:   48-block  5
+    $$$$$:   48-block  6
+call   13 never executed
+    $$$$$:   48-block  7
+        -:   49:  }
+    #####:   50:  return name_vec;
+    %%%%%:   50-block  0
+    %%%%%:   50-block  1
+        -:   51:}
+        -:   52:
+        -:   53:// Verifies that registered_tests match the test names in
+        -:   54:// registered_tests_; returns registered_tests if successful, or
+        -:   55:// aborts the program otherwise.
+function _ZN7testing8internal20TypedTestSuitePState25VerifyRegisteredTestNamesEPKcS3_iS3_ called 0 returned 0% blocks executed 0%
+    #####:   56:const char* TypedTestSuitePState::VerifyRegisteredTestNames(
+        -:   57:    const char* test_suite_name, const char* file, int line,
+        -:   58:    const char* registered_tests) {
+    #####:   59:  RegisterTypeParameterizedTestSuite(test_suite_name, CodeLocation(file, line));
+    %%%%%:   59-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   59-block  1
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   59-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    %%%%%:   59-block  3
+call   10 never executed
+call   11 never executed
+call   12 never executed
+    $$$$$:   59-block  4
+call   13 never executed
+    $$$$$:   59-block  5
+    $$$$$:   59-block  6
+call   14 never executed
+    $$$$$:   59-block  7
+    $$$$$:   59-block  8
+call   15 never executed
+    $$$$$:   59-block  9
+        -:   60:
+        -:   61:  typedef RegisteredTestsMap::const_iterator RegisteredTestIter;
+    #####:   62:  registered_ = true;
+        -:   63:
+    #####:   64:  std::vector<std::string> name_vec = SplitIntoTestNames(registered_tests);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+    $$$$$:   64-block  0
+call    4 never executed
+        -:   65:
+    #####:   66:  Message errors;
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+call    3 never executed
+    $$$$$:   66-block  1
+call    4 never executed
+        -:   67:
+    #####:   68:  std::set<std::string> tests;
+    %%%%%:   68-block  0
+call    0 never executed
+call    1 never executed
+    $$$$$:   68-block  1
+call    2 never executed
+    #####:   69:  for (std::vector<std::string>::const_iterator name_it = name_vec.begin();
+call    0 never executed
+call    1 never executed
+    #####:   70:       name_it != name_vec.end(); ++name_it) {
+    %%%%%:   70-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   70-block  1
+call    4 never executed
+    #####:   71:    const std::string& name = *name_it;
+    %%%%%:   71-block  0
+call    0 never executed
+    #####:   72:    if (tests.count(name) != 0) {
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   72-block  0
+branch  3 never executed
+branch  4 never executed
+    #####:   73:      errors << "Test " << name << " is listed more than once.\n";
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   73-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   73-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    #####:   74:      continue;
+    %%%%%:   74-block  0
+        -:   75:    }
+        -:   76:
+    #####:   77:    if (registered_tests_.count(name) != 0) {
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:   78:      tests.insert(name);
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   79:    } else {
+    #####:   80:      errors << "No test named " << name
+    %%%%%:   80-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   80-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    #####:   81:             << " can be found in this test suite.\n";
+    %%%%%:   81-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   82:    }
+        -:   83:  }
+        -:   84:
+    #####:   85:  for (RegisteredTestIter it = registered_tests_.begin();
+    %%%%%:   85-block  0
+call    0 never executed
+call    1 never executed
+    #####:   86:       it != registered_tests_.end(); ++it) {
+    %%%%%:   86-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   86-block  1
+call    5 never executed
+    #####:   87:    if (tests.count(it->first) == 0) {
+    %%%%%:   87-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   87-block  1
+branch  4 never executed
+branch  5 never executed
+    #####:   88:      errors << "You forgot to list test " << it->first << ".\n";
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   88-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   88-block  2
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+        -:   89:    }
+        -:   90:  }
+        -:   91:
+    #####:   92:  const std::string& errors_str = errors.GetString();
+    %%%%%:   92-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   92-block  1
+call    3 never executed
+    #####:   93:  if (errors_str != "") {
+    %%%%%:   93-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   94:    fprintf(stderr, "%s %s", FormatFileLocation(file, line).c_str(),
+    %%%%%:   94-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   94-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   94-block  2
+call    8 never executed
+    $$$$$:   94-block  3
+call    9 never executed
+    $$$$$:   94-block  4
+        -:   95:            errors_str.c_str());
+    #####:   96:    fflush(stderr);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:    posix::Abort();
+    %%%%%:   97-block  0
+call    0 never executed
+        -:   98:  }
+        -:   99:
+    #####:  100:  return registered_tests;
+    %%%%%:  100-block  0
+call    0 never executed
+    %%%%%:  100-block  1
+        -:  101:}
+        -:  102:
+        -:  103:}  // namespace internal
+        -:  104:}  // namespace testing

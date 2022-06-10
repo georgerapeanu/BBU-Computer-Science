@@ -1,0 +1,39 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/AbstractMovieAction.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/AbstractMovieAction.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/AbstractMovieAction.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by georgerapeanu on 23.05.2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "AbstractMovieAction.h"
+        -:    6:
+function _ZN19AbstractMovieActionC2ERK5MovieR18AbstractRepositoryIS0_ER17AbstractWatchlistIS0_E called 113 returned 100% blocks executed 100%
+      113:    7:AbstractMovieAction::AbstractMovieAction(const Movie &movie, AbstractRepository<Movie> &movie_repository,
+      113:    8:                                         AbstractWatchlist<Movie> &movie_watchlist): movie(movie), movie_repository(movie_repository), movie_watchlist(movie_watchlist) {
+      113:    8-block  0
+call    0 returned 113
+        -:    9:
+      113:   10:}
+        -:   11:
+     113*:   12:AbstractMovieAction::~AbstractMovieAction() {
+        -:   13:
+     113*:   14:}
+------------------
+_ZN19AbstractMovieActionD0Ev:
+function _ZN19AbstractMovieActionD0Ev called 0 returned 0% blocks executed 0%
+    #####:   12:AbstractMovieAction::~AbstractMovieAction() {
+        -:   13:
+    #####:   14:}
+    %%%%%:   14-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN19AbstractMovieActionD2Ev:
+function _ZN19AbstractMovieActionD2Ev called 113 returned 100% blocks executed 100%
+      113:   12:AbstractMovieAction::~AbstractMovieAction() {
+      113:   12-block  0
+call    0 returned 113
+        -:   13:
+      113:   14:}
+------------------

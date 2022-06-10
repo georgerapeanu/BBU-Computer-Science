@@ -1,0 +1,82 @@
+\hypertarget{ui_8h}{}\doxysubsection{include/ui/ui.h File Reference}
+\label{ui_8h}\index{include/ui/ui.h@{include/ui/ui.h}}
+{\ttfamily \#include \char`\"{}../controller/country\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../controller/undo\+\_\+redo\+\_\+controller.\+h\char`\"{}}\newline
+Include dependency graph for ui.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ui_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{ui_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structui__t}{ui\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em this is a model for the \mbox{\hyperlink{structui__t}{ui\+\_\+t}} structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$ \mbox{\hyperlink{ui_8h_acc88f91f90ecdda4b23e7c2e1a8a623b}{create\+\_\+ui}} (\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$p\+\_\+controller, \mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$p\+\_\+undo\+\_\+redo\+\_\+controller, int $\ast$p\+\_\+error)
+\begin{DoxyCompactList}\small\item\em creates ui object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ui_8h_afdbec9ddf806a611413edf37883a8307}{delete\+\_\+ui}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui)
+\item 
+void \mbox{\hyperlink{ui_8h_ac49e155415f2cc70300b08a47643976b}{run}} (\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$p\+\_\+ui)
+\begin{DoxyCompactList}\small\item\em the main loop of the ui \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+this file contains the model for an ui structure 
+
+\doxysubsubsection{Function Documentation}
+\mbox{\Hypertarget{ui_8h_acc88f91f90ecdda4b23e7c2e1a8a623b}\label{ui_8h_acc88f91f90ecdda4b23e7c2e1a8a623b}} 
+\index{ui.h@{ui.h}!create\_ui@{create\_ui}}
+\index{create\_ui@{create\_ui}!ui.h@{ui.h}}
+\doxyparagraph{\texorpdfstring{create\_ui()}{create\_ui()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structui__t}{ui\+\_\+t}}$\ast$ create\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcountry__controller__t}{country\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+controller,  }\item[{\mbox{\hyperlink{structundo__redo__controller__t}{undo\+\_\+redo\+\_\+controller\+\_\+t}} $\ast$}]{p\+\_\+undo\+\_\+redo\+\_\+controller,  }\item[{int $\ast$}]{p\+\_\+error }\end{DoxyParamCaption})}
+
+
+
+creates ui object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & pointer to the controller \\
+\hline
+{\em p\+\_\+error} & pointer to the variable receiving the error code. Can be left N\+U\+LL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8h_afdbec9ddf806a611413edf37883a8307}\label{ui_8h_afdbec9ddf806a611413edf37883a8307}} 
+\index{ui.h@{ui.h}!delete\_ui@{delete\_ui}}
+\index{delete\_ui@{delete\_ui}!ui.h@{ui.h}}
+\doxyparagraph{\texorpdfstring{delete\_ui()}{delete\_ui()}}
+{\footnotesize\ttfamily void delete\+\_\+ui (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui }\end{DoxyParamCaption})}
+
+frees the memory of a \mbox{\hyperlink{structui__t}{ui\+\_\+t}} object 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & pointer to the ui object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ui_8h_ac49e155415f2cc70300b08a47643976b}\label{ui_8h_ac49e155415f2cc70300b08a47643976b}} 
+\index{ui.h@{ui.h}!run@{run}}
+\index{run@{run}!ui.h@{ui.h}}
+\doxyparagraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void run (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structui__t}{ui\+\_\+t}} $\ast$}]{p\+\_\+ui }\end{DoxyParamCaption})}
+
+
+
+the main loop of the ui 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+ui} & the pointer to the ui \\
+\hline
+\end{DoxyParams}

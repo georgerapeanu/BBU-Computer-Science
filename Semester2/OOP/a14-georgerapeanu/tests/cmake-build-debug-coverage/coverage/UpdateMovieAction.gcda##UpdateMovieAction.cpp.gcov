@@ -1,0 +1,63 @@
+        -:    0:Source:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/UpdateMovieAction.cpp
+        -:    0:Graph:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/UpdateMovieAction.gcno
+        -:    0:Data:/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/tests/cmake-build-debug-coverage/CMakeFiles/a14_georgerapeanu_tests.dir/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a14-georgerapeanu/src/domain/UpdateMovieAction.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by georgerapeanu on 23.05.2022.
+        -:    3://
+        -:    4:
+        -:    5:#include "UpdateMovieAction.h"
+        -:    6:#include "Exceptions.h"
+        -:    7:
+function _ZN17UpdateMovieActionC2ERK5MovieS2_R18AbstractRepositoryIS0_ER17AbstractWatchlistIS0_E called 1 returned 100% blocks executed 80%
+        1:    8:UpdateMovieAction::UpdateMovieAction(const Movie &movie, const Movie &new_movie,AbstractRepository<Movie> &movie_repository,
+        1:    9:                                     AbstractWatchlist<Movie> &movie_watchlist) : AbstractMovieAction(movie,
+        -:   10:                                                                                                      movie_repository,
+        -:   11:                                                                                                      movie_watchlist),
+        1:   12:                                                                                                      new_movie(new_movie){
+        1:   12-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   12-block  1
+call    4 never executed
+        -:   13:
+        1:   14:}
+        1:   14-block  0
+        -:   15:
+function _ZN17UpdateMovieAction4undoEv called 0 returned 0% blocks executed 0%
+    #####:   16:void UpdateMovieAction::undo() {
+    #####:   17:    this->movie_repository.update(this->movie);
+    %%%%%:   17-block  0
+call    0 never executed
+        -:   18:    try{
+    #####:   19:        this->movie_watchlist.update(this->movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   20:    }catch (RepositoryException &ex){
+    $$$$$:   20-block  0
+call    0 never executed
+        -:   21:        ;
+        -:   22:    }
+    #####:   23:}
+    %%%%%:   23-block  0
+        -:   24:
+function _ZN17UpdateMovieAction4redoEv called 0 returned 0% blocks executed 0%
+    #####:   25:void UpdateMovieAction::redo() {
+    #####:   26:    this->movie_repository.update(this->new_movie);
+    %%%%%:   26-block  0
+call    0 never executed
+        -:   27:    try{
+    #####:   28:        this->movie_watchlist.update(this->new_movie);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   29:    }catch (RepositoryException &ex){
+    $$$$$:   29-block  0
+call    0 never executed
+        -:   30:        ;
+        -:   31:    }
+    #####:   32:}
+    %%%%%:   32-block  0

@@ -1,0 +1,37 @@
+\hypertarget{structvector__t}{}\doxysubsection{vector\+\_\+t Struct Reference}
+\label{structvector__t}\index{vector\_t@{vector\_t}}
+
+
+Implements a dynamic array. It is generic, so you can hold any type in it.  
+
+
+
+
+{\ttfamily \#include $<$vector.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structvector__t_afce270337125fd7e9ceebfe52877bae5}\label{structvector__t_afce270337125fd7e9ceebfe52877bae5}} 
+int \mbox{\hyperlink{structvector__t_afce270337125fd7e9ceebfe52877bae5}{element\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em the size of an element of the array. This value assures that the structure is re-\/usable with any type \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structvector__t_aa798ee172c823df277a344034fdd622b}\label{structvector__t_aa798ee172c823df277a344034fdd622b}} 
+void $\ast$ \mbox{\hyperlink{structvector__t_aa798ee172c823df277a344034fdd622b}{elements}}
+\begin{DoxyCompactList}\small\item\em pointer to a bytes buffer which holds the data for the structure. It should be casted to the specific type in order to correctly use the \mbox{[}\mbox{]} operator \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structvector__t_a0e65b0968b1e9f6de4d815686f6699a0}\label{structvector__t_a0e65b0968b1e9f6de4d815686f6699a0}} 
+int \mbox{\hyperlink{structvector__t_a0e65b0968b1e9f6de4d815686f6699a0}{size}}
+\begin{DoxyCompactList}\small\item\em the size of the vector(the number of elements it currently holds) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structvector__t_ab76a511a41e98bd6f62ca5955f25c07d}\label{structvector__t_ab76a511a41e98bd6f62ca5955f25c07d}} 
+int \mbox{\hyperlink{structvector__t_ab76a511a41e98bd6f62ca5955f25c07d}{capacity}}
+\begin{DoxyCompactList}\small\item\em the capacity of the vector(the maximum number of elements it currently can hold) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structvector__t_a816c9ad8f97e020b9e40ad69e63b2c8b}\label{structvector__t_a816c9ad8f97e020b9e40ad69e63b2c8b}} 
+void($\ast$ \mbox{\hyperlink{structvector__t_a816c9ad8f97e020b9e40ad69e63b2c8b}{free\+\_\+elem\+\_\+data}} )(void $\ast$p\+\_\+elem)
+\begin{DoxyCompactList}\small\item\em a function which is responsible for freeing any memory allocated on the heap for an element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Implements a dynamic array. It is generic, so you can hold any type in it. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/domain/\mbox{\hyperlink{vector_8h}{vector.\+h}}\end{DoxyCompactItemize}
