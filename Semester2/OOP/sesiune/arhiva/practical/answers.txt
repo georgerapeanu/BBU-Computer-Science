@@ -1,0 +1,10 @@
+0~1~test1~raspuns~28
+1~2~test3~ok~100
+2~2~test3~da~16
+3~2~test3~da~16
+4~2~test3~da~16
+5~2~test3~da~16
+6~2~test3~da~0
+7~2~test3~da~0
+8~0~test3~hmmm~0
+9~1~test2~nu~4
