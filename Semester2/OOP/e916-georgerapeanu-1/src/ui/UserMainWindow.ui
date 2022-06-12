@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserMainWindow</class>
+ <widget class="QWidget" name="UserMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>781</width>
+    <height>527</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>UserMainWindow</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QVBoxLayout" name="questions_vertical_layout">
+     <item>
+      <widget class="QLabel" name="questions_label">
+       <property name="text">
+        <string>Questions:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="questions_table"/>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="questions_form_layout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="questions_text_label">
+         <property name="text">
+          <string>Text:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="questions_text_lineedit"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="questions_add_button">
+       <property name="text">
+        <string>Add question</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="answers_vertical_layout">
+     <item>
+      <widget class="QLabel" name="answers_label">
+       <property name="text">
+        <string>Answers:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="answers_table"/>
+     </item>
+     <item>
+      <layout class="QFormLayout" name="answers_form_layout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="answets_text_label">
+         <property name="text">
+          <string>Text:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="answers_text_lineedit"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QPushButton" name="answers_add_button">
+       <property name="text">
+        <string>Add answer</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>questions_table</sender>
+   <signal>cellClicked(int,int)</signal>
+   <receiver>UserMainWindow</receiver>
+   <slot>clickedQuestionCell(int,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>172</x>
+     <y>523</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>questions_add_button</sender>
+   <signal>clicked()</signal>
+   <receiver>UserMainWindow</receiver>
+   <slot>clickedAddQuestion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>131</x>
+     <y>509</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>123</x>
+     <y>525</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>answers_add_button</sender>
+   <signal>clicked()</signal>
+   <receiver>UserMainWindow</receiver>
+   <slot>clickedAddAnswer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>488</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>492</x>
+     <y>522</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>clickedQuestionCell(int,int)</slot>
+  <slot>clickedAddQuestion()</slot>
+  <slot>clickedAddAnswer()</slot>
+ </slots>
+</ui>

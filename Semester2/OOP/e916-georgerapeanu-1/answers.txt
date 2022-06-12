@@ -1,0 +1,14 @@
+0|0|user1|4|19
+1|0|user2|5|-20
+2|3|user2|2|-9
+3|3|user1|10|3
+4|3|user3|10|-22
+5|3|user3|nu|-21
+6|4|user3|lorem ipsum|-7
+7|4|user3|lorem ipsum 2 lorem|7
+8|4|user2|abcd|-7
+9|4|user3|nice|2
+10|4|user3|ok|-6
+11|6|user3|what question2|0
+12|1|user1|a|-1
+13|7|user2|raspuns|-3
