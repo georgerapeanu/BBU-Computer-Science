@@ -1,0 +1,218 @@
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew01.txt 
+RO: Scrieti o expresie regulara care accepta orice linii care contin cel putin trei vocale.
+EN: Write a regular expression that accepts any lines that contain at least three vowels.
+
+Raspundeti mai jos/Write your answer below:
+
+[aeiouAEIOU].*[aeiouAEIOU].*[aeiouAEIOU]
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew02.txt 
+RO: Cate procese va crea fragmentul de cod de mai jos, excluzand procesul parinte initial?
+EN: How many processes will the code below create, excluding the parent process?
+
+for(i=0; i<4; i++) {
+    if(fork() && i % 2 == 1) {
+        break;
+    }
+}
+
+Raspundeti mai jos/Write your answer below:
+9
+
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew03.txt 
+RO: Procesele A, B si C comunica prin FIFO-urile X, Y, Z conform diagramei de mai jos. Schitati fragmentele de cod prin care FIFO-urile sunt deschise in cele trei procese.
+EN: Processes A, B and C communicate through FIFOs X, Y and Z according to the diagram below. Sketch the code fragments that open the FIFOs in the three processes.
+
+    A --X--> B
+    B --Y--> C
+    C --Z--> A
+
+ Raspundeti mai jos/Write your answer below:
+
+//A.cpp
+int a2b = open("X", O_WRONLY);
+int c2a = open("Z", O_RDONLY);
+
+//B.cpp
+int a2b = open("X", O_RDONLY);
+int b2c = open("Y", O_WRONLY);
+
+//C.cpp
+int b2c = open("Y", O_RDONLY);
+int c2a = open("Z", O_WRONLY);
+
+
+/home/xm/exam/os/account/rgie3205/ex3007> man 2 open
+/home/xm/exam/os/account/rgie3205/ex3007> man 2 open
+/home/xm/exam/os/account/rgie3205/ex3007> 
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew04.txt 
+RO: Ce va tipari fragmentul de cod de mai jos, considerand ca thread-urile se creeaza fara probleme? Justificati raspunsul.
+EN: What will the code fragment below display in the console, considering that the threads are created without problems? Justify your answer.
+
+/* RO: Considerati ca header-ele necesare sunt incluse aici */
+/* EN: Consider that the necessary headers are included here */
+void* f(void* a) {
+    printf("%d\n", *(int*)a);
+    return NULL;
+}
+
+int main() {
+    /* RO: Considerati ca variabilele necesare sunt declarate aici */
+    /* EN: Consider that the necessary variables are declared here */
+    for(i=0; i<10; i++) {
+        pthread_create(&t[i], NULL, f, &i);
+    }
+    /* RO: Considerati ca aici se fac join-urile necesare */
+    /* EN: Consider that the necessary thread joining is here */
+    return 0;
+}
+
+Raspundeti mai jos/Write your answer below:
+It is not certain what the threads will print. The output will be one of 10 numbers, each between 0 and 10, but the order and exact value of them is not certain. This is because the threads get the address of i as a parameter, but i is increased during the for. Thus, we cannot determine what happens: maybe i is increased a couple of times before printed by a thread, or maybe multiple threads print the same i. Maybe a thread that read the value of i at some point waits, and another thread gets to print a bigger i before the current thread can print that value.
+/home/xm/exam/os/account/rgie3205/ex3007> vim exam-ew04.txt 
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew04.txt 
+RO: Ce va tipari fragmentul de cod de mai jos, considerand ca thread-urile se creeaza fara probleme? Justificati raspunsul.
+EN: What will the code fragment below display in the console, considering that the threads are created without problems? Justify your answer.
+
+/* RO: Considerati ca header-ele necesare sunt incluse aici */
+/* EN: Consider that the necessary headers are included here */
+void* f(void* a) {
+    printf("%d\n", *(int*)a);
+    return NULL;
+}
+
+int main() {
+    /* RO: Considerati ca variabilele necesare sunt declarate aici */
+    /* EN: Consider that the necessary variables are declared here */
+    for(i=0; i<10; i++) {
+        pthread_create(&t[i], NULL, f, &i);
+    }
+    /* RO: Considerati ca aici se fac join-urile necesare */
+    /* EN: Consider that the necessary thread joining is here */
+    return 0;
+}
+
+Raspundeti mai jos/Write your answer below:
+It is not certain what the threads will print. The output will be one of 10 numbers, each between 0 and 9(not necessarily distinct), but the order and exact value of them is not certain. This is because the threads get the address of i as a parameter, but i is increased during the for. Thus, we cannot determine what happens: maybe i is increased a couple of times before printed by a thread, or maybe multiple threads print the same i. Maybe a thread that read the value of i at some point waits, and another thread gets to print a bigger i before the current thread can print that value.
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew05.txt 
+RO: Ce risc ridica functia f daca este rulata in mai multe thread-uri simultane? Justificati raspunsul.
+EN: What is the risk brought by function f when executed in multiple simultaneous threads? Justify your answer.
+
+/* RO: Considerati ca mutex-ii sunt initializati corect */
+/* EN: Consider that the mutexes are properly initialized */
+pthread_mutex_t m[2];
+void* f(void* p) {
+    int id = (int)p;
+    pthread_mutex_t* first = &m[id % 2];
+    pthread_mutex_t* second = &m[(id+1) % 2];
+    
+    pthread_mutex_lock(first);
+    pthread_mutex_lock(second);
+    ...
+    pthread_mutex_unlock(second);
+    pthread_mutex_unlock(first);
+}
+
+Raspundeti mai jos/Write your answer below:
+There is a risk for deadlock since the threads do not lock the 2 mutexes in the same order. For example, if there are 2 threads, with ids 0 and 1. The first instructions which would try to be executed by the threads are: 
+Thread 0: pthread_mutex_lock(&m[0]);
+Thread 1: pthread_mutex_lock(&m[1]);
+Let's say they both succeed in aquiring the mutex. Then, thread 0 has mutex 0, thread 1 has mutex 1. In the next step, they would try to execute
+Thread 0: pthread_mutex_lock(&m[1]);
+Thread 1: pthread_mutex_lock(&m[0]);
+
+Since thread 1 has mutex 1, thread 0 would wait. Since thread 0 has mutex 0, thread 1 would wait. Thus, they both wait after each other and this creates a deadlock.
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew06.txt 
+RO: Planificati job-urile de mai jos (date ca Nume/Durata/termen de terminare) astfel incat suma intarzierilor lor sa fie minima.
+EN: Schedule the jobs below (given as Name/Duration/Deadline) so that the sum of their delays is minimized.
+
+    A/3/8, B/10/15, C/3/5
+
+Raspundeti mai jos/Write your answer below:
+A delay of 0 is impossible. If any task is scheduled before C, then C has a starting time that is a list 3, so it has a finishing time that is at least 6 > 5. If it is scheduled first, then we either schedule B, which would finish at 13 and thus A would have a (big) delay, either A, which would finish at 6, and then B would finish at 16(with a delay of 1).
+
+So, a delay of 1 is the best option, and one of the ways of obtaining it is scheduling the tasks in the order:
+
+C, A, B
+
+Task C would start at 0 and finish at 3(<= 5 so 0 delay), Task A would start at 3 and finish at 6(<=8 so 0 delay), and task B would start at 6 and finish at 16(=15+1 so 1 delay).
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew07.txt 
+RO: Cum se face calculul de adresa in alocarea cu partitii fixe absolute?
+EN: How is the address calculation done in the absolute fixed partition allocation?
+
+Raspundeti mai jos/Write your answer below:
+
+In absolute fixed partition allocation, there is a number of predefined partitions in the RAM that can be used by a program.
+This number of partitions is fixed, and a program is compiled for a certain partition.
+
+This means that the final executable address of a variable in the RAM is known at compile time, so the address in the binary is the same with the final address in the executable. So, Binary address = Physical address. At compile time, the program uses the address of the start of the partition it is compiled for in order to determine its exact final address
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew08.txt 
+RO: Dati un avantaj si un dezavantaj al incarcarii tuturor paginilor unui program la pornirea procesului in comparatie cu incarcarea lor doar cand sunt necesare.
+EN: Give and advantage and a disadvantage for loading all program pages at the process startup versus loading the pages only when necessary.
+
+Raspundeti mai jos/Write your answer below:
+If you load every page of a process at start up, the start is slower than loading each page only when neecessary(since it has to load everything at once). <- Disadventage
+But, after they are loaded, the program runs faster than loading each page only when necessary(since we already have everything we need in memory, but the approach of loading only when necessary may have to stop in order to fetch pages). <- Advantage
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew09.txt 
+RO: Dandu-se doua cache-uri set-asociative, unul cu 2 seturi de 4 pagini si altul cu 4 seturi de 2 pagini, care are functiona mai bine pentru secventa de cereri de pagini de mai jos? Justificati raspunsul.
+EN: Given two set-associative caches, one with 2 sets of 4 pages and one with 4 sets of 2 pages, which would perform better for the sequence of page requests below? Justify your answer.
+
+    17, 2, 37, 6, 9
+
+Raspundeti mai jos/Write your answer below:
+We have 2 caches. Using set-associative caches, in order to place a page in cache, we first take the page number modulo number of groups, and then we look for a spot in that group.
+
+First one with 2 sets of 4 pages. Lets say pages 0,1,2,3 are in set 0, pages 4,5,6,7 are in set 1.
+17 mod 2 = 1 -> it could go on page 4
+2 mod 2 = 0 -> it could go on page 0
+37 mod 2 = 1 -> it could go on page 5
+6 mod 2 = 0 -> it could go on page 1
+9 mod 2 = 1 -> it could go on page 6
+
+The second one has 4 sets of 2 pages. Lets say pages 0,1 are in set 0; pages 2,3 are in set 1; pages 4,5 are in set 2; pages 6,7 are in set 3;
+
+17 mod 4 = 3 -> it could go on page 6
+2 mod 4 = 2 -> it could go on page 4
+37 mod 4 = 1 -> it could go on page 2
+6 mod 4 = 2 -> it could go on page 5
+9 mod 4 = 1 -> it could go on page 3
+
+Neither cache runs out of space for a given set for these pages, so neither one is forced to first offload a page.
+The first cache has 3 pages for which the first page was not free, while the second cache has 2 pages for which the first cache page was not free.
+Thus, I think the second one would perform better in this case, but I don't think there would be a very big difference.
+/home/xm/exam/os/account/rgie3205/ex3007> vim exam-ew09.txt 
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew09.txt 
+RO: Dandu-se doua cache-uri set-asociative, unul cu 2 seturi de 4 pagini si altul cu 4 seturi de 2 pagini, care are functiona mai bine pentru secventa de cereri de pagini de mai jos? Justificati raspunsul.
+EN: Given two set-associative caches, one with 2 sets of 4 pages and one with 4 sets of 2 pages, which would perform better for the sequence of page requests below? Justify your answer.
+
+    17, 2, 37, 6, 9
+
+Raspundeti mai jos/Write your answer below:
+We have 2 caches. Using set-associative caches, in order to place a page in cache, we first take the page number modulo number of groups, and then we look for a spot in that group.
+
+First one with 2 sets of 4 pages. Lets say pages 0,1,2,3 are in set 0, pages 4,5,6,7 are in set 1.
+17 mod 2 = 1 -> it could go on page 4
+2 mod 2 = 0 -> it could go on page 0
+37 mod 2 = 1 -> it could go on page 5
+6 mod 2 = 0 -> it could go on page 1
+9 mod 2 = 1 -> it could go on page 6
+
+The second one has 4 sets of 2 pages. Lets say pages 0,1 are in set 0; pages 2,3 are in set 1; pages 4,5 are in set 2; pages 6,7 are in set 3;
+
+17 mod 4 = 1 -> it could go on page 2
+2 mod 4 = 2 -> it could go on page 4
+37 mod 4 = 1 -> it could go on page 3
+6 mod 4 = 2 -> it could go on page 5
+9 mod 4 = 1 -> both pages in this group are full, so the cache would be force to offload a page
+
+Thus, I think the first cache would perform better for this pages, since it does not need to move a cache page back to ram in order to load one from RAM.
+/home/xm/exam/os/account/rgie3205/ex3007> cat exam-ew10.txt 
+RO: Considerand ca intr-un block incap N adrese spre alte blocuri, cate blocuri de date sunt adresate de indirectarea dubla impreuna cu cea tripla a unui i-nod?
+EN: Considering that a block can contain N addresses towards other blocks, how many data blocks are addressed by an i-node's double and triple indirections together?
+
+Raspundeti mai jos/Write your answer below:
+
+
+N * N + N * N * N
+
+
+
