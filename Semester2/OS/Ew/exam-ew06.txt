@@ -1,0 +1,14 @@
+RO: Planificati job-urile de mai jos (date ca Nume/Durata/termen de terminare) astfel incat suma intarzierilor lor sa fie minima.
+EN: Schedule the jobs below (given as Name/Duration/Deadline) so that the sum of their delays is minimized.
+
+    A/3/8, B/10/15, C/3/5
+
+Raspundeti mai jos/Write your answer below:
+A delay of 0 is impossible. If any task is scheduled before C, then C has a starting time that is a list 3, so it has a finishing time that is at least 6 > 5. If it is scheduled first, then we either schedule B, which would finish at 13 and thus A would have a (big) delay, either A, which would finish at 6, and then B would finish at 16(with a delay of 1).
+
+So, a delay of 1 is the best option, and one of the ways of obtaining it is scheduling the tasks in the order:
+
+C, A, B
+
+Task C would start at 0 and finish at 3(<= 5 so 0 delay), Task A would start at 3 and finish at 6(<=8 so 0 delay), and task B would start at 6 and finish at 16(=15+1 so 1 delay).
+

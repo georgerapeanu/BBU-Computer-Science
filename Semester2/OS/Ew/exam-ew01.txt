@@ -1,0 +1,7 @@
+RO: Scrieti o expresie regulara care accepta orice linii care contin cel putin trei vocale.
+EN: Write a regular expression that accepts any lines that contain at least three vowels.
+
+Raspundeti mai jos/Write your answer below:
+
+[aeiouAEIOU].*[aeiouAEIOU].*[aeiouAEIOU]
+

@@ -1,0 +1,28 @@
+RO: Ce risc ridica functia f daca este rulata in mai multe thread-uri simultane? Justificati raspunsul.
+EN: What is the risk brought by function f when executed in multiple simultaneous threads? Justify your answer.
+
+/* RO: Considerati ca mutex-ii sunt initializati corect */
+/* EN: Consider that the mutexes are properly initialized */
+pthread_mutex_t m[2];
+void* f(void* p) {
+    int id = (int)p;
+    pthread_mutex_t* first = &m[id % 2];
+    pthread_mutex_t* second = &m[(id+1) % 2];
+
+    pthread_mutex_lock(first);
+    pthread_mutex_lock(second);
+    ...
+    pthread_mutex_unlock(second);
+    pthread_mutex_unlock(first);
+}
+
+Raspundeti mai jos/Write your answer below:
+There is a risk for deadlock since the threads do not lock the 2 mutexes in the same order. For example, if there are 2 threads, with ids 0 and 1. The first instructions which would try to be executed by the threads are:
+Thread 0: pthread_mutex_lock(&m[0]);
+Thread 1: pthread_mutex_lock(&m[1]);
+Let's say they both succeed in aquiring the mutex. Then, thread 0 has mutex 0, thread 1 has mutex 1. In the next step, they would try to execute
+Thread 0: pthread_mutex_lock(&m[1]);
+Thread 1: pthread_mutex_lock(&m[0]);
+
+Since thread 1 has mutex 1, thread 0 would wait. Since thread 0 has mutex 0, thread 1 would wait. Thus, they both wait after each other and this creates a deadlock.
+

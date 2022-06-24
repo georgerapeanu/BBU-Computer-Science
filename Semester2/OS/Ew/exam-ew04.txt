@@ -1,0 +1,24 @@
+RO: Ce va tipari fragmentul de cod de mai jos, considerand ca thread-urile se creeaza fara probleme? Justificati raspunsul.
+EN: What will the code fragment below display in the console, considering that the threads are created without problems? Justify your answer.
+
+/* RO: Considerati ca header-ele necesare sunt incluse aici */
+/* EN: Consider that the necessary headers are included here */
+void* f(void* a) {
+    printf("%d\n", *(int*)a);
+    return NULL;
+}
+
+int main() {
+    /* RO: Considerati ca variabilele necesare sunt declarate aici */
+    /* EN: Consider that the necessary variables are declared here */
+    for(i=0; i<10; i++) {
+        pthread_create(&t[i], NULL, f, &i);
+    }
+    /* RO: Considerati ca aici se fac join-urile necesare */
+    /* EN: Consider that the necessary thread joining is here */
+    return 0;
+}
+
+Raspundeti mai jos/Write your answer below:
+It is not certain what the threads will print. The output will be one of 10 numbers, each between 0 and 9(not necessarily distinct), but the order and exact value of them is not certain. This is because the threads get the address of i as a parameter, but i is increased during the for. Thus, we cannot determine what happens: maybe i is increased a couple of times before printed by a thread, or maybe multiple threads print the same i. Maybe a thread that read the value of i at some point waits, and another thread gets to print a bigger i before the current thread can print that value.
+

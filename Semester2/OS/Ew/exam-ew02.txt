@@ -1,0 +1,12 @@
+RO: Cate procese va crea fragmentul de cod de mai jos, excluzand procesul parinte initial?
+EN: How many processes will the code below create, excluding the parent process?
+
+for(i=0; i<4; i++) {
+    if(fork() && i % 2 == 1) {
+        break;
+    }
+}
+
+Raspundeti mai jos/Write your answer below:
+9
+

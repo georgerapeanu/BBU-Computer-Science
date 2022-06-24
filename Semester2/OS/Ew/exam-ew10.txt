@@ -1,0 +1,8 @@
+RO: Considerand ca intr-un block incap N adrese spre alte blocuri, cate blocuri de date sunt adresate de indirectarea dubla impreuna cu cea tripla a unui i-nod?
+EN: Considering that a block can contain N addresses towards other blocks, how many data blocks are addressed by an i-node's double and triple indirections together?
+
+Raspundeti mai jos/Write your answer below:
+
+
+N * N + N * N * N
+

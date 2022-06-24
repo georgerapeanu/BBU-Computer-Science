@@ -1,0 +1,7 @@
+RO: Dati un avantaj si un dezavantaj al incarcarii tuturor paginilor unui program la pornirea procesului in comparatie cu incarcarea lor doar cand sunt necesare.
+EN: Give and advantage and a disadvantage for loading all program pages at the process startup versus loading the pages only when necessary.
+
+Raspundeti mai jos/Write your answer below:
+If you load every page of a process at start up, the start is slower than loading each page only when neecessary(since it has to load everything at once). <- Disadventage
+But, after they are loaded, the program runs faster than loading each page only when necessary(since we already have everything we need in memory, but the approach of loading only when necessary may have to stop in order to fetch pages). <- Advantage
+

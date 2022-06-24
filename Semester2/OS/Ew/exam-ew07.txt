@@ -1,0 +1,10 @@
+RO: Cum se face calculul de adresa in alocarea cu partitii fixe absolute?
+EN: How is the address calculation done in the absolute fixed partition allocation?
+
+Raspundeti mai jos/Write your answer below:
+
+In absolute fixed partition allocation, there is a number of predefined partitions in the RAM that can be used by a program.
+This number of partitions is fixed, and a program is compiled for a certain partition.
+
+This means that the final executable address of a variable in the RAM is known at compile time, so the address in the binary is the same with the final address in the executable. So, Binary address = Physical address. At compile time, the program uses the address of the start of the partition it is compiled for in order to determine its exact final address
+

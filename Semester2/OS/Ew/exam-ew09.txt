@@ -1,0 +1,25 @@
+RO: Dandu-se doua cache-uri set-asociative, unul cu 2 seturi de 4 pagini si altul cu 4 seturi de 2 pagini, care are functiona mai bine pentru secventa de cereri de pagini de mai jos? Justificati raspunsul.
+EN: Given two set-associative caches, one with 2 sets of 4 pages and one with 4 sets of 2 pages, which would perform better for the sequence of page requests below? Justify your answer.
+
+    17, 2, 37, 6, 9
+
+Raspundeti mai jos/Write your answer below:
+We have 2 caches. Using set-associative caches, in order to place a page in cache, we first take the page number modulo number of groups, and then we look for a spot in that group.
+
+First one with 2 sets of 4 pages. Lets say pages 0,1,2,3 are in set 0, pages 4,5,6,7 are in set 1.
+17 mod 2 = 1 -> it could go on page 4
+2 mod 2 = 0 -> it could go on page 0
+37 mod 2 = 1 -> it could go on page 5
+6 mod 2 = 0 -> it could go on page 1
+9 mod 2 = 1 -> it could go on page 6
+
+The second one has 4 sets of 2 pages. Lets say pages 0,1 are in set 0; pages 2,3 are in set 1; pages 4,5 are in set 2; pages 6,7 are in set 3;
+
+17 mod 4 = 1 -> it could go on page 2
+2 mod 4 = 2 -> it could go on page 4
+37 mod 4 = 1 -> it could go on page 3
+6 mod 4 = 2 -> it could go on page 5
+9 mod 4 = 1 -> both pages in this group are full, so the cache would be force to offload a page
+
+Thus, I think the first cache would perform better for this pages, since it does not need to move a cache page back to ram in order to load one from RAM.
+

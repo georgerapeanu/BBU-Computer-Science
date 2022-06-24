@@ -1,0 +1,21 @@
+RO: Procesele A, B si C comunica prin FIFO-urile X, Y, Z conform diagramei de mai jos. Schitati fragmentele de cod prin care FIFO-urile sunt deschise in cele trei procese.
+EN: Processes A, B and C communicate through FIFOs X, Y and Z according to the diagram below. Sketch the code fragments that open the FIFOs in the three processes.
+
+    A --X--> B
+    B --Y--> C
+    C --Z--> A
+
+ Raspundeti mai jos/Write your answer below:
+
+//A.cpp
+int a2b = open("X", O_WRONLY);
+int c2a = open("Z", O_RDONLY);
+
+//B.cpp
+int a2b = open("X", O_RDONLY);
+int b2c = open("Y", O_WRONLY);
+
+//C.cpp
+int b2c = open("Y", O_RDONLY);
+int c2a = open("Z", O_WRONLY);
+
