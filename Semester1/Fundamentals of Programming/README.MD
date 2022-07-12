@@ -3,6 +3,6 @@
 The course was an introductory course to programming using Python.
 
 Some relevant topics discussed were:
-* functional and Object Oriented Programming
+* Functional and Object Oriented Programming
 * Layered architecture(UI/Service/Repository/Domain)
 * Persistent storage(utilising File Repositories and Binary Repositories with pickle)

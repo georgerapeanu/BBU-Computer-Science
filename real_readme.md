@@ -10,7 +10,7 @@
 * [Semester 2](Semester2/)
     * [🌴 Data Structures and Algorithms](Semester2/Data%20Structures%20and%20Algorithms/)
     * [🔄 Dynamical Systems](Semester2/Dynamical%20Systems/)
-    * ↗ Semester2/Geometry
+    * ↗ Geometry
     * [〰️ Graphs](Semester2/Graphs/)
     * [🖥️ Object Oriented Programming](Semester2/Object%20Oriented%20Programming/)
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)

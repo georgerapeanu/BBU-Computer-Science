@@ -12,4 +12,4 @@ Some relevant topics discussed were:
 * Equilibrium points, attractors, repellers
 * Flow of a dynamical system
 * Level curves
-
+* Using `sage` for visualising and solving Dynamical Systems.
