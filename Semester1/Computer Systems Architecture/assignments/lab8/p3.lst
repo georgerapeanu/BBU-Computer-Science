@@ -1,0 +1,114 @@
+     1                                  ;problem 8: A text file is given. Read the content of the file, determine the uppercase letter with the highest frequency and display the letter along with its frequency on the screen. The name of text file is defin
+     2                                  
+     3                                  bits 32 ; assembling for the 32 bits architecture
+     4                                  
+     5                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     6                                  global start        
+     7                                  
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit, fopen, fclose, fscanf, printf               ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll
+    11                                  import fopen msvcrt.dll
+    12                                  import fclose msvcrt.dll
+    13                                  import fscanf msvcrt.dll
+    14                                  import printf msvcrt.dll
+    15                                  
+    16                                  ; our data is declared here (the variables needed by our program)
+    17                                  segment data use32 class=data
+    18 00000000 70332E696E00                filename db "p3.in",0x0
+    19 00000006 7200                        readmode db "r",0x0
+    20 00000008 00000000                    fd dd 0
+    21 0000000C 00000000<rept>              frequency times 'Z' - 'A' + 1 dd 0
+    22 00000074 00                          current_char db 0
+    23 00000075 256300                      readCharFmt db "%c",0x0
+    24 00000078 00                          most_frequent_letter_index db 0
+    25 00000079 6D6F73742066726571-         outputFmt db "most frequent letter is %c with frequency %u", 0xa, 0x0
+    25 00000082 75656E74206C657474-
+    25 0000008B 657220697320256320-
+    25 00000094 776974682066726571-
+    25 0000009D 75656E63792025750A-
+    25 000000A6 00                 
+    26 000000A7 4572726F723A207370-         fileDoesntExistFmt db "Error: specified file doesn't exist", 0xa, 0x0
+    26 000000B0 656369666965642066-
+    26 000000B9 696C6520646F65736E-
+    26 000000C2 27742065786973740A-
+    26 000000CB 00                 
+    27                                  
+    28                                  ; our code starts here
+    29                                  segment code use32 class=code
+    30                                      start:
+    31                                          
+    32 00000000 68[06000000]                    push readmode
+    33 00000005 68[00000000]                    push filename
+    34 0000000A FF15[00000000]                  call [fopen]
+    35 00000010 83C408                          add esp, 8
+    36 00000013 A3[08000000]                    mov [fd], eax
+    37 00000018 83F800                          cmp eax, 0
+    38 0000001B 0F84AF000000                    je fileDoesntExist
+    39                                          
+    40                                          readLoop:
+    41 00000021 68[74000000]                        push current_char
+    42 00000026 68[75000000]                        push readCharFmt
+    43 0000002B FF35[08000000]                      push dword[fd]
+    44 00000031 FF15[00000000]                      call [fscanf]
+    45 00000037 83C40C                              add esp, 12
+    46 0000003A 83F801                              cmp eax, 1
+    47 0000003D 7525                                jne doneReadLoop
+    48 0000003F 803D[74000000]41                    cmp byte[current_char], 'A'
+    49 00000046 721A                                jb notUpperCase
+    50 00000048 803D[74000000]5A                    cmp byte[current_char], 'Z'
+    51 0000004F 7711                                ja notUpperCase
+    52 00000051 A0[74000000]                        mov al, byte[current_char]
+    53 00000056 2C41                                sub al, 'A'
+    54 00000058 0FB6C0                              movzx eax, al
+    55 0000005B FF0485[0C000000]                    inc dword[eax * 4 + frequency]
+    56                                              notUpperCase:
+    57 00000062 EBBD                                jmp readLoop
+    58                                          doneReadLoop:
+    59                                          
+    60 00000064 BE[0C000000]                    mov esi, frequency
+    61 00000069 B91A000000                      mov ecx, 'Z' - 'A' + 1
+    62                                          
+    63 0000006E C605[78000000]00                mov byte[most_frequent_letter_index], 0
+    64                                          getMaxLoop:
+    65 00000075 AD                                  lodsd
+    66 00000076 0FB61D[78000000]                    movzx ebx, byte[most_frequent_letter_index]
+    67 0000007D 3B049D[0C000000]                    cmp eax, dword[frequency + ebx * 4]
+    68 00000084 7610                                jbe notMoreFrequent
+    69 00000086 8D46FC                              lea eax, [esi - 4]  ;esi points to the next letter address so we need to subtract 4 to get the correct address
+    70 00000089 2D[0C000000]                        sub eax, frequency
+    71 0000008E C1E802                              shr eax, 2
+    72 00000091 A2[78000000]                        mov byte[most_frequent_letter_index], al
+    73                                              notMoreFrequent:
+    74 00000096 E2DD                                loop getMaxLoop
+    75                                          doneGetMaxLoop:
+    76                                          
+    77 00000098 A0[78000000]                    mov al, byte[most_frequent_letter_index]
+    78 0000009D 0441                            add al, 'A'
+    79                                          
+    80 0000009F 0FB6C0                          movzx eax, al
+    81 000000A2 0FB61D[78000000]                movzx ebx, byte[most_frequent_letter_index]
+    82 000000A9 FF349D[0C000000]                push dword[frequency + 4 * ebx]
+    83 000000B0 50                              push eax
+    84 000000B1 68[79000000]                    push outputFmt
+    85 000000B6 FF15[00000000]                  call [printf]
+    86 000000BC 83C40C                          add esp, 12
+    87                                          
+    88                                          
+    89 000000BF FF35[08000000]                  push dword[fd]
+    90 000000C5 FF15[00000000]                  call [fclose]
+    91 000000CB 83C404                          add esp, 4
+    92                                          
+    93 000000CE EB0E                            jmp doExit
+    94                                          
+    95                                          fileDoesntExist:
+    96 000000D0 68[A7000000]                    push fileDoesntExistFmt
+    97 000000D5 FF15[00000000]                  call [printf]
+    98 000000DB 83C404                          add esp, 4
+    99                                          
+   100                                          doExit:
+   101 000000DE 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+   102 000000E0 FF15[00000000]                  call    [exit]       ; call exit to terminate the program
+   103                                          
+   104                                          
+   105                                          

@@ -1,0 +1,67 @@
+     1                                  ; Problem 23: Read a string s1 (which contains only lowercase letters). Using an alphabet (defined in the data segment), determine and display the string s2 obtained by substitution of each letter of the string s1 w
+     2                                  ; Example:
+     3                                  ; The alphabet:  OPQRSTUVWXYZABCDEFGHIJKLMN
+     4                                  ; The string s1: anaaremere
+     5                                  ; The string s2: OBOOFSASFS
+     6                                  bits 32 ; assembling for the 32 bits architecture
+     7                                  
+     8                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     9                                  global start        
+    10                                  
+    11                                  ; declare external functions needed by our program
+    12                                  extern exit, getchar, printf               
+    13                                  import exit msvcrt.dll
+    14                                  import getchar msvcrt.dll
+    15                                  import printf msvcrt.dll    
+    16                                                            
+    17                                                            
+    18                                  %include "p23_utils.asm"
+     1                              <1> %IFNDEF GET_FROM_ALPHABET
+     2                              <1> %DEFINE GET_FROM_ALPHABET
+     3                              <1> 
+     4                              <1> get_from_alphabet: ;char get_from_alphabet(char* alphabet, char c);
+     5 00000000 55                  <1>     push ebp
+     6 00000001 89E5                <1>     mov ebp, esp
+     7                              <1>     
+     8 00000003 53                  <1>     push ebx
+     9                              <1>     
+    10 00000004 8B5D08              <1>     mov ebx, [ebp + 8]
+    11 00000007 8B450C              <1>     mov eax, [ebp + 12]
+    12 0000000A D7                  <1>     xlat
+    13                              <1>     
+    14 0000000B 5B                  <1>     pop ebx
+    15                              <1>     
+    16 0000000C 89EC                <1>     mov esp, ebp
+    17 0000000E 5D                  <1>     pop ebp
+    18 0000000F C3                  <1>     ret
+    19                              <1> %ENDIF
+    19                                  
+    20                                  ; our data is declared here (the variables needed by our program)
+    21                                  segment data use32 class=data
+    22 00000010 4F5051525354555657-         alphabet db "OPQRSTUVWXYZABCDEFGHIJKLMN"
+    22 00000019 58595A414243444546-
+    22 00000022 4748494A4B4C4D4E   
+    23 0000002A 256300                      fmt_char db "%c", 0x0
+    24                                  
+    25                                  ; our code starts here
+    26                                  segment code use32 class=code
+    27                                      start:
+    28                                  
+    29                                          read_loop:
+    30 00000000 FF15[00000000]                      call [getchar]
+    31 00000006 83F8FF                              cmp eax, -1
+    32 00000009 741D                                je done_read_loop
+    33                                              
+    34 0000000B BB[10000000]                        mov ebx, alphabet
+    35 00000010 D7                                  xlat
+    36 00000011 83C408                              add esp, 8
+    37                                              
+    38 00000014 0FB6C0                              movzx eax, al
+    39 00000017 50                                  push eax
+    40 00000018 68[2A000000]                        push fmt_char
+    41 0000001D FF15[00000000]                      call [printf]
+    42 00000023 83C408                              add esp, 8
+    43 00000026 EBD8                            jmp read_loop    
+    44                                          done_read_loop:
+    45 00000028 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    46 0000002A FF15[00000000]                  call    [exit]       ; call exit to terminate the program

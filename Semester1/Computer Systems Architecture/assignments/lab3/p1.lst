@@ -1,0 +1,70 @@
+     1                                  ;@author: Rapeanu George - Alexandru(#8 in group list)
+     2                                  ;Additions, subtactions - unsigned representation
+     3                                  ;Exercise 8: (a+b-d)+(a-b-d) 
+     4                                  
+     5                                  
+     6                                  bits 32 ; assembling for the 32 bits architecture
+     7                                  
+     8                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     9                                  global start        
+    10                                  
+    11                                  ; declare external functions needed by our program
+    12                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    13                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    14                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    15                                  
+    16                                  extern printf
+    17                                  import printf msvcrt.dll
+    18                                                            
+    19                                  ; our data is declared here (the variables needed by our program)
+    20                                  segment data use32 class=data
+    21 00000000 01                          a db 1
+    22 00000001 0200                        b dw 2
+    23 00000003 03000000                    c dd 3
+    24 00000007 0400000000000000            d dq 4
+    25 0000000F 256C6C780D0A                fmt db "%llx",0xd,0xa
+    26                                  
+    27                                  ; our code starts here
+    28                                  segment code use32 class=code
+    29                                      start:
+    30                                          ; ...
+    31                                      
+    32 00000000 B800000000                      mov eax, 0
+    33 00000005 BA00000000                      mov edx, 0
+    34                                          
+    35 0000000A 0FB61D[00000000]                movzx ebx, byte[a]
+    36 00000011 01D8                            add eax, ebx
+    37 00000013 83D200                          adc edx,0
+    38                                          
+    39 00000016 0FB71D[01000000]                movzx ebx, word[b]
+    40 0000001D 01D8                            add eax, ebx
+    41 0000001F 83D200                          adc edx,0
+    42                                          
+    43 00000022 8B1D[07000000]                  mov ebx, dword[d]
+    44 00000028 8B0D[0B000000]                  mov ecx, dword[d + 4]
+    45                                          
+    46 0000002E 29D8                            sub eax,ebx
+    47 00000030 19CA                            sbb edx,ecx
+    48                                          
+    49 00000032 0FB61D[00000000]                movzx ebx, byte[a]
+    50 00000039 01D8                            add eax, ebx
+    51 0000003B 83D200                          adc edx,0
+    52                                          
+    53 0000003E 0FB71D[01000000]                movzx ebx, word[b]
+    54 00000045 29D8                            sub eax, ebx
+    55 00000047 83DA00                          sbb edx,0
+    56                                          
+    57 0000004A 8B1D[07000000]                  mov ebx, dword[d]
+    58 00000050 8B0D[0B000000]                  mov ecx, dword[d + 4]
+    59                                          
+    60 00000056 29D8                            sub eax,ebx
+    61 00000058 19CA                            sbb edx,ecx
+    62                                          
+    63 0000005A 52                              push edx
+    64 0000005B 50                              push eax
+    65 0000005C 68[0F000000]                    push fmt
+    66 00000061 FF15[00000000]                  call [printf]
+    67 00000067 83C40C                          add esp,12
+    68                                          
+    69 0000006A 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    70 0000006C FF15[00000000]                  call    [exit]       ; call exit to terminate the program

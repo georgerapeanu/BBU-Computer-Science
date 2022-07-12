@@ -1,0 +1,41 @@
+     1                                  ;problem 23: Read a hexadecimal number with 2 digits from the keyboard. Display the number in base 10, in both interpretations: as an unsigned number and as an signed number (on 8 bits).
+     2                                  
+     3                                  bits 32 ; assembling for the 32 bits architecture
+     4                                  
+     5                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     6                                  global start        
+     7                                  
+     8                                  ; declare external functions needed by our program
+     9                                  extern exit, scanf, printf               ; tell nasm that exit exists even if we won't be defining it
+    10                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    11                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    12                                  import printf msvcrt.dll
+    13                                  import scanf msvcrt.dll
+    14                                  
+    15                                  ; our data is declared here (the variables needed by our program)
+    16                                  segment data use32 class=data
+    17 00000000 00                          a db 0
+    18 00000001 257800                      byteHexaFmt db "%x", 0x0
+    19 00000004 7369676E65643A2025-         outputFmt db "signed: %d, unsigned: %u", 0xa, 0x0
+    19 0000000D 642C20756E7369676E-
+    19 00000016 65643A2025750A00   
+    20                                  
+    21                                  ; our code starts here
+    22                                  segment code use32 class=code
+    23                                      start:
+    24                                          
+    25 00000000 68[00000000]                    push a
+    26 00000005 68[01000000]                    push byteHexaFmt
+    27 0000000A FF15[00000000]                  call [scanf]
+    28 00000010 83C408                          add esp, 8
+    29                                          
+    30 00000013 0FB605[00000000]                movzx eax, byte[a]
+    31 0000001A 50                              push eax
+    32 0000001B 0FBE05[00000000]                movsx eax, byte[a]
+    33 00000022 50                              push eax
+    34 00000023 68[04000000]                    push outputFmt
+    35 00000028 FF15[00000000]                  call [printf]
+    36 0000002E 83C40C                          add esp, 12
+    37                                      
+    38 00000031 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    39 00000033 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

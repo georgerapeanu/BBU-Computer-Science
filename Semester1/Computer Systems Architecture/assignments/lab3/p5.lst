@@ -1,0 +1,83 @@
+     1                                  ;@author: Rapeanu George - Alexandru(#8 in group list)
+     2                                  ;Multiplications, divisions - unsigned interpretation
+     3                                  ;Exercise 8:  1/a+200*b-c/(d+1)+x/a-e; a,b-word; c,d-byte; e-doubleword; x-qword
+     4                                  
+     5                                  
+     6                                  bits 32 ; assembling for the 32 bits architecture
+     7                                  
+     8                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     9                                  global start        
+    10                                  
+    11                                  ; declare external functions needed by our program
+    12                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+    13                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+    14                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    15                                  
+    16                                  extern printf
+    17                                  import printf msvcrt.dll
+    18                                                            
+    19                                  ; our data is declared here (the variables needed by our program)
+    20                                  segment data use32 class=data
+    21 00000000 0100                        a dw 1
+    22 00000002 0200                        b dw 2
+    23 00000004 03                          c db 3
+    24 00000005 04                          d db 4
+    25 00000006 05000000                    e dd 5
+    26 0000000A 0600000000000000            x dq 6
+    27 00000012 0000000000000000            result dq 0
+    28 0000001A 256C6C640D0A                fmt db "%lld",0xd,0xa
+    29                                  
+    30                                  ; our code starts here
+    31                                  segment code use32 class=code
+    32                                      start:
+    33                                          ; ...
+    34                                          
+    35 00000000 66BA0000                        mov dx, 0
+    36 00000004 66B80100                        mov ax, 1
+    37 00000008 668B1D[00000000]                mov bx, word[a]
+    38                                          
+    39 0000000F 66F7F3                          div bx
+    40                                          
+    41 00000012 0FB7C0                          movzx eax,ax
+    42 00000015 0105[12000000]                  add dword[result], eax
+    43 0000001B 8315[16000000]00                adc dword[result + 4], 0
+    44                                          
+    45 00000022 66A1[02000000]                  mov ax, word[b]
+    46 00000028 66BBC800                        mov bx, word 200
+    47 0000002C 66F7E3                          mul bx
+    48 0000002F 6652                            push dx
+    49 00000031 6650                            push ax
+    50 00000033 58                              pop eax
+    51 00000034 0105[12000000]                  add dword[result], eax
+    52 0000003A 8315[16000000]00                adc dword[result + 4], 0
+    53                                          
+    54 00000041 660FB61D[05000000]              movzx bx, byte[d]
+    55 00000049 6683C301                        add bx, 1
+    56 0000004D 660FB605[04000000]              movzx ax, byte[c]
+    57 00000055 66BA0000                        mov dx, 0
+    58 00000059 66F7F3                          div bx
+    59 0000005C 0FB7C0                          movzx eax, ax
+    60                                          
+    61 0000005F 2905[12000000]                  sub dword[result], eax
+    62 00000065 831D[16000000]00                sbb dword[result + 4], 0
+    63                                          
+    64 0000006C A1[0A000000]                    mov eax, dword[x]
+    65 00000071 8B15[0E000000]                  mov edx, dword[x + 4]
+    66 00000077 0FB71D[00000000]                movzx ebx, word[a]
+    67 0000007E F7F3                            div ebx
+    68                                          
+    69 00000080 0105[12000000]                  add dword[result], eax
+    70 00000086 8315[16000000]00                adc dword[result + 4], 0
+    71                                          
+    72 0000008D A1[06000000]                    mov eax, dword[e]
+    73 00000092 2905[12000000]                  sub dword[result], eax
+    74 00000098 831D[16000000]00                sbb dword[result + 4], 0
+    75                                          
+    76 0000009F FF35[16000000]                  push dword[result + 4]
+    77 000000A5 FF35[12000000]                  push dword[result]
+    78 000000AB 68[1A000000]                    push fmt
+    79 000000B0 FF15[00000000]                  call [printf]
+    80 000000B6 83C40C                          add esp,12
+    81                                          
+    82 000000B9 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    83 000000BB FF15[00000000]                  call    [exit]       ; call exit to terminate the program
