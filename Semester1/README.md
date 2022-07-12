@@ -2,4 +2,4 @@
 
 * [🔣 Computational Logic](Computational%20Logic/)
 * [💻 Computer Systems Architecture](Computer%20Systems%20Architecture/)
-* [🐍 Fundamentals of Programming](Fundamentals%20Of%20Programming/)
+* [🐍 Fundamentals of Programming](Fundamentals%20of%20Programming/)

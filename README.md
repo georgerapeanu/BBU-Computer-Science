@@ -1,7 +1,13 @@
-### This is a repository containing all of my homeworks(mainly) at the BBU bachelor's in Computer Science program
+### This is a repository containing all of my work at the BBU bachelor's in Computer Science program
+
+* [Semester 1](Semester1/)
+    * [🔣 Computational Logic](Semester1/Computational%20Logic/)
+    * [💻 Computer Systems Architecture](Semester1/Computer%20Systems%20Architecture/)
+    * [🐍 Fundamentals of Programming](Semester1/Fundamentals%20of%20Programming/)
+* [Semester 2](Semester2/)
 
 
-cloc|github.com/AlDanial/cloc v 1.82  T=2.39 s (387.3 files/s, 29297.1 lines/s)
+cloc|github.com/AlDanial/cloc v 1.82  T=1.99 s (465.2 files/s, 35190.2 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -13,7 +19,7 @@ XML|78|7|47|6058
 C|46|631|422|3711
 C/C++ Header|138|1168|2256|2516
 Assembly|46|568|350|1682
-Markdown|28|193|0|948
+Markdown|28|194|0|953
 Qt|8|0|0|860
 INI|3|4|16|704
 CMake|24|120|1|489
@@ -25,5 +31,5 @@ reStructuredText|13|36|75|51
 make|2|9|6|27
 DOS Batch|2|0|0|9
 --------|--------|--------|--------|--------
-SUM:|925|9868|10696|49406
+SUM:|925|9869|10696|49411
 
