@@ -15,4 +15,4 @@
     * [🖥️ Object Oriented Programming](Semester2/Object%20Oriented%20Programming/)
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)
 
-{{%cloc.md%}}
+{{ file.Read "cloc.md" }}
