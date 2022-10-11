@@ -16,7 +16,7 @@
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=1.57 s (591.3 files/s, 43979.2 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=1.54 s (602.1 files/s, 44784.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
