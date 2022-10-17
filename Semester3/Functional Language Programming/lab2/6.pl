@@ -38,3 +38,36 @@ removeFirstNOccurances(K, N, [H|T], R):-
   K =\= H,
   removeFirstNOccurances(K, N, T, RT),
   R=[H|RT].
+
+% Usage: removeFirst3Occuranges(element, input_list, output_list).
+removeFirst3Occurances(K, L, R):- removeFirstNOccurances(K, 3, L, R).
+
+
+% Tests begin here
+
+?- \+ checkElementInList(1, []).
+?- checkElementInList(1, [1]).
+?- checkElementInList(1, [1, 2]).
+?- \+ checkElementInList(1, [2]).
+?- \+ checkElementInList(4, [1, 5, 2, 3]).
+?- checkElementInList(4, [1, 5, 4, 3, 4]).
+
+?- checkIfListIsSet([]).
+?- checkIfListIsSet([1]).
+?- \+ checkIfListIsSet([1, 1]).
+?- \+ checkIfListIsSet([1, 2, 3, 4, 4, 3]).
+?- checkIfListIsSet([1, 2, 4, 3]).
+
+?- removeFirstNOccurances(1, 0, [4], [4]).
+?- removeFirstNOccurances(1, 1, [4], [4]).
+?- removeFirstNOccurances(1, 1, [1, 4], [4]).
+?- removeFirstNOccurances(1, 4, [1, 4], [4]).
+?- removeFirstNOccurances(0, 10, [], []).
+?- removeFirstNOccurances(3, 4, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3]).
+
+?- removeFirst3Occurances(3, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3, 3]).
+?- removeFirst3Occurances(3, [1, 4, 3, 3, 3], [1, 4]).
+?- removeFirst3Occurances(3, [1, 4, 3, 3], [1, 4]).
+?- removeFirst3Occurances(1, [1, 4, 3, 3], [4, 3, 3]).
+?- removeFirst3Occurances(1, [], []).
+

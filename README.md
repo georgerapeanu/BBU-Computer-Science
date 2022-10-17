@@ -16,7 +16,7 @@
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=2.06 s (470.0 files/s, 34079.3 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.25 s (429.9 files/s, 31187.0 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -28,7 +28,7 @@ C|48|652|437|3822
 XML|74|7|47|3482
 C/C++ Header|138|1168|2256|2516
 Assembly|46|568|350|1682
-Markdown|34|215|0|1073
+Markdown|34|215|0|1074
 Qt|8|0|0|860
 INI|3|4|16|704
 Java|29|116|2|502
@@ -38,12 +38,12 @@ Jupyter Notebook|9|0|3020|174
 awk|8|23|0|117
 HTML|2|0|1|52
 reStructuredText|13|36|75|51
+Prolog|1|18|10|45
 make|2|9|6|27
-Prolog|1|10|8|22
 DOS Batch|2|0|0|9
 MATLAB|2|0|0|9
 CSV|2|0|0|3
 SQL|1|12|65|0
 --------|--------|--------|--------|--------
-SUM:|969|10062|10805|49389
+SUM:|969|10070|10807|49413
 
