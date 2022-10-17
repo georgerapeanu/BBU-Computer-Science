@@ -14,9 +14,15 @@
     * [〰️ Graphs](Semester2/Graphs/)
     * [🖥️ Object Oriented Programming](Semester2/Object%20Oriented%20Programming/)
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)
+* [Semester 3](Semester3/)
+    * [👨‍💻️ Advanced Programming Methods](Semester3/Advanced%20Programming%20Methods/)
+    * [📶 Computer Networks](Semester3/Computer%20Networks/)
+    * [💾 Databases](Semester3/Databases/)
+    * [📈 Functional Language Programming](Semester3/Functional%20Language%20Programming/)
+    * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=1.55 s (627.2 files/s, 45492.8 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=1.53 s (634.7 files/s, 46046.5 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -28,7 +34,7 @@ C|48|652|437|3822
 XML|74|7|47|3482
 C/C++ Header|138|1168|2256|2516
 Assembly|46|568|350|1682
-Markdown|34|215|0|1074
+Markdown|34|214|0|1086
 Qt|8|0|0|860
 INI|3|4|16|704
 Java|29|116|2|502
@@ -45,5 +51,5 @@ MATLAB|2|0|0|9
 CSV|2|0|0|3
 SQL|1|12|65|0
 --------|--------|--------|--------|--------
-SUM:|969|10070|10807|49413
+SUM:|969|10069|10807|49425
 

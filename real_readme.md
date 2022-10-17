@@ -14,5 +14,11 @@
     * [〰️ Graphs](Semester2/Graphs/)
     * [🖥️ Object Oriented Programming](Semester2/Object%20Oriented%20Programming/)
     * [🐧 Operating Systems](Semester2/Operating%20Systems/)
+* [Semester 3](Semester3/)
+    * [👨‍💻️ Advanced Programming Methods](Semester3/Advanced%20Programming%20Methods/)
+    * [📶 Computer Networks](Semester3/Computer%20Networks/)
+    * [💾 Databases](Semester3/Databases/)
+    * [📈 Functional Language Programming](Semester3/Functional%20Language%20Programming/)
+    * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 {{ file.Read "cloc.md" }}
