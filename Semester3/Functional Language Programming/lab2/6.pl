@@ -23,24 +23,24 @@ checkIfListIsSet([H|T]):-
   checkIfListIsSet(T).
 
 % b
-% Usage: removeFirstNOccurances(element, N, input_list, output_list).
+% Usage: removeFirstNOccurences(element, N, input_list, output_list).
 
-removeFirstNOccurances(_, _, [], []).
-removeFirstNOccurances(_, 0, L, L).
-removeFirstNOccurances(K, N, [H|T], R):-
+removeFirstNOccurences(_, _, [], []).
+removeFirstNOccurences(_, 0, L, L).
+removeFirstNOccurences(K, N, [H|T], R):-
   N > 0,
   K =:= H,
   NT is N - 1,
-  removeFirstNOccurances(K, NT, T, R).
+  removeFirstNOccurences(K, NT, T, R).
 
-removeFirstNOccurances(K, N, [H|T], R):-
+removeFirstNOccurences(K, N, [H|T], R):-
   N > 0,
   K =\= H,
-  removeFirstNOccurances(K, N, T, RT),
+  removeFirstNOccurences(K, N, T, RT),
   R=[H|RT].
 
 % Usage: removeFirst3Occuranges(element, input_list, output_list).
-removeFirst3Occurances(K, L, R):- removeFirstNOccurances(K, 3, L, R).
+removeFirst3Occurences(K, L, R):- removeFirstNOccurences(K, 3, L, R).
 
 
 % Tests begin here
@@ -58,16 +58,16 @@ removeFirst3Occurances(K, L, R):- removeFirstNOccurances(K, 3, L, R).
 ?- \+ checkIfListIsSet([1, 2, 3, 4, 4, 3]).
 ?- checkIfListIsSet([1, 2, 4, 3]).
 
-?- removeFirstNOccurances(1, 0, [4], [4]).
-?- removeFirstNOccurances(1, 1, [4], [4]).
-?- removeFirstNOccurances(1, 1, [1, 4], [4]).
-?- removeFirstNOccurances(1, 4, [1, 4], [4]).
-?- removeFirstNOccurances(0, 10, [], []).
-?- removeFirstNOccurances(3, 4, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3]).
+?- removeFirstNOccurences(1, 0, [4], [4]).
+?- removeFirstNOccurences(1, 1, [4], [4]).
+?- removeFirstNOccurences(1, 1, [1, 4], [4]).
+?- removeFirstNOccurences(1, 4, [1, 4], [4]).
+?- removeFirstNOccurences(0, 10, [], []).
+?- removeFirstNOccurences(3, 4, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3]).
 
-?- removeFirst3Occurances(3, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3, 3]).
-?- removeFirst3Occurances(3, [1, 4, 3, 3, 3], [1, 4]).
-?- removeFirst3Occurances(3, [1, 4, 3, 3], [1, 4]).
-?- removeFirst3Occurances(1, [1, 4, 3, 3], [4, 3, 3]).
-?- removeFirst3Occurances(1, [], []).
+?- removeFirst3Occurences(3, [1, 4, 3, 2, 3, 3, 3, 3], [1, 4, 2, 3, 3]).
+?- removeFirst3Occurences(3, [1, 4, 3, 3, 3], [1, 4]).
+?- removeFirst3Occurences(3, [1, 4, 3, 3], [1, 4]).
+?- removeFirst3Occurences(1, [1, 4, 3, 3], [4, 3, 3]).
+?- removeFirst3Occurences(1, [], []).
 
