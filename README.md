@@ -18,11 +18,11 @@
     * [👨‍💻️ Advanced Programming Methods](Semester3/Advanced%20Programming%20Methods/)
     * [📶 Computer Networks](Semester3/Computer%20Networks/)
     * [💾 Databases](Semester3/Databases/)
-    * [📈 Functional Language Programming](Semester3/Functional%20Language%20Programming/)
+    * [📈 Functional and Logical Programming](Semester3/Functional%20and%20Logical%20Programming/)
     * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=2.08 s (465.7 files/s, 33758.6 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.38 s (407.1 files/s, 29523.2 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -31,7 +31,7 @@ TeX|119|1843|273|11968
 C++|172|1964|527|11287
 Python|192|3276|3721|10306
 C|48|652|437|3822
-XML|74|7|47|3482
+XML|74|7|47|3488
 C/C++ Header|138|1168|2256|2516
 Assembly|46|568|350|1682
 Markdown|35|216|0|1092
@@ -42,7 +42,7 @@ CMake|24|120|1|489
 Bourne Shell|40|39|0|234
 Jupyter Notebook|9|0|3020|174
 awk|8|23|0|117
-Prolog|1|18|10|58
+Prolog|2|39|18|110
 HTML|2|0|1|52
 reStructuredText|13|36|75|51
 make|2|9|6|27
@@ -51,5 +51,5 @@ MATLAB|2|0|0|9
 CSV|2|0|0|3
 SQL|1|12|65|0
 --------|--------|--------|--------|--------
-SUM:|970|10071|10807|49444
+SUM:|971|10092|10815|49502
 

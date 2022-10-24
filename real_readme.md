@@ -18,7 +18,7 @@
     * [👨‍💻️ Advanced Programming Methods](Semester3/Advanced%20Programming%20Methods/)
     * [📶 Computer Networks](Semester3/Computer%20Networks/)
     * [💾 Databases](Semester3/Databases/)
-    * [📈 Functional Language Programming](Semester3/Functional%20Language%20Programming/)
+    * [📈 Functional and Logical Programming](Semester3/Functional%20and%20Logical%20Programming/)
     * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 {{ file.Read "cloc.md" }}
