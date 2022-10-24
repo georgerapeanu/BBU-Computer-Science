@@ -3,5 +3,5 @@
 * [👨‍💻️ Advanced Programming Methods](Advanced%20Programming%20Methods/)
 * [📶 Computer Networks](Computer%20Networks/)
 * [💾 Databases](Databases/)
-* [📈 Functional and Logical Programming](Semester3/Functional%20and%20Logical%20Programming/)
+* [📈 Functional and Logical Programming](Functional%20and%20Logical%20Programming/)
 * [📊 Probabilities and Statistics](Probabilities%20and%20Statistics/)
