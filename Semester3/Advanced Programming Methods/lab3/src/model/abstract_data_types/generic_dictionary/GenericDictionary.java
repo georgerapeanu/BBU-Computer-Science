@@ -25,4 +25,9 @@ public class GenericDictionary<T, E> implements IGenericDictionary<T, E> {
     public List<T> getKeys() {
         return new ArrayList<>(data.keySet());
     }
+
+    @Override
+    public boolean exists(T key) {
+        return data.containsKey(key);
+    }
 }

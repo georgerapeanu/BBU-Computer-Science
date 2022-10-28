@@ -2,6 +2,8 @@ package model.values;
 
 import model.values.exceptions.DivisionOverflowAppException;
 import model.values.exceptions.InvalidOperationAppException;
+import model.values.types.IType;
+import model.values.types.IntegerType;
 
 public class IntegerValue implements  IValue{
     int value;
@@ -39,7 +41,7 @@ public class IntegerValue implements  IValue{
 
     @Override
     public IValue compose(IValue other, String operation) throws InvalidOperationAppException, DivisionOverflowAppException{
-        if(!(other instanceof IntegerValue)) {
+        if(!(other.getType() instanceof IntegerType)) {
             throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operator " + operation);
         }
         switch(operation){
@@ -49,5 +51,10 @@ public class IntegerValue implements  IValue{
             case "/": return this.divide((IntegerValue)other);
         }
         throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operator " + operation);
+    }
+
+    @Override
+    public IType getType() {
+        return new IntegerType();
     }
 }

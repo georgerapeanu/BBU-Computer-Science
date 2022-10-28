@@ -1,7 +1,11 @@
 package model.statements;
 
+import model.exceptions.AppException;
 import model.state.ProgState;
+import model.state.exceptions.SymbolAlreadyExistsAppException;
+import model.state.exceptions.SymbolNotFoundAppException;
 
 public interface IStatement {
-    public void execute(ProgState progState);
+    public void execute(ProgState progState) throws AppException;
+    public String toString();
 }

@@ -16,4 +16,9 @@ public class CompositeStatement implements IStatement{
         progState.getExecutionStack().push(secondStatement);
         progState.getExecutionStack().push(firstStatement);
     }
+
+    @Override
+    public String toString(){
+        return firstStatement + "; " + secondStatement;
+    }
 }

@@ -9,6 +9,10 @@ import model.statements.IStatement;
 public class ExecutionStack implements IExecutionStack {
     IGenericStack<IStatement> stack;
 
+    public ExecutionStack() {
+        this.stack = new GenericStack<>();
+    }
+
     @Override
     public IStatement pop() throws StackEmptyAppException {
         return stack.pop();

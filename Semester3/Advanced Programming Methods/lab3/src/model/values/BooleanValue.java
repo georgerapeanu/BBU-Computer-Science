@@ -2,6 +2,8 @@ package model.values;
 
 import model.values.exceptions.DivisionOverflowAppException;
 import model.values.exceptions.InvalidOperationAppException;
+import model.values.types.BooleanType;
+import model.values.types.IType;
 
 public class BooleanValue implements IValue{
     boolean value;
@@ -29,7 +31,7 @@ public class BooleanValue implements IValue{
 
     @Override
     public IValue compose(IValue other, String operation) throws InvalidOperationAppException {
-        if(!(other instanceof BooleanValue)) {
+        if(!(other.getType() instanceof BooleanType)) {
             throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operation " + operation);
         }
         switch(operation){
@@ -37,5 +39,10 @@ public class BooleanValue implements IValue{
             case "or": return this.or((BooleanValue) other);
         }
         throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operation " + operation);
+    }
+
+    @Override
+    public IType getType() {
+        return new BooleanType();
     }
 }
