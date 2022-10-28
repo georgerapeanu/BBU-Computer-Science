@@ -12,12 +12,12 @@ public class Output implements  IOutput{
     }
 
     @Override
-    public List<String> getOutputAsList(String string) {
+    public List<String> getOutputAsList() {
         return this.data.getAll();
     }
 
     @Override
-    public String getOutput(String string) {
+    public String getOutput() {
         StringBuilder answer = new StringBuilder();
         for(String elem:this.data.getAll()){
             answer.append(elem);
@@ -34,5 +34,10 @@ public class Output implements  IOutput{
     public void setOutput(String string) {
         this.data.clear();
         this.data.addToEnd(string);
+    }
+
+    @Override
+    public String toDebug() {
+        return "Output: " + this.getOutput();
     }
 }

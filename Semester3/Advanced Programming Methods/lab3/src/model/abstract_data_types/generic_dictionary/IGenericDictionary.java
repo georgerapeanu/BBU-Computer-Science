@@ -2,7 +2,11 @@ package model.abstract_data_types.generic_dictionary;
 
 import model.abstract_data_types.generic_dictionary.exceptions.KeyNotFoundAppException;
 
+import java.util.List;
+
 public interface IGenericDictionary<T, E> {
     public E getValue(T key)throws KeyNotFoundAppException;
     public void setValue(T key, E value);
+
+    public List<T> getKeys();
 }

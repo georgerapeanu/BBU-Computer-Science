@@ -6,4 +6,6 @@ import model.values.IValue;
 public interface ISymTable {
     public IValue getValue(String name) throws KeyNotFoundAppException;
     public void setValue(String name, IValue value);
+
+    public String toDebug();
 }

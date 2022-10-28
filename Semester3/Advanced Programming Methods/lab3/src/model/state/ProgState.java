@@ -23,4 +23,7 @@ public class ProgState {
         return output;
     }
 
+    public String toDebug() {
+        return this.executionStack.toDebug() + "\n" + this.symTable.toDebug() + "\n" + this.output.toDebug();
+    }
 };
