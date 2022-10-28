@@ -5,7 +5,9 @@ import model.expressions.BinaryExpression;
 import model.expressions.ConstantExpression;
 import model.expressions.VariableExpression;
 import model.statements.*;
+import model.values.BooleanValue;
 import model.values.IntegerValue;
+import model.values.types.BooleanType;
 import model.values.types.IntegerType;
 
 public class Main {
@@ -25,6 +27,7 @@ public class Main {
         );
          */
 
+        /*
         IStatement statement = new CompositeStatement(
                 new VariableDeclarationStatement("a",new IntegerType()),
                 new CompositeStatement(
@@ -51,6 +54,29 @@ public class Main {
                                                 )
                                         ),
                                         new PrintStatement(new VariableExpression("b"))
+                                )
+                        )
+                )
+        );
+         */
+
+        IStatement statement = new CompositeStatement(
+                new VariableDeclarationStatement("a",new BooleanType()),
+                new CompositeStatement(
+                        new VariableDeclarationStatement("v", new IntegerType()),
+                        new CompositeStatement(
+                                new AssignmentStatement("a", new BinaryExpression(
+                                        new ConstantExpression(new BooleanValue(true)),
+                                        new ConstantExpression(new BooleanValue(false)),
+                                        "or"
+                                )),
+                                new CompositeStatement(
+                                        new IfStatement(
+                                                new VariableExpression("a"),
+                                                new AssignmentStatement("v",new ConstantExpression(new IntegerValue(2))),
+                                                new AssignmentStatement("v", new ConstantExpression(new IntegerValue(3)))
+                                        ),
+                                        new PrintStatement(new VariableExpression("v"))
                                 )
                         )
                 )

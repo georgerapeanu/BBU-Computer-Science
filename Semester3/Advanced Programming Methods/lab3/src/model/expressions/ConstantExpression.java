@@ -6,9 +6,9 @@ import model.values.IValue;
 import model.values.IntegerValue;
 
 public class ConstantExpression implements IExpression {
-    IntegerValue value;
+    IValue value;
 
-    public ConstantExpression(IntegerValue value) {
+    public ConstantExpression(IValue value) {
         this.value = value;
     }
 

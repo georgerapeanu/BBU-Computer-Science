@@ -45,4 +45,8 @@ public class BooleanValue implements IValue{
     public IType getType() {
         return new BooleanType();
     }
+
+    public boolean getValue(){
+        return this.value;
+    }
 }

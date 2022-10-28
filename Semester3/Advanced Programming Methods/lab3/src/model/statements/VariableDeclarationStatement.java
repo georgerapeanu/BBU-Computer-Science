@@ -14,8 +14,8 @@ public class VariableDeclarationStatement implements IStatement{
         this.type = type;
     }
     @Override
-    public void execute(ProgState progState) throws SymbolAlreadyExistsAppException {
-        progState.getSymTable().declValue(name, type);
+    public void execute(ProgState state) throws SymbolAlreadyExistsAppException {
+        state.getSymTable().declValue(name, type);
     }
 
     @Override

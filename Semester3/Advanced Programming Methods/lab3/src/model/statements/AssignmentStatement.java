@@ -15,12 +15,12 @@ public class AssignmentStatement implements  IStatement{
     }
 
     @Override
-    public void execute(ProgState progState) throws AppException {
-        progState.getSymTable().setValue(variableName, expression.evaluate(progState));
+    public void execute(ProgState state) throws AppException {
+        state.getSymTable().setValue(variableName, expression.evaluate(state));
     }
 
     @Override
     public String toString(){
-        return variableName + "=" + expression.toString();
+        return variableName + " = " + expression.toString();
     }
 }

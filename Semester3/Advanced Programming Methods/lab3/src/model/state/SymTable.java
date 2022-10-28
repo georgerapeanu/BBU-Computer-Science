@@ -42,7 +42,7 @@ public class SymTable implements  ISymTable{
 
     @Override
     public String toDebug() {
-        StringBuilder answer = new StringBuilder("SymTable:");
+        StringBuilder answer = new StringBuilder("SymTable:\n");
         try{
             for(String key: data.getKeys()){
                 answer.append(key).append("(").append(data.getValue(key).getType().toString()).append(")").append(":-> ").append(data.getValue(key).toString()).append("\n");

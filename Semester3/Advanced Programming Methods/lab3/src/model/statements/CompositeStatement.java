@@ -12,9 +12,9 @@ public class CompositeStatement implements IStatement{
     }
 
     @Override
-    public void execute(ProgState progState) {
-        progState.getExecutionStack().push(secondStatement);
-        progState.getExecutionStack().push(firstStatement);
+    public void execute(ProgState state) {
+        state.getExecutionStack().push(secondStatement);
+        state.getExecutionStack().push(firstStatement);
     }
 
     @Override
