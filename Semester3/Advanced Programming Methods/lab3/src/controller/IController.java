@@ -8,5 +8,7 @@ public interface IController {
     public void executeAllSteps() throws AppException;
     public void displayCurrentState();
 
+    public void setDisplayFlag(boolean displayFlag);
     void addProgram(IStatement statement);
+    public boolean getDisplayFlag();
 }

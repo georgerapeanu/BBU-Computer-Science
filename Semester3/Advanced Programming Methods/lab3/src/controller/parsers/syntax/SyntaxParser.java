@@ -202,13 +202,13 @@ public class SyntaxParser {
         if(position.getValue() >= string.length()){
             return null;
         }
+        if (position.getValue() < string.length() && string.charAt(position.getValue()) == '}'){
+            return null;
+        }
 
         IStatement currentStatement = parseNonComposite(string, position);
 
         skipWhiteSpace(string, position);
-        if (position.getValue() < string.length() && string.charAt(position.getValue()) == '}'){
-            return null;
-        }
         IStatement nextStatement = parseAtPosition(string, position);
         if(nextStatement == null){
             return currentStatement;
