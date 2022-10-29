@@ -33,6 +33,6 @@ public class IfStatement implements  IStatement{
 
     @Override
     public String toString(){
-        return "If(" + this.expression.toString() + ")" + "then {" + this.left.toString() + "} else {" + this.right.toString() + "}";
+        return "if(" + this.expression.toString() + ")" + "then {" + this.left.toString() + "} else {" + this.right.toString() + "}";
     }
 }

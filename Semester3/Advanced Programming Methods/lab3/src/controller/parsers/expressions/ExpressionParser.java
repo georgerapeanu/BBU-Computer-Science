@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.Math.exp;
 import static java.lang.Math.max;
 
 public class ExpressionParser {
@@ -67,7 +68,7 @@ public class ExpressionParser {
         throw new WrongMatchAppException("No boolean here");
     }
 
-    private static String extractName(String string, RefInt position) {
+    private static String extractName(String string, RefInt position) throws InvalidExpressionAppException {
         StringBuilder name = new StringBuilder();
         List<Character> delimiterTokens = new ArrayList<>();
         for(String[] operator_list: OperatorPriority.operators){
@@ -86,6 +87,9 @@ public class ExpressionParser {
             name.append(string.charAt(position.getValue()));
             position.increase(1);
         }
+        if(name.length() == 0){
+            throw new InvalidExpressionAppException("Invalid name");
+        }
         return name.toString();
     }
 
@@ -93,7 +97,7 @@ public class ExpressionParser {
         if(string.charAt(position.getValue()) == '('){
             position.increase(1);
             IExpression tmp = parseAtPositionWithOperator(string, position, 0);
-            if(string.charAt(position.getValue()) != ')') {
+            if(position.getValue() >= string.length() ||  string.charAt(position.getValue()) != ')') {
                 throw new InvalidExpressionAppException("Expression is invalid, unbalanced paranthesis");
             }
             position.increase(1);
@@ -172,7 +176,13 @@ public class ExpressionParser {
         return currentExpression;
     }
 
+    public static IExpression parseAtPosition(String string, RefInt position) throws InvalidExpressionAppException {
+        IExpression expression = parseAtPositionWithOperator(string, position, 0);
+        return expression;
+    }
+
     public static  IExpression parse(String string) throws InvalidExpressionAppException {
-        return parseAtPositionWithOperator(string, new RefInt(0), 0);
+        IExpression expression = parseAtPositionWithOperator(string, new RefInt(0), 0);
+        return expression;
     }
 }

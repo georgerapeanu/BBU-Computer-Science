@@ -1,6 +1,8 @@
 import controller.Controller;
 import controller.IController;
 import controller.parsers.expressions.ExpressionParser;
+import controller.parsers.syntax.SyntaxParser;
+import controller.parsers.syntax.SyntaxParser;
 import model.exceptions.AppException;
 import model.expressions.BinaryExpression;
 import model.expressions.ConstantExpression;
@@ -90,6 +92,10 @@ public class Main {
         */
  //       IController controller = new Controller(statement, true);
  //       controller.executeAllSteps();
-        System.out.println(ExpressionParser.parse(" 1 + 1 + 2 *  3 + 4 - 6 / 2").evaluate(new ProgState(new ExecutionStack(), new SymTable(), new Output(), new NoOperationStatement())).toString());
+        //System.out.println(SyntaxParser.parse("IntegerType v;v=2;print(v);").toString());
+        //System.out.println(SyntaxParser.parse("IntegerType a;a = 2 + 3 * 5;IntegerType b;b = a - 4/2 + 7;print(b);").toString());
+        ///System.out.println(SyntaxParser.parse("{print(1);};").toString());
+        ///TODO if with spaces instead of brackets
+        System.out.println(SyntaxParser.parse("BooleanType a;a=false;IntegerType v;if a then v=2; else v=3;print(v);").toString());
     }
 }

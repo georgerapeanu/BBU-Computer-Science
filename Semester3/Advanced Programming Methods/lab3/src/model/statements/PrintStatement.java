@@ -19,6 +19,6 @@ public class PrintStatement implements IStatement {
 
     @Override
     public String toString(){
-        return "Print(" + expression.toString() + ")";
+        return "print(" + expression.toString() + ")";
     }
 }
