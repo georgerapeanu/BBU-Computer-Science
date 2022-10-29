@@ -1,9 +1,15 @@
 import controller.Controller;
 import controller.IController;
+import controller.parsers.expressions.ExpressionParser;
 import model.exceptions.AppException;
 import model.expressions.BinaryExpression;
 import model.expressions.ConstantExpression;
+import model.expressions.IExpression;
 import model.expressions.VariableExpression;
+import model.state.ExecutionStack;
+import model.state.Output;
+import model.state.ProgState;
+import model.state.SymTable;
 import model.statements.*;
 import model.values.BooleanValue;
 import model.values.IntegerValue;
@@ -59,7 +65,7 @@ public class Main {
                 )
         );
          */
-
+    /*
         IStatement statement = new CompositeStatement(
                 new VariableDeclarationStatement("a",new BooleanType()),
                 new CompositeStatement(
@@ -81,8 +87,9 @@ public class Main {
                         )
                 )
         );
-
-        IController controller = new Controller(statement, true);
-        controller.executeAllSteps();
+        */
+ //       IController controller = new Controller(statement, true);
+ //       controller.executeAllSteps();
+        System.out.println(ExpressionParser.parse(" 1 + 1 + 2 *  3 + 4 - 6 / 2").evaluate(new ProgState(new ExecutionStack(), new SymTable(), new Output(), new NoOperationStatement())).toString());
     }
 }

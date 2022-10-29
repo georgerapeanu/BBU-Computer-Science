@@ -2,7 +2,9 @@ package model.expressions;
 
 import model.exceptions.AppException;
 import model.state.ProgState;
+import model.state.exceptions.SymbolNotFoundAppException;
 import model.values.IValue;
+import model.values.types.IType;
 
 public class BinaryExpression implements IExpression {
     IExpression left;
@@ -22,6 +24,6 @@ public class BinaryExpression implements IExpression {
 
     @Override
     public String toString(){
-        return left.toString() + " " + operator + " " + right.toString();
+        return "(" + left.toString() + " " + operator + " " + right.toString() + ")";
     }
 }

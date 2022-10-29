@@ -2,8 +2,10 @@ package model.expressions;
 
 import model.exceptions.AppException;
 import model.state.ProgState;
+import model.state.exceptions.SymbolNotFoundAppException;
 import model.values.IValue;
 import model.values.IntegerValue;
+import model.values.types.IType;
 
 public class ConstantExpression implements IExpression {
     IValue value;
@@ -21,4 +23,5 @@ public class ConstantExpression implements IExpression {
     public String toString(){
         return value.toString();
     }
+
 };
