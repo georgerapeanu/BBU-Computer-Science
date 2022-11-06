@@ -1,0 +1,339 @@
+/*CREATE TABLE USERS (
+	id INT NOT NULL,
+	name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id)
+)
+
+
+CREATE TABLE POSTS (
+	id INT NOT NULL,
+	userId INT NOT NULL,
+	text VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (userId) REFERENCES USERS(id)
+)
+
+CREATE TABLE COMMENTS (
+	id INT NOT NULL,
+	postId INT NOT NULL,
+	userId INT NOT NULL,
+	text VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (postId) REFERENCES POSTS(id),
+	FOREIGN KEY (userId) REFERENCES USERS(id)
+)
+
+CREATE TABLE USER_COMMENT_LIKES (
+	userId INT NOT NULL,
+	commentId INT NOT NULL,
+	PRIMARY KEY(userId, commentId),
+	FOREIGN KEY (userId) REFERENCES USERS(id),
+	FOREIGN KEY (commentId) REFERENCES COMMENTS(id)
+)
+
+CREATE TABLE USER_POST_LIKES (
+	userId INT NOT NULL,
+	postId INT NOT NULL,
+	PRIMARY KEY(userId, postId),
+	FOREIGN KEY (userId) REFERENCES USERS(id),
+	FOREIGN KEY (postId) REFERENCES POSTS(id)
+)
+
+CREATE TABLE STORIES (
+	id INT NOT NULL,
+	userId INT NOT NULL,
+	contentLink VARCHAR(255) NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (userId) REFERENCES USERS(id)
+)
+
+CREATE TABLE CATEGORIES (
+	name VARCHAR(255) NOT NULL,
+	PRIMARY KEY (name)
+)
+
+CREATE TABLE CATEGORY_POST (
+	categoryName VARCHAR(255) NOT NULL,
+	postId INT NOT NULL,
+	PRIMARY KEY(categoryName, postId),
+	FOREIGN KEY (categoryName) REFERENCES CATEGORIES(name),
+	FOREIGN KEY (postId) REFERENCES POSTS(id)
+)
+
+CREATE TABLE CONNECTIONS (
+	firstUserId INT NOT NULL,
+	secondUserId INT NOT NULL,
+	PRIMARY KEY(firstUserId, secondUserId),
+	FOREIGN KEY (firstUserId) REFERENCES USERS(id),
+	FOREIGN KEY (secondUserId) REFERENCES USERS(id)
+)
+
+CREATE TABLE PRIVILEDGES (
+	id INT NOT NULL,
+	isAdmin BIT NOT NULL,
+	isModerator BIT NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (id) REFERENCES USERS(id)
+)*/
+
+
+------------------------------------------------------------------a. 2 queries with the union operation; use UNION [ALL] and OR;
+
+
+/*SElECT userId, postId AS mediaId FROM USER_POST_LIKES upl 
+WHERE upl.userId  = 1 OR upl.userId = 2
+UNION
+SElECT userId, commentId AS mediaId FROM USER_COMMENT_LIKES ucl
+WHERE ucl.userId  = 1 OR ucl.userId = 2;*/
+
+/*SElECT userId, id AS contentId FROM POSTS p  
+WHERE p.userId  = 1 OR p.userId = 2
+UNION ALL
+SElECT userId, id AS contentId FROM COMMENTS c  
+WHERE c.userId  = 1 OR c.userId = 2;*/
+
+
+------------------------------------------------------------------b. 2 queries with the intersection operation; use INTERSECT and IN;
+
+
+/*SELECT userId FROM POSTS p 
+INTERSECT
+SELECT userID FROM COMMENTS c
+WHERE userId IN (2, 4);*/
+
+/*SELECT userId FROM USER_POST_LIKES upl  
+INTERSECT
+SELECT userID FROM USER_COMMENT_LIKES ucl 
+WHERE userId IN (2, 4);*/
+
+
+------------------------------------------------------------------c. 2 queries with the difference operation; use EXCEPT and NOT IN;
+
+
+/*SELECT userId FROM POSTS p 
+WHERE userId NOT IN (1, 1)
+EXCEPT
+SELECT userID FROM COMMENTS c
+WHERE userId NOT IN (1, 1);*/
+
+/*SELECT userId FROM USER_POST_LIKES upl
+WHERE userId NOT IN (1, 1)
+EXCEPT
+SELECT userID FROM USER_COMMENT_LIKES ucl 
+WHERE userId NOT IN (1, 1);*/
+
+
+------------------------------------------------------------------d. 4 queries with INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL JOIN (one query per operator); one query will join at least 3 tables, while another one will join at least two many-to-many relationships;
+
+/*SELECT u.id, SUM(like_table.likes) as total_likes
+FROM USERS u 
+INNER JOIN POSTS p 
+ON u.id = p.userId 
+INNER JOIN (
+	SELECT upl.postId as id, COUNT(*) as likes 
+	FROM USER_POST_LIKES upl 
+	GROUP BY upl.postId) like_table 
+ON like_table.id = p.id
+GROUP BY u.id;*/
+
+
+/*SELECT *
+FROM USERS u
+LEFT JOIN POSTS p 
+on u.id = p.userId 
+LEFT JOIN COMMENTS c 
+on p.userId = c.postId 
+ORDER BY p.text ASC;*/
+
+/*SELECT c.text, u.id 
+FROM COMMENTS c
+RIGHT JOIN USERS u
+on u.id = c.userId
+ORDER BY c.text ASC;*/
+
+/*SELECT p.id, p.[text] , c.name 
+FROM POSTS p
+FULL JOIN CATEGORY_POST cp  
+ON cp.postId = p.id 
+FULL JOIN CATEGORIES c 
+on cp.categoryName = c.name;*/
+
+------------------------------------------------------------------e. 2 queries with the IN operator and a subquery in the WHERE clause; in at least one case, the subquery must include a subquery in its own WHERE clause;
+---select all user ids which have at least one like given to a post that isnt theirs
+
+/*SELECT DISTINCT userId 
+FROM USER_POST_LIKES upl 
+WHERE upl.postId IN (
+	SELECT TOP 1 id 
+	FROM POSTS p 
+	WHERE upl.postId = p.id AND p.userId <> upl.userId
+);*/
+
+---select all comments of users which have at least one like given to a post that isnt theirs
+
+/*SELECT id FROM COMMENTS c 
+WHERE c.userId IN (
+	SELECT DISTINCT userId 
+	FROM USER_POST_LIKES upl 
+	WHERE upl.postId IN (
+		SELECT TOP 1 id 
+		FROM POSTS p 
+		WHERE upl.postId = p.id AND p.userId <> upl.userId
+	)
+);*/
+
+------------------------------------------------------------------f. 2 queries with the EXISTS operator and a subquery in the WHERE clause;
+---select all user ids which have at least one like given to a post that isnt theirs
+
+/*SELECT DISTINCT userId 
+FROM USER_POST_LIKES upl 
+WHERE EXISTS (
+	SELECT TOP 1 id 
+	FROM POSTS p 
+	WHERE upl.postId = p.id AND p.userId <> upl.userId
+);*/
+
+---select all user ids which have at least one like given to a comment that isnt theirs
+
+/*SELECT DISTINCT userId 
+FROM USER_COMMENT_LIKES ucl
+WHERE EXISTS (
+	SELECT TOP 1 id 
+	FROM COMMENTS c 
+	WHERE ucl.commentId = c.id AND c.userId <> ucl.userId
+);*/
+
+
+
+------------------------------------------------------------------g. 2 queries with a subquery in the FROM clause;                         
+
+/*SELECT u.id, t.id as storyId
+FROM USERS u INNER JOIN (SELECT * FROM STORIES s WHERE s.contentLink LIKE  '_one') t
+ON t.userId = u.id;*/
+
+/*SELECT u.id, SUM(like_table.likes) as total_likes
+FROM USERS u 
+INNER JOIN POSTS p 
+ON u.id = p.userId 
+INNER JOIN (
+	SELECT upl.postId as id, COUNT(*) as likes 
+	FROM USER_POST_LIKES upl 
+	GROUP BY upl.postId) like_table 
+ON like_table.id = p.id
+GROUP BY u.id;*/
+
+
+
+------------------------------------------------------------------h. 4 queries with the GROUP BY clause, 3 of which also contain the HAVING clause; 2 of the latter will also have a subquery in the HAVING clause; use the aggregation operators: COUNT, SUM, AVG, MIN, MAX;
+
+/*SELECT upl.postId, COUNT(*)
+FROM USER_POST_LIKES upl 
+GROUP BY upl.postId;*/
+
+/*SELECT upl.postId, COUNT(*) as likes 
+FROM USER_POST_LIKES upl 
+GROUP BY upl.postId
+HAVING COUNT(*) > 2;*/
+
+--select all posts whith positive likes and at least 2 categories
+/*SELECT upl.postId, COUNT(*) as likes
+FROM USER_POST_LIKES upl 
+GROUP BY upl.postId
+HAVING COUNT(*) > 0 AND upl.postId in (
+	SELECT cp.postId
+	FROM CATEGORY_POST cp 
+	GROUP BY cp.postId  
+	HAVING COUNT(*) > 1
+);*/
+
+-- select all stories of friends and count them for a given user
+/*SELECT s.userId, COUNT(*)
+FROM STORIES s
+GROUP BY s.userId  
+HAVING s.userId in (
+	SELECT DISTINCT  c.secondUserId 
+	FROM CONNECTIONS c 
+	WHERE 2 = c.firstUserId 
+	UNION 
+	SELECT DISTINCT  c.firstUserId 
+	FROM CONNECTIONS c 
+	WHERE 2 = c.secondUserId 
+)*/
+
+
+
+------------------------------------------------------------------i. 4 queries using ANY and ALL to introduce a subquery in the WHERE clause (2 queries per operator); rewrite 2 of them with aggregation operators, and the other 2 with IN / [NOT] IN.
+
+/*SELECT id
+FROM USERS u
+WHERE id = ANY (SELECT DISTINCT userId FROM POSTS p);
+--- WHERE id IN (SELECT DISTINCT userId FROM POSTS p);
+*/
+
+/*SELECT id
+FROM USERS u
+WHERE id <> ALL (SELECT DISTINCT userId FROM POSTS p);
+--- WHERE id NOT IN (SELECT DISTINCT userId FROM POSTS p);
+*/
+
+
+/*SELECT upl.postId  as likes 
+FROM USER_POST_LIKES upl 
+GROUP BY upl.postId
+HAVING COUNT(*) >= ALL(
+	SELECT COUNT(*) as likes 
+	FROM USER_POST_LIKES upl2 
+	GROUP BY upl2.postId
+)*/
+--- HAVING COUNT() >= MAX
+
+/*SELECT upl.postId  as likes 
+FROM USER_POST_LIKES upl 
+GROUP BY upl.postId
+HAVING COUNT(*) > ANY(
+	SELECT COUNT(*) as likes 
+	FROM USER_POST_LIKES upl2 
+	GROUP BY upl2.postId
+)*/
+--- HAVING COUNT > MIN()
+
+------------------------------------------------------------------
+
+/*SELECT COALESCE(comment_likes_table.id, post_likes_table.id) AS userId, (ISNULL(comment_likes_table.comment_likes, 0) + ISNULL(post_likes_table.post_likes, 0)) AS total_likes
+FROM (
+	SELECT ucl.userId as id, COUNT(ucl.userId) AS comment_likes
+	FROM USER_COMMENT_LIKES ucl 
+	GROUP BY ucl.userId 
+) comment_likes_table
+FULL JOIN (
+	SELECT upl.userId as id, COUNT(upl.userId) AS post_likes
+	FROM USER_POST_LIKES upl
+	GROUP BY upl.userId 
+) post_likes_table
+ON comment_likes_table.id=post_likes_table.id;*/
+
+/*SELECT COALESCE(count_comments_table.id, count_posts_table.id) AS userId, (ISNULL(count_posts_table.count_posts, 0) + ISNULL(count_comments_table.count_comments, 0)) AS total_media
+FROM (
+	SELECT p.userId as id, COUNT(*) as count_posts
+	FROM POSTS p 
+	GROUP BY p.userId
+) count_posts_table
+FULL JOIN (
+	SELECT c.userId as id, COUNT(*) as count_comments
+	FROM COMMENTS c 
+	GROUP BY c.userId
+) count_comments_table
+ON count_posts_table.id = count_comments_table.id;*/
+
+/*SELECT post_category_likes_table.category_name, (CONVERT(float, SUM(post_category_likes_table.likes)) / COUNT(*)) AS average_likes_per_category
+FROM (
+	SELECT cp.categoryName AS category_name, like_table.likes AS likes
+	FROM CATEGORY_POST cp 	
+	INNER JOIN (
+		SELECT upl.postId AS postId, COUNT(*) AS likes
+		FROM USER_POST_LIKES upl 
+		GROUP BY upl.postId 
+	) like_table
+	ON cp.postId = like_table.postId
+) post_category_likes_table
+GROUP BY post_category_likes_table.category_name;*/
