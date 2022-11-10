@@ -16,12 +16,20 @@ public class BooleanValue implements IValue{
         this.value = value;
     }
 
-    public BooleanValue and(BooleanValue other) {
+    private BooleanValue and(BooleanValue other) {
         return new BooleanValue(this.value & other.value);
     }
 
-    public BooleanValue or(BooleanValue other) {
+    private BooleanValue or(BooleanValue other) {
         return new BooleanValue(this.value | other.value);
+    }
+
+
+    private BooleanValue equal(BooleanValue other) {
+        return new BooleanValue(this.equals(other));
+    }
+    private BooleanValue notEqual(BooleanValue other) {
+        return new BooleanValue(!this.equals(other));
     }
 
     @Override
@@ -36,7 +44,9 @@ public class BooleanValue implements IValue{
         }
         switch(operation){
             case "and": return this.and((BooleanValue) other);
-            case "or": return this.or((BooleanValue) other);
+            case "or":  return this.or((BooleanValue) other);
+            case "==":  return this.equal((BooleanValue) other);
+            case "!=":  return this.notEqual((BooleanValue) other);
         }
         throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two BooleanValue types using operation " + operation);
     }

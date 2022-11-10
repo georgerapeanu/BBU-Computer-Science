@@ -62,5 +62,8 @@ public class Controller implements IController{
         this.repository.clear();
         this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), statement));
         this.repository.logProgramState();
+        if(this.displayFlag){
+            this.displayCurrentState();
+        }
     }
 }

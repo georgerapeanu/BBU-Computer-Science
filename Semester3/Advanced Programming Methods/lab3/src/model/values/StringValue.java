@@ -18,8 +18,32 @@ public class StringValue implements IValue{
         this.value = value;
     }
 
-    public StringValue add(StringValue other) {
+    private StringValue add(StringValue other) {
         return new StringValue(this.value + other.getValue());
+    }
+
+    private BooleanValue lessThan(StringValue other) {
+        return new BooleanValue(this.value.compareTo(other.value) < 0);
+    }
+
+    private BooleanValue lessThanEqual(StringValue other) {
+        return new BooleanValue(this.value.compareTo(other.value) <= 0);
+    }
+
+    private BooleanValue greaterThan(StringValue other) {
+        return new BooleanValue(this.value.compareTo(other.value) > 0);
+    }
+
+    private BooleanValue greaterThanEqual(StringValue other) {
+        return new BooleanValue(this.value.compareTo(other.value) >= 0);
+    }
+
+    private BooleanValue equal(StringValue other) {
+        return new BooleanValue(this.equals(other));
+    }
+
+    private BooleanValue notEqual(StringValue other) {
+        return new BooleanValue(!this.equals(other));
     }
 
     @Override
@@ -34,6 +58,12 @@ public class StringValue implements IValue{
         }
         switch(operation){
             case "+": return this.add((StringValue)other);
+            case "<":   return this.lessThan((StringValue) other);
+            case "<=":  return this.lessThanEqual((StringValue) other);
+            case "==":  return this.equal((StringValue) other);
+            case "!=":  return this.notEqual((StringValue) other);
+            case ">":   return this.greaterThan((StringValue)other);
+            case ">=":  return this.greaterThanEqual((StringValue)other);
         }
         throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two StringValue types using operation " + operation);
     }

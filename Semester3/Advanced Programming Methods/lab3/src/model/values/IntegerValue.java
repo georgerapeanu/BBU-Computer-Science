@@ -16,23 +16,47 @@ public class IntegerValue implements  IValue{
         this.value = value;
     }
 
-    public IntegerValue add(IntegerValue other) {
+    private IntegerValue add(IntegerValue other) {
         return new IntegerValue(this.value + other.value);
     }
 
-    public IntegerValue subtract(IntegerValue other) {
+    private IntegerValue subtract(IntegerValue other) {
         return new IntegerValue(this.value - other.value);
     }
 
-    public IntegerValue multiply(IntegerValue other) {
+    private IntegerValue multiply(IntegerValue other) {
         return new IntegerValue(this.value * other.value);
     }
 
-    public IntegerValue divide(IntegerValue other) throws DivisionOverflowAppException {
+    private IntegerValue divide(IntegerValue other) throws DivisionOverflowAppException {
         if(other.value == 0){
             throw new DivisionOverflowAppException("DivisionOverflowAppException: Cannot divide by 0");
         }
         return new IntegerValue(this.value / other.value);
+    }
+
+    private BooleanValue lessThan(IntegerValue other) {
+        return new BooleanValue(this.value < other.value);
+    }
+
+    private BooleanValue lessThanEqual(IntegerValue other) {
+        return new BooleanValue(this.value <= other.value);
+    }
+
+    private BooleanValue greaterThan(IntegerValue other) {
+        return new BooleanValue(this.value > other.value);
+    }
+
+    private BooleanValue greaterThanEqual(IntegerValue other) {
+        return new BooleanValue(this.value >= other.value);
+    }
+
+    private BooleanValue equal(IntegerValue other) {
+        return new BooleanValue(this.equals(other));
+    }
+
+    private BooleanValue notEqual(IntegerValue other) {
+        return new BooleanValue(!this.equals(other));
     }
 
     @Override
@@ -50,6 +74,12 @@ public class IntegerValue implements  IValue{
             case "-": return this.subtract((IntegerValue)other);
             case "*": return this.multiply((IntegerValue)other);
             case "/": return this.divide((IntegerValue)other);
+            case "<":   return this.lessThan((IntegerValue) other);
+            case "<=":  return this.lessThanEqual((IntegerValue) other);
+            case "==":  return this.equal((IntegerValue) other);
+            case "!=":  return this.notEqual((IntegerValue) other);
+            case ">":   return this.greaterThan((IntegerValue)other);
+            case ">=":  return this.greaterThanEqual((IntegerValue)other);
         }
         throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two IntegerValue types using operator " + operation);
     }
