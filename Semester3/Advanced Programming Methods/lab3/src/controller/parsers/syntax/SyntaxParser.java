@@ -8,6 +8,7 @@ import model.statements.*;
 import model.values.types.BooleanType;
 import model.values.types.IType;
 import model.values.types.IntegerType;
+import model.values.types.StringType;
 import utils.RefInt;
 
 import java.util.Arrays;
@@ -27,7 +28,7 @@ import java.util.regex.Pattern;
  */
 
 public class SyntaxParser {
-    private static IType[] types = {new IntegerType(), new BooleanType()};
+    private static IType[] types = {new IntegerType(), new BooleanType(), new StringType()};
     private static Character[] whiteSpace = {' ', '\t', '\n', '\r'};
     private static Pattern namePattern = Pattern.compile("^(([a-zA-Z_])+[a-zA-Z0-9_]*)");
 

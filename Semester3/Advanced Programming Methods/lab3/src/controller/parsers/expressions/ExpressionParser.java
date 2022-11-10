@@ -15,6 +15,7 @@ import model.expressions.IExpression;
 import model.expressions.VariableExpression;
 import model.values.BooleanValue;
 import model.values.IntegerValue;
+import model.values.StringValue;
 import utils.RefInt;
 
 import java.sql.Ref;
@@ -27,7 +28,14 @@ import static java.lang.Math.max;
 
 public class ExpressionParser {
 
+    private static Character[] whiteSpace = {' ', '\t', '\n', '\r'};
+    private static void skipWhiteSpace(String string, RefInt position) {
+        while(position.getValue() < string.length() && Arrays.asList(whiteSpace).contains(string.charAt(position.getValue()))){
+            position.increase(1);
+        }
+    }
     private static int extractInteger(String string, RefInt position) throws WrongMatchAppException {
+        skipWhiteSpace(string, position);
         int pos = position.getValue();
         if(!(Character.isDigit(string.charAt(pos)) || string.charAt(pos) == '-')){
             throw new WrongMatchAppException("No integer here");
@@ -52,7 +60,31 @@ public class ExpressionParser {
         return answer * sign;
     }
 
+    private static String extractString(String string, RefInt position) throws WrongMatchAppException {
+        skipWhiteSpace(string, position);
+        int pos = position.getValue();
+        if(!(string.charAt(pos) == '"')){
+            throw new WrongMatchAppException("No string here");
+        }
+
+        pos += 1;
+        StringBuilder answer = new StringBuilder();
+
+        while(pos < string.length() && string.charAt(pos) != '"'){
+            answer.append(string.charAt(pos));
+            pos += 1;
+        }
+        if(pos >= string.length() || string.charAt(pos) != '"'){
+            throw new WrongMatchAppException("No string here");
+        }
+        pos += 1;
+
+        position.setValue(pos);
+        return answer.toString();
+    }
+
     private static boolean extractBoolean(String string, RefInt position) throws WrongMatchAppException {
+        skipWhiteSpace(string, position);
         if(position.getValue() + 3 < string.length()){
             if(string.substring(position.getValue(), position.getValue() + 4).equals("true")) {
                 position.increase(4);
@@ -69,6 +101,7 @@ public class ExpressionParser {
     }
 
     private static String extractName(String string, RefInt position) throws InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
         StringBuilder name = new StringBuilder();
         List<Character> delimiterTokens = new ArrayList<>();
         for(String[] operator_list: OperatorPriority.operators){
@@ -81,9 +114,11 @@ public class ExpressionParser {
         }
         delimiterTokens.add('(');
         delimiterTokens.add(')');
-        delimiterTokens.add(' ');
+        delimiterTokens.addAll(Arrays.asList(whiteSpace));
+        delimiterTokens.add('"');
+        delimiterTokens.add('\'');
 
-        while(!delimiterTokens.contains(string.charAt(position.getValue()))) {
+        while(position.getValue() < string.length() && !delimiterTokens.contains(string.charAt(position.getValue()))) {
             name.append(string.charAt(position.getValue()));
             position.increase(1);
         }
@@ -94,6 +129,7 @@ public class ExpressionParser {
     }
 
     private static IExpression extractTerm(String string, RefInt position) throws InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
         if(string.charAt(position.getValue()) == '('){
             position.increase(1);
             IExpression tmp = parseAtPositionWithOperator(string, position, 0);
@@ -113,13 +149,17 @@ public class ExpressionParser {
         } catch (WrongMatchAppException e) {
             ;
         }
+
+        try{
+            return new ConstantExpression(new StringValue(extractString(string, position)));
+        } catch (WrongMatchAppException e) {
+            ;
+        }
         return new VariableExpression(extractName(string, position));
     }
 
     private static String extractOperator(String string, RefInt position, String[] currentOperators) {
-        while(position.getValue() < string.length() && string.charAt(position.getValue()) == ' '){
-            position.increase(1);
-        }
+        skipWhiteSpace(string, position);
         if(position.getValue() >= string.length()){
             return null;
         }
@@ -148,9 +188,7 @@ public class ExpressionParser {
     }
 
     private static IExpression parseAtPositionWithOperator(String string, RefInt position, int currentOperator) throws InvalidExpressionAppException {
-        while(position.getValue() < string.length() && string.charAt(position.getValue()) == ' '){
-            position.increase(1);
-        }
+        skipWhiteSpace(string, position);
         if(position.getValue() >= string.length()){
             return null;
         }
