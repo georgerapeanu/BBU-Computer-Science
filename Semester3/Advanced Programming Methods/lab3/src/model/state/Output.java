@@ -1,11 +1,12 @@
 package model.state;
 
 import model.abstract_data_types.generic_list.GenericList;
+import model.abstract_data_types.generic_list.IGenericList;
 
 import java.util.List;
 
 public class Output implements  IOutput{
-    GenericList<String> data;
+    IGenericList<String> data;
 
     public Output() {
         this.data = new GenericList<>();

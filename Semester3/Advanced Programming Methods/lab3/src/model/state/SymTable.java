@@ -1,6 +1,7 @@
 package model.state;
 
 import model.abstract_data_types.generic_dictionary.GenericDictionary;
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.abstract_data_types.generic_dictionary.exceptions.KeyNotFoundAppException;
 import model.exceptions.AppException;
 import model.state.exceptions.SymbolAlreadyExistsAppException;
@@ -9,7 +10,7 @@ import model.values.IValue;
 import model.values.types.IType;
 
 public class SymTable implements  ISymTable{
-    GenericDictionary<String, IValue> data;
+    IGenericDictionary<String, IValue> data;
 
     public SymTable() {
         data = new GenericDictionary<>();
