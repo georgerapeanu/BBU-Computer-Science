@@ -10,6 +10,8 @@ import model.statements.IStatement;
 import repository.IRepository;
 import repository.Repository;
 
+import java.io.IOException;
+
 public class Controller implements IController{
     IRepository repository;
     boolean displayFlag;
@@ -23,31 +25,24 @@ public class Controller implements IController{
         this.displayFlag = displayFlag;
     }
 
-    public Controller(boolean displayFlag) {
-        repository = new Repository();
+    public Controller(IRepository repository, boolean displayFlag) {
+        this.repository = repository;
         this.displayFlag = displayFlag;
-        if(this.displayFlag){
-            this.displayCurrentState();
-        }
-    }
-
-    public Controller(IStatement statement) {
-        repository = new Repository();
-        this.displayFlag = false;
     }
 
     @Override
-    public void executeOneStep() throws AppException {
+    public void executeOneStep() throws AppException, IOException {
         ProgState state = repository.getCurrentProgram();
         IStatement statement = state.getExecutionStack().pop();
         statement.execute(state);
         if(this.displayFlag){
             this.displayCurrentState();
         }
+        this.repository.logProgramState();
     }
 
     @Override
-    public void executeAllSteps() throws AppException {
+    public void executeAllSteps() throws AppException, IOException {
         try{
             while(true){
                 this.executeOneStep();
@@ -59,11 +54,13 @@ public class Controller implements IController{
 
     @Override
     public void displayCurrentState() {
-        System.out.println(this.repository.getCurrentProgram().toDebug() + "\n");
+        System.out.println(this.repository.getCurrentProgram().toString() + "\n");
     }
 
     @Override
-    public void addProgram(IStatement statement) {
+    public void setProgram(IStatement statement) throws IOException {
+        this.repository.clear();
         this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), statement));
+        this.repository.logProgramState();
     }
 }

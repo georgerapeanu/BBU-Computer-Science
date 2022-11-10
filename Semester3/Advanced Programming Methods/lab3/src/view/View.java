@@ -16,8 +16,8 @@ import java.util.Objects;
 public class View implements  IView {
     IController controller;
 
-    public View() {
-        controller = new Controller(false);
+    public View(IController controller) {
+        this.controller = controller;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class View implements  IView {
 
     }
 
-    private void handleSetProgram(String[] args) throws AppException {
+    private void handleSetProgram(String[] args) throws AppException, IOException {
         StringBuilder program = new StringBuilder();
         for(int i = 2;i < args.length;i++){
             program.append(args[i]);
@@ -64,10 +64,7 @@ public class View implements  IView {
                 program.append(" ");
             }
         }
-        boolean currentDisplayFlag = this.controller.getDisplayFlag();
-        this.controller = new Controller(false);
-        this.controller.addProgram(SyntaxParser.parse(program.toString()));
-        this.controller.setDisplayFlag(currentDisplayFlag);
+        this.controller.setProgram(SyntaxParser.parse(program.toString()));
     }
 
     private void handleSetDisplayFlag(String[] args) throws ViewException {
@@ -80,11 +77,11 @@ public class View implements  IView {
         this.controller.setDisplayFlag(Boolean.parseBoolean(args[2]));
     }
 
-    private void handleSingleStep() throws AppException {
+    private void handleSingleStep() throws AppException, IOException {
         this.controller.executeOneStep();
     }
 
-    private void handleRun() throws AppException {
+    private void handleRun() throws AppException, IOException {
         this.controller.executeAllSteps();
     }
 

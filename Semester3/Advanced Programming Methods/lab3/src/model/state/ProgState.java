@@ -26,7 +26,8 @@ public class ProgState {
         return output;
     }
 
-    public String toDebug() {
+    @Override
+    public String toString() {
         return this.executionStack.toDebug().strip() + "\n" + this.symTable.toDebug().strip() + "\n" + this.output.toDebug().strip();
     }
 };
