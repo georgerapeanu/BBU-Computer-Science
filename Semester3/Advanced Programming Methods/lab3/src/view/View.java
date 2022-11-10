@@ -6,6 +6,7 @@ import controller.parsers.expressions.exceptions.InvalidExpressionAppException;
 import controller.parsers.syntax.SyntaxParser;
 import controller.parsers.syntax.exceptions.SyntaxAppException;
 import model.exceptions.AppException;
+import model.statements.NoOperationStatement;
 import view.exceptions.ViewException;
 
 import java.io.BufferedReader;
@@ -21,7 +22,7 @@ public class View implements  IView {
     }
 
     @Override
-    public void run() {
+    public void run() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         while(true){
             try{
@@ -51,6 +52,7 @@ public class View implements  IView {
                 break;
             } catch (AppException exception){
                 System.out.println(exception.getMessage());
+                this.controller.setProgram(new NoOperationStatement());
             }
         }
 

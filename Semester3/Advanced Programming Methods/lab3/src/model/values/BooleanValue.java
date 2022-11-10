@@ -38,12 +38,20 @@ public class BooleanValue implements IValue{
             case "and": return this.and((BooleanValue) other);
             case "or": return this.or((BooleanValue) other);
         }
-        throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operation " + operation);
+        throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two BooleanValue types using operation " + operation);
     }
 
     @Override
     public IType getType() {
         return new BooleanType();
+    }
+
+    @Override
+    public boolean equals(IValue other){
+        if(other.getType() instanceof BooleanType){
+            return this.getValue() == ((BooleanValue)other).getValue();
+        }
+        return false;
     }
 
     public boolean getValue(){
