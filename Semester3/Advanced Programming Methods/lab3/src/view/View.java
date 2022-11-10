@@ -74,6 +74,9 @@ public class View implements  IView {
         if(args.length != 3){
             throw new ViewException("Invalid arguments for setting the display flag!");
         }
+        if(!args[2].trim().equals("false") && ! args[2].trim().equals("true")){
+            throw new ViewException("Invalid boolean value " + args[2].trim());
+        }
         this.controller.setDisplayFlag(Boolean.parseBoolean(args[2]));
     }
 
