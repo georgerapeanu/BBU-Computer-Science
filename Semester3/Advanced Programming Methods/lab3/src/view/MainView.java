@@ -32,7 +32,6 @@ public class MainView implements IMainView {
                 this.commandMenu.execute(cmd);
             } catch (AppException exception){
                 System.out.println(exception.getMessage());
-                this.controller.setProgram(new NoOperationStatement());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

@@ -27,6 +27,10 @@ public class GenericDictionary<T, E> implements IGenericDictionary<T, E> {
     }
 
     @Override
+    public void removeKey(T key) throws KeyNotFoundAppException {
+        data.remove(key);
+    }
+    @Override
     public boolean exists(T key) {
         return data.containsKey(key);
     }

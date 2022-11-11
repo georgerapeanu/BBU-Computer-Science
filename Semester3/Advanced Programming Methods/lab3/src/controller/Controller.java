@@ -2,11 +2,9 @@ package controller;
 
 import model.abstract_data_types.generic_stack.exceptions.StackEmptyAppException;
 import model.exceptions.AppException;
-import model.state.ExecutionStack;
-import model.state.Output;
-import model.state.ProgState;
-import model.state.SymTable;
+import model.state.*;
 import model.statements.IStatement;
+import model.statements.NoOperationStatement;
 import repository.IRepository;
 import repository.Repository;
 
@@ -49,6 +47,9 @@ public class Controller implements IController{
             }
         } catch(StackEmptyAppException exception){
             ;
+        } catch(AppException exception) {
+            this.setProgram(new NoOperationStatement());
+            throw exception;
         }
     }
 
@@ -60,7 +61,7 @@ public class Controller implements IController{
     @Override
     public void setProgram(IStatement statement) throws AppException {
         this.repository.clear();
-        this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), statement));
+        this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), new FileTable(), statement));
         this.repository.logProgramState();
         if(this.displayFlag){
             this.displayCurrentState();

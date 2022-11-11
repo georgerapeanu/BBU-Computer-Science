@@ -1,6 +1,5 @@
 package model.state;
 
-import model.abstract_data_types.generic_dictionary.exceptions.KeyNotFoundAppException;
 import model.state.exceptions.SymbolAlreadyExistsAppException;
 import model.state.exceptions.SymbolNotFoundAppException;
 import model.values.IValue;
@@ -11,5 +10,5 @@ public interface ISymTable {
     public void declValue(String name, IType type) throws SymbolAlreadyExistsAppException;
     public IValue getValue(String name) throws SymbolNotFoundAppException;
     public void setValue(String name, IValue value) throws SymbolNotFoundAppException;
-    public String toDebug();
+    public String toString();
 }

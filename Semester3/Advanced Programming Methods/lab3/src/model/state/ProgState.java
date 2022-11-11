@@ -7,10 +7,13 @@ public class ProgState {
     ISymTable symTable;
     IOutput output;
 
-    public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IStatement statement){
+    IFileTable fileTable;
+
+    public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IFileTable fileTable, IStatement statement){
         this.executionStack = executionStack;
         this.symTable = symTable;
         this.output = output;
+        this.fileTable = fileTable;
         this.executionStack.push(statement);
     }
 
@@ -26,8 +29,12 @@ public class ProgState {
         return output;
     }
 
+    public IFileTable getFileTable() {
+        return fileTable;
+    }
+
     @Override
     public String toString() {
-        return this.executionStack.toDebug().strip() + "\n" + this.symTable.toDebug().strip() + "\n" + this.output.toDebug().strip();
+        return this.executionStack.toString().strip() + "\n" + this.symTable.toString().strip() + "\n" + this.output.toString().strip() + "\n" + this.fileTable.toString().strip();
     }
 };

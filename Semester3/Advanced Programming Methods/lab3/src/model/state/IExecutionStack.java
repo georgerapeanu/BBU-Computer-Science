@@ -8,5 +8,5 @@ public interface IExecutionStack {
     public void push(IStatement statement);
     public boolean empty();
     public int size();
-    public String toDebug();
+    public String toString();
 }

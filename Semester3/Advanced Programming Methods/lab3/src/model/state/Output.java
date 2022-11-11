@@ -38,7 +38,7 @@ public class Output implements  IOutput{
     }
 
     @Override
-    public String toDebug() {
+    public String toString() {
         return "Output: " + this.getOutput();
     }
 }

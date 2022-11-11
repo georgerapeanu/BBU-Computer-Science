@@ -9,5 +9,7 @@ public interface IGenericDictionary<T, E> {
     public void setValue(T key, E value);
     public List<T> getKeys();
 
+    public void removeKey(T key) throws KeyNotFoundAppException;
+
     public boolean exists(T key);
 }

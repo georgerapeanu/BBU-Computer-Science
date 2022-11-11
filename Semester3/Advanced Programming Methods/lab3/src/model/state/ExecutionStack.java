@@ -34,7 +34,7 @@ public class ExecutionStack implements IExecutionStack {
     }
 
     @Override
-    public String toDebug() {
+    public String toString() {
         StringBuilder answer = new StringBuilder("Execution stack:\n");
         IGenericStack<IStatement> tmpStack = new GenericStack<>();
         try{
