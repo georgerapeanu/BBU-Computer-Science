@@ -48,7 +48,7 @@ public class FileTable implements IFileTable{
         try{
             reader = files.getValue(name);
         }catch(KeyNotFoundAppException exception){
-            throw new FileNotOpenAppException("File " + name + " cannot be closed");
+            throw new FileNotOpenAppException("File " + name + " cannot be read from");
         }
         String data;
         try {
