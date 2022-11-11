@@ -31,7 +31,7 @@ public class Controller implements IController{
     }
 
     @Override
-    public void executeOneStep() throws AppException, IOException {
+    public void executeOneStep() throws AppException{
         ProgState state = repository.getCurrentProgram();
         IStatement statement = state.getExecutionStack().pop();
         statement.execute(state);
@@ -42,7 +42,7 @@ public class Controller implements IController{
     }
 
     @Override
-    public void executeAllSteps() throws AppException, IOException {
+    public void executeAllSteps() throws AppException{
         try{
             while(true){
                 this.executeOneStep();
@@ -53,12 +53,12 @@ public class Controller implements IController{
     }
 
     @Override
-    public void displayCurrentState() {
+    public void displayCurrentState() throws AppException {
         System.out.println(this.repository.getCurrentProgram().toString() + "\n");
     }
 
     @Override
-    public void setProgram(IStatement statement) throws IOException {
+    public void setProgram(IStatement statement) throws AppException {
         this.repository.clear();
         this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), statement));
         this.repository.logProgramState();
