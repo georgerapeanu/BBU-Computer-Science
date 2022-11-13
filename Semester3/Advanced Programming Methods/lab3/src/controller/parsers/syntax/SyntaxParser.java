@@ -131,6 +131,45 @@ public class SyntaxParser {
         return new NoOperationStatement();
     }
 
+    private static IStatement parseOpenRFile(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 9 >= string.length() || !string.substring(position.getValue(), position.getValue() + 10).equals("openRFile(")){
+            throw new SyntaxAppException("Invalid openRFile statement");
+        }
+        position.increase(9);
+        return new OpenFileStatement(ExpressionParser.parseAtPosition(string, position));
+    }
+
+    private static IStatement parseCloseRFile(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 10 >= string.length() || !string.substring(position.getValue(), position.getValue() + 11).equals("closeRFile(")){
+            throw new SyntaxAppException("Invalid closeRFile statement");
+        }
+        position.increase(10);
+        return new CloseFileStatement(ExpressionParser.parseAtPosition(string, position));
+    }
+
+    private static IStatement parseReadFile(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 8 >= string.length() || !string.substring(position.getValue(), position.getValue() + 9).equals("readFile(")){
+            throw new SyntaxAppException("Invalid readFile statement");
+        }
+        position.increase(9);
+        IExpression expression = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ','){
+            throw new SyntaxAppException("Invalid readFile statement");
+        }
+        position.increase(1);
+        skipWhiteSpace(string, position);
+        String name = extractName(string, position);
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ')'){
+            throw new SyntaxAppException("Invalid readFile statement");
+        }
+        position.increase(1);
+        return new ReadFileStatement(expression, name);
+    }
 
     private static IStatement parseNonComposite(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
@@ -154,6 +193,15 @@ public class SyntaxParser {
         }
         if(position.getValue() + 4 < string.length() && string.substring(position.getValue(), position.getValue() + 5).equals("print")){
             return parsePrint(string, position);
+        }
+        if(position.getValue() + 8 < string.length() && string.substring(position.getValue(), position.getValue() + 9).equals("openRFile")){
+            return parseOpenRFile(string, position);
+        }
+        if(position.getValue() + 9 < string.length() && string.substring(position.getValue(), position.getValue() + 10).equals("closeRFile")){
+            return parseCloseRFile(string, position);
+        }
+        if(position.getValue() + 7 < string.length() && string.substring(position.getValue(), position.getValue() + 8).equals("readFile")){
+            return parseReadFile(string, position);
         }
         if(position.getValue() + 2 < string.length() && string.substring(position.getValue(), position.getValue() + 2).equals("if")){
             return parseIf(string, position);

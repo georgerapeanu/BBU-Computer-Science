@@ -70,7 +70,7 @@ public class ExpressionParser {
         pos += 1;
         StringBuilder answer = new StringBuilder();
 
-        while(pos < string.length() && string.charAt(pos) != '"' && string.charAt(pos) != ';'){
+        while(pos < string.length() && string.charAt(pos) != '"'){
             answer.append(string.charAt(pos));
             pos += 1;
         }
@@ -118,6 +118,7 @@ public class ExpressionParser {
         delimiterTokens.add('"');
         delimiterTokens.add('\'');
         delimiterTokens.add(';');
+        delimiterTokens.add(',');
 
         while(position.getValue() < string.length() && !delimiterTokens.contains(string.charAt(position.getValue()))) {
             name.append(string.charAt(position.getValue()));
