@@ -1,0 +1,849 @@
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Execution stack:
+IntegerType v; v = (1 / 0); print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = (1 / 0); print(v)
+SymTable:
+Output:
+Execution stack:
+v = (1 / 0); print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = (1 / 0)
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 0
+Output: 0
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+IntegerType v; v = (2 + (3 - (5 / 1))); print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = (2 + (3 - (5 / 1))); print(v)
+SymTable:
+Output:
+Execution stack:
+v = (2 + (3 - (5 / 1))); print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = (2 + (3 - (5 / 1)))
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 0
+Output: 0
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+StringType v; v = ; print(v)
+SymTable:
+Output:
+Execution stack:
+StringType v
+v = ; print(v)
+SymTable:
+Output:
+Execution stack:
+v = ; print(v)
+SymTable:
+v(StringType):->
+Output:
+Execution stack:
+v = 
+print(v)
+SymTable:
+v(StringType):->
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(StringType):->
+Output:
+Execution stack:
+SymTable:
+v(StringType):->
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+if((aaa == aaaa))then {print(1)} else {print(2)}
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+NOP
+SymTable:
+Output:
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Execution stack:
+IntegerType v; v = 3; print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = 3; print(v)
+SymTable:
+Output:
+Execution stack:
+v = 3; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = 3
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 3
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 3
+Output: 3
+Execution stack:
+IntegerType v; v = 4; print(v)
+SymTable:
+Output:
+Execution stack:
+IntegerType v
+v = 4; print(v)
+SymTable:
+Output:
+Execution stack:
+v = 4; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+v = 4
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 4
+Output:
+Execution stack:
+SymTable:
+v(IntegerType):-> 4
+Output: 4
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Filetable:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Filetable:
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Filetable:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Filetable:
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Filetable:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Filetable:
+Execution stack:
+IntegerType a; a = (2 + (3 * 5)); IntegerType b; b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType a
+a = (2 + (3 * 5)); IntegerType b; b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5)); IntegerType b; b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5))
+IntegerType b; b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+IntegerType b; b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+IntegerType b
+b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+b = (a - ((4 / 2) + 7)); print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+b = (a - ((4 / 2) + 7))
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 8
+Output:
+Filetable:
+Execution stack:
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 8
+Output: 8
+Filetable:
+Execution stack:
+IntegerType a; a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType a
+a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5))
+IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+IntegerType b
+b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+b = ((a - (4 / 2)) + 7)
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 22
+Output:
+Filetable:
+Execution stack:
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 22
+Output: 22
+Filetable:
+Execution stack:
+IntegerType v; v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType v
+v = 2; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+v = 2; print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+v = 2
+print(v)
+SymTable:
+v(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(v)
+SymTable:
+v(IntegerType):-> 2
+Output:
+Filetable:
+Execution stack:
+SymTable:
+v(IntegerType):-> 2
+Output: 2
+Filetable:
+Execution stack:
+IntegerType a; a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType a
+a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5)); IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+a = (2 + (3 * 5))
+IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+IntegerType b; b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+IntegerType b
+b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+Output:
+Filetable:
+Execution stack:
+b = ((a - (4 / 2)) + 7); print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+b = ((a - (4 / 2)) + 7)
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+print(b)
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 22
+Output:
+Filetable:
+Execution stack:
+SymTable:
+a(IntegerType):-> 17
+b(IntegerType):-> 22
+Output: 22
+Filetable:
+Execution stack:
+BooleanType a; a = false; if(a)then {v = 2} else {v = 3}; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+BooleanType a
+a = false; if(a)then {v = 2} else {v = 3}; print(v)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+a = false; if(a)then {v = 2} else {v = 3}; print(v)
+SymTable:
+a(BooleanType):-> false
+Output:
+Filetable:
+Execution stack:
+a = false
+if(a)then {v = 2} else {v = 3}; print(v)
+SymTable:
+a(BooleanType):-> false
+Output:
+Filetable:
+Execution stack:
+if(a)then {v = 2} else {v = 3}; print(v)
+SymTable:
+a(BooleanType):-> false
+Output:
+Filetable:
+Execution stack:
+if(a)then {v = 2} else {v = 3}
+print(v)
+SymTable:
+a(BooleanType):-> false
+Output:
+Filetable:
+Execution stack:
+v = 3
+print(v)
+SymTable:
+a(BooleanType):-> false
+Output:
+Filetable:
+Execution stack:
+NOP
+SymTable:
+Output:
+Filetable:
+Execution stack:
+if(true)then {print(1)} else {print(2)}
+SymTable:
+Output:
+Filetable:
+Execution stack:
+print(1)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+SymTable:
+Output: 1
+Filetable:
+Execution stack:
+if(true)then {print(1)} else {print(2)}
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType a; IntegerType b; a = 2; b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType a
+IntegerType b; a = 2; b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+Output:
+Filetable:
+Execution stack:
+IntegerType b; a = 2; b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+IntegerType b
+a = 2; b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+a = 2; b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 0
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+a = 2
+b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 0
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+b = 3; if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 2
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+b = 3
+if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 2
+b(IntegerType):-> 0
+Output:
+Filetable:
+Execution stack:
+if((a == b))then {print(1)} else {print(2)}
+SymTable:
+a(IntegerType):-> 2
+b(IntegerType):-> 3
+Output:
+Filetable:
+Execution stack:
+print(2)
+SymTable:
+a(IntegerType):-> 2
+b(IntegerType):-> 3
+Output:
+Filetable:
+Execution stack:
+SymTable:
+a(IntegerType):-> 2
+b(IntegerType):-> 3
+Output: 2
+Filetable:
+Execution stack:
+StringType varf; varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+StringType varf
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+openRFile(varf)
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+IntegerType varc
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:
+test.txt
+Execution stack:
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:
