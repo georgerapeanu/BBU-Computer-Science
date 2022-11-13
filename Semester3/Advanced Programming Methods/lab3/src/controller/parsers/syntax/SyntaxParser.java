@@ -67,18 +67,7 @@ public class SyntaxParser {
         }
         position.increase(1);
         skipWhiteSpace(string, position);
-        int pos = position.getValue();
-        while(pos < string.length() && string.charAt(pos) != ';') {
-            pos++;
-        }
-        IStatement answer = new AssignmentStatement(name, ExpressionParser.parse(string.substring(position.getValue(), pos)));
-        position.setValue(pos);
-        skipWhiteSpace(string, position);
-        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ';'){
-            throw new SyntaxAppException("Invalid syntax, missing ;");
-        }
-        position.increase(1);
-        return answer;
+        return new AssignmentStatement(name, ExpressionParser.parseAtPosition(string, position));
     }
 
     private static IStatement parseVariableDeclaration(String string, RefInt position) throws SyntaxAppException {
@@ -86,11 +75,6 @@ public class SyntaxParser {
         IType type = extractType(string, position);
         skipWhiteSpace(string, position);
         String name = extractName(string, position);
-        skipWhiteSpace(string, position);
-        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ';'){
-            throw new SyntaxAppException("Invalid syntax, missing ;");
-        }
-        position.increase(1);
         return new VariableDeclarationStatement(name, type);
     }
 
@@ -101,18 +85,7 @@ public class SyntaxParser {
             throw new SyntaxAppException("Invalid print statement");
         }
         position.increase(5);
-        int pos = position.getValue();
-        while(pos < string.length() && string.charAt(pos) != ';') {
-            pos++;
-        }
-        IStatement answer = new PrintStatement(ExpressionParser.parse(string.substring(position.getValue(), pos)));
-        position.setValue(pos);
-        skipWhiteSpace(string, position);
-        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ';'){
-            throw new SyntaxAppException("Invalid syntax, missing ;");
-        }
-        position.increase(1);
-        return answer;
+        return new PrintStatement(ExpressionParser.parseAtPosition(string, position));
     }
 
     private static IStatement parseIf(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
@@ -148,6 +121,14 @@ public class SyntaxParser {
         skipWhiteSpace(string, position);
 
         return new IfStatement(cond, first, second);
+    }
+
+    private static IStatement parseNoOperation(String string, RefInt position) throws SyntaxAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ';'){
+            throw new SyntaxAppException("Invalid NOP statement");
+        }
+        return new NoOperationStatement();
     }
 
 
@@ -189,15 +170,6 @@ public class SyntaxParser {
         return parseVariableDeclaration(string, position);
     }
 
-    private static IStatement parseNoOperation(String string, RefInt position) throws SyntaxAppException {
-        skipWhiteSpace(string, position);
-        if(position.getValue() >= string.length()){
-            throw new SyntaxAppException("Invalid NOP statement");
-        }
-        position.increase(1);
-        return new NoOperationStatement();
-    }
-
     private static IStatement parseAtPosition(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
         if(position.getValue() >= string.length()){
@@ -210,6 +182,10 @@ public class SyntaxParser {
         IStatement currentStatement = parseNonComposite(string, position);
 
         skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ';') {
+            throw new SyntaxAppException("Missing ;");
+        }
+        position.increase(1);
         IStatement nextStatement = parseAtPosition(string, position);
         if(nextStatement == null){
             return currentStatement;

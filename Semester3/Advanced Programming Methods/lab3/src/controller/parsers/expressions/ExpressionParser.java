@@ -70,7 +70,7 @@ public class ExpressionParser {
         pos += 1;
         StringBuilder answer = new StringBuilder();
 
-        while(pos < string.length() && string.charAt(pos) != '"'){
+        while(pos < string.length() && string.charAt(pos) != '"' && string.charAt(pos) != ';'){
             answer.append(string.charAt(pos));
             pos += 1;
         }
@@ -117,6 +117,7 @@ public class ExpressionParser {
         delimiterTokens.addAll(Arrays.asList(whiteSpace));
         delimiterTokens.add('"');
         delimiterTokens.add('\'');
+        delimiterTokens.add(';');
 
         while(position.getValue() < string.length() && !delimiterTokens.contains(string.charAt(position.getValue()))) {
             name.append(string.charAt(position.getValue()));
@@ -209,7 +210,7 @@ public class ExpressionParser {
             if(operator == null){
                 break;
             }
-            currentExpression = new BinaryExpression(currentExpression, parseAtPositionWithOperator(string, position, currentOperator), operator);
+            currentExpression = new BinaryExpression(currentExpression, parseAtPositionWithOperator(string, position, currentOperator + 1), operator);
         }
         return currentExpression;
     }
