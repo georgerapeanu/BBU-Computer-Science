@@ -847,3 +847,271 @@ varf(StringType):-> "test.txt"
 varc(IntegerType):-> 50
 Output: 1550
 Filetable:
+Execution stack:
+StringType varf; varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+StringType varf
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+openRFile(varf)
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+IntegerType varc
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:
+test.txt
+Execution stack:
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:
+Execution stack:
+StringType varf; varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+StringType varf
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"; openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+varf = "test.txt"
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> ""
+Output:
+Filetable:
+Execution stack:
+openRFile(varf); IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+openRFile(varf)
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+Execution stack:
+IntegerType varc; readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+IntegerType varc
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 0
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc); readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output:
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc); print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+readFile(varf, varc)
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 15
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc); closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+print(varc)
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 15
+Filetable:
+test.txt
+Execution stack:
+closeRFile(varf)
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:
+test.txt
+Execution stack:
+SymTable:
+varf(StringType):-> "test.txt"
+varc(IntegerType):-> 50
+Output: 1550
+Filetable:

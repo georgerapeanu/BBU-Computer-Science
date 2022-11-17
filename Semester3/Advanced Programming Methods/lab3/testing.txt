@@ -74,3 +74,5 @@
         //System.out.println(SyntaxParser.parse("IntegerType a;a = 2 + 3 * 5;IntegerType b;b = a - 4/2 + 7;print(b);").toString());
         ///System.out.println(SyntaxParser.parse("{print(1);};").toString());
         //System.out.println(SyntaxParser.parse("BooleanType a;a=false;IntegerType v;if a then v=2; else v=3;print(v);").toString());
+
+        //set program StringType varf;varf="test.txt";openRFile(varf);IntegerType varc;readFile(varf,varc);print(varc);readFile(varf,varc);print(varc);closeRFile(varf);
