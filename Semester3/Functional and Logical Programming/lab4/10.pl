@@ -12,9 +12,9 @@ len([_|T], R):-
 % subset(L:list, R:list)
 % (i, i), (i, o)
 subset([], []).
-subset([H | T], [H | R]):-
-  subset(T, R).
 subset([_ | T], R):-
+  subset(T, R).
+subset([H | T], [H | R]):-
   subset(T, R).
 
 % check(L:list, N:int)
@@ -26,13 +26,18 @@ check([H | T], C, N):-
   CT is C + H,
   check(T, CT, N).
 
-% generateAnswers(L:list)
-% (i)
-generateAnswers(L, R):-
+% generateAnswer(L:list, R:list)
+% (i, i), (i, o)
+generateAnswer(L, R):-
   len(L, N),
   !,
   subset(L, R),
   check(R, 0, N).
+
+% generateAllAnswers(L:list, R:list)
+% (i, i), (i, o)
+generateAllAnswers(L, R):-
+  findall(AUX, generateAnswer(L, AUX), R).
 
 testLen:-
   len([], 0),
@@ -48,8 +53,19 @@ testCheck:-
   \+ check([2,3], 0, 2),
   check([2,3], 0, 5).
 
+testGenerateAnswer:-
+  generateAnswer([1,2,3], []),
+  generateAnswer([1,2,3],[3]),
+  generateAnswer([1,2,3], [1,2]),
+  generateAnswer([1,2,3],[1,2,3]).
+
+testGenerateAllAnswers:-
+  generateAllAnswers([1,2,3], [[], [3], [1, 2], [1, 2, 3]]).
+
 testAll:-
   testLen,
   testSubset,
-  testCheck.
+  testCheck,
+  testGenerateAnswer,
+  testGenerateAllAnswers.
 
