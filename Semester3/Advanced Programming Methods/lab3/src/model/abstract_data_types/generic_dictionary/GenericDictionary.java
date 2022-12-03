@@ -34,4 +34,9 @@ public class GenericDictionary<T, E> implements IGenericDictionary<T, E> {
     public boolean exists(T key) {
         return data.containsKey(key);
     }
+
+    @Override
+    public Map<T, E> toMap() {
+        return data;
+    }
 }

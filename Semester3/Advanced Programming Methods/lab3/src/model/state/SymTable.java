@@ -9,6 +9,8 @@ import model.state.exceptions.SymbolNotFoundAppException;
 import model.values.IValue;
 import model.values.types.IType;
 
+import java.util.Map;
+
 public class SymTable implements  ISymTable{
     IGenericDictionary<String, IValue> data;
 
@@ -55,5 +57,9 @@ public class SymTable implements  ISymTable{
             throw new RuntimeException(exception.getMessage());
         }
         return answer.toString();
+    }
+
+    public Map<String, IValue> toMap(){
+        return this.data.toMap();
     }
 }

@@ -3,6 +3,7 @@ package model.abstract_data_types.generic_dictionary;
 import model.abstract_data_types.generic_dictionary.exceptions.KeyNotFoundAppException;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IGenericDictionary<T, E> {
     public E getValue(T key)throws KeyNotFoundAppException;
@@ -12,4 +13,5 @@ public interface IGenericDictionary<T, E> {
     public void removeKey(T key) throws KeyNotFoundAppException;
 
     public boolean exists(T key);
+    Map<T, E> toMap();
 }

@@ -7,6 +7,8 @@ import model.exceptions.AppException;
 import model.state.exceptions.AddressOutOfBoundsAppException;
 import model.values.IValue;
 
+import java.util.Map;
+
 public class Heap implements IHeap{
     IGenericDictionary<Integer, IValue> heap;
     int firstFree;
@@ -60,5 +62,9 @@ public class Heap implements IHeap{
             throw new RuntimeException(exception.getMessage());
         }
         return answer.toString();
+    }
+
+    public Map<Integer, IValue> toMap(){
+        return this.heap.toMap();
     }
 }

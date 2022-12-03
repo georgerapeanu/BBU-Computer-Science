@@ -33,6 +33,7 @@ public class Controller implements IController{
         ProgState state = repository.getCurrentProgram();
         IStatement statement = state.getExecutionStack().pop();
         statement.execute(state);
+        GarbageCollector.runGarbageCollector(repository.getCurrentProgram());
         if(this.displayFlag){
             this.displayCurrentState();
         }
