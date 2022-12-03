@@ -178,6 +178,9 @@ public class SyntaxParser {
         IExpression cond = ExpressionParser.parseAtPosition(string, position);
         skipWhiteSpace(string, position);
 
+        if(position.getValue() + 4 >= string.length()){
+            throw new SyntaxAppException("Invalid if syntax");
+        }
         String thenBegin = string.substring(position.getValue(), position.getValue() + 5);
         if(!(thenBegin.startsWith("then ") || thenBegin.startsWith("then{"))){
             throw new SyntaxAppException("Invalid if syntax");
@@ -187,6 +190,9 @@ public class SyntaxParser {
         IStatement first = parseNonComposite(string, position);
         skipWhiteSpace(string, position);
 
+        if(position.getValue() + 4 >= string.length()){
+            throw new SyntaxAppException("Invalid if syntax");
+        }
         String elseBegin = string.substring(position.getValue(), position.getValue() + 5);
         if(!(elseBegin.startsWith("else ") || elseBegin.startsWith("else{"))){
             throw new SyntaxAppException("Invalid if syntax");
@@ -197,6 +203,26 @@ public class SyntaxParser {
         skipWhiteSpace(string, position);
 
         return new IfStatement(cond, first, second);
+    }
+
+    private static IStatement parseWhile(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 5 >= string.length()){
+            throw new SyntaxAppException("Invalid while syntax");
+        }
+        String ifBegin = string.substring(position.getValue(), position.getValue() + 6);
+        if(!(ifBegin.startsWith("while ") || ifBegin.startsWith("while("))){
+            throw new SyntaxAppException("Invalid while syntax");
+        }
+
+        position.increase(5);
+        skipWhiteSpace(string, position);
+        IExpression condition = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+
+        IStatement statement = parseNonComposite(string, position);
+
+        return new WhileStatement(condition, statement);
     }
 
     private static IStatement parseNoOperation(String string, RefInt position) throws SyntaxAppException {
@@ -281,6 +307,9 @@ public class SyntaxParser {
         }
         if(position.getValue() + 2 < string.length() && string.substring(position.getValue(), position.getValue() + 2).equals("if")){
             return parseIf(string, position);
+        }
+        if(position.getValue() + 5 < string.length() && string.substring(position.getValue(), position.getValue() + 5).equals("while")){
+            return parseWhile(string, position);
         }
         if(position.getValue() + 2 < string.length() && string.substring(position.getValue(), position.getValue() + 3).equals("new")){
             return parseNew(string, position);
