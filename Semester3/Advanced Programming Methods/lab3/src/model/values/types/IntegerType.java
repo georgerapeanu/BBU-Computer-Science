@@ -17,4 +17,9 @@ public class IntegerType implements IType{
     public String toString(){
         return "IntegerType";
     }
+
+    @Override
+    public boolean equals(IType other) {
+        return (other instanceof IntegerType);
+    }
 }

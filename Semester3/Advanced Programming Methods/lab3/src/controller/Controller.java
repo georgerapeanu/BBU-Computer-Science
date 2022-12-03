@@ -61,7 +61,7 @@ public class Controller implements IController{
     @Override
     public void setProgram(IStatement statement) throws AppException {
         this.repository.clear();
-        this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), new FileTable(), statement));
+        this.repository.addProgram(new ProgState(new ExecutionStack(), new SymTable(), new Output(), new FileTable(), new Heap(), statement));
         this.repository.logProgramState();
         if(this.displayFlag){
             this.displayCurrentState();

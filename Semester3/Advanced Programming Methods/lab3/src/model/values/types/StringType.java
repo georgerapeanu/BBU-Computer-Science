@@ -17,4 +17,9 @@ public class StringType implements IType{
     public String toString() {
         return "StringType";
     }
+
+    @Override
+    public boolean equals(IType other) {
+        return (other instanceof StringType);
+    }
 }

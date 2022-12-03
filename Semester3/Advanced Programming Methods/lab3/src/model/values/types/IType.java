@@ -5,4 +5,5 @@ import model.values.IValue;
 public interface IType {
     public IValue getDefaultValue();
     public String toString();
+    public boolean equals(IType other);
 }

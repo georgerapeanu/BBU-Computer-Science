@@ -53,7 +53,7 @@ public class StringValue implements IValue{
 
     @Override
     public IValue compose(IValue other, String operation) throws AppException {
-        if(!(other.getType() instanceof StringType)) {
+        if(!(other.getType().equals(this.getType()))) {
             throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operator " + operation);
         }
         switch(operation){

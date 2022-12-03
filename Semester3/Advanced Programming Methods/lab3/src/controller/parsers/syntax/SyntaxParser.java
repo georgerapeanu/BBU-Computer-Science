@@ -5,10 +5,7 @@ import controller.parsers.expressions.exceptions.InvalidExpressionAppException;
 import controller.parsers.syntax.exceptions.SyntaxAppException;
 import model.expressions.IExpression;
 import model.statements.*;
-import model.values.types.BooleanType;
-import model.values.types.IType;
-import model.values.types.IntegerType;
-import model.values.types.StringType;
+import model.values.types.*;
 import utils.RefInt;
 
 import java.util.Arrays;
@@ -38,10 +35,30 @@ public class SyntaxParser {
         }
     }
     private static IType extractType(String string, RefInt position) throws SyntaxAppException {
+        RefInt tmpPosition = new RefInt(position.getValue());
+        int refCount = 0;
+        while(true){
+            skipWhiteSpace(string, tmpPosition);
+            if(tmpPosition.getValue() >= string.length()){
+                throw new SyntaxAppException("No type present");
+            }
+            if(tmpPosition.getValue() + "RefType".length() - 1 >= string.length() ||
+                    !string.substring(tmpPosition.getValue(), tmpPosition.getValue() + "RefType".length()).equals("RefType")){
+                break;
+            }
+            tmpPosition.increase("RefType".length());
+            refCount++;
+        }
         for(IType type : types){
-            if(position.getValue() + type.toString().length() <= string.length() && string.substring(position.getValue(), position.getValue() + type.toString().length()).equals(type.toString())) {
-                position.increase(type.toString().length());
-                return type;
+            if(tmpPosition.getValue() + type.toString().length() <= string.length() && string.substring(tmpPosition.getValue(), tmpPosition.getValue() + type.toString().length()).equals(type.toString())) {
+                tmpPosition.increase(type.toString().length());
+                position.setValue(tmpPosition.getValue());
+                IType answer = type;
+                while(refCount > 0){
+                    answer = new RefType(answer);
+                    refCount--;
+                }
+                return answer;
             }
         }
         throw new SyntaxAppException("No type present");
@@ -78,6 +95,65 @@ public class SyntaxParser {
         return new VariableDeclarationStatement(name, type);
     }
 
+
+
+    private static IStatement parseNew(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 3 >= string.length() || !string.substring(position.getValue(), position.getValue() + 4).equals("new(")){
+            throw new SyntaxAppException("Invalid new statement");
+        }
+        position.increase(4);
+        String name = extractName(string, position);
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ','){
+            throw new SyntaxAppException("Invalid new statement");
+        }
+        position.increase(1);
+        skipWhiteSpace(string, position);
+        IExpression expr = ExpressionParser.parseAtPosition(string, position);
+
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ')') {
+            throw new SyntaxAppException("Invalid new statement");
+        }
+        position.increase(1);
+        return new NewStatement(name, expr);
+    }
+
+    private static IStatement parseWriteHeap(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 9 >= string.length() || !string.substring(position.getValue(), position.getValue() + 10).equals("writeHeap(")){
+            throw new SyntaxAppException("Invalid writeHeap statement");
+        }
+        position.increase(10);
+
+        skipWhiteSpace(string, position);
+        IExpression addressExpression = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ','){
+            throw new SyntaxAppException("Invalid new statement");
+        }
+        position.increase(1);
+        skipWhiteSpace(string, position);
+
+        IExpression valueExpression = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ')') {
+            throw new SyntaxAppException("Invalid writeHeap statement");
+        }
+        position.increase(1);
+        return new WriteHeapStatement(addressExpression, valueExpression);
+    }
+
+    private static IStatement parseReadHeap(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 8 >= string.length() || !string.substring(position.getValue(), position.getValue() + 9).equals("readHeap(")){
+            throw new SyntaxAppException("Invalid readHeap statement");
+        }
+        return new ReadHeapStatement(ExpressionParser.parseAtPosition(string, position));
+    }
 
     private static IStatement parsePrint(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
@@ -206,6 +282,15 @@ public class SyntaxParser {
         if(position.getValue() + 2 < string.length() && string.substring(position.getValue(), position.getValue() + 2).equals("if")){
             return parseIf(string, position);
         }
+        if(position.getValue() + 2 < string.length() && string.substring(position.getValue(), position.getValue() + 3).equals("new")){
+            return parseNew(string, position);
+        }
+        if(position.getValue() + 7 < string.length() && string.substring(position.getValue(), position.getValue() + 8).equals("readHeap")){
+            return parseReadHeap(string, position);
+        }
+        if(position.getValue() + 8 < string.length() && string.substring(position.getValue(), position.getValue() + 9).equals("writeHeap")){
+            return parseWriteHeap(string, position);
+        }
         int pos = position.getValue();
         boolean hasEqual = false;
         while(! hasEqual && pos < string.length() && string.charAt(pos) != ';'){
@@ -217,6 +302,8 @@ public class SyntaxParser {
         }
         return parseVariableDeclaration(string, position);
     }
+
+
 
     private static IStatement parseAtPosition(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);

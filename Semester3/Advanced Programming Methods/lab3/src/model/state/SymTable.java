@@ -34,9 +34,12 @@ public class SymTable implements  ISymTable{
     }
 
     @Override
-    public void setValue(String name, IValue value) throws SymbolNotFoundAppException{
+    public void setValue(String name, IValue value) throws SymbolNotFoundAppException, KeyNotFoundAppException {
         if(!data.exists(name)){
             throw new SymbolNotFoundAppException("Symbol " + name + " not found.");
+        }
+        if(!data.getValue(name).getType().equals(value.getType())){
+            throw new SymbolNotFoundAppException("Symbol " + name + " does not have the same type as new value.");
         }
         data.setValue(name, value);
     }

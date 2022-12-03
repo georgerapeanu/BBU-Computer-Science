@@ -66,7 +66,7 @@ public class IntegerValue implements  IValue{
 
     @Override
     public IValue compose(IValue other, String operation) throws InvalidOperationAppException, DivisionOverflowAppException{
-        if(!(other.getType() instanceof IntegerType)) {
+        if(!(other.getType().equals(this.getType()))) {
             throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operator " + operation);
         }
         switch(operation){

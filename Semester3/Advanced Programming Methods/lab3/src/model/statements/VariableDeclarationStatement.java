@@ -1,5 +1,6 @@
 package model.statements;
 
+import model.exceptions.AppException;
 import model.state.ProgState;
 import model.state.exceptions.SymbolAlreadyExistsAppException;
 import model.state.exceptions.SymbolNotFoundAppException;
@@ -14,7 +15,7 @@ public class VariableDeclarationStatement implements IStatement{
         this.type = type;
     }
     @Override
-    public void execute(ProgState state) throws SymbolAlreadyExistsAppException {
+    public void execute(ProgState state) throws AppException {
         state.getSymTable().declValue(name, type);
     }
 

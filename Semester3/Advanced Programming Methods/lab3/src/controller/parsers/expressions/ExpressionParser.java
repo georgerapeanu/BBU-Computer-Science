@@ -9,10 +9,7 @@ package controller.parsers.expressions;
 
 import controller.parsers.expressions.exceptions.InvalidExpressionAppException;
 import controller.parsers.expressions.exceptions.WrongMatchAppException;
-import model.expressions.BinaryExpression;
-import model.expressions.ConstantExpression;
-import model.expressions.IExpression;
-import model.expressions.VariableExpression;
+import model.expressions.*;
 import model.values.BooleanValue;
 import model.values.IntegerValue;
 import model.values.StringValue;
@@ -136,10 +133,19 @@ public class ExpressionParser {
             position.increase(1);
             IExpression tmp = parseAtPositionWithOperator(string, position, 0);
             if(position.getValue() >= string.length() ||  string.charAt(position.getValue()) != ')') {
-                throw new InvalidExpressionAppException("Expression is invalid, unbalanced paranthesis");
+                throw new InvalidExpressionAppException("Expression is invalid, unbalanced parenthesis");
             }
             position.increase(1);
             return tmp;
+        }
+        if(position.getValue() + 8 < string.length() && string.substring(position.getValue(), position.getValue() + 9).equals("readHeap(")){
+            position.increase(9);
+            IExpression expression = ExpressionParser.parseAtPosition(string, position);
+            if(position.getValue() >= string.length() ||  string.charAt(position.getValue()) != ')') {
+                throw new InvalidExpressionAppException("Expression is invalid, unbalanced parenthesis");
+            }
+            position.increase(1);
+            return new ReadHeapFunction(expression);
         }
         try{
             return new ConstantExpression(new BooleanValue(extractBoolean(string, position)));

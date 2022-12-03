@@ -39,7 +39,7 @@ public class BooleanValue implements IValue{
 
     @Override
     public IValue compose(IValue other, String operation) throws InvalidOperationAppException {
-        if(!(other.getType() instanceof BooleanType)) {
+        if(!(other.getType().equals(this.getType()))) {
             throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two different types using operation " + operation);
         }
         switch(operation){
