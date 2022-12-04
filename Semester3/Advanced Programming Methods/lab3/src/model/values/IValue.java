@@ -8,4 +8,5 @@ public interface IValue {
     public IValue compose(IValue other, String operation) throws AppException;
     IType getType();
     public boolean equals(IValue other);
+    public IValue clone();
 }

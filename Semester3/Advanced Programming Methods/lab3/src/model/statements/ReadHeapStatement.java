@@ -14,8 +14,9 @@ public class ReadHeapStatement implements IStatement{
     }
 
     @Override
-    public void execute(ProgState state) throws AppException {
+    public ProgState execute(ProgState state) throws AppException {
         expr.evaluate(state);
+        return null;
     }
 
     @Override

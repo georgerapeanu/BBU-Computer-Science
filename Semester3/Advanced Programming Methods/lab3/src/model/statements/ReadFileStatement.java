@@ -18,12 +18,13 @@ public class ReadFileStatement implements  IStatement{
     }
 
     @Override
-    public void execute(ProgState state) throws AppException {
+    public ProgState execute(ProgState state) throws AppException {
         IValue value = this.expression.evaluate(state);
         if(!(value.getType() instanceof StringType)) {
             throw new AppException("Filename did not evaluate to string");
         }
         state.getSymTable().setValue(name, new IntegerValue(state.getFileTable().readFile(((StringValue)value).getValue())));
+        return null;
     }
 
     @Override

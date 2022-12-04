@@ -1,8 +1,13 @@
 package model.state;
 
+import controller.GarbageCollector;
+import model.exceptions.AppException;
 import model.statements.IStatement;
 
 public class ProgState {
+
+    int id;
+    static int nextId = 0;
     IExecutionStack executionStack;
     ISymTable symTable;
     IOutput output;
@@ -11,6 +16,8 @@ public class ProgState {
     IHeap heap;
 
     public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IFileTable fileTable, IHeap heap, IStatement statement){
+        this.id = nextId;
+        nextId++;
         this.executionStack = executionStack;
         this.symTable = symTable;
         this.output = output;
@@ -39,8 +46,17 @@ public class ProgState {
         return heap;
     }
 
+    public boolean isNotCompleted(){
+        return this.executionStack.size() > 0;
+    }
+
     @Override
     public String toString() {
-        return this.executionStack.toString().strip() + "\n" + this.symTable.toString().strip() + "\n" + this.output.toString().strip() + "\n" + this.fileTable.toString().strip() + "\n" + this.heap.toString() + "\n";
+        return "Id: " + Integer.toString(this.id) + "\n" + this.executionStack.toString().strip() + "\n" + this.symTable.toString().strip() + "\n" + this.output.toString().strip() + "\n" + this.fileTable.toString().strip() + "\n" + this.heap.toString() + "\n";
+    }
+
+    public ProgState executeOneStep() throws AppException {
+        IStatement statement = executionStack.pop();
+        return statement.execute(this);
     }
 };

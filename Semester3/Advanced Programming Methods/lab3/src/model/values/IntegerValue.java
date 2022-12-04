@@ -96,6 +96,12 @@ public class IntegerValue implements  IValue{
         }
         return false;
     }
+
+    @Override
+    public IValue clone() {
+        return new IntegerValue(this.value);
+    }
+
     public int getValue() {
         return this.value;
     }

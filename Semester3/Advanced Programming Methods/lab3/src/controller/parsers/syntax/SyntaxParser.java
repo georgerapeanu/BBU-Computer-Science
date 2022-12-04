@@ -164,6 +164,22 @@ public class SyntaxParser {
         return new PrintStatement(ExpressionParser.parseAtPosition(string, position));
     }
 
+    private static IStatement parseFork(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 4 >= string.length() || !string.substring(position.getValue(), position.getValue() + 5).equals("fork(")){
+            throw new SyntaxAppException("Invalid fork statement");
+        }
+        position.increase(5);
+        skipWhiteSpace(string, position);
+        IStatement innerStatement = SyntaxParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+        if(position.getValue() >= string.length() || string.charAt(position.getValue()) != ')'){
+            throw new SyntaxAppException("Invalid fork statement");
+        }
+        position.increase(1);
+        return new ForkStatement(innerStatement);
+    }
+
     private static IStatement parseIf(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
         if(position.getValue() + 2 >= string.length()){
@@ -320,6 +336,9 @@ public class SyntaxParser {
         if(position.getValue() + 8 < string.length() && string.substring(position.getValue(), position.getValue() + 9).equals("writeHeap")){
             return parseWriteHeap(string, position);
         }
+        if(position.getValue() + 3 < string.length() && string.substring(position.getValue(), position.getValue() + 4).equals("fork")){
+            return parseFork(string, position);
+        }
         int pos = position.getValue();
         boolean hasEqual = false;
         while(! hasEqual && pos < string.length() && string.charAt(pos) != ';'){
@@ -339,7 +358,7 @@ public class SyntaxParser {
         if(position.getValue() >= string.length()){
             return null;
         }
-        if (position.getValue() < string.length() && string.charAt(position.getValue()) == '}'){
+        if (position.getValue() < string.length() && (string.charAt(position.getValue()) == '}' || string.charAt(position.getValue()) == ')')){
             return null;
         }
 

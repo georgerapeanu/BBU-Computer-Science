@@ -13,8 +13,9 @@ public class PrintStatement implements IStatement {
     }
 
     @Override
-    public void execute(ProgState state) throws AppException {
+    public ProgState execute(ProgState state) throws AppException {
         state.getOutput().appendToOutput(expression.evaluate(state).toString());
+        return null;
     }
 
     @Override

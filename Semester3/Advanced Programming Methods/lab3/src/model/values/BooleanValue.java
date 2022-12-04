@@ -64,6 +64,11 @@ public class BooleanValue implements IValue{
         return false;
     }
 
+    @Override
+    public IValue clone() {
+        return new BooleanValue(this.value);
+    }
+
     public boolean getValue(){
         return this.value;
     }

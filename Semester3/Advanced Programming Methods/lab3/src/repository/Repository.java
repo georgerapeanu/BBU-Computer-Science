@@ -19,12 +19,13 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public ProgState getCurrentProgram() throws AppException {
-        try{
-            return programs.get(0);
-        }catch(IndexOutOfBoundsException exception) {
-            throw new AppException("No program selected");
-        }
+    public List<ProgState> getProgramsList() {
+        return programs;
+    }
+
+    @Override
+    public void setProgramsList(List<ProgState> programs) {
+        this.programs = programs;
     }
 
     @Override
@@ -33,7 +34,7 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public void logProgramState() {
+    public void logProgramState(ProgState program) {
         if(this.logFilePath != null) {
             PrintWriter logFile = null;
             try {
@@ -41,7 +42,7 @@ public class Repository implements IRepository{
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            logFile.println(this.programs.get(0).toString());
+            logFile.println(program.toString());
             logFile.close();
         }
     }

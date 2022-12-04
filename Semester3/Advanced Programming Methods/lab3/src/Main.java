@@ -9,6 +9,7 @@ import view.MainView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args) throws IOException, AppException {
@@ -19,7 +20,7 @@ public class Main {
             line = null;
         }
         IRepository repository = new Repository(line);
-        IController controller = new Controller(repository, false);
+        IController controller = new Controller(repository, Executors.newFixedThreadPool(2),false);
         IMainView view = new MainView(controller);
         view.run();
     }

@@ -12,9 +12,10 @@ public class CompositeStatement implements IStatement{
     }
 
     @Override
-    public void execute(ProgState state) {
+    public ProgState execute(ProgState state) {
         state.getExecutionStack().push(secondStatement);
         state.getExecutionStack().push(firstStatement);
+        return null;
     }
 
     @Override

@@ -59,6 +59,18 @@ public class SymTable implements  ISymTable{
         return answer.toString();
     }
 
+    @Override
+    public ISymTable copy() throws AppException{
+        ISymTable newSymTable = new SymTable();
+
+        for(String key:data.getKeys()){
+            newSymTable.declValue(key, data.getValue(key).getType());
+            newSymTable.setValue(key, data.getValue(key).clone());
+        }
+
+        return newSymTable;
+    }
+
     public Map<String, IValue> toMap(){
         return this.data.toMap();
     }

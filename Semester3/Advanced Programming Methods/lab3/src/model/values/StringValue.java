@@ -81,6 +81,11 @@ public class StringValue implements IValue{
         return false;
     }
 
+    @Override
+    public IValue clone() {
+        return new StringValue(this.value);
+    }
+
     public String getValue() {
         return this.value;
     }

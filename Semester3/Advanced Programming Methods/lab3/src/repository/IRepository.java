@@ -4,12 +4,14 @@ import model.exceptions.AppException;
 import model.state.ProgState;
 
 import java.io.IOException;
+import java.util.List;
 
 public interface IRepository {
-    public ProgState getCurrentProgram() throws AppException;
+    public List<ProgState> getProgramsList();
+    public void setProgramsList(List<ProgState> programs);
     public void addProgram(ProgState program);
 
-    public void logProgramState();
+    public void logProgramState(ProgState program);
 
     public void clear();
 }

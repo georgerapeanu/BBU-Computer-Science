@@ -15,8 +15,9 @@ public class VariableDeclarationStatement implements IStatement{
         this.type = type;
     }
     @Override
-    public void execute(ProgState state) throws AppException {
+    public ProgState execute(ProgState state) throws AppException {
         state.getSymTable().declValue(name, type);
+        return null;
     }
 
     @Override

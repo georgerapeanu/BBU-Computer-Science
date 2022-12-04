@@ -17,7 +17,7 @@ public class WhileStatement implements IStatement {
     }
 
     @Override
-    public void execute(ProgState state) throws AppException {
+    public ProgState execute(ProgState state) throws AppException {
         IValue value = this.condition.evaluate(state);
         if(!(value.getType() instanceof BooleanType)){
             throw new AppException("While condition should evaluate to a BooleanType");
@@ -26,6 +26,7 @@ public class WhileStatement implements IStatement {
             state.getExecutionStack().push(this);
         }
         state.getExecutionStack().push(statement);
+        return null;
     }
 
     @Override

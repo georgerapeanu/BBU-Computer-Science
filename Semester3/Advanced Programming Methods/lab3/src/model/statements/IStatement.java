@@ -6,6 +6,6 @@ import model.state.exceptions.SymbolAlreadyExistsAppException;
 import model.state.exceptions.SymbolNotFoundAppException;
 
 public interface IStatement {
-    public void execute(ProgState state) throws AppException;
+    public ProgState execute(ProgState state) throws AppException;
     public String toString();
 }

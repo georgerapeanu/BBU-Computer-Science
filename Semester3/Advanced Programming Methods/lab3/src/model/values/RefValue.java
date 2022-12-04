@@ -34,6 +34,11 @@ public class RefValue implements IValue {
     }
 
     @Override
+    public IValue clone() {
+        return new RefValue(this.address, this.innerType);
+    }
+
+    @Override
     public String toString() {
         return "Ref(" + Integer.toString(this.address) + "," + this.innerType.toString() + ")";
     }
