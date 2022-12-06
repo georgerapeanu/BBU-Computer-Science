@@ -1,7 +1,7 @@
 #!/usr/bin/clisp
 
 ; 1.
-; a) Write a function to return the n-th element of a list, or NIL if such an element does not exist.
+; a) Write a function to return the n-th element of a list, or NIL if such an element does not exist. schimbare: nth de la capat
 ;b) Write a function to check whether an atom E is a member of a list which is not necessarily linear.
 ;c) Write a function to determine the list of all sublists of a given list, on any level.
 ;A sublist is either the list itself, or any element that is a list, at any level. Example:
@@ -27,7 +27,7 @@
     ((null l) nil)
     ((and (atom (car l)) (equal e (car l))) t)
     ((atom (car l)) (checkIfAtomIsInList (cdr l) e))
-    ((list (car l)) (or (checkIfAtomIsInList (car l) e) (checkIfAtomIsInList (cdr l) e)))
+    ((listp (car l)) (or (checkIfAtomIsInList (car l) e) (checkIfAtomIsInList (cdr l) e)))
     (t nil)
   )
 )
@@ -116,6 +116,41 @@
   (assert (equal (listToSet '(9 2 8 3 2)) '(9 8 3 2)))
 )
 
+; flow model(i)
+; len(l:list) -> returns length of list
+(defun len(l)
+  (cond
+    ((null l) 0)
+    (t (+ 1 (len (cdr l))))
+  )
+)
+
+(defun getNthLastElement (l n)
+  (cond
+    ((null l) nil)
+    ((< (len l) n) nil)
+    ((equal n (len l)) (car l))
+    (t (getNthLastElement (cdr l) n))
+  )
+)
+
+(defun testLen()
+  (assert (equal (len '()) 0)) 
+  (assert (equal (len '(1 2 3 4)) 4)) 
+  (assert (equal (len '(2 2)) 2)) 
+  (assert (equal (len '(1)) 1)) 
+)
+
+(defun testGetNthLastElement()
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 0) nil))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 1) 3))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 2) 4))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 3) 5))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 4) 2))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 5) 1))
+  (assert (equal (getNthLastElement '(1 2 5 4 3) 6) nil))
+)
+
 (defun testAll()
   (testGetNthElement) 
   (testCheckIfAtomInList)
@@ -123,4 +158,6 @@
   (testGetAllSublists)
   (testAppears)
   (testListToSet)
+  (testLen)
+  (testGetNthLastElement)
 )
