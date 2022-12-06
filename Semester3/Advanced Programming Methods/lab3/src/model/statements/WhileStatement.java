@@ -24,8 +24,8 @@ public class WhileStatement implements IStatement {
         }
         if(((BooleanValue)value).getValue()){
             state.getExecutionStack().push(this);
+            state.getExecutionStack().push(statement);
         }
-        state.getExecutionStack().push(statement);
         return null;
     }
 
