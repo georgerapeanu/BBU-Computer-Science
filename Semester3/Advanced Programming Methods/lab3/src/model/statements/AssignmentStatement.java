@@ -38,7 +38,7 @@ public class AssignmentStatement implements  IStatement{
         if(expressionType == null) { //only possible if it's a readHeap expression
             return typeDictionary;
         }
-        if(!variableType.equals(expressionType)){
+        if(!expression.equals(variableType)){
             throw new AppException("Mismatched type in assignment");
         }
         return typeDictionary;

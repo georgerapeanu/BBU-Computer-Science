@@ -25,6 +25,6 @@ public class ForkStatement implements IStatement{
 
     @Override
     public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
-        return innerStatement.typecheck(typeDictionary);
+        return innerStatement.typecheck(typeDictionary.copy());
     }
 }
