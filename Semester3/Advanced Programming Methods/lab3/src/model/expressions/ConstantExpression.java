@@ -30,4 +30,9 @@ public class ConstantExpression implements IExpression {
         return value.getType();
     }
 
+    @Override
+    public String toJavaHardCode() {
+        return "new ConstantExpression(" + value.toJavaHardCode() + ")";
+    }
+
 };

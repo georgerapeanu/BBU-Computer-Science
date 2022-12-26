@@ -27,4 +27,9 @@ public class ForkStatement implements IStatement{
     public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
         return innerStatement.typecheck(typeDictionary.copy());
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new ForkStatement(" + this.innerStatement.toJavaHardCode() + ")";
+    }
 }

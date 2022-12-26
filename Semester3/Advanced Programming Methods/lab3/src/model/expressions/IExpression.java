@@ -10,7 +10,7 @@ import model.values.types.IType;
 public interface IExpression {
     public IValue evaluate(ProgState state) throws AppException;
     public String toString();
-
     IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException;
 
+    String toJavaHardCode();
 }

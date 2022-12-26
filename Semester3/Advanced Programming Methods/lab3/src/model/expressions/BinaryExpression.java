@@ -32,9 +32,17 @@ public class BinaryExpression implements IExpression {
     public IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException{
         IType firstType = left.typecheck(typeDictionary);
         IType secondType = right.typecheck(typeDictionary);
+        if(firstType == null || secondType == null){
+            return null;
+        }
         if(firstType == null || !firstType.equals(secondType)) {
             throw new AppException("Binary expression operands are not the same");
         }
-        return firstType;
+        return firstType.compose(operator);
+    }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new BinaryExpression(" + this.left.toJavaHardCode() + "," + this.right.toJavaHardCode() + "," + "\"" + this.operator + "\"" + ")";
     }
 }

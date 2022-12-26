@@ -34,9 +34,15 @@ public class ReadHeapFunction implements IExpression{
 
     @Override
     public IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
-        if(!(expr.typecheck(typeDictionary) instanceof RefType)) {
+        IType exprType = expr.typecheck(typeDictionary);
+        if(exprType != null && !(exprType instanceof RefType)) {
             throw new AppException("Read Heap expression evaluates to a non RefType");
         }
         return null;
+    }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new ReadHeapFunction(" + expr.toJavaHardCode() + ")";
     }
 }

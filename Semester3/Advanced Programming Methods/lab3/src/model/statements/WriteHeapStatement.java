@@ -42,4 +42,9 @@ public class WriteHeapStatement implements IStatement{
         }
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new WriteHeapStatement(" + this.addressExpression.toJavaHardCode() + ", " + this.valueExpression.toJavaHardCode() + ")";
+    }
 }

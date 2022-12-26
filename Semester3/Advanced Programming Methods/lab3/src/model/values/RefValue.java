@@ -1,6 +1,7 @@
 package model.values;
 
 import model.exceptions.AppException;
+import model.values.exceptions.InvalidOperationAppException;
 import model.values.types.IType;
 import model.values.types.RefType;
 
@@ -20,7 +21,7 @@ public class RefValue implements IValue {
 
     @Override
     public IValue compose(IValue other, String operation) throws AppException {
-        return null;
+        throw new InvalidOperationAppException("InvalidOperationAppException: Cannot compose two RefValue types using operator " + operation);
     }
 
     @Override
@@ -36,6 +37,11 @@ public class RefValue implements IValue {
     @Override
     public IValue clone() {
         return new RefValue(this.address, this.innerType);
+    }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new RefValue(" + String.valueOf(this.address) + ", " + this.innerType.toJavaHardCode() + ")";
     }
 
     @Override

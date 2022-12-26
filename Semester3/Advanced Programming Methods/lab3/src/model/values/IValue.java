@@ -9,4 +9,5 @@ public interface IValue {
     IType getType();
     public boolean equals(IValue other);
     public IValue clone();
+    public String toJavaHardCode();
 }

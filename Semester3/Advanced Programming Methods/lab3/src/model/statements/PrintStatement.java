@@ -30,4 +30,9 @@ public class PrintStatement implements IStatement {
         expression.typecheck(typeDictionary);
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new PrintStatement(" + this.expression.toJavaHardCode() + ")";
+    }
 }

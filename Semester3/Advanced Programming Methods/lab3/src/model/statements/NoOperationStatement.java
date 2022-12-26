@@ -24,4 +24,9 @@ public class NoOperationStatement implements IStatement{
     public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new NoOperationStatement()";
+    }
 }

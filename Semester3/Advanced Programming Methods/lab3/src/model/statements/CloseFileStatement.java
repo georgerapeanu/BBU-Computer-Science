@@ -38,4 +38,9 @@ public class CloseFileStatement implements IStatement{
         }
         throw new AppException("Close file expression doesn't evaluate to a StringType");
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new CloseFileStatement(" + this.expression.toJavaHardCode() + ")";
+    }
 }

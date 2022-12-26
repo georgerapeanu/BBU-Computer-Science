@@ -45,4 +45,9 @@ public class ReadFileStatement implements  IStatement{
         }
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new ReadFileStatement(" + expression.toJavaHardCode() + ", " + "\"" + this.name + "\"" + ")";
+    }
 }

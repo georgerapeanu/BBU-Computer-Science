@@ -15,6 +15,9 @@ public class ViewCommand implements IViewCommand{
 
     @Override
     public void execute(String command) throws AppException {
+        if(command == null){
+            throw new AppException("No such command exists");
+        }
         String[] args = command.trim().split(" ", 2);
         if(this.commands.containsKey(args[0])){
             String remaining = null;

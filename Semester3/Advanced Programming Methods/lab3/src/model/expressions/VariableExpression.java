@@ -29,4 +29,9 @@ public class VariableExpression implements IExpression{
         return typeDictionary.getValue(name);
     }
 
+    @Override
+    public String toJavaHardCode() {
+        return "new VariableExpression(" + "\"" + name + "\"" + ")";
+    }
+
 }

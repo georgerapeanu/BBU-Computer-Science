@@ -48,4 +48,9 @@ public class IfStatement implements  IStatement{
         right.typecheck(typeDictionary.copy());
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new IfStatement(" + this.expression.toJavaHardCode() + ", " + this.left.toJavaHardCode() + ", " + this.right.toJavaHardCode() + ")";
+    }
 }

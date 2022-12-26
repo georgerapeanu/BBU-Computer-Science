@@ -41,4 +41,9 @@ public class NewStatement implements IStatement{
         }
         throw new AppException("Mismatched types for new statement");
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new NewStatement(" + "\"" + this.name + "\"" + ", " + this.expression.toJavaHardCode() + ")";
+    }
 }

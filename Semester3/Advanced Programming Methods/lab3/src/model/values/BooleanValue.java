@@ -1,5 +1,6 @@
 package model.values;
 
+import model.exceptions.AppException;
 import model.values.exceptions.DivisionOverflowAppException;
 import model.values.exceptions.InvalidOperationAppException;
 import model.values.types.BooleanType;
@@ -68,6 +69,12 @@ public class BooleanValue implements IValue{
     public IValue clone() {
         return new BooleanValue(this.value);
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new BooleanValue(" + String.valueOf(this.value) + ")";
+    }
+
 
     public boolean getValue(){
         return this.value;

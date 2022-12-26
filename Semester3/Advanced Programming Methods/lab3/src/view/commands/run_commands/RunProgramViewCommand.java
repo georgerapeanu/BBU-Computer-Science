@@ -1,12 +1,13 @@
-package view.commands;
+package view.commands.run_commands;
 
 import controller.IController;
 import model.exceptions.AppException;
+import view.commands.IViewCommand;
 import view.exceptions.ViewException;
 
-public class RunViewCommand implements IViewCommand{
+public class RunProgramViewCommand implements IViewCommand {
     IController controller;
-    public RunViewCommand(IController controller) {
+    public RunProgramViewCommand(IController controller) {
         this.controller = controller;
     }
 

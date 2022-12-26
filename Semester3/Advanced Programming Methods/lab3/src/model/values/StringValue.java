@@ -86,6 +86,10 @@ public class StringValue implements IValue{
         return new StringValue(this.value);
     }
 
+    @Override
+    public String toJavaHardCode() {
+        return "new StringValue(" + "\"" + this.value + "\"" + ")";
+    }
     public String getValue() {
         return this.value;
     }

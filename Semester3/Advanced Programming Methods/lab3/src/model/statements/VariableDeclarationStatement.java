@@ -31,4 +31,9 @@ public class VariableDeclarationStatement implements IStatement{
         typeDictionary.setValue(name, type);
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new VariableDeclarationStatement(" + "\"" + name + "\"" + "," + this.type.toJavaHardCode() + ")";
+    }
 }

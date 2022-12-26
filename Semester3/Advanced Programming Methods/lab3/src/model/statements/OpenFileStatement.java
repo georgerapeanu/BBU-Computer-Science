@@ -38,4 +38,9 @@ public class OpenFileStatement implements IStatement{
         }
         throw new AppException("Open file expression doesn't evaluate to a StringType");
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new OpenFileStatement(" + this.expression.toJavaHardCode() + ")";
+    }
 }

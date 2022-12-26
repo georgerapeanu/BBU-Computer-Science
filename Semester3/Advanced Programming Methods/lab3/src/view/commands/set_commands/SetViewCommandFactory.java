@@ -10,6 +10,7 @@ public class SetViewCommandFactory {
         IViewCommand viewCommand = new ViewCommand();
         viewCommand.addCommand("display", new SetDisplayFlagViewCommand(controller));
         viewCommand.addCommand("program", new SetProgramViewCommand(controller));
+        viewCommand.addCommand("hardcoded", new SetHardcodedViewCommand(controller));
         return viewCommand;
     }
 }

@@ -43,4 +43,9 @@ public class WhileStatement implements IStatement {
         }
         throw new AppException("While condition does not evaluate to a BooleanType");
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new WhileStatement(" + this.condition.toJavaHardCode() + ", " + this.statement.toJavaHardCode() + ")";
+    }
 }

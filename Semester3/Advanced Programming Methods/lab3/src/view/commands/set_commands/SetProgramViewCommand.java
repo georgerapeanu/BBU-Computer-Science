@@ -15,6 +15,9 @@ public class SetProgramViewCommand implements IViewCommand {
 
     @Override
     public void execute(String command) throws AppException {
+        if(command == null){
+            throw new ViewException("Invalid command");
+        }
         this.controller.setProgram(SyntaxParser.parse(command.strip()));
     }
 

@@ -1,5 +1,6 @@
 package model.values;
 
+import model.exceptions.AppException;
 import model.values.exceptions.DivisionOverflowAppException;
 import model.values.exceptions.InvalidOperationAppException;
 import model.values.types.BooleanType;
@@ -100,6 +101,11 @@ public class IntegerValue implements  IValue{
     @Override
     public IValue clone() {
         return new IntegerValue(this.value);
+    }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new IntegerValue(" + String.valueOf(this.value) + ")";
     }
 
     public int getValue() {

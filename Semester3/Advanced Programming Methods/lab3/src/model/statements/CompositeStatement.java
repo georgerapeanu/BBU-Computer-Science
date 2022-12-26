@@ -30,4 +30,9 @@ public class CompositeStatement implements IStatement{
     public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
         return secondStatement.typecheck(firstStatement.typecheck(typeDictionary));
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new CompositeStatement(" + this.firstStatement.toJavaHardCode() + ", " + this.secondStatement.toJavaHardCode() + ")";
+    }
 }

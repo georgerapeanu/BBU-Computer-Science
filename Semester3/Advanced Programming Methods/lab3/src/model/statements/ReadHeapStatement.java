@@ -31,4 +31,9 @@ public class ReadHeapStatement implements IStatement{
         expr.typecheck(typeDictionary);
         return typeDictionary;
     }
+
+    @Override
+    public String toJavaHardCode() {
+        return "new ReadHeapStatement(" + this.expr.toJavaHardCode() + ")";
+    }
 }

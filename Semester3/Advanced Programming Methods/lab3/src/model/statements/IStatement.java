@@ -11,4 +11,6 @@ public interface IStatement {
     public ProgState execute(ProgState state) throws AppException;
     public String toString();
     IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException;
+
+    public String toJavaHardCode();
 }
