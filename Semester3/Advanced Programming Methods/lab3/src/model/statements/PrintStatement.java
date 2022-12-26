@@ -1,8 +1,10 @@
 package model.statements;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.expressions.IExpression;
 import model.state.ProgState;
+import model.values.types.IType;
 
 public class PrintStatement implements IStatement {
 
@@ -21,5 +23,11 @@ public class PrintStatement implements IStatement {
     @Override
     public String toString(){
         return "print(" + expression.toString() + ")";
+    }
+
+    @Override
+    public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
+        expression.typecheck(typeDictionary);
+        return typeDictionary;
     }
 }

@@ -4714,3 +4714,21 @@ Heap:
 1(IntegerType):-> 30
 
 
+Id: 0
+Execution stack:
+IntegerType v; RefType IntegerType a; v = 10; new(a, 22); fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))
+SymTable:
+Output:
+Filetable:
+Heap:
+
+
+Id: 1
+Execution stack:
+IntegerType v; RefType IntegerType a; v = 10; new(a, 22); fork(writeHeap(a, 30); v = 32; print(v); print(readHeap(a))); print(v); print(readHeap(a))
+SymTable:
+Output:
+Filetable:
+Heap:
+
+

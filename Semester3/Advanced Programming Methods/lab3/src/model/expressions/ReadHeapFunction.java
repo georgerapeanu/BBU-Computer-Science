@@ -1,10 +1,14 @@
 package model.expressions;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.state.ProgState;
 import model.values.IValue;
 import model.values.RefValue;
+import model.values.types.IType;
 import model.values.types.RefType;
+
+import java.sql.Ref;
 
 public class ReadHeapFunction implements IExpression{
 
@@ -26,5 +30,13 @@ public class ReadHeapFunction implements IExpression{
     @Override
     public String toString(){
         return "readHeap(" + expr.toString() + ")";
+    }
+
+    @Override
+    public IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
+        if(!(expr.typecheck(typeDictionary) instanceof RefType)) {
+            throw new AppException("Read Heap expression evaluates to a non RefType");
+        }
+        return null;
     }
 }

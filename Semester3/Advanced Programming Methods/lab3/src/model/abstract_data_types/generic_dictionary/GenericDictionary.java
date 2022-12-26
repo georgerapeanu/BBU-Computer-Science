@@ -39,4 +39,13 @@ public class GenericDictionary<T, E> implements IGenericDictionary<T, E> {
     public Map<T, E> toMap() {
         return data;
     }
+
+    @Override
+    public IGenericDictionary<T, E> copy() {
+        GenericDictionary<T, E> answer = new GenericDictionary<>();
+        for(T key:this.data.keySet()){
+            answer.data.put(key, this.data.get(key));
+        }
+        return answer;
+    }
 }

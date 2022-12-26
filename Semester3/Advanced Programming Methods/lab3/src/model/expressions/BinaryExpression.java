@@ -1,5 +1,6 @@
 package model.expressions;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.state.ProgState;
 import model.state.exceptions.SymbolNotFoundAppException;
@@ -25,5 +26,15 @@ public class BinaryExpression implements IExpression {
     @Override
     public String toString(){
         return "(" + left.toString() + " " + operator + " " + right.toString() + ")";
+    }
+
+    @Override
+    public IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException{
+        IType firstType = left.typecheck(typeDictionary);
+        IType secondType = right.typecheck(typeDictionary);
+        if(firstType == null || !firstType.equals(secondType)) {
+            throw new AppException("Binary expression operands are not the same");
+        }
+        return firstType;
     }
 }

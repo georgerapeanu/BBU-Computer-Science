@@ -1,5 +1,6 @@
 package model.statements;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.state.ProgState;
 import model.state.exceptions.SymbolAlreadyExistsAppException;
@@ -23,5 +24,11 @@ public class VariableDeclarationStatement implements IStatement{
     @Override
     public String toString(){
         return type.toString() + " " + name;
+    }
+
+    @Override
+    public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
+        typeDictionary.setValue(name, type);
+        return typeDictionary;
     }
 }

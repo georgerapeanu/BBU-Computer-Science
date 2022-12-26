@@ -14,4 +14,6 @@ public interface IGenericDictionary<T, E> {
 
     public boolean exists(T key);
     Map<T, E> toMap();
+
+    public IGenericDictionary<T, E> copy();
 }

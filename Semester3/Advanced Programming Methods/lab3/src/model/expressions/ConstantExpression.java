@@ -1,5 +1,6 @@
 package model.expressions;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.state.ProgState;
 import model.state.exceptions.SymbolNotFoundAppException;
@@ -22,6 +23,11 @@ public class ConstantExpression implements IExpression {
     @Override
     public String toString(){
         return value.toString();
+    }
+
+    @Override
+    public IType typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
+        return value.getType();
     }
 
 };

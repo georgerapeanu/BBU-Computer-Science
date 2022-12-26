@@ -1,9 +1,11 @@
 package model.statements;
 
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.exceptions.AppException;
 import model.state.ExecutionStack;
 import model.state.IExecutionStack;
 import model.state.ProgState;
+import model.values.types.IType;
 
 public class ForkStatement implements IStatement{
     IStatement innerStatement;
@@ -19,5 +21,10 @@ public class ForkStatement implements IStatement{
     @Override
     public String toString(){
         return "fork(" + innerStatement.toString() + ")";
+    }
+
+    @Override
+    public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
+        return innerStatement.typecheck(typeDictionary);
     }
 }
