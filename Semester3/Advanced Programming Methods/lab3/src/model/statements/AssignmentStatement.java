@@ -33,11 +33,6 @@ public class AssignmentStatement implements  IStatement{
         IType variableType = typeDictionary.getValue(variableName);
         IType expressionType = expression.typecheck(typeDictionary);
 
-        // due to direct access to the heap, RefType type checks cannot happen at compile time. We need to trust the programmer that what is at the heap at the address that is evaluated from the expression is of the correct type
-        // at runtime, an error will occur if that is not the case.
-        if(expressionType == null) { //only possible if it's a readHeap expression
-            return typeDictionary;
-        }
         if(!expressionType.equals(variableType)){
             throw new AppException("Mismatched type in assignment");
         }

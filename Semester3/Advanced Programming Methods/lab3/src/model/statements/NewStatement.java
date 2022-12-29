@@ -36,7 +36,7 @@ public class NewStatement implements IStatement{
     public IGenericDictionary<String, IType> typecheck(IGenericDictionary<String, IType> typeDictionary) throws AppException {
         IType variableType = typeDictionary.getValue(name);
         IType expressionType = expression.typecheck(typeDictionary);
-        if(variableType != null && variableType.equals(new RefType(expressionType))){
+        if(variableType.equals(new RefType(expressionType))){
             return typeDictionary;
         }
         throw new AppException("Mismatched types for new statement");
