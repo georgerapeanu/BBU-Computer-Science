@@ -20,10 +20,10 @@ endif
 
 t2=tinv(1 - alpha, length(x) - 1);
 RR = [t2, inf];
-printf("The rejection region is (%.4f %.4f)", RR);
+printf("The rejection region is (%.4f %.4f)\n", RR);
 printf("The observed value of the test statistic is %.4f\n", stats.tstat);
 printf("The p-value of the test statistic is %.4f\n", p); 
 
 % variance(s2) can be tested with vartest
 %  2 populations -> s2.1/s2.2 can be tested with vartest2
-% miu1-miu2 -> can be tested with ztest2 or ttest2 or chi2test2(i cant find it, dont know what its called)
+% miu1-miu2 -> can be tested with z_test_2 or ttest2

@@ -20,6 +20,6 @@ endif
 
 z2=norminv(alpha);
 RR = [-inf, z2];
-printf("The rejection region is (%.4f %.4f)", RR);
+printf("The rejection region is (%.4f %.4f)\n", RR);
 printf("The observed value of the test statistic is %.4f\n", z);
 printf("The p-value of the test statistic is %.4f\n", p);
