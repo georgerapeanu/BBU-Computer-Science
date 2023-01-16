@@ -38,7 +38,7 @@ end
 
 t2 = tinv(1 - alpha, n);
 
-[h, pval, ci, stats] = ttest2(PREMIUM_MILAGE, REGULAR_MILAGE, "alpha", alpha, "tail", "right")
+[h, pval, ci, stats2] = ttest2(PREMIUM_MILAGE, REGULAR_MILAGE, "alpha", alpha, "tail", "right")
 
 if h == 0
   printf("The null hypothesis is not rejected\n");
@@ -50,7 +50,7 @@ end
 
 
 printf("pvalue is %4.4f\n", pval);
-printf("observed value is %4.4f\n", stats.tstat);
+printf("observed value is %4.4f\n", stats2.tstat);
 printf("Confidence interval for the difference is %4.4f %4.4f\n", ci(1), ci(2))
 printf("Rejection region is [%4.4f, %4.4f]\n", 
   t2,
