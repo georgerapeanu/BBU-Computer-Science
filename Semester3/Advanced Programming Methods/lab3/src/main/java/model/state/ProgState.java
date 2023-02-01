@@ -15,7 +15,9 @@ public class ProgState {
 
     IHeap heap;
 
-    public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IFileTable fileTable, IHeap heap, IStatement statement){
+    ISemaphoreTable semaphoreTable;
+
+    public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IFileTable fileTable, IHeap heap, ISemaphoreTable semahporeTable, IStatement statement){
         synchronized (ProgState.class){
             this.id = nextId;
             nextId++;
@@ -25,6 +27,7 @@ public class ProgState {
         this.output = output;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.semaphoreTable = semahporeTable;
         this.executionStack.push(statement);
     }
 
@@ -50,6 +53,10 @@ public class ProgState {
 
     public int getId() {
         return id;
+    }
+
+    public ISemaphoreTable getSemaphoreTable() {
+        return semaphoreTable;
     }
 
     public boolean isNotCompleted(){

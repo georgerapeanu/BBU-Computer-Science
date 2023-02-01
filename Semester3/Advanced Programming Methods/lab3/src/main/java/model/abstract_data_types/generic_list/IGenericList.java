@@ -6,4 +6,6 @@ public interface IGenericList<T> {
     public void addToEnd(T elem);
     List<T> getAll();
     void clear();
+
+    boolean remove(T elem);
 }

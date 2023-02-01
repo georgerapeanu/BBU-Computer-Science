@@ -28,4 +28,9 @@ public class GenericList<T> implements IGenericList<T>{
     public void clear() {
         this.data.clear();
     }
+
+    @Override
+    public boolean remove(T elem) {
+        return data.remove(elem);
+    }
 }

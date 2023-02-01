@@ -5,6 +5,7 @@ import model.exceptions.AppException;
 import model.state.ExecutionStack;
 import model.state.IExecutionStack;
 import model.state.ProgState;
+import model.state.SemaphoreTable;
 import model.values.types.IType;
 
 public class ForkStatement implements IStatement{
@@ -16,7 +17,7 @@ public class ForkStatement implements IStatement{
 
     @Override
     public ProgState execute(ProgState state) throws AppException {
-        return new ProgState(new ExecutionStack(), state.getSymTable().copy(), state.getOutput(), state.getFileTable(), state.getHeap(), innerStatement);
+        return new ProgState(new ExecutionStack(), state.getSymTable().copy(), state.getOutput(), state.getFileTable(), state.getHeap(), state.getSemaphoreTable(), innerStatement);
     }
     @Override
     public String toString(){
