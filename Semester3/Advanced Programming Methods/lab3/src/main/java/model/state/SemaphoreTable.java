@@ -1,18 +1,26 @@
 package model.state;
 
 import javafx.util.Pair;
+import model.abstract_data_types.generic_dictionary.GenericDictionary;
 import model.abstract_data_types.generic_dictionary.IGenericDictionary;
 import model.abstract_data_types.generic_list.GenericList;
 import model.abstract_data_types.generic_list.IGenericList;
 import model.exceptions.AppException;
 import model.state.exceptions.SemaphoreAppException;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class SemaphoreTable implements ISemaphoreTable{
     private static int nextId = 0;
     ReentrantLock lock;
     IGenericDictionary<Integer, Pair<Integer, IGenericList<Integer>>> semaphores;
+
+    public SemaphoreTable() {
+        this.lock = new ReentrantLock();
+        this.semaphores = new GenericDictionary<>();
+    }
 
     @Override
     public int createSemaphore(int count) throws SemaphoreAppException {
@@ -58,11 +66,22 @@ public class SemaphoreTable implements ISemaphoreTable{
             }
             Pair<Integer, IGenericList<Integer>> semaphore = semaphores.getValue(semaphoreId);
 
-            if(!semaphore.getValue().getAll().contains(threadId)){
+            if(semaphore.getValue().getAll().contains(threadId)){
                 semaphore.getValue().remove(threadId);
             }
         } finally{
             lock.unlock();
         }
+    }
+
+    @Override
+    public List<Pair<Pair<Integer, Integer>, IGenericList<Integer>>> getSemaphoreDecitionaryAsList() {
+        this.lock.lock();
+        List<Pair<Pair<Integer, Integer>, IGenericList<Integer> > > answer = new ArrayList<>();
+        this.semaphores.toMap().forEach((x, y) -> {
+            answer.add(new Pair<>(new Pair<>(x, y.getKey()), y.getValue()));
+        });
+        this.lock.unlock();
+        return answer;
     }
 }

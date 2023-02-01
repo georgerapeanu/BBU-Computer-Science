@@ -5,6 +5,7 @@ import controller.parsers.expressions.exceptions.InvalidExpressionAppException;
 import controller.parsers.syntax.exceptions.SyntaxAppException;
 import model.abstract_data_types.generic_list.GenericList;
 import model.abstract_data_types.generic_list.IGenericList;
+import model.exceptions.AppException;
 import model.expressions.IExpression;
 import model.statements.*;
 import model.values.types.*;
@@ -353,6 +354,63 @@ public class SyntaxParser {
         return new ReadFileStatement(expression, name);
     }
 
+    private static IStatement parseCreateSemaphore(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 15 >= string.length() || !string.substring(position.getValue(), position.getValue() + 16).equals("createSemaphore(")){
+            throw new SyntaxAppException("Invalid createSemaphore statement");
+        }
+        position.increase(16);
+
+        String name = extractName(string, position);
+        skipWhiteSpace(string, position);
+
+        if(string.length() <= position.getValue() || string.charAt(position.getValue()) != ','){
+            throw new SyntaxAppException("Expected , in createsemaphore");
+        }
+        position.increase(1);
+        IExpression expression = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+        if(string.length() <= position.getValue() || string.charAt(position.getValue()) != ')'){
+            throw new SyntaxAppException("Expected ) in createsemaphore");
+        }
+        position.increase(1);
+        return new CreateSemaphoreStatement(name, expression);
+    }
+
+    private static IStatement parseAcquire(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 7 >= string.length() || !string.substring(position.getValue(), position.getValue() + 8).equals("acquire(")){
+            throw new SyntaxAppException("Invalid acquire statement");
+        }
+        position.increase(8);
+
+        String name = extractName(string, position);
+        skipWhiteSpace(string, position);
+
+        if(string.length() <= position.getValue() || string.charAt(position.getValue()) != ')'){
+            throw new SyntaxAppException("Expected ) in acquire");
+        }
+        position.increase(1);
+        return new AcquireStatement(name);
+    }
+
+    private static IStatement parseRelease(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 7 >= string.length() || !string.substring(position.getValue(), position.getValue() + 8).equals("release(")){
+            throw new SyntaxAppException("Invalid release statement");
+        }
+        position.increase(8);
+
+        String name = extractName(string, position);
+        skipWhiteSpace(string, position);
+
+        if(string.length() <= position.getValue() || string.charAt(position.getValue()) != ')'){
+            throw new SyntaxAppException("Expected ) in acquire");
+        }
+        position.increase(1);
+        return new ReleaseStatement(name);
+    }
+
     private static IStatement parseNonComposite(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
         if(position.getValue() >= string.length()){
@@ -405,6 +463,15 @@ public class SyntaxParser {
         }
         if(position.getValue() + 5 < string.length() && string.substring(position.getValue(), position.getValue() + 6).equals("switch")){
             return parseSwitch(string, position);
+        }
+        if(position.getValue() + 14 < string.length() && string.substring(position.getValue(), position.getValue() + 15).equals("createSemaphore")){
+            return parseCreateSemaphore(string, position);
+        }
+        if(position.getValue() + 6 < string.length() && string.substring(position.getValue(), position.getValue() + 7).equals("acquire")){
+            return parseAcquire(string, position);
+        }
+        if(position.getValue() + 6 < string.length() && string.substring(position.getValue(), position.getValue() + 7).equals("release")){
+            return parseRelease(string, position);
         }
         int pos = position.getValue();
         boolean hasEqual = false;

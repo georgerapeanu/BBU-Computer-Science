@@ -9,11 +9,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 import javafx.util.Pair;
+import model.abstract_data_types.generic_dictionary.IGenericDictionary;
+import model.abstract_data_types.generic_list.IGenericList;
 import model.exceptions.AppException;
-import model.state.IFileTable;
-import model.state.IHeap;
-import model.state.IOutput;
-import model.state.ProgState;
+import model.state.*;
 import model.statements.IStatement;
 import model.values.IValue;
 
@@ -27,6 +26,8 @@ public class MainWindowController {
     IHeap currentHeap;
     IOutput currentOut;
     IFileTable currentFileTable;
+
+    ISemaphoreTable semaphoreTable;
 
     public MainWindowController(IController controller) {
         this.controller = controller;
@@ -59,7 +60,21 @@ public class MainWindowController {
     private Button stepButton;
     @FXML
     private Button runButton;
-    //TODO after run or last step the programs are removed so nothing is displayed anymore
+
+    @FXML
+    private TableView<Pair<Pair<Integer, Integer>, String>> semaphoreTableView;
+
+    @FXML
+    private TableColumn<Pair<Pair<Integer, Integer>, String>, Integer> semaphoreTableIdColumn;
+
+
+    @FXML
+    private TableColumn<Pair<Pair<Integer, Integer>, String>, Integer> semaphoreTableCountColumn;
+
+    @FXML
+    private TableColumn<Pair<Pair<Integer, Integer>, String>, String> semaphoreTableThreadsColumn;
+
+
     public void refresh(){
         Integer id = this.progStatesListView.getSelectionModel().getSelectedItem();
         this.progStatesListView.getItems().clear();
@@ -68,6 +83,7 @@ public class MainWindowController {
         this.fileTableListView.getItems().clear();
         this.symTableTableView.getItems().clear();
         this.executionStackListView.getItems().clear();
+        this.semaphoreTableView.getItems().clear();
 
         this.progStatesLabel.setText("Program states: " + Integer.toString(this.controller.getProgStates().size()));
         this.controller.getProgStates().forEach(x -> this.progStatesListView.getItems().add(x.getId()));
@@ -75,6 +91,7 @@ public class MainWindowController {
             this.currentHeap = this.controller.getProgStates().get(0).getHeap();
             this.currentOut = this.controller.getProgStates().get(0).getOutput();
             this.currentFileTable = this.controller.getProgStates().get(0).getFileTable();
+            this.semaphoreTable = this.controller.getProgStates().get(0).getSemaphoreTable();
         }
         if(this.currentHeap != null) {
             this.currentHeap.toMap().forEach((x, y) -> this.heapTableTableView.getItems().add(new Pair<>(x, y)));
@@ -87,6 +104,19 @@ public class MainWindowController {
         if(this.currentFileTable != null) {
             this.currentFileTable.getFileList().forEach(x -> {
                 this.fileTableListView.getItems().add(x);
+            });
+        }
+        if(this.semaphoreTable != null) {
+            List<Pair<Pair<Integer, Integer>, IGenericList<Integer>>> semaphoreList = this.semaphoreTable.getSemaphoreDecitionaryAsList();
+            semaphoreList.forEach(x -> {
+                StringBuilder threadString = new StringBuilder();
+                for(Integer elem: x.getValue().getAll()){
+                    if(threadString.toString() != ""){
+                        threadString.append(",");
+                    }
+                    threadString.append(elem);
+                }
+                this.semaphoreTableView.getItems().add(new Pair<>(new Pair<>(x.getKey().getKey(), x.getKey().getValue()), threadString.toString()));
             });
         }
         ProgState currentProgram;
@@ -117,6 +147,9 @@ public class MainWindowController {
         this.heapValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().toString()));
         this.symbolNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getKey()));
         this.symbolValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().toString()));
+        this.semaphoreTableIdColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey().getValue()).asObject());
+        this.semaphoreTableCountColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey().getValue()).asObject());
+        this.semaphoreTableThreadsColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue()));
         this.refresh();
         this.runButton.setOnAction(actionEvent -> {
             try {

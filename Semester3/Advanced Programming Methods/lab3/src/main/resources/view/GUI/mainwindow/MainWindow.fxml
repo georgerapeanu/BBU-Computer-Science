@@ -18,6 +18,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
@@ -66,16 +67,20 @@
                   <ListView fx:id="executionStackListView" prefHeight="200.0" prefWidth="200.0" />
                </children>
             </VBox>
+            <HBox alignment="CENTER" prefHeight="32.0" prefWidth="600.0" spacing="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <Button fx:id="stepButton" mnemonicParsing="false" text="Step" />
+                  <Button fx:id="runButton" mnemonicParsing="false" text="Run" />
+               </children>
+            </HBox>
+            <TableView fx:id="semaphoreTableView" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+              <columns>
+                <TableColumn fx:id="semaphoreTableIdColumn" prefWidth="42.0" text="Id" />
+                <TableColumn fx:id="semaphoreTableCountColumn" prefWidth="91.0" text="Count" />
+                  <TableColumn fx:id="semaphoreTableThreadsColumn" prefWidth="166.0" text="Threads" />
+              </columns>
+            </TableView>
          </children>
       </GridPane>
-      <HBox alignment="CENTER" prefHeight="32.0" prefWidth="600.0" spacing="200.0">
-         <children>
-            <Button fx:id="stepButton" mnemonicParsing="false" text="Step" />
-            <Button fx:id="runButton" mnemonicParsing="false" text="Run" />
-         </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </HBox>
    </children>
 </VBox>
