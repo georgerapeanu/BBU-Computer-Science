@@ -10,6 +10,10 @@ public class GenericList<T> implements IGenericList<T>{
         data = new ArrayList<>();
     }
 
+    public GenericList(List<T> data) {
+        this.data = data;
+    }
+
     @Override
     public void addToEnd(T elem) {
         data.add(elem);

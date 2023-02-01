@@ -16,8 +16,10 @@ public class ProgState {
     IHeap heap;
 
     public ProgState(IExecutionStack executionStack, ISymTable symTable, IOutput output, IFileTable fileTable, IHeap heap, IStatement statement){
-        this.id = nextId;
-        nextId++;
+        synchronized (ProgState.class){
+            this.id = nextId;
+            nextId++;
+        }
         this.executionStack = executionStack;
         this.symTable = symTable;
         this.output = output;

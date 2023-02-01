@@ -3,6 +3,8 @@ package controller.parsers.syntax;
 import controller.parsers.expressions.ExpressionParser;
 import controller.parsers.expressions.exceptions.InvalidExpressionAppException;
 import controller.parsers.syntax.exceptions.SyntaxAppException;
+import model.abstract_data_types.generic_list.GenericList;
+import model.abstract_data_types.generic_list.IGenericList;
 import model.expressions.IExpression;
 import model.statements.*;
 import model.values.types.*;
@@ -179,6 +181,68 @@ public class SyntaxParser {
         position.increase(1);
         return new ForkStatement(innerStatement);
     }
+    private static IStatement parseSwitch(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
+        skipWhiteSpace(string, position);
+        if(position.getValue() + 6 >= string.length() || !string.substring(position.getValue(), position.getValue() + 7).equals("switch(")){
+            throw new SyntaxAppException("Invalid switch statement");
+        }
+        position.increase(6);
+        skipWhiteSpace(string, position);
+
+        IExpression expression = ExpressionParser.parseAtPosition(string, position);
+        skipWhiteSpace(string, position);
+
+        IGenericList<IExpression> expressions = new GenericList<>();
+        IGenericList<IStatement> statements = new GenericList<>();
+
+
+
+        while(true){
+            skipWhiteSpace(string, position);
+            if(position.getValue() >= string.length()){
+                throw new SyntaxAppException("Unexpected end");
+            }
+            if(string.charAt(position.getValue()) == ';'){
+                break;
+            }
+            if(string.charAt(position.getValue()) != '('){
+                throw new SyntaxAppException("Invalid switch clause body");
+            }
+            position.increase(1);
+            skipWhiteSpace(string, position);
+            if(position.getValue() + 6 < string.length() && string.substring(position.getValue(), position.getValue() + 7).equals("default")) {
+               position.increase(7);
+            } else {
+                if(position.getValue() + 3 >= string.length()){
+                    throw new SyntaxAppException("Unexpected end");
+                }
+                if(!string.substring(position.getValue(), position.getValue() + 4).equals("case")){
+                    throw new SyntaxAppException("Invalid switch clause body expected case");
+                }
+                position.increase(4);;
+                expressions.addToEnd(ExpressionParser.parseAtPosition(string, position));
+            }
+            skipWhiteSpace(string, position);
+            if(position.getValue() >= string.length()){
+                throw new SyntaxAppException("Unexpected end");
+            }
+            if(string.charAt(position.getValue()) != ':'){
+                throw new SyntaxAppException("Invalid switch clause body: missing :");
+            }
+            position.increase(1);
+            skipWhiteSpace(string, position);
+            statements.addToEnd(SyntaxParser.parseAtPosition(string, position));
+            if(position.getValue() >= string.length()){
+                throw new SyntaxAppException("Unexpected end");
+            }
+            if(string.charAt(position.getValue()) != ')'){
+                throw new SyntaxAppException("Invalid switch clause body: missing :");
+            }
+            position.increase(1);
+        }
+
+        return new SwitchStatement(expression, expressions, statements);
+    }
 
     private static IStatement parseIf(String string, RefInt position) throws SyntaxAppException, InvalidExpressionAppException {
         skipWhiteSpace(string, position);
@@ -338,6 +402,9 @@ public class SyntaxParser {
         }
         if(position.getValue() + 3 < string.length() && string.substring(position.getValue(), position.getValue() + 4).equals("fork")){
             return parseFork(string, position);
+        }
+        if(position.getValue() + 5 < string.length() && string.substring(position.getValue(), position.getValue() + 6).equals("switch")){
+            return parseSwitch(string, position);
         }
         int pos = position.getValue();
         boolean hasEqual = false;

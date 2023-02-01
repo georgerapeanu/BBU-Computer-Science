@@ -48,4 +48,8 @@ public class MainView extends Application implements IMainView {
     public void run(String[] args) throws AppException {
         launch(args);
     }
+
+    public void main(String[] args) throws AppException{
+        launch(args);
+    }
 }
