@@ -1,36 +1,10 @@
-# Prerequisites
-*.d
+## This directory contains the work I did for the Object Oriented Programming course.
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+The course was about Object Oriented Programming using C++.
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-.idea
-
-#Folders
-cmake-build*
+Some relevant topics discussed were:
+* Runtime Polymorphism
+* RAII
+* Model View Controller architecture
+* Design Patterns
+* Qt framework
