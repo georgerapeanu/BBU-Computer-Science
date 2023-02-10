@@ -1,4 +1,0 @@
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic/cmake-build-debug/CMakeFiles/practic.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/sesiune/913/practic/cmake-build-debug/CMakeFiles/practic_autogen.dir
