@@ -1,3 +1,0 @@
-/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/SDA/homeworks/lab5/cmake-build-debug-coverage/CMakeFiles/lab5.dir
