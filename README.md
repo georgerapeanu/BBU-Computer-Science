@@ -22,7 +22,7 @@
     * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=1.67 s (674.1 files/s, 47211.0 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=1.63 s (690.9 files/s, 48391.2 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
