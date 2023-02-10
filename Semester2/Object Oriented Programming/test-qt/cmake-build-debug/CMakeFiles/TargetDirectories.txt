@@ -1,3 +1,0 @@
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/test-qt/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/test-qt/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/test-qt/cmake-build-debug/CMakeFiles/test_qt.dir

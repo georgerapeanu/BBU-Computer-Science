@@ -32,3 +32,5 @@
 *.app
 .idea
 
+#Folders
+cmake-build*

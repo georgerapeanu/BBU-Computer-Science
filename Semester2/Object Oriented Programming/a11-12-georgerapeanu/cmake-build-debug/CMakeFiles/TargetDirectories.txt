@@ -1,4 +1,0 @@
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a11-12-georgerapeanu/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a11-12-georgerapeanu/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a11-12-georgerapeanu/cmake-build-debug/CMakeFiles/a11_12_georgerapeanu.dir
-/home/georgerapeanu/Desktop/ubbShit/Semester2/OOP/a11-12-georgerapeanu/cmake-build-debug/CMakeFiles/a11_12_georgerapeanu_autogen.dir
