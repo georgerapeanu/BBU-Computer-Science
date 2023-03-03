@@ -22,7 +22,7 @@
     * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=1.64 s (672.5 files/s, 48391.2 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.15 s (512.4 files/s, 37406.5 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -35,12 +35,12 @@ C|49|650|422|3845
 XML|81|7|47|3418
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Markdown|36|216|0|1096
+Markdown|37|217|0|1102
 SQL|6|935|1047|877
 Qt|8|0|0|860
 INI|3|4|16|704
 CMake|24|120|1|489
-Jupyter Notebook|10|0|4159|323
+Jupyter Notebook|11|0|5298|472
 MATLAB|20|69|36|314
 Prolog|4|67|41|243
 Bourne Shell|40|39|0|234
@@ -54,5 +54,5 @@ make|2|9|6|27
 DOS Batch|2|0|0|9
 CSV|2|0|0|3
 --------|--------|--------|--------|--------
-SUM:|1100|11688|13011|54450
+SUM:|1102|11689|14150|54605
 
