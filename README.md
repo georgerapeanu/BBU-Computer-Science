@@ -20,9 +20,15 @@
     * [💾 Databases](Semester3/Databases/)
     * [📈 Functional and Logical Programming](Semester3/Functional%20and%20Logical%20Programming/)
     * [📊 Probabilities and Statistics](Semester3/Probabilities%20and%20Statistics/)
+* [Semester 4](Semester4/)
+    * [🤖Artificial Intelligence](Semester4/Artificial%20Intelligence/)
+    * [💿Database Management Systems](Semester4/Database%20Management%20Systems/)
+    * [🖥️Software Engineering](Semester4/Software%20Engineering/)
+    * [🖼️Systems for Design and Implementation](Semester4/Systems%20for%20Design%20and%20Implementation/)
+    * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=2.15 s (512.4 files/s, 37406.5 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=1.64 s (671.2 files/s, 48996.9 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -35,7 +41,7 @@ C|49|650|422|3845
 XML|81|7|47|3418
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Markdown|37|217|0|1102
+Markdown|37|217|0|1108
 SQL|6|935|1047|877
 Qt|8|0|0|860
 INI|3|4|16|704
@@ -54,5 +60,5 @@ make|2|9|6|27
 DOS Batch|2|0|0|9
 CSV|2|0|0|3
 --------|--------|--------|--------|--------
-SUM:|1102|11689|14150|54605
+SUM:|1102|11689|14150|54611
 
