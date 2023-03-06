@@ -28,41 +28,37 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=2.19 s (509.0 files/s, 36801.9 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.32 s (524.5 files/s, 39714.0 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
+XML|179|37|47|13987
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|197|3303|3721|10424
-Java|118|729|20|4029
+Java|123|766|20|4152
 C|49|650|422|3845
-XML|81|7|47|3418
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Markdown|39|224|0|1136
-SQL|6|935|1047|877
+Markdown|41|235|0|1163
+SQL|7|935|1047|878
 Qt|8|0|0|860
 INI|3|4|16|704
+Bourne Shell|42|83|66|490
 CMake|24|120|1|489
 Jupyter Notebook|11|0|5298|472
 MATLAB|20|69|36|314
 Prolog|4|67|41|243
-Bourne Shell|40|39|0|234
 Lisp|3|33|38|214
+DOS Batch|3|35|0|162
 HTML|4|14|1|133
+Maven|2|6|6|133
 FXML|2|5|0|120
 awk|8|23|0|117
-Maven|1|4|1|75
 reStructuredText|13|36|75|51
 make|2|9|6|27
-D|4|6|0|10
-DOS Batch|2|0|0|9
-TOML|1|2|1|5
-JSON|4|0|0|4
 CSV|2|0|0|3
-Rust|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|1115|11718|14151|54741
+SUM:|1215|11869|14221|65906
 
