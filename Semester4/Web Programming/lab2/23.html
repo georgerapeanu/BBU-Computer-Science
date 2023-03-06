@@ -1,0 +1,25 @@
+<style> 
+.funny-square{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: blue;
+  transition: background 5s, top 5s, left 5s; 
+}
+
+.funny-square:hover{
+  top: calc(100% - 100px);
+  left: calc(100% - 100px);
+  background:red;
+}
+main {
+  height:100%;
+  width:100%;
+}
+</style>
+
+<main>
+  <div class="funny-square"><div/>
+</main>
