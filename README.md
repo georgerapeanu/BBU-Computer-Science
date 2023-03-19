@@ -28,38 +28,38 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=3.23 s (384.1 files/s, 33111.4 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.26 s (552.1 files/s, 48607.0 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-XML|179|37|47|15664
+XML|179|37|47|15674
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|197|3303|3721|10424
-CSV|5|0|0|7104
-Java|142|922|20|4837
+CSV|6|0|0|7258
+Java|143|954|20|4948
 C|49|650|422|3845
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Markdown|41|242|0|1172
-Jupyter Notebook|13|0|10199|955
+Markdown|43|244|0|1179
+Jupyter Notebook|15|0|12141|1071
 SQL|6|935|1047|877
 Qt|8|0|0|860
 INI|3|4|16|704
 Bourne Shell|42|83|66|490
 CMake|24|120|1|489
+HTML|7|17|16|391
 MATLAB|20|69|36|314
+CSS|3|64|21|292
 Prolog|4|67|41|243
 Lisp|3|33|38|214
 DOS Batch|3|35|0|162
-HTML|6|15|1|141
 Maven|2|6|6|133
 FXML|2|5|0|120
 awk|8|23|0|117
 reStructuredText|13|36|75|51
-CSS|2|4|0|30
 make|2|9|6|27
 --------|--------|--------|--------|--------
-SUM:|1242|12037|19122|75898
+SUM:|1250|12133|21100|76808
 
