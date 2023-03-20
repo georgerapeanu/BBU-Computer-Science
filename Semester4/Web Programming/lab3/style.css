@@ -13,8 +13,8 @@ body {
   border: 1px solid #e5e7eb;
 }
 
-.topnav__centered{
-  width:100%;
+.topnav__centered {
+  width: 100%;
   max-width: 1013px;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,7 @@ body {
 }
 
 .topnav__centered__left {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .topnav__centered__right {
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
@@ -55,8 +55,8 @@ body {
   border-radius: 10px;
   max-width: 585px;
   background-color: white;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   height: 491px;
 }
 
@@ -68,8 +68,8 @@ body {
 }
 
 .article1__category {
-  color:red;
-  text-transform:uppercase;
+  color: red;
+  text-transform: uppercase;
   margin-top: 10px;
   margin-bottom: 0px;
 }
@@ -83,11 +83,11 @@ body {
   height: 257.83px;
 }
 
-.article1--small > .article1__description {
+.article1--small>.article1__description {
   display: none;
 }
 
-.article1--small > .article1__title {
+.article1--small>.article1__title {
   font-size: 90%;
 }
 
@@ -97,11 +97,11 @@ body {
   width: 229.333px;
 }
 
-.article1--xsmall > .article1__description {
+.article1--xsmall>.article1__description {
   display: none;
 }
 
-.article1--xsmall > .article1__title {
+.article1--xsmall>.article1__title {
   font-size: 90%;
 }
 
@@ -112,22 +112,22 @@ body {
   flex-wrap: wrap;
 }
 
-.article1--long-width > .article1__category {
+.article1--long-width>.article1__category {
   flex-basis: 3%;
   max-width: 60%;
 }
 
-.article1--long-width > .article1__title {
-  flex-basis: 5%; 
+.article1--long-width>.article1__title {
+  flex-basis: 5%;
   max-width: 60%;
 }
 
-.article1--long-width > .article1__description {
+.article1--long-width>.article1__description {
   flex-basis: 70%;
   max-width: 60%;
 }
 
-.article1--long-width > .article1__image{
+.article1--long-width>.article1__image {
   order: 4;
   flex-basis: 100%;
   max-width: 36%;
@@ -146,25 +146,25 @@ body {
   border-color: #d1d5db;
   border-radius: 0%;
   justify-content: center;
-  padding-top:0;
-  padding-bottom:0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.article1--list-item > .article1__title{
-  font-size: .875rem; 
+.article1--list-item>.article1__title {
+  font-size: .875rem;
   line-height: 1.25rem;
   max-width: 80%;
 }
 
-.article1--list-item > .article1__description{
+.article1--list-item>.article1__description {
   display: none;
 }
 
-.article1--list-item > .article1__category{
+.article1--list-item>.article1__category {
   display: none;
 }
 
-.article1--list-item > .article1__image{
+.article1--list-item>.article1__image {
   order: 2;
   width: 75px;
   height: 75px;
@@ -185,7 +185,7 @@ body {
   flex-direction: row;
   column-gap: 2.25rem;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
 }
 
 .massthead__trending {
@@ -194,8 +194,9 @@ body {
 }
 
 .massthead__trending__heading {
-  color: blue; 
+  color: blue;
 }
+
 /* Massthead End*/
 
 /* Recommended Begin */
@@ -210,7 +211,7 @@ body {
 }
 
 .recommended__heading {
-  color:blue;
+  color: blue;
   margin-bottom: 0;
 }
 
@@ -225,6 +226,7 @@ body {
   column-gap: 1.5rem;
   flex-direction: row;
 }
+
 /* Recommended End */
 
 /* Categories begin */
@@ -244,22 +246,15 @@ body {
 
 /* Article Table begin */
 
-.article_table{
-
-}
-
-.article_table__row{
-}
-
-.article_table__row__name{
-  font-weight: bold; 
-  font-size: 1.5rem; 
+.article_table__row__name {
+  font-weight: bold;
+  font-size: 1.5rem;
   color: blue;
   vertical-align: top;
   padding-bottom: .875rem;
 }
 
-.article_table__row__entry{
+.article_table__row__entry {
   padding-bottom: 2.25rem;
   padding-left: .875rem;
 }
@@ -277,6 +272,7 @@ body {
   margin-top: 6rem;
   margin-bottom: 0;
 }
+
 /* Featured End */
 
 /* Latest Begin */
@@ -294,6 +290,7 @@ body {
 .latest__heading {
   color: blue;
 }
+
 /* Latest End */
 
 /* Main End */
@@ -315,7 +312,7 @@ body {
   flex-direction: row;
   column-gap: 3rem;
   border-top: 1px #dadbdf solid;
-  list-style: none; 
+  list-style: none;
   padding: 0;
   padding-top: 24px;
   margin-top: 96px;
@@ -327,7 +324,7 @@ body {
   display: flex;
   flex-direction: row;
   column-gap: 1.25rem;
-  list-style: none; 
+  list-style: none;
   padding: 0;
   padding-top: 24px;
   margin-top: 96px;
