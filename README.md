@@ -28,40 +28,41 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=7.69 s (164.3 files/s, 16760.8 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=2.36 s (538.8 files/s, 47751.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-XML|186|38|47|32933
+XML|181|8|47|15598
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|197|3303|3721|10424
 CSV|6|0|0|7258
-Java|146|1002|20|5154
+Java|148|1029|20|5393
 C|49|650|422|3845
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Jupyter Notebook|17|0|13270|1233
-Markdown|42|254|0|1195
+Jupyter Notebook|19|0|13652|1303
+Markdown|44|269|0|1221
 SQL|6|935|1047|877
 Qt|8|0|0|860
 INI|3|4|16|704
 Bourne Shell|42|83|66|490
 CMake|24|120|1|489
-HTML|7|17|16|391
+HTML|9|22|16|421
+CSS|5|71|21|348
 MATLAB|20|69|36|314
-CSS|3|65|21|288
 Prolog|4|67|41|243
 Lisp|3|33|38|214
+Maven|2|12|3|185
 DOS Batch|3|35|0|162
-Maven|2|6|6|133
 FXML|2|5|0|120
 awk|8|23|0|117
+JavaScript|2|22|0|109
 reStructuredText|13|36|75|51
 make|2|9|6|27
-Visual Studio Solution|1|1|0|7
-SVG|1|0|0|1
+C#|1|1|0|9
+YAML|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|1263|12194|22229|94455
+SUM:|1270|12245|22608|77710
 
