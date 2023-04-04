@@ -1,0 +1,1 @@
+Write a javascript which displays a 3X3 matrix representing the parts of a puzzle (a big image). The user must be able to interchange the cells of the matrix (i.e., the images from the matrix's cells) so that he solves the puzzle. When the user solves the puzzle (constructs correctly the big image) the message "Well done!" will be displayed. 

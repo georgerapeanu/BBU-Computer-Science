@@ -28,41 +28,46 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=2.36 s (538.8 files/s, 47751.1 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=4.17 s (528.6 files/s, 30222.9 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-XML|181|8|47|15598
+XML|185|30|143|14369
+JSON|877|0|0|13022
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|197|3303|3721|10424
 CSV|6|0|0|7258
-Java|148|1029|20|5393
+Java|148|1034|20|5402
 C|49|650|422|3845
 C/C++ Header|136|1145|2230|2475
 Assembly|46|568|350|1682
-Jupyter Notebook|19|0|13652|1303
-Markdown|44|269|0|1221
-SQL|6|935|1047|877
+Jupyter Notebook|19|0|13672|1305
+Markdown|46|287|0|1216
+SQL|7|935|1047|884
 Qt|8|0|0|860
 INI|3|4|16|704
-Bourne Shell|42|83|66|490
+HTML|18|23|16|622
+TypeScript|25|81|0|524
+Bourne Shell|44|88|66|506
 CMake|24|120|1|489
-HTML|9|22|16|421
-CSS|5|71|21|348
+CSS|7|73|21|360
 MATLAB|20|69|36|314
 Prolog|4|67|41|243
+C#|6|38|81|235
 Lisp|3|33|38|214
-Maven|2|12|3|185
+Maven|2|10|3|190
 DOS Batch|3|35|0|162
 FXML|2|5|0|120
+JavaScript|3|23|2|119
 awk|8|23|0|117
-JavaScript|2|22|0|109
+MSBuild script|1|0|0|99
 reStructuredText|13|36|75|51
+PHP|2|6|0|28
 make|2|9|6|27
-C#|1|1|0|9
+Visual Studio Solution|1|1|1|23
 YAML|1|0|0|3
 --------|--------|--------|--------|--------
-SUM:|1270|12245|22608|77710
+SUM:|2202|12422|22808|90660
 

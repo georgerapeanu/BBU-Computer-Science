@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cloc $PWD --fullpath --not-match-f="(^.*build.*$)|(^.*googletest.*$)" -quiet --md >> $PWD/cloc.md
+cloc $PWD --fullpath --not-match-f="(^.*build.*$)|(^.*googletest.*$)|(^.*/dist/.*$)|(^.*/node_modules/.*$)" -quiet --md >> $PWD/cloc.md
 gomplate -f $PWD/real_readme.md -o $PWD/README.md
 rm $PWD/cloc.md
 git add $PWD/README.md
