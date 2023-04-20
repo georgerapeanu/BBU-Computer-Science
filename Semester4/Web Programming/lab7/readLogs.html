@@ -2,15 +2,41 @@
 <head>
     <title>Read logs</title>
     <link rel="stylesheet" href="readLogs.css">
+    <script src="utils/jquery.js"></script>
+    <script src="readLogs.js"></script>
 </head>
 <body>
+    <h2>
+        Read logs
+    </h2>
+    <button class="add_log">
+        Add log
+    </button>
+    <div class="settings">
+        <a class="settings__previous_button">
+            <svg class="settings__previous_button__svg" height="20" width="20">
+                <polygon points="20,0 0,10 20,20"/>
+            </svg>
+        </a> 
+        <input class="settings__page_number" placeholder="page" value="0"/>
+        <a class="settings__next_button">
+            <svg class="settings__next_button__svg" height="20" width="20">
+                <polygon points="0,0 20,10 0,20"/>
+            </svg> 
+        </a> 
+        <input class="settings__user" placeholder="user"/>
+        <input class="settings__severity" placeholder="severity"/>
+    </div>
     <table class="logs_table">
-        <thead>
+        <thead class="logs_table__head">
             <th>id</th>
             <th>severity</th>
             <th>date</th>
             <th>user</th>
             <th>text</th>
         </thead>
+        <tbody class="logs_table__body">
+
+        </tbody>
     </table>
 </body>
