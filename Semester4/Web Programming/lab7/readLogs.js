@@ -7,12 +7,16 @@ $(function (){
         }, json => {
             $(".logs_table__body").empty();
             json.forEach(log => {
-                $(".logs_table__body").append(`<tr>   
+                $(".logs_table__body").append(`<tr onclick="window.location='readLog.html?id=${log["id"]}'">   
                     <td>${log["id"]}</td>
                     <td>${log["severity"]}</td>
                     <td>${log["logDate"]}</td>
                     <td>${log["user"]}</td>
                     <td>${log["data"]}</td>
+                    <td>
+                        <a href="editLog.html?id=${log["id"]}">Edit</a>
+                        <a href="deleteLog.html?id=${log["id"]}">Delete</a>
+                    </td>
                 </tr>`);
             })
         })

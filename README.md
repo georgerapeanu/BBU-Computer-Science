@@ -28,7 +28,7 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=7.38 s (448.6 files/s, 41123.1 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=6.45 s (513.7 files/s, 47084.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -40,8 +40,8 @@ C++|167|1883|527|10800
 Python|198|3313|3736|10448
 XML|96|46|143|9998
 CSV|6|0|0|7258
-JavaScript|10|2118|1899|7164
-PHP|80|993|2763|6891
+JavaScript|11|2133|1905|7250
+PHP|81|999|2763|6926
 Java|154|1059|118|5579
 D|311|777|0|4982
 C|49|650|422|3845
@@ -51,12 +51,12 @@ Assembly|46|568|350|1682
 Markdown|50|334|0|1395
 TypeScript|41|126|2|972
 Qt|8|0|0|860
-HTML|22|40|16|812
+HTML|23|41|16|839
 INI|3|4|16|704
 Rust|13|74|2|558
 Bourne Shell|44|83|63|493
 CMake|24|120|1|489
-CSS|9|82|22|436
+CSS|9|83|22|442
 MATLAB|20|69|36|314
 Prolog|4|67|41|243
 C#|6|38|81|235
@@ -72,5 +72,5 @@ TOML|3|5|3|27
 make|2|9|6|27
 Visual Studio Solution|1|1|1|23
 --------|--------|--------|--------|--------
-SUM:|3309|16552|30705|256103
+SUM:|3312|16575|30711|256257
 

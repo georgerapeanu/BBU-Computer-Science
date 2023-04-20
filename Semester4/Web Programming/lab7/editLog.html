@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Edit logs</title>
+    <link rel="stylesheet" href="editLog.css">
+    <script src="utils/jquery.js"></script>
+    <script src="editLog.js"></script>
+</head>
+<body>
+    <h2 class="heading">
+        Edit log
+    </h2>
+    <form class="input_form">
+        <label class="input_form__severity__label" for="severity">Severity</label>
+        <input class="input_form__severity" type="text" name="severity"/>
+        <label class="input_form__date__label" for="date">Date</label>
+        <input class="input_form__date" type="text" name="date"/>
+        <label class="input_form__user__label" for="user">User</label>
+        <input class="input_form__user" type="text" name="user"/>
+        <label class="input_form__text__label" for="text">Text</label>
+        <input class="input_form__text" type="text" name="text"/>
+        <div class="input_form__buttons">
+            <button class="input_form__buttons__add" type="submit">Edit</button>
+            <button class="input_form__buttons__cancel" type="button">Cancel</button>
+        </div>
+    </form>
+
+</body>
