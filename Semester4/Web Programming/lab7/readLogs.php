@@ -1,7 +1,7 @@
 <?php
     require_once("utils/connect.php");
 
-    $sql_query = "SELECT * FROM Logs WHERE";
+    $sql_query = "SELECT * FROM Logs WHERE 1=1";
     $params = [];
     $paramsTypes = "";
 
@@ -9,10 +9,6 @@
     if(is_numeric($_GET["start_id"])) {
         $start_id = (int)$_GET["start_id"];
     }
-
-    $sql_query = $sql_query . " id >= ?";
-    array_push($params, $start_id);
-    $paramsTypes .= "i";
 
     if (strlen($_GET["user"]) != 0) {
         $sql_query = $sql_query . " AND user LIKE ?";
@@ -27,7 +23,9 @@
         $paramsTypes .= "s";
     } 
 
-    $sql_query .= " LIMIT 4";
+    $sql_query .= " LIMIT 4 OFFSET ?";
+    array_push($params, $start_id);
+    $paramsTypes .= "i";
 
     $stmt = mysqli_prepare($connection, $sql_query);
     mysqli_stmt_bind_param($stmt, $paramsTypes, ...$params);

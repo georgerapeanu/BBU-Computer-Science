@@ -2,7 +2,7 @@ $(function (){
     function refresh() {
         $.getJSON("readLogs.php", {
             severity: $(".settings__severity").val(),
-            start_id: parseInt($(".settings__page_number").val()) * 4 + 1,
+            start_id: parseInt($(".settings__page_number").val()) * 4,
             user: $(".settings__user").val()
         }, json => {
             $(".logs_table__body").empty();
