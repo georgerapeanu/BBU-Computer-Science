@@ -1,4 +1,4 @@
-$(function (){
+$(function () {
     function refresh() {
         $.getJSON("readLogs.php", {
             severity: $(".settings__severity").val(),
@@ -22,27 +22,27 @@ $(function (){
         })
     }
 
-    $(".settings__user, .settings__page_number, .settings__severity").on("input", function() {
+    $(".settings__user, .settings__page_number, .settings__severity").on("input", function () {
         refresh();
     })
 
-    $(".settings__previous_button__svg").click(function() {
+    $(".settings__previous_button__svg").click(function () {
         let page = parseInt($(".settings__page_number").val()) - 1;
-        if(page < 0) {
+        if (page < 0) {
             page = 0;
         }
         $(".settings__page_number").val(page);
         refresh();
     });
 
-    $(".settings__next_button__svg").click(function() {
+    $(".settings__next_button__svg").click(function () {
         let page = parseInt($(".settings__page_number").val()) + 1;
         $(".settings__page_number").val(page);
         refresh();
     });
 
     $(".add_log").click(() => {
-        window.location="addLog.html";
+        window.location = "addLog.html";
     })
 
     refresh();
