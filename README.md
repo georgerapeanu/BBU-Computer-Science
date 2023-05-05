@@ -28,49 +28,50 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=8.82 s (432.9 files/s, 34765.5 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=12.46 s (391.7 files/s, 24617.5 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-SQL|11|935|1048|144042
-JSON|2050|0|0|18900
+SQL|10|935|1048|131025
+JSON|2961|0|0|19839
+XML|98|63|150|13668
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|198|3313|3736|10448
-XML|96|46|143|10005
 JavaScript|12|2134|1905|7270
 CSV|6|0|0|7258
 PHP|82|1000|2763|6935
-Java|156|1065|118|5711
-D|311|777|0|4982
+Java|172|1025|118|6110
+D|393|992|0|5636
 C|49|650|422|3845
-TypeScript|89|356|2|2588
+TypeScript|122|475|2|3019
 C/C++ Header|136|1145|2230|2475
-Jupyter Notebook|21|0|16770|1765
+Jupyter Notebook|26|0|19640|2403
+C#|9|255|151|2238
+HTML|52|110|16|1952
 Assembly|46|568|350|1682
-HTML|44|107|16|1507
-Markdown|50|334|0|1395
+Markdown|50|357|0|1437
 Qt|8|0|0|860
 INI|3|4|16|704
-Rust|13|74|2|558
-Bourne Shell|44|83|63|493
+Rust|13|80|1|634
+Bourne Shell|44|83|63|495
 CMake|24|120|1|489
 CSS|10|84|22|452
 MATLAB|20|69|36|314
 Prolog|4|67|41|243
-C#|6|38|81|235
 Lisp|3|33|38|214
-YAML|7|25|6|211
-Maven|2|13|17|178
+MSBuild script|2|0|0|199
+YAML|7|24|6|194
+Maven|2|13|17|188
+XSD|1|0|0|164
 DOS Batch|3|35|0|162
 FXML|2|5|0|120
 awk|8|23|0|117
-MSBuild script|1|0|0|99
 reStructuredText|13|36|75|51
-TOML|3|5|3|27
+Visual Studio Solution|2|2|2|46
+TOML|3|5|3|28
 make|2|9|6|27
-Visual Studio Solution|1|1|1|23
 --------|--------|--------|--------|--------
-SUM:|3820|16880|30711|259153
+SUM:|4882|17440|33658|255709
 
