@@ -25,8 +25,8 @@ export class LogDeleteComponent {
 
   submit(): void {
     this.logsService.deleteLog(this.id).subscribe({
-      next: () => {this.router.navigate(['/']);},
-      error: (error) => {alert(error.message);}
+      next: () => { this.router.navigate(['/']); },
+      error: (error) => { alert(error.message); }
     });
   }
 

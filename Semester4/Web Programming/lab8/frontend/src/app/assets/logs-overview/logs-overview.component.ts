@@ -15,7 +15,7 @@ export class LogsOverviewComponent {
   pageNumber: number = 0;
   user: string = "";
   severity: string = "";
-  state: BehaviorSubject<{pageNumber: number, user: string, severity: string}> = new BehaviorSubject({
+  state: BehaviorSubject<{ pageNumber: number, user: string, severity: string }> = new BehaviorSubject({
     pageNumber: this.pageNumber,
     user: this.user,
     severity: this.severity
@@ -31,8 +31,8 @@ export class LogsOverviewComponent {
         return this.logsService.getLogsForPage(state.user, state.pageNumber * 4, state.severity);
       })
     ).subscribe({
-      next: (logs) => {this.logs = logs;},
-      error: (error) => {alert(error.message);}
+      next: (logs) => { this.logs = logs; },
+      error: (error) => { alert(error.message); }
     });
   }
 

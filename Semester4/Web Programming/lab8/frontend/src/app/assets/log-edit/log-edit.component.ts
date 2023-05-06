@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './log-edit.component.html',
   styleUrls: ['./log-edit.component.css']
 })
-export class LogEditComponent implements OnInit{
+export class LogEditComponent implements OnInit {
   editForm = this.fb.group({
     id: [0, Validators.required],
     severity: ['', Validators.required],
@@ -40,11 +40,11 @@ export class LogEditComponent implements OnInit{
   }
 
   submit() {
-    if(this.editForm.valid) {
+    if (this.editForm.valid) {
       let log = (this.editForm.value as Log);
       this.logsService.editLog(log).subscribe({
-        next: (value) => {this.location.back();},
-        error: (error) => {alert(error.message);}
+        next: (value) => { this.location.back(); },
+        error: (error) => { alert(error.message); }
       })
     }
   }

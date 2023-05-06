@@ -3,39 +3,31 @@
 </h2>
 <form class="input_form" [formGroup]="createForm">
     <label class="input_form__severity__label" for="severity">Severity</label>
-    <input class="input_form__severity" type="text" name="severity" formControlName="severity"/>
+    <input class="input_form__severity" type="text" name="severity" formControlName="severity" />
     <div *ngIf="
         createForm.get('severity')?.errors?.['required'] && 
-        (createForm.get('severity')?.dirty || createForm.get('severity')?.touched)"
-        class="input_form__error"
-    >
+        (createForm.get('severity')?.dirty || createForm.get('severity')?.touched)" class="input_form__error">
         Severity is required
     </div>
     <label class="input_form__date__label" for="date">Date</label>
-    <input class="input_form__date" type="date" name="date" formControlName="logDate"/>
+    <input class="input_form__date" type="date" name="date" formControlName="logDate" />
     <div *ngIf="
         createForm.get('logDate')?.errors?.['required'] && 
-        (createForm.get('logDate')?.dirty || createForm.get('logDate')?.touched)"
-        class="input_form__error"
-    >
+        (createForm.get('logDate')?.dirty || createForm.get('logDate')?.touched)" class="input_form__error">
         Date is required
     </div>
     <label class="input_form__user__label" for="user">User</label>
-    <input class="input_form__user" type="text" name="user" formControlName="user"/>
+    <input class="input_form__user" type="text" name="user" formControlName="user" />
     <div *ngIf="
         createForm.get('user')?.errors?.['required'] && 
-        (createForm.get('user')?.dirty || createForm.get('user')?.touched)"
-        class="input_form__error"
-    >
+        (createForm.get('user')?.dirty || createForm.get('user')?.touched)" class="input_form__error">
         User is required
     </div>
     <label class="input_form__text__label" for="text">Text</label>
-    <input class="input_form__text" type="text" name="text" formControlName="data"/>
+    <input class="input_form__text" type="text" name="text" formControlName="data" />
     <div *ngIf="
         createForm.get('data')?.errors?.['required'] && 
-        (createForm.get('data')?.dirty || createForm.get('data')?.touched)"
-        class="input_form__error"
-    >
+        (createForm.get('data')?.dirty || createForm.get('data')?.touched)" class="input_form__error">
         Data is required
     </div>
     <div class="input_form__buttons">

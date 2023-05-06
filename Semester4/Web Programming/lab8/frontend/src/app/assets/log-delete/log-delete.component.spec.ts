@@ -8,9 +8,9 @@ describe('LogDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LogDeleteComponent ]
+      declarations: [LogDeleteComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LogDeleteComponent);
     component = fixture.componentInstance;

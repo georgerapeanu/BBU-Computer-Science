@@ -16,13 +16,13 @@ export class LogsService {
       .set('user', user)
       .set('start_id', start_id)
       .set('severity', severity);
-    return this.httpClient.get<Array<Log>>(environment.API_URL + "/readLogs.php", {params: params})
+    return this.httpClient.get<Array<Log>>(environment.API_URL + "/readLogs.php", { params: params })
   }
 
   getLog(id: number): Observable<Log> {
     let params = new HttpParams()
       .set('id', id);
-    return this.httpClient.get<Log>(environment.API_URL + "/readLog.php", {params: params});
+    return this.httpClient.get<Log>(environment.API_URL + "/readLog.php", { params: params });
   }
 
   addLog(log: Log): Observable<any> {
@@ -36,6 +36,6 @@ export class LogsService {
   deleteLog(id: number): Observable<any> {
     let params = new HttpParams()
       .set('id', id);
-    return this.httpClient.get<Log>(environment.API_URL + "/deleteLog.php", {params: params});
+    return this.httpClient.get<Log>(environment.API_URL + "/deleteLog.php", { params: params });
   }
 }

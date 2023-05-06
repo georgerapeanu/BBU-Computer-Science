@@ -26,19 +26,19 @@ export class LogCreateComponent {
     private router: Router,
     private location: Location
   ) {
-    
+
   }
 
   submit() {
-    if(this.createForm.valid) {
+    if (this.createForm.valid) {
       let log = (this.createForm.value as Log);
       this.logsService.addLog(log).subscribe({
-        next: (value) => {this.location.back();},
-        error: (error) => {alert(error.message);}
+        next: (value) => { this.location.back(); },
+        error: (error) => { alert(error.message); }
       })
     }
   }
-  
+
   goBack() {
     this.location.back();
   }

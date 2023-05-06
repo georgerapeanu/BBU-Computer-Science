@@ -8,7 +8,7 @@ import { LogsService } from 'src/app/services/logs-service';
   templateUrl: './log-details.component.html',
   styleUrls: ['./log-details.component.css']
 })
-export class LogDetailsComponent implements OnInit{
+export class LogDetailsComponent implements OnInit {
   log: Log | null = null;
 
   constructor(
@@ -21,8 +21,8 @@ export class LogDetailsComponent implements OnInit{
   ngOnInit(): void {
     let id = parseInt(this.activatedRoute.snapshot.paramMap.get("id") || "0");
     this.logsService.getLog(id).subscribe({
-      next: (log) => {this.log = log;},
-      error: (error) => {alert(error.message);}
+      next: (log) => { this.log = log; },
+      error: (error) => { alert(error.message); }
     })
   }
 }

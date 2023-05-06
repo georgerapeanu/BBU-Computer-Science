@@ -22,9 +22,9 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 $connection->close();
 
-if(count($rows) != 1) {
+if (count($rows) != 1) {
     header("HTTP/1.1 404 Not Found");
-    return ;
+    return;
 }
 
 echo json_encode($rows[0]);

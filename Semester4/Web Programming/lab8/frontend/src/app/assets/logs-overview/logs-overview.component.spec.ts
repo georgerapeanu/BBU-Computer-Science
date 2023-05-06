@@ -8,9 +8,9 @@ describe('LogsOverviewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LogsOverviewComponent ]
+      declarations: [LogsOverviewComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(LogsOverviewComponent);
     component = fixture.componentInstance;
