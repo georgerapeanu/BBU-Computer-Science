@@ -1,0 +1,44 @@
+<h2>
+    Read logs
+</h2>
+<button class="add_log" [routerLink]="['create']">
+    Add log
+</button>
+<div class="settings">
+    <a class="settings__previous_button" (click)="setPageNumber(this.pageNumber - 1)">
+        <svg class="settings__previous_button__svg" height="20" width="20">
+            <polygon points="20,0 0,10 20,20" />
+        </svg>
+    </a>
+    <input class="settings__page_number" placeholder="page" value="0" [(ngModel)]="pageNumber" (ngModelChange)="stateUpdate()" />
+    <a class="settings__next_button" (click)="setPageNumber(this.pageNumber + 1)">
+        <svg class="settings__next_button__svg" height="20" width="20">
+            <polygon points="0,0 20,10 0,20" />
+        </svg>
+    </a>
+    <input class="settings__user" placeholder="user" [(ngModel)]="user" (ngModelChange)="stateUpdate()" />
+    <input class="settings__severity" placeholder="severity" [(ngModel)]="severity" (ngModelChange)="stateUpdate()" />
+</div>
+<table class="logs_table">
+    <thead class="logs_table__head">
+        <th>id</th>
+        <th>severity</th>
+        <th>date</th>
+        <th>user</th>
+        <th>text</th>
+        <th>actions</th>
+    </thead>
+    <tbody class="logs_table__body">
+        <tr *ngFor="let log of logs; index as i" [routerLink]="[log.id]">   
+            <td>{{i + this.pageNumber * 4}}</td>
+            <td>{{log.severity}}</td>
+            <td>{{log.logDate}}</td>
+            <td>{{log.user}}</td>
+            <td>{{log.data}}</td>
+            <td class="logs_table__body__actions">
+                <a [routerLink]="[log.id, 'edit']">Edit</a>
+                <a [routerLink]="[log.id, 'delete']">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
