@@ -28,32 +28,32 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=18.96 s (290.1 files/s, 16962.2 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=25.11 s (228.2 files/s, 12881.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|10|935|1048|131025
-JSON|3471|0|0|32337
-XML|98|63|150|13803
+JSON|3678|0|0|32544
+XML|98|63|150|13879
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
 Python|198|3313|3736|10448
 JavaScript|12|2134|1905|7270
 CSV|6|0|0|7258
 PHP|88|1040|2763|7109
+Java|184|1086|133|6756
 D|458|1157|0|6288
-Java|177|1042|134|6270
 C|49|650|422|3845
-TypeScript|140|544|2|3460
+TypeScript|152|582|2|3774
+Jupyter Notebook|28|0|20049|2590
 C/C++ Header|136|1145|2230|2475
-Jupyter Notebook|26|0|19640|2403
 C#|9|255|151|2238
-HTML|59|113|16|2106
+HTML|61|114|16|2106
 Assembly|46|568|350|1682
 Markdown|51|357|0|1439
 Qt|8|0|0|860
-Rust|13|82|1|719
+Rust|13|93|1|781
 INI|3|4|16|704
 CSS|15|100|23|582
 Bourne Shell|44|83|63|495
@@ -62,7 +62,7 @@ MATLAB|20|69|36|314
 Prolog|4|67|41|243
 Lisp|3|33|38|214
 MSBuild script|2|0|0|199
-YAML|7|24|6|194
+YAML|7|24|6|196
 Maven|2|13|17|188
 XSD|1|0|0|164
 DOS Batch|3|35|0|162
@@ -73,5 +73,5 @@ Visual Studio Solution|2|2|2|46
 TOML|3|5|3|28
 make|2|9|6|27
 --------|--------|--------|--------|--------
-SUM:|5499|17752|33675|270140
+SUM:|5729|17846|34083|271474
 
