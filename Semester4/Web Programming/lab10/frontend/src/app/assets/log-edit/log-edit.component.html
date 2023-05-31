@@ -1,0 +1,37 @@
+<h2 class="heading">
+    Edit log # {{id}}
+</h2>
+<form class="input_form" [formGroup]="editForm">
+    <label class="input_form__severity__label" for="severity">Severity</label>
+    <input class="input_form__severity" type="text" name="severity" formControlName="severity" />
+    <div *ngIf="
+        editForm.get('severity')?.errors?.['required'] && 
+        (editForm.get('severity')?.dirty || editForm.get('severity')?.touched)" class="input_form__error">
+        Severity is required
+    </div>
+    <label class="input_form__date__label" for="date">Date</label>
+    <input class="input_form__date" type="date" name="date" formControlName="logDate" />
+    <div *ngIf="
+        editForm.get('logDate')?.errors?.['required'] && 
+        (editForm.get('logDate')?.dirty || editForm.get('logDate')?.touched)" class="input_form__error">
+        Date is required
+    </div>
+    <label class="input_form__user__label" for="user">User</label>
+    <input class="input_form__user" type="text" name="user" formControlName="user" />
+    <div *ngIf="
+        editForm.get('user')?.errors?.['required'] && 
+        (editForm.get('user')?.dirty || editForm.get('user')?.touched)" class="input_form__error">
+        User is required
+    </div>
+    <label class="input_form__text__label" for="text">Text</label>
+    <input class="input_form__text" type="text" name="text" formControlName="data" />
+    <div *ngIf="
+        editForm.get('data')?.errors?.['required'] && 
+        (editForm.get('data')?.dirty || editForm.get('data')?.touched)" class="input_form__error">
+        Data is required
+    </div>
+    <div class="input_form__buttons">
+        <button class="input_form__buttons__edit" type="submit" (click)="submit()">Edit</button>
+        <button class="input_form__buttons__cancel" type="button" (click)="goBack()">Cancel</button>
+    </div>
+</form>

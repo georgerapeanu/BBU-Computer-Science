@@ -1,0 +1,46 @@
+.input_form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input_form__severity,
+.input_form__user,
+.input_form__text,
+.input_form__date {
+    height: 35px;
+    width: 100%;
+    border-radius: 0.25rem;
+    border-width: 2px;
+    border-color: lightgray;
+}
+
+.input_form__severity__label,
+.input_form__user__label,
+.input_form__text__label,
+.input_form__date__label {
+    z-index: 10;
+    position: relative;
+    font-size: 12px;
+    color: gray;
+    top: 8px;
+    left: 16px;
+    width: min-content;
+    background-color: white;
+}
+
+.input_form__buttons {
+    display: flex;
+    gap: 2rem;
+    margin-top: 20px;
+}
+
+.input_form__buttons__edit,
+.input_form__buttons__cancel {
+    width: 50%;
+}
+
+.input_form__error {
+    color: red;
+    font-size: 15px;
+}
