@@ -28,14 +28,14 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=30.14 s (232.7 files/s, 14721.3 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=24.87 s (294.4 files/s, 17843.4 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|33|994|1061|131373
-JSON|4437|0|0|85917
-HTML|192|187|867|25500
+JSON|4738|0|0|86241
+HTML|194|116|845|25138
 XML|113|63|150|15950
 JavaScript|31|4284|3972|15353
 TeX|119|1843|273|11968
@@ -45,7 +45,7 @@ Python|200|3322|3737|10463
 Java|198|1240|1457|7334
 CSV|6|0|0|7258
 PHP|91|1052|2763|7172
-TypeScript|203|768|60|5490
+TypeScript|210|794|60|5670
 Jupyter Notebook|33|0|32551|4612
 C|49|650|422|3845
 C/C++ Header|136|1145|2230|2475
@@ -79,5 +79,5 @@ Dockerfile|1|1|0|13
 SVG|5|6|20|11
 Gradle|1|0|0|1
 --------|--------|--------|--------|--------
-SUM:|7013|21363|51205|371183
+SUM:|7323|21318|51183|371325
 
