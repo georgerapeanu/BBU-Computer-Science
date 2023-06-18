@@ -1,5 +1,6 @@
 $(() => {
-    $(".login-button").on("click", () => {
+    $(".login-button").on("click", (e) => {
+        e.preventDefault();
         let username = $(".username-input").val().trim();
         let password = $(".password-input").val().trim();
         if(username == "" || password == "") {
@@ -11,7 +12,9 @@ $(() => {
             data: JSON.stringify({
                 username: username,
                 password: password
-            })
+            }),
+            dataType: "json",
+            contentType: "application/json"
         }).done((result) => {
             CookieUtil.set("user", result['token'], "session", "/", null, null)
             window.location = "main.html";
