@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bfFHQQVR9rzUyYrM6h2zC06cAJOle+zolKvR+1gPe7U=",
+  "Hash": "lJQ2LpAfPN+nOkKHMxAq7PNZMgrXLHwTiGlxZMJ3/2w=",
   "Source": "serverside-asp",
   "BasePath": "_content/serverside-asp",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/obj/Debug/net7.0/scopedcss/projectbundle/serverside-asp.bundle.scp.css"
+    },
+    {
+      "Identity": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/wwwroot/css/login.css",
+      "SourceId": "serverside-asp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/wwwroot/",
+      "BasePath": "_content/serverside-asp",
+      "RelativePath": "css/login.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/login.css"
     },
     {
       "Identity": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/wwwroot/css/site.css",

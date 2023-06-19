@@ -15,11 +15,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
+        String? authCookie = Request.Cookies["user"];
+        if(authCookie == null) {
+            return Redirect("/Login");
+        }
+        ViewData["user"] = authCookie;
         return View();
     }
 

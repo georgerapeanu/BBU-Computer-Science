@@ -1,6 +1,6 @@
 {
-  "SerializedFilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/obj/Debug/net7.0/project.razor.json",
-  "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/backend-asp.csproj",
+  "SerializedFilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/obj/Debug/net7.0/project.razor.json",
+  "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/serverside-asp.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "7.0",
@@ -18642,41 +18642,46 @@
     ],
     "CSharpLanguageVersion": 1100
   },
-  "RootNamespace": "backend_asp",
+  "RootNamespace": "serverside_asp",
   "Documents": [
     {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/Shared/Error.cshtml",
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/backend-asp/Views/Home/Index.cshtml",
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/Views/Login/Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

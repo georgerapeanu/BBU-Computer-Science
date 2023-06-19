@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/serverside-asp.bundle.scp.css"
     },
     {
+      "Id": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/wwwroot/css/login.css",
+      "PackagePath": "staticwebassets/css/login.css"
+    },
+    {
       "Id": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester4/Web Programming/practice/serverside-asp/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },
