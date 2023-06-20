@@ -1,0 +1,21 @@
+1. Write a web application in JSP/Servlets for managing a personal genealogical tree.
+The application should use the following 2 tables:
+- table Users: id (int), username(string)
+- table FamilyRelations: id (int), userId (int), mother (string), father(string)
+
+The user should authenticate prior to using the application. In order to be successfully authenticated, the user should specify his username together with his father's or mother's name ( from FamilyRelations table; if either one is correct, the user is authenticated). The user should be able to add another user's mother and father as a record in the FamilyRelations table. He/she should also be able to display his/her own siblings(a sibling is another person that has the same mother or the same father or both as the current authenticated user). 
+
+The user of the application should be able to find his father descending family line (display user's father, user's father's father (grand father), user father's father's father (grand-grand father) and so on ..). In the same way, the user should be able to find his mother descending family line ( user's mother, user's mother's mother and so on..). The descending family line should stop with the oldest ancestor in the database( i.e. the one who does not have a mother/father specified in the DB).
+
+Grading scale:
+- 1 point by default (oficiu)
+- configure web environment, create DB, add a new record in FamilyRelations                                                                                        : 2
+- authentication using username + mother + father                                                                                                                  : 1.5
+- display siblings of the current user                                                                                                                             :2
+- display the user's father descending line and mother descending line(2.75 points for the father's descending line; 0.75 points for the mother's descending line) :3.5
+
+You are not allowed to use any other DB tables except the ones specified above. Also, all the data should be stored at the server-side in databases, not text files or something similar.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Obs: The server-side technology (PHP or JSP or ASP.NET) is not at your choice, it will be fixed by the exam subject. However, you can change this technology to another one of your preference, but in this case the final grade that you receive will be cut at 6 (i.e the maximum grade that you can get for this practical exam is 6).
