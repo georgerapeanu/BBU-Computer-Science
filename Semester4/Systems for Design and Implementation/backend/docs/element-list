@@ -1,0 +1,14 @@
+com.example.app
+com.example.app.configs
+com.example.app.controller
+com.example.app.dto
+com.example.app.dto.model
+com.example.app.exceptions
+com.example.app.interceptors
+com.example.app.model
+com.example.app.model.Ids
+com.example.app.repository
+com.example.app.repository.specification
+com.example.app.secrets
+com.example.app.service
+com.example.app.util

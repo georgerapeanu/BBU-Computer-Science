@@ -1,0 +1,48 @@
+<div class="rounded-lg border-2 border-gray-300 px-4 pt-4">
+    <button type="button" (click)="goBack()" class="flex gap-1">
+        <svg class="mt-1" fill="#000000" width="16px" height="16px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"/></svg>
+        Back
+    </button>
+    <h1 class="font-bold text-3xl py-5">
+        Product Details #{{product?.id}}
+    </h1>
+    <ul>
+        <li class="my-2">Name: {{product?.name}}</li>
+        <li class="my-2">Description: {{product?.description}}</li>
+        <li class="my-2">Published at: {{product?.publishDate}}</li>
+        <li class="my-2">Price: {{product?.price}}</li>
+        <li class="my-2">Weight: {{product?.weight}}</li>
+        <li class="my-2">Manufacturer: <a [routerLink]="['/', 'manufacturers', product?.manufacturerId]">{{product?.manufacturerId}}</a></li>
+    </ul>
+
+    <h2 class="text-2xl py-5">Product Reviews:</h2>
+
+    <a *ngIf="role?.create" [routerLink]="['/reviews', 'create']" [queryParams]="{'product_id': product?.id}"  class="flex text-gray-600 font-semibold px-2 my-2 gap-2">
+        <svg class="mt-1" width="16px" height="16px" viewBox="0 -0.5 9 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Dribbble-Light-Preview" transform="translate(-345.000000, -206.000000)" fill="#00008f">
+                    <g id="icons" transform="translate(56.000000, 160.000000)">
+                        <polygon id="plus_mini-[#1523]" points="298 49 298 51 294.625 51 294.625 54 292.375 54 292.375 51 289 51 289 49 292.375 49 292.375 46 294.625 46 294.625 49"></polygon>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        Create review
+    </a>
+
+
+    <app-reviews-overview-page [currentPage]="this.currentPage" [currentSize]="this.currentSize" [data]="this.reviews" [actionable]="true">
+    </app-reviews-overview-page>
+    
+    <app-pagination [totalPages]="this.totalPages" [pageNumber]="this.pageNumber" [currentPage]="this.currentPage" [pageSize]="pageSize" (pageChangeEvent)="this.setPageNumber($event)" (pageSizeEvent)="this.setPageSize($event)">
+    </app-pagination>
+    
+    <div class="flex gap-9 my-4">
+        <a *ngIf="role?.update_all || (role?.update_own && loggedInHandle == manufacturer?.userHandle)" [routerLink]="['edit']" class="text-blue-600 font-semibold text-sm uppercase">
+            Edit
+        </a>
+        <a *ngIf="role?.delete_all || (role?.delete_own && loggedInHandle == manufacturer?.userHandle)" [routerLink]="['delete']" class="text-blue-600 font-semibold text-sm uppercase">
+            Delete
+        </a>
+    </div>
+</div>

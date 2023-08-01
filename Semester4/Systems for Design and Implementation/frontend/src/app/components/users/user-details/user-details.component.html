@@ -1,0 +1,61 @@
+<div class="rounded-lg border-2 border-gray-300 px-4 pt-4">
+        <button type="button" (click)="goBack()" class="flex gap-1">
+            <svg class="mt-1" fill="#000000" width="16px" height="16px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M222.927 580.115l301.354 328.512c24.354 28.708 20.825 71.724-7.883 96.078s-71.724 20.825-96.078-7.883L19.576 559.963a67.846 67.846 0 01-13.784-20.022 68.03 68.03 0 01-5.977-29.488l.001-.063a68.343 68.343 0 017.265-29.134 68.28 68.28 0 011.384-2.6 67.59 67.59 0 0110.102-13.687L429.966 21.113c25.592-27.611 68.721-29.247 96.331-3.656s29.247 68.721 3.656 96.331L224.088 443.784h730.46c37.647 0 68.166 30.519 68.166 68.166s-30.519 68.166-68.166 68.166H222.927z"/></svg>
+            Back
+        </button>
+        <h1 class="font-bold text-3xl py-5">
+            User Details {{user?.handle}}
+        </h1>
+        <ul>
+            <li class="my-2">Name: {{user?.name}}</li>
+            <li class="my-2">Handle: {{user?.handle}}</li>
+            <li class="my-2">Email: {{user?.email}}</li>
+            <li class="my-2">Date of birth: {{user?.birthday}}</li>
+            <li class="my-2">Registered at: {{user?.registeredAt}}</li>
+            <li *ngIf="role?.name != 'admin'" class="my-2">Role: {{userRole?.name}}</li>
+            <li *ngIf="role?.name == 'admin'" class="my-2">
+                Role: 
+                <select (change)="changeRole($event)">
+                    <option [selected]="userRole?.name=='admin'" value="admin">admin</option>
+                    <option [selected]="userRole?.name=='moderator'" value="moderator">moderator</option>
+                    <option [selected]="userRole?.name=='regular'" value="regular">regular</option>
+                    <option [selected]="userRole?.name=='visitor'" value="visitor">visitor</option>
+                </select>
+            </li>
+        </ul>
+
+        <h3 class="text-xl pt-5">User added:</h3>
+        <ul>
+            <li class="my-2 ml-2">Manufacturers: {{userCreatedCount?.manufacturerCount}}</li>
+            <li class="my-2 ml-2">Products: {{userCreatedCount?.productCount}}</li>
+            <li class="my-2 ml-2">Reviews: {{userCreatedCount?.reviewCount}}</li>
+            
+        </ul>
+
+        <h2 class="text-2xl py-5">User preferences:</h2>
+        <select *ngIf="role?.update_all || (role?.update_own && loggedInHandle==userHandle)" [(ngModel)]="pageSizePreference" (ngModelChange)="setPageSizePreference(this.pageSizePreference)" name="pageSizePreference" [value]="pageSizePreference" class="text-center border-slate-400 bg-white border-2">
+            <option value="4">4</option>
+            <option value="7">7</option>
+            <option value="10">10</option>
+        </select>
+        <div *ngIf="!(role?.update_all || (role?.update_own && loggedInHandle==userHandle))">
+            Page size: {{pageSize}}
+        </div>
+        
+        <h2 class="text-2xl py-5">User Reviews:</h2>
+
+        <app-reviews-overview-page [currentPage]="this.currentPage" [currentSize]="this.currentSize" [data]="this.reviews" [actionable]="true">
+        </app-reviews-overview-page>
+        
+        <app-pagination [totalPages]="this.totalPages" [pageNumber]="this.pageNumber" [currentPage]="this.currentPage" [pageSize]="pageSize" (pageChangeEvent)="this.setPageNumber($event)" (pageSizeEvent)="this.setPageSize($event)">
+        </app-pagination>
+        
+        <div class="flex gap-9 my-4">
+            <a *ngIf="this.role?.update_all || (this.role?.update_own && this.loggedInHandle == this.userHandle)" [routerLink]="['edit']" class="text-blue-600 font-semibold text-sm uppercase">
+                Edit
+            </a>
+            <a *ngIf="this.role?.delete_all || (this.role?.delete_own && this.loggedInHandle == this.userHandle)" [routerLink]="['delete']" class="text-blue-600 font-semibold text-sm uppercase">
+                Delete
+            </a>
+        </div>
+    </div>

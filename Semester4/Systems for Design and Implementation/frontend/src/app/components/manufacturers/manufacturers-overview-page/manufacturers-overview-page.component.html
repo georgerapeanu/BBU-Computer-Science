@@ -1,0 +1,39 @@
+<table class="w-full border-collapse table-auto">
+    <thead>
+      <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+        <th class="py-3 px-6 text-left">#</th>
+        <th class="py-3 px-6 text-left">Name</th>
+        <th class="py-3 px-6 text-left">Description</th>
+        <th class="py-3 px-6 text-left">Registered At</th>
+        <th class="py-3 px-6 text-left">Added by</th>
+        <th *ngIf="actionable" class="py-3 px-6 text-left">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="text-gray-600 text-sm font-light">
+      <tr *ngFor="let manufacturer of data; index as i" [routerLink]="['/manufacturers', manufacturer.id]" class="border-b border-gray-200 hover:bg-gray-100">
+        <td class="py-3 px-6 text-left"><a>{{ i + 1 + currentPage * currentSize}}</a></td>
+        <td class="py-3 px-6 text-left">{{ manufacturer.name }}</td>
+        <td class="py-3 px-6 text-left">{{ manufacturer.description }}</td>
+        <td class="py-3 px-6 text-left">{{ manufacturer.registerDate | date }}</td>
+        <td class="py-3 px-6 text-left">{{ manufacturer.userHandle }}</td>
+        <td *ngIf="actionable" class="py-3 px-6 text-left flex gap-6 items-center">
+          <a *ngIf="this.role?.update_all" [routerLink]="['/manufacturers', manufacturer.id, 'edit']" class="text-black">
+            <svg width="16px" height="16px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -2319.000000)" fill="#000000">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                            <path d="M86.4570767,2175.58276 L99.6296259,2161.94876 L101.053522,2163.42214 L87.8809728,2177.05714 L86.4570767,2175.58276 Z M99.8259906,2159 L84,2175.58276 L84,2179 L87.8809728,2179 L104,2162.91969 L99.8259906,2159 Z" id="pen-[#1320]"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </a>
+          <a *ngIf="this.role?.delete_all" [routerLink]="['/manufacturers', manufacturer.id, 'delete']" class="text-black ml-2">
+            <svg fill="#000000" width="16px" height="16px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 26c0 1.656 1.343 3 3 3h10c1.656 0 3-1.344 3-3l2-16h-20l2 16zM19 13h2v13h-2v-13zM15 13h2v13h-2v-13zM11 13h2v13h-2v-13zM25.5 6h-6.5c0 0-0.448-2-1-2h-4c-0.553 0-1 2-1 2h-6.5c-0.829 0-1.5 0.671-1.5 1.5s0 1.5 0 1.5h22c0 0 0-0.671 0-1.5s-0.672-1.5-1.5-1.5z"></path>
+            </svg>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+</table>

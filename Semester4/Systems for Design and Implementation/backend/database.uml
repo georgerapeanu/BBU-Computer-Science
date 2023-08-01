@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>0c5c03a0-efc4-47b9-a116-c57c504ce761.DATABASE:main</OriginalElement>
+  <nodes>
+    <node x="87.0" y="79.0">0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.product</node>
+    <node x="88.0" y="-102.0">0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.manufacturer</node>
+    <node x="-102.0" y="91.0">0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.user</node>
+    <node x="-8.5" y="332.0">0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.review</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.product" target="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.manufacturer" relationship="REFERENCES">
+      <point x="0.0" y="-101.5" />
+      <point x="0.0" y="65.5" />
+    </edge>
+    <edge source="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.review" target="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.product" relationship="REFERENCES">
+      <point x="47.0" y="-77.0" />
+      <point x="132.5" y="307.0" />
+      <point x="188.5" y="307.0" />
+      <point x="0.0" y="101.5" />
+    </edge>
+    <edge source="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.review" target="0c5c03a0-efc4-47b9-a116-c57c504ce761.TABLE:main.public.user" relationship="REFERENCES">
+      <point x="-47.0" y="-77.0" />
+      <point x="38.5" y="307.0" />
+      <point x="-17.5" y="307.0" />
+      <point x="0.0" y="89.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="94.0" y="192.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Columns</Category>
+    <Category>Comments</Category>
+    <Category>Key columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

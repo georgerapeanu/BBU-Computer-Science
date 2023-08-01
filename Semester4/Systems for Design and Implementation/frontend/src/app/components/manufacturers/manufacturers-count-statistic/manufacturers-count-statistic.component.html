@@ -1,0 +1,19 @@
+<table class="w-full border-collapse table-auto">
+    <thead>
+      <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+        <th class="py-3 px-6 text-left">#</th>
+        <th class="py-3 px-6 text-left">Name</th>
+        <th class="py-3 px-6 text-left">Count</th>
+      </tr>
+    </thead>
+    <tbody class="text-gray-600 text-sm font-light">
+      <tr *ngFor="let manufacturerCount of manufacturerCounts; index as i" class="border-b border-gray-200 hover:bg-gray-100">
+        <td class="py-3 px-6 text-left">{{ i + 1 + currentPage * currentSize}}</td>
+        <td class="py-3 px-6 text-left">{{ manufacturerCount.manufacturerDTO.name }}</td>
+        <td class="py-3 px-6 text-left">{{ manufacturerCount.productCount }}</td>
+      </tr>
+    </tbody>
+</table>
+
+<app-pagination [totalPages]="this.totalPages" [pageNumber]="this.pageNumber" [currentPage]="this.currentPage" [pageSize]="pageSize" (pageChangeEvent)="this.setPageNumber($event)" (pageSizeEvent)="this.setPageSize($event)">
+</app-pagination>

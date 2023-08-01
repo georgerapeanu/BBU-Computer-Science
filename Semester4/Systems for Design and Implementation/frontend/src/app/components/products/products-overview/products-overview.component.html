@@ -1,0 +1,28 @@
+<h1 class="font-bold text-3xl py-5">
+    All products
+  </h1>
+  
+  <a *ngIf="this.role?.create" [routerLink]="['create']" class="flex text-gray-600 font-semibold px-2 my-2 gap-2">
+    <svg class="mt-1" width="16px" height="16px" viewBox="0 -0.5 9 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="Dribbble-Light-Preview" transform="translate(-345.000000, -206.000000)" fill="#00008f">
+              <g id="icons" transform="translate(56.000000, 160.000000)">
+                  <polygon id="plus_mini-[#1523]" points="298 49 298 51 294.625 51 294.625 54 292.375 54 292.375 51 289 51 289 49 292.375 49 292.375 46 294.625 46 294.625 49"></polygon>
+              </g>
+          </g>
+      </g>
+    </svg>
+    Create product
+  </a>
+  <div class="my-1">
+    <label class="text-gray-600" for="weight">Minimum weight:</label>
+    <input class="ml-2 text-center w-12 h-6 border border-gray-200" type="text" name="weight" [(ngModel)]="minWeight" (keydown.enter)="setWeight(minWeight)">
+  </div>
+ 
+  <app-products-score-with-users-page [currentPage]="this.currentPage" [currentSize]="this.currentSize" [data]="this.productScoreWithUsers" [actionable]="true">
+
+  </app-products-score-with-users-page>
+
+  <app-pagination [totalPages]="this.totalPages" [pageNumber]="this.pageNumber" [currentPage]="this.currentPage" [pageSize]="pageSize" (pageChangeEvent)="this.setPageNumber($event)" (pageSizeEvent)="this.setPageSize($event)">
+  
+  </app-pagination>

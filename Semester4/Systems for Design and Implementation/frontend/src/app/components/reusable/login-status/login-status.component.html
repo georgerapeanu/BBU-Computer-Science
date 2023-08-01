@@ -1,0 +1,13 @@
+
+<ul *ngIf="user_handle === null" class="flex gap-6">
+    <li>Not logged in</li>
+    <li>|</li>
+    <li><a [routerLink]="['/', 'login']">Log in</a></li>
+    <li><a [routerLink]="['/', 'register']">Register</a></li>
+</ul>
+
+<ul *ngIf="user_handle !== null" class="flex gap-6">
+    <li><a [routerLink]="['/', 'users', user_handle]">Logged in as {{user_handle}}</a></li>
+    <li>|</li>
+    <li><a [routerLink]="['/', 'logout']">Log out</a></li>
+</ul>

@@ -1,0 +1,37 @@
+<div class="chat-container w-full h-[55rem] border border-gray-950">
+    <div class = "overflow-y-scroll flex flex-col-reverse px-2 message-container w-full h-[51rem] border-b border-gray-950">
+        <div *ngIf="summary" class="bg-yellow-200 text-gray-500">Recently discussed: {{summary}}</div>
+        <div *ngFor="let message of messages">
+            <label class="text-sm text-gray-500">{{message.nickname}}: </label>
+            <p class="pl-2 text-lg text-gray-800 bg-blue-200 rounded whitespace-normal break-words"> {{message.message}} </p>
+        </div>
+    </div>
+    <div [formGroup]="chatForm" class = "send-message-container h-[3.9rem] w-full flex">
+        <input 
+            placeholder="Nickname" 
+            name="nickname" 
+            class="pl-10 m-0 w-2/12 h-full nickname-input border-r border-gray-950"
+            formControlName="nickname"
+            [ngClass]="{
+                'placeholder-red-400': chatForm.get('nickname')?.errors?.['required'] && 
+                            (chatForm.get('nickname')?.touched || chatForm.get('nickname')?.dirty)
+            }"
+        />
+        <input 
+            placeholder="Message" 
+            name="message" 
+            class="pl-10 m-0 w-9/12 h-full message border-r border-gray-950 "
+            formControlName="message"
+            [ngClass]="{
+                'placeholder-red-400': chatForm.get('message')?.errors?.['required'] && 
+                            (chatForm.get('message')?.touched || chatForm.get('message')?.dirty)
+            }"
+        >
+        <button (click)="onSubmit()" class="p-0 m-0 h-full w-1/12 send items-center inline-flex justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 2L11 13" />
+                <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+              </svg>
+        </button> 
+    </div>
+</div>

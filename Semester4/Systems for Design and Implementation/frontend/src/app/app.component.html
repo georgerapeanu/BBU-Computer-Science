@@ -1,0 +1,18 @@
+<div class="h-12 px-6 bg-blue-600 text-xl text-white  border-b-slate-400 border-b-2 flex justify-between items-center">
+  <nav class="inline-flex gap-9 h-full align-middle items-center">
+    <a routerLink="">E-Store</a>
+    <a routerLink="users">Users</a>
+    <a [routerLink]="['manufacturers']">Manufacturers</a>
+    <a [routerLink]="['products']">Products</a>
+    <a [routerLink]="['products', 'sorted-by-score']">Products by score</a>
+    <a [routerLink]="['manufacturers', 'sorted-by-products']">Manufacturers by products</a>
+    <a *ngIf="role?.name=='admin'" [routerLink]="['admin']">Admin</a>
+    <a [routerLink]="['chat']">Chat</a>
+  </nav>
+  <app-login-status class="w-96"/>
+</div>
+<main class="h-screen w-full absolute">
+  <div class="w-4/5 h-screen m-auto py-4">
+    <router-outlet></router-outlet>
+  </div>
+</main>

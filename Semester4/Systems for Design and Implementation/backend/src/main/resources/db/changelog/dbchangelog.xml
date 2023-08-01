@@ -1,0 +1,297 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-1">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="manufacturer_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-2">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="product_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-3">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="productdto_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-4">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="review_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-5">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="reviews_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-6">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="50" maxValue="9223372036854775807" minValue="1" sequenceName="user_seq" startValue="1"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-7">
+        <createTable tableName="manufacturer">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="manufacturer_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="register_date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-8">
+        <createTable tableName="product">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="product_pkey"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="price" type="FLOAT8"/>
+            <column name="publish_date" type="date"/>
+            <column name="weight" type="INTEGER"/>
+            <column name="manufacturer_id" type="INTEGER">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-9">
+        <createTable tableName="review">
+            <column name="comment" type="VARCHAR(255)"/>
+            <column name="posted_date" type="date"/>
+            <column name="score" type="INTEGER"/>
+            <column name="product_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="review_pk"/>
+            </column>
+            <column name="user_id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="review_pk"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-10">
+        <createTable tableName="user">
+            <column name="id" type="INTEGER">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_pkey"/>
+            </column>
+            <column name="birthday" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="handle" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="registered_at" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-11">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="review" constraintName="FK8ldiblkvx92d9i5yn9qqeuk8j" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-12">
+        <addForeignKeyConstraint baseColumnNames="manufacturer_id" baseTableName="product" constraintName="FK9it4492m5g5mttbvqy9dd2ngh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="manufacturer" validate="true"/>
+    </changeSet>
+    <changeSet author="georgerapeanu (generated)" id="1680067598531-13">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet id="1680067598532-1" author="georgerapeanu">
+        <dropSequence sequenceName="manufacturer_seq"/>
+        <dropSequence sequenceName="product_seq"/>
+        <dropSequence sequenceName="productdto_seq"/>
+        <dropSequence sequenceName="review_seq"/>
+        <dropSequence sequenceName="reviews_seq"/>
+        <dropSequence sequenceName="user_seq"/>
+    </changeSet>
+    <changeSet id="1680067598532-2" author="georgerapeanu">
+        <addAutoIncrement tableName="manufacturer" columnName="id"/>
+        <addAutoIncrement tableName="product" columnName="id"/>
+        <addAutoIncrement tableName="user" columnName="id"/>
+    </changeSet>
+    <changeSet id="1680067598533-1" author="georgerapeanu">
+        <dropForeignKeyConstraint baseTableName="review" constraintName="FK8ldiblkvx92d9i5yn9qqeuk8j"/>
+        <dropForeignKeyConstraint baseTableName="product" constraintName="FK9it4492m5g5mttbvqy9dd2ngh"/>
+        <dropForeignKeyConstraint baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8"/>
+
+        <dropPrimaryKey tableName="manufacturer"/>
+        <dropNotNullConstraint tableName="manufacturer" columnName="id"/>
+
+        <dropPrimaryKey tableName="product"/>
+        <dropNotNullConstraint tableName="product" columnName="id"/>
+        <dropNotNullConstraint tableName="product" columnName="manufacturer_id"/>
+
+        <dropPrimaryKey tableName="review"/>
+        <dropNotNullConstraint tableName="review" columnName="user_id"/>
+        <dropNotNullConstraint tableName="review" columnName="product_id"/>
+
+        <dropPrimaryKey tableName="user"/>
+        <dropNotNullConstraint tableName="user" columnName="id"/>
+    </changeSet>
+    <changeSet id="1680067598533-2" author="georgerapeanu">
+        <tagDatabase tag="test-tag"/>
+    </changeSet>
+    <changeSet id="1680067598533-3" author="georgerapeanu">
+        <addNotNullConstraint tableName="manufacturer" columnName="id"/>
+        <addPrimaryKey tableName="manufacturer" columnNames="id"/>
+
+        <addNotNullConstraint tableName="product" columnName="manufacturer_id"/>
+        <addNotNullConstraint tableName="product" columnName="id"/>
+        <addPrimaryKey tableName="product" columnNames="id"/>
+
+        <addNotNullConstraint tableName="review" columnName="product_id"/>
+        <addNotNullConstraint tableName="review" columnName="user_id"/>
+        <addPrimaryKey tableName="review" columnNames="user_id,product_id"/>
+
+        <addNotNullConstraint tableName="user" columnName="id"/>
+        <addPrimaryKey tableName="user" columnNames="id"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="manufacturer_id" baseTableName="product" constraintName="FK9it4492m5g5mttbvqy9dd2ngh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="manufacturer" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="review" constraintName="FK8ldiblkvx92d9i5yn9qqeuk8j" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet id="1680067598534-1" author="georgerapeanu">
+        <createIndex tableName="review" indexName="REVIEW_PRODUCT_ID_INDEX">
+            <column name="product_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="1680067598535-1" author="georgerapeanu">
+        <dropForeignKeyConstraint baseTableName="review" constraintName="FK8ldiblkvx92d9i5yn9qqeuk8j"/>
+        <dropForeignKeyConstraint baseTableName="product" constraintName="FK9it4492m5g5mttbvqy9dd2ngh"/>
+        <dropForeignKeyConstraint baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8"/>
+
+        <dropPrimaryKey tableName="manufacturer"/>
+        <dropNotNullConstraint tableName="manufacturer" columnName="id"/>
+
+        <dropPrimaryKey tableName="product"/>
+        <dropNotNullConstraint tableName="product" columnName="id"/>
+        <dropNotNullConstraint tableName="product" columnName="manufacturer_id"/>
+
+        <dropPrimaryKey tableName="review"/>
+        <dropNotNullConstraint tableName="review" columnName="user_id"/>
+        <dropNotNullConstraint tableName="review" columnName="product_id"/>
+
+        <dropPrimaryKey tableName="user"/>
+        <dropNotNullConstraint tableName="user" columnName="id"/>
+    </changeSet>
+    <changeSet id="1680067598535-2" author="georgerapeanu">
+        <addColumn tableName="product">
+            <column name="color" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1680067598535-3" author="georgerapeanu">
+        <addNotNullConstraint tableName="manufacturer" columnName="id"/>
+        <addPrimaryKey tableName="manufacturer" columnNames="id"/>
+
+        <addNotNullConstraint tableName="product" columnName="manufacturer_id"/>
+        <addNotNullConstraint tableName="product" columnName="id"/>
+        <addPrimaryKey tableName="product" columnNames="id"/>
+
+        <addNotNullConstraint tableName="review" columnName="product_id"/>
+        <addNotNullConstraint tableName="review" columnName="user_id"/>
+        <addPrimaryKey tableName="review" columnNames="user_id,product_id"/>
+
+        <addNotNullConstraint tableName="user" columnName="id"/>
+        <addPrimaryKey tableName="user" columnNames="id"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="user" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="manufacturer_id" baseTableName="product" constraintName="FK9it4492m5g5mttbvqy9dd2ngh" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="manufacturer" validate="true"/>
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="review" constraintName="FK8ldiblkvx92d9i5yn9qqeuk8j" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet id="1680067598535-4" author="georgerapeanu">
+        <tagDatabase tag="lab7-begin"/>
+    </changeSet>
+    <changeSet id="1680067598536-1" author="georgerapeanu">
+        <dropIndex tableName="review" indexName="REVIEW_PRODUCT_ID_INDEX"/>
+        <dropPrimaryKey tableName="review"/>
+        <addPrimaryKey tableName="review" columnNames="product_id,user_id"/>
+    </changeSet>
+    <changeSet id="1680067598536-2" author="georgerapeanu">
+        <tagDatabase tag="lab7-possible-speedup"/>
+    </changeSet>
+    <changeSet id="1680067598537-1" author="georgerapeanu">
+        <tagDatabase tag="lab8-begin"/>
+    </changeSet>
+    <changeSet id="1680067598537-2" author="georgerapeanu">
+        <tagDatabase tag="lab8-begin"/>
+    </changeSet>
+    <changeSet id="1680067598537-3" author="georgerapeanu">
+        <dropForeignKeyConstraint baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8"/>
+        <dropPrimaryKey tableName="user"/>
+        <dropNotNullConstraint tableName="user" columnName="id"/>
+        <renameTable newTableName="user_profile" oldTableName="user"/>
+        <createTable tableName="user">
+            <column name="handle" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="user_pkey"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+        </createTable>
+        <dropColumn columnName="id" tableName="user_profile"/>
+        <dropColumn columnName="user_id" tableName="review"/>
+        <addPrimaryKey tableName="user_profile" columnNames="handle"/>
+        <addNotNullConstraint tableName="user_profile" columnName="handle"/>
+        <addColumn tableName="review">
+            <column name="user_handle" type="VARCHAR(255)"/>
+        </addColumn>
+        <addForeignKeyConstraint baseColumnNames="user_handle" baseTableName="review" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="handle" referencedTableName="user"/>
+        <addForeignKeyConstraint baseColumnNames="handle" baseTableName="user_profile" constraintName="FKp62gdxif9h9dtdwcyf5b7gdi8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="handle" referencedTableName="user"/>
+    </changeSet>
+    <changeSet id="1680067598538-1" author="georgerapeanu">
+        <tagDatabase tag="lab8-migrations"/>
+    </changeSet>
+    <changeSet id="1680067598539-1" author="georgerapeanu">
+        <addColumn tableName="manufacturer">
+            <column name="user_handle" type="VARCHAR(255)"/>
+        </addColumn>
+        <addForeignKeyConstraint baseColumnNames="user_handle" baseTableName="manufacturer" constraintName="FK_manufacturer_user" referencedColumnNames="handle" referencedTableName="user"/>
+    </changeSet>
+    <changeSet id="1680067598539-2" author="georgerapeanu">
+        <tagDatabase tag="lab8-migrations-continuation"/>
+    </changeSet>
+    <changeSet id="1680067598540-1" author="georgerapeanu">
+        <addColumn tableName="user">
+            <column name="activated" type="boolean" defaultValueNumeric="false"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1680067598540-2" author="georgerapeanu">
+        <tagDatabase tag="lab8-add-activated-to-user"/>
+    </changeSet>
+    <changeSet id="1680067598541-1" author="georgerapeanu">
+        <createTable tableName="role">
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="read_all" type="boolean" defaultValueNumeric="false"/>
+            <column name="update_all" type="boolean" defaultValueNumeric="false"/>
+            <column name="delete_all" type="boolean" defaultValueNumeric="false"/>
+            <column name="read_own" type="boolean" defaultValueNumeric="false"/>
+            <column name="update_own" type="boolean" defaultValueNumeric="false"/>
+            <column name="delete_own" type="boolean" defaultValueNumeric="false"/>
+        </createTable>
+        <addPrimaryKey tableName="role" columnNames="name"/>
+        <addColumn tableName="user">
+            <column name="role" type="VARCHAR(255)"/>
+        </addColumn>
+        <addForeignKeyConstraint constraintName="FK_USER_ROLE" baseTableName="user" referencedTableName="role" baseColumnNames="role" referencedColumnNames="name"/>
+    </changeSet>
+    <changeSet id="1680067598541-2" author="georgerapeanu">
+        <tagDatabase tag="lab9-add-roles-table"/>
+    </changeSet>
+    <changeSet id="1680067598542-1" author="georgerapeanu">
+        <addColumn tableName="role">
+            <column name="create" type="boolean" defaultValueNumeric="false"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="1680067598542-2" author="georgerapeanu">
+        <tagDatabase tag="lab9-add-create-right"/>
+    </changeSet>
+    <changeSet  id="1680067598543-1" author="georgerapeanu">
+        <createTable tableName="user_preference">
+            <column name="handle" type="VARCHAR(255)"/>
+            <column name="page_size" type="numeric" defaultValueNumeric="10"/>
+        </createTable>
+        <addPrimaryKey tableName="user_preference" columnNames="handle"/>
+        <addForeignKeyConstraint constraintName="FK_USER_PREFERENCE_USER" baseTableName="user_preference" baseColumnNames="handle" referencedTableName="user" referencedColumnNames="handle"/>
+    </changeSet>
+    <changeSet  id="1680067598543-2" author="georgerapeanu">
+        <tagDatabase tag="lab9-change"/>
+    </changeSet>
+    <changeSet  id="1680067598544-1" author="georgerapeanu">
+        <createTable tableName="message">
+            <column name="id" type="numeric"/>
+            <column name="user_handle" type="VARCHAR(255)"/>
+            <column name="nickname" type="VARCHAR(255)"/>
+            <column name="message" type="VARCHAR(255)"/>
+        </createTable>
+        <addPrimaryKey tableName="message" columnNames="id"/>
+        <addForeignKeyConstraint constraintName="FK_MESSAGE_USER" baseTableName="message" baseColumnNames="user_handle" referencedTableName="user" referencedColumnNames="handle"/>
+    </changeSet>
+    <changeSet  id="1680067598544-2" author="georgerapeanu">
+        <tagDatabase tag="lab11-change"/>
+    </changeSet>
+    <changeSet  id="1680067598545-1" author="georgerapeanu">
+        <addAutoIncrement tableName="message" columnName="id"/>
+    </changeSet>
+    <changeSet  id="1680067598545-2" author="georgerapeanu">
+        <tagDatabase tag="lab11-change-2"/>
+    </changeSet>
+</databaseChangeLog>

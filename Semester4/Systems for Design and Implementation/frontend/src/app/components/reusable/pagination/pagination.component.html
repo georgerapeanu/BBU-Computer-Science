@@ -1,0 +1,28 @@
+<div class="flex gap-2 mt-6 w-full justify-center">
+    <button (click)="setPageNumber(0)" class="h-8 w-8 rounded-full justify-center items-center flex">
+        <<
+    </button>
+    <button (click)="setPageNumber(this.pageNumber - 1)" class="h-8 w-8 rounded-full justify-center items-center flex">
+        <
+    </button>
+    <div class="flex" *ngFor="let page of this.getDisplayedPages(); let i = index">
+      <button (click)="setPageNumber(page)" class="h-8 rounded-full justify-center items-center flex" [ngClass]="{'bg-blue-600': page==this.currentPage}">
+        {{ page }}
+      </button>
+      <div  *ngIf="i < this.getDisplayedPages().length && this.getDisplayedPages()[i + 1] - page > 1" class="h-8 rounded-full justify-center items-center flex mx-2" [ngClass]="{'bg-blue-600': page==this.currentPage}">
+        ... 
+      </div>
+    </div>
+    <button (click)="setPageNumber(this.pageNumber + 1)" class="h-8 w-8 rounded-full justify-center items-center flex">
+      >
+    </button>
+    <button (click)="setPageNumber(this.totalPages - 1)" class="lastPageButton h-8 w-8 rounded-full justify-center items-center flex">
+      >>
+    </button>
+    <input type="text" class="h-8 w-8 border-2 border-slate-400 text-center" [(ngModel)]="pageNumber" (keydow-n.enter)="setPageNumber(pageNumber)">
+    <select [(ngModel)]="pageSize" (ngModelChange)="setPageSize(this.pageSize)" name="pageSize" [value]="pageSize" class="text-center border-slate-400 bg-white border-2">
+        <option value="4">4</option>
+        <option value="7">7</option>
+        <option value="10">10</option>
+    </select>
+  </div>
