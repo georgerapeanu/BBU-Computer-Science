@@ -1,0 +1,16 @@
+```
+let x: i32;
+let y: i32;
+
+x = readI32();
+y = readI32();
+
+while y != 0 {
+  let z: i32 = x % y;
+  x = y;
+  y = z;
+}
+
+// This is a comment
+print("Gcd is ", x);
+```

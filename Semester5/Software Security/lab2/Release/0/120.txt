@@ -1,0 +1,4 @@
+Acesta este
+un mesaj de test
+de asemenea
+pe mai multe linii.

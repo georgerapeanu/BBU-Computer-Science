@@ -28,56 +28,56 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=17.78 s (417.1 files/s, 27613.7 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=21.37 s (350.3 files/s, 23252.6 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|34|996|1061|131385
-JSON|4756|0|0|130562
+JSON|4777|0|0|130583
 HTML|194|116|845|25138
-XML|123|63|150|16352
+XML|129|63|150|16832
 JavaScript|31|4284|3976|15356
 TeX|119|1843|273|11968
 C++|167|1883|527|10800
-D|638|1617|0|10539
+D|659|1664|0|10717
 Python|200|3322|3737|10463
 Java|217|1345|1470|7942
 CSV|6|0|0|7258
 PHP|94|1057|2763|7235
+Jupyter Notebook|34|0|34115|5750
 TypeScript|211|794|66|5674
-Jupyter Notebook|33|0|32551|4612
-C|49|650|422|3845
+C|55|889|525|4862
 C#|31|352|165|2745
-C/C++ Header|136|1145|2230|2475
-Rust|47|275|12|2343
+C/C++ Header|140|1166|2230|2552
+Rust|48|313|13|2511
 CSS|27|173|151|2007
+Markdown|60|466|0|1700
 Assembly|46|568|350|1682
-Markdown|56|427|0|1599
 Qt|8|0|0|860
+MSBuild script|8|11|0|848
 INI|3|4|16|704
 Bourne Shell|46|113|171|609
 CMake|24|120|1|489
 JSP|12|7|21|435
 Maven|5|27|17|435
-DOS Batch|5|91|2|381
+DOS Batch|6|96|4|406
 MATLAB|20|69|36|314
 YAML|8|27|6|276
 Prolog|4|67|41|243
-MSBuild script|5|11|0|235
 Razor|13|9|0|229
 Lisp|3|33|38|214
 XSD|1|0|0|164
 FXML|2|5|0|120
+Visual Studio Solution|4|4|4|118
 awk|8|23|0|117
 reStructuredText|13|36|75|51
-Visual Studio Solution|2|2|2|46
-TOML|4|6|3|32
+TOML|5|8|4|38
 C# Generated|4|16|36|31
 make|2|9|6|27
 Dockerfile|1|1|0|13
 SVG|5|6|20|11
 Gradle|1|0|0|1
 --------|--------|--------|--------|--------
-SUM:|7414|21592|51240|418017
+SUM:|7485|21985|52913|421913
 

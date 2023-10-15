@@ -1,0 +1,16 @@
+```
+let n: u32;
+let sum: u32 = 0;
+let i: u32 = 0;
+
+n = readU32();
+
+while i < n {
+  let val: u32 = readU32();
+
+  sum = sum + val;
+  i = i + 1;
+}
+
+print("Sum is", sum);
+```

@@ -1,0 +1,74 @@
+Syntax
+
+```
+Program         ::= Statement{ Statement } ;
+
+Statement       ::= DeclStatement
+                | Assignment
+                | Input
+                | Output
+                | Conditional
+                | Loop
+                | Comment ;
+
+DeclStatement   ::= "let" Identifier ":" Type ["=" Expression] ";" ;
+
+Type            ::= "i32"
+                |   "u32"
+                |   "bool"
+                |   "f32"
+                |   "str"
+                |   "array["Type";" NonZeroDigit{Digit}"]" ;
+
+Assignment      ::=  Identifier"=" Expression ";" ;
+
+Input           ::= "readI32()"|"readU32()"|"readStr()"|"readBool()"|"readF32()";
+
+Output          ::= "print" ( Expression{, Expression} ) ";" ;
+
+Conditional     ::= "if" "(" Expression ")" "{" Program "}" [ "else" "{" Program "}" ] ;
+
+Loop            ::= "while" "(" Expression ")" "{" Program "}" ;
+
+Comment         ::= "//" { Any Character Except Newline } ;
+
+Expression      ::= Term { Operator Term } ;
+Term            ::= Identifier
+                | IntConstant
+                | StringLiteral
+                | BoolConstant
+                | FloatConstant
+                | ArrayConstant 
+                | "("Expression")";
+
+Identifier      ::= ("_" | Letter) {"_" | Letter | Digit};
+
+IntConstant     ::= [ "+" | "-" ] ( NonZeroDigit { Digit } ) | "0" ;
+
+StringLiteral   ::= """ { Any Character Except """ } """ ;
+
+BoolConstant    ::= "true" | "false" ;
+
+FloatConstant   ::= IntConstant [ "." { Digit } ] ;
+
+ArrayConstant   ::= IntArrayConstant
+                | StringArrayConstant
+                | BoolArrayConstant
+                | FloatArrayConstant ;
+
+IntArrayConstant ::= "[" [ IntConstant { "," IntConstant } ] "]" ;
+
+StringArrayConstant ::= "[" [ StringLiteral { "," StringLiteral } ] "]" ;
+
+BoolArrayConstant ::= "[" [ BoolConstant { "," BoolConstant } ] "]" ;
+
+FloatArrayConstant ::= "[" [ FloatConstant { "," FloatConstant } ] "]" ;
+
+Operator        ::= "+" | "-" | "*" | "/" | "%" | "==" | "<" | "<=" | ">" | ">=" | "=" | "&&" | "||";
+
+Letter          ::= "A" | "B" | "C" | ... | "Z" | "a" | ... "z" ;
+
+NonZeroDigit    ::= "1" | "2" | ... | "9" ;
+
+Digit           ::= "0" | "1" | "2" | ... | "9" ;
+```

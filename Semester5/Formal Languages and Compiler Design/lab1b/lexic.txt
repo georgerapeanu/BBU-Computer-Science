@@ -1,0 +1,28 @@
+```
+Alphabet
+a-z
+A-Z
+0-9
+_
+
+Lexic
+
+operators: +, -, *, /, %, ==, <, <=, >, >=, =, &&, ||
+separators: {}, (), ;, space, newline, ", ', :, ., ","(actual comma)
+reserved words: let, if, else, while,  print, readI32, readU32, readStr, readBool, readF32, i32, u32, str, bool, f32, array
+
+identifier = (letter|"_"){letter|digit|"_"}
+letter = "A"|"B"|"C"|..."Z"|"a"|"b"|...|"z"
+digit = "0"|"1"|"2"|...|"9"
+
+int_constant = ["+"|"-"] non_zero_digit {digit} | "0"
+non_zero_digit = "1"|"2"|..|"9"
+string_constant = """{letter|digit|"_"|" "}"""
+bool_constant = "true"|"false"
+float_constant = int_constant ["." digit{digit}]
+
+int_array_constant = "[" [{int_constant","}int_constant] "]"
+string_array_constant = "[" [{string_constant","}string_constant] "]"
+bool_array_constant = "[" [{bool_constant","}bool_constant] "]"
+float_array_constant = "[" [{float_constant","}float_constant] "]"
+```
