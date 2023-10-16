@@ -196,12 +196,17 @@ fn main() {
     }));
   }
 
-  handles.push(thread::spawn(move || {
-    thread::sleep(Duration::from_secs(1));
-    sanity_check(accounts_arc.clone());
-  }));
+  let accounts_arc_clone = accounts_arc.clone();
+  thread::spawn(move || {
+    loop {
+      thread::sleep(Duration::from_secs(1));
+      sanity_check(accounts_arc_clone.clone());
+    }
+  }); // not waited for
 
   for handle in handles.into_iter() {
     let _ = handle.join();
   }
+
+  sanity_check(accounts_arc);
 }
