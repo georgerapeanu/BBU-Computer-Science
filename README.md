@@ -28,7 +28,7 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=23.03 s (327.1 files/s, 21696.5 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=17.72 s (425.2 files/s, 28198.7 lines/s)
 --- | ---
 
 Language|files|blank|comment|code

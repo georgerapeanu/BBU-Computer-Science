@@ -11,4 +11,4 @@ Function `insert` is used to insert a new symbol in the symbol table. An id is a
 Function `get` returns an optional, which is either `Some(id)` if the symbol exists in the table, or `None` if it doesn't.
 
 #### Example of usage
-![./example.png]()
+![](./example.png)
