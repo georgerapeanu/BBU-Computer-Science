@@ -28,19 +28,19 @@
     * [🌐Web Programming](Semester4/Web%20Programming/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=17.72 s (425.2 files/s, 28198.7 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=40.18 s (188.7 files/s, 12452.8 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|34|996|1061|131385
-JSON|4789|0|0|130595
+JSON|4797|0|0|130603
 HTML|194|116|845|25138
 XML|138|63|150|17715
 JavaScript|31|4284|3976|15356
 TeX|119|1843|273|11968
+D|704|1767|0|11087
 C++|169|1919|537|10937
-D|672|1693|0|10814
 Python|200|3322|3737|10463
 Java|217|1345|1470|7942
 CSV|6|0|0|7258
@@ -48,11 +48,11 @@ PHP|94|1057|2763|7235
 C|59|1137|625|5884
 Jupyter Notebook|34|0|34115|5750
 TypeScript|211|794|66|5674
+Rust|52|386|24|2809
 C#|31|352|165|2745
 C/C++ Header|145|1197|2238|2642
-Rust|49|331|14|2591
 CSS|27|173|151|2007
-Markdown|61|472|0|1708
+Markdown|63|483|0|1731
 Assembly|46|568|350|1682
 Qt|8|0|0|860
 MSBuild script|8|11|0|848
@@ -71,13 +71,13 @@ XSD|1|0|0|164
 Visual Studio Solution|5|5|5|144
 FXML|2|5|0|120
 awk|8|23|0|117
+TOML|8|14|7|54
 reStructuredText|13|36|75|51
-TOML|6|10|5|43
 C# Generated|4|16|36|31
 make|2|9|6|27
 Dockerfile|1|1|0|13
 SVG|5|6|20|11
 Gradle|1|0|0|1
 --------|--------|--------|--------|--------
-SUM:|7534|22356|53034|424273
+SUM:|7581|22500|53046|424806
 

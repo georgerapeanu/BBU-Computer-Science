@@ -1,0 +1,1 @@
+/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester5/Distributed\ and\ Parallel\ Programming/lab2/target/release/lab2: /home/georgerapeanu/Desktop/BBU-Computer-Science/Semester5/Distributed\ and\ Parallel\ Programming/lab2/src/main.rs
