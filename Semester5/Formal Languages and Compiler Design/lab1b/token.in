@@ -1,12 +1,11 @@
-Tokens
-
-```
+!
 +
 -
 *
 /
 %
 ==
+!=
 <
 <=
 >
@@ -19,8 +18,6 @@ Tokens
 (
 )
 ;
-space
-newline
 ,
 '
 :
@@ -42,5 +39,3 @@ str
 bool
 f32
 array
-```
-

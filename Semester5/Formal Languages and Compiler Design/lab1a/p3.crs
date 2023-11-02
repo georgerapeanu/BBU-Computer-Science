@@ -1,4 +1,3 @@
-```
 let n: u32;
 let sum: u32 = 0;
 let i: u32 = 0;
@@ -13,4 +12,3 @@ while i < n {
 }
 
 print("Sum is", sum);
-```

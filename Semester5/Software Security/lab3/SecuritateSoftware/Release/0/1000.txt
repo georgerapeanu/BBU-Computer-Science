@@ -1,0 +1,11 @@
+Username	Password	Email
+raul	P@ssw0rd	raul@cs.ubbcluj.ro
+dan	parola	dan@cs.ubbcluj.ro
+pop	pop	pop@cs.ubbcluj.ro
+popa	popescu	popa@cs.ubbcluj.ro
+popescu	popa	popescu@cs.ubbcluj.ro
+ana	password	ana@cs.ubbcluj.ro
+daniel	daniel	daniel@cs.ubbcluj.ro
+ion	qwerty	ion@cs.ubbcluj.ro
+admin	admin	admin@cs.ubbcluj.ro
+ionescu	123456	ionescu@cs.ubbcluj.ro

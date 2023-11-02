@@ -1,4 +1,2 @@
-```
 let 0a: i32; // lexical error, identifiers should start with [a-zA-Z_]
 let x = 12_34; // underscores not allowed in integer values
-```

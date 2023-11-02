@@ -1,0 +1,85 @@
+p2.out
+```
+Program: let n: i32 = readI32();let i: i32 = 0;let is_prime: bool = true;i = 2;wnile i < n {if n % i == 0 {is_prime = false;}i = i + 1;}if is_prime {print("Number is prime");} else {print("Number is not prime");}
+PIF.out
+let: -
+n: 0
+:: -
+i32: -
+=: -
+readI32: -
+(: -
+): -
+;: -
+let: -
+i: 1
+:: -
+i32: -
+=: -
+0: 2
+;: -
+let: -
+is_prime: 3
+:: -
+bool: -
+=: -
+true: 4
+;: -
+i: 1
+=: -
+2: 5
+;: -
+wnile: 6
+i: 1
+<: -
+n: 0
+{: -
+if: -
+n: 0
+%: -
+i: 1
+==: -
+0: 2
+{: -
+is_prime: 3
+=: -
+false: 7
+;: -
+}: -
+i: 1
+=: -
+i: 1
++: -
+1: 8
+;: -
+}: -
+if: -
+is_prime: 3
+{: -
+print: -
+(: -
+"Number is prime": 9
+): -
+;: -
+}: -
+else: -
+{: -
+print: -
+(: -
+"Number is not prime": 10
+): -
+;: -
+}: -
+ST.out
+0: 2
+1: 8
+2: 5
+false: 7
+"Number is prime": 9
+i: 1
+is_prime: 3
+wnile: 6
+"Number is not prime": 10
+n: 0
+true: 4
+```

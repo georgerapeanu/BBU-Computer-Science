@@ -1,0 +1,2 @@
+Acest mesaj ar trebui sa poata fi vazut
+numai de catre userul 'popa'.

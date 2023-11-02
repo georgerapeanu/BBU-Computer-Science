@@ -1,0 +1,64 @@
+p1.out
+```
+Program: let x: i32;let y: i32;x = readI32();y = readI32();while y != 0 {let z: i32 = x % y;x = y;y = z;}print("Gcd is ", x);
+PIF.out
+let: -
+x: 0
+:: -
+i32: -
+;: -
+let: -
+y: 1
+:: -
+i32: -
+;: -
+x: 0
+=: -
+readI32: -
+(: -
+): -
+;: -
+y: 1
+=: -
+readI32: -
+(: -
+): -
+;: -
+while: -
+y: 1
+!: -
+=: -
+0: 2
+{: -
+let: -
+z: 3
+:: -
+i32: -
+=: -
+x: 0
+%: -
+y: 1
+;: -
+x: 0
+=: -
+y: 1
+;: -
+y: 1
+=: -
+z: 3
+;: -
+}: -
+print: -
+(: -
+"Gcd is ": 4
+,: -
+x: 0
+): -
+;: -
+ST.out
+x: 0
+y: 1
+0: 2
+"Gcd is ": 4
+z: 3
+```

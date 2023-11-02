@@ -1,0 +1,5 @@
+p1err.out
+```
+Lexical error for token number 2 "0a: i32; let x = 12_34; "
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+```

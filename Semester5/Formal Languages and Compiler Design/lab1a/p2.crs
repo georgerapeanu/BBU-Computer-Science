@@ -1,4 +1,3 @@
-```
 let n: i32 = readI32();
 let i: i32 = 0;
 let is_prime: bool = true;
@@ -16,4 +15,3 @@ if is_prime {
 } else {
   print("Number is not prime");
 }
-```
