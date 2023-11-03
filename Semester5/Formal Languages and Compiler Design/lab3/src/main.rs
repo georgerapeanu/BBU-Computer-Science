@@ -29,6 +29,7 @@ pub fn main() {
   let mut pif: Vec<(String, Option<usize>)> = Vec::new();
 
   let separators_regex_string = "([+]|[-]|[*]|[/]|[%]|==|!=|<|<=|>|>=|=|[!]|[&][&]|[|][|]|[{]|[}]|[(]|[)]|;|,|[']|[\"]|[:]|[.]|[,]|$|[ ])";
+  let separators_regex = Regex::new(&separators_regex_string).unwrap();
   let int_constant_regex = Regex::new(&(r"^(0|([+-]?[1-9][0-9]*))".to_owned() + separators_regex_string)).unwrap();
   let string_constant_regex = Regex::new(&("^(\"[^\"]*\")".to_owned() + separators_regex_string)).unwrap();
   let float_constant_regex = Regex::new(&(r"^(0|([+-]?[1-9][0-9]*)([.][0-9]*)?)".to_owned() + separators_regex_string)).unwrap();
@@ -63,10 +64,12 @@ pub fn main() {
     let mut found = false;
     for token in reserved_tokens_vector.iter() {
       if index + token.len() <= program.len() && (&program[index..index + token.len()] == token.as_str()) {
-        pif.push((token.clone(), None));
-        index += token.len();
-        found = true;
-        break;
+        if index + token.len() == program.len() || separators_regex.captures(&program[index + token.len()..=index + token.len()]).is_some() {
+          pif.push((token.clone(), None));
+          index += token.len();
+          found = true;
+          break;
+        }
       }
     }
 

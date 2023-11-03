@@ -35,7 +35,7 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=25.47 s (301.8 files/s, 19747.3 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=15.43 s (498.0 files/s, 32588.3 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -55,7 +55,7 @@ PHP|94|1057|2763|7235
 C|59|1137|625|5884
 Jupyter Notebook|34|0|34115|5750
 TypeScript|211|794|66|5674
-Rust|53|424|26|2970
+Rust|53|424|26|2973
 C#|31|352|165|2745
 C/C++ Header|145|1197|2238|2642
 CSS|27|173|151|2007
@@ -88,5 +88,5 @@ Dockerfile|1|1|0|13
 SVG|5|6|20|11
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|7687|22782|53167|427036
+SUM:|7687|22782|53167|427039
 
