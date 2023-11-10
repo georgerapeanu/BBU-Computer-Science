@@ -35,58 +35,63 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=15.32 s (501.8 files/s, 32830.6 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=19.48 s (585.2 files/s, 26312.6 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|34|996|1061|131385
-JSON|4829|0|0|130635
-HTML|194|116|845|25138
-XML|158|121|176|18544
+JSON|4814|0|0|131021
+HTML|195|124|858|25176
+XML|3875|125|222|23471
 JavaScript|31|4284|3976|15356
 TeX|119|1843|273|11968
-D|743|1855|0|11634
-C++|169|1919|537|10937
+C++|177|2034|593|11365
+D|697|1750|0|11213
 Python|200|3322|3737|10463
-Java|217|1345|1470|7942
+Java|218|1348|1475|7953
 CSV|6|0|0|7258
 PHP|94|1057|2763|7235
+Jupyter Notebook|36|0|35705|6061
 C|59|1137|625|5884
-Jupyter Notebook|34|0|34115|5750
 TypeScript|211|794|66|5674
-Rust|53|431|26|3049
+Rust|55|452|27|3133
+C/C++ Header|154|1254|2307|2754
 C#|31|352|165|2745
-C/C++ Header|145|1197|2238|2642
 CSS|27|173|151|2007
-Markdown|64|488|0|1759
+Markdown|67|521|0|1805
 Assembly|46|568|350|1682
 Qt|8|0|0|860
 MSBuild script|8|11|0|848
-Bourne Shell|47|136|207|735
+CMake|31|199|108|822
+Bourne Shell|49|136|209|758
 INI|3|4|16|704
-CMake|24|120|1|489
-Kotlin|11|64|38|485
+Dart|9|46|21|558
+Kotlin|12|66|38|489
+DOS Batch|7|120|6|470
 JSP|12|7|21|435
 Maven|5|27|17|435
-DOS Batch|6|96|4|406
 MATLAB|20|69|36|314
-YAML|8|27|6|276
+YAML|10|44|88|295
 Prolog|4|67|41|243
 Razor|13|9|0|229
 Lisp|3|33|38|214
 XSD|1|0|0|164
 Visual Studio Solution|5|5|5|144
+Bourne Again Shell|1|19|20|121
 FXML|2|5|0|120
 awk|8|23|0|117
+Windows Resource File|1|23|29|69
 TOML|9|16|8|62
 reStructuredText|13|36|75|51
+Swift|6|14|7|50
+Gradle|3|5|0|33
 C# Generated|4|16|36|31
 make|2|9|6|27
-Gradle|2|1|0|17
 Dockerfile|1|1|0|13
 SVG|5|6|20|11
+Objective-C|1|5|4|5
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|7689|22789|53167|427117
+SUM:|11403|23158|55221|434301
 
