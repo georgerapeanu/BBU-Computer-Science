@@ -1,0 +1,20 @@
+start
+integer_zero integer float string identifier
+
+start integer_zero 0
+start signed_integer +-
+start integer 123456789
+signed_integer integer 123456789
+integer integer 0123456789
+
+
+integer float_dot .
+float_dot float 0123456789
+float float 0123456789
+
+start inside_string "
+inside_string string "
+inside_string inside_string
+
+start identifier _abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+identifier identifier _abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 

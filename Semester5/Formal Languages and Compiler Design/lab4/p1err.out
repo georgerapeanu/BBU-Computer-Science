@@ -1,5 +1,7 @@
-p1err.out
+### p1err.out
 ```
-Lexical error for token number 2 "0a: i32; let x = 12_34; "
+Program: let 0a: i32; let x = 12_34; 
+thread 'main' panicked at src/main.rs:81:7:
+Lexical error for token number 2
 note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 ```

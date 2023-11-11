@@ -1,23 +1,46 @@
 use std::fs;
 use std::env;
-use regex::Regex;
 
+use finite_automaton::FiniteAutomaton;
 use symbol_table::SymbolTable;
 
 pub mod finite_automaton;
 pub mod symbol_table;
 
+pub fn print_usage() {
+    println!("Usage: cargo run TOKENS.IN PROGRAM.CRS");
+    println!("Alternative usage: cargo run describe automaton");
+}
+
 pub fn main() {
 
   let mut args = env::args();
 
-  if args.len() != 3 {
+  if args.len() == 1 {
     println!("Usage: cargo run TOKENS.IN PROGRAM.CRS");
+    print_usage();  
     return ;
   }
+  
+  let fa = FiniteAutomaton::new("FA.in".to_string());
 
   args.next();
-  let mut reserved_tokens_vector: Vec<String> = fs::read_to_string(args.next().unwrap()).unwrap().split('\n')
+
+  let first_arg = args.next().unwrap();
+
+  if first_arg == "describe" {
+    let to_describe = args.next();
+    if to_describe.is_none() {
+      print_usage();  
+    }
+    match to_describe.unwrap().as_str() {
+      "automaton" => {dbg!(fa);},
+      _ => print_usage()
+    }
+    return ;
+  } 
+
+  let mut reserved_tokens_vector: Vec<String> = fs::read_to_string(first_arg).unwrap().split('\n')
     .map(|x| x.trim().to_string())
     .filter(|x| x.len() > 0)
     .collect(); 
@@ -28,15 +51,7 @@ pub fn main() {
   let mut st = SymbolTable::new(None);
   let mut pif: Vec<(String, Option<usize>)> = Vec::new();
 
-  let separators_regex_string = "([+]|[-]|[*]|[/]|[%]|==|!=|<|<=|>|>=|=|[!]|[&][&]|[|][|]|[{]|[}]|[(]|[)]|;|,|[']|[\"]|[:]|[.]|[,]|$|[ ])";
-  let separators_regex = Regex::new(&separators_regex_string).unwrap();
-  let int_constant_regex = Regex::new(&(r"^(0|([+-]?[1-9][0-9]*))".to_owned() + separators_regex_string)).unwrap();
-  let string_constant_regex = Regex::new(&("^(\"[^\"]*\")".to_owned() + separators_regex_string)).unwrap();
-  let float_constant_regex = Regex::new(&(r"^(0|([+-]?[1-9][0-9]*)([.][0-9]*)?)".to_owned() + separators_regex_string)).unwrap();
-  let bool_constant_regex = Regex::new(&(r"^((true)|(false))".to_owned() + separators_regex_string)).unwrap();
-  let identifier_regex = Regex::new(&(r"^(([a-zA-Z]|[_])[0-9a-zA-Z_]*)".to_owned() + separators_regex_string)).unwrap();
-
-  let regexes = [int_constant_regex, string_constant_regex, float_constant_regex, bool_constant_regex, identifier_regex];
+  let separators = vec!["+","-","*","/","%","=","!","<",">","!","&","|","{","}","(",")",";","'","\"",":",".",","," ","[","]", "==", "<=", ">=", "!="];
 
   let mut token_number = 0;
   let program: String = fs::read_to_string(args.next().unwrap()).unwrap()
@@ -49,6 +64,7 @@ pub fn main() {
     .unwrap();
 
   println!("Program: {program}");
+
 
   let mut index = 0;
   while index < program.len() {
@@ -64,7 +80,13 @@ pub fn main() {
     let mut found = false;
     for token in reserved_tokens_vector.iter() {
       if index + token.len() <= program.len() && (&program[index..index + token.len()] == token.as_str()) {
-        if index + token.len() == program.len() || separators_regex.captures(&program[index + token.len()..=index + token.len()]).is_some() {
+        if separators.contains(&token.as_str()) {
+          pif.push((token.clone(), None));
+          index += token.len();
+          found = true;
+          break;
+        }
+        if index + token.len() == program.len() || separators.contains(&&program[index + token.len()..=index + token.len()]) {
           pif.push((token.clone(), None));
           index += token.len();
           found = true;
@@ -76,14 +98,11 @@ pub fn main() {
     if found {
       continue;
     }
-    
-    let token: String = regexes.iter()
-      .map(|re| re.captures(&program[index..program.len()]))
-      .filter(|x| x.is_some())
-      .map(|x| x.unwrap()[1].to_string())
-      .nth(0)
-      .expect(format!("Lexical error for token number {token_number} \"{}\"", &program[index..program.len()]).as_str());
-    
+    let token = fa.get_next_accepted(&program[index..program.len()]).expect(format!("Lexical error for token number {token_number}").as_str()).to_string();
+    if !(program.len() == index + token.len() || separators.contains(&&program[index + token.len()..=index + token.len()])) {
+      panic!("Lexical error for token number {token_number}");
+    }
+
     index += token.len();
     if st.get(token.clone()).is_none() {
       st.insert(token.clone());

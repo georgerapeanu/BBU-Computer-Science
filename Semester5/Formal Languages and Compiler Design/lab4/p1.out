@@ -1,4 +1,4 @@
-p1.out
+### p1.out
 ```
 Program: let x: i32;let y: i32;x = readI32();y = readI32();while y != 0 {let z: i32 = x % y;x = y;y = z;}print("Gcd is ", x);
 PIF.out

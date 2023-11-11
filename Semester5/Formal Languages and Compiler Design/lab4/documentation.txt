@@ -1,0 +1,16 @@
+This lab works exactly the same as the previous one, but instead of using regexes uses FiniteAutomatons.
+The finite automaton is implemented in `finite_automaton.rs`. It stores states as strings, and has a variable for the `initial_state`, a hashset for the `final_states` and a hashmap that maps (states(strings), bytes) to the next state.
+
+Also, `cargo run describe automaton` is now available, for seeing information about automaton;
+
+Format of FA.in
+
+```
+alphabet                                = "a" | "b" | .... | (any possible character excluding whitespace)
+state                                   = alphabet{alphabet}
+final_states_row                        = state{" "state}
+transition_row                          = state" "state[" "{alphabet}]
+fa.in                                   = state"\n"final_states_row"\n"{transition_row"\n"}
+```
+
+A transition row contains the `from` and `to` states as the first two states, and afterwards can contain a list of characters that can transition the `from` state to the `to` state. If it is missing, all the other characters which were not mapped by this point are added as a possible transition from `from` to `to`.
