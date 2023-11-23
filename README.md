@@ -35,32 +35,31 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=21.00 s (366.8 files/s, 24268.6 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=5.06 s (450.8 files/s, 47411.7 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-SQL|34|996|1061|131385
-JSON|4826|0|0|131253
+JSON|103|0|0|40596
 HTML|195|124|858|25176
-XML|138|125|222|18731
 JavaScript|31|4284|3976|15356
 TeX|119|1843|273|11968
-D|716|1794|0|11736
 C++|177|2034|593|11365
 Python|200|3322|3737|10463
 Java|218|1348|1475|7953
-CSV|6|0|0|7258
 PHP|94|1057|2763|7235
-Jupyter Notebook|34|0|36055|6239
+XML|107|109|222|6616
 C|59|1137|625|5884
 TypeScript|211|794|66|5674
+Jupyter Notebook|23|0|20675|4345
 Rust|55|469|27|3231
-C#|37|403|168|2975
+C#|34|403|165|2953
 C/C++ Header|154|1254|2307|2754
-CSS|27|173|151|2007
 Markdown|67|521|0|1805
+CSS|21|125|136|1779
 Assembly|46|568|350|1682
+SQL|33|996|1061|1251
+D|78|177|0|1197
 Qt|8|0|0|860
 MSBuild script|9|13|0|856
 CMake|31|199|108|822
@@ -85,13 +84,14 @@ Windows Resource File|1|23|29|69
 TOML|9|16|8|62
 reStructuredText|13|36|75|51
 Swift|6|14|7|50
-C# Generated|5|20|45|40
 Gradle|3|5|0|33
 make|2|9|6|27
 Dockerfile|1|1|0|13
-SVG|5|6|20|11
+C# Generated|1|4|9|9
+SVG|1|6|20|7
 Objective-C|1|5|4|5
+CSV|2|0|0|3
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|7704|23277|55584|430862
+SUM:|2279|21580|40150|177983
 
