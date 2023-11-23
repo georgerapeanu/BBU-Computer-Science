@@ -35,34 +35,34 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=20.51 s (556.4 files/s, 25006.7 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=47.91 s (161.6 files/s, 10662.5 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
 SQL|34|996|1061|131385
-JSON|4820|0|0|131027
+JSON|4826|0|0|131253
 HTML|195|124|858|25176
-XML|3875|125|222|23471
+XML|173|125|222|19714
 JavaScript|31|4284|3976|15356
 TeX|119|1843|273|11968
-D|702|1763|0|11381
+D|716|1794|0|11736
 C++|177|2034|593|11365
 Python|200|3322|3737|10463
 Java|218|1348|1475|7953
 CSV|6|0|0|7258
 PHP|94|1057|2763|7235
-Jupyter Notebook|36|0|35705|6061
+Jupyter Notebook|37|0|36194|6248
 C|59|1137|625|5884
 TypeScript|211|794|66|5674
-Rust|55|468|27|3218
+Rust|55|469|27|3231
+C#|37|403|168|2975
 C/C++ Header|154|1254|2307|2754
-C#|31|352|165|2745
 CSS|27|173|151|2007
 Markdown|67|521|0|1805
 Assembly|46|568|350|1682
 Qt|8|0|0|860
-MSBuild script|8|11|0|848
+MSBuild script|9|13|0|856
 CMake|31|199|108|822
 Bourne Shell|49|136|209|758
 INI|3|4|16|704
@@ -76,8 +76,8 @@ YAML|10|44|88|295
 Prolog|4|67|41|243
 Razor|13|9|0|229
 Lisp|3|33|38|214
+Visual Studio Solution|6|6|6|167
 XSD|1|0|0|164
-Visual Studio Solution|5|5|5|144
 Bourne Again Shell|1|19|20|121
 FXML|2|5|0|120
 awk|8|23|0|117
@@ -85,13 +85,13 @@ Windows Resource File|1|23|29|69
 TOML|9|16|8|62
 reStructuredText|13|36|75|51
 Swift|6|14|7|50
+C# Generated|5|20|45|40
 Gradle|3|5|0|33
-C# Generated|4|16|36|31
 make|2|9|6|27
 Dockerfile|1|1|0|13
 SVG|5|6|20|11
 Objective-C|1|5|4|5
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|11414|23187|55221|434560
+SUM:|7742|23277|55723|431854
 
