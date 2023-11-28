@@ -35,63 +35,76 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=5.06 s (450.8 files/s, 47411.7 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=57.45 s (404.7 files/s, 90454.3 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-JSON|103|0|0|40596
-HTML|195|124|858|25176
-JavaScript|31|4284|3976|15356
+Python|11141|519629|746343|2056953
+JSON|353|238|0|612447
+C/C++ Header|8734|111686|187342|512809
+C|121|5912|18501|60222
+CSV|33|0|0|36706
+C++|220|3878|6103|28628
+HTML|220|262|890|25905
+Cython|133|4846|5883|23856
+CSS|32|1577|1587|20559
+JavaScript|557|4632|4682|19466
+YAML|26|3361|1093|16350
+CUDA|57|2235|1826|13739
 TeX|119|1843|273|11968
-C++|177|2034|593|11365
-Python|200|3322|3737|10463
+SVG|8|10|22|10886
 Java|218|1348|1475|7953
+XSLT|3|699|467|7525
 PHP|94|1057|2763|7235
-XML|107|109|222|6616
-C|59|1137|625|5884
+XML|114|109|223|6843
 TypeScript|211|794|66|5674
-Jupyter Notebook|23|0|20675|4345
-Rust|55|469|27|3231
-C#|34|403|165|2953
-C/C++ Header|154|1254|2307|2754
-Markdown|67|521|0|1805
-CSS|21|125|136|1779
+CMake|59|1106|1822|4972
+Jupyter Notebook|25|0|20799|4865
+Rust|56|508|27|3387
+C#|34|403|165|2951
+D|158|385|0|2761
+Markdown|80|631|0|2242
 Assembly|46|568|350|1682
 SQL|33|996|1061|1251
-D|78|177|0|1197
-Qt|8|0|0|860
+Bourne Shell|92|145|252|1150
+Qt|10|0|0|937
 MSBuild script|9|13|0|856
-CMake|31|199|108|822
-Bourne Shell|49|136|209|758
-INI|3|4|16|704
+Fortran 90|44|104|79|770
+INI|9|20|16|767
+PO File|3|270|288|666
 Dart|9|46|21|558
+Jinja Template|1|123|8|515
+DOS Batch|9|132|6|510
 Kotlin|12|66|38|489
-DOS Batch|7|120|6|470
+reStructuredText|23|143|76|444
 JSP|12|7|21|435
 Maven|5|27|17|435
+Perl|16|54|0|383
+Fortran 77|19|20|49|353
+ANTLR Grammar|2|84|11|335
 MATLAB|20|69|36|314
-YAML|10|44|88|295
 Prolog|4|67|41|243
 Razor|13|9|0|229
 Lisp|3|33|38|214
 Visual Studio Solution|6|6|6|167
 XSD|1|0|0|164
+TOML|15|35|15|126
 Bourne Again Shell|1|19|20|121
 FXML|2|5|0|120
 awk|8|23|0|117
+Fish Shell|1|19|14|70
 Windows Resource File|1|23|29|69
-TOML|9|16|8|62
-reStructuredText|13|36|75|51
 Swift|6|14|7|50
+PowerShell|1|12|3|46
+make|3|12|8|46
+C Shell|1|13|7|35
 Gradle|3|5|0|33
-make|2|9|6|27
 Dockerfile|1|1|0|13
 C# Generated|1|4|9|9
-SVG|1|6|20|7
 Objective-C|1|5|4|5
-CSV|2|0|0|3
+Bazel|1|1|0|3
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|2279|21580|40150|177983
+SUM:|23254|670345|1004900|3521632
 
