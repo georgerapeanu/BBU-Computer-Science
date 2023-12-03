@@ -1,0 +1,2 @@
+/usr/bin/display_attacker_file_2 /home/attacker/root/root/unix2/ctf2.txt
+where /home/attacker/root -> /

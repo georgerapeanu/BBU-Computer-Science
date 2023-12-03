@@ -1,5 +1,6 @@
 use std::fs;
 use std::env;
+use std::fmt::Display;
 
 use finite_automaton::FiniteAutomaton;
 use symbol_table::SymbolTable;
@@ -10,6 +11,13 @@ pub mod symbol_table;
 pub fn print_usage() {
     println!("Usage: cargo run TOKENS.IN PROGRAM.CRS");
     println!("Alternative usage: cargo run describe automaton");
+}
+
+#[derive(Debug)]
+enum PIFEntry {
+  Reserved(usize),
+  Identifier(usize),
+  Constant(usize)
 }
 
 pub fn main() {
@@ -49,7 +57,7 @@ pub fn main() {
   reserved_tokens_vector.push(" ".to_string());
 
   let mut st = SymbolTable::new(None);
-  let mut pif: Vec<(String, Option<usize>)> = Vec::new();
+  let mut pif: Vec<(String, PIFEntry)> = Vec::new();
 
   let separators = vec!["+","-","*","/","%","=","!","<",">","!","&","|","{","}","(",")",";","'","\"",":",".",","," ","[","]", "==", "<=", ">=", "!="];
 
@@ -78,21 +86,23 @@ pub fn main() {
     token_number += 1;
     // Match reserved tokens
     let mut found = false;
+    let mut current_token = 0;
     for token in reserved_tokens_vector.iter() {
       if index + token.len() <= program.len() && (&program[index..index + token.len()] == token.as_str()) {
         if separators.contains(&token.as_str()) {
-          pif.push((token.clone(), None));
+          pif.push((token.clone(), PIFEntry::Reserved(current_token)));
           index += token.len();
           found = true;
           break;
         }
         if index + token.len() == program.len() || separators.contains(&&program[index + token.len()..=index + token.len()]) {
-          pif.push((token.clone(), None));
+          pif.push((token.clone(), PIFEntry::Reserved(current_token)));
           index += token.len();
           found = true;
           break;
         }
       }
+      current_token += 1;
     }
 
     if found {
@@ -109,11 +119,15 @@ pub fn main() {
     }
     
     let id = st.get(token.clone());
-    pif.push((token, id));
+    if (token.bytes().next().unwrap() >= b'0' && token.bytes().next().unwrap() <= b'9') || token.bytes().next().unwrap() == b'"' || token.bytes().next().unwrap() == b'[' {
+      pif.push((token, PIFEntry::Constant(id.unwrap())));
+    } else {
+      pif.push((token, PIFEntry::Identifier(id.unwrap())));
+    }
   };
 
   println!("PIF.out");
-  pif.iter().for_each(|x| println!("{}: {}", x.0, if x.1.is_none() {"-".to_string()} else { x.1.unwrap().to_string() }));
+  pif.iter().for_each(|x| println!("{}: {:?}", x.0, x.1));
   
   println!("ST.out");
   st.iter().for_each(|x| println!("{}: {}", x.0, x.1))

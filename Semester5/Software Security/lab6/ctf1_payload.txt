@@ -1,0 +1,1 @@
+/usr/bin/display_attacker_file_1 /home/attacker/../../root/unix2/ctf1.txt

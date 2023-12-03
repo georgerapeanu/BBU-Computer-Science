@@ -35,7 +35,7 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=63.33 s (368.6 files/s, 82210.4 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=44.45 s (525.1 files/s, 117121.8 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -57,7 +57,7 @@ SVG|8|10|22|10886
 Java|218|1348|1475|7953
 XSLT|3|699|467|7525
 PHP|94|1057|2763|7235
-XML|114|109|223|6859
+XML|114|109|223|6867
 D|173|385|0|5823
 TypeScript|214|794|66|5680
 CMake|89|1264|1929|5609
@@ -106,5 +106,5 @@ Objective-C|1|5|4|5
 Bazel|1|1|0|3
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|23342|671465|1006102|3528765
+SUM:|23342|671465|1006102|3528773
 

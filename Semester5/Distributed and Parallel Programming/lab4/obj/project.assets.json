@@ -1,0 +1,66 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net7.0": []
+  },
+  "packageFolders": {
+    "/home/georgerapeanu/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester5/Distributed and Parallel Programming/lab4/lab4.csproj",
+      "projectName": "lab4",
+      "projectPath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester5/Distributed and Parallel Programming/lab4/lab4.csproj",
+      "packagesPath": "/home/georgerapeanu/.nuget/packages/",
+      "outputPath": "/home/georgerapeanu/Desktop/BBU-Computer-Science/Semester5/Distributed and Parallel Programming/lab4/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/georgerapeanu/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/home/georgerapeanu/.dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Looking in indexes: https://pypi.org/simple, https://pypi.ngc.nvidia.com
+Collecting portalocker
+  Obtaining dependency information for portalocker from https://files.pythonhosted.org/packages/17/9e/87671efcca80ba6203811540ed1f9c0462c1609d2281d7b7f53cef05da3d/portalocker-2.8.2-py3-none-any.whl.metadata
+  Downloading portalocker-2.8.2-py3-none-any.whl.metadata (8.5 kB)
+Downloading portalocker-2.8.2-py3-none-any.whl (17 kB)
+Installing collected packages: portalocker
+Successfully installed portalocker-2.8.2
