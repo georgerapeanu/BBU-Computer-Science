@@ -1,0 +1,18 @@
+[package]
+name = "lab6"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+[[bin]]
+name = "gen"
+path = "src/gen.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+rayon = "1.8.0"

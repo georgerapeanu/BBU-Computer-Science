@@ -1,0 +1,32 @@
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/main 0 8`
+Found, other threads should stop soon
+Found hamiltonian cycle 0 39 59 12 48 1 34 31 45 9 15 17 26 65 46 64 20 55 13 14 2 19 25 8 61 57 4 32 28 35 42 3 11 5 54 27 56 60 6 30 29 68 23 40 52 63 66 10 24 37 50 67 44 51 69 36 16 21 22 53 41 33 18 7 43 49 58 47 38 62 
+
+real	0m49,943s
+user	0m49,916s
+sys	0m0,021s
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/main 1 8`
+Found, other threads should stop soon
+Found hamiltonian cycle 0 39 59 12 48 1 34 31 45 9 15 17 26 65 46 64 20 55 13 14 2 19 25 8 61 57 4 32 28 35 42 3 11 5 54 27 56 60 6 30 29 68 23 40 52 63 66 10 24 37 50 67 44 51 69 36 16 21 22 53 41 33 18 7 43 49 58 47 38 62 
+
+real	0m32,254s
+user	2m8,621s
+sys	0m0,032s
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/main 2 8`
+Found, other threads should stop soon
+Found hamiltonian cycle 0 39 59 12 48 1 34 31 45 9 15 17 26 65 46 64 20 55 13 14 2 19 25 8 61 57 4 32 28 35 42 3 11 5 54 27 56 60 6 30 29 68 23 40 52 63 66 10 24 37 50 67 44 51 69 36 16 21 22 53 41 33 18 7 43 49 58 47 38 62 
+
+real	0m42,939s
+user	2m37,562s
+sys	0m0,028s
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/main 3 8`
+Found, other threads should stop soon
+Found hamiltonian cycle 0 39 59 12 48 1 34 31 45 9 15 17 26 65 46 64 20 55 13 14 2 19 25 8 61 57 4 32 28 35 42 3 11 5 54 27 56 60 6 30 29 68 23 40 52 63 66 10 24 37 50 67 44 51 69 36 16 21 22 53 41 33 18 7 43 49 58 47 38 62 
+
+real	0m44,455s
+user	2m43,614s
+sys	0m0,020s
