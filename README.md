@@ -35,13 +35,13 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=131.60 s (182.2 files/s, 40934.9 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=65.66 s (366.2 files/s, 82088.4 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Python|11567|545900|794093|2152490
-JSON|415|238|0|615022
+Python|11568|545907|794103|2152531
+JSON|441|238|0|615802
 C/C++ Header|8754|111788|187517|513217
 C|126|6043|18563|60888
 CSV|33|0|0|36706
@@ -50,25 +50,25 @@ HTML|220|262|890|25905
 Cython|133|4846|5883|23856
 CSS|32|1577|1587|20559
 JavaScript|557|4632|4682|19466
-YAML|26|3361|1093|16352
+YAML|40|3374|1093|17229
 CUDA|57|2235|1826|13739
 TeX|129|1884|284|12496
 SVG|8|10|22|10886
 D|241|529|0|8568
-Java|218|1348|1475|7963
+Java|223|1377|1475|8101
 XSLT|3|699|467|7525
+XML|128|109|223|7247
 PHP|94|1057|2763|7235
-XML|114|109|223|6938
 CMake|101|1330|1975|5833
 TypeScript|215|794|66|5682
-Jupyter Notebook|25|0|20573|4780
+Jupyter Notebook|25|0|20715|4874
 Rust|58|526|27|3502
 C#|34|403|165|2951
-Markdown|83|662|0|2592
+Markdown|84|669|0|2614
 OCaml|28|214|49|2161
 Assembly|46|568|350|1682
+Bourne Shell|97|175|378|1290
 SQL|33|996|1061|1251
-Bourne Shell|96|147|262|1185
 make|14|557|542|1135
 Qt|10|0|0|937
 MSBuild script|9|13|0|856
@@ -76,8 +76,8 @@ Fortran 90|44|104|79|770
 INI|9|20|16|767
 PO File|3|270|288|666
 Dart|9|63|21|597
+DOS Batch|10|153|8|579
 Jinja Template|1|123|8|515
-DOS Batch|9|132|6|510
 Kotlin|12|66|38|489
 reStructuredText|23|143|76|444
 JSP|12|7|21|435
@@ -91,6 +91,7 @@ Razor|13|9|0|229
 Lisp|3|33|38|214
 Visual Studio Solution|6|6|6|167
 XSD|1|0|0|164
+diff|2|1|13|163
 TOML|16|39|16|139
 Bourne Again Shell|1|19|20|121
 FXML|2|5|0|120
@@ -100,12 +101,12 @@ Windows Resource File|1|23|29|69
 Swift|6|14|7|54
 PowerShell|1|12|3|46
 C Shell|1|13|7|35
-Gradle|3|5|0|33
+Gradle|4|5|0|34
 Objective-C|1|7|4|17
 Dockerfile|1|1|0|13
 C# Generated|1|4|9|9
 Bazel|1|1|0|3
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|23976|698656|1053499|3634736
+SUM:|24042|698762|1053782|3637335
 
