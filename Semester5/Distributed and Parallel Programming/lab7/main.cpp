@@ -209,6 +209,17 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     MPI_Ssend(p2_sum.data(), (int)p2_sum.size(), MPI_INT, process_id, 4, MPI_COMM_WORLD);
   }
   
+  if(low_part_id >= nrProcs) {
+    low_part_mult = karatsuba_mult(low_p1, low_p2, low_part_id, nrProcs);
+  }
+
+  if(high_part_id >= nrProcs) {
+    high_part_mult = karatsuba_mult(high_p1, high_p2, high_part_id, nrProcs);
+  }
+
+  if(sum_part_id >= nrProcs) {
+    sum_part_mult = karatsuba_mult(p1_sum, p2_sum, sum_part_id, nrProcs);
+  }
 
   if(low_part_id < nrProcs) {
     int length;
@@ -216,17 +227,12 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     low_part_mult = vector<int>((size_t)length);
     
     MPI_Recv(low_part_mult.data(), length, MPI_INT, low_part_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
-    
-  } else {
-    low_part_mult = karatsuba_mult(low_p1, low_p2, low_part_id, nrProcs);
-  }
+  }    
   if(high_part_id < nrProcs) {
     int length;
     MPI_Recv(&length, 1, MPI_INT, high_part_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
     high_part_mult = vector<int>((size_t)length);
     MPI_Recv(high_part_mult.data(), length, MPI_INT, high_part_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
-  } else {
-    high_part_mult = karatsuba_mult(high_p1, high_p2, high_part_id, nrProcs);
   }
   
   if(sum_part_id < nrProcs) {
@@ -234,8 +240,6 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     MPI_Recv(&length, 1, MPI_INT, sum_part_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
     sum_part_mult = vector<int>((size_t)length);
     MPI_Recv(sum_part_mult.data(), length, MPI_INT, sum_part_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
-  } else {
-    sum_part_mult = karatsuba_mult(p1_sum, p2_sum, sum_part_id, nrProcs);
   }
 
   vector<int> answer(max(max(low_part_mult.size(), high_part_mult.size() + 2 * n), sum_part_mult.size() + n));
@@ -267,7 +271,6 @@ void worker_karatsuba(int me, int nrProcs) {
   vector<int> p2((size_t)p2_length);
   MPI_Recv(p2.data(), (int)p2.size(), MPI_INT, parent, 4, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
 
-  
   vector<int> answer = karatsuba_mult(p1, p2, me, nrProcs);
   int tmp = (int)answer.size();
   MPI_Ssend(&tmp, 1, MPI_INT, parent, 1, MPI_COMM_WORLD);
