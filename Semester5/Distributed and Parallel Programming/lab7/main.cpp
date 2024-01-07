@@ -94,21 +94,21 @@ vector<int> master_naive(int nrProcs, const vector<int>& p1, const vector<int> &
   return answer;
 }
 
-void freeSubWorkers(int me, int nrProcs) {
-  for(int process_id = me * 3 + 1; process_id <= me * 3 + 3 && process_id < nrProcs; process_id++) { 
-    int tmp;
-    tmp = 1;
-    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 1, MPI_COMM_WORLD);
-    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 2, MPI_COMM_WORLD);
-    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 3, MPI_COMM_WORLD);
-    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 4, MPI_COMM_WORLD);
-    MPI_Recv(&tmp, 1, MPI_INT, process_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-    vector<int> v((size_t)tmp);
-    MPI_Recv(v.data(), tmp, MPI_INT, process_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-  }
+void freeSubWorkers(int process_id) {
+  int tmp = 1;
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 1, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 2, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 3, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 4, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 5, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, process_id, 6, MPI_COMM_WORLD);
+  MPI_Recv(&tmp, 1, MPI_INT, process_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+  vector<int> v((size_t)tmp);
+  MPI_Recv(v.data(), tmp, MPI_INT, process_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 }
 
-vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me, int nrProcs) {
+// [child_begin, child_end)
+vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int child_begin, int child_end) {
   if(p1.size() == 0 && p2.size() == 0) return {0};
   if(p1.size() + p2.size() <= 1024) {
     vector<int> answer(p1.size() + p2.size() - 1);
@@ -116,7 +116,9 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     for(size_t i = 0; i < answer.size(); i++) {
       answer[i] = compute_coef(p1, p2, i);
     }
-    freeSubWorkers(me, nrProcs);
+    for(int i = child_begin; i < child_end; i++) {
+      freeSubWorkers(i); 
+    }
     return answer;
   }
 
@@ -166,11 +168,14 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
   vector<int> high_part_mult;
   vector<int> sum_part_mult;
 
-  int low_part_id = me * 3 + 1;
-  int high_part_id = me * 3 + 2;
-  int sum_part_id = me * 3 + 3;
+  int low_part_id = -1;
+  int high_part_id = (child_begin < child_end ? child_begin++:-1);
+  int sum_part_id = (child_begin < child_end ? child_begin++:-1);
 
-  if(low_part_id < nrProcs) {
+  int low_part_end = (child_begin * 2 + child_end) / 3;
+  int high_part_end = (child_begin + child_end * 2) / 3;
+
+  if(low_part_id != -1) {
     int process_id = low_part_id;
     int tmp;
 
@@ -181,9 +186,14 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     tmp = (int)low_p2.size();
     MPI_Ssend(&tmp, 1, MPI_INT, process_id, 3, MPI_COMM_WORLD);
     MPI_Ssend(low_p2.data(), (int)low_p2.size(), MPI_INT, process_id, 4, MPI_COMM_WORLD);
+    
+    tmp = child_begin;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 5, MPI_COMM_WORLD);
+    tmp = low_part_end;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 6, MPI_COMM_WORLD);
   } 
 
-  if(high_part_id < nrProcs) {
+  if(high_part_id != -1) {
     int process_id = high_part_id;
     int tmp;
 
@@ -194,9 +204,14 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     tmp = (int)high_p2.size();
     MPI_Ssend(&tmp, 1, MPI_INT, process_id, 3, MPI_COMM_WORLD);
     MPI_Ssend(high_p2.data(), (int)high_p2.size(), MPI_INT, process_id, 4, MPI_COMM_WORLD);
+    
+    tmp = low_part_end;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 5, MPI_COMM_WORLD);
+    tmp = high_part_end;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 6, MPI_COMM_WORLD);
   }
   
-  if(sum_part_id < nrProcs) {
+  if(sum_part_id != -1) {
     int process_id = sum_part_id;
     int tmp;
 
@@ -207,35 +222,40 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
     tmp = (int)p2_sum.size();
     MPI_Ssend(&tmp, 1, MPI_INT, process_id, 3, MPI_COMM_WORLD);
     MPI_Ssend(p2_sum.data(), (int)p2_sum.size(), MPI_INT, process_id, 4, MPI_COMM_WORLD);
+    
+    tmp = high_part_end;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 5, MPI_COMM_WORLD);
+    tmp = child_end;
+    MPI_Ssend(&tmp, 1, MPI_INT, process_id, 6, MPI_COMM_WORLD);
   }
   
-  if(low_part_id >= nrProcs) {
-    low_part_mult = karatsuba_mult(low_p1, low_p2, low_part_id, nrProcs);
+  if(low_part_id == -1) {
+    low_part_mult = karatsuba_mult(low_p1, low_p2, child_begin, low_part_end);
   }
 
-  if(high_part_id >= nrProcs) {
-    high_part_mult = karatsuba_mult(high_p1, high_p2, high_part_id, nrProcs);
+  if(high_part_id == -1) {
+    high_part_mult = karatsuba_mult(high_p1, high_p2, low_part_end, high_part_end);
   }
 
-  if(sum_part_id >= nrProcs) {
-    sum_part_mult = karatsuba_mult(p1_sum, p2_sum, sum_part_id, nrProcs);
+  if(sum_part_id == -1) {
+    sum_part_mult = karatsuba_mult(p1_sum, p2_sum, high_part_end, child_end);
   }
 
-  if(low_part_id < nrProcs) {
+  if(low_part_id != -1) {
     int length;
     MPI_Recv(&length, 1, MPI_INT, low_part_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
     low_part_mult = vector<int>((size_t)length);
     
     MPI_Recv(low_part_mult.data(), length, MPI_INT, low_part_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
   }    
-  if(high_part_id < nrProcs) {
+  if(high_part_id != -1) {
     int length;
     MPI_Recv(&length, 1, MPI_INT, high_part_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
     high_part_mult = vector<int>((size_t)length);
     MPI_Recv(high_part_mult.data(), length, MPI_INT, high_part_id, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
   }
   
-  if(sum_part_id < nrProcs) {
+  if(sum_part_id != -1) {
     int length;
     MPI_Recv(&length, 1, MPI_INT, sum_part_id, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
     sum_part_mult = vector<int>((size_t)length);
@@ -260,26 +280,29 @@ vector<int> karatsuba_mult(const vector<int> &p1, const vector<int> &p2, int me,
   return answer;
 }
 
-void worker_karatsuba(int me, int nrProcs) {
-  int parent = (me - 1) / 3;
+void worker_karatsuba() {
   int p1_length;
-  MPI_Recv(&p1_length, 1, MPI_INT, parent, 1, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  MPI_Status status;
+  MPI_Recv(&p1_length, 1, MPI_INT, MPI_ANY_SOURCE, 1, MPI_COMM_WORLD, &status); 
   vector<int> p1((size_t)p1_length);
-  MPI_Recv(p1.data(), (int)p1.size(), MPI_INT, parent, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  MPI_Recv(p1.data(), (int)p1.size(), MPI_INT, MPI_ANY_SOURCE, 2, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
   int p2_length;
-  MPI_Recv(&p2_length, 1, MPI_INT, parent, 3, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  MPI_Recv(&p2_length, 1, MPI_INT, MPI_ANY_SOURCE, 3, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
   vector<int> p2((size_t)p2_length);
-  MPI_Recv(p2.data(), (int)p2.size(), MPI_INT, parent, 4, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  MPI_Recv(p2.data(), (int)p2.size(), MPI_INT, MPI_ANY_SOURCE, 4, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  int child_begin, child_end;
+  MPI_Recv(&child_begin, 1, MPI_INT, MPI_ANY_SOURCE, 5, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
+  MPI_Recv(&child_end, 1, MPI_INT, MPI_ANY_SOURCE, 6, MPI_COMM_WORLD, MPI_STATUS_IGNORE); 
 
-  vector<int> answer = karatsuba_mult(p1, p2, me, nrProcs);
+  vector<int> answer = karatsuba_mult(p1, p2, child_begin, child_end);
   int tmp = (int)answer.size();
-  MPI_Ssend(&tmp, 1, MPI_INT, parent, 1, MPI_COMM_WORLD);
-  MPI_Ssend(answer.data(), (int)answer.size(), MPI_INT, parent, 2, MPI_COMM_WORLD);
+  MPI_Ssend(&tmp, 1, MPI_INT, status.MPI_SOURCE, 1, MPI_COMM_WORLD);
+  MPI_Ssend(answer.data(), (int)answer.size(), MPI_INT, status.MPI_SOURCE, 2, MPI_COMM_WORLD);
   
 }
 
 vector<int> master_karatsuba(int nrProcs, const vector<int> &p1, const vector<int> &p2) {
-  return karatsuba_mult(p1, p2, 0, nrProcs);
+  return karatsuba_mult(p1, p2, 1, nrProcs);
 }
 
 int main(int argc, char** argv) {
@@ -325,7 +348,7 @@ int main(int argc, char** argv) {
     if(naiveMethod) {
       worker_naive();
     } else {
-      worker_karatsuba(me, nrProcs);
+      worker_karatsuba();
     }
   }
 
