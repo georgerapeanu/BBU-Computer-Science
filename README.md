@@ -35,7 +35,7 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=47.12 s (510.7 files/s, 114437.8 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=91.04 s (264.3 files/s, 59268.1 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
@@ -43,7 +43,7 @@ Language|files|blank|comment|code
 Python|11568|545908|794103|2152539
 JSON|451|238|0|616144
 C/C++ Header|8754|111788|187517|513217
-C|126|6043|18563|60888
+C|127|6374|18925|62290
 CSV|33|0|0|36706
 C++|241|4447|6184|31523
 HTML|220|262|890|25905
@@ -65,7 +65,7 @@ Jupyter Notebook|25|0|21301|4972
 Rust|58|526|27|3502
 C#|34|403|165|2951
 Markdown|84|669|0|2615
-OCaml|28|214|49|2161
+OCaml|28|199|1564|2249
 Assembly|46|568|350|1682
 Bourne Shell|97|175|378|1290
 SQL|33|996|1061|1251
@@ -108,5 +108,5 @@ C# Generated|1|4|9|9
 Bazel|1|1|0|3
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|24065|698820|1054376|3638797
+SUM:|24066|699136|1056253|3640287
 
