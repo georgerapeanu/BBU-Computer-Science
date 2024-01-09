@@ -529,46 +529,22 @@ int yy_flex_debug = 0;
 char *yytext;
 #line 1 "lang.lxi"
 #line 2 "lang.lxi"
+#include "lang.tab.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "include.h"
 
-int symbols_cap = 0;
-int symbols_len = 0;
-char** symbols = NULL;
-
-void grow() {
-  int size = 2 * symbols_len;
-  if(size < 1) {
-    size = 1;
-  }
-  char** new_symbols = malloc(size * sizeof(char*));
-  for(int i = 0; i < symbols_len; i++) {
-    new_symbols[i] = symbols[i];
-  }
-  if(symbols != NULL) {
-    free(symbols);
-  }
-  symbols = new_symbols;
-  symbols_cap = size;
+static struct row_entry* cons(const char* c) {
+  struct row_entry* answer = malloc(sizeof(struct row_entry));
+  answer->first_child = NULL;
+  answer->next_sibling = NULL;
+  answer->name = strdup(c);
+  return answer;
 }
 
-int get_string(char* s) {
-  for(int i = 0; i < symbols_len; i++) {
-    if(strcmp(symbols[i], s) == 0) {
-      return i;
-    }
-  }
-  if(symbols_cap == symbols_len) {
-    grow();
-  }
-  symbols[symbols_len] = malloc(strlen(s) + 1);
-  strcpy(symbols[symbols_len], s);
-  return symbols_len++;
-}
-
-#line 571 "lex.yy.c"
-#line 572 "lex.yy.c"
+#line 547 "lex.yy.c"
+#line 548 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -785,9 +761,9 @@ YY_DECL
 		}
 
 	{
-#line 53 "lang.lxi"
+#line 29 "lang.lxi"
 
-#line 791 "lex.yy.c"
+#line 767 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -847,7 +823,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 54 "lang.lxi"
+#line 30 "lang.lxi"
 {}
 	YY_BREAK
 case 2:
@@ -855,251 +831,251 @@ case 2:
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 55 "lang.lxi"
+#line 31 "lang.lxi"
 {}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 56 "lang.lxi"
-{ printf("-1: "); ECHO; printf("\n"); }
+#line 32 "lang.lxi"
+{ yylval.row = cons(yytext); return NOT; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 57 "lang.lxi"
-{ printf("-2: "); ECHO; printf("\n"); }
+#line 33 "lang.lxi"
+{ yylval.row = cons(yytext); return PLUS; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 58 "lang.lxi"
-{ printf("-3: "); ECHO; printf("\n"); }
+#line 34 "lang.lxi"
+{ yylval.row = cons(yytext); return MINUS; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 59 "lang.lxi"
-{ printf("-4: "); ECHO; printf("\n"); }
+#line 35 "lang.lxi"
+{ yylval.row = cons(yytext); return MULT; }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 60 "lang.lxi"
-{ printf("-5: "); ECHO; printf("\n"); }
+#line 36 "lang.lxi"
+{ yylval.row = cons(yytext); return DIV; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 61 "lang.lxi"
-{ printf("-6: "); ECHO; printf("\n"); }
+#line 37 "lang.lxi"
+{ yylval.row = cons(yytext); return MOD; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 62 "lang.lxi"
-{ printf("-7: "); ECHO; printf("\n"); }
+#line 38 "lang.lxi"
+{ yylval.row = cons(yytext); return EQUAL;  }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 63 "lang.lxi"
-{ printf("-8: "); ECHO; printf("\n"); }
+#line 39 "lang.lxi"
+{ yylval.row = cons(yytext); return NOT_EQUAL; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 64 "lang.lxi"
-{ printf("-9: "); ECHO; printf("\n"); }
+#line 40 "lang.lxi"
+{ yylval.row = cons(yytext); return LT; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 65 "lang.lxi"
-{ printf("-10: "); ECHO; printf("\n"); }
+#line 41 "lang.lxi"
+{ yylval.row = cons(yytext); return LE; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 66 "lang.lxi"
-{ printf("-11: "); ECHO; printf("\n"); }
+#line 42 "lang.lxi"
+{ yylval.row = cons(yytext); return GT; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 67 "lang.lxi"
-{ printf("-12: "); ECHO; printf("\n"); }
+#line 43 "lang.lxi"
+{ yylval.row = cons(yytext); return GE; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 68 "lang.lxi"
-{ printf("-13: "); ECHO; printf("\n"); }
+#line 44 "lang.lxi"
+{ yylval.row = cons(yytext); return ASSIGNMENT; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 69 "lang.lxi"
-{ printf("-14: "); ECHO; printf("\n"); }
+#line 45 "lang.lxi"
+{ yylval.row = cons(yytext); return AND; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 70 "lang.lxi"
-{ printf("-15: "); ECHO; printf("\n"); }
+#line 46 "lang.lxi"
+{ yylval.row = cons(yytext); return OR; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 71 "lang.lxi"
-{ printf("-16: "); ECHO; printf("\n"); }
+#line 47 "lang.lxi"
+{ yylval.row = cons(yytext); return L_BRACKET; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 72 "lang.lxi"
-{ printf("-17: "); ECHO; printf("\n"); }
+#line 48 "lang.lxi"
+{ yylval.row = cons(yytext); return R_BRACKET; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 73 "lang.lxi"
-{ printf("-18: "); ECHO; printf("\n"); }
+#line 49 "lang.lxi"
+{ yylval.row = cons(yytext); return L_PARANTHESIS; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 74 "lang.lxi"
-{ printf("-19: "); ECHO; printf("\n"); }
+#line 50 "lang.lxi"
+{ yylval.row = cons(yytext); return R_PARANTHESIS; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 75 "lang.lxi"
-{ printf("-20: "); ECHO; printf("\n"); }
+#line 51 "lang.lxi"
+{ yylval.row = cons(yytext); return SEMICOLON; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 76 "lang.lxi"
-{ printf("-21: "); ECHO; printf("\n"); }
+#line 52 "lang.lxi"
+{ yylval.row = cons(yytext); return COMMA; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 77 "lang.lxi"
-{ printf("-22: "); ECHO; printf("\n"); }
+#line 53 "lang.lxi"
+{ yylval.row = cons(yytext); return APOSTROPHE; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 78 "lang.lxi"
-{ printf("-23: "); ECHO; printf("\n"); }
+#line 54 "lang.lxi"
+{ yylval.row = cons(yytext); return COLON; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 79 "lang.lxi"
-{ printf("-24: "); ECHO; printf("\n"); }
+#line 55 "lang.lxi"
+{ yylval.row = cons(yytext); return PERIOD; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 80 "lang.lxi"
-{ printf("-25: "); ECHO; printf("\n"); }
+#line 56 "lang.lxi"
+{ yylval.row = cons(yytext); return LET; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 81 "lang.lxi"
-{ printf("-26: "); ECHO; printf("\n"); }
+#line 57 "lang.lxi"
+{ yylval.row = cons(yytext); return IF; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 82 "lang.lxi"
-{ printf("-27: "); ECHO; printf("\n"); }
+#line 58 "lang.lxi"
+{ yylval.row = cons(yytext); return ELSE; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 83 "lang.lxi"
-{ printf("-28: "); ECHO; printf("\n"); }
+#line 59 "lang.lxi"
+{ yylval.row = cons(yytext); return WHILE; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 84 "lang.lxi"
-{ printf("-29: "); ECHO; printf("\n"); }
+#line 60 "lang.lxi"
+{ yylval.row = cons(yytext); return PRINT; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 85 "lang.lxi"
-{ printf("-30: "); ECHO; printf("\n"); }
+#line 61 "lang.lxi"
+{ yylval.row = cons(yytext); return READ_I32; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 86 "lang.lxi"
-{ printf("-31: "); ECHO; printf("\n"); }
+#line 62 "lang.lxi"
+{ yylval.row = cons(yytext); return READ_U32; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 87 "lang.lxi"
-{ printf("-32: "); ECHO; printf("\n"); }
+#line 63 "lang.lxi"
+{ yylval.row = cons(yytext); return READ_STR; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 88 "lang.lxi"
-{ printf("-33: "); ECHO; printf("\n"); }
+#line 64 "lang.lxi"
+{ yylval.row = cons(yytext); return READ_BOOL; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 89 "lang.lxi"
-{ printf("-34: "); ECHO; printf("\n"); }
+#line 65 "lang.lxi"
+{ yylval.row = cons(yytext); return READ_F32; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 90 "lang.lxi"
-{ printf("-35: "); ECHO; printf("\n"); }
+#line 66 "lang.lxi"
+{ yylval.row = cons(yytext); return I32; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 91 "lang.lxi"
-{ printf("-36: "); ECHO; printf("\n"); }
+#line 67 "lang.lxi"
+{ yylval.row = cons(yytext); return U32; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 92 "lang.lxi"
-{ printf("-37: "); ECHO; printf("\n"); }
+#line 68 "lang.lxi"
+{ yylval.row = cons(yytext); return STR; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 93 "lang.lxi"
-{ printf("-38: "); ECHO; printf("\n"); }
+#line 69 "lang.lxi"
+{ yylval.row = cons(yytext); return BOOL; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 94 "lang.lxi"
-{ printf("-39: "); ECHO; printf("\n"); }
+#line 70 "lang.lxi"
+{ yylval.row = cons(yytext); return F32; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 95 "lang.lxi"
-{ printf("-40: "); ECHO; printf("\n"); }
+#line 71 "lang.lxi"
+{ yylval.row = cons(yytext); return ARRAY; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 96 "lang.lxi"
-{ printf("-41: "); ECHO; printf("\n"); }
+#line 72 "lang.lxi"
+{ yylval.row = cons(yytext); return TRUE; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 97 "lang.lxi"
-{ printf("-42: "); ECHO; printf("\n"); }
+#line 73 "lang.lxi"
+{ yylval.row = cons(yytext); return FALSE; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 98 "lang.lxi"
-{ printf("-43: "); ECHO; printf("\n"); }
+#line 74 "lang.lxi"
+{ yylval.row = cons(yytext); return L_SQUARE_BRACKET; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 99 "lang.lxi"
-{ printf("-44: "); ECHO; printf("\n"); }
+#line 75 "lang.lxi"
+{ yylval.row = cons(yytext); return R_SQUARE_BRACKET; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 100 "lang.lxi"
-{ printf("%d: ", get_string(yytext)); ECHO; printf("\n"); }
+#line 76 "lang.lxi"
+{ yylval.row = cons(yytext); return IDENTIFIER; }
 	YY_BREAK
 case 48:
 /* rule 48 can match eol */
 YY_RULE_SETUP
-#line 101 "lang.lxi"
-{ printf("%d: ", get_string(yytext)); ECHO; printf("\n"); }
+#line 77 "lang.lxi"
+{ yylval.row = cons(yytext); return CONSTANT; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 102 "lang.lxi"
+#line 78 "lang.lxi"
 { printf("UNKNOWN "); ECHO; printf("\n");exit(1); }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 103 "lang.lxi"
+#line 79 "lang.lxi"
 ECHO;
 	YY_BREAK
-#line 1103 "lex.yy.c"
+#line 1079 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2104,6 +2080,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 103 "lang.lxi"
+#line 79 "lang.lxi"
 
 

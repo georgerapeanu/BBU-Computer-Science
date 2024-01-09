@@ -1,0 +1,79 @@
+%{
+#include "lang.tab.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "include.h"
+
+static struct row_entry* cons(const char* c) {
+  struct row_entry* answer = malloc(sizeof(struct row_entry));
+  answer->first_child = NULL;
+  answer->next_sibling = NULL;
+  answer->name = strdup(c);
+  return answer;
+}
+
+%}
+
+LETTER                [A-Za-z]
+DIGIT                 [0-9]
+NONZERODIGIT          [1-9]
+INTCONSTANT           [+-]?({NONZERODIGIT}{DIGIT}*|0)
+STRINGCONSTANT        \"([^"]|\\\")*\"
+BOOLCONSTANT          true|false
+FLOATCONSTANT         {INTCONSTANT}(\.{DIGIT}+)?
+WHITESPACE            [\n\t\r ]
+COMMENT               \/\/.*$
+CONSTANT              {INTCONSTANT}|{FLOATCONSTANT}|{BOOLCONSTANT}|{STRINGCONSTANT}
+IDENTIFIER            (_|{LETTER})({LETTER}|{DIGIT}|_)*
+%%
+{WHITESPACE} {}
+{COMMENT} {}
+"!" { yylval.row = cons(yytext); return NOT; }
+"+" { yylval.row = cons(yytext); return PLUS; }
+"-" { yylval.row = cons(yytext); return MINUS; }
+"*" { yylval.row = cons(yytext); return MULT; }
+"/" { yylval.row = cons(yytext); return DIV; }
+"%" { yylval.row = cons(yytext); return MOD; }
+"==" { yylval.row = cons(yytext); return EQUAL;  }
+"!=" { yylval.row = cons(yytext); return NOT_EQUAL; }
+"<" { yylval.row = cons(yytext); return LT; }
+"<=" { yylval.row = cons(yytext); return LE; }
+">" { yylval.row = cons(yytext); return GT; }
+">=" { yylval.row = cons(yytext); return GE; }
+"=" { yylval.row = cons(yytext); return ASSIGNMENT; }
+"&&" { yylval.row = cons(yytext); return AND; }
+"||" { yylval.row = cons(yytext); return OR; }
+"{" { yylval.row = cons(yytext); return L_BRACKET; }
+"}" { yylval.row = cons(yytext); return R_BRACKET; }
+"(" { yylval.row = cons(yytext); return L_PARANTHESIS; }
+")" { yylval.row = cons(yytext); return R_PARANTHESIS; }
+";" { yylval.row = cons(yytext); return SEMICOLON; }
+"," { yylval.row = cons(yytext); return COMMA; }
+"'" { yylval.row = cons(yytext); return APOSTROPHE; }
+":" { yylval.row = cons(yytext); return COLON; }
+"." { yylval.row = cons(yytext); return PERIOD; }
+"let" { yylval.row = cons(yytext); return LET; }
+"if" { yylval.row = cons(yytext); return IF; }
+"else" { yylval.row = cons(yytext); return ELSE; }
+"while" { yylval.row = cons(yytext); return WHILE; }
+"print" { yylval.row = cons(yytext); return PRINT; }
+"readI32" { yylval.row = cons(yytext); return READ_I32; }
+"readU32" { yylval.row = cons(yytext); return READ_U32; }
+"readStr" { yylval.row = cons(yytext); return READ_STR; }
+"readBool" { yylval.row = cons(yytext); return READ_BOOL; }
+"readF32" { yylval.row = cons(yytext); return READ_F32; }
+"i32" { yylval.row = cons(yytext); return I32; }
+"u32" { yylval.row = cons(yytext); return U32; }
+"str" { yylval.row = cons(yytext); return STR; }
+"bool" { yylval.row = cons(yytext); return BOOL; }
+"f32" { yylval.row = cons(yytext); return F32; }
+"array" { yylval.row = cons(yytext); return ARRAY; }
+"true" { yylval.row = cons(yytext); return TRUE; }
+"false" { yylval.row = cons(yytext); return FALSE; }
+"[" { yylval.row = cons(yytext); return L_SQUARE_BRACKET; }
+"]" { yylval.row = cons(yytext); return R_SQUARE_BRACKET; }
+{IDENTIFIER} { yylval.row = cons(yytext); return IDENTIFIER; }
+{CONSTANT} { yylval.row = cons(yytext); return CONSTANT; }
+. { printf("UNKNOWN "); ECHO; printf("\n");exit(1); }
+%%

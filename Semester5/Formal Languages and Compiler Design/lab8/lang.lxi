@@ -95,6 +95,8 @@ IDENTIFIER            (_|{LETTER})({LETTER}|{DIGIT}|_)*
 "array" { printf("-40: "); ECHO; printf("\n"); }
 "true" { printf("-41: "); ECHO; printf("\n"); }
 "false" { printf("-42: "); ECHO; printf("\n"); }
+"[" { printf("-43: "); ECHO; printf("\n"); }
+"]" { printf("-44: "); ECHO; printf("\n"); }
 {IDENTIFIER} { printf("%d: ", get_string(yytext)); ECHO; printf("\n"); }
 {CONSTANT} { printf("%d: ", get_string(yytext)); ECHO; printf("\n"); }
 . { printf("UNKNOWN "); ECHO; printf("\n");exit(1); }

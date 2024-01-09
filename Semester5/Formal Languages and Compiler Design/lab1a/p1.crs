@@ -5,7 +5,8 @@ x = readI32();
 y = readI32();
 
 while y != 0 {
-  let z: i32 = x % y;
+  let z: i32;
+  z = x % y;
   x = y;
   y = z;
 }

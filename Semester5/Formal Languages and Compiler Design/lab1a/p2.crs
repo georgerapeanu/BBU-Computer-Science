@@ -1,6 +1,9 @@
-let n: i32 = readI32();
-let i: i32 = 0;
-let is_prime: bool = true;
+let n: i32;
+n = readI32();
+let i: i32;
+i = 0;
+let is_prime: bool;
+is_prime = true;
 
 i = 2;
 while i < n {

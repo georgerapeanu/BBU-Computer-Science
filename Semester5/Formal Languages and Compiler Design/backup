@@ -1,0 +1,227 @@
+
+  Sexplib.Sexp.of_string
+    {|
+
+      (
+        (non_terminals 
+          (
+            identifier 
+            identifier_after_start 
+            letter 
+            digit 
+            int_constant 
+            int_after_start 
+            positive_int 
+            non_zero_digit 
+            sign 
+            str_constant_inside 
+            str_constant 
+            double_constant
+           
+            program 
+            statement 
+            variable_declaration 
+            function_call 
+            assignment
+            if_expression
+            while_expression
+            type
+            get_call 
+            set_call 
+            read_call 
+            print_call 
+            expression 
+            int_expression
+            bool_expression
+            constant 
+            bool_operator 
+            int_term 
+            int_factor 
+            double_term 
+            double_factor 
+            str_term 
+          )
+        ) 
+        (terminals 
+          (a b c d e f g h i j k l m n o p q r s t u v w x y z 0 1 2 3 4 5 6 7 8 9 "_" "+" "-" "*" "/" "%" "==" "<" "<=" ">" ">=" "=" "!=" 
+           "{" "}" "[" "]" "," "(" ")" ";" " " "\n" "\"" int str double get set read_int read_str read_double print_int print_str print_double if else while)
+        ) 
+        (starting_symbol S)
+        (productions 
+          (
+            ((letter) (a))
+            ((letter) (b))
+            ((letter) (c))
+            ((letter) (d))
+            ((letter) (d))
+            ((letter) (e))
+            ((letter) (f))
+            ((letter) (g))
+            ((letter) (h))
+            ((letter) (i))
+            ((letter) (j))
+            ((letter) (k))
+            ((letter) (l))
+            ((letter) (m))
+            ((letter) (n))
+            ((letter) (o))
+            ((letter) (p))
+            ((letter) (q))
+            ((letter) (s))
+            ((letter) (t))
+            ((letter) (u))
+            ((letter) (v))
+            ((letter) (w))
+            ((letter) (x))
+            ((letter) (y))
+            ((letter) (z))
+
+            ((non_zero_digit) (1))
+            ((non_zero_digit) (2))
+            ((non_zero_digit) (3))
+            ((non_zero_digit) (4))
+            ((non_zero_digit) (5))
+            ((non_zero_digit) (6))
+            ((non_zero_digit) (7))
+            ((non_zero_digit) (8))
+            ((non_zero_digit) (9))
+            
+            ((digit) (0))
+            ((digit) (non_zero_digit))
+            
+            ((sign) (+)) 
+            ((sign) (-))
+
+            ((identifier_after_start) (letter))
+            ((identifier_after_start) (digit))
+            ((identifier_after_start) (_))
+            ((identifier_after_start) (letter identifier_after_start))
+            ((identifier_after_start) (digit identifier_after_start))
+            ((identifier_after_start) (_ identifier_after_start))
+
+            ((identifier) (letter))
+            ((identifier) (_))
+            ((identifier) (letter identifier_after_start))
+            ((identifier) (_ identifier_after_start))
+            
+            ((int_after_start) (digit))
+            ((int_after_start) (digit int_after_start))
+
+            ((positive_int) (non_zero_digit int_after_start))
+
+            ((int_constant) (0))
+            ((int_constant) (positive_int))
+            ((int_constant) (sign positive_int))
+
+            ((str_constant_inside) (letter))
+            ((str_constant_inside) (digit))
+            ((str_constant_inside) ("_"))
+            ((str_constant_inside) (" ")) 
+            ((str_constant_inside) (letter str_constant_inside))
+            ((str_constant_inside) (digit str_constant_inside))
+            ((str_constant_inside) ("_" str_constant_inside))
+            ((str_constant_inside) (" " str_constant_inside))
+
+            ((str_constant) ("\"" str_constant_inside "\""))
+
+            ((double_constant) (int_constant . int_after_start))
+            ((double_constant) (sign 0 . int_after_start))
+
+
+
+            ((program) (statement))
+            ((program) (statement program))
+        
+            ((statement) (variable_declaration ";"))
+            ((statement) (function_call ";"))
+            ((statement) (assignment ";"))
+            ((statement) (if_expression))
+            ((statement) (while_expression))
+            
+            ((type) (int))
+            ((type) (str))
+            ((type) (double))
+
+            ((variable_declaration) (type identifier))
+            ((variable_declaration) (type "[" identifier "]"))
+
+            ((function_call) (get_call))
+            ((function_call) (set_call))
+            ((function_call) (read_call))
+            ((function_call) (print_call))
+
+            ((get_call) (get "(" identifier "," int_expression ")"))
+
+            ((set_call) (set "(" identifier "," int_expression "," expression ")"))
+
+            ((read_call) (read_int "(" ")"))
+            ((read_call) (read_str "(" ")"))
+            ((read_call) (read_double "(" ")"))
+
+            ((print_call) (print_int "(" expression ")"))
+            ((print_call) (print_str "(" expression ")"))
+            ((print_call) (print_double "(" expression ")"))
+
+            ((assignment) (identifier "=" expression))
+
+            ((if_expression) (if "(" bool_expression ")" "{" program "}"))
+            ((if_expression) (if "(" bool_expression ")" "{" program "}" else "{" program "}"))
+            
+            ((while_expression) (while "(" bool_expression ")" "{" program "}"))
+
+            ((constant) (int_constant))
+            ((constant) (str_constant))
+            ((constant) (double_constant))
+  
+            ((bool_operator) ("=="))
+            ((bool_operator) ("!="))
+            ((bool_operator) ("<"))
+            ((bool_operator) (">"))
+            ((bool_operator) ("<="))
+            ((bool_operator) (">="))
+
+            ((bool_expression) (constant bool_operator constant))
+            ((bool_expression) (constant bool_operator identifier))
+            ((bool_expression) (identifier bool_operator constant))
+            ((bool_expression) (identifier bool_operator identifier))
+
+            ((expression) (int_expression))
+            ((expression) (double_expression))
+            ((expression) (str_expression))
+
+            ((int_expression) (int_term))
+            ((int_expression) (int_term "+" int_expression))
+            ((int_expression) (int_term "-" int_expression))
+            
+            ((int_term) (int_factor))
+            ((int_term) (int_factor "*" int_term))
+            ((int_term) (int_factor "/" int_term))
+
+            ((int_factor) (int_constant))
+            ((int_factor) (identifier))
+            ((int_factor) ("(" int_expression ")"))
+            
+            ((double_expression) (double_term))
+            ((double_expression) (double_term "+" double_expression))
+            ((double_expression) (double_term "-" double_expression))
+            
+            ((double_term) (double_factor))
+            ((double_term) (double_factor "*" int_term))
+            ((double_term) (double_factor "/" int_term))
+
+            ((double_factor) (double_constant))
+            ((double_factor) (identifier))
+            ((double_factor) ("(" double_expression ")"))
+
+            ((str_expression) (str_term))
+            ((str_expression) (str_term "+" str_expression))
+
+            ((str_term) (str_expression))
+            ((str_term) (identifier))
+          )
+        )
+      )
+    |}
+  |> Grammar.t_of_sexp
+;;
+
