@@ -15,7 +15,7 @@ BASE_PATH="./lfw_dataset"
 
 def train(model, config):
     if model is None:
-        model = UNet(3, num_layers=config['NUM_LAYERS'])
+        model = UNet(in_channels=1, num_layers=config['NUM_LAYERS'], num_classes=3)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
@@ -75,7 +75,7 @@ def train(model, config):
         average_val_loss = total_val_loss / len(val_dataloader)
         losses['train'].append(average_train_loss)
         losses['validation'].append(average_val_loss)
-        model_eval = eval(model, val_dataset)
+        model_eval = eval(model, val_dataloader)
         log_data = {
             'val_loss': average_val_loss,
             'train_loss': average_train_loss,

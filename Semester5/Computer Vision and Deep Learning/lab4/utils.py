@@ -22,31 +22,41 @@ def transform_generator(INPUT_SHAPE):
 def inv_transform(X, y):
     y = torch.nn.functional.one_hot(y, num_classes=3) * torch.tensor(255)
     y = y.to(torch.uint8)
-    y = y.numpy()
+    y = y.cpu().numpy()
     X = X.to(torch.uint8)
-    X = X.numpy()
+    X = X.cpu().numpy()
     X = X.transpose([1, 2, 0])
     return X, y
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-def get_helpers(model, ds):
-    test_Xs = torch.concatenate([data_entry[0].view(-1, *data_entry[0].shape) for data_entry in ds])
-    test_ys = torch.concatenate([data_entry[1].view(-1, *data_entry[1].shape) for data_entry in ds])
+def get_helpers(model, dl):
     model.eval()
-    model_ys = model(test_Xs)
-    model_ys = torch.nn.functional.interpolate(model_ys, size=tuple(test_ys.shape[1:]))
-    model_ys = model_ys.argmax(dim=1)
-    model_ys = torch.nn.functional.one_hot(model_ys, num_classes=3)
-    test_ys = torch.nn.functional.one_hot(test_ys, num_classes=3)
+    total_belonging = None
+    for X, y in dl:
+        X, y = X.to(device), y.to(device)
+        model_ys = model(X)
+        model_ys = torch.nn.functional.interpolate(model_ys, size=tuple(y.shape[1:]))
+        model_ys = model_ys.argmax(dim=1)
+        model_ys = torch.nn.functional.one_hot(model_ys, num_classes=3)
+        test_ys = torch.nn.functional.one_hot(y, num_classes=3)
 
-    model_ys_shape_list = list(model_ys.shape)
-    model_ys_shape_list.insert(-1, 1)
-    # (test_index, row, col, ground_class, model_class)
-    belonging_data = test_ys.view(*test_ys.shape, 1) @ model_ys.view(model_ys_shape_list)
-    belonging_data = belonging_data.sum(dim=1)
-    belonging_data = belonging_data.sum(dim=1)
+        model_ys = model_ys.cpu()
+        test_ys = test_ys.cpu()
 
-    return belonging_data.sum(dim=0)
+        model_ys_shape_list = list(model_ys.shape)
+        model_ys_shape_list.insert(-1, 1)
+        # (test_index, row, col, ground_class, model_class)
+        belonging_data = test_ys.view(*test_ys.shape, 1) @ model_ys.view(model_ys_shape_list)
+        belonging_data = belonging_data.sum(dim=1)
+        belonging_data = belonging_data.sum(dim=1)
+        belonging_data = belonging_data.sum(dim=0)
+        if total_belonging is None:
+            total_belonging = belonging_data.cpu()
+        else:
+            total_belonging += belonging_data.cpu()
+
+    return total_belonging
 
 
 def eval(model, ds):
