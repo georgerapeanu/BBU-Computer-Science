@@ -4,30 +4,34 @@ import torch
 
 def transform_generator(INPUT_SHAPE):
     def transform(X, y):
-        #X = cv2.cvtColor(X, cv2.COLOR_BGR2GRAY)
-        X = cv2.cvtColor(X, cv2.COLOR_BGR2RGB)
-        #X = X.reshape(1, *X.shape)
-        X = X.transpose([2, 0, 1])
-        X = torch.from_numpy(X)
-        X = X.to(torch.float32)
-        X = torch.nn.functional.interpolate(X.view(-1, *X.shape), size=INPUT_SHAPE).view(-1, *INPUT_SHAPE)
-        y = y.transpose([2, 0, 1])
-        y = torch.from_numpy(y)
-        y = y.to(torch.float32)
-        y = torch.nn.functional.interpolate(y.view(1, *y.shape), size=INPUT_SHAPE).view(-1, *INPUT_SHAPE)
-        y = torch.argmax(y, dim=0)
+        if X is not None:
+            #X = cv2.cvtColor(X, cv2.COLOR_BGR2GRAY)
+            X = cv2.cvtColor(X, cv2.COLOR_BGR2RGB)
+            #X = X.reshape(1, *X.shape)
+            X = X.transpose([2, 0, 1])
+            X = torch.from_numpy(X)
+            X = X.to(torch.float32)
+            X = torch.nn.functional.interpolate(X.view(-1, *X.shape), size=INPUT_SHAPE).view(-1, *INPUT_SHAPE)
+        if y is not None:
+            y = y.transpose([2, 0, 1])
+            y = torch.from_numpy(y)
+            y = y.to(torch.float32)
+            y = torch.nn.functional.interpolate(y.view(1, *y.shape), size=INPUT_SHAPE).view(-1, *INPUT_SHAPE)
+            y = torch.argmax(y, dim=0)
         return X, y
 
     return transform
 
 
 def inv_transform(X, y):
-    y = torch.nn.functional.one_hot(y, num_classes=3) * torch.tensor(255)
-    y = y.to(torch.uint8)
-    y = y.cpu().numpy()
-    X = X.to(torch.uint8)
-    X = X.cpu().numpy()
-    X = X.transpose([1, 2, 0])
+    if y is not None:
+        y = torch.nn.functional.one_hot(y, num_classes=3) * torch.tensor(255)
+        y = y.to(torch.uint8)
+        y = y.cpu().numpy()
+    if X is not None:
+        X = X.to(torch.uint8)
+        X = X.cpu().numpy()
+        X = X.transpose([1, 2, 0])
     return X, y
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
