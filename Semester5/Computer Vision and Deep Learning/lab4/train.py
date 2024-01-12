@@ -15,7 +15,7 @@ BASE_PATH="./lfw_dataset"
 
 def train(model, config):
     if model is None:
-        model = UNet(in_channels=1, num_layers=config['NUM_LAYERS'], num_classes=3)
+        model = UNet(in_channels=1, num_layers=config['NUM_LAYERS'], num_classes=3, intermediary_filters=config['INTERMEDIARY_FILTERS'])
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)

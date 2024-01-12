@@ -43,6 +43,9 @@ class DecoderBlock(torch.nn.Module):
 
     def forward(self, encoder_features, X):
         X = self.up(X)
+        diffX = encoder_features.shape[3] - X.shape[3]
+        diffY = encoder_features.shape[2] - X.shape[2]
+        X = torch.nn.functional.pad(X, [diffX // 2, diffX - diffX // 2, diffY // 2, diffY - diffY // 2])
         encoder_features = torchvision.transforms.CenterCrop((X.shape[2], X.shape[3]))(encoder_features)
         X = torch.concat([encoder_features, X], dim=1)
         X = self.double_conv(X)
@@ -50,12 +53,12 @@ class DecoderBlock(torch.nn.Module):
 
 
 class UNet(torch.nn.Module):
-    def __init__(self, in_channels, num_classes, num_layers = 4):
+    def __init__(self, in_channels, num_classes, intermediary_filters=64, num_layers = 4):
         super().__init__()
-        self.in_conv = DoubleConv(in_channels=in_channels, out_channels=64, mid_channels=64)
-        self.encoders = torch.nn.ModuleList([EncoderBlock(in_channels=64*2**i, out_channels=2*64*2**i) for i in range(0, num_layers)])
-        self.decoders = torch.nn.ModuleList([DecoderBlock(in_channels=2*64*2**i, out_channels=64*2**i) for i in range(0, num_layers)])
-        self.out_conv = torch.nn.Conv2d(in_channels=64, out_channels=num_classes, kernel_size=1)
+        self.in_conv = DoubleConv(in_channels=in_channels, out_channels=intermediary_filters, mid_channels=64)
+        self.encoders = torch.nn.ModuleList([EncoderBlock(in_channels=intermediary_filters*2**i, out_channels=2*intermediary_filters*2**i) for i in range(0, num_layers)])
+        self.decoders = torch.nn.ModuleList([DecoderBlock(in_channels=2*intermediary_filters*2**i, out_channels=intermediary_filters*2**i) for i in range(0, num_layers)])
+        self.out_conv = torch.nn.Conv2d(in_channels=intermediary_filters, out_channels=num_classes, kernel_size=1)
 
     def forward(self, X):
         X = self.in_conv(X)
