@@ -4,8 +4,10 @@ import torch
 
 def transform_generator(INPUT_SHAPE):
     def transform(X, y):
-        X = cv2.cvtColor(X, cv2.COLOR_BGR2GRAY)
-        X = X.reshape(1, *X.shape)
+        #X = cv2.cvtColor(X, cv2.COLOR_BGR2GRAY)
+        X = cv2.cvtColor(X, cv2.COLOR_BGR2RGB)
+        #X = X.reshape(1, *X.shape)
+        X = X.transpose([2, 0, 1])
         X = torch.from_numpy(X)
         X = X.to(torch.float32)
         X = torch.nn.functional.interpolate(X.view(-1, *X.shape), size=INPUT_SHAPE).view(-1, *INPUT_SHAPE)

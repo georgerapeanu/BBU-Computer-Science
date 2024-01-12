@@ -15,7 +15,7 @@ BASE_PATH="./lfw_dataset"
 
 def train(model, config):
     if model is None:
-        model = UNet(in_channels=1, num_layers=config['NUM_LAYERS'], num_classes=3, intermediary_filters=config['INTERMEDIARY_FILTERS'])
+        model = UNet(in_channels=3, num_layers=config['NUM_LAYERS'], num_classes=3, intermediary_filters=config['INTERMEDIARY_FILTERS'])
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
@@ -33,10 +33,10 @@ def train(model, config):
     }
 
     checkpoints = {
-        'val_loss': ModelCheckpoint('val_loss', True, 3),
-        'mean_pixel_accuracy': ModelCheckpoint('mean_pixel_accuracy', False, 3),
-        'mean_intersection_over_union': ModelCheckpoint('mean_intersection_over_union', False, 3),
-        'fw_intersection_over_union': ModelCheckpoint('fw_intersection_over_union', False, 3),
+        'val_loss': ModelCheckpoint('val_loss', True, 1),
+        'mean_pixel_accuracy': ModelCheckpoint('mean_pixel_accuracy', False, 1),
+        'mean_intersection_over_union': ModelCheckpoint('mean_intersection_over_union', False, 1),
+        'fw_intersection_over_union': ModelCheckpoint('fw_intersection_over_union', False, 1),
     }
 
     for i in range(0, config['NUM_EPOCHS']):

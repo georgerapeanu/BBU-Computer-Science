@@ -46,7 +46,6 @@ class DecoderBlock(torch.nn.Module):
         diffX = encoder_features.shape[3] - X.shape[3]
         diffY = encoder_features.shape[2] - X.shape[2]
         X = torch.nn.functional.pad(X, [diffX // 2, diffX - diffX // 2, diffY // 2, diffY - diffY // 2])
-        encoder_features = torchvision.transforms.CenterCrop((X.shape[2], X.shape[3]))(encoder_features)
         X = torch.concat([encoder_features, X], dim=1)
         X = self.double_conv(X)
         return X
@@ -64,10 +63,10 @@ class UNet(torch.nn.Module):
         X = self.in_conv(X)
         outputs = []
         outputs.append(X)
-        for i in range(0, len(self.encoders)):
-            outputs.append(self.encoders[i].forward(outputs[i]))
+        for i, encoder in enumerate(self.encoders):
+            outputs.append(encoder.forward(outputs[i]))
         X = outputs[-1]
-        for i in range(len(self.decoders) - 1, -1, -1):
-            X = self.decoders[i].forward(outputs[i], X)
+        for i, decoder in enumerate(reversed(self.decoders)):
+            X = decoder.forward(outputs[len(self.decoders) - 1 - i], X)
         X = self.out_conv(X)
         return X
