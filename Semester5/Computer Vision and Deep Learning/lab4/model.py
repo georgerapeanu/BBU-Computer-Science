@@ -66,7 +66,7 @@ class UNet(torch.nn.Module):
         for i, encoder in enumerate(self.encoders):
             outputs.append(encoder.forward(outputs[i]))
         X = outputs[-1]
-        for i, decoder in enumerate(reversed(self.decoders)):
+        for i, decoder in enumerate(self.decoders[::-1]):
             X = decoder.forward(outputs[len(self.decoders) - 1 - i], X)
         X = self.out_conv(X)
         return X
