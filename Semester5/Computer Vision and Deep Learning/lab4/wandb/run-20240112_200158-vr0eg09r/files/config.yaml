@@ -1,0 +1,51 @@
+wandb_version: 1
+
+NUM_EPOCHS:
+  desc: null
+  value: 30
+BATCH_SIZE:
+  desc: null
+  value: 64
+INPUT_SHAPE:
+  desc: null
+  value:
+  - 64
+  - 64
+NUM_LAYERS:
+  desc: null
+  value: 1
+LR:
+  desc: null
+  value: 0.01
+INTERMEDIARY_FILTERS:
+  desc: null
+  value: 32
+_wandb:
+  desc: null
+  value:
+    python_version: 3.9.1
+    cli_version: 0.16.2
+    framework: torch
+    is_jupyter_run: true
+    is_kaggle_kernel: false
+    start_time: 1705082518.924474
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 2
+      - 16
+      - 23
+      4: 3.9.1
+      5: 0.16.2
+      8:
+      - 1
+      - 3
+      - 5
+      13: windows-amd64

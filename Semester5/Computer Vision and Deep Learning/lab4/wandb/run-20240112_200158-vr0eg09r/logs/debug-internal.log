@@ -1,0 +1,201 @@
+2024-01-12 20:01:58,924 INFO    StreamThr :11336 [internal.py:wandb_internal():86] W&B internal server running at pid: 11336, started at: 2024-01-12 20:01:58.924474
+2024-01-12 20:01:58,924 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: status
+2024-01-12 20:01:58,932 INFO    WriterThread:11336 [datastore.py:open_for_write():87] open: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\run-vr0eg09r.wandb
+2024-01-12 20:01:58,932 DEBUG   SenderThread:11336 [sender.py:send():382] send: header
+2024-01-12 20:01:58,996 DEBUG   SenderThread:11336 [sender.py:send():382] send: run
+2024-01-12 20:01:59,464 INFO    SenderThread:11336 [dir_watcher.py:__init__():211] watching files in: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files
+2024-01-12 20:01:59,464 INFO    SenderThread:11336 [sender.py:_start_run_threads():1136] run started: vr0eg09r with start time 1705082518.924474
+2024-01-12 20:01:59,480 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: check_version
+2024-01-12 20:01:59,480 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: check_version
+2024-01-12 20:01:59,684 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: run_start
+2024-01-12 20:01:59,700 DEBUG   HandlerThread:11336 [system_info.py:__init__():27] System info init
+2024-01-12 20:01:59,700 DEBUG   HandlerThread:11336 [system_info.py:__init__():42] System info init done
+2024-01-12 20:01:59,700 INFO    HandlerThread:11336 [system_monitor.py:start():194] Starting system monitor
+2024-01-12 20:01:59,700 INFO    SystemMonitor:11336 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-12 20:01:59,700 INFO    HandlerThread:11336 [system_monitor.py:probe():214] Collecting system info
+2024-01-12 20:01:59,700 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started cpu monitoring
+2024-01-12 20:01:59,700 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started disk monitoring
+2024-01-12 20:01:59,700 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started gpu monitoring
+2024-01-12 20:01:59,700 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started memory monitoring
+2024-01-12 20:01:59,715 DEBUG   HandlerThread:11336 [system_info.py:probe():151] Probing system
+2024-01-12 20:01:59,715 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started network monitoring
+2024-01-12 20:01:59,715 DEBUG   HandlerThread:11336 [system_info.py:_probe_git():136] Probing git
+2024-01-12 20:01:59,731 ERROR   gpu       :11336 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-12 20:01:59,841 DEBUG   HandlerThread:11336 [system_info.py:_probe_git():144] Probing git done
+2024-01-12 20:01:59,841 DEBUG   HandlerThread:11336 [system_info.py:probe():199] Probing system done
+2024-01-12 20:01:59,841 DEBUG   HandlerThread:11336 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.22621-SP0', 'python': '3.9.1', 'heartbeatAt': '2024-01-12T18:01:59.715933', 'startedAt': '2024-01-12T18:01:58.916702', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': 'main.ipynb', 'codePathLocal': 'main.ipynb', 'root': 'C:/Users/alexa/Desktop/cvdl', 'git': {'remote': 'https://github.com/georgerapeanu/cvdl.git', 'commit': '48be6b2e4d32f7c34eed13e1d285f4ce23fefc26'}, 'email': None, 'host': 'DESKTOP-EI79NJI', 'username': 'alexa', 'executable': 'c:\\users\\alexa\\appdata\\local\\programs\\python\\python39\\python.exe', 'cpu_count': 6, 'cpu_count_logical': 12, 'cpu_freq': {'current': 2592.0, 'min': 0.0, 'max': 2592.0}, 'cpu_freq_per_core': [{'current': 2592.0, 'min': 0.0, 'max': 2592.0}], 'disk': {'/': {'total': 952.8348197937012, 'used': 797.6159706115723}}, 'gpu': 'NVIDIA GeForce RTX 2060', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2060', 'memory_total': 6442450944}], 'memory': {'total': 15.909957885742188}}
+2024-01-12 20:01:59,841 INFO    HandlerThread:11336 [system_monitor.py:probe():224] Finished collecting system info
+2024-01-12 20:01:59,841 INFO    HandlerThread:11336 [system_monitor.py:probe():227] Publishing system info
+2024-01-12 20:01:59,841 INFO    HandlerThread:11336 [system_monitor.py:probe():229] Finished publishing system info
+2024-01-12 20:01:59,841 DEBUG   SenderThread:11336 [sender.py:send():382] send: files
+2024-01-12 20:01:59,841 INFO    SenderThread:11336 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-01-12 20:01:59,859 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: python_packages
+2024-01-12 20:01:59,860 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: python_packages
+2024-01-12 20:01:59,860 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: stop_status
+2024-01-12 20:01:59,861 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-12 20:01:59,864 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: stop_status
+2024-01-12 20:01:59,869 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: pause
+2024-01-12 20:01:59,869 INFO    HandlerThread:11336 [handler.py:handle_request_pause():708] stopping system metrics thread
+2024-01-12 20:01:59,869 INFO    HandlerThread:11336 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-12 20:01:59,870 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-12 20:01:59,870 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined disk monitor
+2024-01-12 20:01:59,870 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-12 20:01:59,876 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-12 20:01:59,876 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-12 20:01:59,919 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-12 20:01:59,920 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined memory monitor
+2024-01-12 20:01:59,920 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined network monitor
+2024-01-12 20:02:00,232 DEBUG   SenderThread:11336 [sender.py:send():382] send: telemetry
+2024-01-12 20:02:00,232 DEBUG   SenderThread:11336 [sender.py:send():382] send: stats
+2024-01-12 20:02:00,470 INFO    Thread-32 :11336 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-metadata.json
+2024-01-12 20:02:00,470 INFO    Thread-32 :11336 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\requirements.txt
+2024-01-12 20:02:01,268 INFO    wandb-upload_0:11336 [upload_job.py:push():131] Uploaded file C:\Users\alexa\AppData\Local\Temp\tmp0_flow3rwandb\48d8wqk3-wandb-metadata.json
+2024-01-12 20:02:04,256 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: status_report
+2024-01-12 20:02:06,492 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: resume
+2024-01-12 20:02:06,492 INFO    HandlerThread:11336 [handler.py:handle_request_resume():699] starting system metrics thread
+2024-01-12 20:02:06,493 INFO    HandlerThread:11336 [system_monitor.py:start():194] Starting system monitor
+2024-01-12 20:02:06,493 INFO    SystemMonitor:11336 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-01-12 20:02:06,498 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started cpu monitoring
+2024-01-12 20:02:06,498 DEBUG   SenderThread:11336 [sender.py:send():382] send: telemetry
+2024-01-12 20:02:06,499 DEBUG   SenderThread:11336 [sender.py:send():382] send: exit
+2024-01-12 20:02:06,499 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started disk monitoring
+2024-01-12 20:02:06,499 INFO    SenderThread:11336 [sender.py:send_exit():589] handling exit code: 0
+2024-01-12 20:02:06,499 INFO    SenderThread:11336 [sender.py:send_exit():591] handling runtime: 0
+2024-01-12 20:02:06,499 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started gpu monitoring
+2024-01-12 20:02:06,508 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started memory monitoring
+2024-01-12 20:02:06,514 INFO    SenderThread:11336 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-12 20:02:06,525 INFO    SystemMonitor:11336 [interfaces.py:start():190] Started network monitoring
+2024-01-12 20:02:06,525 INFO    SenderThread:11336 [sender.py:send_exit():597] send defer
+2024-01-12 20:02:06,525 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,525 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 0
+2024-01-12 20:02:06,525 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,525 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-01-12 20:02:06,525 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 1
+2024-01-12 20:02:06,525 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,525 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 1
+2024-01-12 20:02:06,525 INFO    Thread-32 :11336 [dir_watcher.py:_on_file_created():271] file/dir created: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-summary.json
+2024-01-12 20:02:06,531 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,531 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-01-12 20:02:06,531 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 2
+2024-01-12 20:02:06,531 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,531 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 2
+2024-01-12 20:02:06,531 INFO    HandlerThread:11336 [system_monitor.py:finish():203] Stopping system monitor
+2024-01-12 20:02:06,531 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined cpu monitor
+2024-01-12 20:02:06,531 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-01-12 20:02:06,532 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined disk monitor
+2024-01-12 20:02:06,532 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-01-12 20:02:06,532 DEBUG   SystemMonitor:11336 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-01-12 20:02:06,532 ERROR   gpu       :11336 [interfaces.py:monitor():144] Failed to sample metric: Not Supported
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined gpu monitor
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined memory monitor
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [interfaces.py:finish():202] Joined network monitor
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 3
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send():382] send: stats
+2024-01-12 20:02:06,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 3
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 4
+2024-01-12 20:02:06,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 4
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 5
+2024-01-12 20:02:06,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,565 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 5
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send():382] send: summary
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-01-12 20:02:06,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-01-12 20:02:06,565 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 6
+2024-01-12 20:02:06,575 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,575 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 6
+2024-01-12 20:02:06,575 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,575 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-01-12 20:02:06,575 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: status_report
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 7
+2024-01-12 20:02:06,785 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,785 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 7
+2024-01-12 20:02:06,785 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 8
+2024-01-12 20:02:06,785 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,785 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 8
+2024-01-12 20:02:06,785 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [job_builder.py:build():296] Attempting to build job artifact
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [job_builder.py:_get_program_relpath():444] run is notebook based run
+2024-01-12 20:02:06,785 INFO    SenderThread:11336 [job_builder.py:build():402] adding wandb-job metadata file
+2024-01-12 20:02:06,796 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 9
+2024-01-12 20:02:06,805 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:06,805 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 9
+2024-01-12 20:02:06,805 DEBUG   SenderThread:11336 [sender.py:send():382] send: artifact
+2024-01-12 20:02:07,498 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-12 20:02:07,532 INFO    Thread-32 :11336 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\config.yaml
+2024-01-12 20:02:07,532 INFO    Thread-32 :11336 [dir_watcher.py:_on_file_modified():288] file/dir modified: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-summary.json
+2024-01-12 20:02:08,532 INFO    wandb-upload_0:11336 [upload_job.py:push():86] Skipped uploading C:\Users\alexa\AppData\Local\wandb\wandb\artifacts\staging\tmp6rx49l_r
+2024-01-12 20:02:09,110 INFO    wandb-upload_1:11336 [upload_job.py:push():89] Uploaded file C:\Users\alexa\AppData\Local\wandb\wandb\artifacts\staging\tmponoo09od
+2024-01-12 20:02:10,475 INFO    SenderThread:11336 [sender.py:send_artifact():1494] sent artifact job-https___github.com_georgerapeanu_cvdl.git_main.ipynb - {'id': 'QXJ0aWZhY3Q6Njg5MTUyOTk3', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEyOTcyMDM2OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6Njg5MTUyNzk4', 'versionIndex': 0}}}
+2024-01-12 20:02:10,475 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:10,475 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-01-12 20:02:10,475 INFO    SenderThread:11336 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-01-12 20:02:10,552 INFO    SenderThread:11336 [dir_watcher.py:finish():388] scan: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files
+2024-01-12 20:02:10,552 INFO    SenderThread:11336 [dir_watcher.py:finish():402] scan save: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\config.yaml config.yaml
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [dir_watcher.py:finish():402] scan save: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\requirements.txt requirements.txt
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [dir_watcher.py:finish():402] scan save: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-metadata.json wandb-metadata.json
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [dir_watcher.py:finish():402] scan save: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-summary.json wandb-summary.json
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 10
+2024-01-12 20:02:10,554 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: poll_exit
+2024-01-12 20:02:10,554 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:10,554 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 10
+2024-01-12 20:02:10,554 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-01-12 20:02:10,554 INFO    SenderThread:11336 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-12 20:02:10,967 INFO    wandb-upload_1:11336 [upload_job.py:push():131] Uploaded file C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\requirements.txt
+2024-01-12 20:02:11,048 INFO    wandb-upload_0:11336 [upload_job.py:push():131] Uploaded file C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\config.yaml
+2024-01-12 20:02:11,185 INFO    wandb-upload_2:11336 [upload_job.py:push():131] Uploaded file C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\files\wandb-summary.json
+2024-01-12 20:02:11,387 INFO    Thread-31 :11336 [sender.py:transition_state():617] send defer: 11
+2024-01-12 20:02:11,387 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:11,387 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 11
+2024-01-12 20:02:11,387 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:11,387 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-01-12 20:02:11,387 INFO    SenderThread:11336 [file_pusher.py:join():181] waiting for file pusher
+2024-01-12 20:02:11,387 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 12
+2024-01-12 20:02:11,387 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:11,387 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 12
+2024-01-12 20:02:11,387 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:11,387 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-01-12 20:02:11,387 INFO    SenderThread:11336 [file_stream.py:finish():595] file stream finish called
+2024-01-12 20:02:11,532 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-12 20:02:11,555 INFO    SenderThread:11336 [file_stream.py:finish():599] file stream finish is done
+2024-01-12 20:02:11,555 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 13
+2024-01-12 20:02:11,555 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: poll_exit
+2024-01-12 20:02:11,564 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:11,564 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 13
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:11,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-01-12 20:02:11,565 INFO    SenderThread:11336 [sender.py:transition_state():617] send defer: 14
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send():382] send: final
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: defer
+2024-01-12 20:02:11,565 INFO    HandlerThread:11336 [handler.py:handle_request_defer():172] handle defer: 14
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send():382] send: footer
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: defer
+2024-01-12 20:02:11,565 INFO    SenderThread:11336 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: poll_exit
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: poll_exit
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: internal_messages
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: server_info
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: get_summary
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: sampled_history
+2024-01-12 20:02:11,565 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: job_info
+2024-01-12 20:02:11,565 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: server_info
+2024-01-12 20:02:11,755 DEBUG   SenderThread:11336 [sender.py:send_request():409] send_request: job_info
+2024-01-12 20:02:11,755 DEBUG   HandlerThread:11336 [handler.py:handle_request():146] handle_request: shutdown
+2024-01-12 20:02:11,755 INFO    HandlerThread:11336 [handler.py:finish():869] shutting down handler
+2024-01-12 20:02:12,579 INFO    WriterThread:11336 [datastore.py:close():296] close: C:\Users\alexa\Desktop\cvdl\wandb\run-20240112_200158-vr0eg09r\run-vr0eg09r.wandb
+2024-01-12 20:02:12,756 INFO    SenderThread:11336 [sender.py:finish():1572] shutting down sender
+2024-01-12 20:02:12,756 INFO    SenderThread:11336 [file_pusher.py:finish():175] shutting down file pusher
+2024-01-12 20:02:12,756 INFO    SenderThread:11336 [file_pusher.py:join():181] waiting for file pusher

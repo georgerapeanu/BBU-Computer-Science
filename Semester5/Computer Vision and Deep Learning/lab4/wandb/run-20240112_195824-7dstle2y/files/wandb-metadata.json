@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.22621-SP0",
+    "python": "3.9.1",
+    "heartbeatAt": "2024-01-12T17:58:26.126422",
+    "startedAt": "2024-01-12T17:58:24.223310",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "main.ipynb",
+    "codePathLocal": "main.ipynb",
+    "root": "C:/Users/alexa/Desktop/cvdl",
+    "git": {
+        "remote": "https://github.com/georgerapeanu/cvdl.git",
+        "commit": "48be6b2e4d32f7c34eed13e1d285f4ce23fefc26"
+    },
+    "email": null,
+    "host": "DESKTOP-EI79NJI",
+    "username": "alexa",
+    "executable": "c:\\users\\alexa\\appdata\\local\\programs\\python\\python39\\python.exe",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 2592.0,
+        "min": 0.0,
+        "max": 2592.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2592.0,
+            "min": 0.0,
+            "max": 2592.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 952.8348197937012,
+            "used": 795.939884185791
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2060",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2060",
+            "memory_total": 6442450944
+        }
+    ],
+    "memory": {
+        "total": 15.909957885742188
+    }
+}

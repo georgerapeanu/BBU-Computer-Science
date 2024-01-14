@@ -1,0 +1,1 @@
+{"val_loss": 0.2528414037078619, "train_loss": 0.18917244610687098, "mean_pixel_accuracy": 0.8287248015403748, "mean_intersection_over_union": 0.7512038350105286, "fw_intersection_over_union": 0.8354887366294861, "_timestamp": 1705082500.6880975, "_runtime": 196.45302057266235, "_step": 34, "_wandb": {"runtime": 189}}

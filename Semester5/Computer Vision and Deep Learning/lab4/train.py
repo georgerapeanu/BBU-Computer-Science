@@ -24,7 +24,10 @@ def train(model, config):
     train_dataloader = DataLoader(train_dataset, batch_size=config['BATCH_SIZE'], shuffle=True)
     val_dataset = LFWDataset(BASE_PATH, transforms=transform_generator(config['INPUT_SHAPE']), download=False, split_name='validation')
     val_dataloader = DataLoader(val_dataset, batch_size=config['BATCH_SIZE'], shuffle=True)
-    optim = torch.optim.Adam(model.parameters(), lr=config['LR'])
+    if config['OPTIMIZER'] == 'Adam':
+        optim = torch.optim.Adam(model.parameters(), lr=config['LR'])
+    else:
+        optim = torch.optim.SGD(model.parameters(), lr=config['LR'])
     loss_fn = torch.nn.CrossEntropyLoss()
 
     losses = {
@@ -57,7 +60,7 @@ def train(model, config):
         model.eval()
 
         columns = ["source_image", "prediction_image", "ground_truth"]
-        predictons_table = wandb.Table(columns=columns)
+        predictions_table = wandb.Table(columns=columns)
 
         for X, y in val_dataloader:
             X, y = X.to(device), y.to(device)
@@ -69,7 +72,7 @@ def train(model, config):
             for (source_image, prediction_image, ground_truth) in zip(X, model_y, y):
                 _, model_y = inv_transform(source_image, prediction_image)
                 X, y = inv_transform(source_image, ground_truth)
-                predictons_table.add_data(wandb.Image(X), wandb.Image(model_y), wandb.Image(y))
+                predictions_table.add_data(wandb.Image(X), wandb.Image(model_y), wandb.Image(y))
 
         average_train_loss = total_train_loss / len(train_dataloader)
         average_val_loss = total_val_loss / len(val_dataloader)
@@ -82,8 +85,10 @@ def train(model, config):
             'mean_pixel_accuracy': model_eval['mean_pixel_accuracy'],
             'mean_intersection_over_union': model_eval['mean_intersection_over_union'],
             'fw_intersection_over_union': model_eval['fw_intersection_over_union'],
-            'predictons_table': predictons_table
+            'predictions_table': predictions_table
         }
+        if i + 1 < config['NUM_EPOCHS']:
+            del log_data['predictions_table']
         wandb.log(log_data)
         for k in checkpoints.keys():
             checkpoints[k](model, i, log_data[k])

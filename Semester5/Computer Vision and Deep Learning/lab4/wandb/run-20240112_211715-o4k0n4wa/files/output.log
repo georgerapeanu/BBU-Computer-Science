@@ -1,0 +1,10 @@
+
+Epoch [1/30], Train Loss: 0.6067, Validation Loss: 0.8278
+Epoch [2/30], Train Loss: 0.4344, Validation Loss: 0.5089
+Epoch [3/30], Train Loss: 0.4048, Validation Loss: 0.4418
+Epoch [4/30], Train Loss: 0.3875, Validation Loss: 0.5639
+Epoch [5/30], Train Loss: 0.3722, Validation Loss: 0.3765
+Epoch [6/30], Train Loss: 0.3657, Validation Loss: 0.5976
+Epoch [7/30], Train Loss: 0.3564, Validation Loss: 0.3649
+Epoch [8/30], Train Loss: 0.3456, Validation Loss: 0.6813
+Epoch [9/30], Train Loss: 0.3346, Validation Loss: 0.4989

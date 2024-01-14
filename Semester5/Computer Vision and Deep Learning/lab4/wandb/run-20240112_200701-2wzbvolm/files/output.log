@@ -1,0 +1,115 @@
+
+Epoch [1/30], Train Loss: 0.5541, Validation Loss: 0.6039
+Epoch [2/30], Train Loss: 0.4454, Validation Loss: 0.5515
+Epoch [3/30], Train Loss: 0.4167, Validation Loss: 0.5018
+Epoch [4/30], Train Loss: 0.3973, Validation Loss: 0.5771
+Epoch [5/30], Train Loss: 0.3830, Validation Loss: 0.3978
+Epoch [6/30], Train Loss: 0.3643, Validation Loss: 0.3907
+Epoch [7/30], Train Loss: 0.3476, Validation Loss: 0.5806
+Epoch [8/30], Train Loss: 0.3467, Validation Loss: 0.3423
+Epoch [9/30], Train Loss: 0.3232, Validation Loss: 0.3154
+Epoch [10/30], Train Loss: 0.3113, Validation Loss: 0.3618
+Epoch [11/30], Train Loss: 0.3010, Validation Loss: 0.3154
+Epoch [12/30], Train Loss: 0.2917, Validation Loss: 0.2956
+Epoch [13/30], Train Loss: 0.2791, Validation Loss: 0.3139
+Epoch [14/30], Train Loss: 0.2694, Validation Loss: 0.3320
+Epoch [15/30], Train Loss: 0.2695, Validation Loss: 0.3097
+Epoch [16/30], Train Loss: 0.2560, Validation Loss: 0.2688
+Epoch [17/30], Train Loss: 0.2434, Validation Loss: 0.2758
+Epoch [18/30], Train Loss: 0.2417, Validation Loss: 0.2571
+Epoch [19/30], Train Loss: 0.2397, Validation Loss: 0.2463
+Epoch [20/30], Train Loss: 0.2332, Validation Loss: 0.2682
+Epoch [21/30], Train Loss: 0.2260, Validation Loss: 0.2393
+Epoch [22/30], Train Loss: 0.2245, Validation Loss: 0.2473
+Epoch [23/30], Train Loss: 0.2226, Validation Loss: 0.2440
+Epoch [24/30], Train Loss: 0.2112, Validation Loss: 0.2360
+Epoch [25/30], Train Loss: 0.2140, Validation Loss: 0.2385
+Epoch [26/30], Train Loss: 0.2142, Validation Loss: 0.2291
+Epoch [27/30], Train Loss: 0.2090, Validation Loss: 0.2943
+Epoch [28/30], Train Loss: 0.2061, Validation Loss: 0.3234
+Epoch [29/30], Train Loss: 0.2015, Validation Loss: 0.2344
+Epoch [30/30], Train Loss: 0.2013, Validation Loss: 0.2253
+wandb: Waiting for artifact model_val_loss to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_val_loss:v409
+wandb: Waiting for artifact model_mean_pixel_accuracy to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_pixel_accuracy:v332
+wandb: Waiting for artifact model_mean_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_intersection_over_union:v336
+wandb: Waiting for artifact model_fw_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_fw_intersection_over_union:v339
+Epoch [1/30], Train Loss: 0.1927, Validation Loss: 0.2099
+Epoch [2/30], Train Loss: 0.1914, Validation Loss: 0.2101
+Epoch [3/30], Train Loss: 0.1916, Validation Loss: 0.2094
+Epoch [4/30], Train Loss: 0.1909, Validation Loss: 0.2092
+Epoch [5/30], Train Loss: 0.1907, Validation Loss: 0.2087
+Epoch [6/30], Train Loss: 0.1901, Validation Loss: 0.2093
+Epoch [7/30], Train Loss: 0.1903, Validation Loss: 0.2079
+Epoch [8/30], Train Loss: 0.1889, Validation Loss: 0.2079
+Epoch [9/30], Train Loss: 0.1891, Validation Loss: 0.2077
+Epoch [10/30], Train Loss: 0.1884, Validation Loss: 0.2076
+Epoch [11/30], Train Loss: 0.1880, Validation Loss: 0.2072
+Epoch [12/30], Train Loss: 0.1889, Validation Loss: 0.2088
+Epoch [13/30], Train Loss: 0.1882, Validation Loss: 0.2076
+Epoch [14/30], Train Loss: 0.1886, Validation Loss: 0.2070
+Epoch [15/30], Train Loss: 0.1883, Validation Loss: 0.2069
+Epoch [16/30], Train Loss: 0.1875, Validation Loss: 0.2074
+Epoch [17/30], Train Loss: 0.1868, Validation Loss: 0.2068
+Epoch [18/30], Train Loss: 0.1873, Validation Loss: 0.2074
+Epoch [19/30], Train Loss: 0.1872, Validation Loss: 0.2060
+Epoch [20/30], Train Loss: 0.1870, Validation Loss: 0.2061
+Epoch [21/30], Train Loss: 0.1866, Validation Loss: 0.2057
+Epoch [22/30], Train Loss: 0.1865, Validation Loss: 0.2058
+Epoch [23/30], Train Loss: 0.1885, Validation Loss: 0.2061
+Epoch [24/30], Train Loss: 0.1858, Validation Loss: 0.2055
+Epoch [25/30], Train Loss: 0.1863, Validation Loss: 0.2063
+Epoch [26/30], Train Loss: 0.1856, Validation Loss: 0.2055
+Epoch [27/30], Train Loss: 0.1870, Validation Loss: 0.2047
+Epoch [28/30], Train Loss: 0.1869, Validation Loss: 0.2056
+Epoch [29/30], Train Loss: 0.1872, Validation Loss: 0.2060
+wandb: Waiting for artifact model_val_loss to be committed...
+Epoch [30/30], Train Loss: 0.1858, Validation Loss: 0.2063
+wandb: Committed artifact georgerapeanu/cvdl/model_val_loss:v410
+wandb: Waiting for artifact model_mean_pixel_accuracy to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_pixel_accuracy:v333
+wandb: Waiting for artifact model_mean_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_intersection_over_union:v337
+wandb: Waiting for artifact model_fw_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_fw_intersection_over_union:v340
+Epoch [1/30], Train Loss: 0.1860, Validation Loss: 0.2055
+Epoch [2/30], Train Loss: 0.1853, Validation Loss: 0.2047
+Epoch [3/30], Train Loss: 0.1849, Validation Loss: 0.2048
+Epoch [4/30], Train Loss: 0.1858, Validation Loss: 0.2055
+Epoch [5/30], Train Loss: 0.1860, Validation Loss: 0.2052
+Epoch [6/30], Train Loss: 0.1860, Validation Loss: 0.2057
+Epoch [7/30], Train Loss: 0.1846, Validation Loss: 0.2042
+Epoch [8/30], Train Loss: 0.1858, Validation Loss: 0.2059
+Epoch [9/30], Train Loss: 0.1860, Validation Loss: 0.2055
+Epoch [10/30], Train Loss: 0.1859, Validation Loss: 0.2052
+Epoch [11/30], Train Loss: 0.1850, Validation Loss: 0.2058
+Epoch [12/30], Train Loss: 0.1841, Validation Loss: 0.2050
+Epoch [13/30], Train Loss: 0.1857, Validation Loss: 0.2058
+Epoch [14/30], Train Loss: 0.1854, Validation Loss: 0.2052
+Epoch [15/30], Train Loss: 0.1846, Validation Loss: 0.2052
+Epoch [16/30], Train Loss: 0.1864, Validation Loss: 0.2055
+Epoch [17/30], Train Loss: 0.1845, Validation Loss: 0.2058
+Epoch [18/30], Train Loss: 0.1855, Validation Loss: 0.2051
+Epoch [19/30], Train Loss: 0.1843, Validation Loss: 0.2048
+Epoch [20/30], Train Loss: 0.1849, Validation Loss: 0.2052
+Epoch [21/30], Train Loss: 0.1862, Validation Loss: 0.2059
+Epoch [22/30], Train Loss: 0.1849, Validation Loss: 0.2047
+Epoch [23/30], Train Loss: 0.1851, Validation Loss: 0.2052
+Epoch [24/30], Train Loss: 0.1863, Validation Loss: 0.2057
+Epoch [25/30], Train Loss: 0.1853, Validation Loss: 0.2052
+Epoch [26/30], Train Loss: 0.1857, Validation Loss: 0.2055
+Epoch [27/30], Train Loss: 0.1850, Validation Loss: 0.2046
+Epoch [28/30], Train Loss: 0.1847, Validation Loss: 0.2052
+Epoch [29/30], Train Loss: 0.1843, Validation Loss: 0.2052
+Epoch [30/30], Train Loss: 0.1847, Validation Loss: 0.2049
+wandb: Waiting for artifact model_val_loss to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_val_loss:v411
+wandb: Waiting for artifact model_mean_pixel_accuracy to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_pixel_accuracy:v334
+wandb: Waiting for artifact model_mean_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_mean_intersection_over_union:v338
+wandb: Waiting for artifact model_fw_intersection_over_union to be committed...
+wandb: Committed artifact georgerapeanu/cvdl/model_fw_intersection_over_union:v341

@@ -13,6 +13,7 @@ class DoubleConv(torch.nn.Module):
             torch.nn.Conv2d(in_channels=mid_channels, out_channels=out_channels, kernel_size=3),
             torch.nn.BatchNorm2d(out_channels),
             torch.nn.ReLU(inplace=True),
+            torch.nn.Dropout(p=0.5)
         )
 
     def forward(self, X):
@@ -24,11 +25,27 @@ class EncoderBlock(torch.nn.Module):
         super().__init__()
         self.encoder = torch.nn.Sequential(
             torch.nn.MaxPool2d(kernel_size=2),
-            DoubleConv(in_channels, out_channels=out_channels)
+            DoubleConv(in_channels, out_channels=out_channels),
+            torch.nn.Dropout(p=0.5)
         )
 
     def forward(self, X):
         return self.encoder(X)
+
+
+def center_crop(image, match_x):
+    h, w = image.shape[-2], image.shape[-1]
+    new_h, new_w = match_x.shape[-2], match_x.shape[-1]
+
+    start_h = max(0, (h - new_h) // 2)
+    start_w = max(0, (w - new_w) // 2)
+
+    end_h = start_h + new_h
+    end_w = start_w + new_w
+
+    cropped_image = image[... , start_h:end_h, start_w:end_w]
+
+    return cropped_image
 
 
 class DecoderBlock(torch.nn.Module):
@@ -37,15 +54,14 @@ class DecoderBlock(torch.nn.Module):
         self.up = torch.nn.Sequential(
             torch.nn.ConvTranspose2d(in_channels=in_channels, out_channels=in_channels // 2, kernel_size=2, stride=2, padding=0),
             torch.nn.BatchNorm2d(in_channels // 2),
-            torch.nn.ReLU(inplace=True)
+            torch.nn.ReLU(inplace=True),
+            torch.nn.Dropout(p=0.5)
         )
         self.double_conv = DoubleConv(in_channels=in_channels, out_channels=out_channels, mid_channels=in_channels//2)
 
     def forward(self, encoder_features, X):
         X = self.up(X)
-        diffX = encoder_features.shape[3] - X.shape[3]
-        diffY = encoder_features.shape[2] - X.shape[2]
-        X = torch.nn.functional.pad(X, [diffX // 2, diffX - diffX // 2, diffY // 2, diffY - diffY // 2])
+        encoder_features = center_crop(encoder_features, match_x=X)
         X = torch.concat([encoder_features, X], dim=1)
         X = self.double_conv(X)
         return X
