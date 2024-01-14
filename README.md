@@ -35,7 +35,7 @@
     * [🔒Software Security](Semester5/Software%20Security/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=70.55 s (341.2 files/s, 76546.4 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=46.68 s (515.7 files/s, 115679.9 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
