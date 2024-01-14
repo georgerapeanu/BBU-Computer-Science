@@ -26,6 +26,7 @@ def center_crop_square(image):
 
 
 def get_prediction_for_image(X):
+    X_shape = X.shape[:-1]
     X = center_crop_square(X)
     transform = utils.transform_generator(INPUT_SHAPE)
     X, _ = transform(X, None)
@@ -34,12 +35,14 @@ def get_prediction_for_image(X):
     model_y = torch.nn.functional.interpolate(model_y, size=INPUT_SHAPE)
     model_y = model_y.squeeze(dim=0).argmax(dim=0)
     X, model_y = utils.inv_transform(X, model_y)
+    X = cv2.resize(X, X_shape)
+    model_y = cv2.resize(model_y, X_shape)
     return X, model_y
 
 
 def gradio_fn(image):
     if image is None:
-        return image
+        return image, image
 
     bgr_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     X, output = get_prediction_for_image(bgr_image)
@@ -50,7 +53,7 @@ def gradio_fn(image):
 if __name__ == '__main__':
     ui = gradio.Interface(
         fn=gradio_fn,
-        inputs=gradio.Image(sources=["webcam"], streaming=True),
+        inputs=gradio.Image(source="webcam", streaming=True),
         outputs=["image", "image"],
         title="Image segmentation demo"
     )
