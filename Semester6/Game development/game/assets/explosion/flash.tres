@@ -1,0 +1,19 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://b1ibxnua0usbr"]
+
+[sub_resource type="Curve" id="Curve_w3t2o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.114786, 0.925072), -0.936079, -0.936079, 0, 0, Vector2(1, 0), -1.02966, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5ykm4"]
+curve = SubResource("Curve_w3t2o")
+
+[resource]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.3
+spread = 180.0
+gravity = Vector3(0, -2, 0)
+scale_min = 4.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_5ykm4")
+color = Color(2.5, 1, 0.5, 1)

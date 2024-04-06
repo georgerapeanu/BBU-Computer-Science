@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://iamfor0l4h4e"]
+
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_xmotr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q2ktv"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_p0rl7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h656o"]
+albedo_color = Color(0.10748, 0.10748, 0.10748, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wv0uv"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_nibkc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = false
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:shooter_id")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_q2ktv")
+gravity_scale = 0.0
+contact_monitor = true
+script = ExtResource("1_xmotr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+mesh = SubResource("SphereMesh_p0rl7")
+surface_material_override/0 = SubResource("StandardMaterial3D_h656o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("SphereShape3D_wv0uv")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+shape = SubResource("SphereShape3D_wv0uv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_nibkc")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]

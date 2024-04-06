@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqt61hd3km3r8"]
+
+[ext_resource type="Script" path="res://scripts/tank.gd" id="1_qf4wx"]
+[ext_resource type="ArrayMesh" uid="uid://datc0vjw1diqf" path="res://assets/stylized tank/tank.obj" id="2_c6spy"]
+[ext_resource type="Texture2D" uid="uid://b0kbqk17s0lrc" path="res://assets/stylized tank/tankdiffuse.png" id="3_2kdo6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nllq8"]
+albedo_texture = ExtResource("3_2kdo6")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hpt6i"]
+size = Vector3(3.22325, 3.32172, 4.86624)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_5cmje"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = false
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="tank" type="CharacterBody3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+top_level = true
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_qf4wx")
+
+[node name="Tank" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_c6spy")
+surface_material_override/0 = SubResource("StandardMaterial3D_nllq8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0357895, 1.66086, 0.311325)
+shape = SubResource("BoxShape3D_hpt6i")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(-1, 5.61943e-08, -6.69697e-08, 0, 0.766044, 0.642788, 8.74228e-08, 0.642788, -0.766044, 0, 20, -20)
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="bulletSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67641, 4.67649)
+
+[node name="bulletTimer" type="Timer" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_5cmje")

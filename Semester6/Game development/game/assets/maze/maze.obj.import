@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cwsxkuv3u6igd"
+path="res://.godot/imported/maze.obj-2fc8767111c538062e9f931365caefb7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maze.obj-2fc8767111c538062e9f931365caefb7.mesh"]
+
+source_file="res://assets/maze/maze.obj"
+dest_files=["res://.godot/imported/maze.obj-2fc8767111c538062e9f931365caefb7.mesh", "res://.godot/imported/maze.obj-2fc8767111c538062e9f931365caefb7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

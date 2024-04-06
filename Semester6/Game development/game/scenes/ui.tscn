@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcojel634waej"]
+
+[ext_resource type="Script" path="res://scripts/join.gd" id="1_phywp"]
+[ext_resource type="PackedScene" uid="uid://cm2kfgo7boink" path="res://scenes/main.tscn" id="2_6n1wu"]
+[ext_resource type="PackedScene" uid="uid://bqt61hd3km3r8" path="res://scenes/tank.tscn" id="2_7d3de"]
+
+[node name="ui" type="Node3D"]
+script = ExtResource("1_phywp")
+play_scene = ExtResource("2_7d3de")
+
+[node name="host" type="Button" parent="."]
+offset_right = 162.0
+offset_bottom = 56.0
+text = "host"
+
+[node name="join" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 64.0
+offset_right = 161.0
+offset_bottom = 124.0
+text = "join"
+
+[node name="maze" parent="." instance=ExtResource("2_6n1wu")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/bullet.tscn", "res://scenes/tank.tscn", "res://scenes/explosion.tscn")
+spawn_path = NodePath(".")
+
+[node name="spawnpoints" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="Node3D2" type="Node3D" parent="spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -34)
+
+[node name="Node3D3" type="Node3D" parent="spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -34)
+
+[node name="Node3D4" type="Node3D" parent="spawnpoints"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0, -4)
+
+[node name="score" type="Label" parent="."]
+visible = false
+offset_left = 985.0
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 61.0
+text = "score: 0"
+
+[connection signal="pressed" from="host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="join" to="." method="_on_join_pressed"]

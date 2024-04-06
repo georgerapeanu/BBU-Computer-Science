@@ -1,0 +1,26 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1712387173
+::res://assets/::1711878336
+::res://assets/explosion/::1712386969
+Circle03.png::CompressedTexture2D::4422696369603123854::1711878380::1711878380::1::::<><>::
+Flare00.PNG::CompressedTexture2D::7799271712033139241::1711878365::1711878403::1::::<><>::
+Flare01.png::CompressedTexture2D::843269961217939047::1711878365::1711878366::1::::<><>::
+flash.tres::ParticleProcessMaterial::4227948144300855851::1711891436::0::1::::<><>::
+flash_geometry.tres::StandardMaterial3D::258821124530377454::1712386969::0::1::::<><>::uid://djea4ov553nm4::::res://assets/explosion/Flare00.PNG
+::res://assets/maze/::1710659770
+maze.obj::Mesh::6355570159976710247::1710513764::1710659770::1::::<><>::
+::res://assets/stylized tank/::1710659748
+tank.obj::Mesh::7198652425167638781::1710510393::1710659748::1::::<><>::
+tankdiffuse.png::CompressedTexture2D::4161875408757152984::1710510393::1710659748::1::::<><>::
+tankoutline.obj::Mesh::1162051131460900038::1710510393::1710659748::1::::<><>::
+::res://scenes/::1712386969
+bullet.tscn::PackedScene::562249044727292402::1712386969::0::1::::<><>::res://scripts/bullet.gd
+explosion.gd::GDScript::-1::1711892493::0::1::::<>Node3D<>::
+explosion.tscn::PackedScene::706842643117668245::1712386969::0::1::::<><>::res://scenes/explosion.gd<>uid://djea4ov553nm4::::res://assets/explosion/Flare00.PNG<>uid://dxm0mq8lya75::::res://assets/explosion/flash_geometry.tres
+main.tscn::PackedScene::5671462127522586340::1712386969::0::1::::<><>::uid://cwsxkuv3u6igd::::res://assets/maze/maze.obj
+tank.tscn::PackedScene::3550594390229966739::1712386969::0::1::::<><>::res://scripts/tank.gd<>uid://datc0vjw1diqf::::res://assets/stylized tank/tank.obj<>uid://b0kbqk17s0lrc::::res://assets/stylized tank/tankdiffuse.png
+ui.tscn::PackedScene::2556253882594119377::1712386969::0::1::::<><>::res://scripts/join.gd<>uid://cm2kfgo7boink::::res://scenes/main.tscn<>uid://bqt61hd3km3r8::::res://scenes/tank.tscn
+::res://scripts/::1712386969
+bullet.gd::GDScript::-1::1712325120::0::1::::<>RigidBody3D<>::
+join.gd::GDScript::-1::1712336321::0::1::::<>Node3D<>::
+tank.gd::GDScript::-1::1712386969::0::1::::<>CharacterBody3D<>::

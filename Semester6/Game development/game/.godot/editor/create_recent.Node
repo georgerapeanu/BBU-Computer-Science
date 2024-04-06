@@ -1,0 +1,15 @@
+Label
+MultiplayerSynchronizer
+Timer
+Node3D
+MultiplayerSpawner
+Button
+GPUParticles3D
+GPUParticles2D
+Area3D
+CollisionShape3D
+MeshInstance3D
+RigidBody3D
+SpringArm3D
+Camera3D
+OmniLight3D
