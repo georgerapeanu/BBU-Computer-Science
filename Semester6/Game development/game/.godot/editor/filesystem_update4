@@ -5,6 +5,3 @@ res://scenes/tank.tscn
 res://scenes/bullet.tscn
 res://scenes/explosion.tscn
 res://scenes/ui.tscn
-res://scripts/join.gd
-res://scripts/bullet.gd
-res://scenes/explosion.gd

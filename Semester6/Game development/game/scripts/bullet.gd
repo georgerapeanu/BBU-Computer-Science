@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var IMPULSE_STRENGTH = 10
+@export var IMPULSE_STRENGTH = 20
 @onready var explosionScene = load("res://scenes/explosion.tscn")
 @export var shooter_id: int
 # Called when the node enters the scene tree for the first time.

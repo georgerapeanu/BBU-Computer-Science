@@ -9,7 +9,9 @@ bounce = 1.0
 [sub_resource type="SphereMesh" id="SphereMesh_p0rl7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h656o"]
-albedo_color = Color(0.10748, 0.10748, 0.10748, 1)
+albedo_color = Color(0.105882, 0.105882, 0.105882, 1)
+emission = Color(0.521569, 0.435294, 0.364706, 1)
+emission_energy_multiplier = 5.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wv0uv"]
 
