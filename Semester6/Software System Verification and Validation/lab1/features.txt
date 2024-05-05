@@ -1,0 +1,26 @@
+
+Feature Tour Testing: Discovered Features
+
+F0: Implement CRUD operations for the Student entity
+
+F1: Adding a laboratory theme
+
+F2: extending the term of delivery for an existing subject
+
+F4: adding a grade for a particular student to a laboratory topic
+
+F5: When adding a grade, the following information will be retained in the NameStudent.txt
+file
+
+Extra features 
+
+- it is possible to add a grade for a student on a given theme
+- it is possible to find a student by its id, if the student with the given id exists, all the information about the student is displayed, otherwise an error message is shown.
+- it is possible to extend the deadline
+- it is possible to update information about a homework, if the homework doesn't exist, an error message is printed
+- it is possible to delete a grade for a student at a given homework; if the grade doesn't exist, an error message is printed
+- it is possible to view a grade for a given student at a given homework; if the grade doesn't exist, an error message is printed
+- students are presisted on a txt file 
+- homeworks are persisted on a txt file 
+- grades are persisted on a txt file 
+
