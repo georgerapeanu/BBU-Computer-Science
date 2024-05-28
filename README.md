@@ -33,81 +33,79 @@
     * [📱MobileApplications](Semester5/MobileApplications/)
     * [🔬Research Project](Semester5/Research%20Project/)
     * [🔒Software Security](Semester5/Software%20Security/)
+* [Semester 6](Semester6/)
+    * Bachelor Thesis Preparation
+    * [Design Patterns](Semester6/Design%20patterns/)
+    * [Ethics and academic integrity](Semester6/Ethics%20and%20academic%20integrity/)
+    * [Game development](Semester6/Game%20development/)
+    * [Numerical Calculus](Semester6/Numerical%20Calculus/)
+    * [Software System Verification and Validation](Semester6/Software%20System%20Verification%20and%20Validation/)
 
 
-cloc|github.com/AlDanial/cloc v 1.90  T=46.68 s (515.7 files/s, 115679.9 lines/s)
+cloc|github.com/AlDanial/cloc v 1.90  T=4.56 s (842.7 files/s, 181414.6 lines/s)
 --- | ---
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Python|11569|545931|794108|2152619
-JSON|453|238|0|616275
-C/C++ Header|8756|111808|187548|513301
-C|129|6978|19545|64900
-CSV|33|0|0|36706
-C++|241|4447|6184|31523
-HTML|220|262|890|25905
-Cython|133|4846|5883|23856
-CSS|32|1577|1587|20559
-JavaScript|557|4632|4682|19466
-YAML|49|3384|1093|17553
-CUDA|57|2235|1826|13739
-TeX|129|1884|284|12496
-SVG|8|10|22|10886
-D|241|529|0|8568
-Java|224|1385|1477|8199
-XSLT|3|699|467|7525
-XML|128|109|223|7517
-PHP|94|1057|2763|7235
-CMake|101|1330|1975|5833
-TypeScript|215|794|66|5682
-Jupyter Notebook|26|0|21352|5127
-Rust|58|526|27|3502
-C#|34|403|165|2951
-Markdown|85|669|0|2617
-OCaml|28|199|1564|2249
+JavaScript|143|63779|72940|326178
+JSON|136|0|0|52722
+Maven|260|1945|3781|47980
+SVG|201|116|101|44145
+HTML|831|510|1313|32320
+C++|189|2356|689|12949
+TeX|119|1843|273|11968
+XML|300|153|333|11200
+Python|206|3421|3787|10871
+C|63|2203|1669|10506
+Java|269|1859|2083|10414
+CSS|91|1295|1236|8048
+Dart|59|780|270|7130
+Jupyter Notebook|25|0|21296|5208
+TypeScript|168|623|62|3970
+C#|36|412|175|2989
+C/C++ Header|159|1292|2338|2909
+Bourne Shell|61|523|656|2898
+D|53|112|0|2172
+Markdown|66|505|0|1785
 Assembly|46|568|350|1682
-Bourne Shell|97|175|378|1290
-SQL|33|996|1061|1251
-make|15|560|542|1143
-Dart|10|97|26|1006
-Qt|10|0|0|937
-MSBuild script|9|13|0|856
-Fortran 90|44|104|79|770
-INI|9|20|16|767
-PO File|3|270|288|666
-DOS Batch|10|153|8|579
-Jinja Template|1|123|8|515
-Kotlin|12|66|38|489
-reStructuredText|23|143|76|444
+Rust|12|304|15|1608
+YAML|34|98|271|1551
+CMake|53|392|253|1531
+SQL|23|992|1053|1212
+MSBuild script|10|13|0|895
+Qt|8|0|0|860
+INI|3|4|16|704
+MATLAB|46|104|38|635
+DOS Batch|8|141|8|539
+Kotlin|13|68|38|493
+PHP|18|89|0|446
 JSP|12|7|21|435
-Maven|5|27|17|435
-Perl|16|54|0|383
-Fortran 77|19|20|49|353
-ANTLR Grammar|2|84|11|335
-MATLAB|20|69|36|314
+Godot Scene|5|78|0|284
+make|7|122|116|265
+Bourne Again Shell|2|37|43|243
 Prolog|4|67|41|243
 Razor|13|9|0|229
 Lisp|3|33|38|214
+Visual Basic|12|0|0|192
+Visual Studio Solution|7|7|7|182
 yacc|1|20|0|169
-Visual Studio Solution|6|6|6|167
 XSD|1|0|0|164
-diff|2|1|13|163
-TOML|16|39|16|139
-Bourne Again Shell|1|19|20|121
+Windows Resource File|2|46|58|138
+GDScript|4|43|8|129
 FXML|2|5|0|120
 awk|8|23|0|117
-Fish Shell|1|19|14|70
-Windows Resource File|1|23|29|69
-Swift|6|14|7|54
-PowerShell|1|12|3|46
-C Shell|1|13|7|35
-Gradle|4|5|0|34
-Objective-C|1|7|4|17
-Dockerfile|1|1|0|13
+Swift|7|17|10|64
+TOML|8|18|8|61
+Gradle|5|10|0|58
+reStructuredText|13|36|75|51
+Objective-C|2|15|8|40
+Godot Resource|2|5|0|29
+CSV|5|0|0|18
+Dockerfile|2|1|2|17
 C# Generated|1|4|9|9
-Bazel|1|1|0|3
+diff|1|1|7|9
+XMI|1|6|26|6
 ProGuard|1|3|18|0
 --------|--------|--------|--------|--------
-SUM:|24075|699805|1056960|3643635
+SUM:|3840|87113|115539|624004
 

@@ -33,5 +33,12 @@
     * [📱MobileApplications](Semester5/MobileApplications/)
     * [🔬Research Project](Semester5/Research%20Project/)
     * [🔒Software Security](Semester5/Software%20Security/)
+* [Semester 6](Semester6/)
+    * Bachelor Thesis Preparation
+    * [Design Patterns](Semester6/Design%20patterns/)
+    * [Ethics and academic integrity](Semester6/Ethics%20and%20academic%20integrity/)
+    * [Game development](Semester6/Game%20development/)
+    * [Numerical Calculus](Semester6/Numerical%20Calculus/)
+    * [Software System Verification and Validation](Semester6/Software%20System%20Verification%20and%20Validation/)
 
 {{ file.Read "cloc.md" }}
